@@ -1,13 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using AirFramework;
-using System.Text;
+using UnityEngine;
 
 namespace DevTest
 {
-   
-        
+
+
 
     public class TempObj
     {
