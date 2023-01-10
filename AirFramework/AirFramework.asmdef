@@ -1,6 +1,6 @@
 {
-    "name": "RootFramework",
-    "rootNamespace": "RootFramework",
+    "name": "AirFramework",
+    "rootNamespace": "AirFramework",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

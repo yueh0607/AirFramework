@@ -1,5 +1,5 @@
 using UnityEngine;
-namespace RootFramework
+namespace AirFramework
 {
     public class SingletonMono<T> : MonoBehaviour where T : SingletonMono<T>
     {

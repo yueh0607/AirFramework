@@ -1,4 +1,4 @@
-namespace RootFramework
+namespace AirFramework
 {
     public interface IPool<T>
     {

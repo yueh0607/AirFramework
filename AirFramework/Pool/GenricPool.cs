@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace RootFramework
+namespace AirFramework
 {
     internal class GenricPool<T> : Singleton<GenricPool<T>> ,IPool<T> where T : new()
     {

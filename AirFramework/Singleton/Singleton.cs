@@ -1,6 +1,6 @@
 using System;
 
-namespace RootFramework
+namespace AirFramework
 {
     public class Singleton<T> where T : Singleton<T>
     {
