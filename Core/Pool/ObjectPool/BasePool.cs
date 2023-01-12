@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
+    /// <summary>
+    /// 对象池基类
+    /// </summary>
     public abstract class BasePool : Unit, IPool,IFormattable
     {
         /// <summary>

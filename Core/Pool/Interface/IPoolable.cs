@@ -22,12 +22,12 @@ namespace AirFramework
         /// 释放时调用
         /// </summary>
         /// <param name="item">被销毁对象的实例引用</param>
-        void OnReleaseItem(T item);
+        void OnReleaseItem();
 
         /// <summary>
         /// 申请对象时调用
         /// </summary>
         /// <param name="item">被销毁对象的实例引用</param>
-        void OnAllocateItem(T item);
+        void OnAllocateItem();
     }
 }

@@ -28,13 +28,21 @@ namespace AirFramework
         /// </summary>
         /// <param name="count"></param>
         void Preload(int count);
-
+        /// <summary>
+        /// 对象池缓存增加到
+        /// </summary>
+        /// <param name="count"></param>
+        void PreloadTo(int count);
         /// <summary>
         /// 对象池缓存减少
         /// </summary>
         /// <param name="count"></param>
         void Unload(int count);
-
+        /// <summary>
+        /// 对象池缓存减少到
+        /// </summary>
+        /// <param name="count"></param>
+        void UnloadTo(int count);
         /// <summary>
         /// 分配对象
         /// </summary>
