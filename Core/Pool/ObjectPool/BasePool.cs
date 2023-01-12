@@ -1,4 +1,4 @@
-﻿using AirFramework.Assets.AirFramework;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,12 +10,12 @@ namespace AirFramework
     /// <summary>
     /// 对象池基类
     /// </summary>
-    public abstract class BasePool : Unit, IPool,IFormattable
+    public abstract class BasePool : Unit, IObjectPool,IFormattable
     {
         /// <summary>
         /// 缓加载缓存池,线程安全容器
         /// </summary>
-        protected Lazy<Stack<object>> pool = new Lazy<Stack<object>>();
+        protected Lazy<Stack<object>> pool = new();
 
         /// <summary>
         /// 对象类型

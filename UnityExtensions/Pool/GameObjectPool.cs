@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace AirFramework
 {
-    public class GameObjectPool : GenericPool<GameObject>
+    public class GameObjectPool 
     {
         
     }

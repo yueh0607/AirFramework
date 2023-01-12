@@ -6,16 +6,22 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public interface IPool
+    public enum MessageState
     {
         /// <summary>
-        /// 对象池类型
+        /// 休息中
         /// </summary>
-        Type ObjectType { get; }
+        Rset = 1,
 
         /// <summary>
-        /// 缓冲对象数量
+        /// 等待中
         /// </summary>
-        int Count { get; }
+        Wait = 2,
+
+
+        /// <summary>
+        /// 发布中
+        /// </summary>
+        Lock = 4
     }
 }

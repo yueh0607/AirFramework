@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AirFramework.Assets.AirFramework
+namespace AirFramework
 {
     /// <summary>
     /// 基类接口
