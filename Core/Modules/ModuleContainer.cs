@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public interface IModules
+    public class ModuleContainer
     {
-        public string Name { get; }
-
-
         
+
     }
 }

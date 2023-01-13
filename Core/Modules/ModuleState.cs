@@ -6,14 +6,10 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public enum ModulePriority
+    public enum ModuleState
     {
-        Initial = 1,
-
-        Message=2,
-
-        Update = 4
-
-
+        Rest = 1,
+        Initializing = 2,
+        Runing = 4
     }
 }
