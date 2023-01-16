@@ -11,6 +11,6 @@ namespace AirFramework
     }
     public interface IValueContainer<T>:IValueContainer
     {
-        T Value { get; }
+        T Value { get;}
     }
 }

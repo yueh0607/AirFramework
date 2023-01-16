@@ -15,8 +15,6 @@ namespace AirFramework
         /// </summary>
         private readonly object _lock = new object();
 
-
-
         /// <summary>
         /// 获取池，需要实现IPoolable
         /// </summary>
@@ -39,8 +37,6 @@ namespace AirFramework
             }
         }
 
-     
-        
         public T Allocate<T> () where T : class,IPoolable
         {
             return (T)(GetPool<T>().AllocateObj());

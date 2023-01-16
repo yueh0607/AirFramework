@@ -8,7 +8,7 @@ namespace AirFramework
     public interface IUnitPoolable : IUnit, IPoolable
     {
 
-        public IObjectPool ThisPool { get;  }
+        public IObjectPool ThisPool { get; set; }
 
         public bool IsRecycled { get; }
     }

@@ -24,9 +24,10 @@ namespace AirFramework
         {
             
         }
-        private static void DefaultAllocate(T item)
+        private void DefaultAllocate(T item)
         {
             item.OnAllocate();
+            item.ThisPool= this;
         }
         private static void DefaultRecycle(T item)
         {
@@ -36,9 +37,12 @@ namespace AirFramework
         /// <summary>
         /// 初始化
         /// </summary>
-        public UnitPool() : base(DefaultCreate,DefaultDestroy,DefaultRecycle,DefaultAllocate)
+        public UnitPool() : base()
         {
-
+            base.onCreate = DefaultCreate;
+            base.onDestroy= DefaultDestroy;
+            base.onAllocate = DefaultAllocate;
+            base.onRecycle = DefaultRecycle;
         }
 
     }

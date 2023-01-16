@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace AirFramework
 {
 
-    public sealed class UnitStringBuilder : UnitSealed<StringBuilder>
+    public sealed class UnitStringBuilder : UnitPoolObject<StringBuilder>
     {
-        public override IObjectPool ThisPool => throw new NotImplementedException();
+
 
         public override void OnAllocateItem()
         {

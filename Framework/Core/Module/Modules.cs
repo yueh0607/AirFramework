@@ -16,7 +16,7 @@ namespace AirFramework
         /// <summary>
         /// 销毁时调用
         /// </summary>
-        public override void OnDispose()
+        protected override void OnDispose()
         {
             moduleContainer.Value.Clear();
         }
@@ -45,7 +45,7 @@ namespace AirFramework
             {
                 moduleContainer.Value.Add(typeof(T), Activator.CreateInstance<T>());
             }
-            return moduleContainer.Value[typeof(T)];
+            return (T)moduleContainer.Value[typeof(T)];
         }
     }
 }

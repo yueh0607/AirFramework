@@ -10,7 +10,7 @@ namespace AirFramework
     /// 通过继承本类实现密封类默认池模板
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public abstract class UnitSealed<T> : Unit, IValueContainer<T>, IUnitEventPoolable where T:new()
+    public abstract class UnitPoolObject<T> : Unit, IValueContainer<T>, IUnitEventPoolable where T:new()
     {
         /// <summary>
         /// 模板值
@@ -20,7 +20,7 @@ namespace AirFramework
        /// <summary>
        /// 需要令该属性返回对应的池
        /// </summary>
-        public abstract IObjectPool ThisPool { get; }
+        public IObjectPool ThisPool { get; set; }
 
         /// <summary>
         /// 判定是否已经回收
