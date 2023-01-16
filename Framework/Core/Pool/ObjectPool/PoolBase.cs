@@ -28,7 +28,7 @@ namespace AirFramework
         /// 申请对象
         /// </summary>
         /// <returns></returns>
-        public abstract object Allocate();
+        public abstract object AllocateObj();
         /// <summary>
         /// 回收对象
         /// </summary>

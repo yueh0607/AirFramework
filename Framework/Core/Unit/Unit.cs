@@ -9,7 +9,7 @@ namespace AirFramework
 {
     public abstract class Unit : IUnit
     {
-        private bool _disposed = false;
+        protected bool _disposed = false;
         public bool Disposed => _disposed;
 
         /// <summary>
@@ -18,6 +18,7 @@ namespace AirFramework
         public virtual void Dispose()
         {
             _disposed= true;
+            OnDispose();
         }
 
         /// <summary>

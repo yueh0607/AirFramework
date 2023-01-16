@@ -11,6 +11,6 @@ namespace AirFramework
     /// </summary>
     public interface IUnitEventPoolable : IUnitPoolable
     {
-        void OnAllocate();
+
     }
 }

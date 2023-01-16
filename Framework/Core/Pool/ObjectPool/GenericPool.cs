@@ -59,7 +59,7 @@ namespace AirFramework
         /// 申请对象
         /// </summary>
         /// <returns></returns>
-        public override object Allocate()
+        public override object AllocateObj()
         {
             lock (_lock)
             {
@@ -75,6 +75,8 @@ namespace AirFramework
                 return item;
             }
         }
+        public T Allocate() {return (T)AllocateObj(); }
+        
 
         /// <summary>
         /// 清空缓存
@@ -108,7 +110,8 @@ namespace AirFramework
         public override void Recycle(object item)
         {
             T it = item as T;
-            if (it == null||item is IPool) return;
+            if (it == null) return;
+            //if (item is IPool) throw new Exception("IPool cannot be recycled!");
             onRecycle?.Invoke(it);
             pool.Enqueue(it);
         }

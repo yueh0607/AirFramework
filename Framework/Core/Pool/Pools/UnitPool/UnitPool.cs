@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public class UnitPool<T>: GenericPool<Unit> where T : Unit,IUnitPoolable,new()
+    public class UnitPool<T>: GenericPool<T> where T : Unit,IUnitPoolable,new()
     {
         /// <summary>
         /// 默认的创建方法
         /// </summary>
         /// <returns></returns>
-        public static Unit DefaultCreate()
+        private static T DefaultCreate()
         {
             return new T();
         }
@@ -20,14 +20,23 @@ namespace AirFramework
         /// 默认的销毁方法
         /// </summary>
         /// <param name="item"></param>
-        private static void DefaultDestroy(Unit item)
+        private static void DefaultDestroy(T item)
         {
-            item.Dispose();
+            
         }
+        private static void DefaultAllocate(T item)
+        {
+            item.OnAllocate();
+        }
+        private static void DefaultRecycle(T item)
+        {
+            item.OnRecycle();
+        }
+
         /// <summary>
         /// 初始化
         /// </summary>
-        public UnitPool() : base(DefaultCreate,DefaultDestroy,null,null)
+        public UnitPool() : base(DefaultCreate,DefaultDestroy,DefaultRecycle,DefaultAllocate)
         {
 
         }
