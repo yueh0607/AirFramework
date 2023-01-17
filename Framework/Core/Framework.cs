@@ -11,7 +11,7 @@ namespace AirFramework
         
 
 
-        public static readonly IModules modules = new Modules();
+        //public static readonly IModules modules = new Modules();
 
 
     }
