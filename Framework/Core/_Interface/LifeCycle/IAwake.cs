@@ -6,13 +6,8 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public static class Framework
+    public interface IAwake:ILifeCycle
     {
-        
-
-
-        public static readonly IModules modules = new Modules();
-
-
+        void Awake();
     }
 }

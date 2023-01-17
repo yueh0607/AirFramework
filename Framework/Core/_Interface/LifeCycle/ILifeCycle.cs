@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public enum ModulePriority
-    {
-        
+    
+    public interface ILifeCycle
+    {        
 
     }
 }
