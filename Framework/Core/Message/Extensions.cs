@@ -9,9 +9,8 @@ namespace AirFramework
     public static partial class Extensions
     {
 
-        public static void Register(this IMessageReceiver receiver)
+        public static void Register(this IMessageReceiver receiver,Action message)
         {
-
         }
         public static void UnRegister(this IMessageReceiver receiver)
         {

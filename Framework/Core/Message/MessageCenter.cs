@@ -1,13 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using System;
+
 
 namespace AirFramework
 {
-    public class MessageManager
+    public class MessageManager : Unit
     {
+        public class AA:IMessageReceiver
+        {
+
+        }
+
+
+        public void SendMessage(IMessageReceiver receiver,long code,ValueTuple tuple)
+        {
+            
+            
+        }
         
+        protected override void OnDispose()
+        {
+            
+        }
     }
 }
