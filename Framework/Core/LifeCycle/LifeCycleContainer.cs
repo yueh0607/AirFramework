@@ -9,9 +9,16 @@ namespace AirFramework
     public class LifeCycleContainer
     {
         
+        public Dictionary<Type,ICustomLifeCycle> lifeCycles = new Dictionary<Type, ICustomLifeCycle>();
 
-
-        private static void EnLifeCycle(Unit unit)
+        private void RegisterCustomLife<T>() where T : class,ICustomLifeCycle,new()
+        {
+            if(!lifeCycles.ContainsKey(typeof(T)))
+            {
+                lifeCycles.Add(typeof(T),new T());
+            }
+        }
+        private void EnLifeCycle(Unit unit)
         {
             Type[] lifes= unit.GetType().GetInterfaces();
             foreach(Type life in lifes)
@@ -21,11 +28,11 @@ namespace AirFramework
         }
 
 
-        private static void LifeCase<T>(Unit unit) where T : ILifeCycle
+        private void LifeCase<T>(Unit unit) where T : ILifeCycle
         {
             
         }
-        private static void 
+        
 
     }
 }

@@ -6,15 +6,13 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public class AwakeLifeCycle : ICustomLifeCycle<IAwake>
+    public class AwakeLifeCycle : ICustomLifeCycle
     {
-        public bool IsOnce => true;
-
         public int SortingLayer => 0;
 
         public Action GetLifeFunc(Unit unit)
         {
-            return (life as IAwake).Awake;
+            return (unit as IAwake).Awake;
         }
         public void LifeFunc(Action lifeFunc)
         {
