@@ -39,7 +39,7 @@ namespace AirFramework
         }
         public void Recycle<T>(T item) where T : Unit, IUnitPoolable, new()
         {
-            GetPool<T>().Recycle(item);
+            GetPool<T>().RecycleObj(item);
         }
 
         protected override void OnDispose()

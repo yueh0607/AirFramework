@@ -26,7 +26,7 @@ namespace AirFramework
         /// <summary>
         /// 回收对象
         /// </summary>
-        public void Recycle(object item);
+        public void RecycleObj(object item);
         /// <summary>
         /// 预加载缓存
         /// </summary>

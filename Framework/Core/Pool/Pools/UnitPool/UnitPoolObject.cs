@@ -70,7 +70,7 @@ namespace AirFramework
         {
             if (ThisPool != null && IsRecycled != true && !ThisPool.Disposed)
             {
-                ThisPool.Recycle(this);
+                ThisPool.RecycleObj(this);
             }
         }
     }

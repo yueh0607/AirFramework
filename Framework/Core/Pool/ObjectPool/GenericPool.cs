@@ -78,6 +78,8 @@ namespace AirFramework
         public T Allocate() {return (T)AllocateObj(); }
         
 
+
+
         /// <summary>
         /// 清空缓存
         /// </summary>
@@ -107,7 +109,7 @@ namespace AirFramework
         /// 回收对象
         /// </summary>
         /// <param name="item"></param>
-        public override void Recycle(object item)
+        public override void RecycleObj(object item)
         {
             T it = item as T;
             if (it == null) return;
@@ -115,6 +117,7 @@ namespace AirFramework
             onRecycle?.Invoke(it);
             pool.Enqueue(it);
         }
+        public void RecycleObj(T item) { RecycleObj(item); }
         /// <summary>
         /// 卸载缓存
         /// </summary>
