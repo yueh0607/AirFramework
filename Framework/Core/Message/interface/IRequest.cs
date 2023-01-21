@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public interface IMessageReceiver
+    public interface IRequest
     {
 
-        
-        void OnReceiveMessage(IMessage message,IMessageSender sender);
-
+    }
+    public interface IMessage<out TResponse> 
+    {
 
     }
 }

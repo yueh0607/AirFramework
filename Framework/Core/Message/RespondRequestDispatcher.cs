@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace AirFramework
 {
-    public interface IMessage
+    
+    public partial class RequestDispatcher
     {
 
-    }
-    public interface IMessage<out TResponse> 
-    {
+      
+      
 
     }
 }

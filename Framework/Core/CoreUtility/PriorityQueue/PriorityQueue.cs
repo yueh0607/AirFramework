@@ -3,19 +3,25 @@ using System.Collections.Generic;
 
 namespace AirFramework
 {
+    struct HeapNode<T>
+    {
+        public int Priority;
+        public T Value;
+    }
     public class PriorityQueue<T>  where T : IComparer<T>
     {
 
-        Predicate<T> predicate;
-        public PriorityQueue(Predicate<T> cmp) 
-        {
-            if (cmp == null) throw new Exception("Cmp cannot be null!");
-            predicate= cmp;
-        }
+        private List<T> heap = new List<T>();
+
         
-        public void Enqueue(T item ) 
+        public PriorityQueue() 
         {
             
+        }
+  
+        public void Enqueue(T item ) 
+        {
+            heap.Add( item );
         }
         public T Dequeue()
         {
