@@ -11,12 +11,12 @@ namespace AirFramework
     {
         public override void OnAllocateItem()
         {
-            throw new NotImplementedException();
+            
         }
 
         public override void OnRecycleItem()
         {
-            throw new NotImplementedException();
+            Value.Clear();
         }
     }
 
