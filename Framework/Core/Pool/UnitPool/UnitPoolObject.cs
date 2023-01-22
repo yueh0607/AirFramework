@@ -10,7 +10,7 @@ namespace AirFramework
     /// 通过继承本类实现密封类默认池模板
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public abstract class UnitPoolObject<T> : Unit, IValueContainer<T>, IUnitPoolable where T:new()
+    public abstract class UnitPoolObject<T> : GenericPoolObject, IValueContainer<T>, IUnitPoolable where T:new()
     {
         /// <summary>
         /// 模板值
@@ -46,10 +46,11 @@ namespace AirFramework
         /// </summary>
         public abstract void OnRecycleItem();
 
+
         /// <summary>
         /// 由池调用，申请时
         /// </summary>
-        void IPoolable.OnAllocate()
+        public override void OnAllocate()
         {
             isRecycled = false;
             OnAllocateItem();
@@ -57,7 +58,7 @@ namespace AirFramework
         /// <summary>
         /// 由池调用，回收时
         /// </summary>
-        void IPoolable.OnRecycle()
+        public override void OnRecycle()
         {
             isRecycled= true;
             OnRecycleItem();

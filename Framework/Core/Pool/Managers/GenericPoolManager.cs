@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public class GenericPoolManager : Unit
+    public class GenericPoolManager : Unit,IGenericPoolManager
     {
         private readonly Dictionary<Type, IObjectPool> pools = new Dictionary<Type, IObjectPool>();
 
@@ -43,7 +43,7 @@ namespace AirFramework
         }
         public void Recycle<T>(T item) where T : class,IPoolable
         {
-            GetPool<T>().Recycle(item);
+            GetPool<T>().RecycleObj(item);
         }
 
         protected override void OnDispose()

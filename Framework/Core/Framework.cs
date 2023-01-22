@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public static class Framework
+    public static partial class Framework
     {
+        public static IUnitPoolManager UnitPool { get; } = new UnitPoolManager();
+        public static IGenericPoolManager GenericPoolManager { get; } = new GenericPoolManager();  
+
         
-
-
-        //public static readonly IModules modules = new Modules();
-
 
     }
 }

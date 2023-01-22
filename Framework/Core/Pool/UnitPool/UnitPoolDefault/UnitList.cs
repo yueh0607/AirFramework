@@ -7,22 +7,17 @@ using System.Threading.Tasks;
 namespace AirFramework
 {
 
-    public sealed class UnitStringBuilder : UnitPoolObject<StringBuilder>
+    public sealed class UnitList<T> : UnitPoolObject<List<T>>
     {
-
-
         public override void OnAllocateItem()
         {
-            
+            throw new NotImplementedException();
         }
 
         public override void OnRecycleItem()
         {
-            value.Clear();
+            throw new NotImplementedException();
         }
-
-
-        
     }
-   
+
 }

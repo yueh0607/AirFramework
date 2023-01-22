@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public class UnitPoolManager : Unit
+    public class UnitPoolManager : Unit,IUnitPoolManager
     {
         private readonly Dictionary<Type, IObjectPool> pools = new Dictionary<Type, IObjectPool>();
 
@@ -44,6 +44,7 @@ namespace AirFramework
 
         protected override void OnDispose()
         {
+           // lock (_lock) foreach (var i in pools) i.Dispose();
             pools.Clear();
         }
     }
