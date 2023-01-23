@@ -44,6 +44,6 @@ namespace AirFramework
             base.onAllocate = DefaultAllocate;
             base.onRecycle = DefaultRecycle;
         }
-
+        public UnitPool(Func<T> onCreate,Action<T>onDestroy,Action<T> onRecycle,Action<T> onAllocate) : base(onCreate,onDestroy,onRecycle,onAllocate) { }
     }
 }

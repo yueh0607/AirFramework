@@ -9,6 +9,7 @@ namespace AirFramework
 {
     public class MessageDispatcher
     {
-        //public Dictionary<IMessageReceiver,>
+        public Dictionary<IMessageReceiver,MessageAlloter> pool= new();
+
     }
 }

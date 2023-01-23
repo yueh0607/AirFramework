@@ -17,10 +17,10 @@ namespace AirFramework
         /// </summary>
         protected T value =new();
 
-       /// <summary>
-       /// 需要令该属性返回对应的池
-       /// </summary>
-        public IObjectPool ThisPool { get; set; }
+        /// <summary>
+        /// 需要令该属性返回对应的池
+        /// </summary>
+        public IObjectPool ThisPool { get; set; } = null;
 
         /// <summary>
         /// 判定是否已经回收
@@ -69,9 +69,12 @@ namespace AirFramework
         /// </summary>
         protected override void OnDispose()
         {
-            if (ThisPool != null && IsRecycled != true && !ThisPool.Disposed)
+            if (ThisPool != null)
             {
-                ThisPool.RecycleObj(this);
+                if (IsRecycled != true && !ThisPool.Disposed)
+                {
+                    ThisPool.RecycleObj(this);
+                }
             }
         }
     }
