@@ -35,10 +35,10 @@ namespace AirFramework
         public void Remove(params Delegate[] message)
         {
             Type delType = ChainType;
-
+            //.
             foreach (var del in message)
             {
-                if (message.GetType() == delType||delType==typeof(object))
+                if (message.GetType() == delType || delType == typeof(object))
                     delegates.Remove(del);
                 else throw new ArgumentException("All Delegates in chain must be same type");
             }
@@ -60,6 +60,7 @@ namespace AirFramework
         protected override void OnDispose()
         {
             Clear();
+
         }
     }
 }
