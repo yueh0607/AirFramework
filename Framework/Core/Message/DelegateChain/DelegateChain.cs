@@ -1,10 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Unity.Plastic.Antlr3.Runtime.Misc;
-using UnityEngine;
 
 namespace AirFramework
 {
@@ -23,7 +18,7 @@ namespace AirFramework
 
 
         public int Count => delegates.Count;
-        public LinkedList<Delegate> DelegateList => delegates;
+        //public LinkedList<Delegate> DelegateList => delegates;
 
         public void Remove(params Delegate[] message)
         {
@@ -52,7 +47,45 @@ namespace AirFramework
 
         public void Invoke()
         {
-
+            foreach(var del in delegates)
+            {
+                (del as Action)?.Invoke();
+            }
+        }
+        public void Invoke<A>(A a)
+        {
+            foreach (var del in delegates)
+            {
+                (del as Action<A>)?.Invoke(a);
+            }
+        }
+        public void Invoke<A,B>(A a,B b)
+        {
+            foreach (var del in delegates)
+            {
+                (del as Action<A,B>)?.Invoke(a,b);
+            }
+        }
+        public void Invoke<A, B,C >(A a, B b,C c)
+        {
+            foreach (var del in delegates)
+            {
+                (del as Action<A, B,C>)?.Invoke(a, b,c);
+            }
+        }
+        public void Invoke<A, B, C,D>(A a, B b, C c,D d)
+        {
+            foreach (var del in delegates)
+            {
+                (del as Action<A, B, C,D>)?.Invoke(a, b, c,d);
+            }
+        }
+        public void Invoke<A, B, C, D,E>(A a, B b, C c, D d,E e)
+        {
+            foreach (var del in delegates)
+            {
+                (del as Action<A, B, C, D,E>)?.Invoke(a, b, c, d,e);
+            }
         }
     }
 }
