@@ -35,7 +35,7 @@ namespace AirFramework
         public void Remove(params Delegate[] message)
         {
             Type delType = ChainType;
-            //.
+        
             foreach (var del in message)
             {
                 if (message.GetType() == delType || delType == typeof(object))
