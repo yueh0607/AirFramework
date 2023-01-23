@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-
-    public sealed class UnitList<T> : UnitPoolObject<List<T>>
+    internal class UnitCollection<T> : UnitPoolObject<T> where T : class, ICollection<T>, new()
     {
         public override void OnAllocateItem()
         {
@@ -19,5 +18,4 @@ namespace AirFramework
             Value.Clear();
         }
     }
-
 }

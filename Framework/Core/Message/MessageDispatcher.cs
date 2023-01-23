@@ -11,5 +11,7 @@ namespace AirFramework
     {
         public Dictionary<IMessageReceiver,MessageAlloter> pool= new();
 
+
+
     }
 }
