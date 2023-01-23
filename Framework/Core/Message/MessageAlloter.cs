@@ -73,7 +73,6 @@ namespace AirFramework
             {
                 pool[messageType].Invoke(a, b, c);
             }
-            //.
         }
         public void Invoke<A, B, C, D>(IMessage messageType, A a, B b, C c,D d)
         {
