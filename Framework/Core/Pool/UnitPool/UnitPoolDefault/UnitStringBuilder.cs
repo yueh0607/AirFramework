@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace AirFramework
 {
 
-    public sealed class UnitStringBuilder : UnitPoolObject<StringBuilder>
+    public class UnitStringBuilder : UnitPoolObject<StringBuilder>
     {
 
 

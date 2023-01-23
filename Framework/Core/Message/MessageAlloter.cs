@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEditor.VersionControl;
+
 
 namespace AirFramework
 {
@@ -19,26 +16,26 @@ namespace AirFramework
             throw new NotImplementedException();
         }
     }
-    
+
     public class MessageAlloter
     {
-        private Dictionary<IMessage, DelegateChain> pool = new();
+        private readonly Dictionary<IMessage, DelegateChain> pool = new();
 
-        public void Register(IMessage messageType,Delegate message)
+        public void Register(IMessage messageType, Delegate message)
         {
-            if(pool.ContainsKey(messageType))
+            if (pool.ContainsKey(messageType))
             {
                 pool[messageType].Add(message);
             }
-            pool.Add(messageType,new DelegateChain(message));
+            pool.Add(messageType, new DelegateChain(message));
         }
-        public void Remove(IMessage messageType,Delegate message)
+        public void Remove(IMessage messageType, Delegate message)
         {
             if (pool.ContainsKey(messageType))
             {
                 pool[messageType].Remove(message);
             }
-            if (pool[messageType].Count==0) pool.Remove(messageType);
+            if (pool[messageType].Count == 0) pool.Remove(messageType);
         }
         public void Remove(IMessage messageType)
         {
@@ -48,10 +45,18 @@ namespace AirFramework
             }
         }
 
-        public void Register(IMessage messageType,Action message)
+       
+        public void InvokeAs(IMessage messageType)
         {
-            Register(messageType, message);
+            if (pool.ContainsKey(messageType))
+            {
+                (pool[messageType] as Action).Invoke();
+            }
+
         }
-     
+        public void InvokeAs(IMessage messageType, params ValueType[] pram)
+        {
+
+        }
     }
 }

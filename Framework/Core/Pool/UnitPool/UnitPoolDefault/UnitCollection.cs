@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    internal class UnitCollection<T> : UnitPoolObject<T> where T : class, ICollection<T>, new()
+    public class UnitCollection<T> : UnitPoolObject<T> where T : class, ICollection<T>, new()
     {
         public override void OnAllocateItem()
         {

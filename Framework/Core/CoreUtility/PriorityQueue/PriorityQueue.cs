@@ -11,7 +11,7 @@ namespace AirFramework
     public class PriorityQueue<T>  where T : IComparer<T>
     {
 
-        private List<T> heap = new List<T>();
+        private readonly List<T> heap = new();
 
         
         public PriorityQueue() 
