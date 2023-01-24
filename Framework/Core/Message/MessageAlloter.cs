@@ -45,49 +45,54 @@ namespace AirFramework
             }
         }
          
-        
-        public void Invoke(IMessage messageType)
+        public void Invoke(IMessage message)
         {
-            if(pool.ContainsKey(messageType))
-            {
-                pool[messageType].Invoke();
-            }
+
         }
-        public void Invoke<A>(IMessage messageType,A a)
-        {
-            if (pool.ContainsKey(messageType))
-            {
-                pool[messageType].Invoke(a);
-            }
-        }
-        public void Invoke<A,B>(IMessage messageType, A a,B b)
-        {
-            if (pool.ContainsKey(messageType))
-            {
-                pool[messageType].Invoke(a,b);
-            }
-        }
-        public void Invoke<A, B, C>(IMessage messageType, A a, B b, C c)
-        {
-            if (pool.ContainsKey(messageType))
-            {
-                pool[messageType].Invoke(a, b, c);
-            }
-        }
-        public void Invoke<A, B, C, D>(IMessage messageType, A a, B b, C c,D d)
-        {
-            if (pool.ContainsKey(messageType))
-            {
-                pool[messageType].Invoke(a, b, c ,d);
-            }
-        }
-        public void Invoke<A, B, C, D , E>(IMessage messageType, A a, B b, C c, D d,E e)
-        {
-            if (pool.ContainsKey(messageType))
-            {
-                pool[messageType].Invoke(a, b, c, d,e);
-            }
-        }
+
+
+        //public void Invoke(IMessage messageType)
+        //{
+        //    if(pool.ContainsKey(messageType))
+        //    {
+        //        pool[messageType].Invoke();
+        //    }
+        //}
+        //public void Invoke<A>(IMessage messageType,A a)
+        //{
+        //    if (pool.ContainsKey(messageType))
+        //    {
+        //        pool[messageType].Invoke(a);
+        //    }
+        //}
+        //public void Invoke<A,B>(IMessage messageType, A a,B b)
+        //{
+        //    if (pool.ContainsKey(messageType))
+        //    {
+        //        pool[messageType].Invoke(a,b);
+        //    }
+        //}
+        //public void Invoke<A, B, C>(IMessage messageType, A a, B b, C c)
+        //{
+        //    if (pool.ContainsKey(messageType))
+        //    {
+        //        pool[messageType].Invoke(a, b, c);
+        //    }
+        //}
+        //public void Invoke<A, B, C, D>(IMessage messageType, A a, B b, C c,D d)
+        //{
+        //    if (pool.ContainsKey(messageType))
+        //    {
+        //        pool[messageType].Invoke(a, b, c ,d);
+        //    }
+        //}
+        //public void Invoke<A, B, C, D , E>(IMessage messageType, A a, B b, C c, D d,E e)
+        //{
+        //    if (pool.ContainsKey(messageType))
+        //    {
+        //        pool[messageType].Invoke(a, b, c, d,e);
+        //    }
+        //}
 
     }
 }

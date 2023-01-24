@@ -11,7 +11,6 @@ namespace AirFramework.Assets.Framework.Core.BindableProperty
     {
         private T value = default(T);
 
-        
         protected T Value { 
             get => value;
             set
@@ -21,8 +20,6 @@ namespace AirFramework.Assets.Framework.Core.BindableProperty
                     this.value = value;
                     OnValueChanged(value);
                 }
-                
-
             }
         }
 
