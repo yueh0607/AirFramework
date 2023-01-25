@@ -4,11 +4,21 @@ using System.Collections.Generic;
 namespace AirFramework
 {
     /// <summary>
-    /// 用于实现委托链
+    /// 用于实现委托链,防止委托拼接产生的GC，只允许存储同类委托
     /// </summary>
-    public class DelegateChain : Unit
+    public class DelegateChain : Unit,IInitialized
     {
+        
+        bool initialized = false;
+        /// <summary>
+        /// 委托链是否初始化
+        /// </summary>
+        public bool Initialized => initialized;
 
+        /// <summary>
+        /// 此方式初始化可以直接使用
+        /// </summary>
+        /// <param name="chainHead"></param>
         public DelegateChain(Delegate chainHead)
         {
             AddAndSetType(chainHead);
@@ -20,26 +30,36 @@ namespace AirFramework
         {
 
         }
+        /// <summary>
+        /// 添加并设置委托链类型
+        /// </summary>
+        /// <param name="chainHead"></param>
+        /// <returns></returns>
         public DelegateChain AddAndSetType(Delegate chainHead)
         {
             ChainType = chainHead.GetType();
             Add(chainHead);
+            initialized= true;
             return this;
         }
+        /// <summary>
+        /// 委托链类型
+        /// </summary>
         public Type ChainType{  get;protected set; } = typeof(Delegate);
 
 
         private LinkedList<Delegate> delegates = new LinkedList<Delegate>();
 
-
+        /// <summary>
+        /// 委托链委托数量
+        /// </summary>
         public int Count => delegates.Count;
-        //public LinkedList<Delegate> DelegateList => delegates;
 
-
-
-
-
-
+        /// <summary>
+        /// 从委托链中删除，类型不匹配抛出异常
+        /// </summary>
+        /// <param name="message"></param>
+        /// <exception cref="ArgumentException"></exception>
         public void Remove(params Delegate[] message)
         {
             foreach (var del in message)
@@ -49,6 +69,11 @@ namespace AirFramework
                 else throw new ArgumentException("The delegation chain type does not match");
             }
         }
+        /// <summary>
+        /// 添加到委托链，类型不匹配抛出异常
+        /// </summary>
+        /// <param name="message"></param>
+        /// <exception cref="ArgumentException"></exception>
         public void Add(params Delegate[] message)
         {
             foreach (var del in message)
