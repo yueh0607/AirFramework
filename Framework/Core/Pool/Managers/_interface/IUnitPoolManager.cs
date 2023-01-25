@@ -8,7 +8,7 @@ namespace AirFramework
 {
     public interface IUnitPoolManager
     {
-        public IObjectPool GetPool<T>() where T : Unit, IUnitPoolable, new();
+        public IUnitPool<T> GetPool<T>() where T : Unit, IUnitPoolable, new();
 
 
         public T Allocate<T>() where T : Unit, IUnitPoolable, new();

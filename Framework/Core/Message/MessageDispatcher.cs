@@ -3,44 +3,61 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace AirFramework
 {
     public class MessageDispatcher
     {
-        public Dictionary<IMessageReceiver,DelegateChain> pool= new();
+        private Dictionary<IMessageReceiver,DelegateChain> pool= new();
+
+        //private static DelegateChain CreateDelChain() { return new DelegateChain(); }
+        
 
         public void Register<MessageType>(IMessageReceiver receiver,Action<MessageType> message) where MessageType : class,IMessage
         {
-            if(pool.ContainsKey(receiver))
+            lock (pool)
             {
-                pool[receiver].Add(message);
+                if (pool.ContainsKey(receiver))
+                {
+                    pool[receiver].Add(message);
+                }
+                else pool.Add(receiver, Framework.UnitPool.Allocate<UnitDelegateChain>().Value.AddAndSetType(message));
             }
-            else pool.Add(receiver,new DelegateChain(message));
         }
         public void Remove<MessageType>(IMessageReceiver receiver,Action<MessageType> message) where MessageType : class,IMessage
         {
-            if(pool.ContainsKey(receiver))
+            lock (pool)
             {
-                pool[receiver].Remove(message);
-                if (pool[receiver].Count==0)
+                if (pool.ContainsKey(receiver))
                 {
-                    pool.Remove(receiver);
+                    pool[receiver].Remove(message);
+                    if (pool[receiver].Count == 0)
+                    {
+                        Remove<MessageType>(receiver);
+                    }
                 }
             }
         }
         public void Remove<MessageType>(IMessageReceiver receiver) where MessageType : class,IMessage
         {
-            if(pool.ContainsKey(receiver))
+            lock (pool)
             {
-                pool.Remove(receiver);
+                if (pool.ContainsKey(receiver))
+                {
+                    DelegateChain dc = pool[receiver];
+                    pool.Remove(receiver);
+                    dc.Dispose();
+                }
             }
         }
-
         public void Invoke<MessageType>(IMessageReceiver receiver,MessageType message) where MessageType : class,IMessage
         {
-            pool[receiver].Invoke(message);
+            if(pool.ContainsKey(receiver))
+            {
+                pool[receiver].Invoke(message);
+            }  
         }
     }
 }

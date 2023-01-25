@@ -15,14 +15,12 @@ namespace AirFramework
         /// </summary>
         private readonly object _lock = new object();
 
-
-
         /// <summary>
         /// 获取池，需要实现IPoolable
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public IObjectPool GetPool<T>() where T : Unit, IUnitPoolable,new()
+        public IUnitPool<T> GetPool<T>() where T : Unit, IUnitPoolable,new()
         {
             lock (_lock)
             {
@@ -30,21 +28,21 @@ namespace AirFramework
                 {
                     pools.Add(typeof(T), new UnitPool<T>());
                 }
-                return pools[typeof(T)];
+                return pools[typeof(T)] as IUnitPool<T>;
             }
         }
+
         public T Allocate<T>() where T : Unit, IUnitPoolable,new()
         {
-            return (T)(GetPool<T>().AllocateObj());
+            return GetPool<T>().Allocate();
         }
         public void Recycle<T>(T item) where T : Unit, IUnitPoolable, new()
         {
-            GetPool<T>().RecycleObj(item);
+            GetPool<T>().Recycle(item);
         }
 
         protected override void OnDispose()
         {
-           // lock (_lock) foreach (var i in pools) i.Dispose();
             pools.Clear();
         }
     }

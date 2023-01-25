@@ -11,11 +11,22 @@ namespace AirFramework
 
         public DelegateChain(Delegate chainHead)
         {
+            AddAndSetType(chainHead);
+        }
+        /// <summary>
+        /// 提示：如果您这样初始化，则需要调用AddAndSetType方法，否则您的Add和Remove将可能抛出异常
+        /// </summary>
+        public DelegateChain()
+        {
+
+        }
+        public DelegateChain AddAndSetType(Delegate chainHead)
+        {
             ChainType = chainHead.GetType();
             Add(chainHead);
+            return this;
         }
-
-        public Type ChainType{  get;set; }
+        public Type ChainType{  get;protected set; } = typeof(Delegate);
 
 
         private LinkedList<Delegate> delegates = new LinkedList<Delegate>();

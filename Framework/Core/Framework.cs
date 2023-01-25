@@ -9,7 +9,7 @@ namespace AirFramework
     public static partial class Framework
     {
         public static IUnitPoolManager UnitPool { get; } = new UnitPoolManager();
-        public static IGenericPoolManager GenericPoolManager { get; } = new GenericPoolManager();  
+        public static IGenericPoolManager GenericPool { get; } = new GenericPoolManager();  
 
         
 

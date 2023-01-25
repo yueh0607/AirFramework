@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public class UnitPool<T>: GenericPool<T> where T : Unit,IUnitPoolable,new()
+    public class UnitPool<T>: GenericPool<T>,IUnitPool<T> where T : Unit,IUnitPoolable,new()
     {
         /// <summary>
         /// 默认的创建方法
@@ -45,5 +45,7 @@ namespace AirFramework
             base.onRecycle = DefaultRecycle;
         }
         public UnitPool(Func<T> onCreate,Action<T>onDestroy,Action<T> onRecycle,Action<T> onAllocate) : base(onCreate,onDestroy,onRecycle,onAllocate) { }
+    
+        
     }
 }

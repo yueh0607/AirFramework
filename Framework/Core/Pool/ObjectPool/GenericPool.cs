@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public class GenericPool<T> : PoolBase where T : class
+    public class GenericPool<T> : PoolBase,IGenericPool<T> where T : class
     {
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace AirFramework
                 return item;
             }
         }
-        public T Allocate() {return (T)AllocateObj(); }
+        public virtual T Allocate() {return (T)AllocateObj(); }
         
 
 
@@ -117,7 +118,11 @@ namespace AirFramework
             onRecycle?.Invoke(it);
             pool.Enqueue(it);
         }
-        public void RecycleObj(T item) { RecycleObj(item); }
+        
+        public virtual void Recycle(T item)
+        {
+            RecycleObj(item);
+        }
         /// <summary>
         /// 卸载缓存
         /// </summary>
@@ -139,5 +144,7 @@ namespace AirFramework
         {
             pool.Clear();
         }
+
+        
     }
 }
