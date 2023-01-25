@@ -41,6 +41,7 @@ namespace AirFramework
         public void Invoke<MessageType>(IMessageReceiver receiver,MessageType message) where MessageType : class,IMessage
         {
             pool[receiver].Invoke(message);
+
         }
     }
 }
