@@ -3,22 +3,31 @@ using System.Collections.Generic;
 
 namespace AirFramework
 {
+    /// <summary>
+    /// 用于实现委托链
+    /// </summary>
     public class DelegateChain : Unit
     {
 
-        public DelegateChain(params Delegate[] chain)
+        public DelegateChain(Delegate chainHead)
         {
-            Add(chain);
+            ChainType = chainHead.GetType();
+            Add(chainHead);
         }
 
         public Type ChainType{  get;set; }
 
 
-        LinkedList<Delegate> delegates = new LinkedList<Delegate>();
+        private LinkedList<Delegate> delegates = new LinkedList<Delegate>();
 
 
         public int Count => delegates.Count;
         //public LinkedList<Delegate> DelegateList => delegates;
+
+
+
+
+
 
         public void Remove(params Delegate[] message)
         {
@@ -26,7 +35,7 @@ namespace AirFramework
             {
                 if (message.GetType() == ChainType)
                     delegates.Remove(del);
-                else throw new ArgumentException("All Delegates in chain must be same type");
+                else throw new ArgumentException("The delegation chain type does not match");
             }
         }
         public void Add(params Delegate[] message)
@@ -35,7 +44,7 @@ namespace AirFramework
             {
                 if (del.GetType() == ChainType)
                     delegates.AddLast(del);
-                else throw new ArgumentException("All Delegates in chain must be same type");
+                else throw new ArgumentException("The delegation chain type does not match");
             }
         }
         public void Clear() { delegates.Clear(); }
@@ -44,6 +53,8 @@ namespace AirFramework
         {
             Clear();
         }
+
+
 
         public void Invoke()
         {

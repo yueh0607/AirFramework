@@ -9,16 +9,38 @@ namespace AirFramework
 {
     public class MessageDispatcher
     {
-        public Dictionary<IMessageReceiver,Action<IMessage>> pool= new();
+        public Dictionary<IMessageReceiver,DelegateChain> pool= new();
 
         public void Register<MessageType>(IMessageReceiver receiver,Action<MessageType> message) where MessageType : class,IMessage
         {
             if(pool.ContainsKey(receiver))
             {
-                pool[receiver]=((pool[receiver] as Action<MessageType>) + message) as Action<IMessage>;
+                pool[receiver].Add(message);
             }
-            else pool.Add(receiver,message as Action<IMessage>);
+            else pool.Add(receiver,new DelegateChain(message));
+        }
+        public void Remove<MessageType>(IMessageReceiver receiver,Action<MessageType> message) where MessageType : class,IMessage
+        {
+            if(pool.ContainsKey(receiver))
+            {
+                pool[receiver].Remove(message);
+                if (pool[receiver].Count==0)
+                {
+                    pool.Remove(receiver);
+                }
+            }
+        }
+        public void Remove<MessageType>(IMessageReceiver receiver) where MessageType : class,IMessage
+        {
+            if(pool.ContainsKey(receiver))
+            {
+                pool.Remove(receiver);
+            }
         }
 
+        public void Invoke<MessageType>(IMessageReceiver receiver,MessageType message) where MessageType : class,IMessage
+        {
+            pool[receiver].Invoke(message);
+        }
     }
 }

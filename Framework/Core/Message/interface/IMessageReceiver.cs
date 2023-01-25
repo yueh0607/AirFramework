@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace AirFramework.Assets.Framework.Core.Message
 {
+
     public interface IMessageReceiver
     {
 
