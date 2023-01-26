@@ -15,7 +15,7 @@ namespace AirFramework
 
         public override void OnRecycleItem()
         {
-            Value.Clear();
+            Value.Dispose();
         }
     }
 }
