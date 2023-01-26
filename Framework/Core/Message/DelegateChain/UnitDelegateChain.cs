@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public class UnitDelegateChain : UnitPoolObject<DelegateChain>
+    public class UnitDelegateChain : PoolableObject<DelegateChain>
     {
         public override void OnAllocateItem()
         {
@@ -15,7 +15,7 @@ namespace AirFramework
 
         public override void OnRecycleItem()
         {
-            Value.Dispose();
+            Value.Clear();
         }
     }
 }

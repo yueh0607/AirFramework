@@ -89,9 +89,6 @@ namespace AirFramework
         {
             Clear();
         }
-
-
-
         public void Invoke()
         {
             foreach(var del in delegates)

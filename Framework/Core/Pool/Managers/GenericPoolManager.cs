@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public class GenericPoolManager : Unit,IGenericPoolManager
+    public class GenericPoolManager : Unit, IGenericPoolManager
     {
         private readonly Dictionary<Type, IObjectPool> pools = new Dictionary<Type, IObjectPool>();
 
@@ -30,7 +30,7 @@ namespace AirFramework
                             () => { return Activator.CreateInstance<T>(); },
                             null,
                             (T item) => { item.OnRecycle(); },
-                            (T item) => { item.OnAllocate(); }                 
+                            (T item) => { item.OnAllocate(); }
                             ));
                 }
                 return pools[typeof(T)] as GenericPool<T>;
@@ -41,7 +41,7 @@ namespace AirFramework
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public T Allocate<T> () where T : class,IPoolable
+        public T Allocate<T>() where T : class, IPoolable
         {
             return (T)(GetPool<T>().AllocateObj());
         }
@@ -50,7 +50,7 @@ namespace AirFramework
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="item"></param>
-        public void Recycle<T>(T item) where T : class,IPoolable
+        public void Recycle<T>(T item) where T : class, IPoolable
         {
             GetPool<T>().RecycleObj(item);
         }
@@ -62,7 +62,7 @@ namespace AirFramework
             pools.Clear();
         }
         /// <summary>
-        /// 获取通用池，不实现IPoolable需要传参
+        /// 获取不受管理的通用池，不实现IPoolable需要传参
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="onCreate"></param>
@@ -70,21 +70,17 @@ namespace AirFramework
         /// <param name="onRecycle"></param>
         /// <param name="onAllocate"></param>
         /// <returns></returns>
-        public IGenericPool<T> GetPool<T>(Func<T> onCreate = null, Action<T> onDestroy = null, Action<T> onRecycle = null, Action<T> onAllocate = null) where T : class
+        public IGenericPool<T> CreatePool<T>(Func<T> onCreate = null, Action<T> onDestroy = null, Action<T> onRecycle = null, Action<T> onAllocate = null) where T : class
         {
-            lock (_lock)
-            {
-                if (!pools.ContainsKey(typeof(T)))
-                {
-                    pools.Add(typeof(T), new GenericPool<T>(
-                            () => { return Activator.CreateInstance<T>(); },
-                            null,
-                            onRecycle,
-                            onAllocate
-                            ));
-                }
-                return pools[typeof(T)] as GenericPool<T>;
-            }
+
+            IGenericPool<T> pool = new GenericPool<T>(
+                        () => { return Activator.CreateInstance<T>(); },
+                        null,
+                        onRecycle,
+                        onAllocate
+                        );
+            return pool;
+
         }
     }
 }

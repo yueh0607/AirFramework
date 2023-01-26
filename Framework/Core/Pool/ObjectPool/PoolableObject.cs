@@ -1,21 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    /// <summary>
-    /// 通过继承本类实现密封类默认池模板
-    /// </summary>
-    /// <typeparam name="T"></typeparam>
-    public abstract class UnitPoolObject<T> : GenericPoolObject, IValueContainer<T>, IUnitPoolable where T:new()
+    public abstract class PoolableObject<T>:Unit,IValueContainer<T>,IPoolable,IAutoPoolable where T:class,new()
     {
         /// <summary>
         /// 模板值
         /// </summary>
-        protected T value =new();
+        protected T value = new();
 
         /// <summary>
         /// 需要令该属性返回对应的池
@@ -46,11 +38,10 @@ namespace AirFramework
         /// </summary>
         public abstract void OnRecycleItem();
 
-
         /// <summary>
         /// 由池调用，申请时
         /// </summary>
-        public override void OnAllocate()
+        void IPoolable.OnAllocate()
         {
             isRecycled = false;
             OnAllocateItem();
@@ -58,10 +49,15 @@ namespace AirFramework
         /// <summary>
         /// 由池调用，回收时
         /// </summary>
-        public override void OnRecycle()
+        void IPoolable.OnRecycle()
         {
-            isRecycled= true;
+            isRecycled = true;
             OnRecycleItem();
+        }
+        
+        public override void Dispose()
+        {
+            OnDispose();
         }
 
         /// <summary>
@@ -73,9 +69,11 @@ namespace AirFramework
             {
                 if (IsRecycled != true && !ThisPool.Disposed)
                 {
+                    (Value as IDisposable).Dispose();
                     ThisPool.RecycleObj(this);
                 }
             }
         }
+
     }
 }

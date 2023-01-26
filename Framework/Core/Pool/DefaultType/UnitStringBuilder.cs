@@ -6,24 +6,16 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-
-    public class UnitStringBuilder : UnitPoolObject<StringBuilder>
+    public class UnitStringBuilder: PoolableObject<StringBuilder> 
     {
-
-
         public override void OnAllocateItem()
         {
             
         }
 
-
         public override void OnRecycleItem()
         {
-            value.Clear();
+            Value.Clear();
         }
-
-
-        
     }
-   
 }

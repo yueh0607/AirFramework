@@ -1,63 +1,78 @@
-﻿using AirFramework.Assets.Framework.Core.Message;
+﻿
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public class MessageDispatcher
+    public class MessageDispatcher :Unit, IMessageDispatcher
     {
-        private Dictionary<IMessageReceiver,DelegateChain> pool= new();
-
+        private Dictionary<Type,UnitDelegateChain> pool= new();
+                                                                                                    
         //private static DelegateChain CreateDelChain() { return new DelegateChain(); }
-        
 
-        public void Register<MessageType>(IMessageReceiver receiver,Action<MessageType> message) where MessageType : class,IMessage
+        public void Register<MessageType>(Action<MessageType> message) where MessageType : class,IMessage
         {
             lock (pool)
             {
-                if (pool.ContainsKey(receiver))
+                Type tp = typeof(MessageType);
+                if (pool.ContainsKey(tp))
                 {
-                    pool[receiver].Add(message);
+                    pool[tp].Value.Add(message);
                 }
-                else pool.Add(receiver, Framework.UnitPool.Allocate<UnitDelegateChain>().Value.AddAndSetType(message));
+                else {
+                    UnitDelegateChain udc = Framework.Pool.Allocate<UnitDelegateChain>();
+                    udc.Value.AddAndSetType(message);
+                    pool.Add(tp, udc); 
+                }
             }
         }
-        public void Remove<MessageType>(IMessageReceiver receiver,Action<MessageType> message) where MessageType : class,IMessage
+        public void Remove<MessageType>(Action<MessageType> message) where MessageType : class,IMessage
         {
             lock (pool)
             {
-                if (pool.ContainsKey(receiver))
+                Type tp = typeof(MessageType);
+                if (pool.ContainsKey(tp))
                 {
-                    pool[receiver].Remove(message);
-                    if (pool[receiver].Count == 0)
+                    pool[tp].Value.Remove(message);
+                    if (pool[tp].Value.Count == 0)
                     {
-                        Remove<MessageType>(receiver);
+                        Remove<MessageType>();
                     }
                 }
             }
         }
-        public void Remove<MessageType>(IMessageReceiver receiver) where MessageType : class,IMessage
+        public void Remove<MessageType>() where MessageType : class,IMessage
         {
             lock (pool)
             {
-                if (pool.ContainsKey(receiver))
+                Type tp = typeof(MessageType);
+                if (pool.ContainsKey(tp))
                 {
-                    DelegateChain dc = pool[receiver];
-                    pool.Remove(receiver);
-                    dc.Dispose();
+                    pool[tp].Dispose();
+                    pool.Remove(tp);
+                    //dc.Dispose();
                 }
             }
         }
-        public void Invoke<MessageType>(IMessageReceiver receiver,MessageType message) where MessageType : class,IMessage
+        public void Invoke<MessageType>(MessageType message) where MessageType : class,IMessage
         {
-            if(pool.ContainsKey(receiver))
+            Type tp = typeof(MessageType);
+            if(pool.ContainsKey(tp))
             {
-                pool[receiver].Invoke(message);
-            }  
+                pool[tp].Value.Invoke(message);
+            }
+        }
+
+        protected override void OnDispose()
+        {
+            lock(pool)
+            {
+                foreach(var tp in pool)
+                {
+                    tp.Value.Dispose();
+                }
+                pool.Clear();
+            }
         }
     }
 }

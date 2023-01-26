@@ -39,5 +39,10 @@ namespace AirFramework
         /// </summary>
         /// <param name="count"></param>
         public void Unload(int count);
+        /// <summary>
+        /// 设置最大缓存数
+        /// </summary>
+        /// <param name="max"></param>
+        public void SetMaxCapacity(int max);
     }
 }

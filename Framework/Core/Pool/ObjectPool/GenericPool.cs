@@ -1,9 +1,7 @@
 ﻿
+using AirFramework;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AirFramework
 {
@@ -29,10 +27,12 @@ namespace AirFramework
         /// 对象类型
         /// </summary>
         public override Type ObjectType => typeof(T);
+
+        private int maxCapacity = int.MaxValue;
         /// <summary>
         /// 最大缓存容量
         /// </summary>
-        public override int MaxCapacity => int.MaxValue;
+        public override int MaxCapacity => maxCapacity;
 
 
 
@@ -48,13 +48,14 @@ namespace AirFramework
         public GenericPool(Func<T> onCreate = null, Action<T> onDestroy = null, Action<T> onRecycle = null, Action<T> onAllocate = null)
         {
             this.onCreate = onCreate ?? DefaultCreate;
-            this.onDestroy = onDestroy;
-            this.onRecycle = onRecycle;
-            this.onAllocate = onAllocate;
+            this.onDestroy += onDestroy;
+            this.onRecycle += onRecycle;
+            this.onAllocate += onAllocate;
         }
 
         //默认的反射创建方法
         private static T DefaultCreate() { return Activator.CreateInstance<T>(); }
+
 
         /// <summary>
         /// 申请对象
@@ -69,16 +70,15 @@ namespace AirFramework
                 {
                     item = onCreate();
                     onRecycle?.Invoke(item);
-                    pool.Enqueue(item);
+                    if(Count<MaxCapacity)pool.Enqueue(item);
                 }
                 item = pool.Dequeue();
                 onAllocate?.Invoke(item);
+                if (item is IAutoPoolable) ((IAutoPoolable)item).ThisPool = this;
                 return item;
             }
         }
         public virtual T Allocate() {return (T)AllocateObj(); }
-        
-
 
 
         /// <summary>
@@ -145,6 +145,9 @@ namespace AirFramework
             pool.Clear();
         }
 
-        
+        public override void SetMaxCapacity(int maxCapacity)
+        {
+            this.maxCapacity = maxCapacity > 0 ? maxCapacity : 0;
+        }
     }
 }
