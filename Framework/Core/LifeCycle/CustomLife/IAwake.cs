@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public static partial class Extensions
+    public interface IAwake : ILife ,IMessage
     {
-        public static IMessageManager Message(this IMessageSender sender)
+        void Awake();
+
+        Action GetFunc()
         {
-            return Framework.Message;
+            return Awake;
         }
-
-       
-
     }
 }
