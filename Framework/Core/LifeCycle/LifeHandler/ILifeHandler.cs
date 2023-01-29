@@ -12,7 +12,7 @@ namespace AirFramework
 
         public void TryHandleLife(Entity entity)
         {
-            //T life = entity as T;
+            
         }
         
     }

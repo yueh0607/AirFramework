@@ -10,8 +10,10 @@ namespace AirFramework
     {
         void Awake();
 
-        Action GetFunc()
+        
+        Action GetFunc(Entity entity)
         {
+            
             return Awake;
         }
     }

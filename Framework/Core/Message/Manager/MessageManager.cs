@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace AirFramework
 {
-    public partial class MessageManager : Unit,IMessageManager
+    public partial class MessageManager : Unit//,IMessageManager
     {
         // MessageDispatcher dispatcher = new();
         /// <summary>
@@ -13,7 +13,7 @@ namespace AirFramework
         /// <summary>
         /// 自旋锁
         /// </summary>
-        private readonly object _locker = new object();
+        private readonly object _locker = new ();
         /// <summary>
         /// 判空移除
         /// </summary>

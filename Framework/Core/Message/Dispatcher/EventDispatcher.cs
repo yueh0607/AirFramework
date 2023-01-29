@@ -13,27 +13,26 @@ namespace AirFramework
         /// <summary>
         /// 用于存储Event
         /// </summary>
-        private Dictionary<Type,UnitDelegateChain> pool= new();
+        private Dictionary<Type,UnitDelegateChain> events= new();
                                                                                                   
         /// <summary>
         /// 以MessageType注册message
         /// </summary>
         /// <typeparam name="MessageType"></typeparam>
         /// <param name="message"></param>
-        public void Register<MessageType>(Delegate message) where MessageType : IMessage
+        public void RegisterEvent(Type messageType,Delegate message)
         {
-            lock (pool)
+            lock (events)
             {
-                Type tp = typeof(MessageType);
-                if (pool.ContainsKey(tp))
+                if (events.ContainsKey(messageType))
                 {
-                    pool[tp].Value.Add(message);
+                    events[messageType].Value.Add(message);
                 }
                 else
                 {
                     UnitDelegateChain udc = Framework.Pool.Allocate<UnitDelegateChain>();
                     udc.Value.AddAndSetType(message);
-                    pool.Add(tp, udc); 
+                    events.Add(messageType, udc); 
                 }
             }
         }
@@ -42,17 +41,17 @@ namespace AirFramework
         /// </summary>
         /// <typeparam name="MessageType"></typeparam>
         /// <param name="message"></param>
-        public void Remove<MessageType>(Delegate message) where MessageType : IMessage
+        public void RemoveEvent(Type messageType,Delegate message) 
         {
-            lock (pool)
+            lock (events)
             {
-                Type tp = typeof(MessageType);
-                if (pool.ContainsKey(tp))
+                
+                if (events.ContainsKey(messageType))
                 {
-                    pool[tp].Value.Remove(message);
-                    if (pool[tp].Value.Count == 0)
+                    events[messageType].Value.Remove(message);
+                    if (events[messageType].Value.Count == 0)
                     {
-                        Remove<MessageType>();
+                        RemoveEvent(messageType);
                     }
                 }
             }
@@ -61,15 +60,15 @@ namespace AirFramework
         /// 移除某类Message监听
         /// </summary>
         /// <typeparam name="MessageType"></typeparam>
-        public void Remove<MessageType>() where MessageType : IMessage
+        public void RemoveEvent(Type messageType) 
         {
-            lock (pool)
+            lock (events)
             {
-                Type tp = typeof(MessageType);
-                if (pool.ContainsKey(tp))
+            
+                if (events.ContainsKey(messageType))
                 {
-                    pool[tp].Dispose();
-                    pool.Remove(tp);
+                    events[messageType].Dispose();
+                    events.Remove(messageType);
                     //dc.Dispose();
                 }
             }
@@ -77,15 +76,15 @@ namespace AirFramework
         /// <summary>
         /// 移除全部监听
         /// </summary>
-        public void RemoveAll()
+        public void RemoveAllEvents()
         {
-            lock (pool)
+            lock (events)
             {
-                foreach (var tp in pool)
+                foreach (var tp in events)
                 {
                     tp.Value.Dispose();
                 }
-                pool.Clear();
+                events.Clear();
             }
         }
         /// <summary>
@@ -93,12 +92,11 @@ namespace AirFramework
         /// </summary>
         /// <typeparam name="MessageType"></typeparam>
         /// <returns></returns>
-        public DelegateChain GetDelegateChain<MessageType>() where MessageType : IMessage
+        public DelegateChain GetEvents(Type messageType)
         {
-            Type tp = typeof(MessageType);
-            if(pool.ContainsKey(tp))
+            if(events.ContainsKey(messageType))
             {
-                return pool[tp].Value;
+                return events[messageType].Value;
             }
             return null;
         }

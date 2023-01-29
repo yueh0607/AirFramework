@@ -8,6 +8,7 @@ namespace AirFramework
 {
     public interface ILife
     {
+        public void LifeRegister();
         
     }
 }

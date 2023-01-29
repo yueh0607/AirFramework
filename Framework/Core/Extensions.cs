@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public interface IMessageSender
+    public partial class Extensions
     {
+        
+
     }
 }

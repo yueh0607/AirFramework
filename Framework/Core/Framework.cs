@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static UnityEngine.EventSystems.EventTrigger;
 
 namespace AirFramework
 {
@@ -17,8 +18,9 @@ namespace AirFramework
         /// <summary>
         /// 消息注册和转发机制管理器
         /// </summary>
-        public static IMessageManager Message { get; } = new MessageManager();
-        
+        public static MessageManager Message { get; } = new MessageManager();
 
+
+        
     }
 }

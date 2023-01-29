@@ -9,27 +9,27 @@ namespace AirFramework
     public partial class MessageDispatcher :Unit
     {
         /// <summary>
-        /// 存储Question
+        /// 存储Request
         /// </summary>
-        private Dictionary<Type, Delegate> questions = new Dictionary<Type, Delegate>();
+        private Dictionary<Type, Delegate> requests = new Dictionary<Type, Delegate>();
         /// <summary>
         /// 回复问题
         /// </summary>
         /// <typeparam name="RespondType"></typeparam>
         /// <typeparam name="MessageType"></typeparam>
         /// <param name="message"></param>
-        public void Reply<MessageType>(Delegate message)
+        public void AddRequest(Type messageType,Delegate message)
         {
-            lock (questions)
+            lock (requests)
             {
-                Type tp = typeof(MessageType);
-                if (questions.ContainsKey(tp))
+                
+                if (requests.ContainsKey(messageType))
                 {
-                    questions[tp] = message;
+                    requests[messageType] = message;
                 }
                 else
                 {
-                    questions.Add(tp, message);
+                    requests.Add(messageType, message);
                 }
             }
         }
@@ -37,13 +37,13 @@ namespace AirFramework
         /// 取消回复
         /// </summary>
         /// <typeparam name="MessageType"></typeparam>
-        public void Recall<MessageType>() where MessageType : IMessage
+        public void RemoveRequest(Type messageType) 
         {
-            lock (questions)
+            lock (requests)
             {
-                if (questions.ContainsKey(typeof(MessageType)))
+                if (requests.ContainsKey(messageType))
                 {
-                    questions.Remove(typeof(MessageType));
+                    requests.Remove(messageType);
                 }
             }
         }
@@ -52,27 +52,27 @@ namespace AirFramework
         /// </summary>
         /// <typeparam name="MessageType"></typeparam>
         /// <returns></returns>
-        public Delegate GetRespondFunc<MessageType>() where MessageType : IMessage
+        public Delegate GetRequest(Type messageType) 
         {
-            Type tp = typeof(MessageType);
-            if (questions.ContainsKey(tp))
+            
+            if (requests.ContainsKey(messageType))
             {
-                return questions[tp];
+                return requests[messageType];
             }
             return null;
         }
         /// <summary>
         /// 取消全部问答
         /// </summary>
-        public void RecallAll()
+        public void RecallAllRequests()
         {
-            lock (questions)
+            lock (requests)
             {
-                foreach (var tp in pool)
+                foreach (var messageType in events)
                 {
-                    tp.Value.Dispose();
+                    messageType.Value.Dispose();
                 }
-                questions.Clear();
+                requests.Clear();
             }
         }
 

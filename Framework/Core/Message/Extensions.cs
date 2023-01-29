@@ -8,12 +8,8 @@ namespace AirFramework
 {
     public static partial class Extensions
     {
-        public static IMessageManager Message(this IMessageSender sender)
-        {
-            return Framework.Message;
-        }
-
-       
+        
+        
 
     }
 }
