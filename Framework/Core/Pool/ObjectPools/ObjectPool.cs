@@ -9,7 +9,7 @@ using System;
 namespace AirFramework
 {
     /// <summary>
-    /// 用于实现任意引用类型的对象池模板，继承Unit并实现IObjectPool接口
+    /// 对象池基类型
     /// </summary>
     public abstract class ObjectPool : Unit,IObjectPool
     {

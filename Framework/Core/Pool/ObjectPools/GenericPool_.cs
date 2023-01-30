@@ -10,7 +10,7 @@
 namespace AirFramework
 {
     /// <summary>
-    /// 实现与GenericPool相同的池，默认使用new来创建对象
+    /// new创建的通用泛型池类型
     /// </summary>
     /// <typeparam name="T"></typeparam>
     public class GenericPool_<T> : GenericPool<T> where T : class, new()

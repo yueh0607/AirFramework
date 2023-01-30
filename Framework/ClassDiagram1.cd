@@ -29,47 +29,32 @@
       <FileName>Assets\Framework\Core\LifeCycle\LifeProcessor.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="AirFramework.DelegateChain">
-    <Position X="11.5" Y="1.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAIAEAAAADAIACAAAAAABAQAABQAAAAAAAAAAABAAAA=</HashCode>
-      <FileName>Assets\Framework\Core\Message\DelegateChain\DelegateChain.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
   <Class Name="AirFramework.DelegateGroup" Collapsed="true">
     <Position X="16.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAACAAIABAAAAABAQAAAAAAAIAAAAAAABAAAA=</HashCode>
-      <FileName>Assets\Framework\Core\Message\DelegateChain\DelegateGroup.cs</FileName>
+      <HashCode>AAIAAAAAACAAAABAAAAABAQAAAAAAAIAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Framework\Core\Message\DelegateGroup\DelegateGroup.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AirFramework.UnitDelegateGroup" Collapsed="true">
-    <Position X="58" Y="3.25" Width="2.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAEA=</HashCode>
-      <FileName>Assets\Framework\Core\Message\DelegateChain\UnitDelegateChain.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="AirFramework.UnitDelegateChain" Collapsed="true">
     <Position X="68.25" Y="3.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAEA=</HashCode>
-      <FileName>Assets\Framework\Core\Message\DelegateChain\UnitDelegateGroup.cs</FileName>
+      <FileName>Assets\Framework\Core\Message\DelegateGroup\UnitDelegateGroup.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AirFramework.UnitMessageDispatcher">
     <Position X="6.25" Y="1.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAEA=</HashCode>
-      <FileName>Assets\Framework\Core\Message\Dispatcher\UnitMessageDispatcher.cs</FileName>
+      <FileName>Assets\Framework\Core\Message\Messageispatcher\UnitMessageDispatcher.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AirFramework.MessageManager">
     <Position X="13.75" Y="1.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAIAAACAAAAAAAAAAAAAAAAACSAAAQAAAAAAAIAA=</HashCode>
-      <FileName>Assets\Framework\Core\Message\Manager\EventManager.cs</FileName>
+      <HashCode>AAAAAIAAACAAAAAAAAAAAAAAAAACQAAAQAAAAAAAIAA=</HashCode>
+      <FileName>Assets\Framework\Core\Message\MessageManager\EventManager.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -175,7 +160,7 @@
   <Class Name="AirFramework.GenericPoolManager">
     <Position X="8.75" Y="1.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAEACAAAAAgAAAAAAAAAABAAIAAAAAAAAACAAA=</HashCode>
+      <HashCode>AAAAAAAEACAAAAAAAAAAAAAAAABAAIAAAAAAAAACAAA=</HashCode>
       <FileName>Assets\Framework\Core\Pool\Managers\GenericPoolManager.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -190,7 +175,7 @@
   <Class Name="AirFramework.GenericPool&lt;T&gt;" Collapsed="true">
     <Position X="21" Y="3.25" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>CAQAQACEACAAAAAgAQAAAAQAAABAACAgAIgAAIBAAQA=</HashCode>
+      <HashCode>CAQAQACEACAAAAAAAQAAAAQAAABAACAgAIgAAIBAAQA=</HashCode>
       <FileName>Assets\Framework\Core\Pool\ObjectPools\GenericPool.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />

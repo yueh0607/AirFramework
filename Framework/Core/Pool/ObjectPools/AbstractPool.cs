@@ -8,7 +8,7 @@
 namespace AirFramework
 {
     /// <summary>
-    /// 继承此抽象类实现自定义行为的池类型
+    /// 抽象通用泛型池类型
     /// </summary>
     /// <typeparam name="T"></typeparam>
     public abstract class AbstractPool<T> : GenericPool<T> where T : class

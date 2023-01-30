@@ -12,8 +12,5 @@
         /// 消息注册和转发机制管理器
         /// </summary>
         public static MessageManager Message { get; } = new MessageManager();
-
-
-        
     }
 }
