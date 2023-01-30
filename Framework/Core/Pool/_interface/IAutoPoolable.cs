@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public interface IAutoPoolable
+    public interface IAutoPoolable : IDisposable
     {
         public IObjectPool ThisPool { get; set; }
-        public bool IsRecycled { get;  }
-       
+        public bool IsRecycled { get; set; }
+        
     }
 }

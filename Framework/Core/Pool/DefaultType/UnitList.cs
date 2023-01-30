@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public class UnitCollection<T> : PoolableObject<T> where T : class, ICollection<T>,new()
+    public class UnitList<T> : PoolableObject<List<T>> 
     {
-        public override void OnAllocateItem()
+        public override void OnAllocate()
         {
             
         }
 
-        public override void OnRecycleItem()
+        public override void OnRecycle()
         {
             Value.Clear();
         }

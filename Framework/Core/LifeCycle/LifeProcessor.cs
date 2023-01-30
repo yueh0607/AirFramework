@@ -13,16 +13,28 @@ namespace AirFramework
         { 
             
         }
-
+        public static void Act(int a) { }
         /// <summary>
         /// 解析实体上存在的生命周期策略
         /// </summary>
         /// <typeparam name="ILifeType"></typeparam>
         /// <param name="entity"></param>
         /// <param name="func"></param>
-        public void RegisterStrategy<ILifeType>(Entity entity,Func<Entity,Action> func) where ILifeType : ILife
+        public void RegisterStrategy<ILifeType>(Entity entity) where ILifeType : ILife
         {
-            Framework.Message.Register<IAwake>(entity, func(entity));
+
+            //Framework.Message.Subscribe(entity,typeof(IAwake), Act);
+
+
+            //entity.Subscribe(typeof(IAwake), Act);
+            //entity.Subscribe<IAwake>(Act);
+
+            //Framework.Message.Publish(entity, typeof(IAwake), 30);
+            //entity.Publish(typeof(IAwake), 30);
+            //entity.Publish<IAwake>();
+
+
+           
         }
 
     }

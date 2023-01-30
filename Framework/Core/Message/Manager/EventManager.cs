@@ -17,7 +17,7 @@ namespace AirFramework
         /// <param name="receiver"></param>
         /// <param name="message"></param>
         /// 
-        public void Subscribe(IMessageReceiver receiver, Type messageType, Delegate message)
+        private void Subscribe(IMessageReceiver receiver, Type messageType, Delegate message)
         {
             lock (_locker)
             {
@@ -28,7 +28,7 @@ namespace AirFramework
                 dispatchers[receiver].Value.RegisterEvent(messageType, message);
             }
         }
-        public void Subscribe<MessageType>(IMessageReceiver receiver, Delegate message)
+        private void Subscribe<MessageType>(IMessageReceiver receiver, Delegate message)
         {
             Subscribe(receiver, typeof(MessageType), message);
         }

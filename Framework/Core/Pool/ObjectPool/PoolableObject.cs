@@ -2,59 +2,45 @@
 
 namespace AirFramework
 {
+    /// <summary>
+    /// 用于实现支持using释放，可以自主回收到池的类型
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public abstract class PoolableObject<T>:Unit,IValueContainer<T>,IPoolable,IAutoPoolable where T:class,new()
     {
         /// <summary>
-        /// 模板值
+        /// 模板对象的真实值
         /// </summary>
+        public T Value { get => value; }
         protected T value = new();
 
         /// <summary>
-        /// 需要令该属性返回对应的池
+        /// 绑定回收到的池
         /// </summary>
         public IObjectPool ThisPool { get; set; } = null;
 
+        
         /// <summary>
-        /// 判定是否已经回收
+        /// 当前对象是否已经回收
         /// </summary>
-        protected bool isRecycled = false;
-        /// <summary>
-        /// 判定是否已经回收
-        /// </summary>
-        public bool IsRecycled { get => isRecycled; }
+        public bool IsRecycled { get => isRecycled; set => isRecycled = value; }
+        private bool isRecycled = false;
 
-        /// <summary>
-        /// 获取密封类的值
-        /// </summary>
-        public T Value { get => value; }
 
         /// <summary>
         /// 当获取时调用
         /// </summary>
-        public abstract void OnAllocateItem();
+        public abstract void OnAllocate();
 
         /// <summary>
         /// 当回收时调用
         /// </summary>
-        public abstract void OnRecycleItem();
+        public abstract void OnRecycle();
 
+  
         /// <summary>
-        /// 由池调用，申请时
+        /// 调用立刻回收对象到池，不会再刷新Disposed属性
         /// </summary>
-        void IPoolable.OnAllocate()
-        {
-            isRecycled = false;
-            OnAllocateItem();
-        }
-        /// <summary>
-        /// 由池调用，回收时
-        /// </summary>
-        void IPoolable.OnRecycle()
-        {
-            isRecycled = true;
-            OnRecycleItem();
-        }
-        
         public override void Dispose()
         {
             OnDispose();
@@ -65,14 +51,7 @@ namespace AirFramework
         /// </summary>
         protected override void OnDispose()
         {
-            if (ThisPool != null)
-            {
-                if (IsRecycled != true && !ThisPool.Disposed)
-                {
-                    (Value as IDisposable).Dispose();
-                    ThisPool.RecycleObj(this);
-                }
-            }
+            this.RecycleSelf();
         }
 
     }

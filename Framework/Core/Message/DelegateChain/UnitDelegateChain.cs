@@ -8,12 +8,12 @@ namespace AirFramework
 {
     public class UnitDelegateChain : PoolableObject<DelegateChain>
     {
-        public override void OnAllocateItem()
+        public override void OnAllocate()
         {
             
         }
 
-        public override void OnRecycleItem()
+        public override void OnRecycle()
         {
             Value.Dispose();
         }

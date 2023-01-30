@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public class UnitStringBuilder: PoolableObject<StringBuilder> 
+    /// <summary>
+    /// 可自动回收的字典
+    /// </summary>
+    /// <typeparam name="TKey"></typeparam>
+    /// <typeparam name="TValue"></typeparam>
+    public class UnitDictionary<TKey,TValue> : PoolableObject<Dictionary<TKey,TValue>> 
     {
         public override void OnAllocate()
         {

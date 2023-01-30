@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public abstract class PoolBase : Unit,IObjectPool
+    /// <summary>
+    /// 用于实现任意引用类型的对象池模板，继承Unit并实现IObjectPool接口
+    /// </summary>
+    public abstract class ObjectPool : Unit,IObjectPool
     {
         /// <summary>
         /// 池缓存数
@@ -19,7 +22,7 @@ namespace AirFramework
         /// <summary>
         /// 最大缓存容量
         /// </summary>
-        public abstract int MaxCapacity { get; }
+        public abstract int MaxCapacity { get; set; }
         /// <summary>
         /// 清空缓存
         /// </summary>
@@ -45,11 +48,7 @@ namespace AirFramework
         /// </summary>
         /// <param name="count"></param>
         public abstract void Unload(int count);
-        /// <summary>
-        /// 设置最大容量
-        /// </summary>
-        /// <param name="maxCapacity"></param>
-        public abstract void SetMaxCapacity(int maxCapacity);
+      
 
     }
 }
