@@ -1,11 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/********************************************************************************************
+ * Author : yueh0607
+ * Date : 2023.1.15
+ * Description : 
+ * 要求用户规范实现ValueContainer封装
+ */
 
 namespace AirFramework
 {
+
     public interface IValueContainer
     {
     }

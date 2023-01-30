@@ -5,13 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AirFramework.Assets.Framework.Core.BindableProperty
+namespace AirFramework
 {
+    /// <summary>
+    /// 可绑定变更事件的属性监听者
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class BindableProperty<T> where T :IEqualityComparer<T>
     {
-        private T value = default(T);
+        private T value;
 
-        protected T Value { 
+        public T Value { 
             get => value;
             set
             {
@@ -31,7 +35,7 @@ namespace AirFramework.Assets.Framework.Core.BindableProperty
         }
         public BindableProperty()
         {
-
+            this.value = default;
         }
     }
 }

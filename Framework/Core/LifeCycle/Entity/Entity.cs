@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public class Entity : Unit,IMessageReceiver,IMessageSender
-    {
+    public class Entity : Unit, IMessageReceiver { 
 
         
 

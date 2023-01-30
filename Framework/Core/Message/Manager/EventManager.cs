@@ -3,259 +3,115 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEditor;
 using UnityEditor.VersionControl;
+using UnityEngine;
 
 namespace AirFramework
 {
-    public partial class MessageManager
+    /// <summary>
+    /// 结构模型 - 消息类型/接收者对象/方法组/方法列表
+    /// </summary>
+    public partial class MessageManager :Unit, IMessageReceiver
     {
-        #region 注册
-        /// <summary>
-        /// 注册事件
-        /// </summary>
-        /// <typeparam name="MessageType"></typeparam>
-        /// <param name="receiver"></param>
-        /// <param name="message"></param>
-        /// 
-        private void Subscribe(IMessageReceiver receiver, Type messageType, Delegate message)
-        {
-            lock (_locker)
-            {
-                if (!dispatchers.ContainsKey(receiver))
-                {
-                    dispatchers.Add(receiver, Framework.Pool.Allocate<UnitMessageDispatcher>());
-                }
-                dispatchers[receiver].Value.RegisterEvent(messageType, message);
-            }
-        }
-        private void Subscribe<MessageType>(IMessageReceiver receiver, Delegate message)
-        {
-            Subscribe(receiver, typeof(MessageType), message);
-        }
-        public void Subscribe(IMessageReceiver receiver, Type messageType, Action message)
-        {
-            Subscribe(receiver, messageType, (Delegate)message);
-        }
-        public void Subscribe<A>(IMessageReceiver receiver, Type messageType, Action<A> message)
-        {
-            Subscribe(receiver, messageType, (Delegate)message);
-        }
-        public void Subscribe<A, B>(IMessageReceiver receiver, Type messageType, Action<A, B> message)
-        {
-            Subscribe(receiver, messageType, (Delegate)message);
-        }
-        public void Subscribe<A, B, C>(IMessageReceiver receiver, Type messageType, Action<A, B, C> message)
-        {
-            Subscribe(receiver, messageType, (Delegate)message);
-        }
-        public void Subscribe<A, B, C, D>(IMessageReceiver receiver, Type messageType, Action<A, B, C, D> message)
-        {
-            Subscribe(receiver, messageType, (Delegate)message);
-        }
-        public void Subscribe<A, B, C, D, E>(IMessageReceiver receiver, Type messageType, Action<A, B, C, D, E> message)
-        {
-            Subscribe(receiver, messageType, (Delegate)message);
-        }
+        
 
-        #endregion
-        #region 移除
-        /// <summary>
-        /// 移除该对象该类型的某事件
-        /// </summary>
-        /// <typeparam name="MessageType"></typeparam>
-        /// <param name="receiver"></param>
-        /// <param name="message"></param>
-        public void UnSubscribe(IMessageReceiver receiver, Type messageType, Delegate message)
+        #region Base
+        internal void Subscribe(Type messageType, IMessageReceiver receiver, Type deleType, Delegate message)
         {
-            lock (_locker)
-            {
-                if (dispatchers.ContainsKey(receiver))
+            //lock (_locker)
+            //{
+                if (!dispatchers.ContainsKey(messageType))
                 {
-                    dispatchers[receiver].Value.RemoveEvent(messageType, message);
-                    CheckEmpty(receiver);
+                    dispatchers.Add(messageType, Framework.Pool.Allocate<UnitMessageDispatcher>());
                 }
-            }
+                dispatchers[messageType].Value.Add(receiver,deleType, message);
+            //}
         }
-        public void UnSubscribe<MessageType>(IMessageReceiver receiver, Delegate message)
+        internal void UnSubscribe(Type messageType, IMessageReceiver receiver, Type deleType, Delegate message)
         {
-            UnSubscribe(receiver, typeof(MessageType), message);
-        }
-        public void UnSubscribe(IMessageReceiver receiver, Type messageType, Action message)
-        {
-            UnSubscribe(receiver, messageType, (Delegate)message);
-        }
-        public void UnSubscribe<A>(IMessageReceiver receiver, Type messageType, Action<A> message)
-        {
-            UnSubscribe(receiver, messageType, (Delegate)message);
-        }
-        public void UnSubscribe<A, B>(IMessageReceiver receiver, Type messageType, Action<A, B> message)
-        {
-            UnSubscribe(receiver, messageType, (Delegate)message);
-        }
-        public void UnSubscribe<A, B, C>(IMessageReceiver receiver, Type messageType, Action<A, B, C> message)
-        {
-            UnSubscribe(receiver, messageType, (Delegate)message);
-        }
-        public void UnSubscribe<A, B, C, D>(IMessageReceiver receiver, Type messageType, Action<A, B, C, D> message)
-        {
-            UnSubscribe(receiver, messageType, (Delegate)message);
-        }
-        public void UnSubscribe<A, B, C, D, E>(IMessageReceiver receiver, Type messageType, Action<A, B, C, D, E> message)
-        {
-            UnSubscribe(receiver, messageType, (Delegate)message);
-        }
+            //lock (_locker)
+            //{
+                if (dispatchers.ContainsKey(messageType))
+                {
+                    var dispatcher = dispatchers[messageType];  
+                    dispatcher.Value.Remove(receiver, deleType, message);
+                    if (dispatcher.Value.Count==0)
+                    {
+                        dispatchers.Remove(messageType);
+                        dispatcher.Dispose();
+                    }
+                    
+                }
 
-        /// <summary>
-        /// 移除该对象的该类型事件
-        /// </summary>
-        /// <typeparam name="MessageType"></typeparam>
-        /// <param name="receiver"></param>
-        public void UnSubscribe(IMessageReceiver receiver, Type messageType)
-        {
-            lock (_locker)
-            {
-                if (dispatchers.ContainsKey(receiver))
-                {
-                    dispatchers[receiver].Value.RemoveEvent(messageType);
-                    CheckEmpty(receiver);
-                }
-            }
+            //}
         }
-        /// <summary>
-        /// 移除对象全部事件
-        /// </summary>
-        /// <param name="receiver"></param>
-        public void UnSubscribeAll(IMessageReceiver receiver)
+        internal void UnSubscribe(Type messageType,IMessageReceiver receiver, Type deleType)
         {
-            lock (_locker)
-            {
-                if (dispatchers.ContainsKey(receiver))
+            //lock(_locker)
+            //{
+                if(dispatchers.ContainsKey(messageType))
                 {
-                    dispatchers[receiver].Dispose();
-                    dispatchers.Remove(receiver);
-                }
-            }
-        }
+                    var dispatcher = dispatchers[messageType];
+                    dispatcher.Value.Remove(receiver, deleType);
 
+                    if(dispatcher.Value.Count==0)
+                    {
+                        dispatchers.Remove(messageType);
+                        dispatcher.Dispose();
+                    }
+                }
+            //}
+        }
+        internal void UnSubscribe(Type messageType ,IMessageReceiver receiver)
+        {
+            //lock (_locker)
+            //{
+                if (dispatchers.ContainsKey(messageType))
+                {
+                    var dispatcher = dispatchers[messageType];
+                    dispatcher.Value.Remove(receiver);
+                    if (dispatcher.Value.Count == 0)
+                    {
+                        dispatchers.Remove(messageType);
+                        dispatcher.Dispose();
+                    }
+                }
+            //}
+        }
+        internal void UnSubscribe(Type messageType)
+        {
+            //lock (_locker)
+            //{
+                if (dispatchers.ContainsKey(messageType))
+                {
+                    var dispatcher = dispatchers[messageType];
+                    dispatchers.Remove(messageType);
+                    dispatcher.Dispose() ;
+                }
+            //}
+        }
         #endregion
 
-        #region 发送
-
-        private DelegateChain GetEvent(IMessageReceiver receiver, Type messageType)
+        #region Generic
+        
+        public UnitMessageDispatcherContanier Operator<MessageType>(IMessageReceiver receiver=null) where MessageType : IMessage
         {
-
-            if (dispatchers.ContainsKey(receiver))
-            {
-                return dispatchers[receiver].Value.GetEvents(messageType);
-            }
-
-            return null;
-
+            var contanier = Framework.Pool.Allocate<UnitMessageDispatcherContanier>();
+            contanier.Value.TypeValue = typeof(MessageType);
+            contanier.Value.Receiver = receiver?? this;
+            return contanier;
         }
 
-        /// <summary>
-        /// 发送消息
-        /// </summary>
-        /// <typeparam name="MessageType"></typeparam>
-        /// <param name="receiver"></param>
-        public void Publish(IMessageReceiver receiver, Type messageType)
+        internal UnitMessageDispatcher GetDispatcher(Type messageType)
         {
-            lock (_locker)
-            {
-                GetEvent(receiver, messageType)?.Invoke();
-            }
+            dispatchers.TryGetValue(messageType, out var dispatcher);
+            return dispatcher;
         }
-        /// <summary>
-        /// 发送消息
-        /// </summary>
-        /// <typeparam name="MessageType"></typeparam>
-        /// <typeparam name="A"></typeparam>
-        /// <param name="receiver"></param>
-        /// <param name="a"></param>
-        public void Publish<A>(IMessageReceiver receiver, Type messageType, A a)
+        internal UnitMessageDispatcher GetDispatcher<MessageType>() where MessageType: IMessage
         {
-            lock (_locker)
-            {
-                GetEvent(receiver, messageType)?.Invoke(a);
-            }
+            return GetDispatcher(typeof(MessageType));
         }
-        /// <summary>
-        /// 发送消息
-        /// </summary>
-        /// <typeparam name="MessageType"></typeparam>
-        /// <typeparam name="A"></typeparam>
-        /// <typeparam name="B"></typeparam>
-        /// <param name="receiver"></param>
-        /// <param name="a"></param>
-        /// <param name="b"></param>
-        public void Publish<A, B>(IMessageReceiver receiver, Type messageType, A a, B b)
-        {
-            lock (_locker)
-            {
-                GetEvent(receiver, messageType)?.Invoke(a, b);
-            }
-        }
-        /// <summary>
-        /// 发送消息
-        /// </summary>
-        /// <typeparam name="MessageType"></typeparam>
-        /// <typeparam name="A"></typeparam>
-        /// <typeparam name="B"></typeparam>
-        /// <typeparam name="C"></typeparam>
-        /// <param name="receiver"></param>
-        /// <param name="a"></param>
-        /// <param name="b"></param>
-        /// <param name="c"></param>
-        public void Publish<A, B, C>(IMessageReceiver receiver, Type messageType, A a, B b, C c)
-        {
-            lock (_locker)
-            {
-                GetEvent(receiver, messageType)?.Invoke(a, b, c);
-            }
-        }
-        /// <summary>
-        /// 发送消息
-        /// </summary>
-        /// <typeparam name="MessageType"></typeparam>
-        /// <typeparam name="A"></typeparam>
-        /// <typeparam name="B"></typeparam>
-        /// <typeparam name="C"></typeparam>
-        /// <typeparam name="D"></typeparam>
-        /// <param name="receiver"></param>
-        /// <param name="a"></param>
-        /// <param name="b"></param>
-        /// <param name="c"></param>
-        /// <param name="d"></param>
-        public void Publish<A, B, C, D>(IMessageReceiver receiver, Type messageType, A a, B b, C c, D d)
-        {
-            lock (_locker)
-            {
-                GetEvent(receiver, messageType)?.Invoke(a, b, c, d);
-            }
-        }
-        /// <summary>
-        /// 发送消息
-        /// </summary>
-        /// <typeparam name="MessageType"></typeparam>
-        /// <typeparam name="A"></typeparam>
-        /// <typeparam name="B"></typeparam>
-        /// <typeparam name="C"></typeparam>
-        /// <typeparam name="D"></typeparam>
-        /// <typeparam name="E"></typeparam>
-        /// <param name="receiver"></param>
-        /// <param name="a"></param>
-        /// <param name="b"></param>
-        /// <param name="c"></param>
-        /// <param name="d"></param>
-        /// <param name="e"></param>
-        public void Publish<A, B, C, D, E>(IMessageReceiver receiver, Type messageType, A a, B b, C c, D d, E e)
-        {
-            lock (_locker)
-            {
-                GetEvent(receiver, messageType)?.Invoke(a, b, c, d, e);
-            }
-        }
-
         #endregion
 
     }

@@ -1,11 +1,12 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Threading;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public class UnitMessageDispatcher : PoolableObject<MessageDispatcher>
+    public class UnitMessageDispatcherContanier : PoolableObject<MessageDispatcherContanier>
     {
         public override void OnAllocate()
         {

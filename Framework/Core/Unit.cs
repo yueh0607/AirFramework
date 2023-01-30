@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
+﻿/********************************************************************************************
+ * Author : yueh0607
+ * Date : 2023.1.15
+ * Description : 
+ * Unit为Framework全局基类，所有来着Framework的一般类型均继承Unit，统一死亡周期
+ */
 
 namespace AirFramework
 {

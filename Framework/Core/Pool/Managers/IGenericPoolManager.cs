@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AirFramework
 {
@@ -38,8 +34,12 @@ namespace AirFramework
         /// <typeparam name="T"></typeparam>
         /// <param name="item"></param>
         public void Recycle<T>(T item) where T : class, IPoolable;
-     
-        
-       
+        /// <summary>
+        /// 释放某个托管池
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        public void ReleasePool<T>() where T : class, IPoolable;
+
+
     }
 }

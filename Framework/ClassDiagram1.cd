@@ -1,0 +1,355 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AirFramework.Extensions" Collapsed="true">
+    <Position X="79" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAgAAAAQAAUAAAACAAABCCCAIQAAAAAAAIAA=</HashCode>
+      <FileName>Assets\Framework\Core\Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AirFramework.Framework" Collapsed="true">
+    <Position X="80.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Assets\Framework\Core\Framework.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AirFramework.Entity">
+    <Position X="4" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Framework\Core\LifeCycle\Entity\Entity.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.1" />
+  </Class>
+  <Class Name="AirFramework.LifeProcessor" Collapsed="true">
+    <Position X="79" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAABAAAAAEA=</HashCode>
+      <FileName>Assets\Framework\Core\LifeCycle\LifeProcessor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AirFramework.DelegateChain">
+    <Position X="11.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAEAAAADAIACAAAAAABAQAABQAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Framework\Core\Message\DelegateChain\DelegateChain.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AirFramework.DelegateGroup" Collapsed="true">
+    <Position X="16.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAACAAIABAAAAABAQAAAAAAAIAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Framework\Core\Message\DelegateChain\DelegateGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AirFramework.UnitDelegateGroup" Collapsed="true">
+    <Position X="58" Y="3.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Framework\Core\Message\DelegateChain\UnitDelegateChain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AirFramework.UnitDelegateChain" Collapsed="true">
+    <Position X="68.25" Y="3.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Framework\Core\Message\DelegateChain\UnitDelegateGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AirFramework.UnitMessageDispatcher">
+    <Position X="6.25" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Framework\Core\Message\Dispatcher\UnitMessageDispatcher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AirFramework.MessageManager">
+    <Position X="13.75" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAACAAAAAAAAAAAAAAAAACSAAAQAAAAAAAIAA=</HashCode>
+      <FileName>Assets\Framework\Core\Message\Manager\EventManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AirFramework.UnitArrayList" Collapsed="true">
+    <Position X="52.25" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Framework\Core\Pool\Defaults\Collections\UnitArrayList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AirFramework.UnitHashtable" Collapsed="true">
+    <Position X="61.25" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Framework\Core\Pool\Defaults\Collections\UnitHashTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AirFramework.UnitSortedList" Collapsed="true">
+    <Position X="71.25" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Framework\Core\Pool\Defaults\Collections\UnitSortedList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AirFramework.UnitCollection&lt;CollectionType, ElementsType&gt;" Collapsed="true">
+    <Position X="26" Y="3.25" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Framework\Core\Pool\Defaults\Collections.Generic\UnitCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AirFramework.UnitDictionary&lt;TKey, TValue&gt;" Collapsed="true">
+    <Position X="36.75" Y="3.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Framework\Core\Pool\Defaults\Collections.Generic\UnitDictionary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AirFramework.UnitHashSet&lt;T&gt;" Collapsed="true">
+    <Position X="43.5" Y="3.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Framework\Core\Pool\Defaults\Collections.Generic\UnitHashSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AirFramework.UnitLinkedList&lt;T&gt;" Collapsed="true">
+    <Position X="46.5" Y="3.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Framework\Core\Pool\Defaults\Collections.Generic\UnitLinkedList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AirFramework.UnitList&lt;T&gt;" Collapsed="true">
+    <Position X="49.5" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Framework\Core\Pool\Defaults\Collections.Generic\UnitList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AirFramework.UnitQueue&lt;T&gt;" Collapsed="true">
+    <Position X="55" Y="3.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Framework\Core\Pool\Defaults\Collections.Generic\UnitQueue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AirFramework.UnitSortedList&lt;TKey, TValue&gt;" Collapsed="true">
+    <Position X="64" Y="3.25" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Framework\Core\Pool\Defaults\Collections.Generic\UnitSortedDictionary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AirFramework.UnitSortedSet&lt;T&gt;" Collapsed="true">
+    <Position X="74" Y="3.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Framework\Core\Pool\Defaults\Collections.Generic\UnitSortedSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AirFramework.UnitStack&lt;T&gt;" Collapsed="true">
+    <Position X="30.5" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Framework\Core\Pool\Defaults\Collections.Generic\UnitStack.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AirFramework.UnitStringBuilder" Collapsed="true">
+    <Position X="40.5" Y="3.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Framework\Core\Pool\Defaults\Others\UnitStringBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AirFramework.PoolableObject&lt;T&gt;" Collapsed="true">
+    <Position X="50.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAEAAAAEACAAAAAgAAAAAEA=</HashCode>
+      <FileName>Assets\Framework\Core\Pool\Definations\PoolableObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AirFramework.GenericPoolManager">
+    <Position X="8.75" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEACAAAAAgAAAAAAAAAABAAIAAAAAAAAACAAA=</HashCode>
+      <FileName>Assets\Framework\Core\Pool\Managers\GenericPoolManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AirFramework.AbstractPool&lt;T&gt;" Collapsed="true">
+    <Position X="21.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAEAAQAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\Framework\Core\Pool\ObjectPools\AbstractPool.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AirFramework.GenericPool&lt;T&gt;" Collapsed="true">
+    <Position X="21" Y="3.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>CAQAQACEACAAAAAgAQAAAAQAAABAACAgAIgAAIBAAQA=</HashCode>
+      <FileName>Assets\Framework\Core\Pool\ObjectPools\GenericPool.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AirFramework.GenericPool_&lt;T&gt;" Collapsed="true">
+    <Position X="23.5" Y="4.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Framework\Core\Pool\ObjectPools\GenericPool_.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AirFramework.ObjectPool" Collapsed="true">
+    <Position X="21" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAQAAACAAAAAAAAAAAAAAAQAAAAAACAAAIAAAIBAAAA=</HashCode>
+      <FileName>Assets\Framework\Core\Pool\ObjectPools\ObjectPool.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AirFramework.Unit" Collapsed="true">
+    <Position X="39.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAEAAAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Assets\Framework\Core\Unit.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AirFramework.BindableProperty&lt;T&gt;" Collapsed="true">
+    <Position X="77.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACEAAAAgAAAAAAA=</HashCode>
+      <FileName>Assets\Framework\Core\Utility\BindableProperty\BindableProperty.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AirFramework.IOContainer" Collapsed="true">
+    <Position X="77.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAACAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Framework\Core\Utility\IOCContainer\IOContainer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AirFramework.GameObjectPool" Collapsed="true">
+    <Position X="18.5" Y="4.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>BAAAABAAEAAAAAAAAAAAAAIAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Framework\UnityExtension\Pool\GameObjectPool\GameObjectPool.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="AirFramework.IInitialized" Collapsed="true">
+    <Position X="3.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Framework\Core\_Interface\IInitialized.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AirFramework.IInitial" Collapsed="true">
+    <Position X="3.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Assets\Framework\Core\_Interface\Initial.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AirFramework.IUnit" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Assets\Framework\Core\_Interface\IUnit.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AirFramework.IAwake">
+    <Position X="3.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUA=</HashCode>
+      <FileName>Assets\Framework\Core\LifeCycle\CustomLife\IAwake.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AirFramework.ILife">
+    <Position X="3.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Assets\Framework\Core\LifeCycle\Life\ILife.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AirFramework.ILifeHandler&lt;T&gt;" Collapsed="true">
+    <Position X="80.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAACAAAAAA=</HashCode>
+      <FileName>Assets\Framework\Core\LifeCycle\LifeHandler\ILifeHandler.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AirFramework.IMessage">
+    <Position X="6.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Framework\Core\Message\interface\IMessage.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AirFramework.IMessageReceiver" Collapsed="true">
+    <Position X="77.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Framework\Core\Message\interface\IMessageReceiver.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AirFramework.IAutoPoolable" Collapsed="true">
+    <Position X="77.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Assets\Framework\Core\Pool\Definations\IAutoPoolable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AirFramework.IGenericPool&lt;T&gt;" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Framework\Core\Pool\Definations\IGenericPool.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AirFramework.IObjectPool" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAQAAACAAAAAAAAAAAAAAAAAAAAAACAAAIAAAIAAAAA=</HashCode>
+      <FileName>Assets\Framework\Core\Pool\Definations\IObjectPool.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AirFramework.IPool" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Framework\Core\Pool\Definations\IPool.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AirFramework.IPoolable" Collapsed="true">
+    <Position X="79" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Framework\Core\Pool\Definations\IPoolable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AirFramework.IGenericPoolManager" Collapsed="true">
+    <Position X="79" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAABAAIAAAAAAAAACAAA=</HashCode>
+      <FileName>Assets\Framework\Core\Pool\Managers\IGenericPoolManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AirFramework.IValueContainer" Collapsed="true">
+    <Position X="0.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Framework\Core\_Interface\IValueContainer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AirFramework.IValueContainer&lt;T&gt;" Collapsed="true">
+    <Position X="0.5" Y="7.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Assets\Framework\Core\_Interface\IValueContainer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Microsoft YaHei UI" Size="9.6" />
+</ClassDiagram>

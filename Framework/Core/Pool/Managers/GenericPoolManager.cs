@@ -1,8 +1,14 @@
-﻿using System;
+﻿/********************************************************************************************
+ * Author : yueh0607
+ * Date : 2023.1.15
+ * Description : 
+ * 建立PoolManager来管理托管池类型，允许全局申请和释放托管对象
+ * 同时支持创建非托管池类型，要求用户自行取得实例并管理
+ * 对该类型Dispose并不会引起管理器失效，而是清空全部池
+ */
+
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AirFramework
 {
@@ -13,14 +19,14 @@ namespace AirFramework
         /// <summary>
         /// 自旋锁
         /// </summary>
-        private readonly object _lock = new object();
+        //private readonly object _lock = new object();
 
         
         public IGenericPool<T> GetPool<T>() where T : class, IPoolable
         {
             //防止创建池相互覆盖
-            lock (_lock)
-            {
+            //lock (_lock)
+            //{
                 if (!pools.ContainsKey(typeof(T)))
                 {
                     pools.Add(typeof(T), new GenericPool<T>(
@@ -32,13 +38,13 @@ namespace AirFramework
                 }
 
                 return pools[typeof(T)] as GenericPool<T>;
-            }
+            //}
         }
 
-        public void Destroy<T>() where T : class, IPoolable
+        public void ReleasePool<T>() where T : class, IPoolable
         {
-            lock (_lock)
-            {
+            //lock (_lock)
+            //{
                 Type poolType = typeof(T);
                 if (pools.ContainsKey(poolType))
                 {
@@ -46,7 +52,7 @@ namespace AirFramework
                     pools.Remove(typeof(T));
                     pool.Dispose();
                 }
-            }
+            //}
         }
         public T Allocate<T>() where T : class, IPoolable
         {
@@ -60,7 +66,14 @@ namespace AirFramework
  
         protected override void OnDispose()
         {
-            pools.Clear();
+            //lock(_lock)
+            //{
+                foreach(var pool in pools)
+                {
+                    pool.Value.Dispose();
+                }
+                pools.Clear();
+            //} 
         }
         
         public IGenericPool<T> CreatePool<T>(Func<T> onCreate = null, Action<T> onDestroy = null, Action<T> onRecycle = null, Action<T> onAllocate = null) where T : class
