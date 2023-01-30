@@ -14,10 +14,20 @@ namespace AirFramework
     /// </summary>
     public partial class MessageManager : Unit, IMessageReceiver
     {
+ 
+        /// <summary>
+        /// 存储消息
+        /// </summary>
+        private Dictionary<Type, UnitMessageDispatcher> dispatchers = new();
 
+        protected override void OnDispose()
+        {
+            UnRegister();
+        }
 
         #region Subscribe/UnSubscribe
-        internal void Subscribe(Type messageType, IMessageReceiver receiver, Type deleType, Delegate message)
+        
+        internal void Register(Type messageType, IMessageReceiver receiver, Type deleType, Delegate message)
         {
 
             if (!dispatchers.ContainsKey(messageType))
@@ -27,7 +37,7 @@ namespace AirFramework
             dispatchers[messageType].Value.Add(receiver, deleType, message);
 
         }
-        internal void UnSubscribe(Type messageType, IMessageReceiver receiver, Type deleType, Delegate message)
+        internal void UnRegister(Type messageType, IMessageReceiver receiver, Type deleType, Delegate message)
         {
             if (dispatchers.ContainsKey(messageType))
             {
@@ -41,7 +51,7 @@ namespace AirFramework
 
             }
         }
-        internal void UnSubscribe(Type messageType, IMessageReceiver receiver, Type deleType)
+        internal void UnRegister(Type messageType, IMessageReceiver receiver, Type deleType)
         {
             if (dispatchers.ContainsKey(messageType))
             {
@@ -55,7 +65,7 @@ namespace AirFramework
                 }
             }
         }
-        internal void UnSubscribe(Type messageType, IMessageReceiver receiver)
+        internal void UnRegister(Type messageType, IMessageReceiver receiver)
         {
 
             if (dispatchers.ContainsKey(messageType))
@@ -69,7 +79,7 @@ namespace AirFramework
                 }
             }
         }
-        internal void UnSubscribe(Type messageType)
+        internal void UnRegister(Type messageType)
         {
 
             if (dispatchers.ContainsKey(messageType))
@@ -78,6 +88,20 @@ namespace AirFramework
                 dispatchers.Remove(messageType);
                 dispatcher.Dispose();
             }
+        }
+        internal void UnRegister()
+        {
+            foreach (var dispatcher in dispatchers)
+            {
+                dispatcher.Value.Dispose();
+            }
+            dispatchers.Clear();
+        }
+
+        internal UnitMessageDispatcher GetDispatcher(Type messageType)
+        {
+            dispatchers.TryGetValue(messageType, out var dispatcher);
+            return dispatcher;
         }
         #endregion
 
@@ -90,16 +114,19 @@ namespace AirFramework
             contanier.Value.Receiver = receiver ?? this;
             return contanier;
         }
-
-        internal UnitMessageDispatcher GetDispatcher(Type messageType)
+        public void Remove<T>() where T : IMessage
         {
-            dispatchers.TryGetValue(messageType, out var dispatcher);
-            return dispatcher;
+            UnRegister(typeof(T));
         }
+
+
+        
         internal UnitMessageDispatcher GetDispatcher<MessageType>() where MessageType : IMessage
         {
             return GetDispatcher(typeof(MessageType));
         }
+
+
         #endregion
 
     }

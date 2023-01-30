@@ -1,4 +1,6 @@
-﻿namespace AirFramework
+﻿using System;
+
+namespace AirFramework
 {
     public static partial class Extensions
     {
@@ -13,6 +15,11 @@
             return Framework.Message.Operator<MessageType>(receiver);
         }
 
-
+        public static void Clear(this UnitMessageDispatcherContanier container)
+        {
+            Framework.Message.UnRegister(container.Value.TypeValue, container.Value.Receiver);
+            container.Dispose();
+        }
+       
     }
 }

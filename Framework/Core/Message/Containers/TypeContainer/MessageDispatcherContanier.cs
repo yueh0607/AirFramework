@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AirFramework
 {
+    /// <summary>
+    /// 引入此类防止用户直接操作Dispatcher，并分离泛型逻辑和根本逻辑
+    /// </summary>
     public class MessageDispatcherContanier: Unit
     {
        /// <summary>
