@@ -61,9 +61,11 @@ namespace AirFramework
             pools.Clear();
         }
 
-        public IGenericPool<T> CreatePool<T>(Func<T> onCreate = null, Action<T> onDestroy = null, Action<T> onRecycle = null, Action<T> onAllocate = null) where T : class
+
+
+        public GenericPool<T> CreatePool<T>(Func<T> onCreate = null, Action<T> onDestroy = null, Action<T> onRecycle = null, Action<T> onAllocate = null) where T : class
         {
-            IGenericPool<T> pool = new GenericPool<T>(
+            GenericPool<T> pool = new GenericPool<T>(
                         onCreate ?? Extensions.DefaltActivatorCreate<T>,
                         onDestroy,
                         onRecycle,
@@ -71,5 +73,16 @@ namespace AirFramework
                         );
             return pool;
         }
+        public PurePool<T> CreatePurePool<T>(Func<T> onCreate = null, Action<T> onDestroy = null, Action<T> onRecycle = null, Action<T> onAllocate = null) where T : class
+        {
+            PurePool<T> pool = new PurePool<T>(
+                        onCreate ?? Extensions.DefaltActivatorCreate<T>,
+                        onDestroy,
+                        onRecycle,
+                        onAllocate
+                        );
+            return pool;
+        }
+
     }
 }

@@ -36,8 +36,8 @@ namespace AirFramework
         public void ReleasePool<T>() where T : class, IPoolable;
 
         #endregion
-        
 
+        #region 非托管类型
         /// <summary>
         /// 从对象池管理器获取非托管池
         /// </summary>
@@ -47,7 +47,18 @@ namespace AirFramework
         /// <param name="onRecycle"></param>
         /// <param name="onAllocate"></param>
         /// <returns></returns>
-        public IGenericPool<T> CreatePool<T>(Func<T> onCreate = null, Action<T> onDestroy = null, Action<T> onRecycle = null, Action<T> onAllocate = null) where T : class;
+        public GenericPool<T> CreatePool<T>(Func<T> onCreate = null, Action<T> onDestroy = null, Action<T> onRecycle = null, Action<T> onAllocate = null) where T : class;
 
+        public PurePool<T> CreatePurePool<T>(Func<T> onCreate = null, Action<T> onDestroy = null, Action<T> onRecycle = null, Action<T> onAllocate = null) where T : class
+        {
+            PurePool<T> pool = new PurePool<T>(
+                        onCreate ?? Extensions.DefaltActivatorCreate<T>,
+                        onDestroy,
+                        onRecycle,
+                        onAllocate
+                        );
+            return pool;
+        }
+        #endregion
     }
 }

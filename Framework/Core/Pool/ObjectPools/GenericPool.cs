@@ -93,7 +93,8 @@ namespace AirFramework
 
             //如果可以被池自动管理，则绑定到池，标记未回收
             if (item is IAutoPoolable) { var it = ((IAutoPoolable)item); it.ThisPool = this; it.IsRecycled = false; }
-
+            //注册生命周期
+            if(item is ILIfeCycle) Framework.LifeCycle.AddAll(item);
             return item;
 
         }
@@ -118,6 +119,8 @@ namespace AirFramework
             onRecycle?.Invoke(it);
             //实现可被池自动管理的对象，标记回收
             if (item is IAutoPoolable) ((IAutoPoolable)item).IsRecycled = true;
+            //移除生命周期
+            if (item is ILIfeCycle) Framework.LifeCycle.RemoveAll(item);
             //入池
             pool.Enqueue(it);
         }
