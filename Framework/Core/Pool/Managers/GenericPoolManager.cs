@@ -4,7 +4,6 @@
  * Description : 
  * 建立PoolManager来管理托管池类型，允许全局申请和释放托管对象
  * 同时支持创建非托管池类型，要求用户自行取得实例并管理
- * 对该类型Dispose并不会引起管理器失效，而是清空全部池
  */
 
 using System;
@@ -12,10 +11,13 @@ using System.Collections.Generic;
 
 namespace AirFramework
 {
-    public class GenericPoolManager : Unit, IGenericPoolManager
+    public class GenericPoolManager : GlobalManager
     {
         private readonly Dictionary<Type, IObjectPool> pools = new Dictionary<Type, IObjectPool>();
 
+        public override string Name => "PoolManager";
+
+        #region 托管池
         public IGenericPool<T> GetPool<T>() where T : class, IPoolable
         {
             if (!pools.ContainsKey(typeof(T)))
@@ -51,18 +53,9 @@ namespace AirFramework
         {
             GetPool<T>().RecycleObj(item);
         }
+        #endregion
 
-        protected override void OnDispose()
-        {
-            foreach (var pool in pools)
-            {
-                pool.Value.Dispose();
-            }
-            pools.Clear();
-        }
-
-
-
+        #region 非托管池
         public GenericPool<T> CreatePool<T>(Func<T> onCreate = null, Action<T> onDestroy = null, Action<T> onRecycle = null, Action<T> onAllocate = null) where T : class
         {
             GenericPool<T> pool = new GenericPool<T>(
@@ -83,6 +76,15 @@ namespace AirFramework
                         );
             return pool;
         }
+        #endregion
 
+        protected override void OnDispose()
+        {
+            foreach (var pool in pools)
+            {
+                pool.Value.Dispose();
+            }
+            pools.Clear();
+        }
     }
 }

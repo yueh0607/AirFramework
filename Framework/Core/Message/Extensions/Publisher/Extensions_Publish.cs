@@ -5,62 +5,70 @@ namespace AirFramework
     public static partial class Extensions
     {
 
-
-        public static void Publish(this UnitMessageDispatcherContanier container)
+        /// <summary>
+        /// 发布
+        /// </summary>
+        /// <param name="container"></param>
+        public static void Publish(this UnitDelegateGroup container)
         {
-            var events = Framework.Message.GetDispatcher(container.Value.TypeValue).Value.Get(container.Value.Receiver, typeof(Action));
-            container.Dispose();
-            if (events == null || events.Count == 0) return;
+            var events = container?.Value.Get<Action>();
+            if (events == null ||events.Count==0) return;
             foreach (var act in events)
             {
                 (act as Action)?.Invoke();
             }
-
         }
-        public static void Publish<T1>(this UnitMessageDispatcherContanier container, T1 arg1)
+        /// <summary>
+        /// 发布
+        /// </summary>
+        /// <param name="container"></param>
+        public static void Publish<T1>(this UnitDelegateGroup container, T1 arg1)
         {
-            var events = Framework.Message.GetDispatcher(container.Value.TypeValue).Value.Get(container.Value.Receiver, typeof(Action<T1>));
-            container.Dispose();
+            var events = container?.Value.Get<Action<T1>>();
             if (events == null || events.Count == 0) return;
             foreach (var act in events)
             {
                 (act as Action<T1>)?.Invoke(arg1);
             }
         }
-        public static void Publish<T1, T2>(this UnitMessageDispatcherContanier container, T1 arg1, T2 arg2)
+        public static void Publish<T1, T2>(this UnitDelegateGroup container, T1 arg1, T2 arg2)
         {
-            var events = Framework.Message.GetDispatcher(container.Value.TypeValue).Value.Get(container.Value.Receiver, typeof(Action<T1, T2>));
-            container.Dispose();
+            var events = container?.Value.Get<Action<T1, T2>>();
             if (events == null || events.Count == 0) return;
             foreach (var act in events)
             {
                 (act as Action<T1, T2>)?.Invoke(arg1, arg2);
             }
         }
-        public static void Publish<T1, T2, T3>(this UnitMessageDispatcherContanier container, T1 arg1, T2 arg2, T3 arg3)
+        /// <summary>
+        /// 发布
+        /// </summary>
+        /// <param name="container"></param>
+        public static void Publish<T1, T2, T3>(this UnitDelegateGroup container, T1 arg1, T2 arg2, T3 arg3)
         {
-            var events = Framework.Message.GetDispatcher(container.Value.TypeValue).Value.Get(container.Value.Receiver, typeof(Action<T1, T2, T3>));
-            container.Dispose();
+            var events = container?.Value.Get<Action<T1, T2, T3>>();
             if (events == null || events.Count == 0) return;
             foreach (var act in events)
             {
                 (act as Action<T1, T2, T3>)?.Invoke(arg1, arg2, arg3);
             }
         }
-        public static void Publish<T1, T2, T3, T4>(this UnitMessageDispatcherContanier container, T1 arg1, T2 arg2, T3 arg3, T4 arg4)
+        public static void Publish<T1, T2, T3, T4>(this UnitDelegateGroup container, T1 arg1, T2 arg2, T3 arg3, T4 arg4)
         {
-            var events = Framework.Message.GetDispatcher(container.Value.TypeValue).Value.Get(container.Value.Receiver, typeof(Action<T1, T2, T3, T4>));
-            container.Dispose();
+            var events = container?.Value.Get<Action<T1, T2, T3, T4>>();
             if (events == null || events.Count == 0) return;
             foreach (var act in events)
             {
                 (act as Action<T1, T2, T3, T4>)?.Invoke(arg1, arg2, arg3, arg4);
             }
         }
-        public static void Publish<T1, T2, T3, T4, T5>(this UnitMessageDispatcherContanier container, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5)
+        /// <summary>
+        /// 发布
+        /// </summary>
+        /// <param name="container"></param>
+        public static void Publish<T1, T2, T3, T4, T5>(this UnitDelegateGroup container, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5)
         {
-            var events = Framework.Message.GetDispatcher(container.Value.TypeValue).Value.Get(container.Value.Receiver, typeof(Action<T1, T2, T3, T4, T5>));
-            container.Dispose();
+            var events = container?.Value.Get<Action<T1, T2, T3, T4, T5>>();
             if (events == null || events.Count == 0) return;
             foreach (var act in events)
             {

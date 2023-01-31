@@ -10,7 +10,7 @@ namespace AirFramework
     /// <summary>
     /// 用于实现所有池类型
     /// </summary>
-    public interface IPool : IUnit
+    public interface IPool: IUnit
     {
         /// <summary>
         /// 池容量

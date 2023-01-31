@@ -4,29 +4,30 @@ using UnityEngine;
 
 using AirFramework;
 
-
-public class AirGame : IAwake
+public interface MyMessage: IMessage{}
+public class MyTestUnit: IUpdate
 {
-    public void Awake()
+    public MyTestUnit()
     {
-        Debug
-            .Log(111);
+        Framework.LifeCycle.AnalyseAddAll(this);
     }
-
+    void IUpdate.Update()
+    {
+        Debug.Log("Receive!");
+    }
+    ~MyTestUnit()
+    {
+        Framework.LifeCycle.AnalyseRemoveAll(this);
+    }
 }
 
-public class MyTest : MonoBehaviour
+public class MyTest : MonoBehaviour, IMessageReceiver
+{
+    MyTestUnit myunit ;
+
+    void Awake()
     {
-
-        void Start()
-        {
-            
-        }
-
-
-        void Update()
-        {
-        
-        }
+        myunit = new MyTestUnit();
     }
+}
 

@@ -1,48 +1,57 @@
-﻿using System;
+﻿/********************************************************************************************
+ * Author : yueh0607
+ * Date : 2023.1.16
+ * Blog : https://blog.csdn.net/qq_46273241/article/details/128756319
+ * Description : 
+ * IOCContainer主要用于实现类型之间依赖的解除，让类依赖于接口和容器，实现控制反转
+ */
+
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AirFramework
 {
     /// <summary>
-    /// 用于实现依赖注入解耦的容器
+    /// 依赖注入容器
     /// </summary>
     public class IOContainer
     {
         private Dictionary<Type, object> container = new Dictionary<Type, object>();
 
         /// <summary>
-        /// 建立依赖 T，绑定到K
+        /// 注册：通过反射建立依赖映射 T-K
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <typeparam name="K"></typeparam>
-        public void Register<T,K>()   where K : class, T 
+        /// <typeparam name="TInterface">接口类型</typeparam>
+        /// <typeparam name="KClass">依赖类型</typeparam>
+        public void Register<TInterface,KClass>()   where KClass : class, TInterface 
         {
-            Register<T>(Activator.CreateInstance<K>());
+            Register<TInterface>(Activator.CreateInstance<KClass>());
         }
         /// <summary>
-        /// 建立依赖T，绑定到具体实例
+        /// 注册：建立依赖并绑定到具体实例
         /// </summary>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="TInterface"></typeparam>
         /// <param name="instance"></param>
-        public void Register<T>(T instance) 
+        public void Register<TInterface>(TInterface instance) 
         {
-            Type key = typeof(T);
+            Type key = typeof(TInterface);
             if (container.ContainsKey(key)) container[key] = instance;
             else container.Add(key, instance);
         }
 
-        public T Reslove<T>() where T : class
+        /// <summary>
+        /// 解析：解析对应接口类型的依赖实例
+        /// </summary>
+        /// <typeparam name="TInterface"></typeparam>
+        /// <returns></returns>
+        /// <exception cref="NullReferenceException"></exception>
+        public TInterface Reslove<TInterface>() where TInterface : class
         {
-            if (container.ContainsKey(typeof(T)))
+            if(container.ContainsKey(typeof(TInterface)))
             {
-                return container[typeof(T)] as T;
+                return container[typeof(TInterface)] as TInterface;
             }
             throw new NullReferenceException("No such relationship in this IOCContainer!");
         }
-
-
     }
 }

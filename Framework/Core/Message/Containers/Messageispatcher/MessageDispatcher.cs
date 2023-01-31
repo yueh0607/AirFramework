@@ -1,38 +1,75 @@
-﻿
+﻿/********************************************************************************************
+ * Author : yueh0607
+ * Date : 2023.1.30
+ * Description : 
+ * 抽象模型消息派发器，负责处理每类消息的派发任务，可以指定接收者与派发类型
+ */
+
+
 using System;
 using System.Collections.Generic;
-using System.Threading;
 
 namespace AirFramework
 {
     /// <summary>
-    /// 负责消息派发，本层结构模型    接收者 - 方法组
+    /// 消息分发器
     /// </summary>
     public class MessageDispatcher : Unit
     {
 
-
+        /// <summary>
+        /// 有效委托组数量
+        /// </summary>
         public int Count => events.Count;
 
         private Dictionary<IMessageReceiver, UnitDelegateGroup> events = new();
 
-        //private readonly object locker = new object();
 
+        /// <summary>
+        /// 访问：获取指定接收者的委托派发组
+        /// </summary>
+        /// <param name="receiver"></param>
+        /// <returns></returns>
+        public UnitDelegateGroup GetGroup(IMessageReceiver receiver)
+        {
+            if (events.ContainsKey(receiver)) return events[receiver];
+            return null;
+        }
+        /// <summary>
+        /// 访问或添加：获取指定接收者的委托派发组
+        /// </summary>
+        /// <param name="receiver"></param>
+        /// <returns></returns>
+        public UnitDelegateGroup GetOrAddGroup(IMessageReceiver receiver)
+        {
+            if (!events.ContainsKey(receiver))
+            {
+                events.Add(receiver, Framework.Pool.Allocate<UnitDelegateGroup>());
+            }
+            return events[receiver];
+        }
+        /// <summary>
+        /// 添加：为接收者添加指定的委托派发
+        /// </summary>
+        /// <param name="receiver"></param>
+        /// <param name="deleType"></param>
+        /// <param name="dele"></param>
         public void Add(IMessageReceiver receiver, Type deleType,Delegate dele)
         {
-            //Monitor.Enter(locker);
-
             if (!events.ContainsKey(receiver))
             {
                 events.Add(receiver, Framework.Pool.Allocate<UnitDelegateGroup>());
             }
             events[receiver].Value.Add(dele,deleType);
-            //Monitor.Exit(locker);
         }
+        /// <summary>
+        /// 移除：为接收者移除指定委托派发
+        /// </summary>
+        /// <param name="receiver"></param>
+        /// <param name="deleType"></param>
+        /// <param name="dele"></param>
         public void Remove(IMessageReceiver receiver,Type deleType, Delegate dele)
         {
-            //Monitor.Enter(locker);
-
             if (events.ContainsKey(receiver))
             {
                 var group = events[receiver];
@@ -43,62 +80,39 @@ namespace AirFramework
                     group.Dispose();
                 }
             }
-
-
-            //Monitor.Exit(locker);
         }
-        public void Remove(IMessageReceiver receiver, Type deleType)
-        {
-            //Monitor.Enter(locker);
-            if (events.ContainsKey(receiver))
-            {
-                var group = events[receiver];
-                group.Value.Remove(deleType);
-                if (group.Value.Count == 0)
-                {
-                    events.Remove(receiver);
-                    group.Dispose();
-                }
-            }
-            //Monitor.Exit(locker);
-        }
+        /// <summary>
+        /// 移除：为接收者移除全部委托派发
+        /// </summary>
+        /// <param name="receiver"></param>
+        /// <param name="deleType"></param>
+        /// <param name="dele"></param>
         public void Remove(IMessageReceiver receiver)
         {
-            //Monitor.Enter(locker);
-
             if (events.ContainsKey(receiver))
             {
                 events[receiver].Dispose();
                 events.Remove(receiver);
             }
-            //Monitor.Exit(locker);
         }
-
+        /// <summary>
+        /// 清空全部委托派发
+        /// </summary>
         public void Clear()
         {
-           //Monitor.Enter(locker);
             foreach (var group in events)
             {
                 group.Value.Dispose();
             }
             events.Clear();
-           //Monitor.Exit(locker);
         }
 
         protected override void OnDispose()
         {
             Clear();
         }
-        public List<Delegate> Get(IMessageReceiver receiver,Type deleType)
-        {
-            events.TryGetValue(receiver, out var result);
-            return result?.Value.Get(deleType);
-        }
-        public List<Delegate> Get<DelegateType>(IMessageReceiver receiver) where DelegateType : Delegate
-        {
-            events.TryGetValue(receiver, out var result);
-            return result?.Value.Get(typeof(DelegateType));
-        }
 
+        
+        
     }
 }

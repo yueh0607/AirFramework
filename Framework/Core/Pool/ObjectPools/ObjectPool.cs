@@ -11,7 +11,7 @@ namespace AirFramework
     /// <summary>
     /// 对象池基类型
     /// </summary>
-    public abstract class ObjectPool : Unit,IObjectPool
+    public abstract class ObjectPool : Unit, IObjectPool
     {
         /// <summary>
         /// 池缓存数
@@ -50,7 +50,7 @@ namespace AirFramework
         /// </summary>
         /// <param name="count"></param>
         public abstract void Unload(int count);
-      
+
 
     }
 }

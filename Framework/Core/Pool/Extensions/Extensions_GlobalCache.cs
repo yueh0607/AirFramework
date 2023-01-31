@@ -1,19 +1,22 @@
-﻿using System;
+﻿/********************************************************************************************
+ * Author : yueh0607
+ * Date : 2023.1.13
+ * Description : 
+ * 针对微小项目，提供一种键值对的全局存储方式，调用起来非常方便，采用object主要出于方便而非性能的考虑
+ * 即时用户采用ValueType发生装箱，也不会造成较大影响，所以仅适合足够小型的项目
+ */
+
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AirFramework
 {
     public static partial class Extensions
     {
-       
-
-        #region 提供全局可用的临时键值存储
         private static Dictionary<object,object> globalTemp = new Dictionary<object ,object>();
+
+
         /// <summary>
-        /// 更新临时键值对的值
+        /// 更新键值对的值
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="value"></param>
@@ -27,7 +30,7 @@ namespace AirFramework
             else globalTemp.Add(key, value);
         }
         /// <summary>
-        /// 获取临时键值对的值
+        /// 获取键值对的值
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="key"></param>
@@ -40,12 +43,17 @@ namespace AirFramework
             }
             return default;
         }
+        /// <summary>
+        /// 检测是否存在键值对
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
         public static bool ContainGloablCache(this object key)
         {
             return globalTemp.ContainsKey(key);
         }
         /// <summary>
-        /// 移除临时键值对的值
+        /// 移除键值对的值
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="key"></param>
@@ -57,20 +65,19 @@ namespace AirFramework
             }
         }
         /// <summary>
-        /// 清空全部临时键值对
+        /// 清空全部键值对
         /// </summary>
         public static void ClearAllGlobalCache()
         {
             globalTemp.Clear();
         }
         /// <summary>
-        /// 清空临时键值对
+        /// 清空键值对
         /// </summary>
         /// <param name="any"></param>
         public static void ClearAllGlobalCache(this object any)
         {
             ClearAllGlobalCache();
         }
-        #endregion
     }
 }

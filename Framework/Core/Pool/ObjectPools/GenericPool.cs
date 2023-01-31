@@ -94,7 +94,7 @@ namespace AirFramework
             //如果可以被池自动管理，则绑定到池，标记未回收
             if (item is IAutoPoolable) { var it = ((IAutoPoolable)item); it.ThisPool = this; it.IsRecycled = false; }
             //注册生命周期
-            if(item is ILIfeCycle) Framework.LifeCycle.AddAll(item);
+            if(item is ILifeCycle) Framework.LifeCycle.AnalyseAddAll(item);
             return item;
 
         }
@@ -120,7 +120,7 @@ namespace AirFramework
             //实现可被池自动管理的对象，标记回收
             if (item is IAutoPoolable) ((IAutoPoolable)item).IsRecycled = true;
             //移除生命周期
-            if (item is ILIfeCycle) Framework.LifeCycle.RemoveAll(item);
+            if (item is ILifeCycle) Framework.LifeCycle.AnalyseRemoveAll(item);
             //入池
             pool.Enqueue(it);
         }
@@ -141,9 +141,7 @@ namespace AirFramework
         /// </summary>
         public override void Clear()
         {
-
             while (pool.Count != 0) onDestroy?.Invoke(pool.Dequeue());
-
         }
 
         /// <summary>
@@ -156,7 +154,6 @@ namespace AirFramework
             for (int i = 0; i < count; ++i)
             {
                 item = onCreate();
-                //onRecycle?.Invoke(item);
                 pool.Enqueue(item);
             }
         }
@@ -167,16 +164,13 @@ namespace AirFramework
         /// <param name="count">缓存数量</param>
         public override void Unload(int count)
         {
-            //卸载时禁止其他操作行为
-            //lock (_lock)
-            //{
             //取小数量
             count = count > Count ? Count : count;
             for (int i = 0; i < count; ++i)
             {
                 onDestroy?.Invoke(pool.Dequeue());
             }
-            //}
+
         }
         #endregion
     }

@@ -4,14 +4,18 @@ using System.Collections.Generic;
 namespace AirFramework
 {
     /// <summary>
-    /// 纯净池类型，解决GenericPool的臃肿问题
+    /// 纯净池类型
     /// </summary>
     /// <typeparam name="T"></typeparam>
     public class PurePool<T> : Unit, IPool
     {
+        /// <summary>
+        /// 缓存数量
+        /// </summary>
         public int Count => queue.Count;
 
-        public Queue<T> queue = new Queue<T>();
+
+        private Queue<T> queue = new Queue<T>();
 
 
         #region 行为委托
@@ -27,6 +31,10 @@ namespace AirFramework
 
         #endregion
 
+        /// <summary>
+        /// 申请对象
+        /// </summary>
+        /// <returns></returns>
         public T Allocate()
         {
             if (Count == 0) return onCreate();
@@ -34,12 +42,18 @@ namespace AirFramework
             onAllocate?.Invoke(item);
             return item;
         }
+        /// <summary>
+        /// 回收对象
+        /// </summary>
+        /// <param name="item"></param>
         public void Recycle(T item)
         {
             onRecycle?.Invoke(item);
             queue.Enqueue(item);
         }
-
+        /// <summary>
+        /// 清空缓存
+        /// </summary>
         public void Clear()
         {
             while (Count != 0) onDestroy?.Invoke(queue.Dequeue());
@@ -54,9 +68,9 @@ namespace AirFramework
         public PurePool(Func<T> onCreate, Action<T> onDestroy = null, Action<T> onRecycle = null, Action<T> onAllocate = null)
         {
             this.onCreate = onCreate;
-            this.onAllocate = onAllocate;
-            this.onRecycle = onRecycle;
-            this.onDestroy = onDestroy;
+            this.onAllocate += onAllocate;
+            this.onRecycle += onRecycle;
+            this.onDestroy += onDestroy;
         }
     }
 }

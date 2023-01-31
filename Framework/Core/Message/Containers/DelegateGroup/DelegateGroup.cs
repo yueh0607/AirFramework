@@ -2,7 +2,7 @@
  * Author : yueh0607
  * Date : 2023.1.30
  * Description : 
- * 建立一个Unit容器来存储一个方法组，存储每个方法的多个重载
+ * 建立一个容器来存储多种类型的委托，这样就可以支持重载和多态
  * 对容器的每个操作都会影响来着容器的任意引用
  * 如Get拿到委托列表后Clear容器会导致Get到的List被回收，Remove和Add将可能导致List元素数量变化
  */
@@ -22,11 +22,11 @@ namespace AirFramework
         private Dictionary<Type, UnitList<Delegate>> events = new();
 
         /// <summary>
-        /// 存在的委托类型数
+        /// 委托类型数
         /// </summary>
         public int Count => events.Count;
         /// <summary>
-        /// 存在的委托总数，计算重载
+        /// 委托总数(计算重载)
         /// </summary>
         public int CountAll
         {

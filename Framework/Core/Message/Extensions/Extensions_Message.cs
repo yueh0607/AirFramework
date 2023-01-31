@@ -10,16 +10,18 @@ namespace AirFramework
         /// <typeparam name="MessageType"></typeparam>
         /// <param name="receiver"></param>
         /// <returns></returns>
-        public static UnitMessageDispatcherContanier Operator<MessageType>(this IMessageReceiver receiver) where MessageType : IMessage
+        public static UnitDelegateGroup Operator<MessageType>(this IMessageReceiver receiver) where MessageType : IMessage
         {
             return Framework.Message.Operator<MessageType>(receiver);
         }
 
-        public static void Clear(this UnitMessageDispatcherContanier container)
+        /// <summary>
+        /// 清空操作器
+        /// </summary>
+        /// <param name="container"></param>
+        public static void Clear(this UnitDelegateGroup container)
         {
-            Framework.Message.UnRegister(container.Value.TypeValue, container.Value.Receiver);
-            container.Dispose();
+            container?.Clear();
         }
-       
     }
 }
