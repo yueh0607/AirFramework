@@ -8,6 +8,8 @@
  * 打造这样一个静态管理器方便用户快捷的调用每一个模块，而无需记忆各种管理器的名称
  */
 
+using System.Diagnostics;
+
 namespace AirFramework
 {
 
@@ -16,20 +18,26 @@ namespace AirFramework
     /// </summary>
     public static partial class Framework
     {
-        
+
         /// <summary>
         /// 池管理器
         /// </summary>
-        public static GenericPoolManager Pool { get; } = new GenericPoolManager();  
-        
+        [DebuggerHidden]
+        public static PoolManager Pool { get; } = new PoolManager();
+
         /// <summary>
         /// 消息管理器
         /// </summary>
+        [DebuggerHidden]
         public static MessageManager Message { get; } = new MessageManager();
 
         /// <summary>
         ///  生命周期管理器
         /// </summary>
-        public static LifeManager LifeCycle { get; } = new LifeManager();
+        [DebuggerHidden]
+        public static LifeCycleManager LifeCycle { get; } = new LifeCycleManager();
+
+
+        //public static LogManager Log { get; } = new LogManager();
     }
 }

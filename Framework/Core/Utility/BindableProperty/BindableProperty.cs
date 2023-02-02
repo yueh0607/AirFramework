@@ -9,6 +9,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace AirFramework
 {
@@ -23,6 +24,7 @@ namespace AirFramework
         /// <summary>
         /// 属性值：当属性值发生变化时，通知属性变更
         /// </summary>
+        
         public T Value { 
             get => value;
             set
@@ -45,6 +47,7 @@ namespace AirFramework
         /// 初始化：使用初始值初始化可绑定属性
         /// </summary>
         /// <param name="value"></param>
+        
         public BindableProperty(T value)
         {
             this.value = value;
@@ -52,6 +55,7 @@ namespace AirFramework
         /// <summary>
         /// 初始化：使用默认值(default)初始化可绑定属性
         /// </summary>
+        
         public BindableProperty()
         {
             this.value = default;

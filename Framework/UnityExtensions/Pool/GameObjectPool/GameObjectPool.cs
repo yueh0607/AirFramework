@@ -32,10 +32,10 @@ namespace AirFramework
         }
         public GameObjectPool():base()
         {
-            base.onRecycle = DefaultRecycle;
-            base.onCreate= DefaultCreate;
-            base.onDestroy= DefaultDestroy;
-            base.onAllocate = DefaultAllocate;
+            base.onCreate = DefaultCreate;
+            base.onRecycle += DefaultRecycle;
+            base.onDestroy+= DefaultDestroy;
+            base.onAllocate += DefaultAllocate;
         }
     }
 }

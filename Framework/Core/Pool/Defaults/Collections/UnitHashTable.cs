@@ -2,7 +2,7 @@
 
 namespace AirFramework
 {
-    public class UnitHashtable : PoolableObject<Hashtable> 
+    public class UnitHashtable : PoolableValueObject<Hashtable> 
     {
         public override void OnAllocate()
         {

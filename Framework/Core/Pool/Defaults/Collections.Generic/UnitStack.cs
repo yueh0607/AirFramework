@@ -6,7 +6,7 @@ namespace AirFramework
     /// 可回收Stack
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class UnitStack<T> : PoolableObject<Stack<T>> 
+    public class UnitStack<T> : PoolableValueObject<Stack<T>> 
     {
         public override void OnAllocate()
         {

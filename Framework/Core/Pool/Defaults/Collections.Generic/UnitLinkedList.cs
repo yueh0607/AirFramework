@@ -6,7 +6,7 @@ namespace AirFramework
     /// 可回收LinkedList
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class UnitLinkedList<T> : PoolableObject<LinkedList<T>> 
+    public class UnitLinkedList<T> : PoolableValueObject<LinkedList<T>> 
     {
         public override void OnAllocate()
         {

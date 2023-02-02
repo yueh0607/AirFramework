@@ -7,7 +7,7 @@ namespace AirFramework
     /// 可回收SortedSet
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class UnitSortedSet<T> : PoolableObject<SortedSet<T>> 
+    public class UnitSortedSet<T> : PoolableValueObject<SortedSet<T>> 
     {
         public override void OnAllocate()
         {

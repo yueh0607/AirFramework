@@ -7,7 +7,7 @@ namespace AirFramework
     /// </summary>
     /// <typeparam name="TKey"></typeparam>
     /// <typeparam name="TValue"></typeparam>
-    public class UnitSortedList<TKey,TValue> : PoolableObject<SortedDictionary<TKey,TValue>> 
+    public class UnitSortedList<TKey,TValue> : PoolableValueObject<SortedDictionary<TKey,TValue>> 
     {
         public override void OnAllocate()
         {

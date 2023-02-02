@@ -4,38 +4,78 @@ namespace AirFramework
 {
     public static partial class Extensions
     {
-        public static UnitList<T1> CallAll<T1>(this UnitDelegateGroup container)
-        {
-            if(!TryCallAll<T1>(container,out var result)) throw new InvalidOperationException(errorInfoCall);
-            return result;
-        }
-        public static UnitList<T2> CallAll<T1, T2>(this UnitDelegateGroup container, T1 arg1)
-        {
-            if (!TryCallAll<T1,T2>(container,arg1, out var result)) throw new InvalidOperationException(errorInfoCall);
-            return result;
 
-        }
-        public static UnitList<T3> CallAll<T1, T2, T3>(this UnitDelegateGroup container, T1 arg1, T2 arg2)
+        public static bool CallAll<T1>(this UnitDelegateGroup container, out UnitList<T1> result)
         {
-            if (!TryCallAll<T1, T2,T3>(container, arg1,arg2, out var result)) throw new InvalidOperationException(errorInfoCall);
-            return result;
+            var events = container?.Value.Get<Func<T1>>();
+            result = new();
+            if (events == null) return false;
 
+            foreach (var func in events)
+            {
+                result.Value.Add((func as Func<T1>).Invoke());
+            }
+            return true;
         }
-        public static UnitList<T4> CallAll<T1, T2, T3, T4>(this UnitDelegateGroup container, T1 arg1, T2 arg2, T3 arg3)
+        public static bool CallAll<T1,T2>(this UnitDelegateGroup container,T1 arg1, out UnitList<T2> result)
         {
-            if (!TryCallAll<T1, T2,T3,T4>(container, arg1,arg2,arg3,out var result)) throw new InvalidOperationException(errorInfoCall);
-            return result;
-        }
-        public static UnitList<T5> CallAll<T1, T2, T3, T4, T5>(this UnitDelegateGroup container, T1 arg1, T2 arg2, T3 arg3, T4 arg4)
-        {
-            if (!TryCallAll<T1, T2, T3, T4,T5>(container, arg1, arg2, arg3,arg4, out var result)) throw new InvalidOperationException(errorInfoCall);
-            return result;
-        }
-        public static UnitList<T6> CallAll<T1, T2, T3, T4, T5,T6>(this UnitDelegateGroup container, T1 arg1, T2 arg2, T3 arg3, T4 arg4,T5 arg5)
-        {
-            if (!TryCallAll<T1, T2, T3, T4, T5,T6>(container, arg1, arg2, arg3, arg4,arg5, out var result)) throw new InvalidOperationException(errorInfoCall);
-            return result;
+            var events = container?.Value.Get<Func<T1, T2>>();
+            result = new();
+            if (events == null) return false;
 
+            foreach (var func in events)
+            {
+                result.Value.Add((func as Func<T1,T2>).Invoke(arg1));
+            }
+            return true;
+        }
+        public static bool CallAll<T1, T2,T3>(this UnitDelegateGroup container, T1 arg1,T2 arg2, out UnitList<T3> result)
+        {
+            var events = container?.Value.Get<Func<T1, T2, T3>>();
+            result = new();
+            if (events == null) return false;
+
+            foreach (var func in events)
+            {
+                result.Value.Add((func as Func<T1, T2,T3>).Invoke(arg1,arg2));
+            }
+            return true;
+        }
+        public static bool CallAll<T1, T2, T3,T4>(this UnitDelegateGroup container, T1 arg1, T2 arg2,T3 arg3, out UnitList<T4> result)
+        {
+            var events = container?.Value.Get<Func<T1, T2, T3, T4>>();
+            result = new();
+            if (events == null) return false;
+
+            foreach (var func in events)
+            {
+                result.Value.Add((func as Func<T1, T2, T3,T4>).Invoke(arg1, arg2,arg3));
+            }
+            return true;
+        }
+        public static bool CallAll<T1, T2, T3, T4,T5>(this UnitDelegateGroup container, T1 arg1, T2 arg2, T3 arg3,T4 arg4, out UnitList<T5> result)
+        {
+            var events = container?.Value.Get<Func<T1, T2, T3, T4, T5>>();
+            result = new();
+            if (events == null) return false;
+
+            foreach (var func in events)
+            {
+                result.Value.Add((func as Func<T1, T2, T3, T4,T5>).Invoke(arg1, arg2, arg3,arg4));
+            }
+            return true;
+        }
+        public static bool CallAll<T1, T2, T3, T4, T5,T6>(this UnitDelegateGroup container, T1 arg1, T2 arg2, T3 arg3, T4 arg4,T5 arg5, out UnitList<T6> result)
+        {
+            var events = container?.Value.Get<Func<T1, T2, T3, T4, T5, T6>>();
+            result = new();
+            if (events == null) return false;
+
+            foreach (var func in events)
+            {
+                result.Value.Add((func as Func<T1, T2, T3, T4, T5,T6>).Invoke(arg1, arg2, arg3, arg4,arg5));
+            }
+            return true;
         }
     }
 }

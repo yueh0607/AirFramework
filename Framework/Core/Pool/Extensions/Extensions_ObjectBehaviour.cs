@@ -26,7 +26,7 @@ namespace AirFramework
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="item"></param>
-        public static void RecycleSelf<T>(this T item) where T : class,IAutoPoolable
+        public static void RecycleSelf<T>(this T item) where T : class,IPoolBindable
         {
             if(item.ThisPool!= null&&item.ThisPool.Disposed==false&&item.IsRecycled==false)
                 item.ThisPool.RecycleObj(item);

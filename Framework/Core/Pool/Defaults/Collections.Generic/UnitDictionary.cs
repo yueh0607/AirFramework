@@ -7,7 +7,7 @@ namespace AirFramework
     /// </summary>
     /// <typeparam name="TKey"></typeparam>
     /// <typeparam name="TValue"></typeparam>
-    public class UnitDictionary<TKey,TValue> : PoolableObject<Dictionary<TKey,TValue>> 
+    public class UnitDictionary<TKey,TValue> : PoolableValueObject<Dictionary<TKey,TValue>> 
     {
         public override void OnAllocate()
         {

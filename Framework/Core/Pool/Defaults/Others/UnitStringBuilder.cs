@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public class UnitStringBuilder: PoolableObject<StringBuilder> 
+    public class UnitStringBuilder: PoolableValueObject<StringBuilder> 
     {
         public override void OnAllocate()
         {

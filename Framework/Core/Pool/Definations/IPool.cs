@@ -23,4 +23,13 @@ namespace AirFramework
         void Clear();
         
     }
+    /// <summary>
+    /// 用于实现所有池类型
+    /// </summary>
+    public interface IPool<T> : IPool
+    {
+        T Allocate();
+        void Recycle(T item);
+
+    }
 }

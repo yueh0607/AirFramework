@@ -2,7 +2,7 @@
 
 namespace AirFramework
 {
-    public class UnitSortedList : PoolableObject<SortedList> 
+    public class UnitSortedList : PoolableValueObject<SortedList> 
     {
         public override void OnAllocate()
         {
