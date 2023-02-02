@@ -124,9 +124,8 @@ namespace AirFramework
         /// <param name="onDestroy"></param>
         /// <param name="onRecycle"></param>
         /// <param name="onAllocate"></param>
-        /// <returns></returns>
-        
-        public AutoBindPool<T> CreateAutoPoolablePool<T>(Func<T> onCreate = null, Action<T> onDestroy = null, Action<T> onRecycle = null, Action<T> onAllocate = null) where T :class, IPoolBindable
+        /// <returns></returns>        
+        public AutoBindPool<T> CreateAutoBindablePool<T>(Func<T> onCreate = null, Action<T> onDestroy = null, Action<T> onRecycle = null, Action<T> onAllocate = null) where T :class, IPoolBindable
         { 
             
             AutoBindPool<T> pool = new AutoBindPool<T>(
@@ -147,8 +146,7 @@ namespace AirFramework
         /// <param name="onDestroy"></param>
         /// <param name="onRecycle"></param>
         /// <param name="onAllocate"></param>
-        /// <returns></returns>
-        
+        /// <returns></returns> 
         public LifeCyclePool<T> CreateLifeCyclePool<T>(Func<T> onCreate = null, Action<T> onDestroy = null, Action<T> onRecycle = null, Action<T> onAllocate = null) where T : class
         {
             LifeCyclePool<T> pool = new LifeCyclePool<T>(

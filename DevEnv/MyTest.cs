@@ -13,13 +13,9 @@ public class MyTestUnit: IUpdate
     }
     void IUpdate.Update()
     {
-        //Debug.Log("Receive!");
+        Debug.Log("Receive!");
     }
 
-    string GetStr(int b,string a)
-    {
-        return($"{b} {a}");
-    }
     ~MyTestUnit()
     {
         Framework.LifeCycle.AnalyseRemoveAll(this);
@@ -33,7 +29,6 @@ public class MyTest : MonoBehaviour, IMessageReceiver
     void Awake()
     {
         myunit = new MyTestUnit();
-        Framework.Message.Operator<MyMessage>().Publish(10, "HH");
     }
    
 }

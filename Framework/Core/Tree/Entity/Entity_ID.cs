@@ -1,7 +1,7 @@
 ﻿
 namespace AirFramework
 {
-    public class Entity : PoolableObject<Entity>, IMessage
+    public partial class Entity : PoolableObject<Entity>, IMessage
     {
         private ulong id;
         public ulong ID => id;
@@ -13,21 +13,7 @@ namespace AirFramework
             id = uid_pool.Allocate();
         }
 
-        protected override void OnDispose()
-        {
-
-        }
-
-        public override void OnAllocate()
-        {
-            
-        }
-
-        public override void OnRecycle()
-        {
-            
-        }
-
+     
         ~Entity()
         {
             uid_pool.Recycle(id);

@@ -8,5 +8,8 @@ namespace AirFramework
     {
         private Dictionary<ulong,Entity> entityDictionary = new Dictionary<ulong,Entity>();
         
+
+
+
     }
 }
