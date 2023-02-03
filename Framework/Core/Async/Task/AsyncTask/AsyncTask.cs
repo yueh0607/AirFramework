@@ -18,6 +18,8 @@ namespace AirFramework
 
         public bool IsCompleted { get; set; }
 
+
+
         [DebuggerHidden]
         private async AsyncTaskVoid InnerCoroutine()
         {
@@ -25,13 +27,15 @@ namespace AirFramework
         }
 
         /// <summary>
-        /// 协程启动
+        /// 以协程方式运行
         /// </summary>
         [DebuggerHidden]
         public void Coroutine()
         {
             InnerCoroutine().Coroutine();
         }
+
+
 
         public void OnCompleted(Action continuation)
         {
@@ -42,15 +46,28 @@ namespace AirFramework
         {
             this.continuation = continuation;
         }
+
+        /// <summary>
+        /// 当执行出现异常时调用
+        /// </summary>
+        /// <param name="exception"></param>
         public void SetException(Exception exception)
         {
             this.Exception = exception;
         }
 
+        /// <summary>
+        /// 状态机调用此方法获取状态
+        /// </summary>
+        /// <returns></returns>
         public IAsyncTask GetResult()
         {
             return this;
         }
+
+        /// <summary>
+        /// 设置结果代表结束当前await
+        /// </summary>
         public void SetResult()
         {
             continuation?.Invoke();

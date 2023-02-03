@@ -7,20 +7,32 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public interface IAsyncTask : ICriticalNotifyCompletion
-    {
-        bool IsCompleted { get; set; }
-        IAsyncTask GetResult();
+    public interface IAsyncTask : ICriticalAwaiter
+    {   
+        /// <summary>
+        /// 结束当前任务
+        /// </summary>
         void SetResult();
+
+        /// <summary>
+        /// 当有异常时调用
+        /// </summary>
+        /// <param name="exception"></param>
         void SetException(Exception exception);
     }
 
 
-    public interface IAsyncTask<T> : ICriticalNotifyCompletion
+    public interface IAsyncTask<T> : ICriticalAwaiter<T> 
     {
-        bool IsCompleted { get; set; }
+        /// <summary>
+        /// 结束当前任务
+        /// </summary>
         void SetResult(T result);
-        T GetResult();
+
+        /// <summary>
+        /// 当有异常时调用
+        /// </summary>
+        /// <param name="exception"></param>
         void SetException(Exception exception);
 
     }

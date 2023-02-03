@@ -13,22 +13,33 @@ namespace AirFramework
         // 1. Static Create method.
         [DebuggerHidden]
         public static AsyncTaskMethodBuilder Create() => new AsyncTaskMethodBuilder(AsyncTask.Create());
+
+        //2.Construct Method 
         public AsyncTaskMethodBuilder(AsyncTask task) => this.task = task;
 
 
-        // 2. TaskLike Task property.
+        // 3. TaskLike Task property.
         [DebuggerHidden]
         public AsyncTask Task => task;
 
+        // 8. Start
+        [DebuggerHidden]
+        public void Start<TStateMachine>(ref TStateMachine stateMachine) where TStateMachine : IAsyncStateMachine
+        {
+            stateMachine.MoveNext();
+            
+        }
 
-        // 3. SetException
+
+
+        // 4. SetException
         [DebuggerHidden]
         public void SetException(Exception exception)
         {
             task.SetException(exception);
         }
 
-        // 4. SetResult
+        // 5. SetResult
         [DebuggerHidden]
 
         public void SetResult()
@@ -36,7 +47,7 @@ namespace AirFramework
             task.SetResult();
         }
 
-        // 5. AwaitOnCompleted
+        // 6. AwaitOnCompleted
         [DebuggerHidden]
 
         public void AwaitOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) where TAwaiter : INotifyCompletion where TStateMachine : IAsyncStateMachine
@@ -44,7 +55,7 @@ namespace AirFramework
             awaiter.OnCompleted(stateMachine.MoveNext);
         }
 
-        // 6. AwaitUnsafeOnCompleted
+        // 7. AwaitUnsafeOnCompleted
         [SecuritySafeCritical]
         public void AwaitUnsafeOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) where TAwaiter : Entity, ICriticalNotifyCompletion where TStateMachine : IAsyncStateMachine
         {
@@ -52,14 +63,9 @@ namespace AirFramework
             awaiter.OnCompleted(stateMachine.MoveNext);
         }
 
-        // 7. Start
-        [DebuggerHidden]
-        public void Start<TStateMachine>(ref TStateMachine stateMachine) where TStateMachine : IAsyncStateMachine
-        {
-            stateMachine.MoveNext();
-        }
+        
 
-        // 8. SetStateMachine
+        // 9. SetStateMachine
         [DebuggerHidden]
         public void SetStateMachine(IAsyncStateMachine stateMachine)
         {
