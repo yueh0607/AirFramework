@@ -1,7 +1,7 @@
 # AirFramework
 Unity3D游戏开发中小型游戏框架，同时Core部分可用于.Net开发
 
-整体特点：
+# 整体特点：
 - 极低的学习成本：每个模块的超级管理器均采用单例模式，根据IDE提示通过Framework.XXXX一键调用，无效记忆各种复杂API。
 - 便捷的使用语法：每个模块均支持大量静态拓展方法，拥有一定渐进式学习过程，是对超级管理器API的简化而非功能性的拓展。
 - 优秀的性能控制：严格控制运行时GC产出(尤其是循环产出的GC)，虽然针对中小型游戏对性能要求不十分严格，但是并不敷衍，且留有上升余地。
@@ -10,13 +10,13 @@ Unity3D游戏开发中小型游戏框架，同时Core部分可用于.Net开发
 
 始于2023.1.11  奋力开发ing....
 
-已经实现的模块：
+# 已经实现的模块：
 - 全局对象池
 - 全局消息机制 
 - 生命周期管理
 - Unity异步编程支持(未完)
 
-未来可能实现/支持的内容(排序不代表优先级)：
+# 未来可能实现/支持的内容(排序不代表优先级)：
 
 - 计时器
 - MVC编程规范/MVVM编程规范/UI管理器
@@ -37,4 +37,4 @@ Unity3D游戏开发中小型游戏框架，同时Core部分可用于.Net开发
 # 推荐项目
 - [WorldTreeFramework](https://github.com/SDHK/WorldTreeFramework)
 - [IFramework](https://github.com/OnClick9927/IFramework)
-- [QFramework](https://github.com/liangxiegame/QFramework)
+- [ET](https://github.com/egametang/ET)
