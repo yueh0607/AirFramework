@@ -13,7 +13,13 @@ namespace AirFramework
 {
     public interface IPoolBindable : IDisposable
     {
+        /// <summary>
+        /// 由Framework调用，在申请或回收时自动绑定Pool
+        /// </summary>
         public IObjectPool ThisPool { get; set; }
+        /// <summary>
+        /// 由Framework调用，在BindablePool入池时和出池时自动设置
+        /// </summary>
         public bool IsRecycled { get; set; }
         
     }

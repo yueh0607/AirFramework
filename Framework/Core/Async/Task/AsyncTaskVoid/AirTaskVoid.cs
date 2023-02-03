@@ -4,8 +4,8 @@ using System.Runtime.CompilerServices;
 
 namespace AirFramework
 {
-    [AsyncMethodBuilder(typeof(AsyncTaskVoidMethodBuilder))]
-    public struct AsyncTaskVoid : ICriticalNotifyCompletion
+    [AsyncMethodBuilder(typeof(AsyncAirTaskVoidMethodBuilder))]
+    public struct AirTaskVoid : ICriticalNotifyCompletion
     {
         [DebuggerHidden]
         public void Coroutine()

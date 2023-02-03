@@ -5,19 +5,19 @@ using System.Security;
 
 namespace AirFramework
 {
-    public struct AsyncTaskVoidMethodBuilder
+    public struct AsyncAirTaskVoidMethodBuilder
     {
         // 1. Static Create method.
         [DebuggerHidden]
-        public static AsyncTaskVoidMethodBuilder Create()
+        public static AsyncAirTaskVoidMethodBuilder Create()
         {
-            AsyncTaskVoidMethodBuilder builder = new AsyncTaskVoidMethodBuilder();
+            AsyncAirTaskVoidMethodBuilder builder = new AsyncAirTaskVoidMethodBuilder();
             return builder;
         }
 
         // 2. TaskLike Task property(void)
         [DebuggerHidden]
-        public AsyncTaskVoid Task => default;
+        public AirTaskVoid Task => default;
 
         // 3. SetException
         [DebuggerHidden]

@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 
 namespace AirFramework
 {
-    public class PoolManager : GlobalManager
+    public partial class PoolManager : GlobalManager
     {
 
         private readonly Dictionary<Type, IObjectPool> pools = new Dictionary<Type, IObjectPool>();
@@ -81,93 +81,7 @@ namespace AirFramework
         }
         #endregion
 
-        #region 非托管池
-        /// <summary>
-        /// 创建非托管通用池
-        /// </summary>
-        
-        public GenericPool<T> CreateGenericPool<T>(Func<T> onCreate = null, Action<T> onDestroy = null, Action<T> onRecycle = null, Action<T> onAllocate = null) where T : class
-        {
-            GenericPool<T> pool = new GenericPool<T>(
-                        onCreate ?? Extensions.DefaltActivatorCreate<T>,
-                        onDestroy,
-                        onRecycle,
-                        onAllocate
-                        );
-            return pool;
-        }
-        /// <summary>
-        /// 创建高效纯净池
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="onCreate"></param>
-        /// <param name="onDestroy"></param>
-        /// <param name="onRecycle"></param>
-        /// <param name="onAllocate"></param>
-        /// <returns></returns>
-        
-        public PurePool<T> CreatePurePool<T>(Func<T> onCreate = null, Action<T> onDestroy = null, Action<T> onRecycle = null, Action<T> onAllocate = null) where T : class
-        {
-            PurePool<T> pool = new PurePool<T>(
-                        onCreate ?? Extensions.DefaltActivatorCreate<T>,
-                        onDestroy,
-                        onRecycle,
-                        onAllocate
-                        );
-            return pool;
-        }
-        /// <summary>
-        /// 创建带绑定的对象池
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="onCreate"></param>
-        /// <param name="onDestroy"></param>
-        /// <param name="onRecycle"></param>
-        /// <param name="onAllocate"></param>
-        /// <returns></returns>        
-        public AutoBindPool<T> CreateAutoBindablePool<T>(Func<T> onCreate = null, Action<T> onDestroy = null, Action<T> onRecycle = null, Action<T> onAllocate = null) where T :class, IPoolBindable
-        { 
-            
-            AutoBindPool<T> pool = new AutoBindPool<T>(
-                        onCreate ?? Extensions.DefaltActivatorCreate<T>,
-                        onDestroy,
-                        onRecycle,
-                        onAllocate
-                        );
-
-            return pool;
-        }
-
-        /// <summary>
-        /// 创建带绑定且可以自动处理生命周期的池
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="onCreate"></param>
-        /// <param name="onDestroy"></param>
-        /// <param name="onRecycle"></param>
-        /// <param name="onAllocate"></param>
-        /// <returns></returns> 
-        public LifeCyclePool<T> CreateLifeCyclePool<T>(Func<T> onCreate = null, Action<T> onDestroy = null, Action<T> onRecycle = null, Action<T> onAllocate = null) where T : class
-        {
-            LifeCyclePool<T> pool = new LifeCyclePool<T>(
-                        onCreate ?? Extensions.DefaltActivatorCreate<T>,
-                        onDestroy,
-                        onRecycle,
-                        onAllocate
-                        );
-            return pool;
-        }
-        /// <summary>
-        /// 创建ID池
-        /// </summary>
-        /// <param name="repeatCount"></param>
-        /// <returns></returns>
-        
-        public UIDPool CreateGUIDPool(int repeatCount=100)
-        {
-            return new UIDPool(repeatCount);
-        }
-        #endregion
+     
 
         protected override void OnDispose()
         {

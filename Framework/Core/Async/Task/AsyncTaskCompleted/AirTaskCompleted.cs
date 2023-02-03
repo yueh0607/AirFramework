@@ -6,11 +6,11 @@ namespace AirFramework
 {
 
 
-    [AsyncMethodBuilder(typeof(AsyncTaskCompletedMethodBuilder))]
-    public class AsyncTaskCompleted : Entity, ICriticalNotifyCompletion
+    [AsyncMethodBuilder(typeof(AsyncAirTaskCompletedMethodBuilder))]
+    public class AirTaskCompleted : Entity, ICriticalNotifyCompletion
     {
         [DebuggerHidden]
-        public AsyncTaskCompleted GetAwaiter() => this;
+        public AirTaskCompleted GetAwaiter() => this;
 
         [DebuggerHidden]
         public bool IsCompleted => true;

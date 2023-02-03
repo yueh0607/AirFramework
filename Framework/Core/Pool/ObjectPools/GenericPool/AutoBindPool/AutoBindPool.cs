@@ -10,7 +10,7 @@ using System;
 namespace AirFramework
 {
     /// <summary>
-    /// 能自动管理生命的池
+    /// 带自动绑定的池
     /// </summary>
     /// <typeparam name="T"></typeparam>
     public class AutoBindPool<T> : GenericPool<T> where T : class 

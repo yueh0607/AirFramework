@@ -6,19 +6,25 @@ using System.Runtime.CompilerServices;
 namespace AirFramework
 {
 
-    [AsyncMethodBuilder(typeof(AsyncTaskMethodBuilder<>))]
-    public class AsyncTask<T> : Entity, IAsyncTask<T>
+    [AsyncMethodBuilder(typeof(AsyncAirTaskMethodBuilder<>))]
+    public class AirTask<T> : Entity, IAsyncTask<T>
     {
-        public AsyncTask<T> GetAwaiter() => this;
+        public AirTask<T> GetAwaiter() => this;
         public Action continuation;
         public bool IsCompleted { get; set; }
 
         public T Result;
 
-        public static AsyncTask<T> Create() => Framework.Pool.Allocate<AsyncTask<T>>();
+        public static AirTask<T> Create(bool fromPool)
+        {
+            if (fromPool)
+                return Framework.Pool.Allocate<AirTask<T>>();
+
+            return new AirTask<T>();
+        }
 
         [DebuggerHidden]
-        private async AsyncTaskVoid InnerCoroutine()
+        private async AirTaskVoid InnerCoroutine()
         {
             await this;
         }

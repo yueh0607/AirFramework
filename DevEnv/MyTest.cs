@@ -37,9 +37,9 @@ public class MyTest : MonoBehaviour, IMessageReceiver
     MyTestUnit myunit ;
 
 
-    AsyncTask Delay(int sec)
+    AirTask Delay(int sec)
     {
-        AsyncTask task = new();
+        AirTask task = new();
         
         return task;
     }

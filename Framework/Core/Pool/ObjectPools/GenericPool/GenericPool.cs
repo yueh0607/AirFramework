@@ -22,11 +22,11 @@ namespace AirFramework
         /// <summary>
         /// 创建时调用该委托对象返回引用对象
         /// </summary>
-        protected Func<T> onCreate = null;
+        public Func<T> onCreate = null;
         /// <summary>
         /// 当申请对象时，回收对象时，销毁对象时，分别调用的委托对象
         /// </summary>
-        protected Action<T> onAllocate = null, onRecycle = null, onDestroy = null;
+        public Action<T> onAllocate = null, onRecycle = null, onDestroy = null;
 
         #endregion
 

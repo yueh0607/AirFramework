@@ -6,66 +6,61 @@ using System.Security;
 
 namespace AirFramework
 {
-    public struct AsyncTaskMethodBuilder
+    public struct AsyncAirTaskMethodBuilder
     {
-        private AsyncTask task;
+        private AirTask task;
 
-        // 1. Static Create method.
+        // 1. Static Create method 编译器调用静态创建方法来创建Builder
         [DebuggerHidden]
-        public static AsyncTaskMethodBuilder Create() => new AsyncTaskMethodBuilder(AsyncTask.Create());
+        public static AsyncAirTaskMethodBuilder Create() => new AsyncAirTaskMethodBuilder(AirTask.Create(fromPool:true));
 
-        //2.Construct Method 
-        public AsyncTaskMethodBuilder(AsyncTask task) => this.task = task;
+        //2.Construct Method 构造Builder时调用
+        public AsyncAirTaskMethodBuilder(AirTask task) => this.task = task;
 
 
-        // 3. TaskLike Task property.
+        // . TaskLike Task property.
         [DebuggerHidden]
-        public AsyncTask Task => task;
+        public AirTask Task => task;
 
-        // 8. Start
+        // 3. Start 构造之后开启状态机
         [DebuggerHidden]
         public void Start<TStateMachine>(ref TStateMachine stateMachine) where TStateMachine : IAsyncStateMachine
         {
             stateMachine.MoveNext();
-            
         }
 
-
-
-        // 4. SetException
+        // 4. SetException 当出现异常时编译器调用，将异常绑定到任务
         [DebuggerHidden]
         public void SetException(Exception exception)
         {
             task.SetException(exception);
         }
 
-        // 5. SetResult
+        // 5. SetResult 当任务成功完成时编译器调用这个方法,将该任务标记为已成功完成
         [DebuggerHidden]
-
         public void SetResult()
         {
             task.SetResult();
         }
 
-        // 6. AwaitOnCompleted
+        // 6. AwaitOnCompleted  在SetResult之后编译器调用OnCompleted
         [DebuggerHidden]
 
         public void AwaitOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) where TAwaiter : INotifyCompletion where TStateMachine : IAsyncStateMachine
         {
+            task = awaiter as AirTask;
             awaiter.OnCompleted(stateMachine.MoveNext);
         }
 
-        // 7. AwaitUnsafeOnCompleted
+        // 7. AwaitUnsafeOnCompleted 同OnCompleted
         [SecuritySafeCritical]
         public void AwaitUnsafeOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) where TAwaiter : Entity, ICriticalNotifyCompletion where TStateMachine : IAsyncStateMachine
         {
-            task = awaiter as AsyncTask;
+            task = awaiter as AirTask;
             awaiter.OnCompleted(stateMachine.MoveNext);
         }
 
-        
-
-        // 9. SetStateMachine
+        // 9. SetStateMachine  将生成器与指定的状态机相关联
         [DebuggerHidden]
         public void SetStateMachine(IAsyncStateMachine stateMachine)
         {
@@ -75,22 +70,22 @@ namespace AirFramework
 
 
 
-    public struct AsyncTaskMethodBuilder<T>
+    public struct AsyncAirTaskMethodBuilder<T>
     {
-        private AsyncTask<T> task;
+        private AirTask<T> task;
         // 1. Static Create method.
 
         [DebuggerHidden]
-        public static AsyncTaskMethodBuilder<T> Create()
+        public static AsyncAirTaskMethodBuilder<T> Create()
         {
             
-            return new AsyncTaskMethodBuilder<T>(AsyncTask<T>.Create());
+            return new AsyncAirTaskMethodBuilder<T>(AirTask<T>.Create(fromPool:true));
         }
-        public AsyncTaskMethodBuilder(AsyncTask<T> task) => this.task = task;
+        public AsyncAirTaskMethodBuilder(AirTask<T> task) => this.task = task;
 
         // 2. TaskLike Task property.
         [DebuggerHidden]
-        public AsyncTask<T> Task => task;
+        public AirTask<T> Task => task;
      
 
         // 3. SetException
