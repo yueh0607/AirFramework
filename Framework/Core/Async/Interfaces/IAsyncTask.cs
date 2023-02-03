@@ -7,21 +7,21 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-
-    public interface IAsyncTaskAwaiter : ICriticalAwaiter
+    public interface IAsyncTask : ICriticalNotifyCompletion
     {
-       
-        TaskStatus Status { get; }
+        bool IsCompleted { get; set; }
+        IAsyncTask GetResult();
         void SetResult();
-
         void SetException(Exception exception);
     }
 
 
-    public interface IAsyncTaskAwaiter<TResult> : ICriticalAwiater<TResult>
+    public interface IAsyncTask<T> : ICriticalNotifyCompletion
     {
-        TaskStatus Status { get; }
+        bool IsCompleted { get; set; }
+        void SetResult(T result);
+        T GetResult();
         void SetException(Exception exception);
-        void SetResult(TResult result);
+
     }
 }

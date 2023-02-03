@@ -7,6 +7,8 @@
 
 
 using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
 
 namespace AirFramework
 {
@@ -17,6 +19,7 @@ namespace AirFramework
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
+        [DebuggerHidden]
         public static T DefaultNewCreate<T>() where T : new()
         {
             return new T();
@@ -26,6 +29,7 @@ namespace AirFramework
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
+        [DebuggerHidden]
         public static T DefaltActivatorCreate<T> ()
         {
             return Activator.CreateInstance<T>();
