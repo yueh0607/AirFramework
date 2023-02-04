@@ -17,7 +17,6 @@ namespace AirFramework
             Framework.LifeCycle.AddLifeCycle<IUpdate,UpdateHandler>();
             Framework.LifeCycle.AddLifeCycle<ILateUpdate,LateUpdateHandler>();
             Framework.LifeCycle.AddLifeCycle<IFixedUpdate,FixedUpdateHandler>();
-            //Debug.Log("LifeCycleInit");
         }
 #endif
         private void Awake()

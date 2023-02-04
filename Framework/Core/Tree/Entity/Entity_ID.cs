@@ -13,7 +13,7 @@ namespace AirFramework
             id = uid_pool.Allocate();
         }
 
-     
+        
         ~Entity()
         {
             uid_pool.Recycle(id);

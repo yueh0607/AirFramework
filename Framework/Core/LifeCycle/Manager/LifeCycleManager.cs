@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using UnityEngine;
 namespace AirFramework
 {
     public class LifeCycleManager: GlobalManager
@@ -12,11 +10,17 @@ namespace AirFramework
         private static void Register(Type messageType,Action action)=>Framework.Message.Operator(messageType).Subscribe(action);
         private static void UnRegister(Type messageType, Action action) => Framework.Message.Operator(messageType).UnSubscribe(action);
         #endregion
+
         #region 注册层
         public void Register<T>(Action cycleMethod)=>Register(typeof(T), cycleMethod);
         public void UnRegister<T>(Action cycleMethod) => UnRegister(typeof(T), cycleMethod);
         #endregion
+
         #region 解析层
+        /// <summary>
+        /// 解析并注册对象所有生命周期
+        /// </summary>
+        /// <param name="instance"></param>
         public void AnalyseAddAll(object instance)
         {
             foreach (var item in lifesAdd)
@@ -24,6 +28,10 @@ namespace AirFramework
                 item(instance);
             }
         }
+        /// <summary>
+        /// 取消对象身上全部生命周期
+        /// </summary>
+        /// <param name="instance"></param>
         public void AnalyseRemoveAll(object instance)
         {
             foreach(var item in lifesRemove)
@@ -31,8 +39,8 @@ namespace AirFramework
                 item(instance);
             }
         }
-
         #endregion
+
         #region 绑定层
 
         private List<Action<object>> lifesAdd= new (),lifesRemove = new();
