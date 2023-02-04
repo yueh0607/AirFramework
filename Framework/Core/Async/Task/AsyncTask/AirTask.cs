@@ -11,11 +11,6 @@ namespace AirFramework
     public partial class AirTask :  PoolableObject<AirTask>, IAsyncTask
     {
     
-        protected override void OnDispose()
-        {
-            
-        }
-
         /// <summary>
         /// 创建非托管池
         /// </summary>
@@ -41,10 +36,6 @@ namespace AirFramework
             Exception = null;
         }
 
-        public AirTask()
-        {
-            this.Dispose();
-        }
     }
 
     [AsyncMethodBuilder(typeof(AsyncAirTaskMethodBuilder))]
@@ -65,7 +56,6 @@ namespace AirFramework
         {
             await this;
         }
-
         /// <summary>
         /// 以协程方式运行
         /// </summary>
@@ -96,7 +86,6 @@ namespace AirFramework
             this.Exception = exception;
         }
 
-
         public void GetResult()
         {
 
@@ -112,8 +101,6 @@ namespace AirFramework
             //回收到Pool
             this.Dispose();
         }
-
-        
     }
 
 }

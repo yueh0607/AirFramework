@@ -12,11 +12,11 @@ namespace AirFramework
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         static void Init()
         {
-            Framework.LifeCycle.AddLifeCycle<IAwake>();
-            Framework.LifeCycle.AddLifeCycle<IStart>();
-            Framework.LifeCycle.AddLifeCycle<IUpdate>();
-            Framework.LifeCycle.AddLifeCycle<ILateUpdate>();
-            Framework.LifeCycle.AddLifeCycle<IFixedUpdate>();
+            Framework.LifeCycle.AddLifeCycle<IAwake,AwakeHandler>();
+            Framework.LifeCycle.AddLifeCycle<IStart,StartHandler>();
+            Framework.LifeCycle.AddLifeCycle<IUpdate,UpdateHandler>();
+            Framework.LifeCycle.AddLifeCycle<ILateUpdate,LateUpdateHandler>();
+            Framework.LifeCycle.AddLifeCycle<IFixedUpdate,FixedUpdateHandler>();
             //Debug.Log("LifeCycleInit");
         }
 #endif

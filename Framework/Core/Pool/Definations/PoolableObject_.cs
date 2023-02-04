@@ -13,7 +13,7 @@ namespace AirFramework
     /// 用于实现支持using释放，可以自主回收到池的类型
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public abstract class PoolableObject<T>:Unit,IPoolable where T:class,new()
+    public abstract class PoolableObject<T>:NotDisposedUnit,IPoolable where T:class,new()
     {
 
         /// <summary>
@@ -39,14 +39,6 @@ namespace AirFramework
         /// </summary>
         public abstract void OnRecycle();
 
-  
-        /// <summary>
-        /// 调用立刻回收对象到池，不会再刷新Disposed属性
-        /// </summary>
-        public override void Dispose()
-        {
-            OnDispose();
-        }
 
         /// <summary>
         /// 回收时调用，自动进入对象池

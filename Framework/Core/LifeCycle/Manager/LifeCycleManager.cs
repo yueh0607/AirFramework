@@ -12,106 +12,63 @@ namespace AirFramework
         private static void Register(Type messageType,Action action)=>Framework.Message.Operator(messageType).Subscribe(action);
         private static void UnRegister(Type messageType, Action action) => Framework.Message.Operator(messageType).UnSubscribe(action);
         #endregion
-
-        #region 消息层泛型
-        /// <summary>
-        /// 在消息层注册消息
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="action"></param>
-        public void Register<T>(Action action) where T : ILifeCycle => Register(typeof(T), action);
-        /// <summary>
-        /// 在消息层移除
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="action"></param>
-        public void UnRegister<T>(Action action) where T : ILifeCycle => UnRegister(typeof(T), action);
-        /// <summary>
-        /// 发布到消息层
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        public void Publish<T>() where T : ILifeCycle => Publish(typeof(T));
+        #region 注册层
+        public void Register<T>(Action cycleMethod)=>Register(typeof(T), cycleMethod);
+        public void UnRegister<T>(Action cycleMethod) => UnRegister(typeof(T), cycleMethod);
         #endregion
-
         #region 解析层
-        /// <summary>
-        /// 将对象的单一生命周期加入生命循环
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="instance"></param>
-        public void Add<T>(object instance) where T : ILifeCycle
-        {
-            if (instance is T) ((T)instance)?.OnLifeCycleRegister();
-            //UnityEngine.Debug.Log(Framework.Message.Operator<T>().Value.CountAll);
-        }
-        /// <summary>
-        /// 将对象的单一生命周期移除生命循环
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="instance"></param>
-        public void Remove<T>(object instance) where T : ILifeCycle
-        {
-            if (instance is T) ((T)instance)?.OnLifeCycleUnRegister();
-        }
-
-        /// <summary>
-        /// 解析添加对象生命周期
-        /// </summary>
-        /// <param name="instance"></param>
         public void AnalyseAddAll(object instance)
         {
-            if (instance == null) return;
-
-            foreach (var add in lifesAdd)
+            foreach (var item in lifesAdd)
             {
-                add(instance);
+                item(instance);
             }
         }
-        /// <summary>
-        /// 解析移除生命周期
-        /// </summary>
-        /// <param name="instance"></param>
         public void AnalyseRemoveAll(object instance)
         {
-            if (instance == null) return;
-
-            foreach (var remove in lifesRemove)
+            foreach(var item in lifesRemove)
             {
-                remove(instance);
+                item(instance);
             }
         }
 
         #endregion
-
         #region 绑定层
-        private List<Action<object>> lifesAdd = new ();
-    
-        private List<Action<object>> lifesRemove = new();
+
+        private List<Action<object>> lifesAdd= new (),lifesRemove = new();
+
+
+        private Dictionary<Type, IHandler> cycles = new Dictionary<Type, IHandler>();
 
         public override string Name =>"LifeCycleManager";
 
+
+
         /// <summary>
-        /// 添加生命周期到生命容器
+        /// 添加生命周期,每个生命周期都应该通过此函数添加，从而支持对象生命周期的解析
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        public void AddLifeCycle<T>() where T : ILifeCycle
+        public void AddLifeCycle<T, K>() where T : ILifeCycle where K : Handler<T>
         {
-            lifesAdd.Add((x) => { Add<T>(x); });
-            lifesRemove.Add((x) => { Remove<T>(x); });
+            var handler = Activator.CreateInstance<K>();
+            cycles.Add(typeof(T), handler);
+            lifesAdd.Add((x) => { if(x is T) handler.OnLifeCycleRegister((T)x); }) ;
+            lifesAdd.Add((x) => { if (x is T) handler.OnLifeCycleUnRegister((T)x); });
         }
         /// <summary>
-        /// 移除生命周期
+        /// 每个生命周期都应该在其他位置调用Publish，否则该生命虽然被解析但是不会生效
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        public void RemoveLifeCycle<T>() where T : ILifeCycle
+        public void Publish<T>() where T : ILifeCycle
         {
-            lifesAdd.Remove((x) => { Add<T>(x); });
-            lifesRemove.Remove((x) => { Remove<T>(x); });
+            Publish(typeof(T));
         }
 
         protected override void OnDispose()
         {
-            throw new NotImplementedException();
+            lifesAdd.Clear();
+            lifesRemove.Clear();
+            cycles.Clear();
         }
         #endregion
     }
