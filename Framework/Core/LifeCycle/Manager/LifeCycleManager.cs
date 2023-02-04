@@ -53,7 +53,7 @@ namespace AirFramework
             var handler = Activator.CreateInstance<K>();
             cycles.Add(typeof(T), handler);
             lifesAdd.Add((x) => { if(x is T) handler.OnLifeCycleRegister((T)x); }) ;
-            lifesAdd.Add((x) => { if (x is T) handler.OnLifeCycleUnRegister((T)x); });
+            lifesRemove.Add((x) => { if (x is T) handler.OnLifeCycleUnRegister((T)x); });
         }
         /// <summary>
         /// 每个生命周期都应该在其他位置调用Publish，否则该生命虽然被解析但是不会生效

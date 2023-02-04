@@ -21,11 +21,11 @@ namespace AirFramework
 
         void IUpdate.Update()
         {
-
+            curent = GetEnvTime();
         }
         void IFixedUpdate.FixedUpdate()
         {
-
+            curent = GetEnvTime();
         }
 
     }

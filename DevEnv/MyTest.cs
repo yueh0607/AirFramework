@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 public interface MyMessage: IMessage{}
 public class MyTestUnit: IUpdate,IPoolable
 {
-    public IObjectPool ThisPool { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public bool IsRecycled { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+    public IObjectPool ThisPool { get; set ; }
+    public bool IsRecycled { get ; set ; }
 
     public MyTestUnit()
     {
@@ -40,22 +40,10 @@ public class MyTest : MonoBehaviour, IMessageReceiver
     MyTestUnit myunit ;
 
 
-    AirTask Delay(int sec)
-    {
-        AirTask task = new();
-        
-        return task;
-    }
-
-    async void TestAsync()
-    {
-
-
-    }
 
     void Awake()
     {
-        //myunit =Framework.Pool.Allocate<MyTestUnit>();
+        myunit =Framework.Pool.Allocate<MyTestUnit>();
         
         //TestAsync();
 

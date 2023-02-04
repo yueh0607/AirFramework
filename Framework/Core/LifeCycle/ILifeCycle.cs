@@ -9,13 +9,6 @@ namespace AirFramework
     /// </summary>
     public interface ILifeCycle: IMessage
     {
-        /// <summary>
-        /// 接口需要显式实现该方法，在方法内调用 Framework.LifeCycle.Register<T>(Action); T为接口类型
-        /// </summary>
-        void OnLifeCycleRegister() { }
-        /// <summary>
-        /// 接口需要显式实现该方法，在方法内调用 Framework.LifeCycle.UnRegister<T>(Action); T为接口类型
-        /// </summary>
-        void OnLifeCycleUnRegister() { }
+        
     }
 }
