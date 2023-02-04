@@ -28,15 +28,13 @@ namespace AirFramework
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         
-        public IGenericPool<T> GetPool<T>() where T : class, IPoolable
+        public IGenericPool<T> GetPool<T>() where T : class,IPoolable
         {
             if (!pools.ContainsKey(typeof(T)))
             {
                 pools.Add(typeof(T), new LifeCyclePool<T>(
                         Extensions.DefaltActivatorCreate<T>,
-                        null,
-                        (T item) => { item.OnRecycle(); },
-                        (T item) => { item.OnAllocate(); }
+                        null
                         ));
             }
             return pools[typeof(T)] as IGenericPool<T>;

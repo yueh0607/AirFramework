@@ -11,7 +11,7 @@ namespace AirFramework
     public partial class Extensions
     {
         [DebuggerHidden,MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static T CheckRecycled<T>(this T poolObj) where T : IPoolBindable
+        public static T CheckRecycled<T>(this T poolObj) where T : IPoolable
         {
             return poolObj.IsRecycled? throw new InvalidOperationException("This Pool Object is invalid"):poolObj; 
         }

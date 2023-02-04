@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 public interface MyMessage: IMessage{}
 public class MyTestUnit: IUpdate,IPoolable
 {
+    public IObjectPool ThisPool { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+    public bool IsRecycled { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+
     public MyTestUnit()
     {
         //Framework.LifeCycle.AnalyseAddAll(this);

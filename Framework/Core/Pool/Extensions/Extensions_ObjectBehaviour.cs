@@ -16,21 +16,12 @@ namespace AirFramework
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="item"></param>
-        public static void Recycle<T>(this T item) where T : class,IPoolable
+        public static void Recycle(this IPoolable item)
         {
-            Framework.Pool.Recycle(item);
+            item.ThisPool.RecycleObj(item);
         }
 
-        /// <summary>
-        /// 允许任意实现IAutoPoolable且从源池申请的对象将自己回收到源池内，
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="item"></param>
-        public static void RecycleSelf<T>(this T item) where T : class,IPoolBindable
-        {
-            if(item.ThisPool!= null&&item.ThisPool.Disposed==false&&item.IsRecycled==false)
-                item.ThisPool.RecycleObj(item);
-        }
+
    
     }
 }

@@ -2,7 +2,7 @@
  * Author : yueh0607
  * Date : 2023.1.15
  * Description : 
- * 实现存储System.Object类型的通用池，该池提供了统一规范的对象池功能，处理了IAutoPoolable相关的逻辑
+ * 实现存储System.Object类型的通用池，该池提供了统一规范的对象池功能
  */
 
 using System;

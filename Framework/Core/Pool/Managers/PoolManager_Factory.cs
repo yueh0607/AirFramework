@@ -18,13 +18,7 @@ namespace AirFramework
 
 
         #region 非托管池 - Factory
-        /// <summary>
-        /// 创建非托管通用池
-        /// </summary>
-        public GenericPool<T> CreateGenericPool<T>(Func<T> onCreate = null, Action<T> onDestroy = null) where T : class, IPoolable
-        {
-            return CreateGenericPool<T>(onCreate, (item) => { item.OnRecycle(); },(item)=>item.OnAllocate(), onDestroy);
-        }
+
         /// <summary>
         /// 创建非托管通用池
         /// </summary>
@@ -40,20 +34,6 @@ namespace AirFramework
         }
         
 
-
-        /// <summary>
-        /// 创建高效纯净池
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="onCreate"></param>
-        /// <param name="onDestroy"></param>
-        /// <param name="onRecycle"></param>
-        /// <param name="onAllocate"></param>
-        /// <returns></returns>
-        public PurePool<T> CreatePurePool<T>(Func<T> onCreate = null, Action<T> onDestroy = null) where T:class,IPoolable
-        {
-            return CreatePurePool<T>(onCreate, (item) => { item.OnRecycle(); }, (item) => item.OnAllocate(), onDestroy);
-        }
         /// <summary>
         /// 创建高效纯净池
         /// </summary>
@@ -76,19 +56,6 @@ namespace AirFramework
 
 
 
-        /// <summary>
-        /// 创建带自动绑定的对象池
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="onCreate"></param>
-        /// <param name="onDestroy"></param>
-        /// <param name="onRecycle"></param>
-        /// <param name="onAllocate"></param>
-        /// <returns></returns>
-        public AutoBindPool<T> CreateAutoBindablePool<T>(Func<T> onCreate = null, Action<T> onDestroy = null) where T : class,IPoolable,IPoolBindable
-        {
-            return CreateAutoBindablePool(onCreate, (item) => { item.OnRecycle(); }, (item) => item.OnAllocate(), onDestroy);
-        }
 
         /// <summary>
         /// 创建带自动绑定的对象池
@@ -99,36 +66,19 @@ namespace AirFramework
         /// <param name="onRecycle"></param>
         /// <param name="onAllocate"></param>
         /// <returns></returns>        
-        public AutoBindPool<T> CreateAutoBindablePool<T>(Func<T> onCreate = null, Action<T> onDestroy = null, Action<T> onRecycle = null, Action<T> onAllocate = null)
-            where T :class, IPoolBindable
+        public AutoBindPool<T> CreateAutoBindablePool<T>(Func<T> onCreate = null, Action<T> onDestroy = null)
+            where T :class, IPoolable
         { 
             
             AutoBindPool<T> pool = new AutoBindPool<T>(
                         onCreate ?? Extensions.DefaltActivatorCreate<T>,
-                        onDestroy,
-                        onRecycle,
-                        onAllocate
+                        onDestroy
+
                         );
 
             return pool;
         }
 
-
-
-
-        /// <summary>
-        /// 创建带自动绑定且可以自动处理生命周期的池
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="onCreate"></param>
-        /// <param name="onDestroy"></param>
-        /// <param name="onRecycle"></param>
-        /// <param name="onAllocate"></param>
-        /// <returns></returns>
-        public LifeCyclePool<T> CreateLifeCyclePool<T>(Func<T> onCreate = null, Action<T> onDestroy = null) where T:class,IPoolable,ILifeCycle
-        {
-            return CreateLifeCyclePool(onCreate, (item) => { item.OnRecycle(); }, (item) => item.OnAllocate(), onDestroy);
-        }
 
         /// <summary>
         /// 创建带自动绑定且可以自动处理生命周期的池
@@ -139,18 +89,12 @@ namespace AirFramework
         /// <param name="onRecycle"></param>
         /// <param name="onAllocate"></param>
         /// <returns></returns> 
-        public LifeCyclePool<T> CreateLifeCyclePool<T>(Func<T> onCreate = null, Action<T> onDestroy = null, Action<T> onRecycle = null, Action<T> onAllocate = null) where T : class,ILifeCycle
+        public LifeCyclePool<T> CreateLifeCyclePool<T>(Func<T> onCreate = null, Action<T> onDestroy = null) where T : class,IPoolable
         {
-            LifeCyclePool<T> pool = new LifeCyclePool<T>(
-                        onCreate ?? Extensions.DefaltActivatorCreate<T>,
-                        onDestroy,
-                        onRecycle,
-                        onAllocate
-                        );
+            LifeCyclePool<T> pool = new LifeCyclePool<T>(onCreate ?? Extensions.DefaltActivatorCreate<T>, onDestroy);
             return pool;
         }
        
-        
         /// <summary>
         /// 创建ID池
         /// </summary>
