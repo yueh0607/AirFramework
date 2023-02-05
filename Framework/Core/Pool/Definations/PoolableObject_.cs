@@ -30,12 +30,12 @@ namespace AirFramework
 
 
         /// <summary>
-        /// 当获取时调用
+        /// 当申请时由对象池调用,如非必要请勿主动调用
         /// </summary>
         public abstract void OnAllocate();
 
         /// <summary>
-        /// 当回收时调用
+        /// 当回收时由对象池调用，如非必要请勿主动调用
         /// </summary>
         public abstract void OnRecycle();
 

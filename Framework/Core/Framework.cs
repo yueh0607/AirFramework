@@ -38,6 +38,7 @@ namespace AirFramework
         public static LifeCycleManager LifeCycle { get; } = new LifeCycleManager();
 
 
+     
         //public static LogManager Log { get; } = new LogManager();
     }
 }

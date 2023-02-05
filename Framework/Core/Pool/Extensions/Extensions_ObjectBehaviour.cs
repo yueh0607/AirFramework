@@ -21,7 +21,16 @@ namespace AirFramework
             item.ThisPool.RecycleObj(item);
         }
 
+        /// <summary>
+        /// 从对象池获取对象
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="item"></param>
+        /// <returns></returns>
+        public static T Create<T>(this object item) where T : class,IPoolable
+        {
+            return Framework.Pool.Allocate<T>();
+        }
 
-   
     }
 }

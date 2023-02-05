@@ -4,12 +4,11 @@ using UnityEngine;
 
 using AirFramework;
 using System.Threading.Tasks;
+using UnityEngine.Pool;
 
 public interface MyMessage: IMessage{}
-public class MyTestUnit: IUpdate,IPoolable
+public class MyTestUnit: PoolableObject<MyTestUnit>,IUpdate,IStart
 {
-    public IObjectPool ThisPool { get; set ; }
-    public bool IsRecycled { get ; set ; }
 
     public MyTestUnit()
     {
@@ -20,12 +19,17 @@ public class MyTestUnit: IUpdate,IPoolable
         Debug.Log("Receive!");
     }
 
-    public void OnRecycle()
+    public override void OnAllocate()
     {
         
     }
 
-    public void OnAllocate()
+    public override void OnRecycle()
+    {
+        
+    }
+
+    void IStart.Start()
     {
         
     }
@@ -40,10 +44,31 @@ public class MyTest : MonoBehaviour, IMessageReceiver
     MyTestUnit myunit ;
 
 
+    void OnTime(float t)
+    {
+        Debug.Log(t);
+    }
+    void OnCom()
+    {
+
+
+
+    }
+
+    class People
+    {
+        public string name;
+        public int age;
+    }
+
+    struct Vector222
+    {
+        public float x; 
+        public float y;
+    }
 
     void Awake()
     {
-        myunit =Framework.Pool.Allocate<MyTestUnit>();
         
         //TestAsync();
 
