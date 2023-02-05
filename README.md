@@ -1,5 +1,5 @@
 # AirFramework
-Unity3D游戏开发中小型游戏框架，同时Core部分可用于.Net开发
+Unity3D游戏开发中小型游戏框架
 
 # 整体特点：
 - 极低的学习成本：每个模块的超级管理器均采用单例模式，根据IDE提示通过Framework.XXXX一键调用，无效记忆各种复杂API。
