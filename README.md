@@ -15,12 +15,10 @@ Unity3D游戏开发中小型游戏框架，同时Core部分可用于.Net开发
 - 全局消息机制 
 - 生命周期管理
 - Unity异步编程支持(未完)
-
+- 回调计时器
 # 未来可能实现/支持的内容(排序不代表优先级)：
 
-- 计时器
-- MVC编程规范/MVVM编程规范/UI管理器
-- 实体对象树（类似Qt对Entity:Unit进行层次管理）
+- MVVM编程规范/UI管理器
 - 日志记录(自建)
 - 资源管理(Addressable)
 - 热更新与Hotfix (HybirdCLR or xlua or ILRuntime)
