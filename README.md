@@ -19,18 +19,19 @@ Unity3D游戏开发中小型游戏框架，同时Core部分可用于.Net开发
 # 未来可能实现/支持的内容(排序不代表优先级)：
 
 - MVVM编程规范/UI管理器
-- 日志记录(自建)
+- 日志记录
 - 资源管理(Addressable)
 - 热更新与Hotfix (HybirdCLR or xlua or ILRuntime)
-- 简单网络模块(TCP/UDP/HTTP的简易支持)
-- 代码状态机与行为树
+- 简单网络模块(TCP/UDP/HTTP/Photon等简易支持)
+- 代码状态机/行为树
 - csv/json/binary/excel等序列化
 - SDK管理器与快捷接入
-- 游戏AI快速创建支持(深度学习/机器学习)
+- 游戏AI创建支持(深度学习/机器学习)
 - 多语言管理
 - 按键绑定/触控/手势管理
 - 类DoTween模块
 - 音效管理器
+- 编辑器拓展
 
 # 参考与推荐项目
 - [WorldTreeFramework](https://github.com/SDHK/WorldTreeFramework)
