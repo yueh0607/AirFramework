@@ -9,11 +9,14 @@ namespace AirFramework
     [AsyncMethodBuilder(typeof(AsyncAirTaskCompletedMethodBuilder))]
     public class AirTaskCompleted : PoolableObject<AirTaskCompleted>, ICriticalNotifyCompletion
     {
+        public static void Create() =>Framework.Pool.Allocate<AirTaskCompleted>();
+
         [DebuggerHidden]
         public AirTaskCompleted GetAwaiter() => this;
 
         [DebuggerHidden]
         public bool IsCompleted => true;
+
 
         [DebuggerHidden]
         public void GetResult()
@@ -30,15 +33,15 @@ namespace AirFramework
         public void UnsafeOnCompleted(Action continuation)
         {
         }
-
+        [DebuggerHidden]
         public override void OnAllocate()
         {
             
         }
-
+        [DebuggerHidden]
         public override void OnRecycle()
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

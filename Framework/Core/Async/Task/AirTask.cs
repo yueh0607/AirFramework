@@ -10,9 +10,9 @@ namespace AirFramework
   
     public partial class AirTask :  PoolableObject<AirTask>, IAsyncTask
     {
-    
+        [DebuggerHidden]
         internal static AutoBindPool<AirTask> AirTaskPool { get; } = Framework.Pool.CreateAutoBindablePool(Extensions.DefaultNewCreate<AirTask>, null);
-
+        [DebuggerHidden]
         public static AirTask Create(bool fromPool)
         {
             if (fromPool)
@@ -21,16 +21,17 @@ namespace AirFramework
             }
             return new AirTask();
         }
-
+        [DebuggerHidden]
         public override void OnAllocate()
         {
             
         }
-
+        [DebuggerHidden]
         public override void OnRecycle()
         {
             continuation = null;
             Exception = null;
+            IsCompleted= false;
         }
 
     }
@@ -38,13 +39,14 @@ namespace AirFramework
     [AsyncMethodBuilder(typeof(AsyncAirTaskMethodBuilder))]
     public partial class AirTask : PoolableObject<AirTask>, IAsyncTask
     {
-        
-        
+
+        [DebuggerHidden]
         public AirTask GetAwaiter() => this;
 
         public Action continuation;
+        [DebuggerHidden]
         public Exception Exception { get; private set; }
-
+        [DebuggerHidden]
         public bool IsCompleted { get; set; }
         
 
@@ -62,13 +64,13 @@ namespace AirFramework
             InnerCoroutine().Coroutine();
         }
 
-
+        [DebuggerHidden]
 
         public void OnCompleted(Action continuation)
         {
             UnsafeOnCompleted(continuation);
         }
-
+        [DebuggerHidden]
         public void UnsafeOnCompleted(Action continuation)
         {
             this.continuation = continuation;
@@ -78,11 +80,12 @@ namespace AirFramework
         /// 当执行出现异常时状态机调用
         /// </summary>
         /// <param name="exception"></param>
+        [DebuggerHidden]
         public void SetException(Exception exception)
         {
             this.Exception = exception;
         }
-
+        [DebuggerHidden]
         public void GetResult()
         {
 
@@ -91,8 +94,10 @@ namespace AirFramework
         /// <summary>
         /// 结束当前await，如果不手动结束，状态机也会调用结束
         /// </summary>
+        [DebuggerHidden]
         public void SetResult()
         {
+            //IsCompleted= true;
             //执行await以后的代码
             continuation?.Invoke();
             //回收到Pool

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public class UIDPool : Unit
+    public class UIDPool : Unit,IPool
     {
 
         private UIDGenerator generator = new UIDGenerator(100);

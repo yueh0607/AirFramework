@@ -6,15 +6,12 @@ using AirFramework;
 using System.Threading.Tasks;
 using UnityEngine.Pool;
 using System;
+using Unity.Collections;
 
 public interface MyMessage: IMessage{}
 public class MyTestUnit: PoolableObject<MyTestUnit>,IUpdate,IStart
 {
 
-    public MyTestUnit()
-    {
-        //Framework.LifeCycle.AnalyseAddAll(this);
-    }
     void IUpdate.Update()
     {
         Debug.Log("Receive!");
@@ -35,9 +32,6 @@ public class MyTestUnit: PoolableObject<MyTestUnit>,IUpdate,IStart
         
     }
 
-    ~MyTestUnit()
-    {//Framework.LifeCycle.AnalyseRemoveAll(this);
-    }
 }
 
 public class MyTest : MonoBehaviour, IMessageReceiver
@@ -46,19 +40,25 @@ public class MyTest : MonoBehaviour, IMessageReceiver
 
 
 
-    public async AirTask Delay(Action act)
+
+   public async void AAA()
     {
-        var timer = this.Create<TimerCall>();
-        var task = this.Create<AirTask>();
-        timer.OnCompleted += act;
-        timer.OnCompleted += task.SetResult;
-        
-        timer.Start(new TimeSpan(0,0,5));
+        await Async.Delay(1);
+        print(0);
+        await Async.Delay(1);
+
+        print("End");
     }
-   
+
     void Awake()
     {
-       Delay(()=>Debug.Log(100));
+        Async.Delay(3, () => print(2)).Coroutine();
+        AAA();
+    }
+
+    void Start()
+    {
+        
     }
    
 }

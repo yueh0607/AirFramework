@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
+    /// <summary>
+    /// 到达指定时间自动回调
+    /// </summary>
     public class TimerCall : PoolableObject<TimerCall>,IUpdate
     {
 

@@ -7,7 +7,10 @@
  * 在设计思路里Unit基类的Disposed代表对象已经被释放，此时不该继续使用这个对象，即时对象的实例仍然被用户持有
  */
 
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using UnityEngine.Pool;
 
 namespace AirFramework
 {
@@ -33,6 +36,26 @@ namespace AirFramework
         /// 当调用Dispose时调用
         /// </summary>
         protected abstract void OnDispose();
+
+
+
+        //private static UIDPool idpool = new UIDPool(100);
+        
+        //private ulong id;
+        ///// <summary>
+        ///// 每个对象不会重复的全局ID
+        ///// </summary>
+        //public ulong ID => id;
+
+        //~Unit()
+        //{
+        //    idpool.Recycle(id);
+  
+        //}
+        //public Unit()
+        //{
+        //    id = idpool.Allocate();
+        //}
 
 
 

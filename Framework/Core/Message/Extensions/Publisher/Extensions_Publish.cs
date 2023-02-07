@@ -13,10 +13,11 @@ namespace AirFramework
         {
             var events = container?.Value.Get<Action>();
             if (events == null ||events.Count==0) return;
-            foreach (var act in events)
+            for(int i=0; i<events.Count; i++)
             {
-                (act as Action)?.Invoke();
+                (events[i] as Action)?.Invoke();
             }
+   
         }
         /// <summary>
         /// 发布
@@ -26,18 +27,18 @@ namespace AirFramework
         {
             var events = container?.Value.Get<Action<T1>>();
             if (events == null || events.Count == 0) return;
-            foreach (var act in events)
+            for (int i = 0; i < events.Count; i++)
             {
-                (act as Action<T1>)?.Invoke(arg1);
+                (events[i] as Action<T1>)?.Invoke(arg1);
             }
         }
         public static void Publish<T1, T2>(this UnitDelegateGroup container, T1 arg1, T2 arg2)
         {
             var events = container?.Value.Get<Action<T1, T2>>();
             if (events == null || events.Count == 0) return;
-            foreach (var act in events)
+            for (int i = 0; i < events.Count; i++)
             {
-                (act as Action<T1, T2>)?.Invoke(arg1, arg2);
+                (events[i] as Action<T1,T2>)?.Invoke(arg1,arg2);
             }
         }
         /// <summary>
@@ -48,18 +49,18 @@ namespace AirFramework
         {
             var events = container?.Value.Get<Action<T1, T2, T3>>();
             if (events == null || events.Count == 0) return;
-            foreach (var act in events)
+            for (int i = 0; i < events.Count; i++)
             {
-                (act as Action<T1, T2, T3>)?.Invoke(arg1, arg2, arg3);
+                (events[i] as Action<T1, T2,T3>)?.Invoke(arg1, arg2,arg3);
             }
         }
         public static void Publish<T1, T2, T3, T4>(this UnitDelegateGroup container, T1 arg1, T2 arg2, T3 arg3, T4 arg4)
         {
             var events = container?.Value.Get<Action<T1, T2, T3, T4>>();
             if (events == null || events.Count == 0) return;
-            foreach (var act in events)
+            for (int i = 0; i < events.Count; i++)
             {
-                (act as Action<T1, T2, T3, T4>)?.Invoke(arg1, arg2, arg3, arg4);
+                (events[i] as Action<T1, T2, T3,T4>)?.Invoke(arg1, arg2, arg3,arg4);
             }
         }
         /// <summary>
@@ -70,9 +71,9 @@ namespace AirFramework
         {
             var events = container?.Value.Get<Action<T1, T2, T3, T4, T5>>();
             if (events == null || events.Count == 0) return;
-            foreach (var act in events)
+            for (int i = 0; i < events.Count; i++)
             {
-                (act as Action<T1, T2, T3, T4, T5>)?.Invoke(arg1, arg2, arg3, arg4, arg5);
+                (events[i] as Action<T1, T2, T3, T4,T5>)?.Invoke(arg1, arg2, arg3, arg4,arg5);
             }
         }
     }

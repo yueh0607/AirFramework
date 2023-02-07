@@ -1,81 +1,88 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace AirFramework
 {
     public static partial class Extensions
     {
 
-        public static bool CallAll<T1>(this UnitDelegateGroup container, out UnitList<T1> result)
+        public static UnitList<T1> CallAll<T1>(this UnitDelegateGroup container)
         {
             var events = container?.Value.Get<Func<T1>>();
-            result = new();
-            if (events == null) return false;
+            var result = Framework.Pool.Allocate<UnitList<T1>>();
+            if (events == null) return result;
 
-            foreach (var func in events)
+            for (int i = 0; i < events.Count; i++)
             {
-                result.Value.Add((func as Func<T1>).Invoke());
+                result.Value.Add((events[i] as Func<T1>).Invoke());
             }
-            return true;
+            return result;
         }
-        public static bool CallAll<T1,T2>(this UnitDelegateGroup container,T1 arg1, out UnitList<T2> result)
+
+        public static UnitList<T2> CallAll<T1, T2>(this UnitDelegateGroup container, T1 arg1)
         {
             var events = container?.Value.Get<Func<T1, T2>>();
-            result = new();
-            if (events == null) return false;
+            var result = Framework.Pool.Allocate<UnitList<T2>>();
+            if (events == null) return result;
 
-            foreach (var func in events)
+            for (int i = 0; i < events.Count; i++)
             {
-                result.Value.Add((func as Func<T1,T2>).Invoke(arg1));
+                result.Value.Add((events[i] as Func<T1, T2>).Invoke(arg1));
             }
-            return true;
+            return result;
         }
-        public static bool CallAll<T1, T2,T3>(this UnitDelegateGroup container, T1 arg1,T2 arg2, out UnitList<T3> result)
+
+        public static UnitList<T3> CallAll<T1, T2, T3>(this UnitDelegateGroup container, T1 arg1, T2 arg2)
         {
             var events = container?.Value.Get<Func<T1, T2, T3>>();
-            result = new();
-            if (events == null) return false;
+            var result = Framework.Pool.Allocate<UnitList<T3>>();
+            if (events == null) return result;
 
-            foreach (var func in events)
+            for (int i = 0; i < events.Count; i++)
             {
-                result.Value.Add((func as Func<T1, T2,T3>).Invoke(arg1,arg2));
+                result.Value.Add((events[i] as Func<T1, T2, T3>).Invoke(arg1, arg2));
             }
-            return true;
+            return result;
         }
-        public static bool CallAll<T1, T2, T3,T4>(this UnitDelegateGroup container, T1 arg1, T2 arg2,T3 arg3, out UnitList<T4> result)
+
+        public static UnitList<T4> CallAll<T1, T2, T3, T4>(this UnitDelegateGroup container, T1 arg1, T2 arg2, T3 arg3)
         {
             var events = container?.Value.Get<Func<T1, T2, T3, T4>>();
-            result = new();
-            if (events == null) return false;
+            var result = Framework.Pool.Allocate<UnitList<T4>>();
+            if (events == null) return result;
 
-            foreach (var func in events)
+            for (int i = 0; i < events.Count; i++)
             {
-                result.Value.Add((func as Func<T1, T2, T3,T4>).Invoke(arg1, arg2,arg3));
+                result.Value.Add((events[i] as Func<T1, T2, T3, T4>).Invoke(arg1, arg2, arg3));
             }
-            return true;
+            return result;
         }
-        public static bool CallAll<T1, T2, T3, T4,T5>(this UnitDelegateGroup container, T1 arg1, T2 arg2, T3 arg3,T4 arg4, out UnitList<T5> result)
+
+        public static UnitList<T5> CallAll<T1, T2, T3, T4, T5>(this UnitDelegateGroup container, T1 arg1, T2 arg2, T3 arg3, T4 arg4)
         {
-            var events = container?.Value.Get<Func<T1, T2, T3, T4, T5>>();
-            result = new();
-            if (events == null) return false;
+            var events = container?.Value.Get<Func<T1, T2, T3, T4,T5>>();
+            var result = Framework.Pool.Allocate<UnitList<T5>>();
+            if (events == null) return result;
 
-            foreach (var func in events)
+            for (int i = 0; i < events.Count; i++)
             {
-                result.Value.Add((func as Func<T1, T2, T3, T4,T5>).Invoke(arg1, arg2, arg3,arg4));
+                result.Value.Add((events[i] as Func<T1, T2, T3, T4,T5>).Invoke(arg1, arg2, arg3,arg4));
             }
-            return true;
+            return result;
         }
-        public static bool CallAll<T1, T2, T3, T4, T5,T6>(this UnitDelegateGroup container, T1 arg1, T2 arg2, T3 arg3, T4 arg4,T5 arg5, out UnitList<T6> result)
+
+        public static UnitList<T6> CallAll<T1, T2, T3, T4, T5, T6>(this UnitDelegateGroup container, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5)
         {
-            var events = container?.Value.Get<Func<T1, T2, T3, T4, T5, T6>>();
-            result = new();
-            if (events == null) return false;
+            var events = container?.Value.Get<Func<T1, T2, T3, T4, T5,T6>>();
+            var result = Framework.Pool.Allocate<UnitList<T6>>();
+            if (events == null) return result;
 
-            foreach (var func in events)
+            for (int i = 0; i < events.Count; i++)
             {
-                result.Value.Add((func as Func<T1, T2, T3, T4, T5,T6>).Invoke(arg1, arg2, arg3, arg4,arg5));
+                result.Value.Add((events[i] as Func<T1, T2, T3, T4, T5,T6>).Invoke(arg1, arg2, arg3, arg4,arg5));
             }
-            return true;
+            return result;
         }
+
     }
 }

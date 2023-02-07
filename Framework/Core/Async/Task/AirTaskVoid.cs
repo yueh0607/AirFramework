@@ -13,7 +13,7 @@ namespace AirFramework
         }
 
         [DebuggerHidden]
-        public bool IsCompleted => true;
+        public bool IsCompleted { get;set; }
 
         [DebuggerHidden]
         public void OnCompleted(Action continuation)
