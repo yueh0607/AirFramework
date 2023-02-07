@@ -5,7 +5,7 @@ using System;
 namespace AirFramework
 {
 
-    public static partial class Extensions
+    public static partial class Message
     {
         private const string errorInfoCall = "No such message with in this Operator";
 

@@ -70,6 +70,7 @@ namespace AirFramework
             Stop();
             //重置计时
             watch.Reset();
+    
             span = default;
             //重置事件
             if (!onlyTime)

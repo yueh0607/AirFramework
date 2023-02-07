@@ -3,7 +3,7 @@
 using UnityEngine;
 namespace AirFramework
 {
-    public static partial class Extensions
+    public static partial class Pool
     {
 
         /// <summary>

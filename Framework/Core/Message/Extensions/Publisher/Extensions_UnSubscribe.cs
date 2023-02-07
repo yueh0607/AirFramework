@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace AirFramework
 {
-    public static partial class Extensions
+    public static partial class Message
     {
         /// <summary>
         /// 退订

@@ -12,7 +12,7 @@ using System.Runtime.CompilerServices;
 
 namespace AirFramework
 {
-    public static partial class Extensions
+    public static partial class Pool
     {
         /// <summary>
         /// 使用new创建T对象

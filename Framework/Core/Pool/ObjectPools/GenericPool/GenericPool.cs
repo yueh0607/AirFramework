@@ -67,7 +67,7 @@ namespace AirFramework
         
         public GenericPool(Func<T> onCreate = null, Action<T> onDestroy = null, Action<T> onRecycle = null, Action<T> onAllocate = null)
         {
-            this.onCreate = onCreate ?? Extensions.DefaltActivatorCreate<T>;
+            this.onCreate = onCreate ?? Pool.DefaltActivatorCreate<T>;
             this.onDestroy += onDestroy;
             this.onRecycle += onRecycle;
             this.onAllocate += onAllocate;

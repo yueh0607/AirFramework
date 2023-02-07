@@ -18,8 +18,8 @@ namespace AirFramework
             var task = Framework.Pool.Allocate<AirTask>();
             var timer = Framework.Pool.Allocate<TimerCall>();
             timer.OnCompleted += task.SetResult;
-            timer.OnCompleted += timer.Dispose;
             timer.OnCompleted += endAction;
+            timer.OnCompleted += timer.Dispose;
             timer.Start(TimeSpan.FromSeconds(seconds));
             return task;
         }

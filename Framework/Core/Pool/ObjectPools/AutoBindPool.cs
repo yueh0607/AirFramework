@@ -15,23 +15,27 @@ namespace AirFramework
     /// <typeparam name="T"></typeparam>
     public class AutoBindPool<T> : GenericPool<T> where T : class, IPoolable
     {
-
-        public void OnExitPool(T item)
-        {
-            item.ThisPool = this;
-            item.IsRecycled = false;
-
+        //回收
+        public void OnEnterPool(T item)
+        { 
+            item.IsRecycled = true;
+            item.OnRecycle();
         }
 
-        public void OnEnterPool(T item)
+        //申请
+        public void OnExitPool(T item)
         {
-            item.IsRecycled = true;
+            item.IsRecycled = false;
+            item.ThisPool = this;
+            item.OnAllocate();
         }
 
         public AutoBindPool(Func<T> onCreate = null, Action<T> onDestroy = null) : base(onCreate, onDestroy, null,null)
         {
             base.onRecycle += OnEnterPool;
             base.onAllocate += OnExitPool;
+
+
         }
 
     }

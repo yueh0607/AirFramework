@@ -1,12 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 using AirFramework;
-using System.Threading.Tasks;
-using UnityEngine.Pool;
-using System;
-using Unity.Collections;
+using UnityEngine;
 
 public interface MyMessage: IMessage{}
 public class MyTestUnit: PoolableObject<MyTestUnit>,IUpdate,IStart
@@ -38,27 +31,31 @@ public class MyTest : MonoBehaviour, IMessageReceiver
 {
     MyTestUnit myunit ;
 
-
-
-
    public async void AAA()
     {
         await Async.Delay(1);
-        print(0);
-        await Async.Delay(1);
+        print(1);
 
-        print("End");
+        await Async.Delay(1);
+        print(2);
+
+        await Async.Delay(1);
+        print(3);
+
+        await Async.Delay(1);
+        print(4);
+
     }
 
     void Awake()
     {
-        Async.Delay(3, () => print(2)).Coroutine();
-        AAA();
+        //Async.Delay(3, () => print(2)).Coroutine();
+        
     }
 
     void Start()
     {
-        
+        AAA();
     }
    
 }

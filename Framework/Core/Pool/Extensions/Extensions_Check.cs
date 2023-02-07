@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public partial class Extensions
+    public static partial class Pool
     {
         [DebuggerHidden,MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T CheckRecycled<T>(this T poolObj) where T : IPoolable

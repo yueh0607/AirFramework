@@ -20,7 +20,7 @@ namespace AirFramework
         
         public GenericPool_():base()
         {
-            base.onCreate = Extensions.DefaultNewCreate<T>;
+            base.onCreate = Pool.DefaultNewCreate<T>;
         }
     }
 }

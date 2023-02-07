@@ -9,7 +9,7 @@
 
 namespace AirFramework
 {
-    public static partial class Extensions
+    public static partial class Pool
     {
         /// <summary>
         /// 回收到源池，仅限回收托管对象
@@ -18,7 +18,7 @@ namespace AirFramework
         /// <param name="item"></param>
         public static void Recycle(this IPoolable item)
         {
-            item.ThisPool.RecycleObj(item);
+            item.ThisPool?.RecycleObj(item);
         }
 
         /// <summary>

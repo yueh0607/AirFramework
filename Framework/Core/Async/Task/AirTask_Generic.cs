@@ -10,7 +10,7 @@ namespace AirFramework
     public partial class AirTask<T> : PoolableObject<AirTask<T>>, IAsyncTask<T>
     {
         [DebuggerHidden]
-        internal static AutoBindPool<AirTask<T>> AirTaskPool { get; } = Framework.Pool.CreateAutoBindablePool(Extensions.DefaultNewCreate<AirTask<T>>, null);
+        internal static AutoBindPool<AirTask<T>> AirTaskPool { get; } = Framework.Pool.CreateAutoBindablePool(Pool.DefaultNewCreate<AirTask<T>>, null);
         [DebuggerHidden]
         public static AirTask<T> Create(bool fromPool)
         {

@@ -25,7 +25,7 @@ namespace AirFramework
         public GenericPool<T> CreateGenericPool<T>(Func<T> onCreate = null, Action<T> onDestroy = null, Action<T> onRecycle = null, Action<T> onAllocate = null) where T : class
         {
             GenericPool<T> pool = new GenericPool<T>(
-                        onCreate ?? Extensions.DefaltActivatorCreate<T>,
+                        onCreate ?? Pool.DefaltActivatorCreate<T>,
                         onDestroy,
                         onRecycle,
                         onAllocate
@@ -46,7 +46,7 @@ namespace AirFramework
         public PurePool<T> CreatePurePool<T>(Func<T> onCreate = null, Action<T> onDestroy = null, Action<T> onRecycle = null, Action<T> onAllocate = null) where T : class
         {
             PurePool<T> pool = new PurePool<T>(
-                        onCreate ?? Extensions.DefaltActivatorCreate<T>,
+                        onCreate ?? Pool.DefaltActivatorCreate<T>,
                         onDestroy,
                         onRecycle,
                         onAllocate
@@ -71,7 +71,7 @@ namespace AirFramework
         { 
             
             AutoBindPool<T> pool = new AutoBindPool<T>(
-                        onCreate ?? Extensions.DefaltActivatorCreate<T>,
+                        onCreate ?? Pool.DefaltActivatorCreate<T>,
                         onDestroy
 
                         );
@@ -91,7 +91,7 @@ namespace AirFramework
         /// <returns></returns> 
         public LifeCyclePool<T> CreateLifeCyclePool<T>(Func<T> onCreate = null, Action<T> onDestroy = null) where T : class,IPoolable
         {
-            LifeCyclePool<T> pool = new LifeCyclePool<T>(onCreate ?? Extensions.DefaltActivatorCreate<T>, onDestroy);
+            LifeCyclePool<T> pool = new LifeCyclePool<T>(onCreate ?? Pool.DefaltActivatorCreate<T>, onDestroy);
             return pool;
         }
        

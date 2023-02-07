@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-
+using UnityEngine;
 
 namespace AirFramework
 {
@@ -11,7 +11,7 @@ namespace AirFramework
     public partial class AirTask :  PoolableObject<AirTask>, IAsyncTask
     {
         [DebuggerHidden]
-        internal static AutoBindPool<AirTask> AirTaskPool { get; } = Framework.Pool.CreateAutoBindablePool(Extensions.DefaultNewCreate<AirTask>, null);
+        internal static AutoBindPool<AirTask> AirTaskPool { get; } = Framework.Pool.CreateAutoBindablePool(Pool.DefaultNewCreate<AirTask>, null);
         [DebuggerHidden]
         public static AirTask Create(bool fromPool)
         {
@@ -24,16 +24,13 @@ namespace AirFramework
         [DebuggerHidden]
         public override void OnAllocate()
         {
-            
         }
         [DebuggerHidden]
         public override void OnRecycle()
         {
             continuation = null;
             Exception = null;
-            IsCompleted= false;
         }
-
     }
 
     [AsyncMethodBuilder(typeof(AsyncAirTaskMethodBuilder))]
@@ -65,11 +62,11 @@ namespace AirFramework
         }
 
         [DebuggerHidden]
-
         public void OnCompleted(Action continuation)
         {
             UnsafeOnCompleted(continuation);
         }
+
         [DebuggerHidden]
         public void UnsafeOnCompleted(Action continuation)
         {
@@ -85,6 +82,7 @@ namespace AirFramework
         {
             this.Exception = exception;
         }
+
         [DebuggerHidden]
         public void GetResult()
         {
@@ -97,11 +95,11 @@ namespace AirFramework
         [DebuggerHidden]
         public void SetResult()
         {
-            //IsCompleted= true;
             //执行await以后的代码
             continuation?.Invoke();
             //回收到Pool
             this.Dispose();
+            //UnityEngine.Debug.Log("SetResult");
         }
     }
 
