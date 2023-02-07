@@ -23,25 +23,23 @@ namespace AirFramework
         /// 当改变时的事件
         /// </summary>
         public event Action<TimeSpan> OnChanged;
-        //预测条件
-        private Predicate<TimeSpan> predicate;
-
         /// <summary>
-        /// 开启计时，在满足condition时调用OnCompleted
+        /// 以及过去的时间
         /// </summary>
-        /// <param name="condition"></param>
-        public void Start(Predicate<TimeSpan> condition)
-        {
-            predicate = condition;
-            Start();
-        }
+        public TimeSpan DeltaTime =>watch.Elapsed;
+
+        //预测条件
+        private TimeSpan span;
+
+       
         /// <summary>
         /// 开始计时，在大于这个时间时调用OnCompleted
         /// </summary>
         /// <param name="endSpan"></param>
         public void Start(TimeSpan endSpan)
         {
-            Start((x)=>x>=endSpan);
+            span = endSpan;
+            Start();
         }
         /// <summary>
         /// 开始计时
@@ -69,12 +67,13 @@ namespace AirFramework
             Stop();
             //重置计时
             watch.Reset();
+            span = default;
             //重置事件
             if (!onlyTime)
             {
                 OnChanged = null;
                 OnCompleted = null;
-                predicate = null;
+                
             }
             //重置状态
             State = TimerState.Idle;
@@ -87,7 +86,7 @@ namespace AirFramework
 
 
            //满足预测条件，则停止计时，调用完成
-            if(predicate!=null&&predicate.Invoke(watch.Elapsed))
+            if(watch.Elapsed>span)
             {
                 Stop();
                 OnCompleted?.Invoke();

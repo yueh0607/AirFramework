@@ -19,6 +19,14 @@ namespace AirFramework
             
         }
 
-     
+        
+    }
+
+    public partial class Entity : PoolableObject<Entity>, IMessage
+    {
+
+       
+
+
     }
 }

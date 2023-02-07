@@ -5,6 +5,7 @@ using UnityEngine;
 using AirFramework;
 using System.Threading.Tasks;
 using UnityEngine.Pool;
+using System;
 
 public interface MyMessage: IMessage{}
 public class MyTestUnit: PoolableObject<MyTestUnit>,IUpdate,IStart
@@ -44,34 +45,20 @@ public class MyTest : MonoBehaviour, IMessageReceiver
     MyTestUnit myunit ;
 
 
-    void OnTime(float t)
+
+    public async AirTask Delay(Action act)
     {
-        Debug.Log(t);
+        var timer = this.Create<TimerCall>();
+        var task = this.Create<AirTask>();
+        timer.OnCompleted += act;
+        timer.OnCompleted += task.SetResult;
+        
+        timer.Start(new TimeSpan(0,0,5));
     }
-    void OnCom()
-    {
-
-
-
-    }
-
-    class People
-    {
-        public string name;
-        public int age;
-    }
-
-    struct Vector222
-    {
-        public float x; 
-        public float y;
-    }
-
+   
     void Awake()
     {
-        
-        //TestAsync();
-
+       Delay(()=>Debug.Log(100));
     }
    
 }
