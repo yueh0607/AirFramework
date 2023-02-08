@@ -1,8 +1,9 @@
 using AirFramework;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
-public interface MyMessage: IMessage{}
-public class MyTestUnit: PoolableObject<MyTestUnit>,IUpdate,IStart
+public interface MyMessage : IMessage { }
+public class MyTestUnit : PoolableObject<MyTestUnit>, IUpdate, IStart
 {
 
     void IUpdate.Update()
@@ -12,26 +13,26 @@ public class MyTestUnit: PoolableObject<MyTestUnit>,IUpdate,IStart
 
     public override void OnAllocate()
     {
-        
+
     }
 
     public override void OnRecycle()
     {
-        
+
     }
 
     void IStart.Start()
     {
-        
+
     }
 
 }
 
 public class MyTest : MonoBehaviour, IMessageReceiver
 {
-    MyTestUnit myunit ;
+    MyTestUnit myunit;
 
-   public async void AAA()
+    public async void AAA()
     {
         await Async.Delay(1);
         print(1);
@@ -41,7 +42,8 @@ public class MyTest : MonoBehaviour, IMessageReceiver
 
         await Async.Delay(1);
         print(3);
-
+        
+        var go = (await Addressables.LoadAssetAsync<GameObject>("")).Result;
         await Async.Delay(1);
         print(4);
 
@@ -50,13 +52,13 @@ public class MyTest : MonoBehaviour, IMessageReceiver
     void Awake()
     {
         //Async.Delay(3, () => print(2)).Coroutine();
-        
+
     }
 
     void Start()
     {
         AAA();
     }
-   
+
 }
 

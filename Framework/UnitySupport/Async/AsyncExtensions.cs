@@ -1,6 +1,9 @@
 ﻿
 
+using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.ResourceManagement.AsyncOperations;
+
 namespace AirFramework
 {
     public static partial class Pool
@@ -19,6 +22,11 @@ namespace AirFramework
             return task;
         }
 
-
+        public static AirTask<AsyncOperationHandle<T>> GetAwaiter<T>(this AsyncOperationHandle<T> handle)
+        {
+            var task = Framework.Pool.Allocate<AirTask<AsyncOperationHandle<T>>>();
+            handle.Completed += task.SetResult;
+            return task ;
+        }
     }
 }
