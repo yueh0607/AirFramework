@@ -16,10 +16,10 @@ Unity3D游戏开发中小型游戏框架
 - 生命周期管理
 - Unity异步编程支持
 - 回调计时器
+- 日志调试(未完)
 
 # 未来可能实现/支持的内容(排序不代表优先级)：
 - MVVM编程规范/UI管理器
-- 日志记录
 - 资源管理(Addressable)
 - 热更新与Hotfix (HybirdCLR or xlua or ILRuntime)
 - 简单网络模块(TCP/UDP/HTTP/Photon等简易支持)
