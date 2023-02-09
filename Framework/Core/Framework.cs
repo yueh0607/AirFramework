@@ -20,7 +20,7 @@ namespace AirFramework
     {
 
         /// <summary>
-        /// 池管理器
+        /// 托管池管理器
         /// </summary>
         [DebuggerHidden]
         public static PoolManager Pool { get; } = new PoolManager();
@@ -37,8 +37,10 @@ namespace AirFramework
         [DebuggerHidden]
         public static LifeCycleManager LifeCycle { get; } = new LifeCycleManager();
 
-
-     
+        /// <summary>
+        /// 调试日志管理器
+        /// </summary>
+        [DebuggerHidden]
         public static LogManager Log { get; } = new LogManager();
     }
 }

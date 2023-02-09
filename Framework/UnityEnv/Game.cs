@@ -18,7 +18,7 @@ namespace AirFramework
             Framework.LifeCycle.AddLifeCycle<ILateUpdate,LateUpdateHandler>();
             Framework.LifeCycle.AddLifeCycle<IFixedUpdate,FixedUpdateHandler>();
 
-            Framework.Log.Recorder = new CSRecorder();
+            Framework.Log.Recorder = new NormalRecorder();
             Framework.Log.Logger = new ULogger();
             Framework.Log.LogPath = Application.persistentDataPath;
         }

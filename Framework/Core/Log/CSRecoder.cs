@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public class CSRecorder : IRecorder
+    public class NormalRecorder : IRecorder
     {
 
   
@@ -22,16 +22,12 @@ namespace AirFramework
             if (!Directory.Exists(directory))
                 Directory.CreateDirectory(directory);
             if (!File.Exists(path)) 
-                File.Create(path). Close();
-           
-            
+                File.Create(path).Close();
 
             using (var writer = new StreamWriter(path, true, Framework.Log.encoding))
             {
                 writer.WriteLine(x);
             }
-
-
         }
 
 
