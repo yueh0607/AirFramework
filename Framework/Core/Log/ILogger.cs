@@ -11,15 +11,15 @@ namespace AirFramework
         /// <summary>
         /// 常规日志
         /// </summary>
-        public void Log(object obj,params object[] param);
+        public void Log(object obj);
         /// <summary>
         /// 警告日志
         /// </summary>
-        public void LogWarnning(object obj, params object[] param);
+        public void LogWarning(object obj);
         /// <summary>
         /// 错误日志
         /// </summary>
-        public void LogError(object obj, params object[] param);
+        public void LogError(object obj);
         /// <summary>
         /// 异常日志
         /// </summary>

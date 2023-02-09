@@ -35,24 +35,24 @@ public class MyTest : MonoBehaviour, IMessageReceiver
     public async void AAA()
     {
         await Async.Delay(1);
-        print(1);
+        100.L();
 
         await Async.Delay(1);
-        print(2);
+        100.L();
 
         await Async.Delay(1);
-        print(3);
-        
-       // var go = (await Addressables.LoadAssetAsync<GameObject>("")).Result;
+        100.L();
+
+        // var go = (await Addressables.LoadAssetAsync<GameObject>("")).Result;
         await Async.Delay(1);
-        print(4);
+        100.L();
 
     }
 
     void Awake()
     {
         //Async.Delay(3, () => print(2)).Coroutine();
-
+        Debug.Log(Application.persistentDataPath);
     }
 
     void Start()
