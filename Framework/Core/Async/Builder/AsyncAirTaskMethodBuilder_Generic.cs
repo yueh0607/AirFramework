@@ -3,48 +3,58 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Security;
 
+
 namespace AirFramework
 {
-    public struct AsyncAirTaskVoidMethodBuilder
-    {
-        // 1. Static Create method.
-        [DebuggerHidden]
-        public static AsyncAirTaskVoidMethodBuilder Create()
-        {
-            AsyncAirTaskVoidMethodBuilder builder = new AsyncAirTaskVoidMethodBuilder();
-            return builder;
-        }
 
-        // 2. TaskLike Task property(void)
+
+    public struct AsyncAirTaskMethodBuilder<T>
+    {
+        private AirTask<T> task;
+        // 1. Static Create method.
+
         [DebuggerHidden]
-        public AirTaskVoid Task => default;
+        public static AsyncAirTaskMethodBuilder<T> Create()
+        {
+
+            return new AsyncAirTaskMethodBuilder<T>(AirTask<T>.Create(fromPool: true));
+        }
+        public AsyncAirTaskMethodBuilder(AirTask<T> task) => this.task = task;
+
+        // 2. TaskLike Task property.
+        [DebuggerHidden]
+        public AirTask<T> Task => task;
+
 
         // 3. SetException
         [DebuggerHidden]
-        public void SetException(Exception e)
+        public void SetException(Exception exception)
         {
+            task.SetException(exception);
         }
 
         // 4. SetResult
         [DebuggerHidden]
-        public void SetResult()
+
+        public void SetResult(T ret)
         {
-            // do nothing
+            task.SetResult(ret);
         }
 
         // 5. AwaitOnCompleted
         [DebuggerHidden]
+
         public void AwaitOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) where TAwaiter : INotifyCompletion where TStateMachine : IAsyncStateMachine
         {
             awaiter.OnCompleted(stateMachine.MoveNext);
         }
 
         // 6. AwaitUnsafeOnCompleted
-        [DebuggerHidden]
         [SecuritySafeCritical]
-        public void AwaitUnsafeOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) where TAwaiter : ICriticalNotifyCompletion where TStateMachine : IAsyncStateMachine
+        public void AwaitUnsafeOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) where TAwaiter : Entity, ICriticalNotifyCompletion where TStateMachine : IAsyncStateMachine
         {
-            awaiter.UnsafeOnCompleted(stateMachine.MoveNext);
+
+            awaiter.OnCompleted(stateMachine.MoveNext);
         }
 
         // 7. Start
@@ -58,8 +68,11 @@ namespace AirFramework
         [DebuggerHidden]
         public void SetStateMachine(IAsyncStateMachine stateMachine)
         {
+
         }
-
-
     }
+
+
+
+
 }

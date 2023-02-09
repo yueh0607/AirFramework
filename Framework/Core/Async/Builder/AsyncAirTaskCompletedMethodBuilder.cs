@@ -5,7 +5,7 @@ using System.Security;
 
 namespace AirFramework
 {
-    public struct AsyncAirTaskCompletedMethodBuilder
+    internal struct AsyncAirTaskCompletedMethodBuilder
     {
 
         private AirTaskCompleted task;

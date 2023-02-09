@@ -9,6 +9,9 @@ namespace AirFramework
     [AsyncMethodBuilder(typeof(AsyncAirTaskCompletedMethodBuilder))]
     public class AirTaskCompleted : PoolableObject<AirTaskCompleted>, ICriticalNotifyCompletion
     {
+        
+
+
         public static void Create() =>Framework.Pool.Allocate<AirTaskCompleted>();
 
         [DebuggerHidden]

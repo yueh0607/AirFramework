@@ -2,7 +2,7 @@
 
 namespace AirFramework
 {
-    public static partial class Message
+    public static partial class MessageExtensions
     {
 
         /// <summary>

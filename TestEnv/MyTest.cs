@@ -23,7 +23,7 @@ public class MyTestUnit : PoolableObject<MyTestUnit>, IUpdate, IStart
 
     void IStart.Start()
     {
-
+        
     }
 
 }
@@ -35,29 +35,39 @@ public class MyTest : MonoBehaviour, IMessageReceiver
     public async void AAA()
     {
         await Async.Delay(1);
-        100.L();
+        1.L();
 
         await Async.Delay(1);
-        100.L();
+        2.L();
 
         await Async.Delay(1);
-        100.L();
+        3.L();
 
         // var go = (await Addressables.LoadAssetAsync<GameObject>("")).Result;
         await Async.Delay(1);
-        100.L();
+        4.E();
+
+        async void MyAsync()
+        {
+            await Async.Delay(1);
+        }
+        MyAsync();
 
     }
 
     void Awake()
     {
-        //Async.Delay(3, () => print(2)).Coroutine();
-        Debug.Log(Application.persistentDataPath);
+
+        Async.Delay(5, () => print(5)).Coroutine();
+ 
     }
 
     void Start()
     {
         AAA();
+        000.L();
+        Debug.Log("Debug");
+
     }
 
 }

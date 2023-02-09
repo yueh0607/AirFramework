@@ -10,9 +10,9 @@ namespace AirFramework
     public partial class AirTask<T> : PoolableObject<AirTask<T>>, IAsyncTask<T>
     {
         [DebuggerHidden]
-        internal static AutoBindPool<AirTask<T>> AirTaskPool { get; } = Framework.Pool.CreateAutoBindablePool(Pool.DefaultNewCreate<AirTask<T>>, null);
+        internal static AutoBindPool<AirTask<T>> AirTaskPool { get; } = Framework.Pool.CreateAutoBindablePool(() => new AirTask<T>(), null);
         [DebuggerHidden]
-        public static AirTask<T> Create(bool fromPool)
+        public static AirTask<T> Create(bool fromPool = false)
         {
             if (fromPool)
             {
@@ -30,7 +30,9 @@ namespace AirFramework
         {
             continuation = null;
             this.Exception = null;
+            IsCompleted = false;
         }
+
 
     }
 
@@ -47,19 +49,14 @@ namespace AirFramework
         public Exception Exception { get; private set; }
         public T Result;
 
-   
+
 
         [DebuggerHidden]
-        private async AirTaskVoid InnerCoroutine()
+        private async void Coroutine()
         {
             await this;
         }
 
-        [DebuggerHidden]
-        public void Coroutine()
-        {
-            InnerCoroutine().Coroutine();
-        }
 
         [DebuggerHidden]
         public T GetResult()
@@ -82,12 +79,15 @@ namespace AirFramework
         {
             Result = result;
             continuation?.Invoke();
+            IsCompleted = true;
             Dispose();
         }
         [DebuggerHidden]
         public void SetException(Exception exception)
         {
-            this.Exception= exception;
+            this.Exception = exception;
+            IsCompleted = true;
+
         }
 
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace AirFramework
 {
-    public static partial class Message
+    public static partial class MessageExtensions
     {
 
         public static UnitList<T1> CallAll<T1>(this UnitDelegateGroup container)

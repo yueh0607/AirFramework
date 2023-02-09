@@ -13,7 +13,7 @@ namespace AirFramework
         [DebuggerHidden,MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T CheckRecycled<T>(this T poolObj) where T : IPoolable
         {
-            return poolObj.IsRecycled? throw new InvalidOperationException("This Pool Object is invalid"):poolObj; 
+            return poolObj.IsRecycled? new InvalidOperationException("This Pool Object is invalid").Throw<T>():poolObj; 
         }
 
     }

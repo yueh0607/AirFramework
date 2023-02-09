@@ -2,7 +2,7 @@
 
 namespace AirFramework
 {
-    public static partial class Message
+    public static partial class MessageExtensions
     {
 
         public static bool TryCall<T1>(this UnitDelegateGroup container,out T1 result)

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public static partial class Extensions
+    public static partial class MessageExtensions
     {
         public static void L(this object any)
         {
@@ -24,6 +24,13 @@ namespace AirFramework
         public static void Throw(this Exception ex)
         {
             Framework.Log.Throw(ex);
+        }
+
+
+        public static T Throw<T>(this Exception ex)
+        {
+            Framework.Log.Throw(ex);
+            return default;
         }
     }
 }

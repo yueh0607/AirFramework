@@ -11,9 +11,9 @@ namespace AirFramework
     public partial class AirTask :  PoolableObject<AirTask>, IAsyncTask
     {
         [DebuggerHidden]
-        internal static AutoBindPool<AirTask> AirTaskPool { get; } = Framework.Pool.CreateAutoBindablePool(Pool.DefaultNewCreate<AirTask>, null);
+        internal static AutoBindPool<AirTask> AirTaskPool { get; } = Framework.Pool.CreateAutoBindablePool(()=>new AirTask(), null);
         [DebuggerHidden]
-        public static AirTask Create(bool fromPool)
+        public static AirTask Create(bool fromPool=false)
         {
             if (fromPool)
             {
@@ -28,9 +28,13 @@ namespace AirFramework
         [DebuggerHidden]
         public override void OnRecycle()
         {
+            IsCompleted= false;
             continuation = null;
             Exception = null;
         }
+
+
+
     }
 
     [AsyncMethodBuilder(typeof(AsyncAirTaskMethodBuilder))]
@@ -48,29 +52,24 @@ namespace AirFramework
         
 
         [DebuggerHidden]
-        private async AirTaskVoid InnerCoroutine()
+        public async void Coroutine()
         {
             await this;
         }
-        /// <summary>
-        /// 以协程方式运行
-        /// </summary>
-        [DebuggerHidden]
-        public void Coroutine()
-        {
-            InnerCoroutine().Coroutine();
-        }
+  
 
         [DebuggerHidden]
         public void OnCompleted(Action continuation)
         {
             UnsafeOnCompleted(continuation);
+            
         }
 
         [DebuggerHidden]
         public void UnsafeOnCompleted(Action continuation)
         {
             this.continuation = continuation;
+            
         }
 
         /// <summary>
@@ -80,6 +79,7 @@ namespace AirFramework
         [DebuggerHidden]
         public void SetException(Exception exception)
         {
+            IsCompleted= true;
             this.Exception = exception;
         }
 
@@ -95,11 +95,13 @@ namespace AirFramework
         [DebuggerHidden]
         public void SetResult()
         {
+            
+            IsCompleted = true;
             //执行await以后的代码
             continuation?.Invoke();
             //回收到Pool
             this.Dispose();
-            //UnityEngine.Debug.Log("SetResult");
+         
         }
     }
 

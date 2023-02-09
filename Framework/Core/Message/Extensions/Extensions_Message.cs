@@ -4,8 +4,12 @@ using System.Runtime.CompilerServices;
 
 namespace AirFramework
 {
-    public static partial class Message
+    public static partial class MessageExtensions
     {
+
+
+        public static MessageManager Message(this object item) => Framework.Message;
+
         /// <summary>
         /// 获取消息操作器
         /// </summary>

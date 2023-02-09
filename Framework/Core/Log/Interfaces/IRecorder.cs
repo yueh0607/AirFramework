@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace AirFramework
 {
@@ -10,9 +11,10 @@ namespace AirFramework
     {
 
 
+        void Record(string logString, string stackTrace, LogType type);
 
-        public void Write(string outline, string info);
-    
+
+
 
     }
 }
