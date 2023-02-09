@@ -1,7 +1,7 @@
 using AirFramework;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-
+using UnityEngine.ResourceManagement.AsyncOperations;
 public interface MyMessage : IMessage { }
 public class MyTestUnit : PoolableObject<MyTestUnit>, IUpdate, IStart
 {
@@ -43,7 +43,7 @@ public class MyTest : MonoBehaviour, IMessageReceiver
         await Async.Delay(1);
         print(3);
         
-        var go = (await Addressables.LoadAssetAsync<GameObject>("")).Result;
+       // var go = (await Addressables.LoadAssetAsync<GameObject>("")).Result;
         await Async.Delay(1);
         print(4);
 
@@ -61,4 +61,5 @@ public class MyTest : MonoBehaviour, IMessageReceiver
     }
 
 }
+
 

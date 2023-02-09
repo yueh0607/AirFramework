@@ -1,8 +1,8 @@
-﻿
-
+﻿using AirFramework;
 using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.ResourceManagement.AsyncOperations;
+
 
 namespace AirFramework
 {
@@ -26,7 +26,7 @@ namespace AirFramework
         {
             var task = Framework.Pool.Allocate<AirTask<AsyncOperationHandle<T>>>();
             handle.Completed += task.SetResult;
-            return task ;
+            return task;
         }
     }
 }

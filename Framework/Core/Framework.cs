@@ -39,6 +39,6 @@ namespace AirFramework
 
 
      
-        //public static LogManager Log { get; } = new LogManager();
+        public static LogManager Log { get; } = new LogManager();
     }
 }

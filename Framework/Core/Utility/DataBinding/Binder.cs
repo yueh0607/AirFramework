@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public unsafe class Binder
+    public class Binder
     {
 
         /*
