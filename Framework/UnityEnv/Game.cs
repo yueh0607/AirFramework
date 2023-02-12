@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Profiling;
 
 namespace AirFramework
 {
@@ -42,7 +43,9 @@ namespace AirFramework
 
         private void Update()
         {
+            Profiler.BeginSample("AirFramework.Update");
             Framework.LifeCycle.Publish<IUpdate>();
+            Profiler.EndSample();
         }
     }
 }

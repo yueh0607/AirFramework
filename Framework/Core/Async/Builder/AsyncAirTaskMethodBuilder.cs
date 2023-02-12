@@ -6,7 +6,7 @@ using System.Security;
 
 namespace AirFramework
 {
-    internal struct AsyncAirTaskMethodBuilder
+    public struct AsyncAirTaskMethodBuilder
     {
         private AirTask task;
 
@@ -46,14 +46,16 @@ namespace AirFramework
         // 6. AwaitOnCompleted  在SetResult之后编译器调用OnCompleted
         [DebuggerHidden]
 
-        public void AwaitOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) where TAwaiter : INotifyCompletion where TStateMachine : IAsyncStateMachine
+        public void AwaitOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) 
+            where TAwaiter : INotifyCompletion where TStateMachine : IAsyncStateMachine
         {
             awaiter.OnCompleted(stateMachine.MoveNext);
         }
 
         // 7. AwaitUnsafeOnCompleted 同OnCompleted
         [SecuritySafeCritical]
-        public void AwaitUnsafeOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) where TAwaiter : Entity, ICriticalNotifyCompletion where TStateMachine : IAsyncStateMachine
+        public void AwaitUnsafeOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) 
+            where TAwaiter : ICriticalNotifyCompletion where TStateMachine : IAsyncStateMachine
         {
             awaiter.OnCompleted(stateMachine.MoveNext);
         }

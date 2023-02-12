@@ -17,7 +17,7 @@ namespace AirFramework
     /// 可绑定监听事件的属性
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class BindableProperty<T> where T :IEqualityComparer<T>
+    public class BindableProperty<T>:PoolableObject<BindableProperty<T>> where T :IEqualityComparer<T>
     {
         private T value;
 
@@ -59,6 +59,17 @@ namespace AirFramework
         public BindableProperty()
         {
             this.value = default;
+        }
+
+        public override void OnAllocate()
+        {
+            value = default;
+        }
+
+        public override void OnRecycle()
+        {
+            OnValueChanged = null;
+            value= default;
         }
     }
 }

@@ -33,7 +33,10 @@ namespace AirFramework
 
         //预测条件
         private TimeSpan span;
-
+        /// <summary>
+        /// 是否一次使用就回收
+        /// </summary>
+        public bool OnceRecycle { get; set; } = false;
        
         /// <summary>
         /// 开始计时，在大于这个时间时调用OnCompleted
@@ -94,6 +97,7 @@ namespace AirFramework
             {
                 Stop();
                 OnCompleted?.Invoke();
+                if(OnceRecycle) Dispose();
             }
             //当改变时
             if (OnChanged != null)

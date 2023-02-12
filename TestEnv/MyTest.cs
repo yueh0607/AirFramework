@@ -1,6 +1,9 @@
 using AirFramework;
+using System;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.Profiling;
 using UnityEngine.ResourceManagement.AsyncOperations;
 public interface MyMessage : IMessage { }
 public class MyTestUnit : PoolableObject<MyTestUnit>, IUpdate, IStart
@@ -28,45 +31,42 @@ public class MyTestUnit : PoolableObject<MyTestUnit>, IUpdate, IStart
 
 }
 
+
+public class MyTask : Task
+{
+    public MyTask(Action action) : base(action)
+    {
+
+    }
+}
+
 public class MyTest : MonoBehaviour, IMessageReceiver
 {
     MyTestUnit myunit;
 
-    public async void AAA()
+    public async AirTask AAA()
     {
         await Async.Delay(1);
-        1.L();
+        throw new NotImplementedException();
+    }
 
-        await Async.Delay(1);
-        2.L();
-
-        await Async.Delay(1);
+    async void BB()
+    {
+        await AAA();
         3.L();
-
-        // var go = (await Addressables.LoadAssetAsync<GameObject>("")).Result;
-        await Async.Delay(1);
-        4.E();
-
-        async void MyAsync()
-        {
-            await Async.Delay(1);
-        }
-        MyAsync();
-
     }
 
-    void Awake()
+
+    void CCC()
     {
-
-        Async.Delay(5, () => print(5)).Coroutine();
- 
+        333.L();
     }
+
 
     void Start()
     {
-        AAA();
-        000.L();
-        Debug.Log("Debug");
+        BB();
+       
 
     }
 

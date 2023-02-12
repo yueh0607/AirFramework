@@ -12,7 +12,7 @@ namespace AirFramework
         /// <summary>
         /// 结束当前任务
         /// </summary>
-        void SetResult();
+        Action SetResult { get;  }
 
         /// <summary>
         /// 当有异常时调用
@@ -29,7 +29,7 @@ namespace AirFramework
         /// <summary>
         /// 结束当前任务
         /// </summary>
-        void SetResult(T result);
+        Action<T> SetResult { get; }
 
         /// <summary>
         /// 当有异常时调用

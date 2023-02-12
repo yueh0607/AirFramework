@@ -1,11 +1,12 @@
-﻿using UnityEngine.ResourceManagement.AsyncOperations;
+﻿using System.ComponentModel;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 
 namespace AirFramework
 {
-   
-    class CCD
-    {
 
+    class CCD : INotifyPropertyChanged
+    {
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

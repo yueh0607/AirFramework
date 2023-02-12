@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-
+using System.Runtime.ExceptionServices;
 
 namespace AirFramework
 {
@@ -11,6 +11,9 @@ namespace AirFramework
     {
         [DebuggerHidden]
         internal static AutoBindPool<AirTask<T>> AirTaskPool { get; } = Framework.Pool.CreateAutoBindablePool(() => new AirTask<T>(), null);
+
+        
+
         [DebuggerHidden]
         public static AirTask<T> Create(bool fromPool = false)
         {
@@ -42,14 +45,16 @@ namespace AirFramework
     {
         [DebuggerHidden]
         public AirTask<T> GetAwaiter() => this;
-        public Action continuation;
+        
         [DebuggerHidden]
         public bool IsCompleted { get; set; }
-        [DebuggerHidden]
-        public Exception Exception { get; private set; }
+
         public T Result;
 
-
+        public AirTask()
+        {
+            SetResult = SetResultMethod;
+        }
 
         [DebuggerHidden]
         private async void Coroutine()
@@ -63,6 +68,9 @@ namespace AirFramework
         {
             return Result;
         }
+
+        #region OnCompleted
+        public Action continuation;
         [DebuggerHidden]
         public void OnCompleted(Action continuation)
         {
@@ -74,19 +82,35 @@ namespace AirFramework
         {
             this.continuation = continuation;
         }
+
+        #endregion
+        public Action<T> SetResult { get; private set; }
         [DebuggerHidden]
-        public void SetResult(T result)
+        private void SetResultMethod(T result)
         {
             Result = result;
             continuation?.Invoke();
             IsCompleted = true;
             Dispose();
         }
+
+
+
+        [DebuggerHidden]
+        public ExceptionDispatchInfo Exception { get; private set; }
+        /// <summary>
+        /// 当执行出现异常时状态机调用
+        /// </summary>
+        /// <param name="exception"></param>
         [DebuggerHidden]
         public void SetException(Exception exception)
         {
-            this.Exception = exception;
+            if (IsCompleted)
+            {
+                throw new InvalidOperationException("Cannot set exceptions for completed tasks.");
+            }
             IsCompleted = true;
+
 
         }
 
