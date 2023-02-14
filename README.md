@@ -32,7 +32,7 @@ Unity3D游戏开发中小型游戏框架
 - 编辑器拓展
 
 # 参考与推荐项目
-- [WorldTreeFramework](https://github.com/SDHK/WorldTreeFramework)
-- [IFramework](https://github.com/OnClick9927/IFramework)
-- [ET](https://github.com/egametang/ET)
-- [UniTask](https://github.com/Cysharp/UniTask)
+- [SDHK/WorldTreeFramework](https://github.com/SDHK/WorldTreeFramework)
+- [OnClick9927/IFramework](https://github.com/OnClick9927/IFramework)
+- [eagmetang/ET](https://github.com/egametang/ET)
+- [Cysharp/UniTask](https://github.com/Cysharp/UniTask)
