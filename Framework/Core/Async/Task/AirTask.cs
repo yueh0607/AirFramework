@@ -32,7 +32,6 @@ namespace AirFramework
         {
             continuation = null;
             Exception = null;
-            OnAsyncCompleted = null;
         }
     }
 
@@ -42,19 +41,23 @@ namespace AirFramework
 
         [DebuggerHidden]
         public AirTask GetAwaiter() => this;
-        
-        
+
+
         [DebuggerHidden]
         public bool IsCompleted { get; set; }
 
-       
-
         public event Action OnAsyncCompleted = null;
 
+        public AsyncToken Token { get; set; } = null;
+
+        public bool Authorization => Token == null || Token.IsRunning;
+
+        //private int id;
         public AirTask()
         {
-  
-            SetResult =SetResultMethod;
+            //id = Framework.index++;
+           // $"{id}.Task.Construct".L();
+            SetResult = SetResultMethod;
         }
 
         [DebuggerHidden]
@@ -71,7 +74,6 @@ namespace AirFramework
         public void OnCompleted(Action continuation)
         {
             UnsafeOnCompleted(continuation);
-
         }
 
         [DebuggerHidden]
@@ -79,7 +81,11 @@ namespace AirFramework
         {
             this.continuation = continuation;
 
+            //$"{id}.UnsafeOnCompleted".L();
         }
+
+       
+
         #endregion
 
         /// <summary>
@@ -88,7 +94,6 @@ namespace AirFramework
         [DebuggerHidden]
         public void GetResult()
         {
-
         }
 
 
@@ -100,19 +105,17 @@ namespace AirFramework
         [DebuggerHidden]
         private void SetResultMethod()
         {
-            if (IsCompleted)
+            if (Authorization)
             {
-                throw new InvalidOperationException("Cannot set result for completed tasks.");
+                //执行await以后的代码
+                continuation?.Invoke();
+                OnAsyncCompleted?.Invoke();
+                //回收到Pool
+                this.Dispose();
             }
-
-            IsCompleted = true;
-            OnAsyncCompleted?.Invoke();
-            //执行await以后的代码
-            continuation?.Invoke();
-            //回收到Pool
-            this.Dispose();
-
         }
+
+
 
         [DebuggerHidden]
         public ExceptionDispatchInfo Exception { get; private set; }
@@ -123,13 +126,7 @@ namespace AirFramework
         [DebuggerHidden]
         public void SetException(Exception exception)
         {
-            if (IsCompleted)
-            {
-                throw new InvalidOperationException("Cannot set exceptions for completed tasks.");
-            }
-            IsCompleted = true;
-
-
+            
         }
 
     }

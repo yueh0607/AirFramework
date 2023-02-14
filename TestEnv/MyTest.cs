@@ -1,5 +1,6 @@
 using AirFramework;
 using System;
+using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -26,7 +27,7 @@ public class MyTestUnit : PoolableObject<MyTestUnit>, IUpdate, IStart
 
     void IStart.Start()
     {
-        
+
     }
 
 }
@@ -44,29 +45,33 @@ public class MyTest : MonoBehaviour, IMessageReceiver
 {
     MyTestUnit myunit;
 
-    public async AirTask AAA()
+
+
+    public async AirTask DoSomething()
     {
+
         await Async.Delay(1);
-        throw new NotImplementedException();
-    }
+        await Async.Delay(1);
 
-    async void BB()
+        await Async.Delay(1);
+        await Async.Delay(1);
+        await Async.Delay(1);
+        await Async.Delay(1);
+        1.L();
+    }
+    public async void DoSomething0()
     {
-        await AAA();
-        3.L();
+        AsyncToken token = this.Create<AsyncToken>();
+        Async.Delay(3,token.Cancel).Coroutine();
+        await DoSomething().WithToken(token);
+
     }
-
-
-    void CCC()
-    {
-        333.L();
-    }
-
-
     void Start()
     {
-        BB();
-       
+        //AsyncToken token = this.Create<AsyncToken>();
+        DoSomething0();
+        //token.Yield();
+        
 
     }
 

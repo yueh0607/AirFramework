@@ -14,7 +14,7 @@ namespace AirFramework
         /// </summary>
         /// <param name="seconds"></param>
         /// <returns></returns>
-        public static AirTask Delay(float seconds,Action endAction=null,CancelToken token=null)
+        public static AirTask Delay(float seconds,Action endAction=null)
         {
             var task = Framework.Pool.Allocate<AirTask>();
             var timer = Framework.Pool.Allocate<TimerCall>();
@@ -22,12 +22,6 @@ namespace AirFramework
           
             timer.OnCompleted += endAction;
             timer.OnceRecycle = true;
-
-            if(token != null)
-            {
-                token.CancelAction += timer.Stop;
-                token.CancelAction += task.SetResult;
-            }
 
             timer.Start(TimeSpan.FromSeconds(seconds));
             return task;
@@ -90,7 +84,11 @@ namespace AirFramework
             return asyncTask;
         }
 
-
+        public static AirTask WithToken(this AirTask task,AsyncToken token)
+        {
+            task.Token= token;
+            return task;
+        }
         //public static AirTask Yield(IUpdate update,int frameCount)
         //{
 

@@ -42,5 +42,7 @@ namespace AirFramework
         /// </summary>
         [DebuggerHidden]
         public static LogManager Log { get; } = new LogManager();
+
+        public static int index = 0;
     }
 }
