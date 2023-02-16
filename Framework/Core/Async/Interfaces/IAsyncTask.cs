@@ -7,6 +7,14 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
+    public interface IAsyncTokenProperty : IPoolable,IAuthorization
+    {
+        AsyncToken Token { get; set; }
+        
+        void SetException(Exception exception);
+    }
+
+
     public interface IAsyncTask : ICriticalAwaiter
     {   
         /// <summary>
@@ -20,11 +28,10 @@ namespace AirFramework
         /// <param name="exception"></param>
         void SetException(Exception exception);
 
-
+        
     }
 
-
-    public interface IAsyncTask<T> : ICriticalAwaiter<T> 
+    public interface IAsyncTask<T> : ICriticalAwaiter<T>
     {
         /// <summary>
         /// 结束当前任务
@@ -37,5 +44,6 @@ namespace AirFramework
         /// <param name="exception"></param>
         void SetException(Exception exception);
 
+       
     }
 }

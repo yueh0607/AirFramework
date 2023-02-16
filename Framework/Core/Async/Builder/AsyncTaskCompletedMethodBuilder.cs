@@ -5,20 +5,20 @@ using System.Security;
 
 namespace AirFramework
 {
-    public struct AsyncAirTaskCompletedMethodBuilder
+    public struct AsyncTaskCompletedMethodBuilder
     {
 
-        private AirTaskCompleted task;
+        private AsyncTaskCompleted task;
 
         // 1. Static Create method.
         [DebuggerHidden]
-        public static AsyncAirTaskCompletedMethodBuilder Create()
+        public static AsyncTaskCompletedMethodBuilder Create()
         {
-            AsyncAirTaskCompletedMethodBuilder builder = new AsyncAirTaskCompletedMethodBuilder();
-            return builder;
+            return new AsyncTaskCompletedMethodBuilder();
+   
         }
 
-        public AirTaskCompleted Task => task;
+        public AsyncTaskCompleted Task => task;
        
         // 3. SetException
         [DebuggerHidden]

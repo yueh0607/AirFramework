@@ -10,27 +10,24 @@ namespace AirFramework
     public static class Async
     {
         /// <summary>
-        /// 延迟指定秒数
+        /// 延迟指定秒数,如果不使用endAction则不产生GC Alloc
         /// </summary>
         /// <param name="seconds"></param>
         /// <returns></returns>
-        public static AirTask Delay(float seconds,Action endAction=null)
+        public static AsyncTask Delay(float seconds,Action endAction=null)
         {
-            var task = Framework.Pool.Allocate<AirTask>();
-            var timer = Framework.Pool.Allocate<TimerCall>();
+            var task = Framework.Pool.Allocate<AsyncTask>();
+            var timer = Framework.Pool.Allocate<AsyncTimerCall>();
             timer.OnCompleted += task.SetResult;
-          
             timer.OnCompleted += endAction;
-            timer.OnceRecycle = true;
-
-            timer.Start(TimeSpan.FromSeconds(seconds));
+            timer.Start(seconds,task);
             return task;
         }
 
-        public static AirTaskCompleted Complete(Action action=null)
+        public static AsyncTaskCompleted Complete(Action action=null)
         {
             action?.Invoke();
-            return Framework.Pool.Allocate<AirTaskCompleted>();
+            return Framework.Pool.Allocate<AsyncTaskCompleted>();
         }
 
         /// <summary>
@@ -38,16 +35,15 @@ namespace AirFramework
         /// </summary>
         /// <param name="tasks"></param>
         /// <returns></returns>
-        public static AirTask WaitAny(params AirTask[] tasks)
+        public static AsyncTask WaitAny(params AsyncTask[] tasks)
         {
             //创建计数器
             var counterCall = Framework.Pool.Allocate<CounterCall>();
             counterCall.ClickValue = 1;
             counterCall.OnceRecycle= true;
             //申请异步任务
-            var asyncTask = Framework.Pool.Allocate<AirTask>();
+            var asyncTask = Framework.Pool.Allocate<AsyncTask>();
             
-
             //计数器任务绑定
             counterCall.OnClick += asyncTask.SetResult;
             //绑定异步任务到计数器
@@ -63,14 +59,14 @@ namespace AirFramework
         /// </summary>
         /// <param name="tasks"></param>
         /// <returns></returns>
-        public static AirTask WaitAll(params AirTask[] tasks)
+        public static AsyncTask WaitAll(params AsyncTask[] tasks)
         {
             //申请计数器
             var counterCall = Framework.Pool.Allocate<CounterCall>();
             counterCall.ClickValue = tasks.Length;
             counterCall.OnceRecycle = true;
             //申请任务
-            var asyncTask = Framework.Pool.Allocate<AirTask>();
+            var asyncTask = Framework.Pool.Allocate<AsyncTask>();
             
             //绑定结束事件
             counterCall.OnClick += asyncTask.SetResult;
@@ -84,9 +80,20 @@ namespace AirFramework
             return asyncTask;
         }
 
-        public static AirTask WithToken(this AirTask task,AsyncToken token)
+        public static AsyncTask WithToken(this AsyncTask task,AsyncToken token)
         {
-            task.Token= token;
+            task.Token?.Dispose();
+            task.Token = token;
+            token.Task = task;
+            token.RootTask= task;
+            return task;
+        }
+        public static AsyncTask<T> WithToken<T>(this AsyncTask<T> task, AsyncToken token)
+        {
+            task.Token?.Dispose();
+            task.Token = token;
+            token.Task= task;
+            token.RootTask = task;
             return task;
         }
         //public static AirTask Yield(IUpdate update,int frameCount)

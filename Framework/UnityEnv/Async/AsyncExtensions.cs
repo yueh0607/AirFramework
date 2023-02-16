@@ -15,16 +15,16 @@ namespace AirFramework
         /// <typeparam name="T"></typeparam>
         /// <param name="operation"></param>
         /// <returns></returns>
-        public static AirTask<T> GetAwaiter<T>(this T operation) where T : AsyncOperation
+        public static AsyncTask<T> GetAwaiter<T>(this T operation) where T : AsyncOperation
         {
-            AirTask<T> task = Framework.Pool.Allocate<AirTask<T>>();
+            AsyncTask<T> task = Framework.Pool.Allocate<AsyncTask<T>>();
             operation.completed += (A) => task.SetResult(A as T);
             return task;
         }
 
-        public static AirTask<AsyncOperationHandle<T>> GetAwaiter<T>(this AsyncOperationHandle<T> handle)
+        public static AsyncTask<AsyncOperationHandle<T>> GetAwaiter<T>(this AsyncOperationHandle<T> handle)
         {
-            var task = Framework.Pool.Allocate<AirTask<AsyncOperationHandle<T>>>();
+            var task = Framework.Pool.Allocate<AsyncTask<AsyncOperationHandle<T>>>();
             handle.Completed += task.SetResult;
             return task;
         }

@@ -2,7 +2,7 @@
 
 namespace AirFramework
 {
-    public class DateTimer : PoolableObject<TimerCall>, IUpdate
+    public class DateCall : PoolableObject<TimerCall>, IUpdate
     {
         bool Broadcast { get; set; } = true;
 

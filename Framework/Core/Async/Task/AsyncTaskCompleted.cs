@@ -6,16 +6,16 @@ namespace AirFramework
 {
 
 
-    [AsyncMethodBuilder(typeof(AsyncAirTaskCompletedMethodBuilder))]
-    public class AirTaskCompleted : PoolableObject<AirTaskCompleted>,ICriticalNotifyCompletion
+    [AsyncMethodBuilder(typeof(AsyncTaskCompletedMethodBuilder))]
+    public class AsyncTaskCompleted : PoolableObject<AsyncTaskCompleted>,ICriticalNotifyCompletion
     {
         
 
 
-        public static void Create() =>Framework.Pool.Allocate<AirTaskCompleted>();
+        public static void Create() =>Framework.Pool.Allocate<AsyncTaskCompleted>();
 
         [DebuggerHidden]
-        public AirTaskCompleted GetAwaiter() => this;
+        public AsyncTaskCompleted GetAwaiter() => this;
 
         [DebuggerHidden]
         public bool IsCompleted => true;

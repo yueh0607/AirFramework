@@ -8,22 +8,25 @@ namespace AirFramework
 {
 
 
-    public struct AsyncAirTaskMethodBuilder<T>
+    public struct AsyncTaskMethodBuilder<T>
     {
-        private AirTask<T> task;
+        private AsyncTask<T> task;
         // 1. Static Create method.
 
         [DebuggerHidden]
-        public static AsyncAirTaskMethodBuilder<T> Create()
+        public static AsyncTaskMethodBuilder<T> Create()
         {
 
-            return new AsyncAirTaskMethodBuilder<T>(AirTask<T>.Create(fromPool: true));
+            return new AsyncTaskMethodBuilder<T>(AsyncTask<T>.Create(fromPool: true));
         }
-        public AsyncAirTaskMethodBuilder(AirTask<T> task) => this.task = task;
+        public AsyncTaskMethodBuilder(AsyncTask<T> task)
+        {
+            this.task = task.WithToken(Framework.Pool.Allocate<AsyncToken>());
+        }
 
         // 2. TaskLike Task property.
         [DebuggerHidden]
-        public AirTask<T> Task => task;
+        public AsyncTask<T> Task => task;
 
 
         // 3. SetException
@@ -44,16 +47,26 @@ namespace AirFramework
         // 5. AwaitOnCompleted
         [DebuggerHidden]
 
-        public void AwaitOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) where TAwaiter : INotifyCompletion where TStateMachine : IAsyncStateMachine
+        public void AwaitOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine)
+            where TAwaiter : INotifyCompletion where TStateMachine : IAsyncStateMachine
         {
+
+            if (task.Token is not null)
+            {
+                task.Token.Task = awaiter as IAsyncTokenProperty;
+            }
             awaiter.OnCompleted(stateMachine.MoveNext);
         }
 
         // 6. AwaitUnsafeOnCompleted
         [SecuritySafeCritical]
-        public void AwaitUnsafeOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) where TAwaiter : Entity, ICriticalNotifyCompletion where TStateMachine : IAsyncStateMachine
+        public void AwaitUnsafeOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) 
+            where TAwaiter : ICriticalNotifyCompletion where TStateMachine : IAsyncStateMachine
         {
-
+            if (task.Token is not null)
+            {
+                task.Token.Task = awaiter as IAsyncTokenProperty;
+            }
             awaiter.OnCompleted(stateMachine.MoveNext);
         }
 

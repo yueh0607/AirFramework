@@ -8,8 +8,14 @@ namespace AirFramework
 {
     public class CounterCall : PoolableObject<CounterCall>
     {
+        /// <summary>
+        /// 是否达到一次ClickValue就自动回收到对象池或者销毁
+        /// </summary>
         public bool OnceRecycle { get; set; } = false;
         private int _counter;
+        /// <summary>
+        /// 当前计数数量
+        /// </summary>
         public int Count
         {
             get => _counter;
@@ -19,16 +25,20 @@ namespace AirFramework
                 if(value==ClickValue)
                 {
                     OnClick?.Invoke();
-                    Dispose();
+                    if(OnceRecycle)Dispose();
                 }
             }
         }
         
 
-
+        /// <summary>
+        /// 预期触发值
+        /// </summary>
         public int ClickValue { get; set; } = 0;
 
-
+        /// <summary>
+        /// 触发事件
+        /// </summary>
         public event Action OnClick=null;
 
         public override void OnAllocate()
@@ -41,16 +51,26 @@ namespace AirFramework
             OnClick = null;
             _counter = 0;
             ClickValue= 0;
-            OnceRecycle= true;
+            OnceRecycle= false;
         }
 
 
-
-        public Action PlusOne { get; private set; }
-
-        public CounterCall()
+        private Action plusOne=null;
+        /// <summary>
+        /// 默认实现的加一行为，第一次访问产生GC，代替自定义lambda减少GC产出
+        /// </summary>
+        public Action PlusOne
         {
-            PlusOne = () => { ++Count; };
+            get
+            {
+                if(plusOne==null)
+                {
+                    plusOne = () => { ++Count; };
+                }
+                return plusOne;
+            }
         }
+
+
     }
 }

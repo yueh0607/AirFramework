@@ -6,25 +6,27 @@ using System.Security;
 
 namespace AirFramework
 {
-    public struct AsyncAirTaskMethodBuilder
+    public struct AsyncTaskMethodBuilder
     {
-        private AirTask task;
+        private AsyncTask task;
 
         // 1. Static Create method 编译器调用静态创建方法来创建Builder
         [DebuggerHidden]
-        public static AsyncAirTaskMethodBuilder Create() => new AsyncAirTaskMethodBuilder(AirTask.Create(fromPool:true));
+        public static AsyncTaskMethodBuilder Create() => new AsyncTaskMethodBuilder(AsyncTask.Create(fromPool:true));
 
         //2.Construct Method 构造Builder时调用
-        public AsyncAirTaskMethodBuilder(AirTask task)
+        public AsyncTaskMethodBuilder(AsyncTask task)
         {
-            "Builder.Construct".L();
-            this.task = task;
+            //"Builder.Construct".L();
+            this.task = task.WithToken(Framework.Pool.Allocate<AsyncToken>());
+        
+     
         }
 
 
         // . TaskLike Task property.
         [DebuggerHidden]
-        public AirTask Task
+        public AsyncTask Task
         {
             get
 
@@ -62,21 +64,27 @@ namespace AirFramework
         [DebuggerHidden]
 
         public void AwaitOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) 
-            where TAwaiter : AirTask where TStateMachine : IAsyncStateMachine
+            where TAwaiter : INotifyCompletion where TStateMachine : IAsyncStateMachine
         {
-            awaiter.Token = task.Token;
+
+            if (task.Token is not null)
+            {
+                task.Token.Task = awaiter as IAsyncTokenProperty;
+            }
             awaiter.OnCompleted(stateMachine.MoveNext);
-            
+
         }
 
         // 7. AwaitUnsafeOnCompleted 
         [SecuritySafeCritical]
         public void AwaitUnsafeOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) 
-            where TAwaiter : AirTask where TStateMachine : IAsyncStateMachine
+            where TAwaiter : ICriticalNotifyCompletion where TStateMachine : IAsyncStateMachine
         {
-            awaiter.Token = task.Token;
+            if (task.Token is not null)
+            {
+                task.Token.Task = awaiter as IAsyncTokenProperty;
+            }
             awaiter.OnCompleted(stateMachine.MoveNext);
-
         }
 
         // 9. SetStateMachine  将生成器与指定的状态机相关联

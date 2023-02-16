@@ -29,7 +29,7 @@ namespace AirFramework
         /// <summary>
         /// 以及过去的时间
         /// </summary>
-        public TimeSpan DeltaTime =>watch.Elapsed;
+        public TimeSpan DeltaTime => watch.Elapsed;
 
         //预测条件
         private TimeSpan span;
@@ -37,7 +37,7 @@ namespace AirFramework
         /// 是否一次使用就回收
         /// </summary>
         public bool OnceRecycle { get; set; } = false;
-       
+
         /// <summary>
         /// 开始计时，在大于这个时间时调用OnCompleted
         /// </summary>
@@ -53,7 +53,7 @@ namespace AirFramework
         public void Start()
         {
             watch.Start();
-            State= TimerState.Running;
+            State = TimerState.Running;
         }
         /// <summary>
         /// 停止计时
@@ -61,7 +61,7 @@ namespace AirFramework
         public void Stop()
         {
             watch.Stop();
-            State= TimerState.Paused;
+            State = TimerState.Paused;
         }
         /// <summary>
         /// 重置计时，参数决定事件重置
@@ -73,31 +73,34 @@ namespace AirFramework
             Stop();
             //重置计时
             watch.Reset();
-    
+
             span = default;
             //重置事件
             if (!onlyTime)
             {
                 OnChanged = null;
                 OnCompleted = null;
-                
+
             }
             //重置状态
             State = TimerState.Idle;
         }
-        
+
         void IUpdate.Update()
         {
             //不在运行则返回
             if (State != TimerState.Running) return;
 
 
-           //满足预测条件，则停止计时，调用完成
-            if(watch.Elapsed>span)
+
+
+
+            //满足预测条件，则停止计时，调用完成
+            if (watch.Elapsed > span)
             {
                 Stop();
                 OnCompleted?.Invoke();
-                if(OnceRecycle) Dispose();
+                if (OnceRecycle) Dispose();
             }
             //当改变时
             if (OnChanged != null)
@@ -108,7 +111,7 @@ namespace AirFramework
 
         public override void OnAllocate()
         {
-            
+
         }
 
         public override void OnRecycle()
