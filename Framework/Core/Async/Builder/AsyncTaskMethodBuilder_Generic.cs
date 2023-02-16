@@ -65,7 +65,9 @@ namespace AirFramework
         {
             if (task.Token is not null)
             {
+                task.Token.Task.Authorization.L();
                 task.Token.Task = awaiter as IAsyncTokenProperty;
+                task.Token.Task.Authorization.L();
             }
             awaiter.OnCompleted(stateMachine.MoveNext);
         }

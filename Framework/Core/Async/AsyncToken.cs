@@ -32,15 +32,24 @@ namespace AirFramework
         public void Yield()
         {
             if (Status == AsyncStatus.Completed) throw new InvalidOperationException();
-            
-            if(Task.Token!=this)this.Task.Token?.Yield();
-            else Task.Authorization = false;
+
+            if (Task.Token != this)
+            {
+
+                this.Task.Token?.Yield();
+            }
+            else
+            {
+                Task.Authorization = false;
+                //Task.Authorization.L();
+                "Yield".L();
+            }
             Status = AsyncStatus.Yield;
         }
         public void Continue()
         {
-            if(Status==AsyncStatus.Completed) throw new InvalidOperationException();
-            
+            if (Status == AsyncStatus.Completed) throw new InvalidOperationException();
+
             if (Task.Token != this) this.Task.Token?.Continue();
             else Task.Authorization = true;
             Status = AsyncStatus.Pending;
@@ -50,7 +59,7 @@ namespace AirFramework
             Yield();
             Status = AsyncStatus.Completed;
             if (Task.Token != this) this.Task.Token?.Cancel();
-           
+
             Task.Recycle();
             RootTask.SetException(new Exception("Cancel"));
         }
@@ -58,8 +67,8 @@ namespace AirFramework
 
         public override void OnAllocate()
         {
-           Status= AsyncStatus.Pending;
-            
+            Status = AsyncStatus.Pending;
+
         }
 
         public override void OnRecycle()

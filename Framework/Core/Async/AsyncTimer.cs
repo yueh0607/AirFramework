@@ -35,10 +35,12 @@ namespace AirFramework
             
             if (Task == null || !Task.Authorization)
             {
+                
                 if(watch.IsRunning)watch.Stop();
                 return;
             }
-            if(!watch.IsRunning)watch.Start();
+            
+            if (!watch.IsRunning)watch.Start();
             //(predicate - watch.Elapsed).L();
             if(watch.Elapsed>predicate)
             {

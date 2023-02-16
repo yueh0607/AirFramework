@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -56,24 +57,28 @@ namespace AirFramework
         /// </summary>
         /// <param name="message"></param>
         /// <param name="parm"></param>
+        [DebuggerHidden]
         public void L(object message)=>Logger.Log(message);
         /// <summary>
         /// 警告日志
         /// </summary>
         /// <param name="message"></param>
         /// <param name="parm"></param>
+        [DebuggerHidden]
         public void W(object message) => Logger.LogWarning(message);
-  
+
         /// <summary>
         /// 错误日志
         /// </summary>
         /// <param name="message"></param>
         /// <param name="parm"></param>
+        [DebuggerHidden]
         public void E(object message)=> Logger.LogError(message);
         /// <summary>
         /// 异常
         /// </summary>
         /// <param name="exception"></param>
+        [DebuggerHidden]
         public void Throw(Exception exception) => Logger.LogException(exception);
 
         #endregion

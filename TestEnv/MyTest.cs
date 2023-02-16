@@ -70,22 +70,20 @@ public class MyTest : MonoBehaviour, IMessageReceiver
     {
         AsyncToken token = this.Create<AsyncToken>();
         Async.Delay(3,token.Yield).Coroutine();
-        await Async.Delay(1);
+        //await Async.Delay(1);
         await DoSomething0().WithToken(token);
       
     }
     public async AsyncTask DoSomething0()
     {
-        //AsyncToken token = this.Create<AsyncToken>();
-        // Async.Delay(3,token.Cancel).Coroutine();
 
-        //Async.Delay(6,token.Continue).Coroutine();
         int x = await DoSomething();//.WithToken(token);
         x.L();
 
     }
     void Start()
     {
+        Application.persistentDataPath.L();
         DoSomething1();
 
 
