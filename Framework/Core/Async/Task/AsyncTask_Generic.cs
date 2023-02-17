@@ -66,9 +66,7 @@ namespace AirFramework
 
         public AsyncTask()
         {
-
             SetResult = SetResultMethod;
-            //$"{ID}Construct".L();
         }
         /// <summary>
         /// 结束当前await并设置结果

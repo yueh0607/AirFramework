@@ -7,6 +7,8 @@
  * 直接调用Dispose方法直接回收到池内，如果是通过PoolManager申请，回收时将自动重置
  */
 
+using System;
+
 namespace AirFramework
 {
     /// <summary>
@@ -46,6 +48,17 @@ namespace AirFramework
         protected override void OnDispose()
         {
             this.Recycle();
+        }
+
+
+        private Action disposeAction = null;
+        public Action DisposeAction
+        {
+            get
+            {
+                if (disposeAction == null) disposeAction = Dispose;
+                return disposeAction;
+            }
         }
     }
 }

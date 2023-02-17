@@ -37,15 +37,7 @@ namespace AirFramework
         /// </summary>
         protected abstract void OnDispose();
 
-        private Action disposeAction = null;
-        public Action DisposeAction 
-        { 
-            get
-            {
-                if (disposeAction == null) disposeAction = Dispose;
-                return disposeAction;
-            } 
-        }
+     
     }
 
     public abstract partial class Unit:IUnit
