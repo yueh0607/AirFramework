@@ -7,7 +7,7 @@ namespace AirFramework
     /// </summary>
     public class EntityMono:Entity
     {
-        MonoBehaviour mono;
+        MonoBehaviour mono; 
 
     }
 }
