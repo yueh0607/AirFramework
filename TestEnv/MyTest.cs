@@ -87,7 +87,7 @@ public class MyTest : MonoBehaviour, IMessageReceiver
     {
         Application.persistentDataPath.L();
         DoSomething1();
-
+    
 
     }
 

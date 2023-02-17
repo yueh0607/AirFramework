@@ -16,6 +16,7 @@ namespace AirFramework
             result= (events[0] as Func<T1>).Invoke();
             return true;
         }
+
         public static bool TryCall<T1,T2>(this UnitDelegateGroup container,T1 arg1 ,out T2 result)
         {
             var events = container?.Value.Get<Func<T1, T2>>();
@@ -73,7 +74,6 @@ namespace AirFramework
             result = (events[0] as Func<T1, T2, T3, T4, T5,T6>).Invoke(arg1, arg2, arg3, arg4,arg5);
             return true;
         }
-
 
     }
 }
