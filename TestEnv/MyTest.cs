@@ -51,9 +51,9 @@ public class MyTest : MonoBehaviour, IMessageReceiver
     public async AsyncTask<int> DoSomething()
     {
         0.L();
-        await Async.Delay(1);
+        await Async.Delay(1);//28
         1.L();
-        await Async.Delay(1);
+        await Async.Delay(1);//42
         2.L();
         await Async.Delay(1);
         3.L();
@@ -69,15 +69,17 @@ public class MyTest : MonoBehaviour, IMessageReceiver
     public async void DoSomething1()
     {
         AsyncToken token = this.Create<AsyncToken>();
-        Async.Delay(3,token.Yield).Coroutine();
+        Async.Delay(3,token.Cancel).Coroutine();//14
         //await Async.Delay(1);
-        await DoSomething0().WithToken(token);
-      
+        //$"ID:{token.TokenID}".L();
+        await DoSomething0().WithToken(token);//23
+
+
     }
     public async AsyncTask DoSomething0()
     {
 
-        int x = await DoSomething();//.WithToken(token);
+        int x = await DoSomething();//.InitToken(token);//26
         x.L();
 
     }

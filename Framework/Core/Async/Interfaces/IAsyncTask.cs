@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public interface IAsyncTokenProperty : IPoolable,IAuthorization
+    public interface IAsyncTokenProperty : IPoolable,IAuthorization,IUnit
     {
-        AsyncToken Token { get; set; }
+        AsyncTreeTokenNode Token { get; set; }
         
         void SetException(Exception exception);
     }

@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UnityEditor.VersionControl;
-using UnityEngine;
 
 namespace AirFramework
 {
@@ -23,59 +20,41 @@ namespace AirFramework
         //结束
         Completed
     }
-    public class AsyncToken : PoolableObject<AsyncToken>
+    public class AsyncToken:PoolableObject<AsyncToken>
     {
-        public AsyncStatus Status { get; set; } = AsyncStatus.Pending;
-        public IAsyncTokenProperty Task { get; set; }
-        public IAsyncTokenProperty RootTask { get; set; }
+        internal AsyncTreeTokenNode node=null;
+
+        public AsyncStatus Status { get; private set; } = AsyncStatus.Pending;
+
+        public ulong TokenID => node.ID;
 
         public void Yield()
         {
-            if (Status == AsyncStatus.Completed) throw new InvalidOperationException();
-
-            if (Task.Token != this)
-            {
-
-                this.Task.Token?.Yield();
-            }
-            else
-            {
-                Task.Authorization = false;
-                //Task.Authorization.L();
-                "Yield".L();
-            }
+            if (Status == AsyncStatus.Completed||node==null) throw new InvalidOperationException();
             Status = AsyncStatus.Yield;
+            node.Yield();
         }
         public void Continue()
         {
-            if (Status == AsyncStatus.Completed) throw new InvalidOperationException();
-
-            if (Task.Token != this) this.Task.Token?.Continue();
-            else Task.Authorization = true;
-            Status = AsyncStatus.Pending;
+            if(Status==AsyncStatus.Completed || node == null) throw new InvalidOperationException();
+            Status= AsyncStatus.Pending;
+            node.Continue();
         }
         public void Cancel()
         {
-            Yield();
+            if (Status == AsyncStatus.Completed || node == null) throw new InvalidOperationException();
             Status = AsyncStatus.Completed;
-            if (Task.Token != this) this.Task.Token?.Cancel();
-
-            Task.Recycle();
-            RootTask.SetException(new Exception("Cancel"));
+            node.Cancel();
         }
-
 
         public override void OnAllocate()
         {
-            Status = AsyncStatus.Pending;
-
+            node = null;
         }
 
         public override void OnRecycle()
         {
-            Task = null;
-            RootTask = null;
+            
         }
     }
-
 }

@@ -14,17 +14,18 @@ namespace AirFramework
         /// </summary>
         /// <param name="seconds"></param>
         /// <returns></returns>
-        public static AsyncTask Delay(float seconds,Action endAction=null)
+        public static AsyncTask Delay(float seconds, Action endAction = null)
         {
             var task = Framework.Pool.Allocate<AsyncTask>();
             var timer = Framework.Pool.Allocate<AsyncTimerCall>();
             timer.OnCompleted += task.SetResult;
             timer.OnCompleted += endAction;
-            timer.Start(seconds,task);
+            task.OnAsyncCompleted += timer.DisposeAction;
+            timer.Start(seconds, task);
             return task;
         }
 
-        public static AsyncTaskCompleted Complete(Action action=null)
+        public static AsyncTaskCompleted Complete(Action action = null)
         {
             action?.Invoke();
             return Framework.Pool.Allocate<AsyncTaskCompleted>();
@@ -40,10 +41,10 @@ namespace AirFramework
             //创建计数器
             var counterCall = Framework.Pool.Allocate<CounterCall>();
             counterCall.ClickValue = 1;
-            counterCall.OnceRecycle= true;
+            counterCall.OnceRecycle = true;
             //申请异步任务
             var asyncTask = Framework.Pool.Allocate<AsyncTask>();
-            
+
             //计数器任务绑定
             counterCall.OnClick += asyncTask.SetResult;
             //绑定异步任务到计数器
@@ -67,7 +68,7 @@ namespace AirFramework
             counterCall.OnceRecycle = true;
             //申请任务
             var asyncTask = Framework.Pool.Allocate<AsyncTask>();
-            
+
             //绑定结束事件
             counterCall.OnClick += asyncTask.SetResult;
             //绑定计数器
@@ -80,19 +81,27 @@ namespace AirFramework
             return asyncTask;
         }
 
-        public static AsyncTask WithToken(this AsyncTask task,AsyncToken token)
+
+
+        public static AsyncTask WithToken(this AsyncTask task, AsyncToken token)
+        {
+            token.node = task.Token;
+            //$"IDDDDD:{token.node.ID}".L();
+            return task;
+        }
+        internal static AsyncTask InitToken(this AsyncTask task, AsyncTreeTokenNode token)
         {
             task.Token?.Dispose();
             task.Token = token;
             token.Task = task;
-            token.RootTask= task;
+            token.RootTask = task;
             return task;
         }
-        public static AsyncTask<T> WithToken<T>(this AsyncTask<T> task, AsyncToken token)
+        internal static AsyncTask<T> InitToken<T>(this AsyncTask<T> task, AsyncTreeTokenNode token)
         {
             task.Token?.Dispose();
             task.Token = token;
-            token.Task= task;
+            token.Task = task;
             token.RootTask = task;
             return task;
         }

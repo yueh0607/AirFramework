@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public class AsyncTimerCall : PoolableObject<AsyncTimerCall>,IUpdate
+    internal class AsyncTimerCall : PoolableObject<AsyncTimerCall>,IUpdate
     {
         private Stopwatch watch = new Stopwatch();
 
@@ -41,14 +41,11 @@ namespace AirFramework
             }
             
             if (!watch.IsRunning)watch.Start();
-            //(predicate - watch.Elapsed).L();
             if(watch.Elapsed>predicate)
             {
-                //"cLICK".L();
                 watch.Stop();
                 watch.Reset();
                 OnCompleted?.Invoke();
-                this.Dispose();
             }
         }
 

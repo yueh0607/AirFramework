@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public class UIDGenerator : Unit,IUIDGenerator
+    public class UIDGenerator : IUIDGenerator
     {
 
 
@@ -65,10 +65,7 @@ namespace AirFramework
             queue_recycle.Enqueue(item);
         }
 
-        protected override void OnDispose()
-        {
-            Clear();
-        }
+    
 
         /// <summary>
         /// 超过申请100个ID可能会跟曾经的重复

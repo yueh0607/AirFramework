@@ -7,7 +7,7 @@ namespace AirFramework
 
 
     [AsyncMethodBuilder(typeof(AsyncTaskCompletedMethodBuilder))]
-    public class AsyncTaskCompleted : PoolableObject<AsyncTaskCompleted>,ICriticalNotifyCompletion
+    public class AsyncTaskCompleted : PoolableObject<AsyncTaskCompleted>,ICriticalNotifyCompletion,IAsyncTokenProperty
     {
         
 
@@ -20,6 +20,10 @@ namespace AirFramework
         [DebuggerHidden]
         public bool IsCompleted => true;
 
+
+        private AsyncTreeTokenNode token;
+        public AsyncTreeTokenNode Token { get => token; set => token=value; }
+        public bool Authorization { get; set; } = true;
 
         [DebuggerHidden]
         public void GetResult()
@@ -41,13 +45,17 @@ namespace AirFramework
         }
 
 
-        [DebuggerHidden]
         public override void OnAllocate()
         {
-            
+
         }
         [DebuggerHidden]
         public override void OnRecycle()
+        {
+            Token?.Dispose();
+            Token = null;
+        }
+        public void SetException(Exception exception)
         {
             
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public interface IUIDGenerator:IPool<ulong>
+    public interface IUIDGenerator
     {
         
 

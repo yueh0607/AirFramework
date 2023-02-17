@@ -17,7 +17,7 @@ namespace AirFramework
     /// <summary>
     /// 框架内所有类型的基类
     /// </summary>
-    public abstract class Unit : IUnit
+    public abstract partial class Unit : IUnit
     {
         protected bool _disposed = false;
         public bool Disposed => _disposed;
@@ -37,25 +37,36 @@ namespace AirFramework
         /// </summary>
         protected abstract void OnDispose();
 
+        private Action disposeAction = null;
+        public Action DisposeAction 
+        { 
+            get
+            {
+                if (disposeAction == null) disposeAction = Dispose;
+                return disposeAction;
+            } 
+        }
+    }
 
+    public abstract partial class Unit:IUnit
+    {
+        private static UIDGenerator generator = new(100);
 
-        //private static UIDPool idpool = new UIDPool(100);
-        
-        //private ulong id;
-        ///// <summary>
-        ///// 每个对象不会重复的全局ID
-        ///// </summary>
-        //public ulong ID => id;
-
-        //~Unit()
-        //{
-        //    idpool.Recycle(id);
-  
-        //}
-        //public Unit()
-        //{
-        //    id = idpool.Allocate();
-        //}
+        private ulong _id;
+        //唯一ID
+        public ulong ID
+        {
+            get => _id;
+            private set=> _id = value;
+        }
+        public Unit()
+        {
+            _id=generator.Allocate();
+        }
+        ~Unit()
+        {
+            generator.Recycle(_id);
+        }
 
 
 

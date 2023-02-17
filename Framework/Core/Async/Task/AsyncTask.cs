@@ -33,7 +33,7 @@ namespace AirFramework
         public override void OnRecycle()
         {
             //Token?.Unregister(this);
-
+            Token?.Dispose();
             continuation = null;
             Token = null;
             Exception = null;
@@ -76,6 +76,8 @@ namespace AirFramework
             //id = Framework.index++;
             // $"{id}.Task.Construct".L();
             SetResult = SetResultMethod;
+
+           // $"{ID}Construct".L();
         }
         /// <summary>
         /// 结束当前await并设置结果
@@ -90,9 +92,10 @@ namespace AirFramework
             {
                 //执行await以后的代码
                 continuation?.Invoke();
-                OnAsyncCompleted?.Invoke();
+                
                 
             }
+            OnAsyncCompleted?.Invoke();
             //回收到Pool
             this.Dispose();
         }
@@ -145,7 +148,7 @@ namespace AirFramework
     {
         public event Action OnAsyncCompleted = null;
 
-        public AsyncToken Token { get; set; } = null;
+        public AsyncTreeTokenNode Token { get; set; } = null;
 
         private bool authorization = true;
         public bool Authorization { get => authorization; set => authorization = value; }

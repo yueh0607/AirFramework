@@ -18,8 +18,9 @@ namespace AirFramework
         public AsyncTaskMethodBuilder(AsyncTask task)
         {
             //"Builder.Construct".L();
-            this.task = task.WithToken(Framework.Pool.Allocate<AsyncToken>());
-        
+            
+            this.task =  task.InitToken(Framework.Pool.Allocate<AsyncTreeTokenNode>());
+            
      
         }
 
@@ -82,9 +83,9 @@ namespace AirFramework
         {
             if (task.Token is not null)
             {
-                task.Token.Task.Authorization.L();
+                //task.Token.Task.Authorization.L();
                 task.Token.Task = awaiter as IAsyncTokenProperty;
-                //33333.L();
+                //$"源任务ID：{task.ID}  源任务令牌ID:{task.Token.ID} 令牌任务当前ID:{task.Token.Task.ID }  授权信息:{task.Token.Task.Authorization}".L();
             }
             //else 4444.L();
             awaiter.OnCompleted(stateMachine.MoveNext);
