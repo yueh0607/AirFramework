@@ -16,12 +16,8 @@ namespace AirFramework
 
         //2.Construct Method 构造Builder时调用
         public AsyncTaskMethodBuilder(AsyncTask task)
-        {
-            //"Builder.Construct".L();
-            
+        {  
             this.task =  task.InitToken(Framework.Pool.Allocate<AsyncTreeTokenNode>());
-            
-     
         }
 
 
@@ -30,9 +26,7 @@ namespace AirFramework
         public AsyncTask Task
         {
             get
-
             {
-                //"Builder.Task.Get".L();
                 return task;
             }
         }
@@ -42,14 +36,12 @@ namespace AirFramework
         public void Start<TStateMachine>(ref TStateMachine stateMachine) where TStateMachine : IAsyncStateMachine
         {
             stateMachine.MoveNext();
-            //"Builder.Start".L();
         }
 
         // 4. SetException 
         [DebuggerHidden]
         public void SetException(Exception exception)
         {
-            //"Builder.SetException".L();
             task.SetException(exception);
         }
 
@@ -57,7 +49,6 @@ namespace AirFramework
         [DebuggerHidden]
         public void SetResult()
         {
-            //"Builder.SetResult".L();
             task.SetResult();
         }
 
@@ -83,11 +74,9 @@ namespace AirFramework
         {
             if (task.Token is not null)
             {
-                //task.Token.Task.Authorization.L();
                 task.Token.Task = awaiter as IAsyncTokenProperty;
                 //$"源任务ID：{task.ID}  源任务令牌ID:{task.Token.ID} 令牌任务当前ID:{task.Token.Task.ID }  授权信息:{task.Token.Task.Authorization}".L();
             }
-            //else 4444.L();
             awaiter.OnCompleted(stateMachine.MoveNext);
         }
 
@@ -95,7 +84,6 @@ namespace AirFramework
         [DebuggerHidden]
         public void SetStateMachine(IAsyncStateMachine stateMachine)
         {
-           // "Builder.SetStateMachine".L();
         }
     }
 

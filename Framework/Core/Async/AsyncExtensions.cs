@@ -105,9 +105,6 @@ namespace AirFramework
             token.RootTask = task;
             return task;
         }
-        //public static AirTask Yield(IUpdate update,int frameCount)
-        //{
 
-        //}
     }
 }

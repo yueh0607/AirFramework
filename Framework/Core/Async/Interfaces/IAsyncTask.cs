@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
+    //通过接口实现异步令牌
     public interface IAsyncTokenProperty : IPoolable,IAuthorization,IUnit
     {
         AsyncTreeTokenNode Token { get; set; }

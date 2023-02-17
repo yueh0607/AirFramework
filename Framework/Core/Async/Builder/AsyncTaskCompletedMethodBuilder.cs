@@ -37,6 +37,11 @@ namespace AirFramework
         [DebuggerHidden]
         public void AwaitOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) where TAwaiter : INotifyCompletion where TStateMachine : IAsyncStateMachine
         {
+            if (task.Token is not null)
+            {
+                task.Token.Task = awaiter as IAsyncTokenProperty;
+                //$"源任务ID：{task.ID}  源任务令牌ID:{task.Token.ID} 令牌任务当前ID:{task.Token.Task.ID }  授权信息:{task.Token.Task.Authorization}".L();
+            }
             awaiter.OnCompleted(stateMachine.MoveNext);
         }
 
@@ -45,7 +50,11 @@ namespace AirFramework
         [SecuritySafeCritical]
         public void AwaitUnsafeOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) where TAwaiter : Entity, ICriticalNotifyCompletion where TStateMachine : IAsyncStateMachine
         {
-            
+            if (task.Token is not null)
+            {
+                task.Token.Task = awaiter as IAsyncTokenProperty;
+                //$"源任务ID：{task.ID}  源任务令牌ID:{task.Token.ID} 令牌任务当前ID:{task.Token.Task.ID }  授权信息:{task.Token.Task.Authorization}".L();
+            }
             awaiter.UnsafeOnCompleted(stateMachine.MoveNext);
         }
 

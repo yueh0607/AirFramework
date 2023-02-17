@@ -32,7 +32,7 @@ namespace AirFramework
         [DebuggerHidden]
         public override void OnRecycle()
         {
-            //Token?.Unregister(this);
+
             Token?.Dispose();
             continuation = null;
             Token = null;
@@ -69,15 +69,9 @@ namespace AirFramework
         {
         }
 
-
-        //private int id;
         public AsyncTask()
         {
-            //id = Framework.index++;
-            // $"{id}.Task.Construct".L();
             SetResult = SetResultMethod;
-
-           // $"{ID}Construct".L();
         }
         /// <summary>
         /// 结束当前await并设置结果
@@ -87,21 +81,16 @@ namespace AirFramework
         [DebuggerHidden]
         private void SetResultMethod()
         {
-            //Token?.IsRunning.L();
+
             if (Authorization)
             {
                 //执行await以后的代码
                 continuation?.Invoke();
-                
-                
             }
             OnAsyncCompleted?.Invoke();
             //回收到Pool
             this.Dispose();
         }
-
-
-
 
         [DebuggerHidden]
         public ExceptionDispatchInfo Exception { get; private set; }
@@ -134,7 +123,6 @@ namespace AirFramework
         public void UnsafeOnCompleted(Action continuation)
         {
             this.continuation = continuation;
-
             //$"{id}.UnsafeOnCompleted".L();
         }
 
