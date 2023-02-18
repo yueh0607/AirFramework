@@ -55,6 +55,34 @@ namespace AirFramework
             }
             return asyncTask;
         }
+
+        
+
+        /// <summary>
+        /// 等待任意一个完成即可，其余都会正常进行，有少量委托创建的GC
+        /// </summary>
+        /// <param name="tasks"></param>
+        /// <returns></returns>
+        public static AsyncTask WaitAny(List<AsyncTask> tasks)
+        {
+            //创建计数器
+            var counterCall = Framework.Pool.Allocate<CounterCall>();
+            counterCall.ClickValue = 1;
+            counterCall.OnceRecycle = true;
+            //申请异步任务
+            var asyncTask = Framework.Pool.Allocate<AsyncTask>();
+
+            //计数器任务绑定
+            counterCall.OnClick += asyncTask.SetResult;
+            //绑定异步任务到计数器
+            foreach (var task in tasks)
+            {
+                task.Coroutine();
+                task.OnAsyncCompleted += counterCall.PlusOne;
+            }
+            return asyncTask;
+        }
+
         /// <summary>
         /// 等待全部完成，有少量委托创建的GC
         /// </summary>
@@ -81,6 +109,31 @@ namespace AirFramework
             return asyncTask;
         }
 
+        /// <summary>
+        /// 等待全部完成，有少量委托创建的GC
+        /// </summary>
+        /// <param name="tasks"></param>
+        /// <returns></returns>
+        public static AsyncTask WaitAll(List<AsyncTask> tasks)
+        {
+            //申请计数器
+            var counterCall = Framework.Pool.Allocate<CounterCall>();
+            counterCall.ClickValue = tasks.Length;
+            counterCall.OnceRecycle = true;
+            //申请任务
+            var asyncTask = Framework.Pool.Allocate<AsyncTask>();
+
+            //绑定结束事件
+            counterCall.OnClick += asyncTask.SetResult;
+            //绑定计数器
+            foreach (var task in tasks)
+            {
+                task.Coroutine();
+                task.OnAsyncCompleted += counterCall.PlusOne;
+            }
+
+            return asyncTask;
+        }
 
 
         public static AsyncTask WithToken(this AsyncTask task, AsyncToken token)
@@ -89,6 +142,16 @@ namespace AirFramework
             //$"IDDDDD:{token.node.ID}".L();
             return task;
         }
+
+
+
+
+
+
+
+
+
+
         internal static AsyncTask InitToken(this AsyncTask task, AsyncTreeTokenNode token)
         {
             task.Token?.Dispose();

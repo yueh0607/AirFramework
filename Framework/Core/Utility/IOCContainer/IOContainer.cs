@@ -20,7 +20,7 @@ namespace AirFramework
         private Dictionary<Type, object> container = new Dictionary<Type, object>();
 
         /// <summary>
-        /// 注册：通过反射建立依赖映射 T-K
+        /// 注册：通过反射建立依赖映射 T1-K
         /// </summary>
         /// <typeparam name="TInterface">接口类型</typeparam>
         /// <typeparam name="KClass">依赖类型</typeparam>
