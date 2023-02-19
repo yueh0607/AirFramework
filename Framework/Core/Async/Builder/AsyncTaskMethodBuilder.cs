@@ -17,9 +17,16 @@ namespace AirFramework
         //2.Construct Method 构造Builder时调用
         public AsyncTaskMethodBuilder(AsyncTask task)
         {  
-            this.task =  task.InitToken(Framework.Pool.Allocate<AsyncTreeTokenNode>());
+            this.task =  InitToken(task,Framework.Pool.Allocate<AsyncTreeTokenNode>());
         }
-
+        private static AsyncTask InitToken(AsyncTask task, AsyncTreeTokenNode token)
+        {
+            task.Token?.Dispose();
+            task.Token = token;
+            token.Task = task;
+            token.RootTask = task;
+            return task;
+        }
 
         // . TaskLike Task property.
         [DebuggerHidden]

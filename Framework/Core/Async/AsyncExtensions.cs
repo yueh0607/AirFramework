@@ -24,7 +24,11 @@ namespace AirFramework
             timer.Start(seconds, task);
             return task;
         }
-
+        /// <summary>
+        /// 延迟指定秒数,如果不使用endAction则不产生GC Alloc
+        /// </summary>
+        /// <param name="seconds"></param>
+        /// <returns></returns>
         public static AsyncTaskCompleted Complete(Action action = null)
         {
             action?.Invoke();
@@ -55,9 +59,6 @@ namespace AirFramework
             }
             return asyncTask;
         }
-
-        
-
         /// <summary>
         /// 等待任意一个完成即可，其余都会正常进行，有少量委托创建的GC
         /// </summary>
@@ -65,16 +66,18 @@ namespace AirFramework
         /// <returns></returns>
         public static AsyncTask WaitAny(List<AsyncTask> tasks)
         {
-            //创建计数器
+            //申请计数器
             var counterCall = Framework.Pool.Allocate<CounterCall>();
+            //设置触发值
             counterCall.ClickValue = 1;
+            //使用一次就自动回收
             counterCall.OnceRecycle = true;
             //申请异步任务
             var asyncTask = Framework.Pool.Allocate<AsyncTask>();
 
-            //计数器任务绑定
+            //计数器任务绑定，此步骤仅第一次从池申请有GC
             counterCall.OnClick += asyncTask.SetResult;
-            //绑定异步任务到计数器
+            //绑定异步任务到计数器，同样是仅第一次存在GC
             foreach (var task in tasks)
             {
                 task.Coroutine();
@@ -92,14 +95,16 @@ namespace AirFramework
         {
             //申请计数器
             var counterCall = Framework.Pool.Allocate<CounterCall>();
+            //设置触发值
             counterCall.ClickValue = tasks.Length;
+            //使用一次就回收
             counterCall.OnceRecycle = true;
             //申请任务
             var asyncTask = Framework.Pool.Allocate<AsyncTask>();
 
-            //绑定结束事件
+            //绑定结束事件，仅第一次存在GC
             counterCall.OnClick += asyncTask.SetResult;
-            //绑定计数器
+            //绑定计数器，仅第一次存在GC
             foreach (var task in tasks)
             {
                 task.Coroutine();
@@ -118,7 +123,7 @@ namespace AirFramework
         {
             //申请计数器
             var counterCall = Framework.Pool.Allocate<CounterCall>();
-            counterCall.ClickValue = tasks.Length;
+            counterCall.ClickValue = tasks.Count;
             counterCall.OnceRecycle = true;
             //申请任务
             var asyncTask = Framework.Pool.Allocate<AsyncTask>();
@@ -136,6 +141,8 @@ namespace AirFramework
         }
 
 
+
+        //为指定异步任务设置令牌，可以取消和挂起
         public static AsyncTask WithToken(this AsyncTask task, AsyncToken token)
         {
             token.node = task.Token;
@@ -144,30 +151,6 @@ namespace AirFramework
         }
 
 
-
-
-
-
-
-
-
-
-        internal static AsyncTask InitToken(this AsyncTask task, AsyncTreeTokenNode token)
-        {
-            task.Token?.Dispose();
-            task.Token = token;
-            token.Task = task;
-            token.RootTask = task;
-            return task;
-        }
-        internal static AsyncTask<T> InitToken<T>(this AsyncTask<T> task, AsyncTreeTokenNode token)
-        {
-            task.Token?.Dispose();
-            task.Token = token;
-            token.Task = task;
-            token.RootTask = task;
-            return task;
-        }
 
     }
 }

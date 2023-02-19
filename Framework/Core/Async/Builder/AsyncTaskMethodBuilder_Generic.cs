@@ -21,9 +21,16 @@ namespace AirFramework
         }
         public AsyncTaskMethodBuilder(AsyncTask<T> task)
         {
-            this.task = task.InitToken(Framework.Pool.Allocate<AsyncTreeTokenNode>());
+            this.task = InitToken(task, Framework.Pool.Allocate<AsyncTreeTokenNode>());
         }
-
+        private static AsyncTask<T> InitToken( AsyncTask<T> task, AsyncTreeTokenNode token)
+        {
+            task.Token?.Dispose();
+            task.Token = token;
+            token.Task = task;
+            token.RootTask = task;
+            return task;
+        }
         // 2. TaskLike Task property.
         [DebuggerHidden]
         public AsyncTask<T> Task => task;
