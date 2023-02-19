@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public interface IStringConverter<T> : IConverter<T,string>
+    public interface IConverter<T,K>
     {
-        public new string ConvertTo(T obj);
-        public new T ConvertFrom(string value);
+        public K ConvertTo(T obj);
+        public T ConvertFrom(K obj);
     }
 }
