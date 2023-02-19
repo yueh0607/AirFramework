@@ -10,7 +10,7 @@ namespace AirFramework
     {
 
         /// <summary>
-        /// 使UnityEngine.AsyncOperation
+        /// 使UnityEngine.AsyncOperation的拓展
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="operation"></param>
@@ -21,7 +21,12 @@ namespace AirFramework
             operation.completed += (A) => task.SetResult(A as T);
             return task;
         }
-
+        /// <summary>
+        /// 针对Addressable的拓展
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="handle"></param>
+        /// <returns></returns>
         public static AsyncTask<AsyncOperationHandle<T>> GetAwaiter<T>(this AsyncOperationHandle<T> handle)
         {
             var task = Framework.Pool.Allocate<AsyncTask<AsyncOperationHandle<T>>>();

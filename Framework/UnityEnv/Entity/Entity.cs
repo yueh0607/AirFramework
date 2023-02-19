@@ -1,9 +1,9 @@
 ﻿
 namespace AirFramework
 {
-    public partial class Entity : PoolableObject<Entity>, IMessage
+    public partial class Entity : PoolableObject<Entity>, IMessageReceiver
     {
-       
+        
         protected override void OnDispose()
         {
 
@@ -22,7 +22,7 @@ namespace AirFramework
         
     }
 
-    public partial class Entity : PoolableObject<Entity>, IMessage
+    public partial class Entity : PoolableObject<Entity>, IMessageReceiver
     {
 
        
