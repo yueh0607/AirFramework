@@ -16,7 +16,7 @@ Unity3D游戏开发中小型游戏框架
 - 热更新与Hotfix (HybirdCLR or xlua or ILRuntime)
 - 简单网络模块(TCP/UDP/HTTP/Photon等简易支持)
 - 代码状态机/行为树
-- csv/json/binary/excel等序列化
+- csv/json/binary/excel/string等序列化
 - SDK管理器与快捷接入
 - 游戏AI创建支持(深度学习/机器学习)
 - 多语言管理
