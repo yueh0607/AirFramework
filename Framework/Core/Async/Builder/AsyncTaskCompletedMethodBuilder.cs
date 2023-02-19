@@ -8,7 +8,7 @@ namespace AirFramework
     public struct AsyncTaskCompletedMethodBuilder
     {
 
-        private AsyncTaskCompleted task;
+        
 
         // 1. Static Create method.
         [DebuggerHidden]
@@ -18,6 +18,8 @@ namespace AirFramework
    
         }
 
+        private AsyncTaskCompleted task;
+        //2.Task-LikeW
         public AsyncTaskCompleted Task => task;
        
         // 3. SetException
@@ -30,7 +32,6 @@ namespace AirFramework
         [DebuggerHidden]
         public void SetResult()
         {
-            // do nothing
         }
 
         // 5. AwaitOnCompleted

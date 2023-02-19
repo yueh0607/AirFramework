@@ -10,11 +10,10 @@ namespace AirFramework
     {
         private AsyncTask task;
 
-        // 1. Static Create method 编译器调用静态创建方法来创建Builder
+        // 1. Static Create method
         [DebuggerHidden]
         public static AsyncTaskMethodBuilder Create() => new AsyncTaskMethodBuilder(AsyncTask.Create(fromPool:true));
 
-        //2.Construct Method 构造Builder时调用
         public AsyncTaskMethodBuilder(AsyncTask task)
         {  
             this.task =  InitToken(task,Framework.Pool.Allocate<AsyncTreeTokenNode>());
@@ -28,7 +27,7 @@ namespace AirFramework
             return task;
         }
 
-        // . TaskLike Task property.
+        // 2. TaskLike Task
         [DebuggerHidden]
         public AsyncTask Task
         {
@@ -61,6 +60,7 @@ namespace AirFramework
 
         // 6. AwaitOnCompleted  
         [DebuggerHidden]
+
 
         public void AwaitOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) 
             where TAwaiter : INotifyCompletion where TStateMachine : IAsyncStateMachine

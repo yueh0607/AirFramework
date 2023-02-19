@@ -54,8 +54,9 @@ namespace AirFramework
             //绑定异步任务到计数器
             foreach (var task in tasks)
             {
-                task.Coroutine();
+                
                 task.OnAsyncCompleted += counterCall.PlusOne;
+                task.Coroutine();
             }
             return asyncTask;
         }
@@ -80,14 +81,61 @@ namespace AirFramework
             //绑定异步任务到计数器，同样是仅第一次存在GC
             foreach (var task in tasks)
             {
-                task.Coroutine();
+                
                 task.OnAsyncCompleted += counterCall.PlusOne;
+                task.Coroutine();
             }
             return asyncTask;
         }
 
         /// <summary>
-        /// 等待全部完成，有少量委托创建的GC
+        /// 等待任意一个完成即可，其余都会正常进行，有少量委托创建的GC
+        /// </summary>
+        /// <param name="tasks"></param>
+        /// <returns></returns>
+        public static AsyncTask<T> WaitAny<T>(params AsyncTask<T>[] tasks)
+        {
+            //创建计数器
+            var counterCall = Framework.Pool.Allocate<CounterCall<T>>();
+            counterCall.ClickValue = 1;
+            counterCall.OnceRecycle = true;
+            //申请异步任务
+            var asyncTask = Framework.Pool.Allocate<AsyncTask<T>>();
+
+            //计数器任务绑定
+            counterCall.OnClick +=(x)=> { asyncTask.SetResult(x[0]); };
+
+            //绑定异步任务到计数器
+            foreach (var task in tasks)
+            {
+                task.OnAsyncCompleted += counterCall.PlusOne;
+                task.Coroutine();
+            }
+            return asyncTask;
+        }
+        public static AsyncTask<T> WaitAny<T>(List<AsyncTask<T>> tasks)
+        {
+            //创建计数器
+            var counterCall = Framework.Pool.Allocate<CounterCall<T>>();
+            counterCall.ClickValue = 1;
+            counterCall.OnceRecycle = true;
+            //申请异步任务
+            var asyncTask = Framework.Pool.Allocate<AsyncTask<T>>();
+
+            //计数器任务绑定
+            counterCall.OnClick += (x) => { asyncTask.SetResult(x[0]); };
+
+            //绑定异步任务到计数器
+            foreach (var task in tasks)
+            {
+                task.OnAsyncCompleted += counterCall.PlusOne;
+                task.Coroutine();
+            }
+            return asyncTask;
+        }
+
+        /// <summary>
+        /// 等待全部完成，必定有一个委托的GC
         /// </summary>
         /// <param name="tasks"></param>
         /// <returns></returns>
@@ -115,7 +163,7 @@ namespace AirFramework
         }
 
         /// <summary>
-        /// 等待全部完成，有少量委托创建的GC
+        /// 等待全部完成，必定有一个委托的GC
         /// </summary>
         /// <param name="tasks"></param>
         /// <returns></returns>
@@ -131,6 +179,60 @@ namespace AirFramework
             //绑定结束事件
             counterCall.OnClick += asyncTask.SetResult;
             //绑定计数器
+            foreach (var task in tasks)
+            {
+                task.Coroutine();
+                task.OnAsyncCompleted += counterCall.PlusOne;
+            }
+
+            return asyncTask;
+        }
+        /// <summary>
+        /// 等待全部完成，必定有一个委托的GC
+        /// </summary>
+        /// <param name="tasks"></param>
+        /// <returns></returns>
+        public static AsyncTask<T[]> WaitAll<T>(params AsyncTask<T>[] tasks)
+        {
+            //申请计数器
+            var counterCall = Framework.Pool.Allocate<CounterCall<T>>();
+            //设置触发值
+            counterCall.ClickValue = tasks.Length;
+            //使用一次就回收
+            counterCall.OnceRecycle = true;
+            //申请任务
+            var asyncTask = Framework.Pool.Allocate<AsyncTask<T[]>>();
+
+            //绑定结束事件
+            counterCall.OnClick += (x)=> { asyncTask.SetResult(x.ToArray()); };
+            //绑定计数器，仅第一次存在GC
+            foreach (var task in tasks)
+            {
+                task.Coroutine();
+                task.OnAsyncCompleted += counterCall.PlusOne;
+            }
+
+            return asyncTask;
+        }
+        /// <summary>
+        /// 等待全部完成，必定有一个委托的GC
+        /// </summary>
+        /// <param name="tasks"></param>
+        /// <returns></returns>
+        public static AsyncTask<T[]> WaitAll<T>(List<AsyncTask<T>> tasks)
+        {
+            //申请计数器
+            var counterCall = Framework.Pool.Allocate<CounterCall<T>>();
+            //设置触发值
+            counterCall.ClickValue = tasks.Count;
+            //使用一次就回收
+            counterCall.OnceRecycle = true;
+            //申请任务
+            var asyncTask = Framework.Pool.Allocate<AsyncTask<T[]>>();
+
+            //绑定结束事件
+            counterCall.OnClick += (x) => { asyncTask.SetResult(x.ToArray()); };
+            //绑定计数器，仅第一次存在GC
             foreach (var task in tasks)
             {
                 task.Coroutine();

@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    //通过接口实现异步令牌
+    /// <summary>
+    /// 使用该接口统一支持异步令牌
+    /// </summary>
     public interface IAsyncTokenProperty : IPoolable,IAuthorization,IUnit
     {
         AsyncTreeTokenNode Token { get; set; }
@@ -15,7 +17,9 @@ namespace AirFramework
         void SetException(Exception exception);
     }
 
-
+    /// <summary>
+    /// 异步任务接口
+    /// </summary>
     public interface IAsyncTask : ICriticalAwaiter
     {   
         /// <summary>
@@ -31,7 +35,10 @@ namespace AirFramework
 
         
     }
-
+    /// <summary>
+    /// 异步任务接口
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public interface IAsyncTask<T> : ICriticalAwaiter<T>
     {
         /// <summary>
