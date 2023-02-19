@@ -24,10 +24,11 @@ namespace AirFramework
             timer.Start(seconds, task);
             return task;
         }
+        
         /// <summary>
-        /// 延迟指定秒数,如果不使用endAction则不产生GC Alloc
+        /// 用于在特定时刻配位await
         /// </summary>
-        /// <param name="seconds"></param>
+        /// <param name="action"></param>
         /// <returns></returns>
         public static AsyncTaskCompleted Complete(Action action = null)
         {
@@ -36,7 +37,7 @@ namespace AirFramework
         }
 
         /// <summary>
-        /// 等待任意一个完成即可，其余都会正常进行，有少量委托创建的GC
+        /// 等待任意一个完成即可，必有一个委托的GC
         /// </summary>
         /// <param name="tasks"></param>
         /// <returns></returns>
@@ -61,7 +62,7 @@ namespace AirFramework
             return asyncTask;
         }
         /// <summary>
-        /// 等待任意一个完成即可，其余都会正常进行，有少量委托创建的GC
+        /// 等待任意一个完成即可，必有一个委托的GC
         /// </summary>
         /// <param name="tasks"></param>
         /// <returns></returns>
@@ -89,7 +90,7 @@ namespace AirFramework
         }
 
         /// <summary>
-        /// 等待任意一个完成即可，其余都会正常进行，有少量委托创建的GC
+        /// 等待任意一个完成即可，必有一个委托的GC
         /// </summary>
         /// <param name="tasks"></param>
         /// <returns></returns>
@@ -113,6 +114,11 @@ namespace AirFramework
             }
             return asyncTask;
         }
+        /// <summary>
+        /// 等待任意一个完成即可，必有一个委托的GC
+        /// </summary>
+        /// <param name="tasks"></param>
+        /// <returns></returns>
         public static AsyncTask<T> WaitAny<T>(List<AsyncTask<T>> tasks)
         {
             //创建计数器
@@ -244,7 +250,12 @@ namespace AirFramework
 
 
 
-        //为指定异步任务设置令牌，可以取消和挂起
+        /// <summary>
+        /// 为指定异步任务设置令牌，可以取消和挂起
+        /// </summary>
+        /// <param name="task"></param>
+        /// <param name="token"></param>
+        /// <returns></returns>
         public static AsyncTask WithToken(this AsyncTask task, AsyncToken token)
         {
             token.node = task.Token;

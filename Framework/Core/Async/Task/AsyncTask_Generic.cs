@@ -8,6 +8,7 @@ namespace AirFramework
     /// <summary>
     /// 此分部类负责对象池
     /// </summary>
+    [AsyncMethodBuilder(typeof(AsyncTaskMethodBuilder<>))]
     public partial class AsyncTask<T> : PoolableObject<AsyncTask<T>>, IAsyncTask<T>,IAuthorization, IAsyncTokenProperty
     {
         [DebuggerHidden]
@@ -36,20 +37,6 @@ namespace AirFramework
             Exception = null;
 
         }
-    }
-
-
-    /// <summary>
-    /// 匹配编译器要求
-    /// </summary>
-    public partial class AsyncTask<T> : PoolableObject<AsyncTask<T>>, IAsyncTask<T>, IAuthorization, IAsyncTokenProperty
-    {
-        [DebuggerHidden]
-        public AsyncTask<T> GetAwaiter() => this;
-
-
-        [DebuggerHidden]
-        public bool IsCompleted { get; set; }
     }
 
     /// <summary>
@@ -89,9 +76,6 @@ namespace AirFramework
             this.Dispose();
         }
 
-
-
-
         [DebuggerHidden]
         public ExceptionDispatchInfo Exception { get; private set; }
         /// <summary>
@@ -110,9 +94,15 @@ namespace AirFramework
     /// </summary>
     public partial class AsyncTask<T> : PoolableObject<AsyncTask<T>>, IAsyncTask<T>, IAuthorization, IAsyncTokenProperty
     {
-        #region OnCompleted
 
-        public Action continuation;
+        [DebuggerHidden]
+        public AsyncTask<T> GetAwaiter() => this;
+
+        #region OnCompleted
+        public event Action<T> OnAsyncCompleted = null;
+        private Action continuation;
+        [DebuggerHidden]
+        public bool IsCompleted { get; set; }
         [DebuggerHidden]
         public void OnCompleted(Action continuation)
         {
@@ -123,26 +113,23 @@ namespace AirFramework
         public void UnsafeOnCompleted(Action continuation)
         {
             this.continuation = continuation;
-
-            //$"{id}.UnsafeOnCompleted".L();
         }
 
         #endregion
 
-    }
-
-
-    [AsyncMethodBuilder(typeof(AsyncTaskMethodBuilder<>))]
-    public partial class AsyncTask<T> : PoolableObject<AsyncTask<T>>, IAsyncTask<T>, IAuthorization, IAsyncTokenProperty
-    {
-        public event Action<T> OnAsyncCompleted = null;
-
+        #region Token
+        /// <summary>
+        /// 异步令牌，与AsyncToken作用相同
+        /// </summary>
         public AsyncTreeTokenNode Token { get; set; } = null;
 
-        private bool authorization=true;
-        public bool Authorization { get => authorization; set=> authorization=value; }
+        private bool authorization = true;
+        /// <summary>
+        /// 授权状态：代表当前任务是否挂起与任务链能否继续
+        /// </summary>
+        public bool Authorization { get => authorization; set => authorization = value; }
 
-
+        #endregion
 
         [DebuggerHidden]
         public async void Coroutine()
@@ -152,5 +139,4 @@ namespace AirFramework
 
 
     }
-
 }
