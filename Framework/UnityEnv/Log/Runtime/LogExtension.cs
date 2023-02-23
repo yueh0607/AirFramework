@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace AirFramework
 {
@@ -10,26 +11,26 @@ namespace AirFramework
     {
         public static void L(this object any)
         {
-            Framework.Log.L(any);
+            Debug.Log(any);
         }
         public static void W(this object any)
         {
-            Framework.Log.W(any);
+            Debug.LogWarning(any);
         }
         public static void E(this object any)
         {
-            Framework.Log.E(any);
+            Debug.LogError(any);
         }
 
         public static void Throw(this Exception ex)
         {
-            Framework.Log.Throw(ex);
+            Debug.LogException(ex);
         }
 
 
         public static T Throw<T>(this Exception ex)
         {
-            Framework.Log.Throw(ex);
+            Throw(ex);
             return default;
         }
     }

@@ -13,6 +13,9 @@ namespace AirFramework.Editor
     
     public class FrameworkWindows :OdinMenuEditorWindow
     {
+        [SerializeField]
+        Config config;
+
         [MenuItem("Framework/Open")]
         public static void Open()
         {
@@ -24,7 +27,7 @@ namespace AirFramework.Editor
         {
             var tree = new OdinMenuTree(supportsMultiSelect: false);
             tree.Add("关于", new About(),EditorIcons.Info);
-            tree.Add("日志管理",new LogSettings(),EditorIcons.SettingsCog);
+            tree.Add("日志管理",new LogSettings(config),EditorIcons.SettingsCog);
             tree.Add("UI代码生成", new MVVMCodeGenerate(),EditorIcons.Flag);
             return tree;
         }

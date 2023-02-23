@@ -25,7 +25,7 @@ public class MyTestUnit : PoolableObject<MyTestUnit>, IUpdate, IStart
     {
 
     }
-
+    public static void XXX() { }
     void IStart.Start()
     {
 
@@ -46,6 +46,9 @@ public class MyTest : MonoBehaviour, IMessageReceiver
 {
     public void Start()
     {
+        MyTestUnit mt = this.Create<MyTestUnit>();
+
+       
         Application.persistentDataPath.L();
     }
 

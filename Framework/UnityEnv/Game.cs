@@ -20,7 +20,7 @@ namespace AirFramework
             Framework.LifeCycle.AddLifeCycle<IFixedUpdate,FixedUpdateHandler>();
 
             Framework.Log.Logger = new ULogger();
-            Framework.Log.LogPath = Application.persistentDataPath;
+            //Framework.Log.LogPath = Application.persistentDataPath;
             Framework.Log.SetInterceptor<UInterceptor, URecorder>();
         }
 #endif

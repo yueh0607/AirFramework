@@ -16,7 +16,7 @@ namespace AirFramework
         public void Record(string logString, string stackTrace, LogType type)
         {
 
-            string directory = $"{Framework.Log.LogPath}/{Framework.Log.LogDirectory}/";
+            string directory = $"{LogManager.LogPath}/{LogManager.LogDirectory}/";
             string path = $"{directory}{System.DateTime.Now.Date.ToString().Replace("/", "-").Replace(" 0:00:00", "")}.txt";
 
 

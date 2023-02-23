@@ -1,71 +1,78 @@
 using Sirenix.OdinInspector;
+using Sirenix.Serialization;
+using Sirenix.Serialization.Utilities;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Globalization;
 using System.IO;
 using System.Runtime.InteropServices;
+using UnityEditor.AssetImporters;
 using UnityEngine;
 
 namespace AirFramework.Editor
 {
-
+    
     public class LogSettings
     {
+        #region Config
+        Config config;
+
+        public LogSettings(Config c)
+        {
+            config = c;
+
+            log_recorder = c.logger_log_enable;
+            warning_recorder = c.logger_warn_enable;
+            error_recorder = c.logger_error;
+            exception_recorder= c.logger_exception;
+        }
+        void SaveFile()
+        {
+            config.logger_log_enable = log_recorder;
+            config.logger_warn_enable = warning_recorder;
+            config.logger_error = error_recorder;
+            config.logger_exception = exception_recorder;
+
+        }
+
+        #endregion
 
 
         #region Recorder
-
-        public enum LogState
-        {
-            /// <summary>
-            /// 不会记录
-            /// </summary>
-
-            None,
-            /// <summary>
-            /// 只记录内容
-            /// </summary>
-
-            Simple,
-            /// <summary>
-            /// 完全日志，带有堆栈跟踪
-            /// </summary>
-
-            All
-        }
-
-
-
-        [BoxGroup("日志文件写入模式")]
+        [BoxGroup("File Write Mode")]
         [EnumToggleButtons]
-        [LabelText("日志记录")]
+        [LabelText("Log Record Mode")]
+        [OnValueChanged("SaveFile")]
         public LogState log_recorder = LogState.Simple;
 
 
         [EnumToggleButtons]
-        [BoxGroup("日志文件写入模式")]
-        [LabelText("警告记录")]
+        [BoxGroup("File Write Mode")]
+        [LabelText("Warning Record Mode")]
+        [OnValueChanged("SaveFile")]
         public LogState warning_recorder = LogState.Simple;
 
 
         [EnumToggleButtons]
-        [BoxGroup("日志文件写入模式")]
-        [LabelText("错误记录")]
+        [BoxGroup("File Write Mode")]
+        [OnValueChanged("SaveFile")]
+        [LabelText("Error Record Mode")]
         public LogState error_recorder = LogState.All;
 
 
         [EnumToggleButtons]
-        [BoxGroup("日志文件写入模式")]
-        [LabelText("异常记录")]
+        [BoxGroup("File Write Mode")]
+        [OnValueChanged("SaveFile")]
+        [LabelText("Exception Record Mode")]
         public LogState exception_recorder = LogState.All;
 
 
 
 
-
-        [BoxGroup("日志文件写入模式")]
-        [HorizontalGroup("日志文件写入模式/A")]
+        [BoxGroup("File Write Mode")]
+        [HorizontalGroup("File Write Mode/A")]
         [GUIColor(0, 1, 0)]
         [Button]
 
@@ -75,23 +82,25 @@ namespace AirFramework.Editor
             warning_recorder = LogState.Simple;
             error_recorder = LogState.All;
             exception_recorder = LogState.All;
+            SaveFile();
         }
-        [BoxGroup("日志文件写入模式")]
+        [BoxGroup("File Write Mode")]
         [GUIColor(0, 1, 0)]
         [Button]
-        [HorizontalGroup("日志文件写入模式/A")]
-
+        [HorizontalGroup("File Write Mode/A")]
+        
         public void DisableAll()
         {
             log_recorder = LogState.None;
             warning_recorder = LogState.None;
             error_recorder = LogState.None;
             exception_recorder = LogState.None;
+            SaveFile();
         }
-        [BoxGroup("日志文件写入模式")]
+        [BoxGroup("File Write Mode")]
         [GUIColor(0, 1, 0)]
         [Button]
-        [HorizontalGroup("日志文件写入模式/A")]
+        [HorizontalGroup("File Write Mode/A")]
 
         public void EnableAll()
         {
@@ -99,17 +108,29 @@ namespace AirFramework.Editor
             warning_recorder = LogState.All;
             error_recorder = LogState.All;
             exception_recorder = LogState.All;
+            SaveFile();
         }
 
 
         #endregion
-   
 
-        [TableList(AlwaysExpanded = true)]
-        [LabelText("日志管理")]
+
+
+        #region LoopDefender
+        [BoxGroup("Debug Tools")]
+        [LabelText("Defend Dead Loop")]
+        public bool defend_enable = true;
+
+        #endregion
+
+        #region Manage
+        [BoxGroup("Log Manage")]
+        [TableList(AlwaysExpanded = true,IsReadOnly =true)]
+
+        [HideLabel]
         public List<LogColumn> datas = ReadLogs();
 
-
+         
         private static List<LogColumn> ReadLogs()
         {
             string path = Application.persistentDataPath + "/Log/";
@@ -123,8 +144,6 @@ namespace AirFramework.Editor
 
                 using (var x = new StreamReader(info.OpenRead()))
                 {
-
-
                     var text = new TextAsset(x.ReadToEnd());
                     text.name = info.Name;
                     column.logs = text;
@@ -143,7 +162,7 @@ namespace AirFramework.Editor
             foreach(var file in files)
             {
 
-                Debug.Log(file.Name);
+                //Debug.Log(file.Name);
                 var delta = DateTime.Now - DateTime.Parse(file.Name.Replace(".txt",""));
                 if(delta.TotalDays>days)
                 {
@@ -153,29 +172,35 @@ namespace AirFramework.Editor
             datas = ReadLogs();
         }
 
-
-        [ButtonGroup("删除日志")]
-        [LabelText("Over 3 Days")]
+        [BoxGroup("Log Manage")]
+        [Button]
+        [HorizontalGroup("Log Manage/A")]
+       
+        [LabelText("Delete Over 3 Days")]
         public void DelThree()
         {
             DeleDays(3);
         }
-
-
-        [ButtonGroup("删除日志")]
-        [LabelText("Over 7 Days")]
+        [BoxGroup("Log Manage")]
+        [Button]
+        [HorizontalGroup("Log Manage/A")]
+        [LabelText("Delete Over 7 Days")]
         public void DelSeven()
         {
             DeleDays(7);
         }
-        [ButtonGroup("删除日志")]
-        [LabelText("Over 30 Days")]
+        [BoxGroup("Log Manage")]
+        [HorizontalGroup("Log Manage/A")]
+        [Button]
+        [LabelText("Delete Over 30 Days")]
         public void DelMon()
         {
             DeleDays(30);
         }
-        [ButtonGroup("删除日志")]
-        [LabelText("Over 90 Days")]
+        [BoxGroup("Log Manage")]
+        [Button]
+        [LabelText("Delete Over 90 Days")]
+        [HorizontalGroup("Log Manage/A")]
         public void DelTMon()
         {
             DeleDays(90);
@@ -196,5 +221,8 @@ namespace AirFramework.Editor
                 Application.OpenURL(Application.persistentDataPath + "/Log/" + logs.name);
             }
         }
+
+
+        #endregion
     }
 }

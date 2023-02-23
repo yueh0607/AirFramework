@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using UnityEditor.VersionControl;
 using UnityEngine;
 
 namespace AirFramework
@@ -36,11 +32,11 @@ namespace AirFramework
         /// <summary>
         /// 日志记录位置
         /// </summary>
-        public string LogPath { get; set; } = "";
+        public static string LogPath { get; set; } = Application.persistentDataPath;
         /// <summary>
         /// 记录位置的子目录
         /// </summary>
-        public string LogDirectory { get; set; } = "Log";
+        public static string LogDirectory { get; set; } = "Log";
 
         /// <summary>
         /// 日志记录编码，与输出无关
@@ -50,6 +46,8 @@ namespace AirFramework
         /// 全部堆栈跟踪
         /// </summary>
         public bool AllStatckTrace { get; set; } = false;
+
+
 
         #region 方法
         /// <summary>
@@ -80,6 +78,7 @@ namespace AirFramework
         /// <param name="exception"></param>
         [DebuggerHidden]
         public void Throw(Exception exception) => Logger.LogException(exception);
+
 
         #endregion
         protected override void OnDispose()
