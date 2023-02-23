@@ -1,12 +1,13 @@
 ﻿using AirFramework;
 using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
-
+using UnityEngine.ResourceManagement.ResourceLocations;
 
 namespace AirFramework
 {
-    public static partial class Pool
+    public static partial class AsyncExtensions
     {
 
         /// <summary>

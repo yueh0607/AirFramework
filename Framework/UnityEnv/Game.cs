@@ -24,6 +24,8 @@ namespace AirFramework
             Framework.Log.SetInterceptor<UInterceptor, URecorder>();
         }
 #endif
+
+ 
         private void Awake()
         {
             Framework.LifeCycle.Publish<IAwake>();
