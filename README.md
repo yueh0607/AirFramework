@@ -25,7 +25,7 @@ Unity3D游戏开发中小型游戏框架
 - 音效管理器
 - 编辑器拓展
 
-# 参考与推荐项目
+# 推荐项目
 - [SDHK/WorldTreeFramework](https://github.com/SDHK/WorldTreeFramework)
 - [OnClick9927/IFramework](https://github.com/OnClick9927/IFramework)
 - [eagmetang/ET](https://github.com/egametang/ET)
