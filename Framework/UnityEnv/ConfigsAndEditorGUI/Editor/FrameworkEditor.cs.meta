@@ -6,7 +6,8 @@ MonoImporter:
   defaultReferences:
   - m_ViewDataDictionary: {instanceID: 0}
   - inspectorTargetSerialized: {instanceID: 0}
-  - config: {fileID: 11400000, guid: a308d7f341f0eff4a91a3d1deb5fa374, type: 2}
+  - config_runtime: {fileID: 11400000, guid: a308d7f341f0eff4a91a3d1deb5fa374, type: 2}
+  - config_editor: {fileID: 11400000, guid: 8fea2153d24565c4ca2e32f32abe0dc9, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

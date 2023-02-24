@@ -5,27 +5,10 @@ using UnityEngine;
 namespace AirFramework.Editor
 {
     
-    public enum LogState
-    {
-        /// <summary>
-        /// 不会记录
-        /// </summary>
+    
 
-        None,
-        /// <summary>
-        /// 只记录内容
-        /// </summary>
-
-        Simple,
-        /// <summary>
-        /// 完全日志，带有堆栈跟踪
-        /// </summary>
-
-        All
-    }
-
-    [CreateAssetMenu(menuName = "FrameworkConfig")]
-    public class Config :ScriptableObject
+    [CreateAssetMenu(menuName = "ConfigFile/FrameworkInfo")]
+    public class RuntimeConfig :ScriptableObject
     {
 
         public LogState logger_log_enable = LogState.Simple;
@@ -35,5 +18,10 @@ namespace AirFramework.Editor
         public bool logger_loop_defend = true;
 
 
+        public bool defend_enable = true;
+        public float loop_time_out = 0.1f;
+        public bool restart_when_compile = true;
+
+        public bool is_release = false;
     }
 }

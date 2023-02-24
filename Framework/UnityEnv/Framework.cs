@@ -16,6 +16,6 @@ namespace AirFramework
         /// 调试日志管理器
         /// </summary>
         [DebuggerHidden]
-        public static LogManager Log { get; } = new LogManager();
+        internal static LogManager Log { get; } = new LogManager();
     }
 }

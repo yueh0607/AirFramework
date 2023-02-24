@@ -9,7 +9,7 @@ namespace AirFramework
     public interface ILogger
     {
 
-        public bool Enable { get; set; }
+
 
         /// <summary>
         /// 常规日志

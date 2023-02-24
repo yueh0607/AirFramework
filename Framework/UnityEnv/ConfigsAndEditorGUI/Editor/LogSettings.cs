@@ -1,40 +1,45 @@
 using Sirenix.OdinInspector;
-using Sirenix.Serialization;
-using Sirenix.Serialization.Utilities;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Globalization;
 using System.IO;
-using System.Runtime.InteropServices;
-using UnityEditor.AssetImporters;
 using UnityEngine;
 
 namespace AirFramework.Editor
 {
-    
+
     public class LogSettings
     {
-        #region Config
-        Config config;
 
-        public LogSettings(Config c)
+        #region Config
+        RuntimeConfig config;
+
+        public LogSettings(RuntimeConfig c)
         {
             config = c;
-
+            //调试器记录开关
             log_recorder = c.logger_log_enable;
             warning_recorder = c.logger_warn_enable;
             error_recorder = c.logger_error;
             exception_recorder= c.logger_exception;
+
+            //深循环防御
+            defend_enable= config.defend_enable;
+            loop_time_out= config.loop_time_out ;
+            restart_when_compile = config.restart_when_compile;
         }
         void SaveFile()
         {
+            //调试器记录开关
             config.logger_log_enable = log_recorder;
             config.logger_warn_enable = warning_recorder;
             config.logger_error = error_recorder;
             config.logger_exception = exception_recorder;
 
+            //深循环防御参数
+            config.defend_enable = defend_enable;
+            config.loop_time_out = loop_time_out;
+            config.restart_when_compile= restart_when_compile;
+            
         }
 
         #endregion
@@ -115,18 +120,27 @@ namespace AirFramework.Editor
         #endregion
 
 
-
         #region LoopDefender
         [BoxGroup("Debug Tools")]
-        [LabelText("Defend Dead Loop")]
+        [LabelText("Deep Loop Defend ")]
+        [OnValueChanged("SaveFile")]
         public bool defend_enable = true;
-
+        [LabelText("Restart When ReComplie")]
+        [BoxGroup("Debug Tools")]
+        [ShowIf("defend_enable")]
+        [OnValueChanged("SaveFile")]
+        public bool restart_when_compile = true;
+        [LabelText("Loop Time Out(s)")]
+        [BoxGroup("Debug Tools")]
+        [ShowIf("defend_enable")]
+        [OnValueChanged("SaveFile")]
+        public float loop_time_out = 0.1f;
         #endregion
 
         #region Manage
         [BoxGroup("Log Manage")]
         [TableList(AlwaysExpanded = true,IsReadOnly =true)]
-
+ 
         [HideLabel]
         public List<LogColumn> datas = ReadLogs();
 
@@ -175,7 +189,7 @@ namespace AirFramework.Editor
         [BoxGroup("Log Manage")]
         [Button]
         [HorizontalGroup("Log Manage/A")]
-       
+        [GUIColor(0,1,0)]
         [LabelText("Delete Over 3 Days")]
         public void DelThree()
         {
@@ -185,6 +199,7 @@ namespace AirFramework.Editor
         [Button]
         [HorizontalGroup("Log Manage/A")]
         [LabelText("Delete Over 7 Days")]
+        [GUIColor(0, 1, 0)]
         public void DelSeven()
         {
             DeleDays(7);
@@ -193,6 +208,7 @@ namespace AirFramework.Editor
         [HorizontalGroup("Log Manage/A")]
         [Button]
         [LabelText("Delete Over 30 Days")]
+        [GUIColor(0, 1, 0)]
         public void DelMon()
         {
             DeleDays(30);
@@ -201,28 +217,27 @@ namespace AirFramework.Editor
         [Button]
         [LabelText("Delete Over 90 Days")]
         [HorizontalGroup("Log Manage/A")]
+        [GUIColor(0, 1, 0)]
         public void DelTMon()
         {
             DeleDays(90);
-        }
+        } 
         [Serializable]
         public class LogColumn
         {
 
             [HideLabel]
-
-
             public TextAsset logs;
-            [LabelText("Open File")]
 
+
+            [LabelText("Open File")]
             [Button]
+            //[GUIColor(0.6f,0.7f,0.7f)]
             public void Open()
             {
                 Application.OpenURL(Application.persistentDataPath + "/Log/" + logs.name);
             }
         }
-
-
         #endregion
     }
 }

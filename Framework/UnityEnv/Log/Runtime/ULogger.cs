@@ -9,12 +9,7 @@ namespace AirFramework
     
     public class ULogger : ILogger
     {
-        [DebuggerHidden]
-        public bool Enable
-        {
-            get => Debug.unityLogger.logEnabled; 
-            set => Debug.unityLogger.logEnabled=value; 
-        }
+    
         [DebuggerHidden]
         public void Log(object obj)
         {
