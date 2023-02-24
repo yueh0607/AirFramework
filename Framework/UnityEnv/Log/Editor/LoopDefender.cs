@@ -30,7 +30,7 @@ namespace AirFramework
                         {
                             EditorApplication.isPlaying = true;
                             break;
-                        }  
+                        }
                     }
                 }
 

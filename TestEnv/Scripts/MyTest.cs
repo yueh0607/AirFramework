@@ -14,6 +14,7 @@ public class MyTestUnit : PoolableObject<MyTestUnit>, IUpdate, IStart
     void IUpdate.Update()
     {
         //Debug.Log("Receive!");
+        
     }
 
     public override void OnAllocate()
@@ -28,6 +29,7 @@ public class MyTestUnit : PoolableObject<MyTestUnit>, IUpdate, IStart
     public static void XXX() { }
     void IStart.Start()
     {
+        1.L();
 
     }
 
@@ -49,7 +51,7 @@ public class MyTest : MonoBehaviour, IMessageReceiver
         MyTestUnit mt = this.Create<MyTestUnit>();
 
        
-        Application.persistentDataPath.L();
+        
     }
 
 }

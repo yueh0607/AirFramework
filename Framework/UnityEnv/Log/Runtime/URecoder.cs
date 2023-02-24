@@ -11,7 +11,7 @@ namespace AirFramework
 {
     public class URecorder : IRecorder
     {
-        public Dictionary<LogType, LogState> StateList { get; set; }
+        public Dictionary<LogType, LogState> StateList { get; set; } = new();
         
 
 

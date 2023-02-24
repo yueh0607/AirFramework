@@ -22,10 +22,10 @@ namespace AirFramework
             Recorder = new TRecorder(); 
             Interceptor = new TInterceptor();
             //读取配置表参数
-            if (FrameworkEditor.RuntimeGetRuntimeConfig().is_release) return;
+            var rc = FrameworkEditor.RuntimeGetRuntimeConfig();
+            if (rc.is_release) return;
 
             //初始化记录器
-            RuntimeConfig rc = FrameworkEditor.RuntimeGetRuntimeConfig();
             Recorder.StateList[LogType.Log] = rc.logger_log_enable;
             Recorder.StateList[LogType.Warning] = rc.logger_warn_enable;
             Recorder.StateList[LogType.Error] = rc.logger_error;

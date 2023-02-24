@@ -39,11 +39,24 @@ namespace AirFramework
             }
             return pools[typeof(T)] as IGenericPool<T>;
         }
+
+        private IObjectPool GetPool(Type type)
+        {
+            if (!pools.ContainsKey(type))
+            {
+                Type tp = typeof(LifeCyclePool<>).MakeGenericType(type);
+                var pool = (IObjectPool)Activator.CreateInstance(tp, null);
+                pools.Add(type, );
+
+            }
+            //return pools[typeof(T)] as IGenericPool<T>;
+        }
+
         /// <summary>
         /// 释放T类型的托管池
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        
+
         public void ReleasePool<T>() where T : class, IPoolable
         {
             Type poolType = typeof(T);
