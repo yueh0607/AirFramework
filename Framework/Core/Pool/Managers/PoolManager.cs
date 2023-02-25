@@ -46,7 +46,7 @@ namespace AirFramework
             {
                 Type tp = typeof(LifeCyclePool<>).MakeGenericType(type);
                 var pool = (IObjectPool)Activator.CreateInstance(tp, null);
-                pools.Add(type, );
+                pools.Add(type,1);
 
             }
             //return pools[typeof(T)] as IGenericPool<T>;
