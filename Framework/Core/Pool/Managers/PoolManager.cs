@@ -9,7 +9,9 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Reflection;
 using System.Runtime.CompilerServices;
+using static UnityEditor.Progress;
 
 namespace AirFramework
 {
@@ -40,16 +42,19 @@ namespace AirFramework
             return pools[typeof(T)] as IGenericPool<T>;
         }
 
+
+
         private IObjectPool GetPool(Type type)
         {
             if (!pools.ContainsKey(type))
             {
+                //Pool
                 Type tp = typeof(LifeCyclePool<>).MakeGenericType(type);
-                var pool = (IObjectPool)Activator.CreateInstance(tp, null);
-                pools.Add(type,1);
+                var pool = (IObjectPool)Activator.CreateInstance(tp,FuncCreator.GetFunc(type), null, null, null);
+                pools.Add(type, pool);
 
             }
-            //return pools[typeof(T)] as IGenericPool<T>;
+            return pools[type];
         }
 
         /// <summary>
@@ -79,16 +84,27 @@ namespace AirFramework
         {
             return GetPool<T>().Allocate();
         }
+
+
         /// <summary>
         /// 回收对象到托管池
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="item"></param>
-        
-        
+
         public void Recycle<T>(T item) where T : class, IPoolable
         {
             GetPool<T>().Recycle(item);
+        }
+        /// <summary>
+        /// 强行回收对象到源池，本步骤采用多步反射，性能损耗类似单例，仅在第一次损失较大
+        /// </summary>
+        /// <param name="item"></param>
+        /// <exception cref="InvalidOperationException"></exception>
+        public void RecycleOrigin(object item)
+        {
+            if (item is not IPoolable) throw new InvalidOperationException("The managed pool must implement the IPoolable interface");
+            GetPool(item.GetType()).RecycleObj(item);
         }
         #endregion
 

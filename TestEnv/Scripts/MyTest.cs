@@ -1,20 +1,19 @@
 using AirFramework;
 using System;
-using System.Diagnostics;
-using System.Threading;
-using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
-using UnityEngine.Profiling;
-using UnityEngine.ResourceManagement.AsyncOperations;
 public interface MyMessage : IMessage { }
+
+public class Ny
+{
+    public int value = 10;
+}
 public class MyTestUnit : PoolableObject<MyTestUnit>, IUpdate, IStart
 {
 
     void IUpdate.Update()
     {
-        //Debug.Log("Receive!");
-        
+       
+
     }
 
     public override void OnAllocate()
@@ -29,29 +28,28 @@ public class MyTestUnit : PoolableObject<MyTestUnit>, IUpdate, IStart
     public static void XXX() { }
     void IStart.Start()
     {
-        1.L();
 
+        Debug.Log("Receive!");
+
+        object obj = FuncCreator.GetFunc(typeof(Ny));
+        Func<Ny> func= (Func<Ny>)obj;
+
+        func().value.L();
     }
 
 }
 
 
-public class MyTask : Task
-{
-    public MyTask(Action action) : base(action)
-    {
-
-    }
-}
 
 public class MyTest : MonoBehaviour, IMessageReceiver
 {
+    MyTestUnit mt;
     public void Start()
     {
-        MyTestUnit mt = this.Create<MyTestUnit>();
+         mt= this.Create<MyTestUnit>();
 
-       
-        
+
+
     }
 
 }

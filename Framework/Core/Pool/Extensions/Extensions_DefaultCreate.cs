@@ -33,6 +33,17 @@ namespace AirFramework
         public static T DefaltActivatorCreate<T> ()
         {
             return Activator.CreateInstance<T>();
-        }       
+        }
+
+        /// <summary>
+        /// 使用Activator.CreateInstance创建T对象
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        [DebuggerHidden]
+        public static object DefaltActivatorCreate(Type type)
+        {
+            return Activator.CreateInstance(type);
+        }
     }
 }
