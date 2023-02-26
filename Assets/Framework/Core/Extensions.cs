@@ -106,7 +106,7 @@ namespace AirFramework
         /// <param name="key"></param>
         public static void RemoveAndDispose<T, K>(this Dictionary<T, K> dictionary, T key) where K : IDisposable
         {
-            if (!dictionary.TryRemoveAndDispose(key)) Throw(new InvalidOperationException("No such key in dictionary!if possible,please insteading of TryRemoveAndDispose()"));
+            if (!dictionary.TryRemoveAndDispose(key)) throw new InvalidOperationException("No such key in dictionary!if possible,please insteading of TryRemoveAndDispose()");
         }
         /// <summary>
         /// 清空并释放字典

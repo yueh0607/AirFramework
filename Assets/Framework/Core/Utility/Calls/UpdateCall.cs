@@ -17,9 +17,9 @@ namespace AirFramework
             get { return callPerFrameCount; }
             set
             {
-                if(value<1)
+                if (value < 1)
                 {
-                    "CallPerFrameCount must greater than 1".E();
+                    throw new InvalidOperationException("CallPerFrameCount must greater than 1");
                 }
                 callPerFrameCount = value;
             }
@@ -27,7 +27,7 @@ namespace AirFramework
 
         public override void OnAllocate()
         {
-            
+
         }
 
         public override void OnRecycle()

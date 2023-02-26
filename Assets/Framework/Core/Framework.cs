@@ -8,7 +8,6 @@
  * 打造这样一个静态管理器方便用户快捷的调用每一个模块，而无需记忆各种管理器的名称
  */
 
-using AirFramework.Editor;
 using System.Diagnostics;
 
 namespace AirFramework

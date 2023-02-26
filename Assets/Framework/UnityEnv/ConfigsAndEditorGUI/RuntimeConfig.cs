@@ -17,11 +17,6 @@ namespace AirFramework.Editor
         public LogState logger_error = LogState.All;
         public bool logger_loop_defend = true;
 
-
-        public bool defend_enable = true;
-        public float loop_time_out = 0.1f;
-        public bool restart_when_compile = true;
-
         public bool is_release = false;
     }
 }

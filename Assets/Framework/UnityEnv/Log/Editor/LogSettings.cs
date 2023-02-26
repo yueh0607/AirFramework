@@ -22,10 +22,6 @@ namespace AirFramework.Editor
             error_recorder = c.logger_error;
             exception_recorder= c.logger_exception;
 
-            //深循环防御
-            defend_enable= config.defend_enable;
-            loop_time_out= config.loop_time_out ;
-            restart_when_compile = config.restart_when_compile;
         }
         void SaveFile()
         {
@@ -35,11 +31,6 @@ namespace AirFramework.Editor
             config.logger_error = error_recorder;
             config.logger_exception = exception_recorder;
 
-            //深循环防御参数
-            config.defend_enable = defend_enable;
-            config.loop_time_out = loop_time_out;
-            config.restart_when_compile= restart_when_compile;
-            
         }
 
         #endregion
@@ -119,23 +110,6 @@ namespace AirFramework.Editor
 
         #endregion
 
-
-        #region LoopDefender
-        [BoxGroup("Debug Tools")]
-        [LabelText("Deep Loop Defend ")]
-        [OnValueChanged("SaveFile")]
-        public bool defend_enable = true;
-        [LabelText("Restart When ReComplie")]
-        [BoxGroup("Debug Tools")]
-        [ShowIf("defend_enable")]
-        [OnValueChanged("SaveFile")]
-        public bool restart_when_compile = true;
-        [LabelText("Loop Time Out(s)")]
-        [BoxGroup("Debug Tools")]
-        [ShowIf("defend_enable")]
-        [OnValueChanged("SaveFile")]
-        public float loop_time_out = 0.1f;
-        #endregion
 
         #region Manage
         [BoxGroup("Log Manage")]

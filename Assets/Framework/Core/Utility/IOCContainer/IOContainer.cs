@@ -55,7 +55,7 @@ namespace AirFramework
             {
                 return container[typeof(TInterface)] as TInterface;
             }
-            return new NullReferenceException("No such relationship in this IOCContainer!").Throw<TInterface>();
+            throw new InvalidOperationException("No such relationship in this IOCContainer!");
         }
     }
 }
