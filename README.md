@@ -19,7 +19,7 @@ Unity3D游戏开发中小型游戏框架
 - 资源管理（采用Addressable+异步拓展）
 
 # 未来可能实现/支持的内容(排序不代表优先级，放在这里防止我忘)：
-- MVVM编程规范/UI管理器
+- MVVM/PanelManager支持的UI管理器(配备代码自动生成)
 - 热更新与Hotfix (HybirdCLR or xlua or ILRuntime)
 - 简单网络模块(TCP/UDP/HTTP/Photon等简易支持)
 - 代码状态机/行为树
