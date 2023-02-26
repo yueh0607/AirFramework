@@ -10,7 +10,7 @@
 /[Ll]ogs/
 /[Mm]emoryCaptures/
 /[Aa]ssets/[Pp]lugins/[Oo]din/
-/[Uu]serSettings
+/[Uu]serSettings/
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
 
@@ -22,7 +22,7 @@
 
 # Visual Studio cache directory
 .vs/
-
+*.cd
 # Gradle cache directory
 .gradle/
 
