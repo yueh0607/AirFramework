@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Timers;
 using static UnityEditor.Progress;
 
 namespace AirFramework
@@ -19,7 +20,7 @@ namespace AirFramework
     {
 
         private readonly Dictionary<Type, IObjectPool> pools = new Dictionary<Type, IObjectPool>();
-
+        private readonly Dictionary<Type, bool> lifes = new();
         
         public override string Name => "PoolManager";
 
@@ -64,22 +65,33 @@ namespace AirFramework
 
         public void ReleasePool<T>() where T : class, IPoolable
         {
-            Type poolType = typeof(T);
+            ReleasePool(typeof(T));
+
+        }
+
+
+        /// <summary>
+        /// 释放T类型的托管池
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+
+        private void ReleasePool(Type poolType)
+        {
+           
             if (pools.ContainsKey(poolType))
             {
-                var pool = pools[poolType];
-                pools.Remove(typeof(T));
-                pool.Dispose();
+                pools.RemoveAndDispose(poolType);
             }
 
         }
+
         /// <summary>
         /// 从托管池申请对象
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        
-        
+
+
         public T Allocate<T>() where T : class, IPoolable
         {
             return GetPool<T>().Allocate();
@@ -108,8 +120,6 @@ namespace AirFramework
         }
         #endregion
 
-      
-
         protected override void OnDispose()
         {
             foreach (var pool in pools)
@@ -118,5 +128,9 @@ namespace AirFramework
             }
             pools.Clear();
         }
+
+
+
+        
     }
 }

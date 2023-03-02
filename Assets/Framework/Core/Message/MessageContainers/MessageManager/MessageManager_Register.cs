@@ -84,11 +84,11 @@ namespace AirFramework
         {
             //此方式调用Linq产生GCAlloc弃用
             ////在foreach内无法判空移除，采用for位置指针遍历
-            //for (int i = 0; i < dispatchers.Count; ++i)
+            //for (int i = 0; i < dispatchers.CountPull; ++i)
             //{
             //    var dispatcher = dispatchers.ElementAt(i);
             //    dispatcher.Value.Value.Remove(receiver);
-            //    if(dispatcher.Value.Value.Count==0)
+            //    if(dispatcher.Value.Value.CountPull==0)
             //    {
             //        dispatchers.Remove(dispatcher.Key);
             //        --i;

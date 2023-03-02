@@ -13,11 +13,12 @@ using System.Diagnostics;
 
 namespace AirFramework
 {
+    public delegate void PropertyChangedEvent<T>(T oldValue, T newValue);
     /// <summary>
     /// 可绑定监听事件的属性
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class BindableProperty<T>:PoolableObject<BindableProperty<T>> where T :IEqualityComparer<T>
+    public class BindableProperty<T>:PoolableObject<BindableProperty<T>> 
     {
         private T value;
 
@@ -29,10 +30,10 @@ namespace AirFramework
             get => value;
             set
             {
-                if (!Equals(value,this.value))
+                if (!object.Equals(value,this.value))
                 {
+                    OnValueChanged?.Invoke(this.value,value);
                     this.value = value;
-                    OnValueChanged(value);
                 }
             }
         }
@@ -40,17 +41,17 @@ namespace AirFramework
         /// <summary>
         /// 事件列表：属性值变更时触发事件
         /// </summary>
-        public event Action<T> OnValueChanged;
+        public event PropertyChangedEvent<T> OnValueChanged;
 
 
         /// <summary>
-        /// 初始化：使用初始值初始化可绑定属性
+        /// 初始化：使用初始值初始化可绑定属性,触发实际
         /// </summary>
         /// <param name="value"></param>
         
         public BindableProperty(T value)
         {
-            this.value = value;
+            Value = value;
         }
         /// <summary>
         /// 初始化：使用默认值(default)初始化可绑定属性

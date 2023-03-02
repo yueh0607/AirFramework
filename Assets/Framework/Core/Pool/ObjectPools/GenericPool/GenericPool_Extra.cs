@@ -11,10 +11,6 @@ namespace AirFramework
     public partial class GenericPool<T>: ObjectPoolBase, IGenericPool<T> where T : class
     {
 
-
-
-
-
         /// <summary>
         /// 申请对象
         /// </summary>
@@ -52,6 +48,7 @@ namespace AirFramework
                 item = onCreate();
                 pool.Enqueue(item);
             }
+            
         }
 
         /// <summary>

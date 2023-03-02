@@ -12,7 +12,17 @@ namespace AirFramework
         #endregion
 
         #region 注册层
+        /// <summary>
+        /// 注册某函数到生命周期
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="cycleMethod"></param>
         public void Register<T>(Action cycleMethod)=>Register(typeof(T), cycleMethod);
+        /// <summary>
+        /// 取消某函数从生命周期
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="cycleMethod"></param>
         public void UnRegister<T>(Action cycleMethod) => UnRegister(typeof(T), cycleMethod);
         #endregion
 
