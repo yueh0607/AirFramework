@@ -1,4 +1,11 @@
-﻿using System;
+﻿/********************************************************************************************
+ * Author : yueh0607
+ * Date : 2023.2.25
+ * Description : 
+ * AsyncTask泛型类
+ */
+
+using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.ExceptionServices;

@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using UnityEditor.PackageManager;
 
 namespace AirFramework
 {
     /// <summary>
     /// 全局拓展类，包含全局所有的拓展方法
     /// </summary>
-    public static partial class MessageExtensions
+    public static partial class Extensions
     {
         #region Dictionary
         /// <summary>
@@ -128,6 +127,7 @@ namespace AirFramework
 
 
         #endregion
+
         #region name
 
         #endregion

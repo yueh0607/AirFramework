@@ -1,7 +1,7 @@
 ﻿using System.Timers;
 namespace AirFramework
 {
-    public class AnalysisRecycle : PoolableObject<AnalysisRecycle>
+    public class TimerRecycle : PoolableObject<TimerRecycle>
     {
         public const int interval = 30_000;
         private IObjectPool Pool { get; set; }
@@ -9,7 +9,7 @@ namespace AirFramework
         System.Timers.Timer timer = new System.Timers.Timer(interval);
         public int CountPull { get; set; } = 0;
         public int CountPush { get; set; } = 0;
-        public AnalysisRecycle()
+        public TimerRecycle()
         {
             timer.Elapsed += ResetState;
         }
@@ -32,6 +32,7 @@ namespace AirFramework
 
         void ResetState(object sender, ElapsedEventArgs e)
         {
+            
             float seconds = interval / 1000f;
             //拿取速率
             float rate = CountPull / seconds;

@@ -1,9 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿/********************************************************************************************
+ * Author : yueh0607
+ * Date : 2023.2.25
+ * Description : 
+ * 编译器Task-LIKE要求返回实现INotifyCompletion的对象，同时要求对象带有IsCompleted和GetResult
+ * 这里实现这样的接口来约束返回对象的可行性
+ */
+
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AirFramework
 {

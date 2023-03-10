@@ -21,7 +21,7 @@ namespace AirFramework
             //注册生命周期
             if (item is ILifeCycle) Framework.LifeCycle.AnalyseAddAll(item);
         }
-   
+        
 
         public void OnRemoveItemLifeCycle(T item)
         {

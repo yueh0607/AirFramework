@@ -1,9 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿/********************************************************************************************
+ * Author : yueh0607
+ * Date : 2023.2.25
+ * Description : 
+ * 在IAwairer的基础上，我们创建ICriticalAwaiter，能够使得Awaiter可以处理异常
+ */
+
+
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AirFramework
 {

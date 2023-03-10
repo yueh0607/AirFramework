@@ -1,4 +1,11 @@
-﻿using System;
+﻿/********************************************************************************************
+ * Author : yueh0607
+ * Date : 2023.2.25
+ * Description : 
+ * 该类主要是为了构建AsyncTask的状态机
+ */
+
+using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Security;
@@ -10,7 +17,7 @@ namespace AirFramework
     {
         private AsyncTask task;
 
-        // 1. Static Create method
+        // 1. Static PoolGet method
         [DebuggerHidden]
         public static AsyncTaskMethodBuilder Create() => new AsyncTaskMethodBuilder(AsyncTask.Create(fromPool:true));
 
@@ -29,13 +36,7 @@ namespace AirFramework
 
         // 2. TaskLike Task
         [DebuggerHidden]
-        public AsyncTask Task
-        {
-            get
-            {
-                return task;
-            }
-        }
+        public AsyncTask Task => task;
 
         // 3. Start 构造之后开启状态机
         [DebuggerHidden]
@@ -60,8 +61,6 @@ namespace AirFramework
 
         // 6. AwaitOnCompleted  
         [DebuggerHidden]
-
-
         public void AwaitOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) 
             where TAwaiter : INotifyCompletion where TStateMachine : IAsyncStateMachine
         {

@@ -1,8 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/********************************************************************************************
+ * Author : yueh0607
+ * Date : 2023.2.25
+ * Description : 
+ * 提供异步令牌给用户进行操作，方便用户挂起，结束异步任务
+ */
+
+
+using System;
 
 namespace AirFramework
 {

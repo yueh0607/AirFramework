@@ -1,9 +1,13 @@
-﻿using System;
-using System.Collections;
+﻿/********************************************************************************************
+ * Author : yueh0607
+ * Date : 2023.2.25
+ * Description : 
+ * 创建Async静态类以实现一些静态异步方法，比如等待，延迟等，方便用户进行使用
+ */
+
+
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AirFramework
 {
@@ -24,6 +28,7 @@ namespace AirFramework
             timer.Start(seconds, task);
             return task;
         }
+        
         
         /// <summary>
         /// 用于在特定时刻配位await
@@ -82,7 +87,6 @@ namespace AirFramework
             //绑定异步任务到计数器，同样是仅第一次存在GC
             foreach (var task in tasks)
             {
-                
                 task.OnAsyncCompleted += counterCall.PlusOne;
                 task.Coroutine();
             }
@@ -114,6 +118,7 @@ namespace AirFramework
             }
             return asyncTask;
         }
+
         /// <summary>
         /// 等待任意一个完成即可，必有一个委托的GC
         /// </summary>

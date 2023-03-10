@@ -9,6 +9,9 @@ namespace AirFramework
 
     public static partial class MessageExtensions
     {
+ 
+        public static async AsyncTask CallAsync(this UnitDelegateGroup container)
+            => await Call<AsyncTask>(container);
         public static async AsyncTask<T1> CallAsync<T1>(this UnitDelegateGroup container)
             => await Call<AsyncTask<T1>>(container);
 

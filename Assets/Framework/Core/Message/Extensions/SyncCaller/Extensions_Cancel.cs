@@ -12,7 +12,7 @@ namespace AirFramework
             => container?.Value.Remove<Func<T1>>(message);
 
         
-        
+       
         public static void Cancel<T1, T2>(this UnitDelegateGroup container, Func<T1, T2> message)
             => container?.Value.Remove<Func<T1, T2>>(message);
 

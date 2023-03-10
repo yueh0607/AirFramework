@@ -1,4 +1,11 @@
-﻿using System;
+﻿/********************************************************************************************
+ * Author : yueh0607
+ * Date : 2023.2.25
+ * Description : 
+ * 该类主要是为了构建AsyncTaskCompleted<>的状态机
+ */
+
+using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Security;
@@ -7,16 +14,14 @@ using System.Security;
 namespace AirFramework
 {
 
-
     public struct AsyncTaskMethodBuilder<T>
     {
         private AsyncTask<T> task;
-        // 1. Static Create method.
+        // 1. Static PoolGet method.
 
         [DebuggerHidden]
         public static AsyncTaskMethodBuilder<T> Create()
         {
-
             return new AsyncTaskMethodBuilder<T>(AsyncTask<T>.Create(fromPool: true));
         }
         public AsyncTaskMethodBuilder(AsyncTask<T> task)

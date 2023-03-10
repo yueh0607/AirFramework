@@ -10,7 +10,14 @@ namespace AirFramework
     public static partial class MessageExtensions
     {
 
-
+        /// <summary>
+        /// 异步等待全部消息
+        /// </summary>
+        /// <typeparam name="T1"></typeparam>
+        /// <typeparam name="T2"></typeparam>
+        /// <param name="container"></param>
+        /// <param name="arg1"></param>
+        /// <returns></returns>
         public static async AsyncTask CallAllAsync(this UnitDelegateGroup container)
         {
             var events = container?.Value.Get<Func<AsyncTask>>();
@@ -24,6 +31,14 @@ namespace AirFramework
             }
             await Async.WaitAll(list.Value);
         }
+        /// <summary>
+        /// 异步等待全部消息
+        /// </summary>
+        /// <typeparam name="T1"></typeparam>
+        /// <typeparam name="T2"></typeparam>
+        /// <param name="container"></param>
+        /// <param name="arg1"></param>
+        /// <returns></returns>
         public static async AsyncTask<T1[]> CallAllAsync<T1>(this UnitDelegateGroup container)
         {
             var events = container?.Value.Get<Func<T1, AsyncTask<T1>>>();
@@ -33,20 +48,15 @@ namespace AirFramework
             UnitList<AsyncTask<T1>> list = new UnitList<AsyncTask<T1>>();
             for (int i = 0; i < events.Count; i++)
             {
-                list.Value.Add((events[i] as Func< AsyncTask<T1>>).Invoke());
+                list.Value.Add((events[i] as Func<AsyncTask<T1>>).Invoke());
             }
-
-   
-
             var result = await Async.WaitAll(list.Value);
             list.Dispose();
             return result;
         }
 
-
-
         /// <summary>
-        /// 有GC异步等待全部
+        /// 异步等待全部
         /// </summary>
         /// <typeparam name="T1"></typeparam>
         /// <typeparam name="T2"></typeparam>
@@ -71,7 +81,14 @@ namespace AirFramework
             list.Dispose();
             return result;
         }
-
+        /// <summary>
+        /// 异步等待全部
+        /// </summary>
+        /// <typeparam name="T1"></typeparam>
+        /// <typeparam name="T2"></typeparam>
+        /// <param name="container"></param>
+        /// <param name="arg1"></param>
+        /// <returns></returns>
         public static async AsyncTask<T3[]> CallAllAsync<T1, T2, T3>(this UnitDelegateGroup container, T1 arg1, T2 arg2)
         {
             var events = container?.Value.Get<Func<T1, AsyncTask<T3>>>();
@@ -90,7 +107,14 @@ namespace AirFramework
             list.Dispose();
             return result;
         }
-
+        /// <summary>
+        /// 异步等待全部
+        /// </summary>
+        /// <typeparam name="T1"></typeparam>
+        /// <typeparam name="T2"></typeparam>
+        /// <param name="container"></param>
+        /// <param name="arg1"></param>
+        /// <returns></returns>
         public static async AsyncTask<T4[]> CallAllAsync<T1, T2, T3, T4>(this UnitDelegateGroup container, T1 arg1, T2 arg2, T3 arg3)
         {
             var events = container?.Value.Get<Func<T1, T2, T3, AsyncTask<T4>>>();
@@ -111,7 +135,14 @@ namespace AirFramework
         }
 
 
-
+        /// <summary>
+        /// 异步等待全部
+        /// </summary>
+        /// <typeparam name="T1"></typeparam>
+        /// <typeparam name="T2"></typeparam>
+        /// <param name="container"></param>
+        /// <param name="arg1"></param>
+        /// <returns></returns>
 
         public static async AsyncTask<T5[]> CallAllAsync<T1, T2, T3, T4, T5>(this UnitDelegateGroup container, T1 arg1, T2 arg2, T3 arg3, T4 arg4)
         {
@@ -130,7 +161,14 @@ namespace AirFramework
             return result;
         }
 
-
+        /// <summary>
+        /// 异步等待全部
+        /// </summary>
+        /// <typeparam name="T1"></typeparam>
+        /// <typeparam name="T2"></typeparam>
+        /// <param name="container"></param>
+        /// <param name="arg1"></param>
+        /// <returns></returns>
         public static async AsyncTask<T6[]> CallAllAsync<T1, T2, T3, T4, T5, T6>(this UnitDelegateGroup container, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5)
         {
             var events = container?.Value.Get<Func<T1, T2, T3, T4, T5, AsyncTask<T6>>>();
@@ -147,5 +185,7 @@ namespace AirFramework
             list.Dispose();
             return result;
         }
+
+        
     }
 }

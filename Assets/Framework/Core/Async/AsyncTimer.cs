@@ -1,9 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿/********************************************************************************************
+ * Author : yueh0607
+ * Date : 2023.2.25
+ * Description : 
+ * 为了实现异步令牌取消功能，计时器需要特化以满足异步的取消挂起功能，使用StopWatch实现高精度计时功能
+ */
+
+
+using System;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AirFramework
 {

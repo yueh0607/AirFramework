@@ -1,10 +1,15 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿/********************************************************************************************
+ * Author : yueh0607
+ * Date : 2023.2.25
+ * Description : 
+ * 使用内部对象池进行任务回收利用，消除异步任务的GC
+ */
+
+
+using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.ExceptionServices;
-using UnityEngine;
 
 namespace AirFramework
 {
@@ -42,12 +47,8 @@ namespace AirFramework
     }
 
 
-    /// <summary>
-    /// OnCompleted
-    /// </summary>
     public partial class AsyncTask : PoolableObject<AsyncTask>, IAsyncTask, IAuthorization, IAsyncTokenProperty
     {
-
         /// <summary>
         /// 获取等待器
         /// </summary>
@@ -91,8 +92,6 @@ namespace AirFramework
 
         #endregion
 
-
-
         #region Token
         /// <summary>
         /// 异步令牌，与AsyncToken作用相同
@@ -106,8 +105,6 @@ namespace AirFramework
         public bool Authorization { get => authorization; set => authorization = value; }
         #endregion
 
-
-        
     }
 
     /// <summary>

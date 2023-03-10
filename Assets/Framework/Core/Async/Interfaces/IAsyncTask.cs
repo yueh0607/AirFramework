@@ -1,21 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+﻿/********************************************************************************************
+ * Author : yueh0607
+ * Date : 2023.2.25
+ * Description : 
+ * 创建IAsyncTask来统一任务在awaiter标准以外的特殊行为
+ */
+
+
+using System;
 
 namespace AirFramework
 {
-    /// <summary>
-    /// 使用该接口统一支持异步令牌
-    /// </summary>
-    public interface IAsyncTokenProperty : IPoolable,IAuthorization,IUnit
-    {
-        AsyncTreeTokenNode Token { get; set; }
-        
-        void SetException(Exception exception);
-    }
+    
 
     /// <summary>
     /// 异步任务接口

@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEditor.VersionControl;
-using UnityEngine;
+﻿/********************************************************************************************
+ * Author : yueh0607
+ * Date : 2023.2.25
+ * Description : 
+ * 此类为异步令牌的底层实现，要求形成任务树结构
+ */
+
+using System;
 
 namespace AirFramework
 {
