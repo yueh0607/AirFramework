@@ -19,25 +19,12 @@ namespace AirFramework
     public static partial class Framework
     {
 
-        /// <summary>
-        /// 托管池管理器
-        /// </summary>
-        [DebuggerHidden]
-        public static PoolManager Pool { get; } = new PoolManager();
 
         /// <summary>
         /// 消息管理器
         /// </summary>
         [DebuggerHidden]
         public static MessageManager Message { get; } = new MessageManager();
-
-        /// <summary>
-        ///  生命周期管理器
-        /// </summary>
-        [DebuggerHidden]
-        public static LifeCycleManager LifeCycle { get; } = new LifeCycleManager();
-
-        
 
 
     }

@@ -13,6 +13,8 @@ namespace AirFramework
     }
     public abstract class Controller<T> : Controller where T : View
     {
+        protected T View { get; set; }
+
 
 
     }

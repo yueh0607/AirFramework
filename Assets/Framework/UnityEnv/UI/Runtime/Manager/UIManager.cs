@@ -38,12 +38,12 @@ namespace AirFramework
 
 
         private Dictionary<string, GameObject> panels = new(); 
-        public async AsyncTask PreloadAsync<T>(string name) where T : Controller
+        public async AsyncTask PreloadAsync<T>() where T : Controller
         {
-            var x = (await Addressables.LoadAssetAsync<GameObject>(name)).Result;
+            var x = (await Addressables.LoadAssetAsync<GameObject>()).Result;
             var y = (await Addressables.InstantiateAsync(x,canvas)).Result;
             y.SetActive(false);
-            panels.TryAdd(name, x);
+            panels.TryAdd(x);
             
         }
     }
