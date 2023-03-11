@@ -19,18 +19,18 @@ Unity3D游戏开发中小型游戏框架
 - 资源管理（采用Addressable+异步拓展）
 
 # 未来可能实现/支持的内容(放在这里防止我忘)：
-- MVVM/PanelManager支持的UI管理器(配备代码自动生成)
-- 热更新与Hotfix (HybirdCLR or xlua or ILRuntime)
-- 简单网络模块(TCP/UDP/HTTP/Photon等简易支持)
+- MVC/PanelManager支持的UI管理器(配备代码自动生成)
+- 热更新与Hotfix (HybirdCLR or XLua or ILRuntime)
+- 简单网络模块(TCP/UDP/HTTP支持)
 - 代码状态机/行为树
 - csv/json/binary/excel/string等序列化
 - SDK管理器与快捷接入
 - 游戏AI创建支持(深度学习/机器学习)
 - 多语言管理
 - 按键绑定/触控/手势管理
-- 类DoTween模块
-- 音效管理器
-- 编辑器拓展
+- Tween模块
+- 编辑器拓展强化支持
+- 将Addressable替换为yooAssest
 
 # 推荐项目
 - [SDHK/WorldTreeFramework](https://github.com/SDHK/WorldTreeFramework)
