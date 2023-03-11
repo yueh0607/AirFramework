@@ -5,9 +5,7 @@
     /// </summary>
     public abstract class Model:Entity
     {
-        /*
-         * 在这里，只写一些字段值，代表了数据模型,不需要进行代码生成
-         * */
+        
 
     }
 }

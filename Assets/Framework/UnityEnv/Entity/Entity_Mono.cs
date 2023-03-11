@@ -1,13 +1,26 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace AirFramework
 {
     /// <summary>
     /// 带有Mono字段的Entity
     /// </summary>
-    public class EntityMono:Entity
+    public abstract class EntityMono : Entity
     {
-        MonoBehaviour mono; 
+        public MonoBehaviour Mono { get; set; }
 
+        public GameObject gameObject;
+        public Transform trasnform;
+
+        
+        
+        public T GetComponent<T>()where T:Component
+        {
+            
+            return Mono.GetComponent<T>();
+        }
+
+       
     }
 }

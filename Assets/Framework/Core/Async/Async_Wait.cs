@@ -29,6 +29,14 @@ namespace AirFramework
             return task;
         }
         
+
+
+        public static void WaitCompleted(AsyncTask task)
+        {
+            bool state = true;
+            task.OnAsyncCompleted += () => state = false;
+            while (state) ;
+        }
         
         /// <summary>
         /// 用于在特定时刻配位await
@@ -42,7 +50,7 @@ namespace AirFramework
         }
 
         /// <summary>
-        /// 等待任意一个完成即可，必有一个委托的GC
+        /// 等待任意一个完成即可
         /// </summary>
         /// <param name="tasks"></param>
         /// <returns></returns>
@@ -67,7 +75,7 @@ namespace AirFramework
             return asyncTask;
         }
         /// <summary>
-        /// 等待任意一个完成即可，必有一个委托的GC
+        /// 等待任意一个完成即可
         /// </summary>
         /// <param name="tasks"></param>
         /// <returns></returns>
@@ -94,7 +102,7 @@ namespace AirFramework
         }
 
         /// <summary>
-        /// 等待任意一个完成即可，必有一个委托的GC
+        /// 等待任意一个完成即可
         /// </summary>
         /// <param name="tasks"></param>
         /// <returns></returns>
@@ -120,7 +128,7 @@ namespace AirFramework
         }
 
         /// <summary>
-        /// 等待任意一个完成即可，必有一个委托的GC
+        /// 等待任意一个完成即可
         /// </summary>
         /// <param name="tasks"></param>
         /// <returns></returns>
@@ -146,7 +154,7 @@ namespace AirFramework
         }
 
         /// <summary>
-        /// 等待全部完成，必定有一个委托的GC
+        /// 等待全部完成
         /// </summary>
         /// <param name="tasks"></param>
         /// <returns></returns>
@@ -174,7 +182,7 @@ namespace AirFramework
         }
 
         /// <summary>
-        /// 等待全部完成，必定有一个委托的GC
+        /// 等待全部完成
         /// </summary>
         /// <param name="tasks"></param>
         /// <returns></returns>
@@ -199,7 +207,7 @@ namespace AirFramework
             return asyncTask;
         }
         /// <summary>
-        /// 等待全部完成，必定有一个委托的GC
+        /// 等待全部完成
         /// </summary>
         /// <param name="tasks"></param>
         /// <returns></returns>
@@ -226,7 +234,7 @@ namespace AirFramework
             return asyncTask;
         }
         /// <summary>
-        /// 等待全部完成，必定有一个委托的GC
+        /// 等待全部完成
         /// </summary>
         /// <param name="tasks"></param>
         /// <returns></returns>

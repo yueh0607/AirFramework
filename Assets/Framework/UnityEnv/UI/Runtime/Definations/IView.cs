@@ -9,7 +9,7 @@ namespace AirFramework
 
     public interface IView
     {
-        ViewModel BindingContext { get; set; }
+        Controller BindingContext { get; set; }
 
     }
 
