@@ -12,7 +12,7 @@ namespace AirFramework
     public class UIManager : GlobalManager
     {
         public override string Name => "UIManager";
-        public Canvas canvas { get; private set; } = null;
+        private Canvas canvas = null;
         protected override void OnDispose()
         {
 
@@ -22,29 +22,32 @@ namespace AirFramework
 
 
         [DebuggerHidden,MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void CheckInit()
+        private void CheckInit()
         {
             if (canvas is null) throw new System.Exception("Init UI Module before first call.");
         }
+
+        public void Initialize(Canvas canvas)
+        {
+            this.canvas = canvas;
+        }
+
         public void Open<T>() where T : Controller
         {
             CheckInit();
 
         }
-        public void Close<T>( ) where T : Controller
+        public void Close<T>() where T : Controller
         {
             CheckInit();
         }
 
 
-        private Dictionary<string, GameObject> panels = new(); 
+
         public async AsyncTask PreloadAsync<T>() where T : Controller
         {
-            var x = (await Addressables.LoadAssetAsync<GameObject>()).Result;
-            var y = (await Addressables.InstantiateAsync(x,canvas)).Result;
-            y.SetActive(false);
-            panels.TryAdd(x);
-            
+            await Framework.Res.LoadAssestAsync<GameObject>(typeof(T).Name);
+                
         }
     }
 }

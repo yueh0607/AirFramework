@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public class CounterCall : PoolableObject<CounterCall>
+    public sealed class CounterCall : PoolableObject<CounterCall>
     {
         /// <summary>
         /// 是否达到一次ClickValue就自动回收到对象池或者销毁

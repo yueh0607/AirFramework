@@ -15,7 +15,7 @@ namespace AirFramework
     /// <summary>
     /// 依赖注入容器
     /// </summary>
-    public class IOContainer
+    public sealed class IOContainer
     {
         private Dictionary<Type, object> container = new Dictionary<Type, object>();
 

@@ -18,7 +18,7 @@ namespace AirFramework
     /// 可绑定监听事件的属性
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class BindableProperty<T>:PoolableObject<BindableProperty<T>> 
+    public sealed class BindableProperty<T>:PoolableObject<BindableProperty<T>> 
     {
         private T value;
 

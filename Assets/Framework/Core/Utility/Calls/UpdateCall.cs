@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public class UpdateCall : PoolableObject<CounterCall>, IUpdate
+    public sealed class UpdateCall : PoolableObject<CounterCall>, IUpdate
     {
         public event Action LifeEvent = null;
 

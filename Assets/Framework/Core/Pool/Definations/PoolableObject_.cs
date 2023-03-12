@@ -49,7 +49,7 @@ namespace AirFramework
         {
             this.Recycle();
         }
-
+      
 
         private Action disposeAction = null;
         public Action DisposeAction
