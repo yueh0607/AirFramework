@@ -17,8 +17,8 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 14f52bc689bdedf44be96e335e57ab88
   m_SerializeEntries:
-  - m_GUID: 9db0b515acd7cfc43b18eb4ea0edcfc1
-    m_Address: CounterPanel
+  - m_GUID: 896d63d71472fe14cac41ce023a2c462
+    m_Address: Panels
     m_ReadOnly: 0
     m_SerializedLabels:
     - UIPanel
