@@ -33,7 +33,7 @@ namespace AirFrameworkEditor
             var tree = new OdinMenuTree(supportsMultiSelect: false);
             tree.Add("关于", new About(),EditorIcons.Info);
             //tree.Add("日志管理",new LogSettings(),EditorIcons.SettingsCog);
-            tree.Add("UI代码生成", new MVVMCodeGenerate(),EditorIcons.Flag);
+            tree.Add("UI代码生成", new MVVMCodeGenerate(),EditorIcons.Fla;
             return tree;
         }
 
