@@ -8,28 +8,28 @@ using UnityEngine;
 namespace AirFramework
 {
 
-    public enum LogState
-    {
-        /// <summary>
-        /// 不会记录
-        /// </summary>
+    //public enum LogState
+    //{
+    //    /// <summary>
+    //    /// 不会记录
+    //    /// </summary>
 
-        None,
-        /// <summary>
-        /// 只记录内容
-        /// </summary>
+    //    None,
+    //    /// <summary>
+    //    /// 只记录内容
+    //    /// </summary>
 
-        Simple,
-        /// <summary>
-        /// 完全日志，带有堆栈跟踪
-        /// </summary>
+    //    Simple,
+    //    /// <summary>
+    //    /// 完全日志，带有堆栈跟踪
+    //    /// </summary>
 
-        All
-    }
+    //    All
+    //}
 
 
 
-    public static partial class MessageExtensions
+    public static partial class LogExtensions
     {
         /// <summary>
         /// 输出普通日志

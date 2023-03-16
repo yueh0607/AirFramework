@@ -18,11 +18,6 @@ namespace AirFrameworkEditor
         [MenuItem("Framework/Open")]
         public static void Open()
         {
-            if (Application.isPlaying)
-            {
-                "It is not allowed to open the frame panel at runtime, but you can run it after opening the panel, but this may cause unexpected errors".E();
-                return;
-            }
 
             var window = GetWindow<FrameworkEditor>();
             window.position = GUIHelper.GetEditorWindowRect().AlignCenter(800, 600);
@@ -33,7 +28,7 @@ namespace AirFrameworkEditor
             var tree = new OdinMenuTree(supportsMultiSelect: false);
             tree.Add("关于", new About(),EditorIcons.Info);
             //tree.Add("日志管理",new LogSettings(),EditorIcons.SettingsCog);
-            tree.Add("UI代码生成", new MVVMCodeGenerate(),EditorIcons.Fla;
+            tree.Add("UI代码生成", new MVVMCodeGenerate(),EditorIcons.Flag);
             return tree;
         }
 
