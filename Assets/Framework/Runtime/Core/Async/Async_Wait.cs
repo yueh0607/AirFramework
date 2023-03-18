@@ -30,14 +30,35 @@ namespace AirFramework
         }
         
 
-
+        /// <summary>
+        /// 有委托GC，阻塞到完成
+        /// </summary>
+        /// <param name="task"></param>
         public static void WaitCompleted(AsyncTask task)
         {
             bool state = true;
             task.OnAsyncCompleted += () => state = false;
             while (state) ;
         }
-        
+        /// <summary>
+        /// 有委托GC，等待完成
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="task"></param>
+        /// <returns></returns>
+        public static T WaitCompleted<T>(AsyncTask<T> task)
+        {
+            bool state = true;
+            T value = default;
+            task.OnAsyncCompleted += (v) =>
+            {
+                value = v;
+                state = false;
+            };
+            while (state) ;
+            return value;
+        }
+
         /// <summary>
         /// 用于在特定时刻配位await
         /// </summary>

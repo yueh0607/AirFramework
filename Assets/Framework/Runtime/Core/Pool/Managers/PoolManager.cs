@@ -18,7 +18,7 @@ namespace AirFramework
     {
 
         private readonly Dictionary<Type, IObjectPool> pools = new Dictionary<Type, IObjectPool>();
-        private readonly Dictionary<Type, bool> lifes = new();
+
         
         public override string Name => "PoolManager";
 
