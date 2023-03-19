@@ -5,6 +5,7 @@
  * 建立通用的池模板，要求所有存储引用类型的对象池都自此模板派生
  */
 using System;
+using Timer = System.Timers.Timer;
 
 namespace AirFramework
 {
@@ -52,5 +53,43 @@ namespace AirFramework
         public abstract void Unload(int count);
 
 
+        protected abstract void OnCycleRecycle();
+
+     
+        private Timer timer=null;
+
+        private float recycleTime = -1;
+        public float RecycleTime
+        {
+            get
+            {
+                return recycleTime;
+            }
+            set
+            {
+                recycleTime= value;
+                if(recycleTime>0f)
+                {
+                    if(timer==null)
+                    {
+                        timer=new Timer(recycleTime);
+                        timer.Interval = recycleTime;
+                        timer.Elapsed += (s,o)=> { OnCycleRecycle(); };
+                    }
+                    if(!timer.Enabled)
+                    {
+                        timer.Start();
+                    }
+
+                }
+                else
+                {
+                    timer.Stop();
+                }
+            }
+        }
+
+        
+        
     }
 }
