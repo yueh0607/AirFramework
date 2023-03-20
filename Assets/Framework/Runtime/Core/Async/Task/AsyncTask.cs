@@ -159,9 +159,7 @@ namespace AirFramework
         [DebuggerHidden]
         public void SetException(Exception exception)
         {
-           
             SetResultMethod();
-
         }
     }
 

@@ -65,7 +65,11 @@ namespace AirFramework
             ReleasePool(typeof(T));
 
         }
+        internal void UnsafeReleasePool<T>() where T : class
+        {
+            ReleasePool(typeof(T));
 
+        }
 
         /// <summary>
         /// 释放T类型的托管池

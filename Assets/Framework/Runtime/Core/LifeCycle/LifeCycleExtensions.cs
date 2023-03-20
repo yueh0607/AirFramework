@@ -12,9 +12,15 @@ namespace AirFramework
         /// 开始生命周期
         /// </summary>
         /// <param name="obj"></param>
-        public static void StartLifeCycle(this object obj)
+        public static void StartLifeCycle<T>(this object obj)
         {
             Framework.LifeCycle.AnalyseAddAll(obj);
+        }
+
+        public static T StartLifeCycle<T>(this T obj)
+        {
+            Framework.LifeCycle.AnalyseAddAll(obj);
+            return obj;
         }
 
         /// <summary>

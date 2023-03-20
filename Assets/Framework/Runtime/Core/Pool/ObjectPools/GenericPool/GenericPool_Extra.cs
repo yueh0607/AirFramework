@@ -50,7 +50,16 @@ namespace AirFramework
             }
             
         }
+        /// <summary>
+        /// 异步加载有GC
+        /// </summary>
+        /// <param name="count"></param>
+        /// <returns></returns>
+        public async AsyncTask PreloadAsync(int count)
+        {
+            await Task.Run(()=>Preload(count));
 
+        }
         /// <summary>
         /// 同步卸载缓存
         /// </summary>
@@ -66,6 +75,66 @@ namespace AirFramework
                 onDestroy?.Invoke(pool.Dequeue());
             }
         }
+        /// <summary>
+        /// 异步卸载，无GC问题
+        /// </summary>
+        /// <param name="count">卸载总数量</param>
+        /// <param name="frame">间隔帧</param>
+        /// <returns></returns>
+        public async AsyncTask UnloadAsync(int count,int frame = 1)
+        {
+            //取小数量
+            count = count > Count ? Count : count;
+            for (int i = 0; i < count; ++i)
+            {
+                if (pool.Count != 0)
+                {
+                    onDestroy?.Invoke(pool.Dequeue());
+                    await Async.WaitForFrame(frame);
+                }
+                else
+                {
+                    await Async.Complete();
+                    break;
+                }
+            }
+        }
         #endregion
+
+
+        private int AllocateCount = 0;
+        private int RecycleCount = 0;
+        private int PreloadCount = 0;
+        private int UnloadCount = 0;
+        protected override void OnCycleRecycle()
+        {
+            //空池销毁
+            if (Count == 0)
+            {
+                Framework.Pool.UnsafeReleasePool<T>();
+                return;
+            }
+
+
+            //计算可释放比例
+            int releaseRatio = 1 - AllocateCount / Count;
+            //小于释放阈值则不释放
+            if(releaseRatio < 0.1f)
+            {
+                return;
+            }
+            //计算释放数量
+            int releaseCount = (int)(releaseRatio * 0.5f * Count);
+            
+            
+
+
+            //空池销毁
+            if (Count == 0)
+            {
+                Framework.Pool.UnsafeReleasePool<T>();
+                return;
+            }
+        }
     }
 }

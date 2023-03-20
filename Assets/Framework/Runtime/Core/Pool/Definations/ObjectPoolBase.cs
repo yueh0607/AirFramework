@@ -52,7 +52,9 @@ namespace AirFramework
         /// <param name="count"></param>
         public abstract void Unload(int count);
 
-
+        /// <summary>
+        /// 回收周期到达时调用
+        /// </summary>
         protected abstract void OnCycleRecycle();
 
      
@@ -73,14 +75,14 @@ namespace AirFramework
                     if(timer==null)
                     {
                         timer=new Timer(recycleTime);
-                        timer.Interval = recycleTime;
                         timer.Elapsed += (s,o)=> { OnCycleRecycle(); };
                     }
-                    if(!timer.Enabled)
+                    timer.Interval = recycleTime;
+                    if (!timer.Enabled)
                     {
                         timer.Start();
                     }
-
+                    
                 }
                 else
                 {

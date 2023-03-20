@@ -44,8 +44,11 @@ namespace AirFramework
         /// <param name="count"></param>
         public void Unload(int count);
 
-
-
+        public float RecycleTime
+        {
+            get;
+            set;
+        }
 
     }
 }
