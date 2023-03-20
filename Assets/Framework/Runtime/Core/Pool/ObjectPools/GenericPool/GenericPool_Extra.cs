@@ -55,7 +55,7 @@ namespace AirFramework
         /// </summary>
         /// <param name="count"></param>
         /// <returns></returns>
-        public async AsyncTask PreloadAsync(int count)
+        public override async AsyncTask PreloadAsync(int count)
         {
             await Task.Run(()=>Preload(count));
 
@@ -81,7 +81,7 @@ namespace AirFramework
         /// <param name="count">卸载总数量</param>
         /// <param name="frame">间隔帧</param>
         /// <returns></returns>
-        public async AsyncTask UnloadAsync(int count,int frame = 1)
+        public override async AsyncTask UnloadAsync(int count,int frame = 1)
         {
             //取小数量
             count = count > Count ? Count : count;
@@ -101,12 +101,7 @@ namespace AirFramework
         }
         #endregion
 
-
-        private int AllocateCount = 0;
-        private int RecycleCount = 0;
-        private int PreloadCount = 0;
-        private int UnloadCount = 0;
-        protected override void OnCycleRecycle()
+        protected override async void OnCycleRecycle()
         {
             //空池销毁
             if (Count == 0)
@@ -115,26 +110,13 @@ namespace AirFramework
                 return;
             }
 
-
-            //计算可释放比例
-            int releaseRatio = 1 - AllocateCount / Count;
-            //小于释放阈值则不释放
-            if(releaseRatio < 0.1f)
+            int delta = Count - AllocateCount;
+            if (delta > 0)
             {
-                return;
+                 await UnloadAsync((int)(delta*RecoveryRatio));
             }
-            //计算释放数量
-            int releaseCount = (int)(releaseRatio * 0.5f * Count);
-            
-            
-
-
-            //空池销毁
-            if (Count == 0)
-            {
-                Framework.Pool.UnsafeReleasePool<T>();
-                return;
-            }
+            await Async.Complete();
+            AllocateCount = 0;
         }
     }
 }

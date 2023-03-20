@@ -12,7 +12,7 @@ namespace AirFramework
     /// <summary>
     /// 对象池基类型
     /// </summary>
-    public abstract class ObjectPoolBase : Unit, IObjectPool
+    public abstract class ObjectPoolBase : Unit , IObjectPool
     {
         /// <summary>
         /// 池缓存数
@@ -60,8 +60,8 @@ namespace AirFramework
      
         private Timer timer=null;
 
-        private float recycleTime = -1;
-        public float RecycleTime
+        private double recycleTime = -1;
+        public double RecycleTime
         {
             get
             {
@@ -70,7 +70,7 @@ namespace AirFramework
             set
             {
                 recycleTime= value;
-                if(recycleTime>0f)
+                if(recycleTime>0d)
                 {
                     if(timer==null)
                     {
@@ -91,7 +91,9 @@ namespace AirFramework
             }
         }
 
-        
-        
+        public float RecoveryRatio { get; set; } = 0.5f;
+
+        public abstract AsyncTask PreloadAsync(int count);
+        public abstract AsyncTask UnloadAsync(int count, int frame = 1);
     }
 }

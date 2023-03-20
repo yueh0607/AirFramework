@@ -9,6 +9,9 @@
  *      如果池在达到闲置阈值时，自动销毁整个池      
  */
 
+
+
+
 using System;
 using System.Collections.Generic;
 
@@ -19,7 +22,7 @@ namespace AirFramework
 
         private readonly Dictionary<Type, IObjectPool> pools = new Dictionary<Type, IObjectPool>();
 
-        
+        public double DefaultRecycleCycleTime = 60_000D;
         public override string Name => "PoolManager";
 
         #region 托管池
@@ -31,13 +34,14 @@ namespace AirFramework
         
         public IGenericPool<T> GetPool<T>() where T : class,IPoolable
         {
-            if (!pools.ContainsKey(typeof(T)))
+            var type = typeof(T);
+            if (!pools.ContainsKey(type))
             {
-                pools.Add(typeof(T), new LifeCyclePool<T>(
+                pools.Add(type, new LifeCyclePool<T>(
                         Pool.DefaltActivatorCreate<T>,
                         null
                         ));
-                
+                pools[type].RecycleTime = DefaultRecycleCycleTime;
             }
             return pools[typeof(T)] as IGenericPool<T>;
         }
@@ -50,7 +54,7 @@ namespace AirFramework
                 Type tp = typeof(LifeCyclePool<>).MakeGenericType(type);
                 var pool = (IObjectPool)Activator.CreateInstance(tp,FuncCreator.GetFunc(type), null, null, null);
                 pools.Add(type, pool);
-                
+                pools[type].RecycleTime = DefaultRecycleCycleTime;
             }
             return pools[type];
         }
@@ -137,5 +141,6 @@ namespace AirFramework
             pools.Clear();
         }
 
+        
     }
 }

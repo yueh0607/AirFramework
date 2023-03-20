@@ -23,5 +23,9 @@ namespace AirFramework
         /// </summary>
         /// <param name="item"></param>
         public void Recycle(T item);
+
+
+        public AsyncTask PreloadAsync(int count);
+        public AsyncTask UnloadAsync(int count, int frame = 1);
     }
 }
