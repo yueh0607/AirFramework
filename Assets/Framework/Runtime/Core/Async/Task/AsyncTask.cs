@@ -72,12 +72,13 @@ namespace AirFramework
         public bool IsCompleted { get; set; } = false;
 
         //在结束时调用，无论是否成功
-        public event Action OnAsyncCompleted = null;
+        public event Action OnTaskCompleted = null;
 
         private Action continuation;
         [DebuggerHidden]
         public void OnCompleted(Action continuation)
         {
+            
             UnsafeOnCompleted(continuation);
         }
 
@@ -87,9 +88,6 @@ namespace AirFramework
             this.continuation = continuation;
             
         }
-
-
-
         #endregion
 
         #region Token
@@ -124,13 +122,24 @@ namespace AirFramework
 
         public AsyncTask()
         {
-            SetResult = SetResultMethod;
         }
+
+        private Action setResult = null;
         /// <summary>
-        /// 结束当前await并设置结果，调用该方法即代表任务结束，允许手动调用提前结束或者当异步结束自动调用
+        /// 结束当前await并设置结果
         /// </summary>
         [DebuggerHidden]
-        public Action SetResult { get; private set; }
+        public Action SetResult
+        {
+            get
+            {
+                if (setResult == null)
+                {
+                    setResult = SetResultMethod;
+                }
+                return setResult;
+            }
+        }
         [DebuggerHidden]
         private void SetResultMethod()
         {
@@ -141,7 +150,7 @@ namespace AirFramework
                 //执行await以后的代码
                 continuation?.Invoke();
             }
-            OnAsyncCompleted?.Invoke();
+            OnTaskCompleted?.Invoke();
             //回收到Pool
             this.Dispose();
             

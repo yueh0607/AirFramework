@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 namespace AirFramework
 {
 
-    [AsyncMethodBuilder(typeof(AsyncTaskCompletedMethodBuilder))]
+    [AsyncMethodBuilder(typeof(AsyncTaskUpdateMethodBuilder))]
     public class AsyncTaskUpdate : PoolableObject<AsyncTaskUpdate>,ICriticalNotifyCompletion,IAsyncTokenProperty,IUpdate
     {
         public static void Create() =>Framework.Pool.Allocate<AsyncTaskUpdate>();

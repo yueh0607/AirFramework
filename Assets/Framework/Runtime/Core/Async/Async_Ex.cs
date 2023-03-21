@@ -25,16 +25,12 @@ namespace AirFramework
             var timer = Framework.Pool.Allocate<AsyncTimerCall>();
             timer.OnCompleted += task.SetResult;
             timer.OnCompleted += endAction;
-            task.OnAsyncCompleted += timer.DisposeAction;
+            task.OnTaskCompleted += timer.DisposeAction;
             timer.Start(seconds, task);
             return task;
         }
         
-        public static async AsyncTask IE2Task(IEnumerator ie)
-        {
-            var task = AsyncTask.Create(true);
-           
-        }
+        
         public static async AsyncTaskUpdate WaitForFrame(int count = 1)
         {
             for(int i=0;i<count;i++)
@@ -53,7 +49,7 @@ namespace AirFramework
         public static void WaitForCompleted(AsyncTask task)
         {
             bool state = true;
-            task.OnAsyncCompleted += () => state = false;
+            task.OnTaskCompleted += () => state = false;
             while (state) ;
         }
         /// <summary>
@@ -83,6 +79,7 @@ namespace AirFramework
         public static AsyncTaskCompleted Complete(Action action = null)
         {
             action?.Invoke();
+            
             return Framework.Pool.Allocate<AsyncTaskCompleted>();
         }
 
@@ -106,7 +103,7 @@ namespace AirFramework
             foreach (var task in tasks)
             {
                 
-                task.OnAsyncCompleted += counterCall.PlusOne;
+                task.OnTaskCompleted += counterCall.PlusOne;
                 task.Coroutine();
             }
             return asyncTask;
@@ -132,7 +129,7 @@ namespace AirFramework
             //绑定异步任务到计数器，同样是仅第一次存在GC
             foreach (var task in tasks)
             {
-                task.OnAsyncCompleted += counterCall.PlusOne;
+                task.OnTaskCompleted += counterCall.PlusOne;
                 task.Coroutine();
             }
             return asyncTask;
@@ -212,7 +209,7 @@ namespace AirFramework
             foreach (var task in tasks)
             {
                 task.Coroutine();
-                task.OnAsyncCompleted += counterCall.PlusOne;
+                task.OnTaskCompleted += counterCall.PlusOne;
             }
 
             return asyncTask;
@@ -238,7 +235,7 @@ namespace AirFramework
             foreach (var task in tasks)
             {
                 task.Coroutine();
-                task.OnAsyncCompleted += counterCall.PlusOne;
+                task.OnTaskCompleted += counterCall.PlusOne;
             }
 
             return asyncTask;

@@ -2,6 +2,7 @@
 using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.Networking;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceLocations;
 
@@ -30,9 +31,14 @@ namespace AirFramework
         /// <returns></returns>
         public static AsyncTask<AsyncOperationHandle<T>> GetAwaiter<T>(this AsyncOperationHandle<T> handle)
         {
+            
             var task = Framework.Pool.Allocate<AsyncTask<AsyncOperationHandle<T>>>();
             handle.Completed += task.SetResult;
             return task;
         }
+
+
+
+        
     }
 }

@@ -51,7 +51,7 @@ namespace AirFramework
     /// </summary>
     public partial class AsyncTask<T> : PoolableObject<AsyncTask<T>>, IAsyncTask<T>, IAuthorization, IAsyncTokenProperty
     {
-        T Result;
+        public T Result { get; set; } = default;
         /// <summary>
         /// 返回await结果
         /// </summary>
@@ -60,16 +60,45 @@ namespace AirFramework
 
         public AsyncTask()
         {
-            SetResult = SetResultMethod;
+     
         }
+
+
+        private Action<T> setResult = null;
         /// <summary>
         /// 结束当前await并设置结果
         /// </summary>
         [DebuggerHidden]
-        public Action<T> SetResult { get; private set; }
+        public Action<T> SetResult
+        {
+            get
+            {
+                if (setResult == null)
+                {
+                    setResult = SetResultMethod;
+                }
+                return setResult;
+            }
+        }
+        private Action unsafeSetResult = null;
+        /// <summary>
+        /// 结束当前await并设置结果,该方法并不安全，如果没有提前对Result赋值可能导致出现Result为默认值的情况
+        /// </summary>
+        public Action UnsafeSetResult
+        {
+            get
+            {
+                if(unsafeSetResult==null)
+                {
+                    unsafeSetResult = UnsafeSetResultMethod;
+                }
+                return unsafeSetResult;
+            }
+        }
         [DebuggerHidden]
         private void SetResultMethod(T result)
         {
+            if (IsCompleted) throw new InvalidOperationException("AsyncTask dont allow SetResult repeatly.");
             if (Authorization)
             {
                 this.Result = result;
@@ -82,7 +111,19 @@ namespace AirFramework
             //回收到Pool
             this.Dispose();
         }
-
+        [DebuggerHidden]
+        private void UnsafeSetResultMethod()
+        {
+            if (IsCompleted) throw new InvalidOperationException("AsyncTask dont allow SetResult repeatly.");
+            if (Authorization)
+            {
+                //执行await以后的代码
+                continuation?.Invoke();
+            }
+            OnAsyncCompleted?.Invoke(Result);
+            //回收到Pool
+            this.Dispose();
+        }
         [DebuggerHidden]
         public ExceptionDispatchInfo Exception { get; private set; }
         /// <summary>
