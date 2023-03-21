@@ -17,6 +17,7 @@ namespace AirFramework
        
         public async AsyncTask<T> LoadAssestAsync<T>(string path) where T : UnityEngine.Object
         {
+            
             return (await Addressables.LoadAssetAsync<T>(path)).Result;
         }
         

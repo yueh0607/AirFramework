@@ -1,6 +1,6 @@
 ﻿namespace AirFramework
 {
-    public class StartHandler : Handler<IStart>
+    public class StartHandler : LifeCycleHandler<IStart>
     {
         public override void OnLifeCycleRegister(IStart item)
         {

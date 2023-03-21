@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public class ResHandle : PoolableObject<ResHandle>
+    public class ResHandle<T> : PoolableObject<ResHandle<T>>
     {
         public override void OnAllocate()
         {

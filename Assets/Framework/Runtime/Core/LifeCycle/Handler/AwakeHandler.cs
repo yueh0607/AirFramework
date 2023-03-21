@@ -3,7 +3,7 @@
 namespace AirFramework
 {
 
-    public class AwakeHandler : Handler<IAwake>
+    public class AwakeHandler : LifeCycleHandler<IAwake>
     {
         public override void OnLifeCycleRegister(IAwake item)
         {

@@ -56,7 +56,7 @@ namespace AirFramework
         private List<Action<object>> lifesAdd= new (),lifesRemove = new();
 
 
-        private Dictionary<Type, IHandler> cycles = new Dictionary<Type, IHandler>();
+        private Dictionary<Type, ILifeCycleHandler> cycles = new Dictionary<Type, ILifeCycleHandler>();
 
         public override string Name =>"LifeCycleManager";
 
@@ -66,7 +66,7 @@ namespace AirFramework
         /// 添加生命周期,每个生命周期都应该通过此函数添加，从而支持对象生命周期的解析
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        public void AddLifeCycle<T, K>() where T : ILifeCycle where K : Handler<T>
+        public void AddLifeCycle<T, K>() where T : ILifeCycle where K : LifeCycleHandler<T>
         {
             var handler = Activator.CreateInstance<K>();
             cycles.Add(typeof(T), handler);

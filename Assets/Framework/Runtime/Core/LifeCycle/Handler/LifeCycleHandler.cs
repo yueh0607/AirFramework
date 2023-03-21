@@ -2,11 +2,11 @@
 {
 
 
-    public interface IHandler
+    public interface ILifeCycleHandler
     {
 
     }
-    public abstract class Handler<T>:IHandler where T : ILifeCycle
+    public abstract class LifeCycleHandler<T>:ILifeCycleHandler where T : ILifeCycle
     {
 
         public abstract void OnLifeCycleRegister(T item);

@@ -7,7 +7,7 @@ namespace AirFramework
     /// 纯净池类型
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class SuperPurePool<T> : Unit, IPool
+    public class SuperPurePool<T> : Unit, IPool<T>
     {
         /// <summary>
         /// 缓存数量

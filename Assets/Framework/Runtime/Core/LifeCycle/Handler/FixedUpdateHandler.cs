@@ -2,7 +2,7 @@
 
 namespace AirFramework
 {
-    public class FixedUpdateHandler : Handler<IFixedUpdate>
+    public class FixedUpdateHandler : LifeCycleHandler<IFixedUpdate>
     {
         public override void OnLifeCycleRegister(IFixedUpdate item)
         {

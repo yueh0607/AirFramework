@@ -3,7 +3,7 @@
 namespace AirFramework
 {
 
-    public class LateUpdateHandler : Handler<ILateUpdate>
+    public class LateUpdateHandler : LifeCycleHandler<ILateUpdate>
     {
         public override void OnLifeCycleRegister(ILateUpdate item)
         {

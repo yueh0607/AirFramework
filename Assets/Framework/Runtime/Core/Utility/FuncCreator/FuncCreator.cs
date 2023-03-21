@@ -1,8 +1,13 @@
-﻿using System;
+﻿
+
+using System;
 using System.Reflection;
 
 namespace AirFramework
 {
+    /// <summary>
+    /// 反射创建泛型委托创建器
+    /// </summary>
     public static class FuncCreator
     {
 

@@ -13,7 +13,7 @@ namespace AirFramework
     /// <summary>
     /// 使用该接口统一支持异步令牌
     /// </summary>
-    public interface IAsyncTokenProperty : IPoolable,IAuthorization,IUnit
+    public interface IAsyncTokenProperty : IAuthorization
     {
         AsyncTreeTokenNode Token { get; set; }
         
