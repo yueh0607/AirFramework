@@ -107,7 +107,7 @@ namespace AirFramework
                 
                 
             }
-            OnAsyncCompleted?.Invoke(result);
+            OnTaskCompleted?.Invoke(result);
             //回收到Pool
             this.Dispose();
         }
@@ -120,7 +120,7 @@ namespace AirFramework
                 //执行await以后的代码
                 continuation?.Invoke();
             }
-            OnAsyncCompleted?.Invoke(Result);
+            OnTaskCompleted?.Invoke(Result);
             //回收到Pool
             this.Dispose();
         }
@@ -147,7 +147,7 @@ namespace AirFramework
         public AsyncTask<T> GetAwaiter() => this;
 
         #region OnCompleted
-        public event Action<T> OnAsyncCompleted = null;
+        public event Action<T> OnTaskCompleted = null;
         private Action continuation;
         [DebuggerHidden]
         public bool IsCompleted { get; set; }

@@ -62,7 +62,7 @@ namespace AirFramework
         {
             bool state = true;
             T value = default;
-            task.OnAsyncCompleted += (v) =>
+            task.OnTaskCompleted += (v) =>
             {
                 value = v;
                 state = false;
@@ -155,7 +155,7 @@ namespace AirFramework
             //绑定异步任务到计数器
             foreach (var task in tasks)
             {
-                task.OnAsyncCompleted += counterCall.PlusOne;
+                task.OnTaskCompleted += counterCall.PlusOne;
                 task.Coroutine();
             }
             return asyncTask;
@@ -181,7 +181,7 @@ namespace AirFramework
             //绑定异步任务到计数器
             foreach (var task in tasks)
             {
-                task.OnAsyncCompleted += counterCall.PlusOne;
+                task.OnTaskCompleted += counterCall.PlusOne;
                 task.Coroutine();
             }
             return asyncTask;
@@ -262,7 +262,7 @@ namespace AirFramework
             foreach (var task in tasks)
             {
                 task.Coroutine();
-                task.OnAsyncCompleted += counterCall.PlusOne;
+                task.OnTaskCompleted += counterCall.PlusOne;
             }
 
             return asyncTask;
@@ -289,7 +289,7 @@ namespace AirFramework
             foreach (var task in tasks)
             {
                 task.Coroutine();
-                task.OnAsyncCompleted += counterCall.PlusOne;
+                task.OnTaskCompleted += counterCall.PlusOne;
             }
 
             return asyncTask;
