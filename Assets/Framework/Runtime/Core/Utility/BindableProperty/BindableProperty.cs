@@ -72,5 +72,37 @@ namespace AirFramework
             OnValueChanged = null;
             value= default;
         }
+
+
+        private Func<T> getter = null;
+        private Action<T> setter = null;
+        /// <summary>
+        /// 获取Value的Getter
+        /// </summary>
+        public Func<T> Getter
+        {
+            get
+            {
+                if(getter==null)
+                {
+                    getter = () => Value;
+                }
+                return getter;
+            }
+        }
+        /// <summary>
+        /// 获取Value的Setter
+        /// </summary>
+        public Action<T> Setter
+        {
+            get
+            {
+                if(setter==null)
+                {
+                    setter = (value) => { Value = value; };
+                }
+                return setter;
+            }
+        }
     }
 }

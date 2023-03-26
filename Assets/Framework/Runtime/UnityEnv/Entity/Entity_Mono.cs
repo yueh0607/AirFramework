@@ -10,17 +10,12 @@ namespace AirFramework
     {
         public MonoBehaviour Mono { get; set; }
 
-        public GameObject gameObject;
-        public Transform trasnform;
+        public GameObject gameObject=>Mono.gameObject;
+        public Transform trasnform=>Mono.transform;
+        public T GetComponent<T>()where T:Component=>Mono.GetComponent<T>();
 
-        
-        
-        public T GetComponent<T>()where T:Component
-        {
-            
-            return Mono.GetComponent<T>();
-        }
 
        
+
     }
 }
