@@ -6,16 +6,33 @@ namespace AirFramework
     /// <summary>
     /// 带有Mono字段的Entity
     /// </summary>
-    public abstract class EntityMono : Entity
+    public class EntityMono : Entity
     {
-        public MonoBehaviour Mono { get; set; }
+        public MonoBehaviour MonoEntity { get; set; }
 
-        public GameObject gameObject=>Mono.gameObject;
-        public Transform trasnform=>Mono.transform;
-        public T GetComponent<T>()where T:Component=>Mono.GetComponent<T>();
+        public GameObject gameObject=>MonoEntity?.gameObject;
+        public Transform trasnform=>MonoEntity?.transform;
+        public T GetComponent<T>()where T:Component=>MonoEntity?.GetComponent<T>();
+
+ 
+
+        public override void OnAllocate()
+        {
+            base.OnAllocate();
+            gameObject.SetActive(true);
+        }
+
+        public override void OnRecycle()
+        {
+            base.OnRecycle();
+            gameObject.SetActive(false);
+        }
 
 
-       
-
+        ~EntityMono() 
+        {
+            GameObject.Destroy(gameObject);
+            MonoEntity = null;
+        }
     }
 }

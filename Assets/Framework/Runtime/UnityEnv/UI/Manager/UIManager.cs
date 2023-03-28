@@ -46,7 +46,7 @@ namespace AirFramework
 
         public async AsyncTask PreloadAsync<T>() where T : Controller
         {
-            await Framework.Res.LoadAssestAsync<GameObject>(typeof(T).Name);
+            //await Framework.Res.LoadAssestAsync<GameObject>(typeof(T).Name);
                 
         }
     }

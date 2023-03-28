@@ -10,10 +10,6 @@ namespace AirFrameworkEditor
 
     public class FrameworkEditor : OdinMenuEditorWindow
     {
-        //[SerializeField]
-        //RuntimeConfig config_runtime;
-
-    
 
         [MenuItem("Framework/Open")]
         public static void Open()
@@ -27,23 +23,10 @@ namespace AirFrameworkEditor
         {
             var tree = new OdinMenuTree(supportsMultiSelect: false);
             tree.Add("关于", new About(),EditorIcons.Info);
-            //tree.Add("日志管理",new LogSettings(),EditorIcons.SettingsCog);
-            tree.Add("UI代码生成", new MVVMCodeGenerate(),EditorIcons.Flag);
+            
+            tree.Add("UI代码生成", new UIGenerateWindow(),EditorIcons.Flag);
+            
             return tree;
         }
-
-
-
-        //private static RuntimeConfig instance_Config = null;
-        //public static RuntimeConfig RuntimeGetRuntimeConfig()
-        //{
-
-        //    if (instance_Config == null)
-        //    {
-        //        instance_Config  = Resources.Load<RuntimeConfig>("RuntimeInfo");
-        //    }
-        //    return instance_Config;
-        //}
-       
     }
 }

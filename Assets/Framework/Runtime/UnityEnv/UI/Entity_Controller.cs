@@ -13,9 +13,29 @@ namespace AirFramework
     }
     public abstract class Controller<T> : Controller where T : View
     {
+
+
         protected T View { get; set; }
 
+        public Controller()
+        {
+            OnBindEvents();
+            OnBindProperty();
+        }
+        ~Controller()
+        {
+            OnUnBindEvents();
+            OnUnBindProperty();
+        }
+        protected abstract void OnBindProperty();
+        protected abstract void OnUnBindProperty();
+        protected abstract void OnBindEvents();
+        protected abstract void OnUnBindEvents();
 
+        protected K Model<K> () where K : Model
+        {
+            return Framework.UI.Models.Get<K> ();
+        }
 
     }
 
