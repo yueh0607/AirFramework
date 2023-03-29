@@ -22,7 +22,10 @@ namespace AirFramework
         {
             Addressables.Release(res);
         }
-        
+        public async AsyncTask<GameObject> InstantiateAsync(GameObject gameObject)
+        {
+            return (await Addressables.InstantiateAsync(gameObject)).Result;
+        }
 
         public override string Name => "ResManager";
 
