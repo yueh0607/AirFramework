@@ -92,7 +92,7 @@ namespace AirFrameworkEditor
 
         public Component BuildTarget => mark.buildTarget;
         public string ViewFieldName => $"{BuildName}_{TypeName}";
-        public string ViewFiledString => $"{FullTypeName} {ViewFieldName};";
+        public string ViewFiledString => $"public {FullTypeName} {ViewFieldName};";
         public string EventName
         {
             get

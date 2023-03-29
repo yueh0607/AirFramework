@@ -2,6 +2,7 @@ using AirFrameworkEditor.Assets.Framework.UnityEditorEnv.Editor.UI.Generator;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEditor;
 using UnityEditorInternal;
 using UnityEngine;
@@ -32,13 +33,15 @@ namespace AirFrameworkEditor
         {
             var data = PanelAnalyser.GetData(marks);
             var eventList = data.GetEventList();
-            var fieldList = data.GetViewFieldList();
             var bind = data.GetBindCode();
             var unbind = data.GetUnBindCode();
             CreateEventController(panelName, path, eventList,bind,unbind);
             CreateUpdateController(panelName, path);
-            CreateViewPanel(panelName, path);
-            CreateView(panelName, path,fieldList);
+            CreateControllerPanel(panelName, path);
+            CreateView(panelName, path,data);
+
+
+            AssetDatabase.Refresh();
         }
 
         /// <summary>
@@ -90,13 +93,25 @@ namespace AirFrameworkEditor
         /// <param panelName="panelName"></param>
         /// <param panelName="path"></param>
         /// <param panelName="fields"></param>
-        internal static void CreateView(string panelName, string path, string[] fields)
+        internal static void CreateView(string panelName, string path, List<MarkData> data)
         {
             path += $"/{panelName}View.cs";
             ViewGenerator generator = new ViewGenerator();
             generator.Init(panelName);
-            //generator.AddCommit("非必要不更改这个文件");
-            foreach (var x in fields) generator.AddField(x);
+
+            string[] fields = data.GetViewFieldList(); 
+            foreach (var x in fields)
+            {
+                generator.AddField(x);
+            }
+
+            List<string> initCode = new();
+            foreach (var x in data) 
+            {
+                string code = $"{x.ViewFieldName} = transform.Find(\"{x.BuildName}\").GetComponent<{x.FullTypeName}>();";
+                initCode.Add(code);
+            }
+            generator.AddEvent("public override void InitComponents()", initCode);
             generator.End();
             CreateFileInFolder(path, generator.GetCode());
         }
@@ -106,14 +121,18 @@ namespace AirFrameworkEditor
         /// </summary>
         /// <param panelName="panelName"></param>
         /// <param panelName="path"></param>
-        internal static void CreateViewPanel(string panelName, string path)
+        internal static void CreateControllerPanel(string panelName, string path)
         {
-            path += $"/{panelName}View.Panel.cs";
-            ViewGenerator generator = new ViewGenerator();
+            path += $"/{panelName}Panel.Behaviour.cs";
+            ControllerGenerator generator = new ControllerGenerator();
             generator.Init(panelName);
 
-            generator.AddEmptyEvent("public void OnOpenPanel()");
-            generator.AddEmptyEvent("public void OnClosePanel()");
+            generator.AddEmptyEvent("public override void OnOpenPanel()");
+            generator.AddEmptyEvent("public override void OnClosePanel()");
+            generator.AddEvent("public override void OnLoadPanel()",new List<string>() { "View.InitComponents();"});
+            generator.AddEmptyEvent("public override void OnUnloadPanel()");
+            generator.AddEmptyEvent("public override void OnFocusPanel()");
+            generator.AddEmptyEvent("public override void OnLostFocusPanel()");
 
             generator.End();
             CreateFileInFolder(path, generator.GetCode());

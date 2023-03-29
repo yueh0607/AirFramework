@@ -37,6 +37,7 @@ namespace AirFrameworkEditor
         [ButtonGroup]
         [GUIColor(0, 1, 0)]
         [LabelText("生成模板代码")]
+       
         public void Generate()
         {
             if (prefab == null)
@@ -48,9 +49,7 @@ namespace AirFrameworkEditor
             CreateUIFileHandle.CreateVCByMarks(marks,path,name);
 
         }
-
-
-
+     
 
 
 

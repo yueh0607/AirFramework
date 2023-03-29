@@ -22,10 +22,10 @@ namespace AirFrameworkEditor
             generator.UsingText("System.Collections.Generic");
             generator.UsingText("AirFramework");
 
-            generator.NameSpaceStart("MyNameSpace");
+            generator.NameSpaceStart("MyNamespace");
             endCount++;
             //–¥»Î¿‡
-            generator.ClassStart(controllerName + "View",part:true);
+            generator.ClassStart(controllerName + "View:View",part:true);
             endCount++;
 
         }

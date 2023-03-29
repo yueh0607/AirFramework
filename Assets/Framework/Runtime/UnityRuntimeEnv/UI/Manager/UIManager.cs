@@ -13,41 +13,43 @@ namespace AirFramework
     {
         public override string Name => "UIManager";
         private Canvas canvas = null;
+        public bool Initialized => canvas != null;
+
+
+
         protected override void OnDispose()
         {
 
         }
 
+        private Dictionary<string, GameObject> mapper = new();
+
+     
+        private Stack<GameObject> panel_stack = new(); 
+
         public ModelManager Models { get; protected set; } = new ModelManager();
 
 
-        [DebuggerHidden,MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private void CheckInit()
+        private void EnStack<T>(GameObject panel)
         {
-            if (canvas is null) throw new System.Exception("Init UI Module before first call.");
-        }
-
-        public void Initialize(Canvas canvas)
-        {
-            this.canvas = canvas;
+            if(panel.transform.IsChildOf(canvas.transform))
+            {
+                
+            }
         }
 
         public void Open<T>() where T : Controller
         {
-            CheckInit();
+            string path = typeof(T).Name;
 
         }
         public void Close<T>() where T : Controller
         {
-            CheckInit();
+            
         }
 
 
-
-        public async AsyncTask PreloadAsync<T>() where T : Controller
-        {
-            //await Framework.Res.LoadAssestAsync<GameObject>(typeof(T).Name);
-                
-        }
+     
+       
     }
 }

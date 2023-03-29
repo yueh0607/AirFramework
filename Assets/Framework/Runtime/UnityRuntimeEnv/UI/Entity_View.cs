@@ -11,10 +11,7 @@ namespace AirFramework
     /// </summary>
     public abstract partial class View : MonoBehaviour
     {
-        public abstract void OnOpenPanel();
-
-
-        public abstract void OnClosePanel();
+        public abstract void InitComponents();
     }
 
 

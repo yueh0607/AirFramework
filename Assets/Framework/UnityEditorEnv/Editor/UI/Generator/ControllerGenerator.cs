@@ -29,7 +29,7 @@ namespace AirFrameworkEditor.Assets.Framework.UnityEditorEnv.Editor.UI.Generator
             generator.NameSpaceStart("MyNamespace");
             endCount++;
             //写入类
-            generator.ClassStart($"{controllerName}Controller:Controller<{controllerName}View>",part:true);
+            generator.ClassStart($"{controllerName}Panel:Controller<{controllerName}View>",part:true);
             endCount++;
             
         }

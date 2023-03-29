@@ -8,13 +8,13 @@ namespace AirFramework
     /// </summary>
     public class EntityMono : Entity
     {
-        public MonoBehaviour MonoEntity { get; set; }
+        public MonoBehaviour MonoEntity { get; private set; }
 
         public GameObject gameObject=>MonoEntity?.gameObject;
         public Transform trasnform=>MonoEntity?.transform;
         public T GetComponent<T>()where T:Component=>MonoEntity?.GetComponent<T>();
 
- 
+        
 
         public override void OnAllocate()
         {
@@ -32,7 +32,7 @@ namespace AirFramework
         ~EntityMono() 
         {
             GameObject.Destroy(gameObject);
-            MonoEntity = null;
+        
         }
     }
 }
