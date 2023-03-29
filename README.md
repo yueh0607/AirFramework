@@ -1,4 +1,4 @@
-# 没名的Framework
+# 没名的缝合怪Framework
 Unity3D游戏开发中小型游戏框架
 始于2023.1.11  奋力开发ing....
 
@@ -17,7 +17,7 @@ Unity3D游戏开发中小型游戏框架
 - 通用工具(BindableProperty，IOCContainer，TimerCaller，CountCaller)
 - 日志记录(该功能已经移除)
 - 资源管理（采用Addressable+异步拓展)）
-
+- MVC-UI代码生成(生成V层引用，Panel事件，Controller自动绑定常用事件，数据绑定更新)
 
 # 推荐项目
 - [SDHK/WorldTreeFramework](https://github.com/SDHK/WorldTreeFramework)
