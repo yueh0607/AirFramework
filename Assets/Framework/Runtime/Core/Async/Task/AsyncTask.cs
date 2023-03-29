@@ -78,7 +78,7 @@ namespace AirFramework
         [DebuggerHidden]
         public void OnCompleted(Action continuation)
         {
-            
+
             UnsafeOnCompleted(continuation);
         }
 
@@ -86,7 +86,7 @@ namespace AirFramework
         public void UnsafeOnCompleted(Action continuation)
         {
             this.continuation = continuation;
-            
+
         }
         #endregion
 
@@ -110,7 +110,7 @@ namespace AirFramework
     /// </summary>
     public partial class AsyncTask : PoolableObject<AsyncTask>, IAsyncTask, IAuthorization, IAsyncTokenProperty
     {
-        
+
 
         /// <summary>
         /// 返回await结果，非必要禁止手动调用
@@ -143,7 +143,7 @@ namespace AirFramework
         [DebuggerHidden]
         private void SetResultMethod()
         {
-            if(IsCompleted) throw new InvalidOperationException("AsyncTask dont allow SetResult repeatly.");
+            if (IsCompleted) throw new InvalidOperationException("AsyncTask dont allow SetResult repeatly.");
             IsCompleted = true;
             if (Authorization)
             {
@@ -153,7 +153,7 @@ namespace AirFramework
             OnTaskCompleted?.Invoke();
             //回收到Pool
             this.Dispose();
-            
+
         }
 
         /// <summary>

@@ -14,9 +14,9 @@ namespace AirFramework
 {
 
     [AsyncMethodBuilder(typeof(AsyncTaskUpdateMethodBuilder))]
-    public class AsyncTaskUpdate : PoolableObject<AsyncTaskUpdate>,ICriticalNotifyCompletion,IAsyncTokenProperty,IUpdate
+    public class AsyncTaskUpdate : PoolableObject<AsyncTaskUpdate>, ICriticalNotifyCompletion, IAsyncTokenProperty, IUpdate
     {
-        public static void Create() =>Framework.Pool.Allocate<AsyncTaskUpdate>();
+        public static void Create() => Framework.Pool.Allocate<AsyncTaskUpdate>();
 
         [DebuggerHidden]
         public AsyncTaskUpdate GetAwaiter() => this;
@@ -26,13 +26,13 @@ namespace AirFramework
         private Action continuation = null;
 
         private AsyncTreeTokenNode token;
-        public AsyncTreeTokenNode Token { get => token; set => token=value; }
-        public bool Authorization { get;set; } = true;
+        public AsyncTreeTokenNode Token { get => token; set => token = value; }
+        public bool Authorization { get; set; } = true;
 
         [DebuggerHidden]
         public void GetResult()
         {
-            
+
         }
 
         [DebuggerHidden]
@@ -45,7 +45,7 @@ namespace AirFramework
         public void UnsafeOnCompleted(Action continuation)
         {
             this.continuation = continuation;
-            
+
         }
         private void SetResult()
         {
@@ -66,7 +66,7 @@ namespace AirFramework
         }
         public void SetException(Exception exception)
         {
-            
+
         }
 
         void IUpdate.Update()

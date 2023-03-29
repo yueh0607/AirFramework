@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 namespace AirFramework
 {
     public class EntityManager : GlobalManager
@@ -10,7 +6,7 @@ namespace AirFramework
 
         protected override void OnDispose()
         {
-            
+
         }
 
 

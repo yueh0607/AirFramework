@@ -20,7 +20,7 @@ namespace AirFramework
         /// <param name="message"></param>
         internal void Register(Type messageType, IMessageReceiver receiver, Type deleType, Delegate message)
         {
-            dispatchers.GetValueOrAddDefault(messageType,GetDispatcherFromPool).Value.Add(receiver, deleType, message);
+            dispatchers.GetValueOrAddDefault(messageType, GetDispatcherFromPool).Value.Add(receiver, deleType, message);
         }
         /// <summary>
         /// 基础消息移除
@@ -31,7 +31,7 @@ namespace AirFramework
         /// <param name="message"></param>
         internal void UnRegister(Type messageType, IMessageReceiver receiver, Type deleType, Delegate message)
         {
-            if(dispatchers.TryGetValue(messageType,out var dispatcher))
+            if (dispatchers.TryGetValue(messageType, out var dispatcher))
             {
                 dispatcher.Value.Remove(receiver, deleType, message);
                 if (dispatcher.Value.Count == 0)
@@ -93,7 +93,7 @@ namespace AirFramework
             //}
 
             var queue = Framework.Pool.Allocate<UnitQueue<Type>>();
-            foreach(var dispatcher in dispatchers)
+            foreach (var dispatcher in dispatchers)
             {
                 dispatcher.Value.Value.Remove(receiver);
                 if (dispatcher.Value.Value.Count == 0)
@@ -101,9 +101,9 @@ namespace AirFramework
                     queue.Value.Enqueue(dispatcher.Key);
                 }
             }
-            while(queue.Value.Count > 0) dispatchers.Remove(queue.Value.Dequeue());
+            while (queue.Value.Count > 0) dispatchers.Remove(queue.Value.Dequeue());
             queue.Dispose();
         }
-        
+
     }
 }

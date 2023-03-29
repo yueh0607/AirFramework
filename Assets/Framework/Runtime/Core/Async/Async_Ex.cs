@@ -7,7 +7,6 @@
 
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace AirFramework
@@ -29,18 +28,18 @@ namespace AirFramework
             timer.Start(seconds, task);
             return task;
         }
-        
-        
+
+
         public static async AsyncTaskUpdate WaitForFrame(int count = 1)
         {
-            for(int i=0;i<count;i++)
+            for (int i = 0; i < count; i++)
             {
                 await Framework.Pool.Allocate<AsyncTaskUpdate>();
             }
         }
 
 
-        
+
 
         /// <summary>
         /// 有委托GC，阻塞到完成
@@ -79,7 +78,7 @@ namespace AirFramework
         public static AsyncTaskCompleted Complete(Action action = null)
         {
             action?.Invoke();
-            
+
             return Framework.Pool.Allocate<AsyncTaskCompleted>();
         }
 
@@ -102,7 +101,7 @@ namespace AirFramework
             //绑定异步任务到计数器
             foreach (var task in tasks)
             {
-                
+
                 task.OnTaskCompleted += counterCall.PlusOne;
                 task.Coroutine();
             }
@@ -150,7 +149,7 @@ namespace AirFramework
             var asyncTask = AsyncTask<T>.Create(true);
 
             //计数器任务绑定
-            counterCall.OnClick +=(x)=> { asyncTask.SetResult(x[0]); };
+            counterCall.OnClick += (x) => { asyncTask.SetResult(x[0]); };
 
             //绑定异步任务到计数器
             foreach (var task in tasks)
@@ -257,7 +256,7 @@ namespace AirFramework
             var asyncTask = Framework.Pool.Allocate<AsyncTask<T[]>>();
 
             //绑定结束事件
-            counterCall.OnClick += (x)=> { asyncTask.SetResult(x.ToArray()); };
+            counterCall.OnClick += (x) => { asyncTask.SetResult(x.ToArray()); };
             //绑定计数器，仅第一次存在GC
             foreach (var task in tasks)
             {

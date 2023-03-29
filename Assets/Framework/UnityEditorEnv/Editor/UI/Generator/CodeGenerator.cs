@@ -1,9 +1,4 @@
-﻿using Sirenix.Utilities.Editor;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
 namespace AirFrameworkEditor
 {
@@ -50,8 +45,8 @@ namespace AirFrameworkEditor
 
             AddTab(--tabCount);
             builder.AppendLine("}");
-            
-    
+
+
         }
 
         /// <summary>
@@ -59,10 +54,10 @@ namespace AirFrameworkEditor
         /// </summary>
         /// <param name="name"></param>
         /// <param name="part"></param>
-        public void ClassStart(string name,bool part= false)
+        public void ClassStart(string name, bool part = false)
         {
             AddTab(tabCount);
-            builder.Append(part?"public partial class ":"public class ");
+            builder.Append(part ? "public partial class " : "public class ");
             builder.AppendLine(name);
             AddTab(tabCount);
             builder.AppendLine("{");
@@ -115,10 +110,10 @@ namespace AirFrameworkEditor
         {
             for (int i = 0; i < count; i++)
             {
-                
+
                 builder.Append("\t");
             }
-            
+
         }
     }
 }

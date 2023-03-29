@@ -11,7 +11,7 @@ using System.Diagnostics;
 
 namespace AirFramework
 {
-    internal class AsyncTimerCall : PoolableObject<AsyncTimerCall>,IUpdate
+    internal class AsyncTimerCall : PoolableObject<AsyncTimerCall>, IUpdate
     {
         private Stopwatch watch = new Stopwatch();
 
@@ -24,28 +24,28 @@ namespace AirFramework
         private TimeSpan predicate;
 
 
-        public void Start(float seconds,IAuthorization task)
+        public void Start(float seconds, IAuthorization task)
         {
-            Start(TimeSpan.FromSeconds(seconds),task);
+            Start(TimeSpan.FromSeconds(seconds), task);
         }
         public void Start(TimeSpan span, IAuthorization task)
         {
-            predicate= span;
+            predicate = span;
             Task = task;
             watch.Start();
         }
         void IUpdate.Update()
         {
-            
+
             if (Task == null || !Task.Authorization)
             {
-                
-                if(watch.IsRunning)watch.Stop();
+
+                if (watch.IsRunning) watch.Stop();
                 return;
             }
-            
-            if (!watch.IsRunning)watch.Start();
-            if(watch.Elapsed>predicate)
+
+            if (!watch.IsRunning) watch.Start();
+            if (watch.Elapsed > predicate)
             {
                 watch.Stop();
                 watch.Reset();

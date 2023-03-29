@@ -3,7 +3,6 @@ using Sirenix.OdinInspector.Editor;
 using Sirenix.Utilities;
 using Sirenix.Utilities.Editor;
 using UnityEditor;
-using UnityEngine;
 
 namespace AirFrameworkEditor
 {
@@ -22,10 +21,10 @@ namespace AirFrameworkEditor
         protected override OdinMenuTree BuildMenuTree()
         {
             var tree = new OdinMenuTree(supportsMultiSelect: false);
-            tree.Add("关于", new About(),EditorIcons.Info);
-            
-            tree.Add("UI代码生成", new UIGenerateWindow(),EditorIcons.Flag);
-            
+            tree.Add("关于", new About(), EditorIcons.Info);
+
+            tree.Add("UI代码生成", new UIGenerateWindow(), EditorIcons.Flag);
+
             return tree;
         }
     }

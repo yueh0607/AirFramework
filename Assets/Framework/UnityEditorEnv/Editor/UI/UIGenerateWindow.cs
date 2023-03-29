@@ -1,5 +1,4 @@
 using Sirenix.OdinInspector;
-using Sirenix.Utilities.Editor;
 using System.Collections.Generic;
 using UnityEngine;
 using UIMark = AirFramework.UIMark;
@@ -26,9 +25,9 @@ namespace AirFrameworkEditor
         private void SetNameByPrefabName()
         {
             name = prefab.name;
-            if(name.EndsWith(KeyWord))
+            if (name.EndsWith(KeyWord))
             {
-                name=name.Substring(0, name.Length - KeyWord.Length);
+                name = name.Substring(0, name.Length - KeyWord.Length);
             }
         }
 
@@ -37,7 +36,7 @@ namespace AirFrameworkEditor
         [ButtonGroup]
         [GUIColor(0, 1, 0)]
         [LabelText("生成模板代码")]
-       
+
         public void Generate()
         {
             if (prefab == null)
@@ -46,10 +45,10 @@ namespace AirFrameworkEditor
             }
             List<UIMark> marks = PanelAnalyser.GetMarks(prefab);
 
-            CreateUIFileHandle.CreateVCByMarks(marks,path,name);
+            CreateUIFileHandle.CreateVCByMarks(marks, path, name);
 
         }
-     
+
 
 
 

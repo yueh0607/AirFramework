@@ -24,9 +24,9 @@ namespace AirFramework
         //结束
         Completed
     }
-    public class AsyncToken:PoolableObject<AsyncToken>
+    public class AsyncToken : PoolableObject<AsyncToken>
     {
-        internal AsyncTreeTokenNode node=null;
+        internal AsyncTreeTokenNode node = null;
 
         public AsyncStatus Status { get; private set; } = AsyncStatus.Pending;
 
@@ -34,14 +34,14 @@ namespace AirFramework
 
         public void Yield()
         {
-            if (Status == AsyncStatus.Completed||node==null) throw new InvalidOperationException();
+            if (Status == AsyncStatus.Completed || node == null) throw new InvalidOperationException();
             Status = AsyncStatus.Yield;
             node.Yield();
         }
         public void Continue()
         {
-            if(Status==AsyncStatus.Completed || node == null) throw new InvalidOperationException();
-            Status= AsyncStatus.Pending;
+            if (Status == AsyncStatus.Completed || node == null) throw new InvalidOperationException();
+            Status = AsyncStatus.Pending;
             node.Continue();
         }
         public void Cancel()
@@ -58,7 +58,7 @@ namespace AirFramework
 
         public override void OnRecycle()
         {
-            
+
         }
     }
 }

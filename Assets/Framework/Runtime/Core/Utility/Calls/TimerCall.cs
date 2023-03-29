@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AirFramework
 {
     /// <summary>
     /// 到达指定时间自动回调
     /// </summary>
-    public sealed class TimerCall : PoolableObject<TimerCall>,IUpdate
+    public sealed class TimerCall : PoolableObject<TimerCall>, IUpdate
     {
 
         private Stopwatch watch = new Stopwatch();

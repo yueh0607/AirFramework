@@ -5,9 +5,6 @@
  * 在Object的基础上，为通用对象池增加泛型功能，任意object对象池均可以通过泛型使用
  */
 
-
-using System.Diagnostics;
-
 namespace AirFramework
 {
 

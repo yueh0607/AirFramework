@@ -1,10 +1,7 @@
+using AirFramework;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using AirFramework;
-using Codice.Client.BaseCommands;
-using System.Text;
 
 namespace AirFrameworkEditor
 {

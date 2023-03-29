@@ -34,7 +34,7 @@ namespace AirFramework
         /// <param name="key"></param>
         /// <param name="defaultVaue"></param>
         /// <returns></returns>
-        public static K GetValueOrAddDefault<T, K>(this IDictionary<T, K> dictionary, T key,Func<K> onCreate)
+        public static K GetValueOrAddDefault<T, K>(this IDictionary<T, K> dictionary, T key, Func<K> onCreate)
         {
             if (!dictionary.ContainsKey(key))
             {

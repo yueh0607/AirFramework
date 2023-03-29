@@ -22,7 +22,7 @@ namespace AirFramework
         private Dictionary<Type, UnitList<Delegate>> events = new();
 
 
-        
+
         /// <summary>
         /// 委托类型数
         /// </summary>

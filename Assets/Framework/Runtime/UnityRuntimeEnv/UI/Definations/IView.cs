@@ -1,10 +1,4 @@
-﻿using UnityEngine;
-using System.Runtime.CompilerServices;
-using UnityEngine.UI;
-using UnityEngine.Events;
-using System;
-
-namespace AirFramework
+﻿namespace AirFramework
 {
 
     public interface IView
@@ -13,5 +7,5 @@ namespace AirFramework
 
     }
 
-    
+
 }

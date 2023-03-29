@@ -13,12 +13,12 @@ namespace AirFramework
 
         public T GetEntityValue<T>() where T : EntityMono
         {
-            if (!EntityType.IsSubclassOf(typeof(T))) throw new MissingComponentException("Error EntityType"); 
+            if (!EntityType.IsSubclassOf(typeof(T))) throw new MissingComponentException("Error EntityType");
 
 
             return EntityValue as T;
         }
-        
+
     }
 
 

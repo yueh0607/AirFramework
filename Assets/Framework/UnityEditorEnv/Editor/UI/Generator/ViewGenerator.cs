@@ -1,7 +1,4 @@
-using Palmmedia.ReportGenerator.Core.Parser.Analysis;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace AirFrameworkEditor
 {
@@ -25,7 +22,7 @@ namespace AirFrameworkEditor
             generator.NameSpaceStart("MyNamespace");
             endCount++;
             //–¥»Î¿‡
-            generator.ClassStart(controllerName + "View:View",part:true);
+            generator.ClassStart(controllerName + "View:View", part: true);
             endCount++;
 
         }

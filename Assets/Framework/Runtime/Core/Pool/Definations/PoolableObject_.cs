@@ -15,7 +15,7 @@ namespace AirFramework
     /// 用于实现支持using释放，可以自主回收到池的类型
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public abstract class PoolableObject<T>:NotDisposedUnit,IPoolable where T:class
+    public abstract class PoolableObject<T> : NotDisposedUnit, IPoolable where T : class
     {
 
         /// <summary>
@@ -23,7 +23,7 @@ namespace AirFramework
         /// </summary>
         public IObjectPool ThisPool { get; set; } = null;
 
-        
+
         /// <summary>
         /// 当前对象是否已经回收
         /// </summary>
@@ -49,7 +49,7 @@ namespace AirFramework
         {
             this.Recycle();
         }
-      
+
 
         private Action disposeAction = null;
         public Action DisposeAction

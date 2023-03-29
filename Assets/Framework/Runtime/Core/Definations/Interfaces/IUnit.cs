@@ -15,7 +15,7 @@ namespace AirFramework
         bool Disposed { get; }
 
         ulong ID { get; }
-       
-        
+
+
     }
 }

@@ -10,17 +10,17 @@ using System;
 
 namespace AirFramework
 {
-    
+
 
     /// <summary>
     /// 异步任务接口
     /// </summary>
     public interface IAsyncTask : ICriticalAwaiter
-    {   
+    {
         /// <summary>
         /// 结束当前任务
         /// </summary>
-        Action SetResult { get;  }
+        Action SetResult { get; }
 
         /// <summary>
         /// 当有异常时调用
@@ -28,7 +28,7 @@ namespace AirFramework
         /// <param name="exception"></param>
         void SetException(Exception exception);
 
-        
+
     }
     /// <summary>
     /// 异步任务接口
@@ -47,6 +47,6 @@ namespace AirFramework
         /// <param name="exception"></param>
         void SetException(Exception exception);
 
-       
+
     }
 }

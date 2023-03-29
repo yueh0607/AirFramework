@@ -16,7 +16,7 @@ namespace AirFramework
     /// 此分部类负责对象池
     /// </summary>
     [AsyncMethodBuilder(typeof(AsyncTaskMethodBuilder<>))]
-    public partial class AsyncTask<T> : PoolableObject<AsyncTask<T>>, IAsyncTask<T>,IAuthorization, IAsyncTokenProperty
+    public partial class AsyncTask<T> : PoolableObject<AsyncTask<T>>, IAsyncTask<T>, IAuthorization, IAsyncTokenProperty
     {
         [DebuggerHidden]
         internal static AutoBindPool<AsyncTask<T>> AsyncTaskPool { get; } = Framework.Pool.CreateAutoBindablePool(() => new AsyncTask<T>(), null);
@@ -60,7 +60,7 @@ namespace AirFramework
 
         public AsyncTask()
         {
-     
+
         }
 
 
@@ -88,7 +88,7 @@ namespace AirFramework
         {
             get
             {
-                if(unsafeSetResult==null)
+                if (unsafeSetResult == null)
                 {
                     unsafeSetResult = UnsafeSetResultMethod;
                 }
@@ -104,8 +104,8 @@ namespace AirFramework
                 this.Result = result;
                 //执行await以后的代码
                 continuation?.Invoke();
-                
-                
+
+
             }
             OnTaskCompleted?.Invoke(result);
             //回收到Pool

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
-
-namespace AirFramework
+﻿namespace AirFramework
 {
     public enum TimerState
     {
@@ -20,6 +16,6 @@ namespace AirFramework
         Running
     }
 
-   
+
 
 }

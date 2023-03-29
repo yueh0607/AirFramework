@@ -2,11 +2,11 @@
 
 namespace AirFramework
 {
-    public class UnitArrayList : PoolableValueObject<ArrayList> 
+    public class UnitArrayList : PoolableValueObject<ArrayList>
     {
         public override void OnAllocate()
         {
-            
+
         }
 
         public override void OnRecycle()

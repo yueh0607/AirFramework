@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace AirFramework
 {
@@ -13,20 +9,20 @@ namespace AirFramework
         /// <summary>
         /// 已经占用的ID
         /// </summary>
-        private HashSet<ulong> guids= new HashSet<ulong>();
+        private HashSet<ulong> guids = new HashSet<ulong>();
         /// <summary>
         /// 已经回收的ID
         /// </summary>
-        private Queue<ulong> queue_recycle= new Queue<ulong>();
-  
-        
+        private Queue<ulong> queue_recycle = new Queue<ulong>();
+
+
         /// <summary>
         /// 已注册ID数量
         /// </summary>
         public int Count => guids.Count;
         public int RepeatCount { get; set; }
 
-        private  ulong uid_adder = 0;
+        private ulong uid_adder = 0;
 
         /// <summary>
         /// 申请ID
@@ -34,14 +30,14 @@ namespace AirFramework
         /// <returns></returns>
         public ulong Allocate()
         {
-            if(queue_recycle.Count > RepeatCount)
+            if (queue_recycle.Count > RepeatCount)
             {
                 ulong id = queue_recycle.Dequeue();
                 guids.Add(id);
                 return id;
             }
 
-            while(guids.Contains(uid_adder)) uid_adder++;
+            while (guids.Contains(uid_adder)) uid_adder++;
             guids.Add(uid_adder);
             return uid_adder++;
         }
@@ -65,13 +61,13 @@ namespace AirFramework
             queue_recycle.Enqueue(item);
         }
 
-    
+
 
         /// <summary>
         /// 超过申请100个ID可能会跟曾经的重复
         /// </summary>
         /// <param name="repeatCount"></param>
-        public UIDGenerator(int repeatCount=100)
+        public UIDGenerator(int repeatCount = 100)
         {
             this.RepeatCount = repeatCount;
         }

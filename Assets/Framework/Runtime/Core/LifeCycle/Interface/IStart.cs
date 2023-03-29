@@ -3,6 +3,6 @@
     public interface IStart : ILifeCycle
     {
         void Start();
-       
+
     }
 }

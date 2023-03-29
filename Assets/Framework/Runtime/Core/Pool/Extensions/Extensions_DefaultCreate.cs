@@ -8,7 +8,6 @@
 
 using System;
 using System.Diagnostics;
-using System.Runtime.CompilerServices;
 
 namespace AirFramework
 {
@@ -30,7 +29,7 @@ namespace AirFramework
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         [DebuggerHidden]
-        public static T DefaltActivatorCreate<T> ()
+        public static T DefaltActivatorCreate<T>()
         {
             return Activator.CreateInstance<T>();
         }

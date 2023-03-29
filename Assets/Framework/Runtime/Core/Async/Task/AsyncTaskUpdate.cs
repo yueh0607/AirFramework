@@ -14,9 +14,9 @@ namespace AirFramework
 {
 
     [AsyncMethodBuilder(typeof(AsyncTaskCompletedMethodBuilder))]
-    public class AsyncTaskCompleted : PoolableObject<AsyncTaskCompleted>,ICriticalNotifyCompletion,IAsyncTokenProperty
+    public class AsyncTaskCompleted : PoolableObject<AsyncTaskCompleted>, ICriticalNotifyCompletion, IAsyncTokenProperty
     {
-        public static void Create() =>Framework.Pool.Allocate<AsyncTaskCompleted>();
+        public static void Create() => Framework.Pool.Allocate<AsyncTaskCompleted>();
 
         [DebuggerHidden]
         public AsyncTaskCompleted GetAwaiter() => this;
@@ -26,13 +26,13 @@ namespace AirFramework
 
 
         private AsyncTreeTokenNode token;
-        public AsyncTreeTokenNode Token { get => token; set => token=value; }
+        public AsyncTreeTokenNode Token { get => token; set => token = value; }
         public bool Authorization { get; set; } = true;
 
         [DebuggerHidden]
         public void GetResult()
         {
-            
+
         }
 
         [DebuggerHidden]
@@ -61,7 +61,7 @@ namespace AirFramework
         }
         public void SetException(Exception exception)
         {
-            
+
         }
     }
 }

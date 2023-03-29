@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AirFramework
 {
@@ -22,14 +19,14 @@ namespace AirFramework
             set
             {
                 _counter = value;
-                if(value==ClickValue)
+                if (value == ClickValue)
                 {
                     OnClick?.Invoke();
-                    if(OnceRecycle)Dispose();
+                    if (OnceRecycle) Dispose();
                 }
             }
         }
-        
+
 
         /// <summary>
         /// 预期触发值
@@ -39,23 +36,23 @@ namespace AirFramework
         /// <summary>
         /// 触发事件
         /// </summary>
-        public event Action OnClick=null;
+        public event Action OnClick = null;
 
         public override void OnAllocate()
         {
-            
+
         }
 
         public override void OnRecycle()
         {
             OnClick = null;
             _counter = 0;
-            ClickValue= 0;
-            OnceRecycle= false;
+            ClickValue = 0;
+            OnceRecycle = false;
         }
 
 
-        private Action plusOne=null;
+        private Action plusOne = null;
         /// <summary>
         /// 默认实现的加一行为，第一次访问产生GC，代替自定义lambda减少GC产出
         /// </summary>
@@ -63,14 +60,14 @@ namespace AirFramework
         {
             get
             {
-                if(plusOne==null)
+                if (plusOne == null)
                 {
                     plusOne = () => { ++Count; };
                 }
                 return plusOne;
             }
         }
-        
+
 
     }
 
@@ -124,7 +121,7 @@ namespace AirFramework
             Results.Clear();
         }
 
-        public List<T> Results { get; set; }=new List<T>();
+        public List<T> Results { get; set; } = new List<T>();
 
         private Action<T> plusOne = null;
         /// <summary>
@@ -136,7 +133,7 @@ namespace AirFramework
             {
                 if (plusOne == null)
                 {
-                    plusOne = (x) => {  ++Count; Results.Add(x); };
+                    plusOne = (x) => { ++Count; Results.Add(x); };
                 }
                 return plusOne;
             }

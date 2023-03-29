@@ -7,9 +7,6 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
 
 namespace AirFramework
 {
@@ -32,7 +29,7 @@ namespace AirFramework
                         );
             return pool;
         }
-        
+
 
         /// <summary>
         /// 创建高效纯净池
@@ -67,9 +64,9 @@ namespace AirFramework
         /// <param name="onAllocate"></param>
         /// <returns></returns>        
         public AutoBindPool<T> CreateAutoBindablePool<T>(Func<T> onCreate = null, Action<T> onDestroy = null)
-            where T :class, IPoolable
-        { 
-            
+            where T : class, IPoolable
+        {
+
             AutoBindPool<T> pool = new AutoBindPool<T>(
                         onCreate ?? Pool.DefaltActivatorCreate<T>,
                         onDestroy
@@ -89,19 +86,19 @@ namespace AirFramework
         /// <param name="onRecycle"></param>
         /// <param name="onAllocate"></param>
         /// <returns></returns> 
-        public LifeCyclePool<T> CreateLifeCyclePool<T>(Func<T> onCreate = null, Action<T> onDestroy = null) where T : class,IPoolable
+        public LifeCyclePool<T> CreateLifeCyclePool<T>(Func<T> onCreate = null, Action<T> onDestroy = null) where T : class, IPoolable
         {
             LifeCyclePool<T> pool = new LifeCyclePool<T>(onCreate ?? Pool.DefaltActivatorCreate<T>, onDestroy);
             return pool;
         }
-       
+
         /// <summary>
         /// 创建ID池
         /// </summary>
         /// <param name="repeatCount"></param>
         /// <returns></returns>
-        
-        public UIDPool CreateGUIDPool(int repeatCount=100)
+
+        public UIDPool CreateGUIDPool(int repeatCount = 100)
         {
             return new UIDPool(repeatCount);
         }

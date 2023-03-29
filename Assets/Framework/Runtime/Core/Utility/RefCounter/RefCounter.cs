@@ -18,9 +18,9 @@
         }
 
 
-        protected void Allocate()=> RefCount++;
-        
-        protected void Release()=>RefCount--;
+        protected void Allocate() => RefCount++;
+
+        protected void Release() => RefCount--;
 
         public abstract void OnZeroRef();
     }

@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AirFramework
+﻿namespace AirFramework
 {
-    public class UIDPool : Unit,IPool
+    public class UIDPool : Unit, IPool
     {
 
         private UIDGenerator generator = new UIDGenerator(100);
@@ -20,10 +14,10 @@ namespace AirFramework
         }
 
 
-        public ulong Allocate()=>generator.Allocate();
-        
-        public void Recycle(ulong id)=>generator.Recycle(id);
-        
+        public ulong Allocate() => generator.Allocate();
+
+        public void Recycle(ulong id) => generator.Recycle(id);
+
 
         public void Clear()
         {
@@ -37,7 +31,7 @@ namespace AirFramework
 
         public UIDPool(int repeatCount)
         {
-            RepeatCount= repeatCount;
+            RepeatCount = repeatCount;
         }
     }
 }

@@ -18,8 +18,8 @@ namespace AirFramework
         public IAsyncTokenProperty RootTask { get; set; }
 
         public void Yield()
-        { 
-            if(Task.Token==null|| Task.Token == this)
+        {
+            if (Task.Token == null || Task.Token == this)
             {
                 Task.Authorization = false;
             }
@@ -53,7 +53,7 @@ namespace AirFramework
                 this.Task.Token?.Cancel();
             }
 
-            
+
         }
 
 

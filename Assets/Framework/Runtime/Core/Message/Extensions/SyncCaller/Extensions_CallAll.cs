@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace AirFramework
 {
@@ -60,26 +59,26 @@ namespace AirFramework
 
         public static UnitList<T5> CallAll<T1, T2, T3, T4, T5>(this UnitDelegateGroup container, T1 arg1, T2 arg2, T3 arg3, T4 arg4)
         {
-            var events = container?.Value.Get<Func<T1, T2, T3, T4,T5>>();
+            var events = container?.Value.Get<Func<T1, T2, T3, T4, T5>>();
             var result = Framework.Pool.Allocate<UnitList<T5>>();
             if (events == null) return result;
 
             for (int i = 0; i < events.Count; i++)
             {
-                result.Value.Add((events[i] as Func<T1, T2, T3, T4,T5>).Invoke(arg1, arg2, arg3,arg4));
+                result.Value.Add((events[i] as Func<T1, T2, T3, T4, T5>).Invoke(arg1, arg2, arg3, arg4));
             }
             return result;
         }
 
         public static UnitList<T6> CallAll<T1, T2, T3, T4, T5, T6>(this UnitDelegateGroup container, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5)
         {
-            var events = container?.Value.Get<Func<T1, T2, T3, T4, T5,T6>>();
+            var events = container?.Value.Get<Func<T1, T2, T3, T4, T5, T6>>();
             var result = Framework.Pool.Allocate<UnitList<T6>>();
             if (events == null) return result;
 
             for (int i = 0; i < events.Count; i++)
             {
-                result.Value.Add((events[i] as Func<T1, T2, T3, T4, T5,T6>).Invoke(arg1, arg2, arg3, arg4,arg5));
+                result.Value.Add((events[i] as Func<T1, T2, T3, T4, T5, T6>).Invoke(arg1, arg2, arg3, arg4, arg5));
             }
             return result;
         }

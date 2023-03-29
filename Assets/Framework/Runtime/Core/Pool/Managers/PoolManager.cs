@@ -31,8 +31,8 @@ namespace AirFramework
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        
-        public IGenericPool<T> GetPool<T>() where T : class,IPoolable
+
+        public IGenericPool<T> GetPool<T>() where T : class, IPoolable
         {
             var type = typeof(T);
             if (!pools.ContainsKey(type))
@@ -52,7 +52,7 @@ namespace AirFramework
             {
                 //Pool
                 Type tp = typeof(LifeCyclePool<>).MakeGenericType(type);
-                var pool = (IObjectPool)Activator.CreateInstance(tp,FuncCreator.GetFunc(type), null, null, null);
+                var pool = (IObjectPool)Activator.CreateInstance(tp, FuncCreator.GetFunc(type), null, null, null);
                 pools.Add(type, pool);
                 pools[type].RecycleTime = DefaultRecycleCycleTime;
             }
@@ -82,7 +82,7 @@ namespace AirFramework
 
         private void ReleasePool(Type poolType)
         {
-           
+
             if (pools.ContainsKey(poolType))
             {
                 pools.RemoveAndDispose(poolType);
@@ -123,14 +123,14 @@ namespace AirFramework
         public void RecycleOrigin(object item)
         {
             if (item is not IPoolable) throw new InvalidOperationException("The managed pool must implement the IPoolable interface");
-      
+
             GetPool(item.GetType()).RecycleObj(item);
         }
         #endregion
 
 
 
-        
+
 
         protected override void OnDispose()
         {
@@ -141,6 +141,6 @@ namespace AirFramework
             pools.Clear();
         }
 
-        
+
     }
 }

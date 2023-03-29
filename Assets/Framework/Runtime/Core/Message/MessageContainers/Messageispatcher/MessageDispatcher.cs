@@ -6,9 +6,7 @@
  */
 
 
-using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 
 namespace AirFramework
 {
@@ -18,16 +16,16 @@ namespace AirFramework
     public partial class MessageDispatcher : Unit
     {
         public int Count => events.Count;
-        
+
 
         private Dictionary<IMessageReceiver, UnitDelegateGroup> events = new();
 
-        internal Dictionary<IMessageReceiver,UnitDelegateGroup> EevensList=> events;
+        internal Dictionary<IMessageReceiver, UnitDelegateGroup> EevensList => events;
 
-        
-       
 
-        
+
+
+
         /// <summary>
         /// 清空全部委托派发
         /// </summary>
@@ -41,7 +39,7 @@ namespace AirFramework
             Clear();
         }
 
-        
-        
+
+
     }
 }

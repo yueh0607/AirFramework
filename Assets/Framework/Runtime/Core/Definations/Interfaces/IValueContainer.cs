@@ -15,6 +15,6 @@ namespace AirFramework
         /// <summary>
         /// ValueContainer封装值
         /// </summary>
-        T Value { get;}
+        T Value { get; }
     }
 }

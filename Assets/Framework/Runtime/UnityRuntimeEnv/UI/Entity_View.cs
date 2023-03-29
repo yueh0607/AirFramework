@@ -1,8 +1,4 @@
 ﻿using UnityEngine;
-using System.Runtime.CompilerServices;
-using UnityEngine.UI;
-using UnityEngine.Events;
-using System;
 
 namespace AirFramework
 {
@@ -13,7 +9,7 @@ namespace AirFramework
     {
         public abstract void InitComponents();
     }
-    public class MyEb:EntityMono
+    public class MyEb : EntityMono
     {
 
     }

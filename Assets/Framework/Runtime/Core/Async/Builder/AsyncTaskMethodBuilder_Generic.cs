@@ -28,7 +28,7 @@ namespace AirFramework
         {
             this.task = InitToken(task, Framework.Pool.Allocate<AsyncTreeTokenNode>());
         }
-        private static AsyncTask<T> InitToken( AsyncTask<T> task, AsyncTreeTokenNode token)
+        private static AsyncTask<T> InitToken(AsyncTask<T> task, AsyncTreeTokenNode token)
         {
             task.Token?.Dispose();
             task.Token = token;
@@ -72,7 +72,7 @@ namespace AirFramework
 
         // 6. AwaitUnsafeOnCompleted
         [SecuritySafeCritical]
-        public void AwaitUnsafeOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) 
+        public void AwaitUnsafeOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine)
             where TAwaiter : ICriticalNotifyCompletion where TStateMachine : IAsyncStateMachine
         {
             if (task.Token is not null)

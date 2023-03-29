@@ -9,7 +9,7 @@
 namespace AirFramework
 {
 
-    public abstract class GlobalManager :NotDisposedUnit
+    public abstract class GlobalManager : NotDisposedUnit
     {
         public abstract string Name { get; }
 

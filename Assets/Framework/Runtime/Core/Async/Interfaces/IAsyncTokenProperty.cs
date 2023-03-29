@@ -16,7 +16,7 @@ namespace AirFramework
     public interface IAsyncTokenProperty : IAuthorization
     {
         AsyncTreeTokenNode Token { get; set; }
-        
+
         void SetException(Exception exception);
     }
 

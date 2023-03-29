@@ -13,7 +13,7 @@ namespace AirFramework
     /// <summary>
     /// 实现可以被GetAwaiter返回支持的Awaiter对象(当执行代码可能给程序造成负面影响时)
     /// </summary>
-    public interface ICriticalAwaiter : ICriticalNotifyCompletion,IAwaiter
+    public interface ICriticalAwaiter : ICriticalNotifyCompletion, IAwaiter
     {
 
     }
@@ -21,7 +21,7 @@ namespace AirFramework
     /// <summary>
     /// 实现可以被GetAwaiter返回支持的Awaiter对象(当执行代码可能给程序造成负面影响时)
     /// </summary>
-    public interface ICriticalAwaiter<T> : ICriticalNotifyCompletion,IAwaiter<T>
+    public interface ICriticalAwaiter<T> : ICriticalNotifyCompletion, IAwaiter<T>
     {
 
     }

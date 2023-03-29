@@ -35,11 +35,11 @@ namespace AirFramework
         /// <param name="item"></param>
         public abstract void OnRecycleItem(T item);
 
-        public AbstractPool()  : base()
-        { 
+        public AbstractPool() : base()
+        {
             base.onCreate = OnCreateItem;
             base.onDestroy += OnDestroyItem;
-            base.onAllocate+= OnAllocateItem;
+            base.onAllocate += OnAllocateItem;
             base.onDestroy += OnDestroyItem;
         }
 

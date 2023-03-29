@@ -6,11 +6,6 @@
  * 同时支持创建非托管池类型，要求用户自行取得实例并管理
  */
 
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
-
 namespace AirFramework
 {
     public partial class PoolManager : GlobalManager

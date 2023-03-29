@@ -1,8 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
-
-namespace AirFramework
+﻿namespace AirFramework
 {
     public static partial class MessageExtensions
     {
@@ -16,8 +12,8 @@ namespace AirFramework
         /// <typeparam name="MessageType"></typeparam>
         /// <param name="receiver"></param>
         /// <returns></returns>
-        
-        
+
+
         public static UnitDelegateGroup Operator<MessageType>(this IMessageReceiver receiver) where MessageType : IMessage
         {
             return Framework.Message.Operator<MessageType>(receiver);
@@ -27,8 +23,8 @@ namespace AirFramework
         /// 清空操作器
         /// </summary>
         /// <param name="container"></param>
-        
-        
+
+
         public static void Clear(this UnitDelegateGroup container)
         {
             container?.Clear();

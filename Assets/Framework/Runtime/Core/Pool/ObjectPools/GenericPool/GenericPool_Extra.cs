@@ -1,29 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public partial class GenericPool<T>: ObjectPoolBase, IGenericPool<T> where T : class
+    public partial class GenericPool<T> : ObjectPoolBase, IGenericPool<T> where T : class
     {
 
         /// <summary>
         /// 申请对象
         /// </summary>
         /// <returns></returns>
-        
-        public virtual T Allocate()=>(T)AllocateObj();
+
+        public virtual T Allocate() => (T)AllocateObj();
 
         /// <summary>
         /// 回收对象到该池
         /// </summary>
         /// <param name="item"></param>
-        
-        public virtual void Recycle(T item)=>RecycleObj(item);
+
+        public virtual void Recycle(T item) => RecycleObj(item);
 
         #region 拓展行为
         /// <summary>
@@ -48,7 +42,7 @@ namespace AirFramework
                 item = onCreate();
                 pool.Enqueue(item);
             }
-            
+
         }
         /// <summary>
         /// 异步加载有GC
@@ -57,7 +51,7 @@ namespace AirFramework
         /// <returns></returns>
         public override async AsyncTask PreloadAsync(int count)
         {
-            await Task.Run(()=>Preload(count));
+            await Task.Run(() => Preload(count));
 
         }
         /// <summary>
@@ -71,8 +65,8 @@ namespace AirFramework
             count = count > Count ? Count : count;
             for (int i = 0; i < count; ++i)
             {
-                if(pool.Count != 0)
-                onDestroy?.Invoke(pool.Dequeue());
+                if (pool.Count != 0)
+                    onDestroy?.Invoke(pool.Dequeue());
             }
         }
         /// <summary>
@@ -81,7 +75,7 @@ namespace AirFramework
         /// <param name="count">卸载总数量</param>
         /// <param name="frame">间隔帧</param>
         /// <returns></returns>
-        public override async AsyncTask UnloadAsync(int count,int frame = 1)
+        public override async AsyncTask UnloadAsync(int count, int frame = 1)
         {
             //取小数量
             count = count > Count ? Count : count;
@@ -113,7 +107,7 @@ namespace AirFramework
             int delta = Count - AllocateCount;
             if (delta > 0)
             {
-                 await UnloadAsync((int)(delta*RecoveryRatio));
+                await UnloadAsync((int)(delta * RecoveryRatio));
             }
             await Async.Complete();
             AllocateCount = 0;

@@ -8,8 +8,6 @@
 
 
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 
 namespace AirFramework
 {
@@ -18,21 +16,22 @@ namespace AirFramework
     /// 可绑定监听事件的属性
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public sealed class BindableProperty<T>:PoolableObject<BindableProperty<T>> 
+    public sealed class BindableProperty<T> : PoolableObject<BindableProperty<T>>
     {
         private T value;
 
         /// <summary>
         /// 属性值：当属性值发生变化时，通知属性变更
         /// </summary>
-        
-        public T Value { 
+
+        public T Value
+        {
             get => value;
             set
             {
-                if (!object.Equals(value,this.value))
+                if (!object.Equals(value, this.value))
                 {
-                    OnValueChanged?.Invoke(this.value,value);
+                    OnValueChanged?.Invoke(this.value, value);
                     this.value = value;
                 }
             }
@@ -48,7 +47,7 @@ namespace AirFramework
         /// 初始化：使用初始值初始化可绑定属性,触发实际
         /// </summary>
         /// <param name="value"></param>
-        
+
         public BindableProperty(T value)
         {
             Value = value;
@@ -56,7 +55,7 @@ namespace AirFramework
         /// <summary>
         /// 初始化：使用默认值(default)初始化可绑定属性
         /// </summary>
-        
+
         public BindableProperty()
         {
             this.value = default;
@@ -70,7 +69,7 @@ namespace AirFramework
         public override void OnRecycle()
         {
             OnValueChanged = null;
-            value= default;
+            value = default;
         }
 
 
@@ -83,7 +82,7 @@ namespace AirFramework
         {
             get
             {
-                if(getter==null)
+                if (getter == null)
                 {
                     getter = () => Value;
                 }
@@ -97,7 +96,7 @@ namespace AirFramework
         {
             get
             {
-                if(setter==null)
+                if (setter == null)
                 {
                     setter = (value) => { Value = value; };
                 }

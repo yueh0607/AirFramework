@@ -5,9 +5,6 @@
  * 实现该接口，就允许使用全局对象池托管，对象应该负责自己的申请和回收时行为
  */
 
-
-using System;
-
 namespace AirFramework
 {
     /// <summary>

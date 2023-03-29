@@ -18,7 +18,7 @@ namespace AirFramework
         private Queue<T> queue = new Queue<T>();
 
 
-        
+
 
         /// <summary>
         /// 申请对象
@@ -52,10 +52,10 @@ namespace AirFramework
             Clear();
         }
 
-        
+
         public SuperPurePool()
         {
-            
+
         }
     }
 }

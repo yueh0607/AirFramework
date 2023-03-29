@@ -19,11 +19,11 @@ namespace AirFramework
 
         // 1. Static PoolGet method
         [DebuggerHidden]
-        public static AsyncTaskMethodBuilder Create() => new AsyncTaskMethodBuilder(AsyncTask.Create(fromPool:true));
+        public static AsyncTaskMethodBuilder Create() => new AsyncTaskMethodBuilder(AsyncTask.Create(fromPool: true));
 
         public AsyncTaskMethodBuilder(AsyncTask task)
-        {  
-            this.task =  InitToken(task,Framework.Pool.Allocate<AsyncTreeTokenNode>());
+        {
+            this.task = InitToken(task, Framework.Pool.Allocate<AsyncTreeTokenNode>());
         }
         private static AsyncTask InitToken(AsyncTask task, AsyncTreeTokenNode token)
         {
@@ -61,7 +61,7 @@ namespace AirFramework
 
         // 6. AwaitOnCompleted  
         [DebuggerHidden]
-        public void AwaitOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) 
+        public void AwaitOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine)
             where TAwaiter : INotifyCompletion where TStateMachine : IAsyncStateMachine
         {
 
@@ -75,7 +75,7 @@ namespace AirFramework
 
         // 7. AwaitUnsafeOnCompleted 
         [SecuritySafeCritical]
-        public void AwaitUnsafeOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) 
+        public void AwaitUnsafeOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine)
             where TAwaiter : ICriticalNotifyCompletion where TStateMachine : IAsyncStateMachine
         {
             if (task.Token is not null)

@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace AirFramework
 {
@@ -8,11 +7,11 @@ namespace AirFramework
     /// </summary>
     /// <typeparam name="CollectionType">集合类型</typeparam>
     /// <typeparam name="ElementsType">元素类型</typeparam>
-    public class UnitCollection<CollectionType,ElementsType> : PoolableValueObject<CollectionType>  where CollectionType : class,ICollection<ElementsType>,new()
+    public class UnitCollection<CollectionType, ElementsType> : PoolableValueObject<CollectionType> where CollectionType : class, ICollection<ElementsType>, new()
     {
         public override void OnAllocate()
         {
-            
+
         }
 
         public override void OnRecycle()

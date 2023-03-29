@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 namespace AirFramework
 {
-    public class LifeCycleManager: GlobalManager
+    public class LifeCycleManager : GlobalManager
     {
 
         #region 消息层
         private static void Publish(Type messageType) => Framework.Message.Operator(messageType).Publish();
-        private static void Register(Type messageType,Action action)=>Framework.Message.Operator(messageType).Subscribe(action);
+        private static void Register(Type messageType, Action action) => Framework.Message.Operator(messageType).Subscribe(action);
         private static void UnRegister(Type messageType, Action action) => Framework.Message.Operator(messageType).UnSubscribe(action);
         #endregion
 
@@ -17,7 +17,7 @@ namespace AirFramework
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="cycleMethod"></param>
-        public void Register<T>(Action cycleMethod)=>Register(typeof(T), cycleMethod);
+        public void Register<T>(Action cycleMethod) => Register(typeof(T), cycleMethod);
         /// <summary>
         /// 取消某函数从生命周期
         /// </summary>
@@ -44,7 +44,7 @@ namespace AirFramework
         /// <param name="instance"></param>
         public void AnalyseRemoveAll(object instance)
         {
-            foreach(var item in lifesRemove)
+            foreach (var item in lifesRemove)
             {
                 item(instance);
             }
@@ -53,12 +53,12 @@ namespace AirFramework
 
         #region 绑定层
 
-        private List<Action<object>> lifesAdd= new (),lifesRemove = new();
+        private List<Action<object>> lifesAdd = new(), lifesRemove = new();
 
 
         private Dictionary<Type, ILifeCycleHandler> cycles = new Dictionary<Type, ILifeCycleHandler>();
 
-        public override string Name =>"LifeCycleManager";
+        public override string Name => "LifeCycleManager";
 
 
 
@@ -70,7 +70,7 @@ namespace AirFramework
         {
             var handler = Activator.CreateInstance<K>();
             cycles.Add(typeof(T), handler);
-            lifesAdd.Add((x) => { if(x is T) handler.OnLifeCycleRegister((T)x); }) ;
+            lifesAdd.Add((x) => { if (x is T) handler.OnLifeCycleRegister((T)x); });
             lifesRemove.Add((x) => { if (x is T) handler.OnLifeCycleUnRegister((T)x); });
         }
         /// <summary>

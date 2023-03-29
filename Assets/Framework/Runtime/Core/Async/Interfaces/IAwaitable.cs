@@ -25,7 +25,7 @@ namespace AirFramework
     /// </summary>
     /// <typeparam name="TAwaiter"></typeparam>
     /// <typeparam name="TResult"></typeparam>
-    public interface IAwaitable<out TAwaiter,out TResult> where TAwaiter : IAwaiter<TResult>
+    public interface IAwaitable<out TAwaiter, out TResult> where TAwaiter : IAwaiter<TResult>
     {
         /// <summary>
         /// 获取一个实现IAwaiter<TResult>对象

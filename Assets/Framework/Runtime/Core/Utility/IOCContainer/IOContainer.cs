@@ -8,7 +8,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 
 namespace AirFramework
 {
@@ -24,8 +23,8 @@ namespace AirFramework
         /// </summary>
         /// <typeparam name="TInterface">接口类型</typeparam>
         /// <typeparam name="KClass">依赖类型</typeparam>
-        
-        public void Register<TInterface,KClass>()   where KClass : class, TInterface 
+
+        public void Register<TInterface, KClass>() where KClass : class, TInterface
         {
             Register<TInterface>(Activator.CreateInstance<KClass>());
         }
@@ -34,8 +33,8 @@ namespace AirFramework
         /// </summary>
         /// <typeparam name="TInterface"></typeparam>
         /// <param name="instance"></param>
-        
-        public void Register<TInterface>(TInterface instance) 
+
+        public void Register<TInterface>(TInterface instance)
         {
             Type key = typeof(TInterface);
             if (container.ContainsKey(key)) container[key] = instance;
@@ -48,10 +47,10 @@ namespace AirFramework
         /// <typeparam name="TInterface"></typeparam>
         /// <returns></returns>
         /// <exception cref="NullReferenceException"></exception>
-        
+
         public TInterface Reslove<TInterface>() where TInterface : class
         {
-            if(container.ContainsKey(typeof(TInterface)))
+            if (container.ContainsKey(typeof(TInterface)))
             {
                 return container[typeof(TInterface)] as TInterface;
             }

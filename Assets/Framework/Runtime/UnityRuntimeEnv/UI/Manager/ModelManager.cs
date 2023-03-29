@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AirFramework
 {
@@ -18,16 +15,16 @@ namespace AirFramework
 
 
         private Dictionary<Type, Model> models = new Dictionary<Type, Model>();
-        
-        public T Get<T>() where T : Model 
+
+        public T Get<T>() where T : Model
         {
-            if(!models.ContainsKey(typeof(T)))
+            if (!models.ContainsKey(typeof(T)))
             {
-                models.Add(typeof(T),Activator.CreateInstance<T>());
+                models.Add(typeof(T), Activator.CreateInstance<T>());
             }
-            return models[typeof(T)] as T;  
+            return models[typeof(T)] as T;
         }
 
-       
+
     }
 }

@@ -8,9 +8,6 @@
  * 同时Unit接入ID，方便调试和索引
  */
 
-using System;
-using System.Collections.Generic;
-
 namespace AirFramework
 {
     /// <summary>
@@ -57,7 +54,7 @@ namespace AirFramework
         public Unit()
         {
             _id = IDs.Allocate();
-           
+
         }
         ~Unit()
         {

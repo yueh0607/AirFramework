@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
@@ -17,7 +15,7 @@ namespace AirFramework
             var res = await Addressables.LoadAssetAsync<T>(path);
             return res.Result;
         }
-        
+
         public void Release<T>(T res)
         {
             Addressables.Release(res);
@@ -31,7 +29,7 @@ namespace AirFramework
 
         protected override void OnDispose()
         {
-            
+
         }
     }
 }

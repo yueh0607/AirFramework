@@ -25,7 +25,7 @@ namespace AirFramework
         private AsyncTaskCompleted task;
         //2.Task-LikeW
         public AsyncTaskCompleted Task => task;
-       
+
         // 3. SetException
         [DebuggerHidden]
         public void SetException(Exception exceptions)
@@ -53,7 +53,7 @@ namespace AirFramework
         // 6. AwaitUnsafeOnCompleted
         [DebuggerHidden]
         [SecuritySafeCritical]
-        public void AwaitUnsafeOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) where TAwaiter :  ICriticalNotifyCompletion where TStateMachine : IAsyncStateMachine
+        public void AwaitUnsafeOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) where TAwaiter : ICriticalNotifyCompletion where TStateMachine : IAsyncStateMachine
         {
             if (task.Token is not null)
             {

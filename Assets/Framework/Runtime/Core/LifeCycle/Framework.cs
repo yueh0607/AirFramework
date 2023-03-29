@@ -25,7 +25,7 @@ namespace AirFramework
         [DebuggerHidden]
         public static LifeCycleManager LifeCycle { get; } = new LifeCycleManager();
 
-        
+
 
 
     }

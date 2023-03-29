@@ -14,11 +14,11 @@ namespace AirFramework
         /// </summary>
         private Dictionary<Type, UnitMessageDispatcher> dispatchers = new();
 
-        
+
 
         public override string Name => "MessageManager";
 
-        
+
         protected override void OnDispose()
         {
             UnRegister();

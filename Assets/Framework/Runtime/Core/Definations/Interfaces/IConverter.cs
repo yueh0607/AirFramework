@@ -7,7 +7,7 @@
 
 namespace AirFramework
 {
-    public interface IConverter<T,K>
+    public interface IConverter<T, K>
     {
         public K ConvertTo(T obj);
         public T ConvertFrom(K obj);

@@ -12,7 +12,7 @@ namespace AirFramework
     /// <summary>
     /// 对象池基类型
     /// </summary>
-    public abstract class ObjectPoolBase : Unit , IObjectPool
+    public abstract class ObjectPoolBase : Unit, IObjectPool
     {
         /// <summary>
         /// 池缓存数
@@ -57,8 +57,8 @@ namespace AirFramework
         /// </summary>
         protected abstract void OnCycleRecycle();
 
-     
-        private Timer timer=null;
+
+        private Timer timer = null;
 
         private double recycleTime = -1;
         public double RecycleTime
@@ -69,20 +69,20 @@ namespace AirFramework
             }
             set
             {
-                recycleTime= value;
-                if(recycleTime>0d)
+                recycleTime = value;
+                if (recycleTime > 0d)
                 {
-                    if(timer==null)
+                    if (timer == null)
                     {
-                        timer=new Timer(recycleTime);
-                        timer.Elapsed += (s,o)=> { OnCycleRecycle(); };
+                        timer = new Timer(recycleTime);
+                        timer.Elapsed += (s, o) => { OnCycleRecycle(); };
                     }
                     timer.Interval = recycleTime;
                     if (!timer.Enabled)
                     {
                         timer.Start();
                     }
-                    
+
                 }
                 else
                 {

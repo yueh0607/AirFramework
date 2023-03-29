@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace AirFrameworkEditor.Assets.Framework.UnityEditorEnv.Editor.UI.Generator
+namespace AirFrameworkEditor
 {
     /// <summary>
     /// 用于Controller代码生成
@@ -29,9 +25,9 @@ namespace AirFrameworkEditor.Assets.Framework.UnityEditorEnv.Editor.UI.Generator
             generator.NameSpaceStart("MyNamespace");
             endCount++;
             //写入类
-            generator.ClassStart($"{controllerName}Panel:Controller<{controllerName}View>",part:true);
+            generator.ClassStart($"{controllerName}Panel:Controller<{controllerName}View>", part: true);
             endCount++;
-            
+
         }
 
         /// <summary>
@@ -65,11 +61,11 @@ namespace AirFrameworkEditor.Assets.Framework.UnityEditorEnv.Editor.UI.Generator
         /// </summary>
         /// <param name="method"></param>
         /// <param name="code"></param>
-        public void AddEvent(string method,List<string> codeLine)
+        public void AddEvent(string method, List<string> codeLine)
         {
             generator.AddLine(string.Empty);
             generator.MethodStart(method);
-            foreach(string line in codeLine)generator.AddLine(line);
+            foreach (string line in codeLine) generator.AddLine(line);
             generator.AnyEnd();
         }
         /// <summary>
@@ -86,7 +82,7 @@ namespace AirFrameworkEditor.Assets.Framework.UnityEditorEnv.Editor.UI.Generator
         /// </summary>
         public void End()
         {
-            for(int i=0;i<endCount; i++)
+            for (int i = 0; i < endCount; i++)
             {
                 generator.AnyEnd();
             }

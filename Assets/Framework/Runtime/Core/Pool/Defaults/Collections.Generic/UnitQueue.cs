@@ -6,11 +6,11 @@ namespace AirFramework
     /// 可回收Queue
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class UnitQueue<T> : PoolableValueObject<Queue<T>> 
+    public class UnitQueue<T> : PoolableValueObject<Queue<T>>
     {
         public override void OnAllocate()
         {
-            
+
         }
 
         public override void OnRecycle()

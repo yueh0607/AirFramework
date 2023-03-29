@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace AirFramework
 {
@@ -7,11 +6,11 @@ namespace AirFramework
     /// 可回收SortedSet
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class UnitSortedSet<T> : PoolableValueObject<SortedSet<T>> 
+    public class UnitSortedSet<T> : PoolableValueObject<SortedSet<T>>
     {
         public override void OnAllocate()
         {
-            
+
         }
 
         public override void OnRecycle()

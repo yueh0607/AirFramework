@@ -6,9 +6,6 @@
  * 原GenericPool通过Activator创建对象效率较差
  */
 
-
-using System.Diagnostics;
-
 namespace AirFramework
 {
     /// <summary>
@@ -17,8 +14,8 @@ namespace AirFramework
     /// <typeparam name="T"></typeparam>
     public class GenericPool_<T> : GenericPool<T> where T : class, new()
     {
-        
-        public GenericPool_():base()
+
+        public GenericPool_() : base()
         {
             base.onCreate = Pool.DefaultNewCreate<T>;
         }

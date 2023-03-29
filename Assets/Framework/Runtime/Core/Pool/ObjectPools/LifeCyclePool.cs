@@ -13,7 +13,7 @@ namespace AirFramework
     /// 能自动管理生命的池
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class LifeCyclePool<T> : AutoBindPool<T> where T : class,IPoolable
+    public class LifeCyclePool<T> : AutoBindPool<T> where T : class, IPoolable
     {
 
         public void OnAddItemLifeCycle(T item)
@@ -21,7 +21,7 @@ namespace AirFramework
             //注册生命周期
             if (item is ILifeCycle) Framework.LifeCycle.AnalyseAddAll(item);
         }
-        
+
 
         public void OnRemoveItemLifeCycle(T item)
         {
@@ -29,7 +29,7 @@ namespace AirFramework
             if (item is ILifeCycle) Framework.LifeCycle.AnalyseRemoveAll(item);
         }
 
-        public LifeCyclePool(Func<T> onCreate = null, Action<T> onDestroy = null) : base(onCreate,onDestroy)
+        public LifeCyclePool(Func<T> onCreate = null, Action<T> onDestroy = null) : base(onCreate, onDestroy)
         {
             base.onRecycle += OnRemoveItemLifeCycle;
             base.onAllocate += OnAddItemLifeCycle;

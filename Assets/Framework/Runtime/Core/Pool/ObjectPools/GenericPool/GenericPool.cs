@@ -7,7 +7,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 
 namespace AirFramework
 {
@@ -36,19 +35,19 @@ namespace AirFramework
         /// <summary>
         /// 池缓存数量
         /// </summary>
-        
+
         public override int Count => pool.Count;
 
         /// <summary>
         /// 池内对象类型
         /// </summary>
-        
+
         public override Type ObjectType { get; } = typeof(T);
 
         /// <summary>
         /// 最大缓存容量,池内的缓存永远不会超过这个值
         /// </summary>
-        
+
         public override int MaxCapacity { get; set; } = int.MaxValue;
 
         #endregion
@@ -57,14 +56,14 @@ namespace AirFramework
         /// <summary>
         /// 只允许子类实现无参数构造方法，不指定行为
         /// </summary>
-        
+
         protected GenericPool() { }
 
         /// <summary>
         /// 需要指定池各种行为
         /// </summary>
         /// <param name="objectType"></param>
-        
+
         public GenericPool(Func<T> onCreate = null, Action<T> onDestroy = null, Action<T> onRecycle = null, Action<T> onAllocate = null)
         {
             this.onCreate = onCreate ?? Pool.DefaltActivatorCreate<T>;
@@ -75,7 +74,7 @@ namespace AirFramework
         /// <summary>
         /// 当对象销毁时调用
         /// </summary>
-        
+
         protected override void OnDispose()
         {
             //清空池缓存
@@ -95,14 +94,14 @@ namespace AirFramework
         {
             T item;
             //空池则创建,非空则从池取出
-            if (pool.Count == 0 ) item = onCreate();
+            if (pool.Count == 0) item = onCreate();
             else item = pool.Dequeue();
             //执行申请时行为委托
             onAllocate?.Invoke(item);
             ++AllocateCount;
             return item;
         }
-        
+
         /// <summary>
         /// 回收对象到该池
         /// </summary>

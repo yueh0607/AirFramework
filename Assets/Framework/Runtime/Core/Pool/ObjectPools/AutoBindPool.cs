@@ -17,7 +17,7 @@ namespace AirFramework
     {
         //回收
         public void OnEnterPool(T item)
-        { 
+        {
             item.IsRecycled = true;
             item.OnRecycle();
         }
@@ -30,7 +30,7 @@ namespace AirFramework
             item.OnAllocate();
         }
 
-        public AutoBindPool(Func<T> onCreate = null, Action<T> onDestroy = null) : base(onCreate, onDestroy, null,null)
+        public AutoBindPool(Func<T> onCreate = null, Action<T> onDestroy = null) : base(onCreate, onDestroy, null, null)
         {
             base.onRecycle += OnEnterPool;
             base.onAllocate += OnExitPool;

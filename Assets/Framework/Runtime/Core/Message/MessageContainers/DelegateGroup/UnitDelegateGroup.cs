@@ -4,7 +4,7 @@
     {
         public override void OnAllocate()
         {
-            
+
         }
 
         public override void OnRecycle()
