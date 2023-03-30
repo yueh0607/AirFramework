@@ -6,8 +6,6 @@ namespace AirFramework
     public class Game : MonoBehaviour
     {
 
-
-#if UNITY_2020_1_OR_NEWER
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         static void Init()
         {
@@ -16,10 +14,7 @@ namespace AirFramework
             Framework.LifeCycle.AddLifeCycle<IUpdate, UpdateHandler>();
             Framework.LifeCycle.AddLifeCycle<ILateUpdate, LateUpdateHandler>();
             Framework.LifeCycle.AddLifeCycle<IFixedUpdate, FixedUpdateHandler>();
-
-
         }
-#endif
 
 
         private void Awake()
@@ -41,9 +36,7 @@ namespace AirFramework
 
         private void Update()
         {
-            Profiler.BeginSample("AirFramework.Update");
             Framework.LifeCycle.Publish<IUpdate>();
-            Profiler.EndSample();
         }
     }
 }

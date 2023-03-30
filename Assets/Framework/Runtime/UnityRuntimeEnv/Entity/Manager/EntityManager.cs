@@ -1,14 +1,9 @@
+using UnityEngine;
+
 namespace AirFramework
 {
-    public class EntityManager : GlobalManager
+    public static class EntityManager
     {
-        public override string Name => "EntityManager";
-
-        protected override void OnDispose()
-        {
-
-        }
-
-
+        
     }
 }

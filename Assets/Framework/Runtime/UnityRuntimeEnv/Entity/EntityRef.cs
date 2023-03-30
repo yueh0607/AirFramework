@@ -8,7 +8,15 @@ namespace AirFramework
     /// </summary>
     public class EntityRef : MonoBehaviour
     {
-        public EntityMono EntityValue;
+        private EntityMono mono = null;
+        public EntityMono EntityValue
+        {
+            get => mono;
+            set
+            {
+                mono= value;
+            }
+        }
         public Type EntityType;
 
         public T GetEntityValue<T>() where T : EntityMono

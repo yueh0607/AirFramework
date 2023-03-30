@@ -9,9 +9,6 @@ namespace AirFramework
     {
         public abstract void InitComponents();
     }
-    public class MyEb : EntityMono
-    {
-
-    }
+  
 
 }

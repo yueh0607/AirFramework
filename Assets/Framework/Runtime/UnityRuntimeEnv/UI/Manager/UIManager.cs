@@ -35,7 +35,7 @@ namespace AirFramework
 
         public void Open<T>() where T : Controller
         {
-            string path = typeof(T).Name;
+            
 
         }
         public void Close<T>() where T : Controller
