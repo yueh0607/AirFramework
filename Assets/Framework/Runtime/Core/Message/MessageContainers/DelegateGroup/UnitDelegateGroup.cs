@@ -2,7 +2,7 @@
 {
 
 
-    public class UnitDelegateGroup : PoolableValueObject<DelegateGroup>
+    public class UnitDelegateGroup : PoolableValueObject<DelegateGroup>,IUnitDelegateGroupIn<IMessage>,IUnitDelegateGroupOut<IMessage>
     {
         public override void OnAllocate()
         {
@@ -13,5 +13,7 @@
         {
             Value.Dispose();
         }
+
+      
     }
 }

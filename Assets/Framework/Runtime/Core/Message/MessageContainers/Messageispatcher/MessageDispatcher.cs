@@ -20,7 +20,7 @@ namespace AirFramework
 
         private Dictionary<IMessageReceiver, UnitDelegateGroup> events = new();
 
-        internal Dictionary<IMessageReceiver, UnitDelegateGroup> EevensList => events;
+        internal Dictionary<IMessageReceiver, UnitDelegateGroup> EventsList => events;
 
 
 

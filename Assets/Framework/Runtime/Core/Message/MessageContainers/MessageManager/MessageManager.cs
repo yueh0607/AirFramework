@@ -21,7 +21,7 @@ namespace AirFramework
 
         protected override void OnDispose()
         {
-            UnRegister();
+            RemoveAll();
         }
 
 
@@ -32,7 +32,7 @@ namespace AirFramework
         /// <typeparam name="T"></typeparam>
         public void Remove<T>() where T : IMessage
         {
-            UnRegister(typeof(T));
+            RemoveAll(typeof(T));
         }
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace AirFramework
         /// <param name="receiver"></param>
         public void Remove<T>(IMessageReceiver receiver) where T : IMessage
         {
-            UnRegister(typeof(T), receiver);
+            RemoveAll(typeof(T), receiver);
         }
 
 

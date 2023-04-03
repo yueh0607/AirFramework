@@ -5,7 +5,7 @@ namespace AirFramework
     public static partial class MessageExtensions
     {
 
-        public static UnitList<T1> CallAll<T1>(this UnitDelegateGroup container)
+        public static UnitList<T1> CallAll<T1>(this IUnitDelegateGroupOut<ISendMessage<T1>> container)
         {
             var events = container?.Value.Get<Func<T1>>();
             var result = Framework.Pool.Allocate<UnitList<T1>>();
@@ -18,7 +18,7 @@ namespace AirFramework
             return result;
         }
 
-        public static UnitList<T2> CallAll<T1, T2>(this UnitDelegateGroup container, T1 arg1)
+        public static UnitList<T2> CallAll<T1, T2>(this IUnitDelegateGroupOut<ISendMessage<T1,T2>> container, T1 arg1)
         {
             var events = container?.Value.Get<Func<T1, T2>>();
             var result = Framework.Pool.Allocate<UnitList<T2>>();
@@ -31,7 +31,7 @@ namespace AirFramework
             return result;
         }
 
-        public static UnitList<T3> CallAll<T1, T2, T3>(this UnitDelegateGroup container, T1 arg1, T2 arg2)
+        public static UnitList<T3> CallAll<T1, T2, T3>(this IUnitDelegateGroupOut<ISendMessage<T1,T2,T3>> container, T1 arg1, T2 arg2)
         {
             var events = container?.Value.Get<Func<T1, T2, T3>>();
             var result = Framework.Pool.Allocate<UnitList<T3>>();
@@ -44,7 +44,7 @@ namespace AirFramework
             return result;
         }
 
-        public static UnitList<T4> CallAll<T1, T2, T3, T4>(this UnitDelegateGroup container, T1 arg1, T2 arg2, T3 arg3)
+        public static UnitList<T4> CallAll<T1, T2, T3, T4>(this IUnitDelegateGroupOut<ISendMessage<T1,T2,T3,T4>> container, T1 arg1, T2 arg2, T3 arg3)
         {
             var events = container?.Value.Get<Func<T1, T2, T3, T4>>();
             var result = Framework.Pool.Allocate<UnitList<T4>>();
@@ -57,7 +57,7 @@ namespace AirFramework
             return result;
         }
 
-        public static UnitList<T5> CallAll<T1, T2, T3, T4, T5>(this UnitDelegateGroup container, T1 arg1, T2 arg2, T3 arg3, T4 arg4)
+        public static UnitList<T5> CallAll<T1, T2, T3, T4, T5>(this IUnitDelegateGroupOut<ISendMessage<T1,T2,T3,T4,T5>> container, T1 arg1, T2 arg2, T3 arg3, T4 arg4)
         {
             var events = container?.Value.Get<Func<T1, T2, T3, T4, T5>>();
             var result = Framework.Pool.Allocate<UnitList<T5>>();
@@ -70,7 +70,7 @@ namespace AirFramework
             return result;
         }
 
-        public static UnitList<T6> CallAll<T1, T2, T3, T4, T5, T6>(this UnitDelegateGroup container, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5)
+        public static UnitList<T6> CallAll<T1, T2, T3, T4, T5, T6>(this IUnitDelegateGroupOut<ISendMessage<T1,T2,T3,T4,T5,T6>> container, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5)
         {
             var events = container?.Value.Get<Func<T1, T2, T3, T4, T5, T6>>();
             var result = Framework.Pool.Allocate<UnitList<T6>>();

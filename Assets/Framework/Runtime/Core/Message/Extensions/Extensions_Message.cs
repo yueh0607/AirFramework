@@ -4,7 +4,7 @@
     {
 
 
-        public static MessageManager Message(this object item) => Framework.Message;
+        //public static MessageManager Message(this object item) => Framework.Message;
 
         /// <summary>
         /// 获取消息操作器
@@ -14,10 +14,10 @@
         /// <returns></returns>
 
 
-        public static UnitDelegateGroup Operator<MessageType>(this IMessageReceiver receiver) where MessageType : IMessage
-        {
-            return Framework.Message.Operator<MessageType>(receiver);
-        }
+        //public static UnitDelegateGroup Operator<T>(this IMessageReceiver receiver) where T : IMessage
+        //{
+        //    return Framework.Message.Operator<T>(receiver);
+        //}
 
         /// <summary>
         /// 清空操作器
