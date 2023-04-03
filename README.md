@@ -10,13 +10,12 @@ Unity3D游戏开发中小型游戏框架
 后续会给出类似Odin的编辑器插件实现上传到仓库内来解决这个问题
 
 # 已经实现的模块：
-- 全局对象池(托管池全局申请/回收，using释放，非托管池创建，计时回收，基类管理)
-- 逆变约束全局消息机制 (全局广播，指定派发，异步消息，单线程，强语法泛型约束与简化)
-- 生命周期管理(消息驱动，自动绑定，拓展生命周期)
-- Unity异步编程支持(tasklike+pool 支持强GC控制的unity异步编程)
-- 通用工具(BindableProperty，IOCContainer，TimerCaller，CountCaller)
-- 日志记录(该功能已经移除)
-- 资源管理（采用Addressable+异步拓展)）
+- 基类全局对象池(托管池全局申请/回收，using释放，非托管池创建，计时回收，基类管理)
+- 逆变约束全局消息机制 (全局广播，指定派发，异步消息，强语法接口泛型约束与简化)
+- 生命周期管理(消息驱动，自动绑定，拓展生命周期，动态添加移除)
+- Unity异步编程支持(tasklike+pool， 强GC控制的unity异步编程)
+- 通用工具(BindableProperty，IOCContainer，TimerCaller，CountCaller，FuncCreator,UnsafeHandler)
+- 资源管理（采用Addressable+AsyncExtension)）
 - MVC-UI代码生成(生成V层引用，Panel事件，Controller自动绑定常用事件，数据绑定更新)
 
 # 推荐项目
