@@ -84,10 +84,10 @@ namespace AirFramework
             //for (int i = 0; i < dispatchers.CountPull; ++i)
             //{
             //    var dispatcher = dispatchers.ElementAt(i);
-            //    dispatcher.Value.Value.Remove(receiver);
+            //    dispatcher.Value.Value.RemoveAll(receiver);
             //    if(dispatcher.Value.Value.CountPull==0)
             //    {
-            //        dispatchers.Remove(dispatcher.Key);
+            //        dispatchers.RemoveAll(dispatcher.Key);
             //        --i;
             //    }
             //}

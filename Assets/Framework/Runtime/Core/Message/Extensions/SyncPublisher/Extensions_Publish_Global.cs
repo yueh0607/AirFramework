@@ -9,8 +9,15 @@
         public static void Publish(this IUnitDispatcherOut<ISendMessage> container)
         {
             var dic = container.Value.EventsList;
-            foreach (var group in dic) 
-                UnsafeHandler.AsRef(ref group.Value).Publish();
+        
+
+            foreach (var group in dic.Values)
+            {
+                var g = group;
+                UnsafeHandler.AsRef<UnitDelegateGroup,IUnitDelegateGroupOut<ISendMessage>>(ref g)
+                    .Publish();
+                
+            }
         }
         /// <summary>
         /// 发布全局消息

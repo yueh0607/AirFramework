@@ -121,6 +121,22 @@ namespace AirFramework
             }
             dictionary.Clear();
         }
+
+        /// <summary>
+        /// 设置全部值
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="K"></typeparam>
+        /// <param name="dictionary"></param>
+        /// <param name="defaultValue"></param>
+        public static void SetAllValue<T, K>(this IDictionary<T, K> dictionary,  K defaultValue)
+        {
+            foreach(var x in dictionary.Keys)
+            {
+                dictionary[x] = defaultValue;
+            }
+        }
+
         #endregion
 
         #region List

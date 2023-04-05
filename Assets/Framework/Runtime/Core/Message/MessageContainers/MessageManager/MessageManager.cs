@@ -30,7 +30,7 @@ namespace AirFramework
         /// 消息移除：移除全局所有的该类消息
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        public void Remove<T>() where T : IMessage
+        public void RemoveAll<T>() where T : IMessage
         {
             RemoveAll(typeof(T));
         }
@@ -40,7 +40,7 @@ namespace AirFramework
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="receiver"></param>
-        public void Remove<T>(IMessageReceiver receiver) where T : IMessage
+        public void RemoveAll<T>(IMessageReceiver receiver) where T : IMessage
         {
             RemoveAll(typeof(T), receiver);
         }
