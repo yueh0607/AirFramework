@@ -9,7 +9,7 @@
         public static void Publish(this IDispatcherOut<ISendMessage> container)
         {
             //获取动态队列
-            var dic = container.Value.m_events;
+            var dic = ((UnitMessageDispatcher<IMessage>)container).Value.m_events;
             //刷新动态队列数量
             dic.RefreshTraversalCount();
             for(int i=0;i< dic.TraversalCount; i++)
@@ -17,12 +17,10 @@
                 //尝试出列
                 if(dic.TryDequeue(out var operations,out var key))
                 {
-                    //强转发布
-                    IOperatorIn<ISendMessage> op = operations;
-                    UnsafeHandler.As<IOperatorIn<ISendMessage>,IOperatorOut<ISendMessage>>(ref op)
-                        .Publish();
+                    ((IOperatorOut<ISendMessage>)operations).Publish();
                     //归队
-                    dic.Enqueue(key,operations);
+                    dic.Enqueue(key, operations);
+             
                 }
             }
         }
@@ -32,15 +30,14 @@
         public static void Publish<T1>(this IDispatcherOut<ISendMessage<T1>> container, T1 arg1)
         {
             //事件集合
-            var dic = container.Value.m_events;
+            var dic = ((UnitMessageDispatcher<IMessage>)container).Value.m_events;
             dic.RefreshTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
             {
                 if (dic.TryDequeue(out var operations, out var key))
                 {
-                    IOperatorIn<ISendMessage<T1>> op = operations;
-                    UnsafeHandler.As<IOperatorIn<ISendMessage<T1>>, IOperatorOut<ISendMessage<T1>>>(ref op)
-                        .Publish(arg1);
+                    ((IOperatorOut<ISendMessage<T1>>)operations).Publish(arg1);
+                    //归队
                     dic.Enqueue(key, operations);
                 }
             }
@@ -52,15 +49,14 @@
         public static void Publish<T1, T2>(this IDispatcherOut<ISendMessage<T1,T2>> container, T1 arg1, T2 arg2)
         {
             //事件集合
-            var dic = container.Value.m_events;
+            var dic = ((UnitMessageDispatcher<IMessage>)container).Value.m_events;
             dic.RefreshTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
             {
                 if (dic.TryDequeue(out var operations, out var key))
                 {
-                    IOperatorIn<ISendMessage<T1,T2>> op = operations;
-                    UnsafeHandler.As<IOperatorIn<ISendMessage<T1,T2>>, IOperatorOut<ISendMessage<T1,T2>>>(ref op)
-                        .Publish(arg1,arg2);
+                    ((IOperatorOut<ISendMessage<T1,T2>>)operations).Publish(arg1,arg2);
+                    //归队
                     dic.Enqueue(key, operations);
                 }
             }
@@ -72,15 +68,13 @@
         public static void Publish<T1, T2, T3>(this IDispatcherOut<ISendMessage<T1,T2,T3>> container, T1 arg1, T2 arg2, T3 arg3)
         {
             //事件集合
-            var dic = container.Value.m_events;
+            var dic = ((UnitMessageDispatcher<IMessage>)container).Value.m_events;
             dic.RefreshTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
             {
                 if (dic.TryDequeue(out var operations, out var key))
                 {
-                    IOperatorIn<ISendMessage<T1, T2,T3>> op = operations;
-                    UnsafeHandler.As<IOperatorIn<ISendMessage<T1, T2,T3>>, IOperatorOut<ISendMessage<T1, T2,T3>>>(ref op)
-                        .Publish(arg1, arg2,arg3);
+                    ((IOperatorOut<ISendMessage<T1, T2, T3>>)operations).Publish(arg1, arg2, arg3);
                     dic.Enqueue(key, operations);
                 }
             }
@@ -92,15 +86,13 @@
         public static void Publish<T1, T2, T3, T4>(this IDispatcherOut<ISendMessage<T1,T2,T3,T4>> container, T1 arg1, T2 arg2, T3 arg3, T4 arg4)
         {
             //事件集合
-            var dic = container.Value.m_events;
+            var dic = ((UnitMessageDispatcher<IMessage>)container).Value.m_events;
             dic.RefreshTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
             {
                 if (dic.TryDequeue(out var operations, out var key))
                 {
-                    IOperatorIn<ISendMessage<T1, T2, T3,T4>> op = operations;
-                    UnsafeHandler.As<IOperatorIn<ISendMessage<T1, T2, T3,T4>>, IOperatorOut<ISendMessage<T1, T2,T3,T4>>>(ref op)
-                        .Publish(arg1, arg2,arg3,arg4);
+                    ((IOperatorOut<ISendMessage<T1, T2, T3, T4>>)operations).Publish(arg1, arg2, arg3, arg4);
                     dic.Enqueue(key, operations);
                 }
             }
@@ -111,15 +103,13 @@
         public static void Publish<T1, T2, T3, T4, T5>(this IDispatcherOut<ISendMessage<T1,T2,T3,T4,T5>> container, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5)
         {
             //事件集合
-            var dic = container.Value.m_events;
+            var dic = ((UnitMessageDispatcher<IMessage>)container).Value.m_events;
             dic.RefreshTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
             {
                 if (dic.TryDequeue(out var operations, out var key))
                 {
-                    IOperatorIn<ISendMessage<T1, T2, T3, T4,T5>> op = operations;
-                    UnsafeHandler.As<IOperatorIn<ISendMessage<T1, T2, T3, T4,T5>>, IOperatorOut<ISendMessage<T1, T2, T3, T4,T5>>>(ref op)
-                        .Publish(arg1, arg2, arg3, arg4,arg5);
+                    ((IOperatorOut<ISendMessage<T1, T2, T3, T4, T5>>)operations).Publish(arg1, arg2, arg3, arg4, arg5);
                     dic.Enqueue(key, operations);
                 }
             }

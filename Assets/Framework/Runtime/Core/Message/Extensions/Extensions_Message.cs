@@ -9,7 +9,7 @@
         /// <param name="container"></param>
 
 
-        public static void Clear(this UnitMessageOperator container)
+        public static void Clear(this UnitMessageOperator<IMessage> container)
         {
             container?.Clear();
         }

@@ -18,7 +18,7 @@ namespace AirFramework
     {
 
         //这里使用静态创建方法来简化下面获取Dispatcher的代码，同时避免GC
-        internal static Func<UnitMessageOperator> GetGroupFromNew = () => new UnitMessageOperator();
+        internal static Func<UnitMessageOperator<IMessage>> GetGroupFromNew = () => new UnitMessageOperator<IMessage>();
 
 
         /// <summary>
@@ -26,7 +26,7 @@ namespace AirFramework
         /// </summary>
         /// <param name="receiver"></param>
         /// <returns></returns>
-        public UnitMessageOperator GetGroup(IMessageReceiver receiver)
+        public UnitMessageOperator<IMessage> GetGroup(IMessageReceiver receiver)
         {
             return m_events.GetValueOrDefault(receiver, null);
         }
@@ -35,7 +35,7 @@ namespace AirFramework
         /// </summary>
         /// <param name="receiver"></param>
         /// <returns></returns>
-        public UnitMessageOperator GetOrAddGroup(IMessageReceiver receiver)
+        public UnitMessageOperator<IMessage> GetOrAddGroup(IMessageReceiver receiver)
         {
             return m_events.GetValueOrAddDefault(receiver, GetGroupFromNew);
         }

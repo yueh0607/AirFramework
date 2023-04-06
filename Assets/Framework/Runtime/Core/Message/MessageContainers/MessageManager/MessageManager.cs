@@ -13,7 +13,7 @@ namespace AirFramework
         /// 消息派发器存储器
         /// </summary>
         //private Dictionary<Type, UnitMessageDispatcher> dispatchers = new();
-        private DynamicQueue<Type, UnitMessageDispatcher> m_dispatchers = new();
+        private DynamicQueue<Type, UnitMessageDispatcher<IMessage>> m_dispatchers = new();
         public override string Name => "MessageManager";
 
 

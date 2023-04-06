@@ -9,7 +9,7 @@ namespace AirFramework
         {
             var result = Framework.Pool.Allocate<UnitList<T1>>();
             //获取动态队列
-            var dic = container.Value.m_events;
+            var dic = ((UnitMessageDispatcher<IMessage>)container).Value.m_events;
             //刷新动态队列数量
             dic.RefreshTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
@@ -17,10 +17,7 @@ namespace AirFramework
                 //尝试出列
                 if (dic.TryDequeue(out var operations, out var key))
                 {
-                    //强转发布
-                    IOperatorIn<ISendMessage<T1>> op = operations;
-                    result.Value.Add(UnsafeHandler.As<IOperatorIn<ISendMessage<T1>>, IOperatorOut<ISendMessage<T1>>>(ref op)
-                        .Call());
+                    result.Value.Add(((IOperatorOut<ISendMessage<T1>>)operations).Call());
                     //归队
                     dic.Enqueue(key, operations);
                 }
@@ -32,7 +29,7 @@ namespace AirFramework
         {
             var result = Framework.Pool.Allocate<UnitList<T2>>();
             //获取动态队列
-            var dic = container.Value.m_events;
+            var dic = ((UnitMessageDispatcher<IMessage>)container).Value.m_events;
             //刷新动态队列数量
             dic.RefreshTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
@@ -40,10 +37,7 @@ namespace AirFramework
                 //尝试出列
                 if (dic.TryDequeue(out var operations, out var key))
                 {
-                    //强转发布
-                    IOperatorIn<ISendMessage<T1,T2>> op = operations;
-                    result.Value.Add(UnsafeHandler.As<IOperatorIn<ISendMessage<T1,T2>>, IOperatorOut<ISendMessage<T1,T2>>>(ref op)
-                        .Call(arg1));
+                    result.Value.Add(((IOperatorOut<ISendMessage<T1,T2>>)operations).Call(arg1));
                     //归队
                     dic.Enqueue(key, operations);
                 }
@@ -55,7 +49,7 @@ namespace AirFramework
         {
             var result = Framework.Pool.Allocate<UnitList<T3>>();
             //获取动态队列
-            var dic = container.Value.m_events;
+            var dic = ((UnitMessageDispatcher<IMessage>)container).Value.m_events;
             //刷新动态队列数量
             dic.RefreshTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
@@ -63,10 +57,7 @@ namespace AirFramework
                 //尝试出列
                 if (dic.TryDequeue(out var operations, out var key))
                 {
-                    //强转发布
-                    IOperatorIn<ISendMessage<T1, T2,T3>> op = operations;
-                    result.Value.Add(UnsafeHandler.As<IOperatorIn<ISendMessage<T1, T2,T3>>, IOperatorOut<ISendMessage<T1, T2,T3>>>(ref op)
-                        .Call(arg1,arg2));
+                    result.Value.Add(((IOperatorOut<ISendMessage<T1, T2,T3>>)operations).Call(arg1,arg2));
                     //归队
                     dic.Enqueue(key, operations);
                 }
@@ -78,7 +69,7 @@ namespace AirFramework
         {
             var result = Framework.Pool.Allocate<UnitList<T4>>();
             //获取动态队列
-            var dic = container.Value.m_events;
+            var dic = ((UnitMessageDispatcher<IMessage>)container).Value.m_events;
             //刷新动态队列数量
             dic.RefreshTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
@@ -86,10 +77,7 @@ namespace AirFramework
                 //尝试出列
                 if (dic.TryDequeue(out var operations, out var key))
                 {
-                    //强转发布
-                    IOperatorIn<ISendMessage<T1, T2, T3,T4>> op = operations;
-                    result.Value.Add(UnsafeHandler.As<IOperatorIn<ISendMessage<T1, T2, T3,T4>>, IOperatorOut<ISendMessage<T1, T2, T3, T4>>>(ref op)
-                        .Call(arg1, arg2,arg3));
+                    result.Value.Add(((IOperatorOut<ISendMessage<T1, T2, T3,T4>>)operations).Call(arg1, arg2,arg3));
                     //归队
                     dic.Enqueue(key, operations);
                 }
@@ -101,7 +89,7 @@ namespace AirFramework
         {
             var result = Framework.Pool.Allocate<UnitList<T5>>();
             //获取动态队列
-            var dic = container.Value.m_events;
+            var dic = ((UnitMessageDispatcher<IMessage>)container).Value.m_events;
             //刷新动态队列数量
             dic.RefreshTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
@@ -110,9 +98,7 @@ namespace AirFramework
                 if (dic.TryDequeue(out var operations, out var key))
                 {
                     //强转发布
-                    IOperatorIn<ISendMessage<T1, T2, T3, T4,T5>> op = operations;
-                    result.Value.Add(UnsafeHandler.As<IOperatorIn<ISendMessage<T1, T2, T3, T4,T5>>, IOperatorOut<ISendMessage<T1, T2, T3,T4, T5>>>(ref op)
-                        .Call(arg1, arg2, arg3,arg4));
+                    result.Value.Add(((IOperatorOut<ISendMessage<T1, T2, T3, T4, T5>>)operations).Call(arg1, arg2, arg3, arg4));
                     //归队
                     dic.Enqueue(key, operations);
                 }
@@ -124,7 +110,7 @@ namespace AirFramework
         {
             var result = Framework.Pool.Allocate<UnitList<T6>>();
             //获取动态队列
-            var dic = container.Value.m_events;
+            var dic = ((UnitMessageDispatcher<IMessage>)container).Value.m_events;
             //刷新动态队列数量
             dic.RefreshTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
@@ -133,9 +119,7 @@ namespace AirFramework
                 if (dic.TryDequeue(out var operations, out var key))
                 {
                     //强转发布
-                    IOperatorIn<ISendMessage<T1, T2, T3, T4, T5,T6>> op = operations;
-                    result.Value.Add(UnsafeHandler.As<IOperatorIn<ISendMessage<T1, T2, T3, T4, T5,T6>>, IOperatorOut<ISendMessage<T1, T2, T3, T4, T5,T6>>>(ref op)
-                        .Call(arg1, arg2, arg3, arg4,arg5));
+                    result.Value.Add(((IOperatorOut<ISendMessage<T1, T2, T3, T4, T5,T6>>)operations).Call(arg1, arg2, arg3, arg4,arg5));
                     //归队
                     dic.Enqueue(key, operations);
                 }

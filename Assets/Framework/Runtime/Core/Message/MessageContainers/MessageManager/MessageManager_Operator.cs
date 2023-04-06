@@ -18,10 +18,9 @@ namespace AirFramework
     
         public unsafe IOperatorOut<MessageType> Operator<MessageType>(IMessageReceiver receiver=null) where MessageType : IMessage
         {
-            var x= (IOperatorIn<MessageType>)m_dispatchers.GetValueOrAddDefault(typeof(MessageType), GetDispatcherFromNew)
+            var x= m_dispatchers.GetValueOrAddDefault(typeof(MessageType), GetDispatcherFromNew)
                 ?.Value.GetOrAddGroup(receiver??this);
-            
-            return UnsafeHandler.As<IOperatorIn<MessageType>,IOperatorOut<MessageType>>(ref x);
+            return UnsafeHandler.As<UnitMessageOperator<IMessage>,UnitMessageOperator<MessageType>>(ref x);
         }
 
       
@@ -32,8 +31,8 @@ namespace AirFramework
         /// <returns></returns>
         public IDispatcherOut<MessageType> Dispatcher<MessageType>() where MessageType : IMessage
         {
-            var x= (IDispatcherIn<MessageType>)m_dispatchers.GetValueOrAddDefault(typeof(MessageType), GetDispatcherFromNew);
-            return UnsafeHandler.As<IDispatcherIn<MessageType>,IDispatcherOut<MessageType>>(ref x);
+            var x= m_dispatchers.GetValueOrAddDefault(typeof(MessageType), GetDispatcherFromNew);
+            return UnsafeHandler.As<UnitMessageDispatcher<IMessage>, UnitMessageDispatcher<MessageType>>(ref x);
         }
 
 

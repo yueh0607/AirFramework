@@ -9,7 +9,7 @@ namespace AirFramework
     public partial class MessageManager : GlobalManager, IMessageReceiver
     {
 
-        internal static Func<UnitMessageDispatcher> GetDispatcherFromNew = () => new UnitMessageDispatcher();
+        internal static Func<UnitMessageDispatcher<IMessage>> GetDispatcherFromNew = () => new UnitMessageDispatcher<IMessage>();
 
         /// <summary>
         /// 基础消息注册
