@@ -15,14 +15,14 @@ namespace AirFramework
     /// </summary>
     public partial class MessageDispatcher : Unit
     {
-        public int Count => events.Count;
+        public int Count => m_events.Count;
 
 
-        private Dictionary<IMessageReceiver, UnitDelegateGroup> events = new();
+        //private Dictionary<IMessageReceiver, UnitDelegateGroup> events = new();
 
-        internal Dictionary<IMessageReceiver, UnitDelegateGroup> EventsList => events;
+        //internal Dictionary<IMessageReceiver, UnitDelegateGroup> EventsList => events;
 
-
+        internal DynamicQueue<IMessageReceiver,UnitDelegateGroup> m_events { get; private set; }
 
 
 
@@ -31,7 +31,7 @@ namespace AirFramework
         /// </summary>
         public void Clear()
         {
-            events.ClearAndDispose();
+            m_events.Clear();
         }
 
         protected override void OnDispose()

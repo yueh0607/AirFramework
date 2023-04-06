@@ -18,7 +18,7 @@ namespace AirFramework
     {
 
         //这里使用静态创建方法来简化下面获取Dispatcher的代码，同时避免GC分配
-        internal static Func<UnitDelegateGroup> GetGroupFromPool = () => Framework.Pool.Allocate<UnitDelegateGroup>();
+        internal static Func<UnitDelegateGroup> GetGroupFromNew = () => new UnitDelegateGroup();
 
 
         /// <summary>
@@ -28,7 +28,7 @@ namespace AirFramework
         /// <returns></returns>
         public UnitDelegateGroup GetGroup(IMessageReceiver receiver)
         {
-            return events.GetValueOrDefault(receiver, null);
+            return m_events.GetValueOrDefault(receiver, null);
         }
         /// <summary>
         /// 访问或添加：获取指定接收者的委托派发组
@@ -37,7 +37,7 @@ namespace AirFramework
         /// <returns></returns>
         public UnitDelegateGroup GetOrAddGroup(IMessageReceiver receiver)
         {
-            return events.GetValueOrAddDefault(receiver, GetGroupFromPool);
+            return m_events.GetValueOrAddDefault(receiver, GetGroupFromNew);
         }
         /// <summary>
         /// 添加：为接收者添加指定的委托派发
@@ -47,7 +47,7 @@ namespace AirFramework
         /// <param name="dele"></param>
         public void Add(IMessageReceiver receiver, Type deleType, Delegate dele)
         {
-            events.GetValueOrAddDefault(receiver, GetGroupFromPool).Value.Add(dele, deleType);
+            m_events.GetValueOrAddDefault(receiver, GetGroupFromNew).Value.Add(dele, deleType);
         }
         /// <summary>
         /// 移除：为接收者移除指定委托派发
@@ -57,12 +57,12 @@ namespace AirFramework
         /// <param name="dele"></param>
         public void Remove(IMessageReceiver receiver, Type deleType, Delegate dele)
         {
-            if (events.TryGetValue(receiver, out var group))
+            if (m_events.TryGetValue(receiver, out var group))
             {
                 group.Value.Remove(dele, deleType);
                 if (group.Value.Count == 0)
                 {
-                    events.RemoveAndDispose(receiver);
+                    m_events.Remove(receiver);
                 }
             }
         }
@@ -74,7 +74,7 @@ namespace AirFramework
         /// <param name="dele"></param>
         public void Remove(IMessageReceiver receiver)
         {
-            events.TryRemoveAndDispose(receiver);
+            m_events.TryRemove(receiver);
         }
 
 

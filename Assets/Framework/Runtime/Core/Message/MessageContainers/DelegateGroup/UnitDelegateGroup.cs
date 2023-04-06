@@ -2,18 +2,19 @@
 {
 
 
-    public class UnitDelegateGroup : PoolableValueObject<DelegateGroup>,IUnitDelegateGroupIn<IMessage>,IUnitDelegateGroupOut<IMessage>
+    public class UnitDelegateGroup : IValueContainer<DelegateGroup>,IUnitDelegateGroupIn<IMessage>,IUnitDelegateGroupOut<IMessage>
     {
-        public override void OnAllocate()
+        public DelegateGroup Value { get => value; }
+        protected DelegateGroup value = new();
+
+        public UnitDelegateGroup()
         {
 
         }
 
-        public override void OnRecycle()
+        ~UnitDelegateGroup()
         {
             Value.Dispose();
         }
-
-      
     }
 }

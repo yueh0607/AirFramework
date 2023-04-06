@@ -9,7 +9,7 @@ namespace AirFramework
     public partial class MessageManager : GlobalManager, IMessageReceiver
     {
 
-        internal static Func<UnitMessageDispatcher> GetDispatcherFromPool = () => Framework.Pool.Allocate<UnitMessageDispatcher>();
+        internal static Func<UnitMessageDispatcher> GetDispatcherFromNew = () => new UnitMessageDispatcher();
 
         /// <summary>
         /// 基础消息注册
@@ -20,7 +20,7 @@ namespace AirFramework
         /// <param name="message"></param>
         internal void Add(Type messageType, IMessageReceiver receiver, Type deleType, Delegate message)
         {
-            dispatchers.GetValueOrAddDefault(messageType, GetDispatcherFromPool).Value.Add(receiver, deleType, message);
+            m_dispatchers.GetValueOrAddDefault(messageType, GetDispatcherFromNew).Value.Add(receiver, deleType, message);
         }
         /// <summary>
         /// 基础消息移除
@@ -31,12 +31,12 @@ namespace AirFramework
         /// <param name="message"></param>
         internal void Remove(Type messageType, IMessageReceiver receiver, Type deleType, Delegate message)
         {
-            if (dispatchers.TryGetValue(messageType, out var dispatcher))
+            if (m_dispatchers.TryGetValue(messageType, out var dispatcher))
             {
                 dispatcher.Value.Remove(receiver, deleType, message);
                 if (dispatcher.Value.Count == 0)
                 {
-                    dispatchers.RemoveAndDispose(messageType);
+                    m_dispatchers.Remove(messageType);   //dispose
                 }
             }
         }
@@ -48,12 +48,12 @@ namespace AirFramework
         internal void RemoveAll(Type messageType, IMessageReceiver receiver)
         {
 
-            if (dispatchers.TryGetValue(messageType, out var dispatcher))
+            if (m_dispatchers.TryGetValue(messageType, out var dispatcher))
             {
                 dispatcher.Value.Remove(receiver);
                 if (dispatcher.Value.Count == 0)
                 {
-                    dispatchers.RemoveAndDispose(messageType);
+                    m_dispatchers.Remove(messageType);  //dispose
                 }
             }
         }
@@ -63,37 +63,24 @@ namespace AirFramework
         /// <param name="messageType"></param>
         internal void RemoveAll(Type messageType)
         {
-            dispatchers.TryRemoveAndDispose(messageType);
+            m_dispatchers.TryRemove(messageType);  //dispose
         }
         /// <summary>
         /// 基础消息移除：移除全局所有消息
         /// </summary>
         internal void RemoveAll()
         {
-            dispatchers.ClearAndDispose();
+            m_dispatchers.Clear();   //dispose
         }
 
         /// <summary>
         /// 基础消息移除：移除对象身上全部消息
         /// </summary>
         /// <param name="receiver"></param>
-        internal void RemoveAll(IMessageReceiver receiver)
+        internal void RemoveAllFromReceiver(IMessageReceiver receiver)
         {
-            //此方式调用Linq产生GCAlloc弃用
-            ////在foreach内无法判空移除，采用for位置指针遍历
-            //for (int i = 0; i < dispatchers.CountPull; ++i)
-            //{
-            //    var dispatcher = dispatchers.ElementAt(i);
-            //    dispatcher.Value.Value.RemoveAll(receiver);
-            //    if(dispatcher.Value.Value.CountPull==0)
-            //    {
-            //        dispatchers.RemoveAll(dispatcher.Key);
-            //        --i;
-            //    }
-            //}
-
             var queue = Framework.Pool.Allocate<UnitQueue<Type>>();
-            foreach (var dispatcher in dispatchers)
+            foreach (var dispatcher in m_dispatchers)
             {
                 dispatcher.Value.Value.Remove(receiver);
                 if (dispatcher.Value.Value.Count == 0)
@@ -101,7 +88,7 @@ namespace AirFramework
                     queue.Value.Enqueue(dispatcher.Key);
                 }
             }
-            while (queue.Value.Count > 0) dispatchers.Remove(queue.Value.Dequeue());
+            while (queue.Value.Count > 0) m_dispatchers.Remove(queue.Value.Dequeue());
             queue.Dispose();
         }
 

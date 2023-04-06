@@ -10,7 +10,7 @@
 
 using System;
 using System.Collections.Generic;
-
+ 
 namespace AirFramework
 {
     /// <summary>
@@ -61,7 +61,7 @@ namespace AirFramework
         /// <param name="deleType"></param>
         public void Remove(Type deleType)
         {
-            events.TryRemoveAndDispose(deleType);
+            m_events.TryRemoveAndDispose(deleType);
         }
         /// <summary>
         /// 移除该类型委托
@@ -87,7 +87,7 @@ namespace AirFramework
         /// <param name="deleType"></param>
         public void Add(Delegate dele, Type deleType)
         {
-            events.GetValueOrAddDefault(deleType, GetUnitListFromPool).Value.Add(dele);
+            m_events.GetValueOrAddDefault(deleType, GetUnitListFromPool).Value.Add(dele);
         }
         /// <summary>
         /// 移除委托
@@ -96,12 +96,12 @@ namespace AirFramework
         /// <param name="deleType"></param>
         public void Remove(Delegate dele, Type deleType)
         {
-            if (events.TryGetValue(deleType, out var kvp))
+            if (m_events.TryGetValue(deleType, out var kvp))
             {
                 kvp.Value.Remove(dele);
                 if (kvp.Value.Count == 0)
                 {
-                    events.RemoveAndDispose(deleType);
+                    m_events.RemoveAndDispose(deleType);
                 }
             }
         }
@@ -113,7 +113,7 @@ namespace AirFramework
         /// <returns></returns>
         public List<Delegate> GetDelegateList(Type deleType)
         {
-            return events.GetValueOrDefault(deleType)?.Value;
+            return m_events.GetValueOrDefault(deleType)?.Value;
         }
 
 

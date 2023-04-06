@@ -10,6 +10,7 @@
 
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace AirFramework
 {
@@ -19,12 +20,13 @@ namespace AirFramework
     public partial class DelegateGroup : Unit
     {
 
-        private Dictionary<Type, UnitList<Delegate>> events = new();
+        //private Dictionary<Type, UnitList<Delegate>> events = new();
+        private DynamicQueue<Type, UnitList<Delegate>> m_events = new();
 
         /// <summary>
         /// 委托类型数
         /// </summary>
-        public int Count => events.Count;
+        public int Count => m_events.Count;
         /// <summary>
         /// 委托总数(计算重载)
         /// </summary>
@@ -33,7 +35,7 @@ namespace AirFramework
             get
             {
                 int allCount = 0;
-                foreach (var kvp in events)
+                foreach (var kvp in m_events)
                 {
                     allCount += kvp.Value.Value.Count;
                 }
@@ -44,11 +46,11 @@ namespace AirFramework
         protected override void OnDispose()
         {
             Clear();
-        }
+        } 
 
         public void Clear()
         {
-            events.ClearAndDispose();
+            m_events.ClearAndDispose();
         }
 
     }

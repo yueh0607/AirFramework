@@ -1,13 +1,17 @@
 ﻿namespace AirFramework
 {
-    public class UnitMessageDispatcher : PoolableValueObject<MessageDispatcher>,IUnitDispatcherIn<IMessage>,IUnitDispatcherOut<IMessage>
+    public class UnitMessageDispatcher : IValueContainer<MessageDispatcher>,IUnitDispatcherIn<IMessage>,IUnitDispatcherOut<IMessage>
     {
-        public override void OnAllocate()
+
+        public MessageDispatcher Value { get => value; }
+        protected MessageDispatcher value = new();
+
+        public UnitMessageDispatcher() 
         {
 
         }
 
-        public override void OnRecycle()
+        ~UnitMessageDispatcher()
         {
             Value.Dispose();
         }

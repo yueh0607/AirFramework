@@ -18,7 +18,7 @@ namespace AirFramework
     
         public unsafe IUnitDelegateGroupOut<MessageType> Operator<MessageType>(IMessageReceiver receiver=null) where MessageType : IMessage
         {
-            var x= (IUnitDelegateGroupIn<MessageType>)dispatchers.GetValueOrAddDefault(typeof(MessageType), GetDispatcherFromPool)
+            var x= (IUnitDelegateGroupIn<MessageType>)m_dispatchers.GetValueOrAddDefault(typeof(MessageType), GetDispatcherFromNew)
                 .Value.GetOrAddGroup(receiver??this);
             return UnsafeHandler.AsRef<IUnitDelegateGroupIn<MessageType>,IUnitDelegateGroupOut<MessageType>>(ref x);
         }
@@ -31,7 +31,7 @@ namespace AirFramework
         /// <returns></returns>
         public IUnitDispatcherOut<MessageType> Dispatcher<MessageType>() where MessageType : IMessage
         {
-            var x= (IUnitDispatcherIn<MessageType>)dispatchers.GetValueOrAddDefault(typeof(MessageType), GetDispatcherFromPool);
+            var x= (IUnitDispatcherIn<MessageType>)m_dispatchers.GetValueOrAddDefault(typeof(MessageType), GetDispatcherFromNew);
             return UnsafeHandler.AsRef<IUnitDispatcherIn<MessageType>,IUnitDispatcherOut<MessageType>>(ref x);
         }
 

@@ -6,11 +6,12 @@
 
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace AirFramework
 {
-    public class DynamicQueue<T, K> where T : notnull
+    public class DynamicQueue<T, K>:IEnumerable<KeyValuePair<T,K>> where T : notnull
     {
         private Queue<T> queue;
         private Dictionary<T, K> dictionary;
@@ -25,6 +26,17 @@ namespace AirFramework
 
         public int Count => dictionary.Count;
 
+
+        private int rm_counter = 0;
+        public int DeltaRemoveCount
+        {
+            get
+            {
+                int x = rm_counter;
+                rm_counter = 0;
+                return x;
+            }
+        }
 
         /// <summary>
         /// 入队
@@ -54,13 +66,24 @@ namespace AirFramework
         /// <param name="key"></param>
         public void Remove(T key)
         {
+            if(!TryRemove(key))
+            {
+                throw new ArgumentException("error remove key ");
+            }
+        }
+        public bool TryRemove(T key)
+        {
             if (dictionary.ContainsKey(key))
             {
                 dictionary.Remove(key);
                 //Count--;
                 if (state.ContainsKey(key)) state[key]++;
                 else state.Add(key, 1);
+                rm_counter++;
+                return true;
             }
+
+            return false;
         }
 
         /// <summary>
@@ -129,6 +152,7 @@ namespace AirFramework
                 {
                     k = key;
                     dictionary.Remove(key);
+                    //rm_counter++;
                     return true;
                 }
             }
@@ -196,5 +220,24 @@ namespace AirFramework
             }
             throw new ApplicationException("Requeue defeated");
         }
+
+        public void Clear()
+        {
+            dictionary.Clear();
+            queue.Clear();
+            state.Clear();
+        }
+
+        public IEnumerator<KeyValuePair<T, K>> GetEnumerator()
+        {
+            return dictionary.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return dictionary.GetEnumerator();
+        }
     }
 }
+
+
