@@ -14,8 +14,6 @@ namespace AirFramework
         /// </summary>
         private Dictionary<Type, UnitMessageDispatcher> dispatchers = new();
 
-
-
         public override string Name => "MessageManager";
 
 
@@ -23,8 +21,6 @@ namespace AirFramework
         {
             RemoveAll();
         }
-
-
 
         /// <summary>
         /// 消息移除：移除全局所有的该类消息
