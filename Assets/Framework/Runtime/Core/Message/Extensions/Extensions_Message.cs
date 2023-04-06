@@ -14,7 +14,7 @@
         /// <returns></returns>
 
 
-        //public static UnitDelegateGroup Operator<T>(this IMessageReceiver receiver) where T : IMessage
+        //public static UnitMessageOperator Operator<T>(this IMessageReceiver receiver) where T : IMessage
         //{
         //    return Framework.Message.Operator<T>(receiver);
         //}
@@ -25,7 +25,7 @@
         /// <param name="container"></param>
 
 
-        public static void Clear(this UnitDelegateGroup container)
+        public static void Clear(this UnitMessageOperator container)
         {
             container?.Clear();
         }

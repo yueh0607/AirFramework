@@ -16,11 +16,11 @@ namespace AirFramework
     /// <summary>
     /// 委托组(方法组委托)
     /// </summary>
-    public partial class DelegateGroup : Unit
+    public partial class MessageOperator : Unit
     {
         internal static Func<UnitList<Delegate>> GetUnitListFromPool = () => Framework.Pool.Allocate<UnitList<Delegate>>();
 
-
+        #region 延申实现
         /// <summary>
         /// 添加新的委托，通过GetType取得类型
         /// </summary>
@@ -58,21 +58,15 @@ namespace AirFramework
         /// <summary>
         /// 移除该类型委托
         /// </summary>
-        /// <param name="deleType"></param>
-        public void Remove(Type deleType)
-        {
-            m_events.TryRemoveAndDispose(deleType);
-        }
-        /// <summary>
-        /// 移除该类型委托
-        /// </summary>
         /// <typeparam name="T"></typeparam>
         public void Remove<T>()
         {
             Remove(typeof(T));
         }
+
+
         /// <summary>
-        /// 返回同类型可空委托列表，禁止长期持有返回值的引用，该引用在对象池回收后无效，且可能存在元素的数量改变
+        /// 返回同类型可空委托列表，禁止长期持有返回值的引用
         /// </summary>
         /// <typeparam name="DelegateType"></typeparam>
         /// <returns></returns>
@@ -80,6 +74,20 @@ namespace AirFramework
         {
             return GetDelegateList(typeof(DelegateType));
         }
+        #endregion
+
+
+
+        /// <summary>
+        /// 移除该类型委托
+        /// </summary>
+        /// <param name="deleType"></param>
+        public void Remove(Type deleType)
+        {
+            m_events.TryRemoveAndDispose(deleType);
+        }
+       
+        
         /// <summary>
         /// 添加委托
         /// </summary>
@@ -107,7 +115,7 @@ namespace AirFramework
         }
 
         /// <summary>
-        /// 返回同类型可空委托列表，禁止长期持有返回值的引用，该引用在对象池回收后无效，且可能存在元素的数量改变
+        /// 返回同类型可空委托列表，禁止长期持有返回值的引用
         /// </summary>
         /// <param name="deleType"></param>
         /// <returns></returns>

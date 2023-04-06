@@ -16,11 +16,11 @@ namespace AirFramework
         /// <param name="receiver">操作对象</param>
         /// <returns></returns>
     
-        public unsafe IUnitDelegateGroupOut<MessageType> Operator<MessageType>(IMessageReceiver receiver=null) where MessageType : IMessage
+        public unsafe IUnitMessageOperatorOut<MessageType> Operator<MessageType>(IMessageReceiver receiver=null) where MessageType : IMessage
         {
-            var x= (IUnitDelegateGroupIn<MessageType>)m_dispatchers.GetValueOrAddDefault(typeof(MessageType), GetDispatcherFromNew)
+            var x= (IUnitMessageOperatorIn<MessageType>)m_dispatchers.GetValueOrAddDefault(typeof(MessageType), GetDispatcherFromNew)
                 .Value.GetOrAddGroup(receiver??this);
-            return UnsafeHandler.AsRef<IUnitDelegateGroupIn<MessageType>,IUnitDelegateGroupOut<MessageType>>(ref x);
+            return UnsafeHandler.AsRef<IUnitMessageOperatorIn<MessageType>,IUnitMessageOperatorOut<MessageType>>(ref x);
         }
 
       

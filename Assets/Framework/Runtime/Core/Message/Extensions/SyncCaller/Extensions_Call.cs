@@ -14,37 +14,37 @@ namespace AirFramework
 
 
 
-        public static T1 Call<T1>(this IUnitDelegateGroupOut<ISendMessage<T1>> container)
+        public static T1 Call<T1>(this IUnitMessageOperatorOut<ISendMessage<T1>> container)
         {
             return TryCall<T1>(container, out var result) ? result : throw new TryCallException(errorInfoCall);
         }
 
 
-        public static T2 Call<T1, T2>(this IUnitDelegateGroupOut<ISendMessage<T1,T2>> container, T1 arg1)
+        public static T2 Call<T1, T2>(this IUnitMessageOperatorOut<ISendMessage<T1,T2>> container, T1 arg1)
         {
             return TryCall<T1, T2>(container, arg1, out var result) ? result : throw new TryCallException(errorInfoCall);
         }
 
 
-        public static T3 Call<T1, T2, T3>(this IUnitDelegateGroupOut<ISendMessage<T1,T2,T3>> container, T1 arg1, T2 arg2)
+        public static T3 Call<T1, T2, T3>(this IUnitMessageOperatorOut<ISendMessage<T1,T2,T3>> container, T1 arg1, T2 arg2)
         {
             return TryCall<T1, T2, T3>(container, arg1, arg2, out var result) ? result : throw new TryCallException(errorInfoCall);
         }
 
 
-        public static T4 Call<T1, T2, T3, T4>(this IUnitDelegateGroupOut<ISendMessage<T1,T2,T3,T4>> container, T1 arg1, T2 arg2, T3 arg3)
+        public static T4 Call<T1, T2, T3, T4>(this IUnitMessageOperatorOut<ISendMessage<T1,T2,T3,T4>> container, T1 arg1, T2 arg2, T3 arg3)
         {
             return TryCall<T1, T2, T3, T4>(container, arg1, arg2, arg3, out var result) ? result : throw new TryCallException(errorInfoCall);
         }
 
 
-        public static T5 Call<T1, T2, T3, T4, T5>(this IUnitDelegateGroupOut<ISendMessage<T1,T2,T3,T4,T5>> container, T1 arg1, T2 arg2, T3 arg3, T4 arg4)
+        public static T5 Call<T1, T2, T3, T4, T5>(this IUnitMessageOperatorOut<ISendMessage<T1,T2,T3,T4,T5>> container, T1 arg1, T2 arg2, T3 arg3, T4 arg4)
         {
             return TryCall<T1, T2, T3, T4, T5>(container, arg1, arg2, arg3, arg4, out var result) ? result : throw new TryCallException(errorInfoCall);
         }
 
 
-        public static T6 Call<T1, T2, T3, T4, T5, T6>(this IUnitDelegateGroupOut<ISendMessage<T1,T2,T3,T4,T5,T6>> container, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5)
+        public static T6 Call<T1, T2, T3, T4, T5, T6>(this IUnitMessageOperatorOut<ISendMessage<T1,T2,T3,T4,T5,T6>> container, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5)
         {
             return TryCall<T1, T2, T3, T4, T5, T6>(container, arg1, arg2, arg3, arg4, arg5, out var result) ? result : throw new TryCallException(errorInfoCall);
         }

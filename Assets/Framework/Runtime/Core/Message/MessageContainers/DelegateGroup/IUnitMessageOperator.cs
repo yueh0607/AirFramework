@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public interface IUnitDelegateGroupOut<out T> where T : IMessage
+    public interface IUnitMessageOperatorOut<out T> where T : IMessage
     {
         /*
          * 警告:此处严格禁止引用T类型！！！否则可能引发程序直接崩溃！！！
@@ -19,9 +19,9 @@ namespace AirFramework
 
 
         //允许使用其他类型，但禁用T类型，T仅作语法配位
-        public DelegateGroup Value { get; }
+        public MessageOperator Value { get; }
     }
-    public interface IUnitDelegateGroupIn<in T> where T: IMessage 
+    public interface IUnitMessageOperatorIn<in T> where T: IMessage 
     {
 
         /*
@@ -34,6 +34,6 @@ namespace AirFramework
         */
 
         //允许使用其他类型，但禁用T类型，T仅作语法配位
-        public DelegateGroup Value { get; }
+        public MessageOperator Value { get; }
     }
 }

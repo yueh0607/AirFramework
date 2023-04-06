@@ -11,7 +11,7 @@ namespace AirFramework
         /// <param name="message"></param>
 
 
-        public static void UnSubscribe(this IUnitDelegateGroupOut<ISendMessage> container, Action message)
+        public static void UnSubscribe(this IUnitMessageOperatorOut<ISendMessage> container, Action message)
             => container?.Value.Remove<Action>(message);
         /// <summary>
         /// 退订
@@ -20,7 +20,7 @@ namespace AirFramework
         /// <param name="message"></param>
 
 
-        public static void UnSubscribe<T1>(this IUnitDelegateGroupOut<ISendMessage<T1>> container, Action<T1> message)
+        public static void UnSubscribe<T1>(this IUnitMessageOperatorOut<ISendMessage<T1>> container, Action<T1> message)
             => container?.Value.Remove<Action<T1>>(message);
         /// <summary>
         /// 退订
@@ -29,7 +29,7 @@ namespace AirFramework
         /// <param name="message"></param>
 
 
-        public static void UnSubscribe<T1, T2>(this IUnitDelegateGroupOut<ISendMessage<T1,T2>> container, Action<T1, T2> message)
+        public static void UnSubscribe<T1, T2>(this IUnitMessageOperatorOut<ISendMessage<T1,T2>> container, Action<T1, T2> message)
             => container?.Value.Remove<Action<T1, T2>>(message);
         /// <summary>
         /// 退订
@@ -38,7 +38,7 @@ namespace AirFramework
         /// <param name="message"></param>
 
 
-        public static void UnSubscribe<T1, T2, T3>(this IUnitDelegateGroupOut<ISendMessage<T1,T2,T3>> container, Action<T1, T2, T3> message)
+        public static void UnSubscribe<T1, T2, T3>(this IUnitMessageOperatorOut<ISendMessage<T1,T2,T3>> container, Action<T1, T2, T3> message)
             => container?.Value.Remove<Action<T1, T2, T3>>(message);
         /// <summary>
         /// 退订
@@ -47,7 +47,7 @@ namespace AirFramework
         /// <param name="message"></param>
 
 
-        public static void UnSubscribe<T1, T2, T3, T4>(this IUnitDelegateGroupOut<ISendMessage<T1,T2,T3,T4>> container, Action<T1, T2, T3, T4> message)
+        public static void UnSubscribe<T1, T2, T3, T4>(this IUnitMessageOperatorOut<ISendMessage<T1,T2,T3,T4>> container, Action<T1, T2, T3, T4> message)
             => container?.Value.Remove<Action<T1, T2, T3, T4>>(message);
         /// <summary>
         /// 退订
@@ -56,7 +56,7 @@ namespace AirFramework
         /// <param name="message"></param>
 
 
-        public static void UnSubscribe<T1, T2, T3, T4, T5>(this IUnitDelegateGroupOut<ISendMessage<T1,T2,T3,T4,T5>> container, Action<T1, T2, T3, T4, T5> message)
+        public static void UnSubscribe<T1, T2, T3, T4, T5>(this IUnitMessageOperatorOut<ISendMessage<T1,T2,T3,T4,T5>> container, Action<T1, T2, T3, T4, T5> message)
             => container?.Value.Remove<Action<T1, T2, T3, T4, T5>>(message);
 //-----------------------------------------------------------------------------------------------------------------------------------
 
@@ -65,7 +65,7 @@ namespace AirFramework
         /// </summary>
         /// <param name="container"></param>
         /// <param name="message"></param>
-        public static void UnSubscribe<T1>(this IUnitDelegateGroupOut<ISendMessage<T1>> container, Func<T1> message)
+        public static void UnSubscribe<T1>(this IUnitMessageOperatorOut<ISendMessage<T1>> container, Func<T1> message)
             => container?.Value.Remove<Func<T1>>(message);
 
 
@@ -74,7 +74,7 @@ namespace AirFramework
         /// </summary>
         /// <param name="container"></param>
         /// <param name="message"></param>
-        public static void UnSubscribe<T1, T2>(this IUnitDelegateGroupOut<ISendMessage<T1, T2>> container, Func<T1, T2> message)
+        public static void UnSubscribe<T1, T2>(this IUnitMessageOperatorOut<ISendMessage<T1, T2>> container, Func<T1, T2> message)
             => container?.Value.Remove<Func<T1, T2>>(message);
 
 
@@ -83,7 +83,7 @@ namespace AirFramework
         /// </summary>
         /// <param name="container"></param>
         /// <param name="message"></param>
-        public static void UnSubscribe<T1, T2, T3>(this IUnitDelegateGroupOut<ISendMessage<T1, T2, T3>> container, Func<T1, T2, T3> message)
+        public static void UnSubscribe<T1, T2, T3>(this IUnitMessageOperatorOut<ISendMessage<T1, T2, T3>> container, Func<T1, T2, T3> message)
             => container?.Value.Remove<Func<T1, T2, T3>>(message);
 
 
@@ -92,7 +92,7 @@ namespace AirFramework
         /// </summary>
         /// <param name="container"></param>
         /// <param name="message"></param>
-        public static void UnSubscribe<T1, T2, T3, T4>(this IUnitDelegateGroupOut<ISendMessage<T1, T2, T3, T4>> container, Func<T1, T2, T3, T4> message)
+        public static void UnSubscribe<T1, T2, T3, T4>(this IUnitMessageOperatorOut<ISendMessage<T1, T2, T3, T4>> container, Func<T1, T2, T3, T4> message)
             => container?.Value.Remove<Func<T1, T2, T3, T4>>(message);
 
 
@@ -101,7 +101,7 @@ namespace AirFramework
         /// </summary>
         /// <param name="container"></param>
         /// <param name="message"></param>
-        public static void UnSubscribe<T1, T2, T3, T4, T5>(this IUnitDelegateGroupOut<ISendMessage<T1, T2, T3, T4,T5>> container, Func<T1, T2, T3, T4, T5> message)
+        public static void UnSubscribe<T1, T2, T3, T4, T5>(this IUnitMessageOperatorOut<ISendMessage<T1, T2, T3, T4,T5>> container, Func<T1, T2, T3, T4, T5> message)
             => container?.Value.Remove<Func<T1, T2, T3, T4, T5>>(message);
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace AirFramework
         /// <param name="container"></param>
         /// <param name="message"></param>
 
-        public static void UnSubscribe<T1, T2, T3, T4, T5, T6>(this IUnitDelegateGroupOut<ISendMessage<T1, T2, T3, T4,T5,T6>> container, Func<T1, T2, T3, T4, T5, T6> message)
+        public static void UnSubscribe<T1, T2, T3, T4, T5, T6>(this IUnitMessageOperatorOut<ISendMessage<T1, T2, T3, T4,T5,T6>> container, Func<T1, T2, T3, T4, T5, T6> message)
             => container?.Value.Remove<Func<T1, T2, T3, T4, T5, T6>>(message);
     }
 }

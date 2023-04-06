@@ -14,7 +14,7 @@
             foreach (var group in dic.Values)
             {
                 var g = group;
-                UnsafeHandler.AsRef<UnitDelegateGroup,IUnitDelegateGroupOut<ISendMessage>>(ref g)
+                UnsafeHandler.AsRef<UnitMessageOperator,IUnitMessageOperatorOut<ISendMessage>>(ref g)
                     .Publish();
                 
             }

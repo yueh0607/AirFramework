@@ -17,30 +17,30 @@ namespace AirFramework
     public partial class MessageDispatcher : Unit
     {
 
-        //这里使用静态创建方法来简化下面获取Dispatcher的代码，同时避免GC分配
-        internal static Func<UnitDelegateGroup> GetGroupFromNew = () => new UnitDelegateGroup();
+        //这里使用静态创建方法来简化下面获取Dispatcher的代码，同时避免GC
+        internal static Func<UnitMessageOperator> GetGroupFromNew = () => new UnitMessageOperator();
 
 
         /// <summary>
-        /// 访问：获取指定接收者的委托派发组
+        /// 访问：获取指定接收者的委托组
         /// </summary>
         /// <param name="receiver"></param>
         /// <returns></returns>
-        public UnitDelegateGroup GetGroup(IMessageReceiver receiver)
+        public UnitMessageOperator GetGroup(IMessageReceiver receiver)
         {
             return m_events.GetValueOrDefault(receiver, null);
         }
         /// <summary>
-        /// 访问或添加：获取指定接收者的委托派发组
+        /// 访问或添加：获取指定接收者的委托组
         /// </summary>
         /// <param name="receiver"></param>
         /// <returns></returns>
-        public UnitDelegateGroup GetOrAddGroup(IMessageReceiver receiver)
+        public UnitMessageOperator GetOrAddGroup(IMessageReceiver receiver)
         {
             return m_events.GetValueOrAddDefault(receiver, GetGroupFromNew);
         }
         /// <summary>
-        /// 添加：为接收者添加指定的委托派发
+        /// 添加：为接收者添加指定的委托
         /// </summary>
         /// <param name="receiver"></param>
         /// <param name="deleType"></param>
@@ -50,7 +50,7 @@ namespace AirFramework
             m_events.GetValueOrAddDefault(receiver, GetGroupFromNew).Value.Add(dele, deleType);
         }
         /// <summary>
-        /// 移除：为接收者移除指定委托派发
+        /// 移除：为接收者移除指定委托
         /// </summary>
         /// <param name="receiver"></param>
         /// <param name="deleType"></param>

@@ -17,11 +17,11 @@ namespace AirFramework
     /// <summary>
     /// 委托组(方法组委托)
     /// </summary>
-    public partial class DelegateGroup : Unit
+    public partial class MessageOperator : Unit
     {
 
         //private Dictionary<Type, UnitList<Delegate>> events = new();
-        private DynamicQueue<Type, UnitList<Delegate>> m_events = new();
+        internal DynamicQueue<Type, UnitList<Delegate>> m_events = new();
 
         /// <summary>
         /// 委托类型数
