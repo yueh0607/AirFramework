@@ -10,7 +10,7 @@
 
 using System;
 using System.Collections.Generic;
- 
+
 namespace AirFramework
 {
     /// <summary>
@@ -86,8 +86,8 @@ namespace AirFramework
         {
             m_events.TryRemoveAndDispose(deleType);
         }
-       
-        
+
+
         /// <summary>
         /// 添加委托
         /// </summary>

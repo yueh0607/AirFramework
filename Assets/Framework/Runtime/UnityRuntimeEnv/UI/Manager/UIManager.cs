@@ -35,7 +35,7 @@ namespace AirFramework
 
         public void Open<T>() where T : Controller
         {
-            
+
 
         }
         public void Close<T>() where T : Controller

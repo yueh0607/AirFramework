@@ -15,12 +15,12 @@ namespace AirFramework
 
         public void SetActive(bool active) => gameObject.SetActive(active);
 
-    
+
 
     }
 
 
-    public abstract partial class Entity:PoolableObject<Entity>,IMessageReceiver
+    public abstract partial class Entity : PoolableObject<Entity>, IMessageReceiver
     {
         public override void OnAllocate()
         {

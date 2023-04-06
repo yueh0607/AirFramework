@@ -15,8 +15,8 @@
 
 
     public interface ISendMessage : IMessage { }
-    public interface ISendMessage<T1> : IMessage{ }
-    public interface ISendMessage<T1, T2> : IMessage{ }
+    public interface ISendMessage<T1> : IMessage { }
+    public interface ISendMessage<T1, T2> : IMessage { }
     public interface ISendMessage<T1, T2, T3> : IMessage { }
     public interface ISendMessage<T1, T2, T3, T4> : IMessage { }
     public interface ISendMessage<T1, T2, T3, T4, T5> : IMessage { }

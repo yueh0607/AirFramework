@@ -129,9 +129,9 @@ namespace AirFramework
         /// <typeparam name="K"></typeparam>
         /// <param name="dictionary"></param>
         /// <param name="defaultValue"></param>
-        public static void SetAllValue<T, K>(this IDictionary<T, K> dictionary,  K defaultValue)
+        public static void SetAllValue<T, K>(this IDictionary<T, K> dictionary, K defaultValue)
         {
-            foreach(var x in dictionary.Keys)
+            foreach (var x in dictionary.Keys)
             {
                 dictionary[x] = defaultValue;
             }

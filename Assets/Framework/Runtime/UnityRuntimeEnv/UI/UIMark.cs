@@ -5,7 +5,7 @@ namespace AirFramework
 
     public class UIMark : MonoBehaviour
     {
-         
+
 #if UNITY_EDITOR
 
         public Component buildTarget = null;

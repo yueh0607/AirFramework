@@ -11,12 +11,12 @@ using System.Collections.Generic;
 
 namespace AirFramework
 {
-    public class DynamicQueue<T, K>:IEnumerable<KeyValuePair<T,K>> where T : notnull
+    public class DynamicQueue<T, K> : IEnumerable<KeyValuePair<T, K>> where T : notnull
     {
         private Queue<T> queue;
         private Dictionary<T, K> dictionary;
         private Dictionary<T, int> state;
-        
+
         public DynamicQueue()
         {
             queue = new Queue<T>();
@@ -29,8 +29,8 @@ namespace AirFramework
 
 
         public int TraversalCount { get; private set; } = 0;
-       
-        public void RefreshTraversalCount()=>TraversalCount=queue.Count;
+
+        public void RefreshTraversalCount() => TraversalCount = queue.Count;
 
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace AirFramework
 
 
         }
-        public bool TryEnqueue(T key,K value)
+        public bool TryEnqueue(T key, K value)
         {
             if (!dictionary.TryAdd(key, value))
             {
@@ -61,7 +61,7 @@ namespace AirFramework
         /// <param name="key"></param>
         public void Remove(T key)
         {
-            if(!TryRemove(key))
+            if (!TryRemove(key))
             {
                 throw new ArgumentException("error remove key ");
             }
@@ -95,7 +95,7 @@ namespace AirFramework
                     if (state.TryGetValue(key, out int count))
                     {
                         state[key] = --count;
-                        if(TraversalCount >0) TraversalCount--;
+                        if (TraversalCount > 0) TraversalCount--;
                         if (count == 0) state.Remove(key);
                         queue.Dequeue();
                     }
@@ -126,10 +126,10 @@ namespace AirFramework
         /// <returns></returns>
         public bool TryDequeue(out K result)
         {
-            return TryDequeue(out result, out _ );
+            return TryDequeue(out result, out _);
         }
-        
-        public bool TryDequeue(out K result ,out T k)
+
+        public bool TryDequeue(out K result, out T k)
         {
             if (queue.TryDequeue(out var key))
             {
@@ -157,7 +157,7 @@ namespace AirFramework
             k = default;
             return false;
         }
-    
+
         /// <summary>
         /// 出队
         /// </summary>

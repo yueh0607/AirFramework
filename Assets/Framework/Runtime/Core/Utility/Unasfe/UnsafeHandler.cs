@@ -1,10 +1,4 @@
-﻿using Sirenix.Utilities.Unsafe;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Unity.Collections.LowLevel.Unsafe;
+﻿using Unity.Collections.LowLevel.Unsafe;
 
 namespace AirFramework
 {
@@ -20,7 +14,7 @@ namespace AirFramework
         //}
 #pragma warning restore
 
-        public static ref TTo As<TFrom,TTo>(ref TFrom source)
+        public static ref TTo As<TFrom, TTo>(ref TFrom source)
         {
 #if UNITY_2020_1_OR_NEWER
             return ref UnsafeUtility.As<TFrom, TTo>(ref source);

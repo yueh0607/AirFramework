@@ -24,7 +24,7 @@ namespace AirFramework
         {
             return (await Addressables.InstantiateAsync(gameObject)).Result;
         }
-        public async AsyncTask<GameObject> InstantiateAsync(GameObject gameObject,Vector3 position)
+        public async AsyncTask<GameObject> InstantiateAsync(GameObject gameObject, Vector3 position)
         {
             return (await Addressables.InstantiateAsync(gameObject)).Result;
         }

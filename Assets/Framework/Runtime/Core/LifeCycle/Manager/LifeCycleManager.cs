@@ -29,7 +29,7 @@ namespace AirFramework
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="cycleMethod"></param>
-        public void UnRegister<T>(Action cycleMethod) where T : ILifeCycle=> ((IOperatorOut<ISendMessage>)Framework.Message.Operator<T>()).UnSubscribe(cycleMethod);
+        public void UnRegister<T>(Action cycleMethod) where T : ILifeCycle => ((IOperatorOut<ISendMessage>)Framework.Message.Operator<T>()).UnSubscribe(cycleMethod);
 
         /// <summary>
         /// 每个生命周期都应该在其他位置调用Publish，否则该生命虽然被解析但是不会生效
@@ -88,7 +88,7 @@ namespace AirFramework
             lifesAdd.Add((x) => { if (x is T) handler.OnLifeCycleRegister((T)x); });
             lifesRemove.Add((x) => { if (x is T) handler.OnLifeCycleUnRegister((T)x); });
         }
-        
+
 
         protected override void OnDispose()
         {

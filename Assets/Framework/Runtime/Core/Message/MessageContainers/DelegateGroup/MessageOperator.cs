@@ -9,8 +9,6 @@
 
 
 using System;
-using System.Collections.Generic;
-using UnityEngine;
 
 namespace AirFramework
 {
@@ -46,7 +44,7 @@ namespace AirFramework
         protected override void OnDispose()
         {
             Clear();
-        } 
+        }
 
         public void Clear()
         {

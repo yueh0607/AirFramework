@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace AirFramework
+﻿namespace AirFramework
 {
     public static partial class MessageExtensions
     {
@@ -37,7 +35,7 @@ namespace AirFramework
                 //尝试出列
                 if (dic.TryDequeue(out var operations, out var key))
                 {
-                    result.Value.Add(((IOperatorOut<ISendMessage<T1,T2>>)operations).Call(arg1));
+                    result.Value.Add(((IOperatorOut<ISendMessage<T1, T2>>)operations).Call(arg1));
                     //归队
                     dic.Enqueue(key, operations);
                 }
@@ -57,7 +55,7 @@ namespace AirFramework
                 //尝试出列
                 if (dic.TryDequeue(out var operations, out var key))
                 {
-                    result.Value.Add(((IOperatorOut<ISendMessage<T1, T2,T3>>)operations).Call(arg1,arg2));
+                    result.Value.Add(((IOperatorOut<ISendMessage<T1, T2, T3>>)operations).Call(arg1, arg2));
                     //归队
                     dic.Enqueue(key, operations);
                 }
@@ -77,7 +75,7 @@ namespace AirFramework
                 //尝试出列
                 if (dic.TryDequeue(out var operations, out var key))
                 {
-                    result.Value.Add(((IOperatorOut<ISendMessage<T1, T2, T3,T4>>)operations).Call(arg1, arg2,arg3));
+                    result.Value.Add(((IOperatorOut<ISendMessage<T1, T2, T3, T4>>)operations).Call(arg1, arg2, arg3));
                     //归队
                     dic.Enqueue(key, operations);
                 }
@@ -119,7 +117,7 @@ namespace AirFramework
                 if (dic.TryDequeue(out var operations, out var key))
                 {
                     //强转发布
-                    result.Value.Add(((IOperatorOut<ISendMessage<T1, T2, T3, T4, T5,T6>>)operations).Call(arg1, arg2, arg3, arg4,arg5));
+                    result.Value.Add(((IOperatorOut<ISendMessage<T1, T2, T3, T4, T5, T6>>)operations).Call(arg1, arg2, arg3, arg4, arg5));
                     //归队
                     dic.Enqueue(key, operations);
                 }

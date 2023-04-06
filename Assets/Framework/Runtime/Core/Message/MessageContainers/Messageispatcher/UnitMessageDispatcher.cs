@@ -4,9 +4,9 @@
     {
 
         public MessageDispatcher Value { get; } = new MessageDispatcher();
-       
 
-        public UnitMessageDispatcher() 
+
+        public UnitMessageDispatcher()
         {
 
         }

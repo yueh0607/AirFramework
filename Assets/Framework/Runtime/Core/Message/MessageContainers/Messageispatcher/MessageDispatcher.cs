@@ -5,9 +5,6 @@
  * 抽象模型消息派发器，负责处理每类消息的派发任务，可以指定接收者与派发类型
  */
 
-
-using System.Collections.Generic;
-
 namespace AirFramework
 {
     /// <summary>

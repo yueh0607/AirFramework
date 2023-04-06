@@ -14,7 +14,7 @@ namespace AirFramework
             get => mono;
             set
             {
-                mono= value;
+                mono = value;
             }
         }
         public Type EntityType;
