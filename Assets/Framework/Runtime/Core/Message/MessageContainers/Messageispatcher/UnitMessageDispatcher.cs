@@ -3,8 +3,8 @@
     public class UnitMessageDispatcher : IValueContainer<MessageDispatcher>,IDispatcherIn<IMessage>,IDispatcherOut<IMessage>
     {
 
-        public MessageDispatcher Value { get => value; }
-        protected MessageDispatcher value = new();
+        public MessageDispatcher Value { get; } = new MessageDispatcher();
+       
 
         public UnitMessageDispatcher() 
         {

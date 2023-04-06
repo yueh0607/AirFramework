@@ -20,6 +20,7 @@ namespace AirFramework
         {
             var x= (IOperatorIn<MessageType>)m_dispatchers.GetValueOrAddDefault(typeof(MessageType), GetDispatcherFromNew)
                 ?.Value.GetOrAddGroup(receiver??this);
+            
             return UnsafeHandler.As<IOperatorIn<MessageType>,IOperatorOut<MessageType>>(ref x);
         }
 

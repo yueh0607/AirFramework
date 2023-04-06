@@ -17,7 +17,7 @@ namespace AirFramework
     {
         public int Count => m_events.Count;
 
-        internal DynamicQueue<IMessageReceiver,UnitMessageOperator> m_events { get; private set; }
+        internal DynamicQueue<IMessageReceiver, UnitMessageOperator> m_events { get; private set; } = new();
 
         /// <summary>
         /// 清空全部委托派发

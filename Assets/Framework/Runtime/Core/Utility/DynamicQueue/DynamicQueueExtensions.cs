@@ -34,6 +34,7 @@ namespace AirFramework
             {
                 return queue[key];
             }
+
             queue.Enqueue(key, getter==null?default:getter());
             return queue[key];
         }

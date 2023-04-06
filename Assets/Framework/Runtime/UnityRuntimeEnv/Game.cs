@@ -9,6 +9,7 @@ namespace AirFramework
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         static void Init()
         {
+            return;
             Framework.LifeCycle.AddLifeCycle<IAwake, AwakeHandler>();
             Framework.LifeCycle.AddLifeCycle<IStart, StartHandler>();
             Framework.LifeCycle.AddLifeCycle<IUpdate, UpdateHandler>();

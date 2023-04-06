@@ -37,7 +37,7 @@ namespace AirFramework
         /// <returns></returns>
         public UnitMessageOperator GetOrAddGroup(IMessageReceiver receiver)
         {
-            return m_events?.GetValueOrAddDefault(receiver, GetGroupFromNew);
+            return m_events.GetValueOrAddDefault(receiver, GetGroupFromNew);
         }
         /// <summary>
         /// 添加：为接收者添加指定的委托
