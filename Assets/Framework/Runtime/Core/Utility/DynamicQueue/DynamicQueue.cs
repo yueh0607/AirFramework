@@ -27,16 +27,11 @@ namespace AirFramework
         public int Count => dictionary.Count;
 
 
-        private int rm_counter = 0;
-        public int DeltaRemoveCount
-        {
-            get
-            {
-                int x = rm_counter;
-                rm_counter = 0;
-                return x;
-            }
-        }
+
+        public int TraversalCount { get; private set; } = 0;
+       
+        public void RefreshTraversalCount()=>TraversalCount=queue.Count;
+
 
         /// <summary>
         /// 入队
@@ -79,7 +74,7 @@ namespace AirFramework
                 //Count--;
                 if (state.ContainsKey(key)) state[key]++;
                 else state.Add(key, 1);
-                rm_counter++;
+
                 return true;
             }
 
@@ -100,6 +95,7 @@ namespace AirFramework
                     if (state.TryGetValue(key, out int count))
                     {
                         state[key] = --count;
+                        if(TraversalCount >0) TraversalCount--;
                         if (count == 0) state.Remove(key);
                         queue.Dequeue();
                     }
@@ -140,6 +136,7 @@ namespace AirFramework
                 while (state.TryGetValue(key, out var count))
                 {
                     state[key] = --count;
+                    if (TraversalCount > 0) TraversalCount--;
                     if (count == 0) state.Remove(key);
                     if (!queue.TryDequeue(out key))
                     {
@@ -152,7 +149,6 @@ namespace AirFramework
                 {
                     k = key;
                     dictionary.Remove(key);
-                    //rm_counter++;
                     return true;
                 }
             }
@@ -193,33 +189,6 @@ namespace AirFramework
         /// <returns></returns>
         public bool ContainsKey(T key) => dictionary.ContainsKey(key);
 
-        /// <summary>
-        /// 尝试队首重排，如果入队失败，则发出异常
-        /// </summary>
-        /// <param name="result"></param>
-        /// <returns></returns>
-        public bool TryRequeue(out K result)
-        {
-            bool x = TryDequeue(out result, out var key);
-            if (!x) return false;
-            Enqueue(key, result);
-            return true;
-            
-        }
-
-
-        /// <summary>
-        /// 从队首出队并放到队尾
-        /// </summary>
-        /// <returns></returns>
-        public K Requeue()
-        {
-            if(TryRequeue(out var result))
-            {
-                return result;
-            }
-            throw new ApplicationException("Requeue defeated");
-        }
 
         public void Clear()
         {

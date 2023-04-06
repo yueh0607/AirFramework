@@ -16,11 +16,11 @@ namespace AirFramework
         /// <param name="receiver">操作对象</param>
         /// <returns></returns>
     
-        public unsafe IUnitMessageOperatorOut<MessageType> Operator<MessageType>(IMessageReceiver receiver=null) where MessageType : IMessage
+        public unsafe IOperatorOut<MessageType> Operator<MessageType>(IMessageReceiver receiver=null) where MessageType : IMessage
         {
-            var x= (IUnitMessageOperatorIn<MessageType>)m_dispatchers.GetValueOrAddDefault(typeof(MessageType), GetDispatcherFromNew)
-                .Value.GetOrAddGroup(receiver??this);
-            return UnsafeHandler.AsRef<IUnitMessageOperatorIn<MessageType>,IUnitMessageOperatorOut<MessageType>>(ref x);
+            var x= (IOperatorIn<MessageType>)m_dispatchers.GetValueOrAddDefault(typeof(MessageType), GetDispatcherFromNew)
+                ?.Value.GetOrAddGroup(receiver??this);
+            return UnsafeHandler.As<IOperatorIn<MessageType>,IOperatorOut<MessageType>>(ref x);
         }
 
       
@@ -29,10 +29,10 @@ namespace AirFramework
         /// </summary>
         /// <typeparam name="MessageType"></typeparam>
         /// <returns></returns>
-        public IUnitDispatcherOut<MessageType> Dispatcher<MessageType>() where MessageType : IMessage
+        public IDispatcherOut<MessageType> Dispatcher<MessageType>() where MessageType : IMessage
         {
-            var x= (IUnitDispatcherIn<MessageType>)m_dispatchers.GetValueOrAddDefault(typeof(MessageType), GetDispatcherFromNew);
-            return UnsafeHandler.AsRef<IUnitDispatcherIn<MessageType>,IUnitDispatcherOut<MessageType>>(ref x);
+            var x= (IDispatcherIn<MessageType>)m_dispatchers.GetValueOrAddDefault(typeof(MessageType), GetDispatcherFromNew);
+            return UnsafeHandler.As<IDispatcherIn<MessageType>,IDispatcherOut<MessageType>>(ref x);
         }
 
 

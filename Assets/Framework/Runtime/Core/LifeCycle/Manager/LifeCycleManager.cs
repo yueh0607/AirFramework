@@ -6,24 +6,39 @@ namespace AirFramework
     {
 
         #region 消息层
-        private static void Publish(Type messageType) => Framework.Message.Operator(messageType).Publish();
-        private static void Register(Type messageType, Action action) => Framework.Message.Operator(messageType).Subscribe(action);
-        private static void UnRegister(Type messageType, Action action) => Framework.Message.Operator(messageType).UnSubscribe(action);
+        //private static void Publish(Type messageType) => Framework.Message.Operator(messageType).Publish();
+        //private static void Register(Type messageType, Action action) => Framework.Message.Operator(messageType).Subscribe(action);
+        //private static void UnRegister(Type messageType, Action action) => Framework.Message.Operator(messageType).UnSubscribe(action);
         #endregion
 
-        #region 注册层
+
+
+
+        #region 消息层
         /// <summary>
         /// 注册某函数到生命周期
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="cycleMethod"></param>
-        public void Register<T>(Action cycleMethod) => Register(typeof(T), cycleMethod);
+        public void Register<T>(Action cycleMethod) where T : ILifeCycle
+        {
+            ((IOperatorOut<ISendMessage>)Framework.Message.Operator<T>()).Subscribe(cycleMethod);
+        }
         /// <summary>
         /// 取消某函数从生命周期
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="cycleMethod"></param>
-        public void UnRegister<T>(Action cycleMethod) => UnRegister(typeof(T), cycleMethod);
+        public void UnRegister<T>(Action cycleMethod) where T : ILifeCycle=> ((IOperatorOut<ISendMessage>)Framework.Message.Operator<T>()).UnSubscribe(cycleMethod);
+
+        /// <summary>
+        /// 每个生命周期都应该在其他位置调用Publish，否则该生命虽然被解析但是不会生效
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        public void Publish<T>() where T : ILifeCycle
+        {
+            ((IOperatorOut<ISendMessage>)Framework.Message.Operator<T>()).Publish();
+        }
         #endregion
 
         #region 解析层
@@ -73,14 +88,7 @@ namespace AirFramework
             lifesAdd.Add((x) => { if (x is T) handler.OnLifeCycleRegister((T)x); });
             lifesRemove.Add((x) => { if (x is T) handler.OnLifeCycleUnRegister((T)x); });
         }
-        /// <summary>
-        /// 每个生命周期都应该在其他位置调用Publish，否则该生命虽然被解析但是不会生效
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        public void Publish<T>() where T : ILifeCycle
-        {
-            Publish(typeof(T));
-        }
+        
 
         protected override void OnDispose()
         {

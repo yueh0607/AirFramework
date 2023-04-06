@@ -1,6 +1,6 @@
 ﻿namespace AirFramework
 {
-    public class UnitMessageDispatcher : IValueContainer<MessageDispatcher>,IUnitDispatcherIn<IMessage>,IUnitDispatcherOut<IMessage>
+    public class UnitMessageDispatcher : IValueContainer<MessageDispatcher>,IDispatcherIn<IMessage>,IDispatcherOut<IMessage>
     {
 
         public MessageDispatcher Value { get => value; }

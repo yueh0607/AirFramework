@@ -11,7 +11,6 @@
                 refCount = value;
                 if (refCount == 0)
                 {
-
                     OnZeroRef();
                 }
             }

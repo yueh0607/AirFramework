@@ -1,29 +1,33 @@
-﻿using System;
+﻿using Sirenix.Utilities.Unsafe;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Unity.Collections.LowLevel.Unsafe;
 
 namespace AirFramework
 {
-    internal unsafe class UnsafeHandler
+    public unsafe class UnsafeHandler
     {
 #pragma warning disable
-        unsafe public static ref TTo AsRef<TFrom, TTo>(ref TFrom source)
-        {
-
-            if (sizeof(TFrom) != sizeof(TTo))
-            {
-                throw new InvalidCastException("Size of TFrom and TTo must be the same.");
-            }
-
-            fixed (void* sourcePtr = &source)
-            {
-                return ref *(TTo*)sourcePtr;
-            }
-        }
+        //unsafe public static ref TTo AsRef<TFrom, TTo>(ref TFrom source)
+        //{
+        //    fixed (void* sourcePtr = &source)
+        //    {
+        //        return ref *(TTo*)sourcePtr;
+        //    }
+        //}
 #pragma warning restore
 
+        public static ref TTo As<TFrom,TTo>(ref TFrom source)
+        {
+#if UNITY_2020_1_OR_NEWER
+            return ref UnsafeUtility.As<TFrom, TTo>(ref source);
+#elif NETSTANDARD
+                return ref Unsafe.As<TFrom,TTo>(ref source);
+#endif
+        }
 
 
 

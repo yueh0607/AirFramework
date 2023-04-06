@@ -95,6 +95,7 @@ namespace AirFramework
         /// <param name="deleType"></param>
         public void Add(Delegate dele, Type deleType)
         {
+            if (m_events == null) throw new Exception("meve");
             m_events.GetValueOrAddDefault(deleType, GetUnitListFromPool).Value.Add(dele);
         }
         /// <summary>
