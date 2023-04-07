@@ -20,13 +20,14 @@ namespace AirFramework
         /// <param name="receiver">操作对象</param>
         /// <returns></returns>
 
+
         public unsafe IOperatorOut<MessageType> Operator<MessageType>(IMessageReceiver receiver = null) where MessageType : IMessage
         {
+            
             var x = dispatchersContainer.GetValueOrAddDefault(typeof(MessageType), CreateDispatcherBox)
                 .Value.GetOrAddOperator(receiver ?? this);
-            return UnsafeHandler.As<UnitMessageOperator<IMessage>, UnitMessageOperator<MessageType>>(ref x);
+            return UnsafeHandler.As<MessageOperatorBox<IMessage>, MessageOperatorBox<MessageType>>(ref x);
         }
-
 
         /// <summary>
         /// 消息派发器访问：获取指定类型的消息派发器，可进行全局行为

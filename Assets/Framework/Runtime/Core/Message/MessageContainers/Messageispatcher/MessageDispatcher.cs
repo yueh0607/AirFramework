@@ -5,13 +5,16 @@
  ********************************************************************************************/
 
 
+using System.Runtime.InteropServices;
+
 namespace AirFramework
 {
+  
     public partial class MessageDispatcher : Unit
     {
         public int Count => eventsContainer.Count;
 
-        internal DynamicQueue<IMessageReceiver, UnitMessageOperator<IMessage>> eventsContainer { get; private set; } = new();
+        internal DynamicQueue<IMessageReceiver, MessageOperatorBox<IMessage>> eventsContainer { get; private set; } = new();
 
         /// <summary>
         /// 清空全部委托派发

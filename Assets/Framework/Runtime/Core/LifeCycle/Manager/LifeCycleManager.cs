@@ -22,14 +22,14 @@ namespace AirFramework
         /// <param name="cycleMethod"></param>
         public void Register<T>(Action cycleMethod) where T : ILifeCycle
         {
-            ((IOperatorOut<ISendMessage>)Framework.Message.Operator<T>()).Subscribe(cycleMethod);
+            ((IOperatorOut<IGenericMessage>)Framework.Message.Operator<T>()).Subscribe(cycleMethod);
         }
         /// <summary>
         /// 取消某函数从生命周期
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="cycleMethod"></param>
-        public void UnRegister<T>(Action cycleMethod) where T : ILifeCycle => ((IOperatorOut<ISendMessage>)Framework.Message.Operator<T>()).UnSubscribe(cycleMethod);
+        public void UnRegister<T>(Action cycleMethod) where T : ILifeCycle => ((IOperatorOut<IGenericMessage>)Framework.Message.Operator<T>()).UnSubscribe(cycleMethod);
 
         /// <summary>
         /// 每个生命周期都应该在其他位置调用Publish，否则该生命虽然被解析但是不会生效
@@ -37,7 +37,8 @@ namespace AirFramework
         /// <typeparam name="T"></typeparam>
         public void Publish<T>() where T : ILifeCycle
         {
-            ((IOperatorOut<ISendMessage>)Framework.Message.Operator<T>()).Publish();
+            var o = Framework.Message.Operator<T>();
+            var x = UnsafeHandler.As<MessageOperatorBox<IMessage>, MessageOperatorBox<T>>(ref o);
         }
         #endregion
 

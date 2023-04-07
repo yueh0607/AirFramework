@@ -58,32 +58,36 @@ namespace AirFramework
         /// 移除该类型事件
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        public void RemoveType<T>()
+        public bool TryRemoveType<T>()
         {
-            RemoveType(typeof(T));
+            return TryRemoveType(typeof(T));
         }
-
+        public void RemoveAll()
+        {
+            Clear();
+        }
 
         /// <summary>
         /// 返回同类型可空事件列表，禁止长期持有返回值的引用
         /// </summary>
         /// <typeparam name="DelegateType"></typeparam>
         /// <returns></returns>
-        public List<Delegate> Get<DelegateType>()
+        public List<Delegate> GetNullableDelegateList<DelegateType>()
         {
-            return GetDelegateList(typeof(DelegateType));
+            return GetNullableDelegateList(typeof(DelegateType));
         }
         #endregion
-
+        #region 逻辑实现
 
 
         /// <summary>
         /// 移除该类型事件
         /// </summary>
         /// <param name="deleType"></param>
-        public void RemoveType(Type deleType)
+        public bool TryRemoveType(Type deleType)
         {
             eventsContainer.TryRemoveAndDispose(deleType);
+            return true;
         }
 
 
@@ -119,12 +123,12 @@ namespace AirFramework
         /// </summary>
         /// <param name="deleType"></param>
         /// <returns></returns>
-        public List<Delegate> GetDelegateList(Type deleType)
+        public List<Delegate> GetNullableDelegateList(Type deleType)
         {
             return eventsContainer.GetValueOrDefault(deleType)?.Value;
         }
 
-
+        #endregion
 
     }
 }
