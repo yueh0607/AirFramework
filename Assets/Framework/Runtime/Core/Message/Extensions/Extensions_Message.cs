@@ -1,7 +1,4 @@
-﻿using UnityEditor;
-using UnityEngine;
-
-namespace AirFramework
+﻿namespace AirFramework
 {
     public static partial class MessageExtensions
     {
@@ -18,19 +15,19 @@ namespace AirFramework
         }
 
         #region OperatorGeneric
-        private static MessageOperatorBox<IMessage> GetMessageBoxDefault<T>(this MessageManager manager,IMessageReceiver receiver=null)
+        private static MessageOperatorBox<IMessage> GetMessageBoxDefault<T>(this MessageManager manager, IMessageReceiver receiver = null)
         {
             return manager.dispatchersContainer.GetValueOrAddDefault(typeof(T), static () => new MessageDispatcherBox<IMessage>())
                     .Value.GetOrAddOperator(receiver ?? manager);
         }
 
-        public static IOperatorOut<IGenericMessage> GenericOperator<M>(this MessageManager manager,IMessageReceiver receiver=null) where M : IGenericMessage
+        public static IOperatorOut<IGenericMessage> GenericOperator<M>(this MessageManager manager, IMessageReceiver receiver = null) where M : IGenericMessage
         {
             var x = manager.GetMessageBoxDefault<M>();
-           return UnsafeHandler.As<MessageOperatorBox<IMessage>, MessageOperatorBox<IGenericMessage>>(ref x);
-            
+            return UnsafeHandler.As<MessageOperatorBox<IMessage>, MessageOperatorBox<IGenericMessage>>(ref x);
+
         }
-        public static IOperatorOut<IGenericMessage<T1>> GenericOperator<M,T1>(this MessageManager manager, IMessageReceiver receiver = null) where M : IGenericMessage<T1>
+        public static IOperatorOut<IGenericMessage<T1>> GenericOperator<M, T1>(this MessageManager manager, IMessageReceiver receiver = null) where M : IGenericMessage<T1>
         {
             var x = manager.GetMessageBoxDefault<M>();
             return UnsafeHandler.As<MessageOperatorBox<IMessage>, MessageOperatorBox<IGenericMessage<T1>>>(ref x);
@@ -72,7 +69,7 @@ namespace AirFramework
         private static MessageDispatcherBox<IMessage> GetDispatcherBoxDefault<T>(this MessageManager manager, IMessageReceiver receiver = null)
         {
             return manager.dispatchersContainer.GetValueOrAddDefault(typeof(T), static () => new MessageDispatcherBox<IMessage>());
-                    
+
         }
 
         public static IDispatcherOut<IGenericMessage> GenericDispatcher<M>(this MessageManager manager, IMessageReceiver receiver = null) where M : IGenericMessage

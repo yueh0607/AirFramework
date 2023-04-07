@@ -4,12 +4,9 @@
  * Description : 派发器定义，存储一些强制性声明的方法，以及受限访问的字段
  ********************************************************************************************/
 
-
-using System.Runtime.InteropServices;
-
 namespace AirFramework
 {
-  
+
     public partial class MessageDispatcher : Unit
     {
         public int Count => eventsContainer.Count;
@@ -42,6 +39,6 @@ namespace AirFramework
             eventsContainer.TryRemove(receiver);
             return true;
         }
-       
+
     }
 }

@@ -1,16 +1,13 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 namespace AirFramework
 {
     public static class SingletonProperty<T> where T : class
     {
-        
+
         private static readonly object locker = new object();
-        private volatile static T instance =null;
-        public  static T Instance
+        private volatile static T instance = null;
+        public static T Instance
         {
             get
             {
@@ -18,7 +15,7 @@ namespace AirFramework
                 {
                     lock (locker)
                     {
-                        if(instance == null)
+                        if (instance == null)
                         {
                             instance = Activator.CreateInstance<T>();
                         }

@@ -7,7 +7,7 @@ using System;
 
 namespace AirFramework
 {
-    
+
     public partial class MessageManager : GlobalManager, IMessageReceiver
     {
         //静态创建委托，返回新的派发器

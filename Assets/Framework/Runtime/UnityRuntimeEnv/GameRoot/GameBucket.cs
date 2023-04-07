@@ -1,12 +1,10 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using System.Reflection;
 namespace AirFramework
 {
     [AttributeUsage(AttributeTargets.Class)]
-    public class AutoInitializeByFrameworkAttribute:Attribute{}
+    public class AutoInitializeByFrameworkAttribute : Attribute { }
     public class GameBucket
     {
         private static Dictionary<Type, object> bucket = new();
@@ -14,12 +12,12 @@ namespace AirFramework
         internal static void CreateByReflection()
         {
             var assemblies = AppDomain.CurrentDomain.GetAssemblies();
-            foreach(var assembly in assemblies)
+            foreach (var assembly in assemblies)
             {
                 var types = assembly.GetTypes();
-                foreach(var type in types)
+                foreach (var type in types)
                 {
-                    bool result = type.GetCustomAttribute<AutoInitializeByFrameworkAttribute>()!=null;
+                    bool result = type.GetCustomAttribute<AutoInitializeByFrameworkAttribute>() != null;
                     if (result) bucket.TryAdd(type, Activator.CreateInstance(type).StartLifeCycle());
                 }
             }
@@ -29,13 +27,13 @@ namespace AirFramework
         public static bool Initialized { get; private set; } = false;
         internal static void TryCreateByReflection()
         {
-            if(Initialized) return;
+            if (Initialized) return;
             Initialized = true;
             CreateByReflection();
         }
-   
+
         public static bool Exist(Type type) => bucket.ContainsKey(type);
-        public static bool Exist<T>()=>Exist(typeof(T));
+        public static bool Exist<T>() => Exist(typeof(T));
 
 
         /// <summary>
@@ -44,7 +42,7 @@ namespace AirFramework
         /// <param name="type"></param>
         public static void Unload(Type type)
         {
-            if(bucket.ContainsKey(type))
+            if (bucket.ContainsKey(type))
             {
                 bucket[type].CloseLifeCycle();
                 bucket.Remove(type);
@@ -78,7 +76,7 @@ namespace AirFramework
         /// <param name="type"></param>
         public static T GetToGeneric<T>()
         {
-            if(bucket.TryGetValue(typeof(T),out var result))
+            if (bucket.TryGetValue(typeof(T), out var result))
             {
                 return (T)result;
             }

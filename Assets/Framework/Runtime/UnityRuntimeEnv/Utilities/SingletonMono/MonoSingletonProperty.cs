@@ -1,14 +1,11 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace AirFramework
 {
-    public static class MonoSingletonProperty<T> where T:MonoBehaviour
+    public static class MonoSingletonProperty<T> where T : MonoBehaviour
     {
 
-        private static T instance=null;
+        private static T instance = null;
         public static T Instance
         {
             get

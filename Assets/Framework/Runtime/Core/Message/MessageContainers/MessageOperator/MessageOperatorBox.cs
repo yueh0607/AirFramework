@@ -16,9 +16,9 @@ namespace AirFramework
         public MessageOperator Value { get => value; }
         protected MessageOperator value = new();
 
-        public MessageOperatorBox() {}
+        public MessageOperatorBox() { }
 
-        ~MessageOperatorBox()=>Value.Dispose();
-        
+        ~MessageOperatorBox() => Value.Dispose();
+
     }
 }

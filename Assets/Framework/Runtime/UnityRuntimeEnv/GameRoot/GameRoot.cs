@@ -20,7 +20,7 @@ namespace AirFramework
             Framework.LifeCycle.AddLifeCycle<ILateUpdate, LateUpdateHandler>();
             Framework.LifeCycle.AddLifeCycle<IFixedUpdate, FixedUpdateHandler>();
         }
-        
+
 
         private void LateUpdate()
         {
@@ -30,7 +30,7 @@ namespace AirFramework
         {
             Framework.LifeCycle.Publish<IFixedUpdate>();
         }
-    
+
         private void Update()
         {
             Framework.LifeCycle.Publish<IUpdate>();

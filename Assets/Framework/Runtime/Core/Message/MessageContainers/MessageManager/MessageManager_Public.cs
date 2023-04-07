@@ -4,8 +4,6 @@
  * Description : 管理器公开方法，通过这些方法实现核心操作的匹配和泛型约束
  ********************************************************************************************/
 
-using System;
-
 namespace AirFramework
 {
     /// <summary>
@@ -26,13 +24,13 @@ namespace AirFramework
 
         public IOperatorOut<MessageType> Operator<MessageType>(IMessageReceiver receiver = null) where MessageType : IMessage
         {
-            
+
             var x = dispatchersContainer.GetValueOrAddDefault(typeof(MessageType), CreateDispatcherBox)
                 .Value.GetOrAddOperator(receiver ?? this);
             return UnsafeHandler.As<MessageOperatorBox<IMessage>, MessageOperatorBox<MessageType>>(ref x);
         }
 
-     
+
 
         /// <summary>
         /// 消息派发器访问：获取指定类型的消息派发器，可进行全局行为
@@ -67,6 +65,6 @@ namespace AirFramework
         #endregion
 
 
-        
+
     }
 }

@@ -8,7 +8,7 @@
 namespace AirFramework
 {
 
-    public interface IOperatorOut<out T> :IUnsafeOut where T : IMessage
+    public interface IOperatorOut<out T> : IUnsafeOut where T : IMessage
     {
         /****************************************************************************
          * 警告:此处定义的任何成员严格禁止被访问！！！否则可能引发程序直接崩溃！！！*

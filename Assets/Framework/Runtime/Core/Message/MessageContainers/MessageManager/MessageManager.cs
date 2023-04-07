@@ -19,7 +19,7 @@ namespace AirFramework
         internal readonly DynamicQueue<Type, MessageDispatcherBox<IMessage>> dispatchersContainer = new();
         public override string Name => "MessageManager";
 
-        
+
         protected override void OnDispose()
         {
             TryRemoveAllFromGlobal();

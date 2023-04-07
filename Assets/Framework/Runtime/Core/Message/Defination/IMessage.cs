@@ -11,7 +11,7 @@
     /// 所有消息实现的接口,禁止用户自己实现这个接口
     /// </summary>
     public interface IMessage { }
- 
+
 
     public interface IGenericMessage : IMessage { }
     public interface IGenericMessage<T1> : IMessage { }
