@@ -11,7 +11,7 @@ Unity3D游戏开发中小型游戏框架
 
 # 已经实现的模块：
 - 基类全局对象池(托管池全局申请/回收，using释放，非托管池创建，计时回收，基类管理)
-- 逆变约束全局消息系统 (全局广播，指定派发，异步消息，强语法接口泛型约束与简化)
+- 协变约束全局消息系统 (全局广播，指定派发，异步消息，强语法接口泛型约束与简化)
 - 生命周期管理(消息驱动，自动绑定，拓展生命周期，动态添加移除)
 - Unity异步编程支持(tasklike+pool， 强GC控制的unity异步编程)
 - 通用工具(BindableProperty，IOCContainer，TimerCaller，CountCaller，FuncCreator,UnsafeHandler)
