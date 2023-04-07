@@ -6,15 +6,6 @@ namespace AirFramework
     {
 
         #region 消息层
-        //private static void Publish(Type messageType) => Framework.Message.Operator(messageType).Publish();
-        //private static void Register(Type messageType, Action action) => Framework.Message.Operator(messageType).Subscribe(action);
-        //private static void UnRegister(Type messageType, Action action) => Framework.Message.Operator(messageType).UnSubscribe(action);
-        #endregion
-
-
-
-
-        #region 消息层
         /// <summary>
         /// 注册某函数到生命周期
         /// </summary>
@@ -22,7 +13,7 @@ namespace AirFramework
         /// <param name="cycleMethod"></param>
         public void Register<T>(Action cycleMethod) where T : ILifeCycle
         {
-            ((IOperatorOut<IGenericMessage>)Framework.Message.Operator<T>()).Subscribe(cycleMethod);
+            Framework.Message.GenericOperator<T>().Subscribe(cycleMethod);
         }
         /// <summary>
         /// 取消某函数从生命周期
@@ -37,8 +28,7 @@ namespace AirFramework
         /// <typeparam name="T"></typeparam>
         public void Publish<T>() where T : ILifeCycle
         {
-            var o = Framework.Message.Operator<T>();
-            var x = UnsafeHandler.As<MessageOperatorBox<IMessage>, MessageOperatorBox<T>>(ref o);
+            Framework.Message.GenericOperator<T>().Publish();
         }
         #endregion
 

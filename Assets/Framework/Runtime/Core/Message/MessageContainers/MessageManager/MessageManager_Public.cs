@@ -13,6 +13,9 @@ namespace AirFramework
     /// </summary>
     public partial class MessageManager : GlobalManager, IMessageReceiver
     {
+
+
+        #region 具体实现
         /// <summary>
         /// 消息操作者访问：申请指定类型的消息操作者，receiver为默认时返回全局操作者
         /// </summary>
@@ -21,13 +24,15 @@ namespace AirFramework
         /// <returns></returns>
 
 
-        public unsafe IOperatorOut<MessageType> Operator<MessageType>(IMessageReceiver receiver = null) where MessageType : IMessage
+        public IOperatorOut<MessageType> Operator<MessageType>(IMessageReceiver receiver = null) where MessageType : IMessage
         {
             
             var x = dispatchersContainer.GetValueOrAddDefault(typeof(MessageType), CreateDispatcherBox)
                 .Value.GetOrAddOperator(receiver ?? this);
             return UnsafeHandler.As<MessageOperatorBox<IMessage>, MessageOperatorBox<MessageType>>(ref x);
         }
+
+     
 
         /// <summary>
         /// 消息派发器访问：获取指定类型的消息派发器，可进行全局行为
@@ -59,5 +64,9 @@ namespace AirFramework
         {
             return TryRemoveTypeFromReceiver(typeof(T), receiver);
         }
+        #endregion
+
+
+        
     }
 }

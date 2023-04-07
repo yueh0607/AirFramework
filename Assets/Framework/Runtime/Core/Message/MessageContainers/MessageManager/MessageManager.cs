@@ -16,7 +16,7 @@ namespace AirFramework
         /// <summary>
         /// 层级容器，存储派发器
         /// </summary>
-        private readonly DynamicQueue<Type, MessageDispatcherBox<IMessage>> dispatchersContainer = new();
+        internal readonly DynamicQueue<Type, MessageDispatcherBox<IMessage>> dispatchersContainer = new();
         public override string Name => "MessageManager";
 
         

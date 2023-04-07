@@ -6,12 +6,12 @@ namespace AirFramework
     {
         public override void OnLifeCycleRegister(IFixedUpdate item)
         {
-            Framework.LifeCycle.Register<IFixedUpdate>(item.FixedUpdate);
+            Framework.Message.Operator<IFixedUpdate>().UnSubscribe(item.FixedUpdate);
         }
 
         public override void OnLifeCycleUnRegister(IFixedUpdate item)
         {
-            Framework.LifeCycle.UnRegister<IFixedUpdate>(item.FixedUpdate);
+            Framework.Message.Operator<IFixedUpdate>().UnSubscribe(item.FixedUpdate);
         }
     }
 }
