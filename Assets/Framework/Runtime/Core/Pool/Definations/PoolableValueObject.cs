@@ -1,5 +1,5 @@
 ﻿/********************************************************************************************
- * Author : yueh0607
+ * Author : YueZhenpeng
  * Date : 2023.1.15
  * Description : 
  * 通过实现IPooable和IAutoPoolable来实现托管池和自回收，再通过Dispose实现using释放

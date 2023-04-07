@@ -1,5 +1,5 @@
 ﻿/********************************************************************************************
- * Author : yueh0607
+ * Author : YueZhenpeng
  * Date : 2023.2.25
  * Description : 
  * 编译器Task-LIKE要求返回实现INotifyCompletion的对象，同时要求对象带有IsCompleted和GetResult

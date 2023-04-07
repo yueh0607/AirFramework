@@ -1,11 +1,8 @@
 ﻿/********************************************************************************************
- * Author : yueh0607
+ * Author: YueZhenpeng
  * Date : 2023.1.30
- * Description : 
- * 建立一个容器来存储多种类型的委托，这样就可以支持重载和多态
- * 对容器的每个操作都会影响来着容器的任意引用
- * 如Get拿到委托列表后Clear容器会导致Get到的List被回收，Remove和Add将可能导致List元素数量变化
- */
+ * Description : 操作器实现
+ ********************************************************************************************/
 
 
 using System;
@@ -14,7 +11,7 @@ using System.Collections.Generic;
 namespace AirFramework
 {
     /// <summary>
-    /// 委托组(方法组委托)
+    /// 事件组(方法组事件)
     /// </summary>
     public partial class MessageOperator : Unit
     {
@@ -22,7 +19,7 @@ namespace AirFramework
 
         #region 延申实现
         /// <summary>
-        /// 添加新的委托，通过GetType取得类型
+        /// 添加新的事件，通过GetType取得类型
         /// </summary>
         /// <param name="dele"></param>
         public void Add(Delegate dele)
@@ -30,7 +27,7 @@ namespace AirFramework
             Add(dele, dele.GetType());
         }
         /// <summary>
-        /// 添加新的委托，通过typeof取得类型
+        /// 添加新的事件，通过typeof取得类型
         /// </summary>
         /// <typeparam name="DelegateType"></typeparam>
         /// <param name="dele"></param>
@@ -39,34 +36,36 @@ namespace AirFramework
             Add(dele, typeof(DelegateType));
         }
         /// <summary>
-        /// 存在则移除委托，通过GetType取得类型
+        /// 存在则移除事件，通过GetType取得类型
         /// </summary>
         /// <param name="dele"></param>
-        public void Remove(Delegate dele)
+        public bool TryRemove(Delegate dele)
         {
             Remove(dele, dele.GetType());
+            return true;
         }
         /// <summary>
-        /// 存在则移除委托，typeof取得类型
+        /// 存在则移除事件，typeof取得类型
         /// </summary>
         /// <typeparam name="DelegateType"></typeparam>
         /// <param name="dele"></param>
-        public void Remove<DelegateType>(Delegate dele) where DelegateType : Delegate
+        public bool TryRemove<DelegateType>(Delegate dele) where DelegateType : Delegate
         {
             Remove(dele, typeof(DelegateType));
+            return true;
         }
         /// <summary>
-        /// 移除该类型委托
+        /// 移除该类型事件
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        public void Remove<T>()
+        public void RemoveType<T>()
         {
-            Remove(typeof(T));
+            RemoveType(typeof(T));
         }
 
 
         /// <summary>
-        /// 返回同类型可空委托列表，禁止长期持有返回值的引用
+        /// 返回同类型可空事件列表，禁止长期持有返回值的引用
         /// </summary>
         /// <typeparam name="DelegateType"></typeparam>
         /// <returns></returns>
@@ -79,50 +78,50 @@ namespace AirFramework
 
 
         /// <summary>
-        /// 移除该类型委托
+        /// 移除该类型事件
         /// </summary>
         /// <param name="deleType"></param>
-        public void Remove(Type deleType)
+        public void RemoveType(Type deleType)
         {
-            m_events.TryRemoveAndDispose(deleType);
+            eventsContainer.TryRemoveAndDispose(deleType);
         }
 
 
         /// <summary>
-        /// 添加委托
+        /// 添加事件
         /// </summary>
         /// <param name="dele"></param>
         /// <param name="deleType"></param>
         public void Add(Delegate dele, Type deleType)
         {
-            if (m_events == null) throw new Exception("meve");
-            m_events.GetValueOrAddDefault(deleType, GetUnitListFromPool).Value.Add(dele);
+            if (eventsContainer == null) throw new Exception("meve");
+            eventsContainer.GetValueOrAddDefault(deleType, GetUnitListFromPool).Value.Add(dele);
         }
         /// <summary>
-        /// 移除委托
+        /// 移除事件
         /// </summary>
         /// <param name="dele"></param>
         /// <param name="deleType"></param>
         public void Remove(Delegate dele, Type deleType)
         {
-            if (m_events.TryGetValue(deleType, out var kvp))
+            if (eventsContainer.TryGetValue(deleType, out var kvp))
             {
                 kvp.Value.Remove(dele);
                 if (kvp.Value.Count == 0)
                 {
-                    m_events.RemoveAndDispose(deleType);
+                    eventsContainer.RemoveAndDispose(deleType);
                 }
             }
         }
 
         /// <summary>
-        /// 返回同类型可空委托列表，禁止长期持有返回值的引用
+        /// 返回同类型可空事件列表，禁止长期持有返回值的引用
         /// </summary>
         /// <param name="deleType"></param>
         /// <returns></returns>
         public List<Delegate> GetDelegateList(Type deleType)
         {
-            return m_events.GetValueOrDefault(deleType)?.Value;
+            return eventsContainer.GetValueOrDefault(deleType)?.Value;
         }
 
 

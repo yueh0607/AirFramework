@@ -1,4 +1,9 @@
-﻿
+﻿/********************************************************************************************
+ * Author: YueZhenpeng
+ * Date : 2023.1.30
+ * Description : 消息管理器的定义区，仅实现基础字段和定义性质的方法
+ ********************************************************************************************/
+
 using System;
 
 namespace AirFramework
@@ -9,37 +14,16 @@ namespace AirFramework
     public partial class MessageManager : GlobalManager, IMessageReceiver
     {
         /// <summary>
-        /// 消息派发器存储器
+        /// 层级容器，存储派发器
         /// </summary>
-        //private Dictionary<Type, UnitMessageDispatcher> dispatchers = new();
-        private DynamicQueue<Type, UnitMessageDispatcher<IMessage>> m_dispatchers = new();
+        private readonly DynamicQueue<Type, MessageDispatcherBox<IMessage>> dispatchersContainer = new();
         public override string Name => "MessageManager";
 
-
+        
         protected override void OnDispose()
         {
-            RemoveAll();
+            TryRemoveAllFromGlobal();
         }
-
-        /// <summary>
-        /// 消息移除：移除全局所有的该类消息
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        public void RemoveAll<T>() where T : IMessage
-        {
-            RemoveAll(typeof(T));
-        }
-
-        /// <summary>
-        /// 消息移除：移除该对象所有的该类消息
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="receiver"></param>
-        public void RemoveAll<T>(IMessageReceiver receiver) where T : IMessage
-        {
-            RemoveAll(typeof(T), receiver);
-        }
-
 
     }
 }

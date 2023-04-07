@@ -1,5 +1,5 @@
 ﻿/********************************************************************************************
- * Author : yueh0607
+ * Author : YueZhenpeng
  * Date : 2023.2.25
  * Description : 
  * 在IAwairer的基础上，我们创建ICriticalAwaiter，能够使得Awaiter可以处理异常

@@ -57,13 +57,10 @@ namespace AirFramework
 
         }
 
-        public static void RemoveAndDispose<T, K>(this DynamicQueue<T, K> queue, T key) where K : Unit
+        public static void RemoveAndDispose<T, K>(this DynamicQueue<T, K> queue, T key) where K : IUnit
         {
             queue[key].Dispose();
             queue.Remove(key);
-
-
-
         }
         public static void ClearAndDispose<T, K>(this DynamicQueue<T, K> queue) where K : Unit
         {

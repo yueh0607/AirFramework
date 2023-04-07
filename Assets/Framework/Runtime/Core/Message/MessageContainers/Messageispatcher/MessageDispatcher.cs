@@ -1,32 +1,44 @@
 ﻿/********************************************************************************************
- * Author : yueh0607
+ * Author: YueZhenpeng
  * Date : 2023.1.30
- * Description : 
- * 抽象模型消息派发器，负责处理每类消息的派发任务，可以指定接收者与派发类型
- */
+ * Description : 派发器定义，存储一些强制性声明的方法，以及受限访问的字段
+ ********************************************************************************************/
+
 
 namespace AirFramework
 {
-    /// <summary>
-    /// 消息分发器
-    /// </summary>
     public partial class MessageDispatcher : Unit
     {
-        public int Count => m_events.Count;
+        public int Count => eventsContainer.Count;
 
-        internal DynamicQueue<IMessageReceiver, UnitMessageOperator<IMessage>> m_events { get; private set; } = new();
+        internal DynamicQueue<IMessageReceiver, UnitMessageOperator<IMessage>> eventsContainer { get; private set; } = new();
 
         /// <summary>
         /// 清空全部委托派发
         /// </summary>
-        public void Clear()
+        internal void Clear()
         {
-            m_events.Clear();
+            eventsContainer.Clear();
         }
 
         protected override void OnDispose()
         {
             Clear();
         }
+
+
+
+        /// <summary>
+        /// 移除：为接收者移除全部委托派发
+        /// </summary>
+        /// <param name="receiver"></param>
+        /// <param name="deleType"></param>
+        /// <param name="dele"></param>
+        public bool TryRemoveAllFromReceiver(IMessageReceiver receiver)
+        {
+            eventsContainer.TryRemove(receiver);
+            return true;
+        }
+       
     }
 }

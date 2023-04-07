@@ -9,7 +9,9 @@ namespace AirFramework
         static void Init()
         {
             return;
+#pragma warning disable CS0162 // 检测到无法访问的代码
             Framework.LifeCycle.AddLifeCycle<IAwake, AwakeHandler>();
+#pragma warning restore CS0162 // 检测到无法访问的代码
             Framework.LifeCycle.AddLifeCycle<IStart, StartHandler>();
             Framework.LifeCycle.AddLifeCycle<IUpdate, UpdateHandler>();
             Framework.LifeCycle.AddLifeCycle<ILateUpdate, LateUpdateHandler>();

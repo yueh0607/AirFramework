@@ -1,5 +1,5 @@
 ﻿/********************************************************************************************
- * Author : yueh0607
+ * Author : YueZhenpeng
  * Date : 2023.2.25
  * Description : 
  * 该类主要是为了构建AsyncTaskCompleted的状态机
@@ -22,7 +22,9 @@ namespace AirFramework
             return new AsyncTaskUpdateMethodBuilder();
         }
 
+#pragma warning disable CS0649 // 从未对字段“AsyncTaskUpdateMethodBuilder.task”赋值，字段将一直保持其默认值 null
         private AsyncTaskUpdate task;
+#pragma warning restore CS0649 // 从未对字段“AsyncTaskUpdateMethodBuilder.task”赋值，字段将一直保持其默认值 null
         //2.Task-Like
         public AsyncTaskUpdate Task => task;
 

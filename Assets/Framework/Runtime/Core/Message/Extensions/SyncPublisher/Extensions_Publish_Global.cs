@@ -9,7 +9,7 @@
         public static void Publish(this IDispatcherOut<ISendMessage> container)
         {
             //获取动态队列
-            var dic = ((UnitMessageDispatcher<IMessage>)container).Value.m_events;
+            var dic = ((MessageDispatcherBox<IMessage>)container).Value.eventsContainer;
             //刷新动态队列数量
             dic.RefreshTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
@@ -30,7 +30,7 @@
         public static void Publish<T1>(this IDispatcherOut<ISendMessage<T1>> container, T1 arg1)
         {
             //事件集合
-            var dic = ((UnitMessageDispatcher<IMessage>)container).Value.m_events;
+            var dic = ((MessageDispatcherBox<IMessage>)container).Value.eventsContainer;
             dic.RefreshTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
             {
@@ -49,7 +49,7 @@
         public static void Publish<T1, T2>(this IDispatcherOut<ISendMessage<T1, T2>> container, T1 arg1, T2 arg2)
         {
             //事件集合
-            var dic = ((UnitMessageDispatcher<IMessage>)container).Value.m_events;
+            var dic = ((MessageDispatcherBox<IMessage>)container).Value.eventsContainer;
             dic.RefreshTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
             {
@@ -68,7 +68,7 @@
         public static void Publish<T1, T2, T3>(this IDispatcherOut<ISendMessage<T1, T2, T3>> container, T1 arg1, T2 arg2, T3 arg3)
         {
             //事件集合
-            var dic = ((UnitMessageDispatcher<IMessage>)container).Value.m_events;
+            var dic = ((MessageDispatcherBox<IMessage>)container).Value.eventsContainer;
             dic.RefreshTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
             {
@@ -86,7 +86,7 @@
         public static void Publish<T1, T2, T3, T4>(this IDispatcherOut<ISendMessage<T1, T2, T3, T4>> container, T1 arg1, T2 arg2, T3 arg3, T4 arg4)
         {
             //事件集合
-            var dic = ((UnitMessageDispatcher<IMessage>)container).Value.m_events;
+            var dic = ((MessageDispatcherBox<IMessage>)container).Value.eventsContainer;
             dic.RefreshTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
             {
@@ -103,7 +103,7 @@
         public static void Publish<T1, T2, T3, T4, T5>(this IDispatcherOut<ISendMessage<T1, T2, T3, T4, T5>> container, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5)
         {
             //事件集合
-            var dic = ((UnitMessageDispatcher<IMessage>)container).Value.m_events;
+            var dic = ((MessageDispatcherBox<IMessage>)container).Value.eventsContainer;
             dic.RefreshTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
             {

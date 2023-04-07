@@ -7,7 +7,7 @@
         {
             var result = Framework.Pool.Allocate<UnitList<T1>>();
             //获取动态队列
-            var dic = ((UnitMessageDispatcher<IMessage>)container).Value.m_events;
+            var dic = ((MessageDispatcherBox<IMessage>)container).Value.eventsContainer;
             //刷新动态队列数量
             dic.RefreshTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
@@ -27,7 +27,7 @@
         {
             var result = Framework.Pool.Allocate<UnitList<T2>>();
             //获取动态队列
-            var dic = ((UnitMessageDispatcher<IMessage>)container).Value.m_events;
+            var dic = ((MessageDispatcherBox<IMessage>)container).Value.eventsContainer;
             //刷新动态队列数量
             dic.RefreshTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
@@ -47,7 +47,7 @@
         {
             var result = Framework.Pool.Allocate<UnitList<T3>>();
             //获取动态队列
-            var dic = ((UnitMessageDispatcher<IMessage>)container).Value.m_events;
+            var dic = ((MessageDispatcherBox<IMessage>)container).Value.eventsContainer;
             //刷新动态队列数量
             dic.RefreshTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
@@ -67,7 +67,7 @@
         {
             var result = Framework.Pool.Allocate<UnitList<T4>>();
             //获取动态队列
-            var dic = ((UnitMessageDispatcher<IMessage>)container).Value.m_events;
+            var dic = ((MessageDispatcherBox<IMessage>)container).Value.eventsContainer;
             //刷新动态队列数量
             dic.RefreshTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
@@ -87,7 +87,7 @@
         {
             var result = Framework.Pool.Allocate<UnitList<T5>>();
             //获取动态队列
-            var dic = ((UnitMessageDispatcher<IMessage>)container).Value.m_events;
+            var dic = ((MessageDispatcherBox<IMessage>)container).Value.eventsContainer;
             //刷新动态队列数量
             dic.RefreshTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
@@ -108,7 +108,7 @@
         {
             var result = Framework.Pool.Allocate<UnitList<T6>>();
             //获取动态队列
-            var dic = ((UnitMessageDispatcher<IMessage>)container).Value.m_events;
+            var dic = ((MessageDispatcherBox<IMessage>)container).Value.eventsContainer;
             //刷新动态队列数量
             dic.RefreshTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
