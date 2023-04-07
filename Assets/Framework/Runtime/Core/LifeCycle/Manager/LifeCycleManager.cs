@@ -11,7 +11,7 @@ namespace AirFramework
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="cycleMethod"></param>
-        public void Register<T>(Action cycleMethod) where T : ILifeCycle
+        internal void Register<T>(Action cycleMethod) where T : ILifeCycle
         {
             Framework.Message.GenericOperator<T>().Subscribe(cycleMethod);
         }
@@ -20,7 +20,7 @@ namespace AirFramework
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="cycleMethod"></param>
-        public void UnRegister<T>(Action cycleMethod) where T : ILifeCycle => ((IOperatorOut<IGenericMessage>)Framework.Message.Operator<T>()).UnSubscribe(cycleMethod);
+        internal void UnRegister<T>(Action cycleMethod) where T : ILifeCycle => Framework.Message.GenericOperator<T>().UnSubscribe(cycleMethod);
 
         /// <summary>
         /// 每个生命周期都应该在其他位置调用Publish，否则该生命虽然被解析但是不会生效
@@ -62,7 +62,7 @@ namespace AirFramework
         private List<Action<object>> lifesAdd = new(), lifesRemove = new();
 
 
-        private Dictionary<Type, ILifeCycleHandler> cycles = new Dictionary<Type, ILifeCycleHandler>();
+        //private Dictionary<Type, ILifeCycleHandler> cycles = new Dictionary<Type, ILifeCycleHandler>();
 
         public override string Name => "LifeCycleManager";
 
@@ -75,7 +75,7 @@ namespace AirFramework
         public void AddLifeCycle<T, K>() where T : ILifeCycle where K : LifeCycleHandler<T>
         {
             var handler = Activator.CreateInstance<K>();
-            cycles.Add(typeof(T), handler);
+            //cycles.Add(typeof(T), handler);
             lifesAdd.Add((x) => { if (x is T) handler.OnLifeCycleRegister((T)x); });
             lifesRemove.Add((x) => { if (x is T) handler.OnLifeCycleUnRegister((T)x); });
         }
@@ -85,7 +85,7 @@ namespace AirFramework
         {
             lifesAdd.Clear();
             lifesRemove.Clear();
-            cycles.Clear();
+            //cycles.Clear();
         }
         #endregion
     }
