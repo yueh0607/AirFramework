@@ -24,7 +24,7 @@ namespace AirFramework
         }
 
 
-        public static bool Initialized { get; private set; } = false;
+        private static bool Initialized { get; set; } = false;
         internal static void TryCreateByReflection()
         {
             if (Initialized) return;
@@ -53,6 +53,14 @@ namespace AirFramework
         /// </summary>
         /// <param name="type"></param>
         public static void Unload<T>() => Unload(typeof(T));
+        public static void UnloadAll()
+        {
+            foreach(var x in bucket)
+            {
+                x.CloseLifeCycle();
+            }
+            bucket.Clear();
+        }
         /// <summary>
         /// 尝试获取，可能为default
         /// </summary>
@@ -82,5 +90,7 @@ namespace AirFramework
             }
             return default(T);
         }
+
+
     }
 }

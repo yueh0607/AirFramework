@@ -5,6 +5,8 @@ namespace AirFramework
     public class GameRoot : MonoSingleton<GameRoot>
     {
 
+
+
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         private static void AfterLoadSceneInitialize()
         {
