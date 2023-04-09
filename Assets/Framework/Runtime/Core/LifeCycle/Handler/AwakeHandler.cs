@@ -14,5 +14,7 @@ namespace AirFramework
         {
             Framework.LifeCycle.UnRegister<IAwake>(item.Awake);
         }
+
+       
     }
 }

@@ -66,8 +66,6 @@ namespace AirFramework
 
         public override string Name => "LifeCycleManager";
 
-
-
         /// <summary>
         /// 添加生命周期,每个生命周期都应该通过此函数添加，从而支持对象生命周期的解析
         /// </summary>
@@ -79,8 +77,6 @@ namespace AirFramework
             lifesAdd.Add((x) => { if (x is T) handler.OnLifeCycleRegister((T)x); });
             lifesRemove.Add((x) => { if (x is T) handler.OnLifeCycleUnRegister((T)x); });
         }
-
-
         protected override void OnDispose()
         {
             lifesAdd.Clear();
