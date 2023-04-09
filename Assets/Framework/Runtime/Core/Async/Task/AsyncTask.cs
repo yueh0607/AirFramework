@@ -20,7 +20,7 @@ namespace AirFramework
     public partial class AsyncTask : PoolableObject<AsyncTask>, IAsyncTask, IAsyncTokenProperty
     {
         [DebuggerHidden]
-        internal static AutoBindPool<AsyncTask> AsyncTaskPool { get; } = Framework.Pool.CreateAutoBindablePool(() => new AsyncTask(), null);
+        internal static ManagedPool<AsyncTask> AsyncTaskPool { get; } = Framework.Pool.CreateAutoBindablePool(() => new AsyncTask(), null);
         [DebuggerHidden]
         public static AsyncTask Create(bool fromPool = false)
         {
@@ -42,7 +42,6 @@ namespace AirFramework
             continuation = null;
             Token = null;
             Exception = null;
-
         }
     }
 
@@ -156,13 +155,11 @@ namespace AirFramework
 
         }
 
-        /// <summary>
-        /// 代表过程出现的异常
-        /// </summary>
+       
         [DebuggerHidden]
         public ExceptionDispatchInfo Exception { get; private set; }
         /// <summary>
-        /// 为当前任务设置异常，一种情况为手动调用设置，另一种为异步过程出现异常
+        /// 为当前任务设置异常，一种情况为手动调用设置，另一种为异步过程出现异常,取消也是异常
         /// </summary>
         /// <param name="exception"></param>
         [DebuggerHidden]

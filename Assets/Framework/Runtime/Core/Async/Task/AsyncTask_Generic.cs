@@ -19,7 +19,7 @@ namespace AirFramework
     public partial class AsyncTask<T> : PoolableObject<AsyncTask<T>>, IAsyncTask<T>, IAuthorization, IAsyncTokenProperty
     {
         [DebuggerHidden]
-        internal static AutoBindPool<AsyncTask<T>> AsyncTaskPool { get; } = Framework.Pool.CreateAutoBindablePool(() => new AsyncTask<T>(), null);
+        internal static ManagedPool<AsyncTask<T>> AsyncTaskPool { get; } = Framework.Pool.CreateAutoBindablePool(() => new AsyncTask<T>(), null);
         [DebuggerHidden]
         public static AsyncTask<T> Create(bool fromPool = false)
         {

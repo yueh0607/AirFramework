@@ -2,7 +2,7 @@
  * Author : YueZhenpeng
  * Date : 2023.2.25
  * Description : 
- * 该类主要是为了构建AsyncTask的状态机
+ * 构建AsyncTask的状态机
  */
 
 using System;
