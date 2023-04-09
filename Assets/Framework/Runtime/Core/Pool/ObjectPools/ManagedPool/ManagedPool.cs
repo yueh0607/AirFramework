@@ -85,7 +85,7 @@ namespace AirFramework
         protected async void OnCycleRecycle()
         {
             //空池销毁
-            if (Count == 0)
+            if (IsDeposit&&Count == 0)
             {
                 Framework.Pool.UnsafeReleasePool<T>();
                 return;
