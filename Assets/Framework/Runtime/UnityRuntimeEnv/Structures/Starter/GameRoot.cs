@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 namespace AirFramework
 {
     public class GameRoot : MonoSingleton<GameRoot>
@@ -35,7 +36,12 @@ namespace AirFramework
 
         private void Update()
         {
+#if UNITY_EDITOR
+            UnityEngine.Profiling.Profiler.BeginSample("AirFranework.Update");
             Framework.LifeCycle.Publish<IUpdate>();
+            UnityEngine.Profiling.Profiler.EndSample();
+#endif
+
         }
     }
 }

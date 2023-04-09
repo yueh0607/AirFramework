@@ -47,7 +47,7 @@ namespace AirFramework
         /// </summary>
         protected override void OnDispose()
         {
-            this.Recycle();
+            this.RecycleSelf();
         }
 
 

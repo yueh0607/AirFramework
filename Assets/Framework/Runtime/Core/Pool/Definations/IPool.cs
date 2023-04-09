@@ -13,8 +13,12 @@ namespace AirFramework
     public interface IPool : IUnit
     {
         /// <summary>
-        /// 池容量
+        /// 是否托管
         /// </summary>
+        bool IsDeposit { get; internal set; }
+        /// <summary>
+        /// 池容量
+        /// </summary>s
         int Count { get; }
 
         /// <summary>

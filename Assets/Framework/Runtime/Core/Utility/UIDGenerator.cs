@@ -2,7 +2,7 @@
 
 namespace AirFramework
 {
-    public class UIDGenerator : IUIDGenerator
+    public class UIDGenerator
     {
 
 

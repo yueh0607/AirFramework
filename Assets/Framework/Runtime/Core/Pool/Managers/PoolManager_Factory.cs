@@ -63,11 +63,11 @@ namespace AirFramework
         /// <param name="onRecycle"></param>
         /// <param name="onAllocate"></param>
         /// <returns></returns>        
-        public AutoBindPool<T> CreateAutoBindablePool<T>(Func<T> onCreate = null, Action<T> onDestroy = null)
+        public ManagedPool<T> CreateAutoBindablePool<T>(Func<T> onCreate = null, Action<T> onDestroy = null)
             where T : class, IPoolable
         {
 
-            AutoBindPool<T> pool = new AutoBindPool<T>(
+            ManagedPool<T> pool = new ManagedPool<T>(
                         onCreate ?? Pool.DefaltActivatorCreate<T>,
                         onDestroy
 

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Reflection;
 namespace AirFramework
 {
@@ -11,6 +12,8 @@ namespace AirFramework
 
         internal static void CreateByReflection()
         {
+
+            Stopwatch watch = Stopwatch.StartNew();
             var assemblies = AppDomain.CurrentDomain.GetAssemblies();
             foreach (var assembly in assemblies)
             {
@@ -21,6 +24,8 @@ namespace AirFramework
                     if (result) bucket.TryAdd(type, Activator.CreateInstance(type).StartLifeCycle());
                 }
             }
+            watch.Stop();
+            UnityEngine.Debug.Log("»¨·Ñ:" + watch.Elapsed);
         }
 
 

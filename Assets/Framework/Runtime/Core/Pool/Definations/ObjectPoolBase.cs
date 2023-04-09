@@ -15,6 +15,19 @@ namespace AirFramework
     public abstract class ObjectPoolBase : Unit, IObjectPool
     {
         /// <summary>
+        /// 是否托管
+        /// </summary>
+        public bool IsDeposit { get;  internal set; } = false;
+
+        // 实现 IObjectPool 接口中定义的 IsDeposit 属性
+        bool IPool.IsDeposit
+        {
+            get { return IsDeposit; }
+            set { IsDeposit = value; }
+        }
+
+
+        /// <summary>
         /// 池缓存数
         /// </summary>
         public abstract int Count { get; }
@@ -53,47 +66,12 @@ namespace AirFramework
         public abstract void Unload(int count);
 
         /// <summary>
-        /// 回收周期到达时调用
+        /// 异步卸载
         /// </summary>
-        protected abstract void OnCycleRecycle();
-
-
-        private Timer timer = null;
-
-        private double recycleTime = -1;
-        public double RecycleTime
-        {
-            get
-            {
-                return recycleTime;
-            }
-            set
-            {
-                recycleTime = value;
-                if (recycleTime > 0d)
-                {
-                    if (timer == null)
-                    {
-                        timer = new Timer(recycleTime);
-                        timer.Elapsed += (s, o) => { OnCycleRecycle(); };
-                    }
-                    timer.Interval = recycleTime;
-                    if (!timer.Enabled)
-                    {
-                        timer.Start();
-                    }
-
-                }
-                else
-                {
-                    timer.Stop();
-                }
-            }
-        }
-
-        public float RecoveryRatio { get; set; } = 0.5f;
-
-        public abstract AsyncTask PreloadAsync(int count);
-        public abstract AsyncTask UnloadAsync(int count, int frame = 1);
+        /// <param name="count"></param>
+        /// <param name="frame"></param>
+        /// <returns></returns>
+        public abstract AsyncTask UnloadAsync(int count,int frame=1);
+        
     }
 }

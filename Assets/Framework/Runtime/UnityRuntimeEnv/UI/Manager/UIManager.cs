@@ -25,13 +25,6 @@ namespace AirFramework
         public ModelManager Models { get; protected set; } = new ModelManager();
 
 
-        private void EnStack<T>(GameObject panel)
-        {
-            if (panel.transform.IsChildOf(canvas.transform))
-            {
-
-            }
-        }
 
         public void Open<T>() where T : Controller
         {

@@ -22,11 +22,11 @@ namespace AirFramework
         void OnAllocate();
 
         /// <summary>
-        /// 由Framework调用，在申请或回收时自动绑定Pool
+        /// 由Framework调用，在申请或回收时自动绑定Pool,手动修改可能引起未定义的行为
         /// </summary>
         public IObjectPool ThisPool { get; set; }
         /// <summary>
-        /// 由Framework调用，在BindablePool入池时和出池时自动设置
+        /// 由Framework调用，在BindablePool入池时和出池时自动设置，手动修改可能引起未定义的行为
         /// </summary>
         public bool IsRecycled { get; set; }
     }

@@ -20,12 +20,16 @@ namespace AirFramework
     public partial class PoolManager : GlobalManager
     {
 
-        private readonly Dictionary<Type, IObjectPool> pools = new Dictionary<Type, IObjectPool>();
+        private readonly Dictionary<Type, IManagedPool> pools = new Dictionary<Type, IManagedPool>();
 
         public double DefaultRecycleCycleTime = 60_000D;
+        public float DefaultRecycleRatio = 0.5F;
         public override string Name => "PoolManager";
 
         #region 托管池
+
+
+        #region GetPool
         /// <summary>
         /// 获取T类型的托管池
         /// </summary>
@@ -37,11 +41,14 @@ namespace AirFramework
             var type = typeof(T);
             if (!pools.ContainsKey(type))
             {
-                pools.Add(type, new LifeCyclePool<T>(
+                var pool = new LifeCyclePool<T>(
                         Pool.DefaltActivatorCreate<T>,
                         null
-                        ));
+                        );
+                pools.Add(type, pool);
                 pools[type].RecycleTime = DefaultRecycleCycleTime;
+                pools[type].RecoveryRatio = DefaultRecycleRatio;
+                pool.IsDeposit= true;
             }
             return pools[typeof(T)] as IGenericPool<T>;
         }
@@ -52,13 +59,20 @@ namespace AirFramework
             {
                 //Pool
                 Type tp = typeof(LifeCyclePool<>).MakeGenericType(type);
-                var pool = (IObjectPool)Activator.CreateInstance(tp, FuncCreator.GetFunc(type), null, null, null);
+                var pool = (IManagedPool)Activator.CreateInstance(tp, FuncCreator.GetFunc(type), null, null, null);
                 pools.Add(type, pool);
                 pools[type].RecycleTime = DefaultRecycleCycleTime;
+                pools[type].RecoveryRatio = DefaultRecycleRatio;
+                pool.IsDeposit= true;
             }
             return pools[type];
         }
 
+
+        #endregion
+
+
+        #region ReleasePool
         /// <summary>
         /// 释放T类型的托管池
         /// </summary>
@@ -89,13 +103,14 @@ namespace AirFramework
             }
 
         }
+        #endregion
 
+        #region CoreBehaviour
         /// <summary>
         /// 从托管池申请对象
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-
 
         public T Allocate<T>() where T : class, IPoolable
         {
@@ -116,7 +131,7 @@ namespace AirFramework
             GetPool<T>().Recycle(item);
         }
         /// <summary>
-        /// 强行回收对象到源池，本步骤采用多步反射，性能损耗类似单例，仅在第一次损失较大
+        /// 强行回收对象到真实类型对应池
         /// </summary>
         /// <param name="item"></param>
         /// <exception cref="InvalidOperationException"></exception>
@@ -126,6 +141,22 @@ namespace AirFramework
 
             GetPool(item.GetType()).RecycleObj(item);
         }
+
+        #endregion
+
+        #region Extensions
+        public void ForeachPools(Action<IManagedPool> action)
+        {
+            if (action == null) return;
+            foreach(var x in pools)
+            {
+                action(x.Value);
+            }
+        }
+
+
+        #endregion
+
         #endregion
 
 

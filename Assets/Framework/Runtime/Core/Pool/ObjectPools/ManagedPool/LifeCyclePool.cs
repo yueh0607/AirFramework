@@ -10,10 +10,10 @@ using System;
 namespace AirFramework
 {
     /// <summary>
-    /// 能自动管理生命的池
+    /// 能自动绑定生命的池
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class LifeCyclePool<T> : AutoBindPool<T> where T : class, IPoolable
+    public class LifeCyclePool<T> : ManagedPool<T> where T : class, IPoolable
     {
 
         public void OnAddItemLifeCycle(T item)

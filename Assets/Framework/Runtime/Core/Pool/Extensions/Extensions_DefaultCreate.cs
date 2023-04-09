@@ -8,6 +8,7 @@
 
 using System;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 
 namespace AirFramework
 {
@@ -18,7 +19,7 @@ namespace AirFramework
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        [DebuggerHidden]
+        [DebuggerHidden,MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T DefaultNewCreate<T>() where T : new()
         {
             return new T();
@@ -28,7 +29,7 @@ namespace AirFramework
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        [DebuggerHidden]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T DefaltActivatorCreate<T>()
         {
             return Activator.CreateInstance<T>();
@@ -39,7 +40,7 @@ namespace AirFramework
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        [DebuggerHidden]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static object DefaltActivatorCreate(Type type)
         {
             return Activator.CreateInstance(type);

@@ -16,6 +16,7 @@ namespace AirFramework
     public interface IObjectPool : IPool
     {
 
+
         public Type ObjectType { get; }
         /// <summary>
         /// 最大缓存容量
@@ -44,11 +45,6 @@ namespace AirFramework
         /// <param name="count"></param>
         public void Unload(int count);
 
-        public double RecycleTime
-        {
-            get;
-            set;
-        }
 
     }
 }

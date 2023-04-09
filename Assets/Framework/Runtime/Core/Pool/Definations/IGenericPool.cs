@@ -8,21 +8,9 @@
 namespace AirFramework
 {
 
-    public interface IGenericPool<T> : IObjectPool
+    public interface IGenericPool<T> : IObjectPool,IPool<T>
     {
-        /// <summary>
-        /// 申请对象
-        /// </summary>
-        /// <returns></returns>
-        public T Allocate();
-        /// <summary>
-        /// 回收对象
-        /// </summary>
-        /// <param name="item"></param>
-        public void Recycle(T item);
 
-
-        public AsyncTask PreloadAsync(int count);
         public AsyncTask UnloadAsync(int count, int frame = 1);
     }
 }

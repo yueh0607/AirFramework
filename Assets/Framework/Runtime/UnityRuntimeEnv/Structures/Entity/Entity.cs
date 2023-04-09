@@ -57,7 +57,6 @@ namespace AirFramework
         
     }
 
-
     public abstract partial class Entity : PoolableObject<Entity>, IMessageReceiver
     {
         public override void OnAllocate()
@@ -80,7 +79,6 @@ namespace AirFramework
         {
             return Instantiate<T>(parent, position, Quaternion.identity, worldPositionStays);
         }
-
         public static T Instantiate<T>(Entity parent, bool worldPositionStays = false) where T : Entity, new()
         {
             return Instantiate<T>(parent, Vector3.zero, Quaternion.identity, worldPositionStays);
@@ -88,11 +86,17 @@ namespace AirFramework
 
         public static T Instantiate<T>(Entity parent, Vector3 position, Quaternion rotation, bool worldPositionStays = false) where T : Entity, new()
         {
+            //加载预制体
             GameObject origin = Framework.Res.Load<GameObject>(typeof(T).Name);
+            //实例化到场景
             GameObject instance = GameObject.Instantiate(origin, parent.MonoEntity.transform, worldPositionStays);
+            //为物体添加引用组件
             var RefCom = instance.AddComponent<EntityRef>();
-            T entity = new();
+            //申请实例引用
+            T entity = Framework.Pool.Allocate<T>();
+            //更新Entity属性
             entity.MonoEntity = RefCom;
+            //更新EntityRef属性
             RefCom.EntityValue = entity;
             RefCom.EntityType = typeof(T);
             return entity;
