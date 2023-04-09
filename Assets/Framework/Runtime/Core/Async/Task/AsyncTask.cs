@@ -121,7 +121,7 @@ namespace AirFramework
 
         public AsyncTask()
         {
-        }
+        } 
 
         private Action setResult = null;
         /// <summary>

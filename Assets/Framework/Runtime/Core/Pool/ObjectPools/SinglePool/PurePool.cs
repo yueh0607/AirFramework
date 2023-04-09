@@ -14,6 +14,8 @@ namespace AirFramework
         /// </summary>
         public int Count => queue.Count;
 
+        public bool IsDeposit { get; } = false;
+        bool IPool.IsDeposit { get => IsDeposit; set => _ = value; }
 
         private Queue<T> queue = new Queue<T>();
 
