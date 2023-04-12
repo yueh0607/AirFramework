@@ -6,7 +6,7 @@
     {
 
     }
-    public abstract class LifeCycleHandler<T> : ILifeCycleHandler where T : ILifeCycle
+    public abstract class LifeCycleHandler<T> : ILifeCycleHandler where T : IMessage
     {
 
         public abstract void OnLifeCycleRegister(T item);

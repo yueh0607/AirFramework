@@ -42,6 +42,18 @@ namespace AirFramework
         public abstract void OnRecycle();
 
 
+
+        public PoolableObject()=>OnCreate();
+        ~PoolableObject() =>OnDestroy();
+        protected virtual void OnDestroy()
+        {
+
+        }
+        protected virtual void OnCreate()
+        {
+
+        }
+
         /// <summary>
         /// 回收时调用，自动进入对象池
         /// </summary>

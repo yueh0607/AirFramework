@@ -69,7 +69,7 @@ namespace AirFramework
 
         }
 
-        void IUpdate.Update()
+        void IUpdate.Update(float deltaTime)
         {
             SetResult();
         }

@@ -18,8 +18,8 @@ namespace AirFramework
         /// <summary>
         /// 模板对象的真实值
         /// </summary>
-        public T Value { get => value; }
-        protected T value = new();
+        public T Value { get; private set; } = new();
+        
 
 
     }

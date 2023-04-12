@@ -34,12 +34,11 @@ namespace AirFramework
             Task = task;
             watch.Start();
         }
-        void IUpdate.Update()
+        void IUpdate.Update(float deltaTime)
         {
 
             if (Task == null || !Task.Authorization)
             {
-
                 if (watch.IsRunning) watch.Stop();
                 return;
             }

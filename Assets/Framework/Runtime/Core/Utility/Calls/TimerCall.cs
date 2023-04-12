@@ -3,105 +3,67 @@ using System.Diagnostics;
 
 namespace AirFramework
 {
+
+    public enum TimerState
+    {
+        /// <summary>
+        /// 闲置状态
+        /// </summary>
+        Idle,
+        /// <summary>
+        /// 暂停状态
+        /// </summary>
+        Paused,
+        /// <summary>
+        /// 运行状态
+        /// </summary>
+        Running
+    }
     /// <summary>
     /// 到达指定时间自动回调
     /// </summary>
     public sealed class TimerCall : PoolableObject<TimerCall>, IUpdate
     {
 
-        private Stopwatch watch = new Stopwatch();
-        /// <summary>
-        /// 表示当前回调计时器的状态
-        /// </summary>
+       
+        private bool OnceRecycle { get; set; } = false;
+
         public TimerState State { get; private set; } = TimerState.Idle;
-        /// <summary>
-        /// 当完成时的事件
-        /// </summary>
-        public event Action OnCompleted;
-        /// <summary>
-        /// 当改变时的事件
-        /// </summary>
-        public event Action<TimeSpan> OnChanged;
-        /// <summary>
-        /// 以及过去的时间
-        /// </summary>
-        public TimeSpan DeltaTime => watch.Elapsed;
+        public float Time { get; private set; } = 0;
 
-        //预测条件
-        private TimeSpan span;
-        /// <summary>
-        /// 是否一次使用就回收
-        /// </summary>
-        public bool OnceRecycle { get; set; } = false;
+        public event Action OnCompleted=null;
+        public float EndTime { get; private set; } = 1f;
 
-        /// <summary>
-        /// 开始计时，在大于这个时间时调用OnCompleted
-        /// </summary>
-        /// <param name="endSpan"></param>
-        public void Start(TimeSpan endSpan)
+
+        
+        public void Reset()
         {
-            span = endSpan;
-            Start();
+            State= TimerState.Idle;
+            EndTime = 1f;
         }
-        /// <summary>
-        /// 开始计时
-        /// </summary>
-        public void Start()
+        public void Pause()
         {
-            watch.Start();
-            State = TimerState.Running;
+            State= TimerState.Paused;
         }
-        /// <summary>
-        /// 停止计时
-        /// </summary>
-        public void Stop()
+        public void Start(float endTime,Action onCompleted=null,bool onceRecycle = false)
         {
-            watch.Stop();
-            State = TimerState.Paused;
-        }
-        /// <summary>
-        /// 重置计时，参数决定事件重置
-        /// </summary>
-        /// <param name="onlyTime"></param>
-        public void Reset(bool onlyTime = false)
-        {
-            //暂停计时
-            Stop();
-            //重置计时
-            watch.Reset();
-
-            span = default;
-            //重置事件
-            if (!onlyTime)
-            {
-                OnChanged = null;
-                OnCompleted = null;
-
-            }
-            //重置状态
-            State = TimerState.Idle;
+            OnceRecycle= onceRecycle;
+            OnCompleted+=onCompleted;
+            State= TimerState.Running;
         }
 
-        void IUpdate.Update()
+        void IUpdate.Update(float deltaTime)
         {
-            //不在运行则返回
             if (State != TimerState.Running) return;
-
-
-
-
-
-            //满足预测条件，则停止计时，调用完成
-            if (watch.Elapsed > span)
+            Time+=deltaTime;
+            if(Time>EndTime)
             {
-                Stop();
                 OnCompleted?.Invoke();
-                if (OnceRecycle) Dispose();
-            }
-            //当改变时
-            if (OnChanged != null)
-            {
-                OnChanged(watch.Elapsed);
+
+                if(OnceRecycle)
+                {
+                    Dispose();
+                }
             }
         }
 
@@ -112,7 +74,7 @@ namespace AirFramework
 
         public override void OnRecycle()
         {
-            Reset(false);
+            Reset();
         }
     }
 }

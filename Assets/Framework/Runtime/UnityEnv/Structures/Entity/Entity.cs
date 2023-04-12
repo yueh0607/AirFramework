@@ -3,7 +3,7 @@ using System;
 using UnityEngine;
 namespace AirFramework
 {
-    public abstract partial class Entity : PoolableObject<Entity>, IMessageReceiver
+    public abstract partial class Entity : PoolableObject<Entity>
     {
         /// <summary>
         /// Mono引用
@@ -67,23 +67,34 @@ namespace AirFramework
         {
             this.SetActive(false);
         }
+
+        protected override void OnCreate()
+        {
+            base.OnCreate();
+
+        }
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+        }
     }
     public abstract partial class Entity : PoolableObject<Entity>, IMessageReceiver
     {
-        public static T Instantiate<T>(Entity parent, Quaternion rotation, bool worldPositionStays = false) where T : Entity, new()
+
+        public static T Instantiate<T>(Entity parent, Quaternion rotation, bool worldPositionStays = false) where T : Entity
         {
             return Instantiate<T>(parent, Vector3.zero, rotation, worldPositionStays);
         }
-        public static T Instantiate<T>(Entity parent, Vector3 position, bool worldPositionStays = false) where T : Entity, new()
+        public static T Instantiate<T>(Entity parent, Vector3 position, bool worldPositionStays = false) where T : Entity
         {
             return Instantiate<T>(parent, position, Quaternion.identity, worldPositionStays);
         }
-        public static T Instantiate<T>(Entity parent, bool worldPositionStays = false) where T : Entity, new()
+        public static T Instantiate<T>(Entity parent, bool worldPositionStays = false) where T : Entity
         {
             return Instantiate<T>(parent, Vector3.zero, Quaternion.identity, worldPositionStays);
         }
 
-        public static T Instantiate<T>(Entity parent, Vector3 position, Quaternion rotation, bool worldPositionStays = false) where T : Entity, new()
+        public static T Instantiate<T>(Entity parent, Vector3 position, Quaternion rotation, bool worldPositionStays = false) where T : Entity
         {
             //加载预制体
             GameObject origin = Framework.Res.Load<GameObject>(typeof(T).Name);
@@ -100,8 +111,5 @@ namespace AirFramework
             RefCom.EntityType = typeof(T);
             return entity;
         }
-
-        
-
     }
 }

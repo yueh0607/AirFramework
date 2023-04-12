@@ -1,5 +1,7 @@
 ﻿
 
+using UnityEngine;
+
 namespace AirFramework
 {
 
@@ -7,12 +9,13 @@ namespace AirFramework
     {
         public override void OnLifeCycleRegister(ILateUpdate item)
         {
-            Framework.LifeCycle.Register<ILateUpdate>(item.LateUpdate);
+           
+            Framework.Message.Operator<ILateUpdate>().Subscribe(item.LateUpdate);
         }
 
         public override void OnLifeCycleUnRegister(ILateUpdate item)
         {
-            Framework.LifeCycle.UnRegister<ILateUpdate>(item.LateUpdate);
+            Framework.Message.Operator<ILateUpdate>().UnSubscribe(item.LateUpdate);
         }
     }
 }

@@ -14,24 +14,22 @@
 
         public abstract void OnUnloadPanel();
 
-        public abstract void OnFocusPanel();
-
-        public abstract void OnLostFocusPanel();
-
         protected abstract void OnBindProperty();
         protected abstract void OnUnBindProperty();
         protected abstract void OnBindEvents();
         protected abstract void OnUnBindEvents();
 
-
-        public Controller()
+        public override void OnAllocate()
         {
+            base.OnAllocate();
             OnBindEvents();
             OnBindProperty();
         }
 
-        ~Controller()
+
+        public override void OnRecycle()
         {
+            base.OnRecycle();
             OnUnBindEvents();
             OnUnBindProperty();
         }

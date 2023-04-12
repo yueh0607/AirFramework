@@ -5,32 +5,6 @@ namespace AirFramework
     public class LifeCycleManager : GlobalManager
     {
 
-        #region 消息层
-        /// <summary>
-        /// 注册某函数到生命周期
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="cycleMethod"></param>
-        internal void Register<T>(Action cycleMethod) where T : ILifeCycle
-        {
-            Framework.Message.GenericOperator<T>().Subscribe(cycleMethod);
-        }
-        /// <summary>
-        /// 取消某函数从生命周期
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="cycleMethod"></param>
-        internal void UnRegister<T>(Action cycleMethod) where T : ILifeCycle => Framework.Message.GenericOperator<T>().UnSubscribe(cycleMethod);
-
-        /// <summary>
-        /// 每个生命周期都应该在其他位置调用Publish，否则该生命虽然被解析但是不会生效
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        public void Publish<T>() where T : ILifeCycle
-        {
-            Framework.Message.GenericOperator<T>().Publish();
-        }
-        #endregion
 
         #region 解析层
         /// <summary>
@@ -61,16 +35,13 @@ namespace AirFramework
 
         private List<Action<object>> lifesAdd = new(), lifesRemove = new();
 
-
-        //private Dictionary<Type, ILifeCycleHandler> cycles = new Dictionary<Type, ILifeCycleHandler>();
-
         public override string Name => "LifeCycleManager";
 
         /// <summary>
         /// 添加生命周期,每个生命周期都应该通过此函数添加，从而支持对象生命周期的解析
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        public void AddLifeCycle<T, K>() where T : ILifeCycle where K : LifeCycleHandler<T>
+        public void AddLifeCycle<T, K>() where T : IMessage where K : LifeCycleHandler<T>
         {
             var handler = Activator.CreateInstance<K>();
             //cycles.Add(typeof(T), handler);
@@ -81,7 +52,6 @@ namespace AirFramework
         {
             lifesAdd.Clear();
             lifesRemove.Clear();
-            //cycles.Clear();
         }
         #endregion
     }

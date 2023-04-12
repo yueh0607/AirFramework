@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace AirFramework
 {
-    public class GameRoot : MonoSingleton<GameRoot>
+    public class UnityEnvStarter : MonoSingleton<UnityEnvStarter>
     {
 
 

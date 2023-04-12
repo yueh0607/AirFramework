@@ -32,7 +32,7 @@ namespace AirFramework
 
 
         int counter = 0;
-        void IUpdate.Update()
+        void IUpdate.Update(float deltaTime)
         {
             if (++counter == CallPerFrameCount)
             {

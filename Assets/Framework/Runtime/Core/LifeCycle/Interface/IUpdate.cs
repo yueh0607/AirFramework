@@ -1,7 +1,7 @@
 ﻿namespace AirFramework
 {
-    public interface IUpdate : ILifeCycle
+    public interface IUpdate : IGenericMessage<float>
     {
-        void Update();
+        void Update(float deltaTime);
     }
 }

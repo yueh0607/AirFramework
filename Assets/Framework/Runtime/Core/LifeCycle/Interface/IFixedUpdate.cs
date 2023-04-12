@@ -1,7 +1,7 @@
 ﻿namespace AirFramework
 {
-    public interface IFixedUpdate : ILifeCycle
+    public interface IFixedUpdate : IGenericMessage<float>
     {
-        void FixedUpdate();
+        void FixedUpdate(float fixedTime);
     }
 }
