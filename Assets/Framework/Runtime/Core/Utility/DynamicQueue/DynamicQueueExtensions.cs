@@ -24,8 +24,6 @@ namespace AirFramework
         }
         public static K GetValueOrAddDefault<T, K>(this DynamicQueue<T, K> queue, T key, Func<K> getter = null)
         {
-            //if (queue == null) throw new Exception("queueEx");
-            //if (key== null) throw new Exception("keyEx");
             if (queue.ContainsKey(key))
             {
                 return queue[key];

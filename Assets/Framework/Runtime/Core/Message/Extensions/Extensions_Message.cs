@@ -1,6 +1,6 @@
 ﻿namespace AirFramework
 {
-    public static partial class MessageExtensions
+    public static partial class MessageExtensions_Operator_Dispatcher
     {
 
         /// <summary>

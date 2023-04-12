@@ -1,5 +1,4 @@
-﻿using Unity.Collections.LowLevel.Unsafe;
-
+﻿
 namespace AirFramework
 {
     public unsafe class UnsafeHandler
@@ -17,9 +16,11 @@ namespace AirFramework
         public static ref TTo As<TFrom, TTo>(ref TFrom source)
         {
 #if UNITY_2020_1_OR_NEWER
-            return ref UnsafeUtility.As<TFrom, TTo>(ref source);
-#elif NETSTANDARD
-                return ref Unsafe.As<TFrom,TTo>(ref source);
+            return ref Unity.Collections.LowLevel.Unsafe.UnsafeUtility.As<TFrom, TTo>(ref source);
+#elif NETCOREAPP
+                return ref System.Runtime.CompilerServices.Unsafe.As<TFrom,TTo>(ref source);
+#else 
+#error 消息系统仅支持 Unity3D 2020.1或更新，以及有.NET Core支持的平台。
 #endif
         }
 

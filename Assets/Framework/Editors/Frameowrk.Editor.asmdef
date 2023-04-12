@@ -1,14 +1,14 @@
 {
-    "name": "AirFrameworkEditor",
+    "name": "AirFramework.Editor",
     "rootNamespace": "AirFrameworkEditor",
     "references": [
-        "GUID:e7f01c7ffd86fc042847feafb1513a65"
+        "GUID:24e8af817f14eeb4fb2babd5c567f8c8"
     ],
     "includePlatforms": [
         "Editor"
     ],
     "excludePlatforms": [],
-    "allowUnsafeCode": true,
+    "allowUnsafeCode": false,
     "overrideReferences": false,
     "precompiledReferences": [],
     "autoReferenced": true,

@@ -1,7 +1,6 @@
 ﻿
 using System;
 using UnityEngine;
-
 namespace AirFramework
 {
     public abstract partial class Entity : PoolableObject<Entity>, IMessageReceiver
