@@ -17,6 +17,7 @@ namespace AirFramework
     public class AsyncTaskUpdate : PoolableObject<AsyncTaskUpdate>, ICriticalNotifyCompletion, IAsyncTokenProperty, IUpdate
     {
         public static void Create() => Framework.Pool.Allocate<AsyncTaskUpdate>();
+        public AsyncTaskUpdate() => Token = new(this, this);
 
         [DebuggerHidden]
         public AsyncTaskUpdate GetAwaiter() => this;
@@ -25,7 +26,7 @@ namespace AirFramework
         public bool IsCompleted { get; private set; } = false;
         private Action continuation = null;
 
-
+        #region Token
         AsyncTreeTokenNode IAsyncTokenProperty.Token { get => Token; set => Token = value; }
         public AsyncTreeTokenNode Token { get; internal set; }
 
@@ -33,6 +34,10 @@ namespace AirFramework
 
         public bool Authorization { get; internal set; } = true;
         bool IAuthorization.Authorization { get => Authorization; set => Authorization = value; }
+
+
+        #endregion
+
 
         [DebuggerHidden]
         public void GetResult()
@@ -53,8 +58,6 @@ namespace AirFramework
 
         }
 
-
-
         private void SetResult()
         {
             if (Authorization)
@@ -67,7 +70,7 @@ namespace AirFramework
             //回收到Pool
             this.Dispose();
         }
-        public AsyncTaskUpdate() => Token = new(this, this);
+
 
         public override void OnAllocate()
         {
@@ -81,15 +84,25 @@ namespace AirFramework
         public override void OnRecycle()
         {
             Authorization = false;
+            FrameCount = 1;
+            current = 0;
+            
         }
         public void SetException(Exception exception)
         {
             SetResult();
         }
 
+        public int FrameCount { get; set; } = 1;
+        int current = 0;
+    
         void IUpdate.Update(float deltaTime)
         {
-            SetResult();
+            if(current++>=FrameCount)
+            {
+                SetResult();
+            }
+          
         }
     }
 }

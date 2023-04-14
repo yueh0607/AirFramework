@@ -33,22 +33,14 @@ namespace AirFramework
         bool IAuthorization.Authorization { get => Authorization; set => Authorization = value; }
 
         [DebuggerHidden]
-        public void GetResult()
-        {
-
-        }
+        public void GetResult() { }
 
         [DebuggerHidden]
-        public void OnCompleted(Action continuation)
-        {
-            UnsafeOnCompleted(continuation);
-        }
-
+        public void OnCompleted(Action continuation)=>UnsafeOnCompleted(continuation);
+        
         [DebuggerHidden]
-        public void UnsafeOnCompleted(Action continuation)
-        {
-            this.continuation = continuation;
-        }
+        public void UnsafeOnCompleted(Action continuation)=>this.continuation = continuation;
+        
 
         private void SetResult()
         {

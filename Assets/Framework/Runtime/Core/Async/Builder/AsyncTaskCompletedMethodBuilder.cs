@@ -28,21 +28,22 @@ namespace AirFramework
 
 
         private AsyncTaskCompleted task;
-
-        //2.Current-Like
+        //2.Task-Like
         public AsyncTaskCompleted Task => task;
+
+
+
 
         // 3. SetException
         [DebuggerHidden]
-        public void SetException(Exception exceptions)
-        {
-        }
+        public void SetException(Exception exceptions){}
 
         // 4. SetResult
         [DebuggerHidden]
-        public void SetResult()
-        {
-        }
+        public void SetResult(){ }
+
+
+
 
         // 5. AwaitOnCompleted
         [DebuggerHidden]
@@ -61,17 +62,16 @@ namespace AirFramework
             awaiter.UnsafeOnCompleted(stateMachine.MoveNext);
         }
 
+
+
         // 7. Start
         [DebuggerHidden]
         public void Start<TStateMachine>(ref TStateMachine stateMachine) where TStateMachine : IAsyncStateMachine
         {
             stateMachine.MoveNext();
         }
-
         // 8. SetStateMachine
         [DebuggerHidden]
-        public void SetStateMachine(IAsyncStateMachine stateMachine)
-        {
-        }
+        public void SetStateMachine(IAsyncStateMachine stateMachine){}
     }
 }

@@ -15,20 +15,22 @@ namespace AirFramework
 {
     public struct AsyncTaskMethodBuilder
     {
-        private AsyncTask task;
-
-        // 1. Static PoolGet method
+   
+        // 1. Static Create method
         [DebuggerHidden]
         public static AsyncTaskMethodBuilder Create() => new AsyncTaskMethodBuilder(AsyncTask.Create(fromPool: true));
-
         public AsyncTaskMethodBuilder(AsyncTask task)
         {
             this.task = task;
         }
+        
 
+        private AsyncTask task;
         // 2. TaskLike Current
         [DebuggerHidden]
         public AsyncTask Task => task;
+
+
 
         // 3. Start 构造之后开启状态机
         [DebuggerHidden]
@@ -76,7 +78,7 @@ namespace AirFramework
             awaiter.OnCompleted(stateMachine.MoveNext);
         }
 
-        // 9. SetStateMachine  将生成器与指定的状态机相关联
+        // 9. SetStateMachine 
         [DebuggerHidden]
         public void SetStateMachine(IAsyncStateMachine stateMachine)
         {

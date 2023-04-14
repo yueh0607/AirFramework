@@ -17,7 +17,7 @@ namespace AirFramework
     public class AsyncTaskCompleted : PoolableObject<AsyncTaskCompleted>, ICriticalNotifyCompletion, IAsyncTokenProperty
     {
         public static AsyncTaskCompleted Create() => Framework.Pool.Allocate<AsyncTaskCompleted>();
-
+        public AsyncTaskCompleted() => Token = new(this, this);
         [DebuggerHidden]
         public AsyncTaskCompleted GetAwaiter() => this;
 
@@ -25,26 +25,20 @@ namespace AirFramework
         [DebuggerHidden]
         public bool IsCompleted { get; set; } = true;
 
+        #region Token
         AsyncTreeTokenNode IAsyncTokenProperty.Token { get => Token; set => Token = value; }
         public AsyncTreeTokenNode Token { get; internal set; }
 
         public bool Authorization { get; internal set; } = true;
         bool IAuthorization.Authorization { get => Authorization; set => Authorization = value; }
-
-        public AsyncTaskCompleted() => Token = new(this, this);
-
-        [DebuggerHidden]
-        public void GetResult()
-        {
-
-        }
+        #endregion
+       
 
         [DebuggerHidden]
-        public void OnCompleted(Action continuation)
-        {
-            UnsafeOnCompleted(continuation);
-        }
+        public void GetResult() { }
 
+        [DebuggerHidden]
+        public void OnCompleted(Action continuation)=> UnsafeOnCompleted(continuation);
 
         private Action continuation;
         [DebuggerHidden]
@@ -59,7 +53,6 @@ namespace AirFramework
 
             if (Authorization)
             {
-
                 continuation?.Invoke();
             }
             Dispose();
@@ -69,13 +62,11 @@ namespace AirFramework
             Token.Root = this;
             Token.Current = this;
             Authorization = true;
-
         }
         [DebuggerHidden]
         public override void OnRecycle()
         {
             Authorization = false;
-
         }
         public void SetException(Exception exception)
         {

@@ -40,14 +40,12 @@ namespace AirFramework
             Token.Root = this;
             IsCompleted = false;
             Authorization = true;
-
         }
         [DebuggerHidden]
         public override void OnRecycle()
         {
             Authorization = false;
             continuation = null;
-            //Exception = null;
         }
     }
 
@@ -74,8 +72,6 @@ namespace AirFramework
 
 
         #region Completed
-
-
         [DebuggerHidden]
         public bool IsCompleted { get; set; } = false;
 
@@ -86,7 +82,6 @@ namespace AirFramework
         [DebuggerHidden]
         public void OnCompleted(Action continuation)
         {
-
             UnsafeOnCompleted(continuation);
         }
 
@@ -94,7 +89,6 @@ namespace AirFramework
         public void UnsafeOnCompleted(Action continuation)
         {
             this.continuation = continuation;
-
         }
         #endregion
 
@@ -148,8 +142,6 @@ namespace AirFramework
         [DebuggerHidden]
         private void SetResultMethod()
         {
-
-
             if (Authorization)
             {
                 if (IsCompleted) throw new InvalidOperationException("AsyncTask dont allow SetResult repeatly.");

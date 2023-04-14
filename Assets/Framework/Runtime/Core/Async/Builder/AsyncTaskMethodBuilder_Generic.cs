@@ -16,7 +16,7 @@ namespace AirFramework
 
     public struct AsyncTaskMethodBuilder<T>
     {
-        private AsyncTask<T> task;
+
         // 1. Static PoolGet method.
 
         [DebuggerHidden]
@@ -29,6 +29,8 @@ namespace AirFramework
             this.task = task;
         }
 
+
+        private AsyncTask<T> task;
         // 2. TaskLike Current property.
         [DebuggerHidden]
         public AsyncTask<T> Task => task;
@@ -55,9 +57,7 @@ namespace AirFramework
         public void AwaitOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine)
             where TAwaiter : INotifyCompletion where TStateMachine : IAsyncStateMachine
         {
-
             task.Token.Current = awaiter as IAsyncTokenProperty;
-
             awaiter.OnCompleted(stateMachine.MoveNext);
         }
 

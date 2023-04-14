@@ -17,8 +17,6 @@ namespace AirFramework
     [AsyncMethodBuilder(typeof(AsyncTaskMethodBuilder<>))]
     public partial class AsyncTask<T> : PoolableObject<AsyncTask<T>>, IAsyncTask<T>, IAuthorization, IAsyncTokenProperty
     {
-        // [DebuggerHidden]
-        // internal static ManagedPool<AsyncTask<T>> AsyncTaskPool { get; } = Framework.Pool.CreateAutoBindablePool(() => new AsyncTask<T>(), null);
         [DebuggerHidden]
         public static AsyncTask<T> Create(bool fromPool = false)
         {
@@ -37,16 +35,12 @@ namespace AirFramework
             Token.Root = this;
             IsCompleted = false;
             Authorization = true;
-
         }
         [DebuggerHidden]
         public override void OnRecycle()
         {
             Authorization = false;
             continuation = null;
-
-            //Exception = null;
-
         }
     }
 
@@ -96,7 +90,6 @@ namespace AirFramework
         [DebuggerHidden]
         private void SetResultMethod(T result)
         {
-
             if (Authorization)
             {
                 if (IsCompleted) throw new InvalidOperationException("AsyncTask dont allow SetResult repeatly.");
@@ -112,18 +105,8 @@ namespace AirFramework
         [DebuggerHidden]
         private void UnsafeSetResultMethod()
         {
-            if (IsCompleted) throw new InvalidOperationException("AsyncTask dont allow SetResult repeatly.");
-            if (Authorization)
-            {
-                //执行await以后的代码
-                continuation?.Invoke();
-            }
-            OnTaskCompleted?.Invoke(Result);
-            //回收到Pool
-            this.Dispose();
+            SetResult(this.Result);
         }
-        // [DebuggerHidden]
-        // public ExceptionDispatchInfo Exception { get; private set; }
         /// <summary>
         /// 当执行出现异常时状态机调用
         /// </summary>
@@ -131,7 +114,7 @@ namespace AirFramework
         [DebuggerHidden]
         public void SetException(Exception exception)
         {
-            SetResultMethod(default);
+            SetResultMethod(this.Result);
         }
     }
 
@@ -140,7 +123,7 @@ namespace AirFramework
     /// </summary>
     public partial class AsyncTask<T> : PoolableObject<AsyncTask<T>>, IAsyncTask<T>, IAuthorization, IAsyncTokenProperty
     {
-
+        #region
         [DebuggerHidden]
         public AsyncTask<T> GetAwaiter() => this;
 
@@ -149,7 +132,7 @@ namespace AirFramework
         {
             await this;
         }
-
+        #endregion
         #region OnCompleted
         public event Action<T> OnTaskCompleted = null;
         private Action continuation;
