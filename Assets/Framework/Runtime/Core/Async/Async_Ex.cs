@@ -28,11 +28,15 @@ namespace AirFramework
 
         public static async AsyncTask WaitForFrame(int count = 1)
         {
-
-            await Complete();
-            for (int i = 0; i < count; i++)
+            if(count <= 0)
             {
-                await Framework.Pool.Allocate<AsyncTaskUpdate>();
+                await Async.Complete();
+            }
+            else
+            {
+                var task = Framework.Pool.Allocate<AsyncTaskUpdate>();
+                task.FrameCount = count;
+                await task;
             }
         }
 

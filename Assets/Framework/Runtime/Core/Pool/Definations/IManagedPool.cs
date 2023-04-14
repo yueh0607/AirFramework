@@ -3,7 +3,7 @@
 
     public interface IManagedPool : IObjectPool
     {
-        public double RecycleTime
+        public float RecycleTime
         {
             get;
             set;

@@ -85,7 +85,6 @@ namespace AirFramework
         #region 核心行为
 
 
-        protected int AllocateCount = 0;
         /// <summary>
         /// 申请对象
         /// </summary>
@@ -98,7 +97,6 @@ namespace AirFramework
             else item = pool.Dequeue();
             //执行申请时行为委托
             onAllocate?.Invoke(item);
-            ++AllocateCount;
             return item;
         }
 

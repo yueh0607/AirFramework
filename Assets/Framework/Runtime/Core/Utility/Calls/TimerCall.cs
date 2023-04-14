@@ -31,23 +31,22 @@ namespace AirFramework
         public float Time { get; private set; } = 0;
 
         public event Action OnCompleted = null;
-        public float EndTime { get; private set; } = 1f;
+        public float Interval { get;  set; } = 60f;
 
 
 
         public void Reset()
         {
             State = TimerState.Idle;
-            EndTime = 1f;
+            Interval = 60f;
         }
         public void Pause()
         {
             State = TimerState.Paused;
         }
-        public void Start(float endTime, Action onCompleted = null, bool onceRecycle = false)
+        public void Start( bool onceRecycle = false)
         {
             OnceRecycle = onceRecycle;
-            OnCompleted += onCompleted;
             State = TimerState.Running;
         }
 
@@ -56,10 +55,10 @@ namespace AirFramework
 
             if (State != TimerState.Running) return;
             Time += deltaTime;
-            if (Time > EndTime)
+            if (Time > Interval)
             {
                 OnCompleted?.Invoke();
-
+                Time = 0;
                 if (OnceRecycle)
                 {
                     Dispose();
