@@ -48,12 +48,12 @@ namespace AirFramework
 
         }
 
-        
+
         public static implicit operator GameObject(Entity entity)
         {
             return entity.gameObject;
         }
-        
+
     }
 
     public abstract partial class Entity : PoolableObject<Entity>, IMessageReceiver

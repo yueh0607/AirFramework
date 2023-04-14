@@ -11,6 +11,6 @@ namespace AirFramework
 
     public interface IAuthorization
     {
-        bool Authorization { get; set; }
+        bool Authorization { get; internal set; }
     }
 }

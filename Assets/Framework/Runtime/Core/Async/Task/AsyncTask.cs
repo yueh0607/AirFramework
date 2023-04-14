@@ -19,35 +19,43 @@ namespace AirFramework
     [AsyncMethodBuilder(typeof(AsyncTaskMethodBuilder))]
     public partial class AsyncTask : PoolableObject<AsyncTask>, IAsyncTask, IAsyncTokenProperty
     {
-        [DebuggerHidden]
-        internal static ManagedPool<AsyncTask> AsyncTaskPool { get; } = Framework.Pool.CreateAutoBindablePool(() => new AsyncTask(), null);
+        //  [DebuggerHidden]
+        // internal static ManagedPool<AsyncTask> AsyncTaskPool { get; } = Framework.Pool.CreateAutoBindablePool(() => new AsyncTask(), null);
         [DebuggerHidden]
         public static AsyncTask Create(bool fromPool = false)
         {
             if (fromPool)
             {
-                return AsyncTaskPool.Allocate();
+                return Framework.Pool.Allocate<AsyncTask>();
             }
             return new AsyncTask();
+        }
+        public AsyncTask() 
+        {
+            Token = new(this, this);
         }
         [DebuggerHidden]
         public override void OnAllocate()
         {
+            Token.SetCurrent(this);
+            Token.SetRoot(this);
             IsCompleted = false;
+            Authorization = true;
+         
         }
         [DebuggerHidden]
         public override void OnRecycle()
         {
-            Token?.Dispose();
+            Authorization = false;
             continuation = null;
-            Token = null;
-            Exception = null;
+            //Exception = null;
         }
     }
 
 
     public partial class AsyncTask : PoolableObject<AsyncTask>, IAsyncTask, IAuthorization, IAsyncTokenProperty
     {
+        #region Method
         /// <summary>
         /// 获取等待器
         /// </summary>
@@ -63,6 +71,8 @@ namespace AirFramework
         {
             await this;
         }
+        #endregion
+
 
         #region Completed
 
@@ -93,13 +103,15 @@ namespace AirFramework
         /// <summary>
         /// 异步令牌，与AsyncToken作用相同
         /// </summary>
-        public AsyncTreeTokenNode Token { get; set; } = null;
+        AsyncTreeTokenNode IAsyncTokenProperty.Token { get => Token; set => Token = value; }
+        public AsyncTreeTokenNode Token { get; internal set; }
 
-        private bool authorization = true;
+
         /// <summary>
         /// 授权状态，代表当前任务是否被挂起，也决定了状态机是否能够继续前进
         /// </summary>
-        public bool Authorization { get => authorization; set => authorization = value; }
+        public bool Authorization { get; internal set; } = true;
+        bool IAuthorization.Authorization { get => Authorization; set => Authorization = value; }
         #endregion
 
     }
@@ -110,7 +122,6 @@ namespace AirFramework
     public partial class AsyncTask : PoolableObject<AsyncTask>, IAsyncTask, IAuthorization, IAsyncTokenProperty
     {
 
-
         /// <summary>
         /// 返回await结果，非必要禁止手动调用
         /// </summary>
@@ -118,10 +129,6 @@ namespace AirFramework
         public void GetResult()
         {
         }
-
-        public AsyncTask()
-        {
-        } 
 
         private Action setResult = null;
         /// <summary>
@@ -142,22 +149,23 @@ namespace AirFramework
         [DebuggerHidden]
         private void SetResultMethod()
         {
-            if (IsCompleted) throw new InvalidOperationException("AsyncTask dont allow SetResult repeatly.");
-            IsCompleted = true;
+           
+          
             if (Authorization)
             {
+                if (IsCompleted) throw new InvalidOperationException("AsyncTask dont allow SetResult repeatly.");
                 //执行await以后的代码
                 continuation?.Invoke();
             }
+            IsCompleted = true;
             OnTaskCompleted?.Invoke();
             //回收到Pool
             this.Dispose();
-
         }
 
-       
-        [DebuggerHidden]
-        public ExceptionDispatchInfo Exception { get; private set; }
+
+      //  [DebuggerHidden]
+      //  public ExceptionDispatchInfo Exception { get; private set; }
         /// <summary>
         /// 为当前任务设置异常，一种情况为手动调用设置，另一种为异步过程出现异常,取消也是异常
         /// </summary>

@@ -14,7 +14,7 @@ namespace AirFramework
     /// 管理可以自动管理的对象
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class ManagedPool<T> : GenericPool<T>,IManagedPool where T : class, IPoolable
+    public class ManagedPool<T> : GenericPool<T>, IManagedPool where T : class, IPoolable
     {
 
         #region 管理逻辑
@@ -85,7 +85,7 @@ namespace AirFramework
         protected async void OnCycleRecycle()
         {
             //空池销毁
-            if (IsDeposit&&Count == 0)
+            if (IsDeposit && Count == 0)
             {
                 Framework.Pool.UnsafeReleasePool<T>();
                 return;

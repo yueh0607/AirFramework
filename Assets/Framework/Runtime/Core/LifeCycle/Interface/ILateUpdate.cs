@@ -1,6 +1,6 @@
 ﻿namespace AirFramework
 {
-    public interface ILateUpdate : IGenericMessage
+    public interface ILateUpdate : IGenericMessage,IMessageReceiver
     {
         void LateUpdate();
     }

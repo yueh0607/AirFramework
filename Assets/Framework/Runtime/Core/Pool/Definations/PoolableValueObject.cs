@@ -19,7 +19,7 @@ namespace AirFramework
         /// 模板对象的真实值
         /// </summary>
         public T Value { get; private set; } = new();
-        
+
 
 
     }

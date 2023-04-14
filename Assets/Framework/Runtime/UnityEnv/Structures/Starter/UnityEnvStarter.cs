@@ -27,18 +27,18 @@ namespace AirFramework
 
         private void LateUpdate()
         {
-            Framework.LifeCycle.Publish<ILateUpdate>();
+            Framework.Message.Operator<ILateUpdate>().Publish();
         }
         private void FixedUpdate()
         {
-            Framework.LifeCycle.Publish<IFixedUpdate>();
+            Framework.Message.Operator<IFixedUpdate>().Publish(Time.fixedDeltaTime);
         }
 
         private void Update()
         {
 #if UNITY_EDITOR
             UnityEngine.Profiling.Profiler.BeginSample("AirFranework.Update");
-            Framework.LifeCycle.Publish<IUpdate>();
+            Framework.Message.Operator<IUpdate>().Publish(Time.deltaTime);
             UnityEngine.Profiling.Profiler.EndSample();
 #endif
 

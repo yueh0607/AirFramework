@@ -24,41 +24,49 @@ namespace AirFramework
         //结束
         Completed
     }
-    public class AsyncToken : PoolableObject<AsyncToken>
+    public sealed class AsyncToken : PoolableObject<AsyncToken>
     {
-        internal AsyncTreeTokenNode node = null;
+        //internal static T BindToken<T>(T task, AsyncTreeTokenNode token) where T : IAsyncTokenProperty
+        //{
+        //    task.Token?.Dispose();
+        //    task.Token = token;
+        //    token.Current = task;
+        //    token.Root = task;
+        //    return task;
+        //}
+
+        internal AsyncTreeTokenNode node;
 
         public AsyncStatus Status { get; private set; } = AsyncStatus.Pending;
 
-        public ulong TokenID => node.ID;
-
+        //private AsyncToken() { }
         public void Yield()
         {
-            if (Status == AsyncStatus.Completed || node == null) throw new InvalidOperationException();
+            if (Status == AsyncStatus.Completed) throw new InvalidOperationException();
             Status = AsyncStatus.Yield;
             node.Yield();
         }
         public void Continue()
         {
-            if (Status == AsyncStatus.Completed || node == null) throw new InvalidOperationException();
+            if (Status == AsyncStatus.Completed) throw new InvalidOperationException();
             Status = AsyncStatus.Pending;
             node.Continue();
         }
         public void Cancel()
         {
-            if (Status == AsyncStatus.Completed || node == null) throw new InvalidOperationException();
+            if (Status == AsyncStatus.Completed) throw new InvalidOperationException();
             Status = AsyncStatus.Completed;
             node.Cancel();
         }
 
         public override void OnAllocate()
         {
-            node = null;
+           
         }
 
         public override void OnRecycle()
         {
-
+           
         }
     }
 }

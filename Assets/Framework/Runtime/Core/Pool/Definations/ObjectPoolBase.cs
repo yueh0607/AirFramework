@@ -5,7 +5,6 @@
  * 建立通用的池模板，要求所有存储引用类型的对象池都自此模板派生
  */
 using System;
-using Timer = System.Timers.Timer;
 
 namespace AirFramework
 {
@@ -17,7 +16,7 @@ namespace AirFramework
         /// <summary>
         /// 是否托管
         /// </summary>
-        public bool IsDeposit { get;  internal set; } = false;
+        public bool IsDeposit { get; internal set; } = false;
 
         // 实现 IObjectPool 接口中定义的 IsDeposit 属性
         bool IPool.IsDeposit
@@ -71,7 +70,7 @@ namespace AirFramework
         /// <param name="count"></param>
         /// <param name="frame"></param>
         /// <returns></returns>
-        public abstract AsyncTask UnloadAsync(int count,int frame=1);
-        
+        public abstract AsyncTask UnloadAsync(int count, int frame = 1);
+
     }
 }

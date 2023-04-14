@@ -2,7 +2,7 @@
  * Author : YueZhenpeng
  * Date : 2023.2.25
  * Description : 
- * 跳过一帧的任务
+ * 
  */
 
 
@@ -13,25 +13,24 @@ using System.Runtime.CompilerServices;
 namespace AirFramework
 {
 
-    [AsyncMethodBuilder(typeof(AsyncTaskCompletedMethodBuilder))]
-    public class AsyncTaskCompleted : PoolableObject<AsyncTaskCompleted>, ICriticalNotifyCompletion, IAsyncTokenProperty
+    //[AsyncMethodBuilder(typeof(AsyncTaskMethodBuilder))]
+    public class AsyncTaskTimer : PoolableObject<AsyncTaskTimer>, ICriticalNotifyCompletion, IAsyncTokenProperty, IUpdate
     {
-        public static AsyncTaskCompleted Create() => Framework.Pool.Allocate<AsyncTaskCompleted>();
+        public static void Create() => Framework.Pool.Allocate<AsyncTaskTimer>();
 
         [DebuggerHidden]
-        public AsyncTaskCompleted GetAwaiter() => this;
-
+        public AsyncTaskTimer GetAwaiter() => this;
 
         [DebuggerHidden]
-        public bool IsCompleted { get; set; } = true;
+        public bool IsCompleted { get; set; } = false;
+        private Action continuation = null;
+
 
         AsyncTreeTokenNode IAsyncTokenProperty.Token { get => Token; set => Token = value; }
         public AsyncTreeTokenNode Token { get; internal set; }
 
         public bool Authorization { get; internal set; } = true;
         bool IAuthorization.Authorization { get => Authorization; set => Authorization = value; }
-
-        public AsyncTaskCompleted() => Token = new(this, this);
 
         [DebuggerHidden]
         public void GetResult()
@@ -45,41 +44,56 @@ namespace AirFramework
             UnsafeOnCompleted(continuation);
         }
 
-
-        private Action continuation;
         [DebuggerHidden]
         public void UnsafeOnCompleted(Action continuation)
         {
             this.continuation = continuation;
-            SetResult();
         }
 
         private void SetResult()
         {
-     
             if (Authorization)
             {
-                
+                //执行await以后的代码
                 continuation?.Invoke();
             }
-            Dispose();
+            //回收到Pool
+            this.Dispose();
         }
+
+        public AsyncTaskTimer() => Token = new(this, this);
         public override void OnAllocate()
         {
-            Token.SetRoot(this);
             Token.SetCurrent(this);
-            Authorization= true;
-           
+            Token.SetRoot(this);
+            currentTime = 0;
+            EndTime = 1000f; 
+            Authorization = true;
+          
         }
         [DebuggerHidden]
         public override void OnRecycle()
         {
-            Authorization = false;
-    
+            Authorization= false;
         }
         public void SetException(Exception exception)
         {
             SetResult();
+        }
+
+
+        public float EndTime { get; set; } = 1000f;
+        private float currentTime = 0f;
+        void IUpdate.Update(float deltaTime)
+        {
+            if(Authorization)
+            {
+                currentTime += deltaTime;
+                if(currentTime >= EndTime)
+                {
+                    SetResult();
+                }
+            }
         }
     }
 }

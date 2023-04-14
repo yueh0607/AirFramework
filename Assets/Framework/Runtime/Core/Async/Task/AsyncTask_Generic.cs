@@ -18,30 +18,35 @@ namespace AirFramework
     [AsyncMethodBuilder(typeof(AsyncTaskMethodBuilder<>))]
     public partial class AsyncTask<T> : PoolableObject<AsyncTask<T>>, IAsyncTask<T>, IAuthorization, IAsyncTokenProperty
     {
-        [DebuggerHidden]
-        internal static ManagedPool<AsyncTask<T>> AsyncTaskPool { get; } = Framework.Pool.CreateAutoBindablePool(() => new AsyncTask<T>(), null);
+        // [DebuggerHidden]
+        // internal static ManagedPool<AsyncTask<T>> AsyncTaskPool { get; } = Framework.Pool.CreateAutoBindablePool(() => new AsyncTask<T>(), null);
         [DebuggerHidden]
         public static AsyncTask<T> Create(bool fromPool = false)
         {
             if (fromPool)
             {
-                return AsyncTaskPool.Allocate();
+                return Framework.Pool.Allocate<AsyncTask<T>>();
             }
             return new AsyncTask<T>();
         }
+        public AsyncTask() => Token = new(this, this);
+
         [DebuggerHidden]
         public override void OnAllocate()
         {
+            Token.SetCurrent(this);
+            Token.SetRoot(this);
             IsCompleted = false;
+            Authorization = true;
+            
         }
         [DebuggerHidden]
         public override void OnRecycle()
         {
-            //Token?.Unregister(this);
-            Token.Dispose();
+            Authorization = false;
             continuation = null;
-            Token = null;
-            Exception = null;
+
+            //Exception = null;
 
         }
     }
@@ -57,12 +62,6 @@ namespace AirFramework
         /// </summary>
         [DebuggerHidden]
         public T GetResult() => Result;
-
-        public AsyncTask()
-        {
-
-        }
-
 
         private Action<T> setResult = null;
         /// <summary>
@@ -98,15 +97,15 @@ namespace AirFramework
         [DebuggerHidden]
         private void SetResultMethod(T result)
         {
-            if (IsCompleted) throw new InvalidOperationException("AsyncTask dont allow SetResult repeatly.");
+           
             if (Authorization)
             {
+                if (IsCompleted) throw new InvalidOperationException("AsyncTask dont allow SetResult repeatly.");
                 this.Result = result;
                 //执行await以后的代码
                 continuation?.Invoke();
-
-
             }
+            IsCompleted= true;
             OnTaskCompleted?.Invoke(result);
             //回收到Pool
             this.Dispose();
@@ -124,8 +123,8 @@ namespace AirFramework
             //回收到Pool
             this.Dispose();
         }
-        [DebuggerHidden]
-        public ExceptionDispatchInfo Exception { get; private set; }
+       // [DebuggerHidden]
+       // public ExceptionDispatchInfo Exception { get; private set; }
         /// <summary>
         /// 当执行出现异常时状态机调用
         /// </summary>
@@ -145,6 +144,12 @@ namespace AirFramework
 
         [DebuggerHidden]
         public AsyncTask<T> GetAwaiter() => this;
+
+        [DebuggerHidden]
+        public async void Coroutine()
+        {
+            await this;
+        }
 
         #region OnCompleted
         public event Action<T> OnTaskCompleted = null;
@@ -166,24 +171,17 @@ namespace AirFramework
         #endregion
 
         #region Token
-        /// <summary>
-        /// 异步令牌，与AsyncToken作用相同
-        /// </summary>
-        public AsyncTreeTokenNode Token { get; set; } = null;
+        AsyncTreeTokenNode IAsyncTokenProperty.Token { get => Token; set => Token = value; }
+        public AsyncTreeTokenNode Token { get; internal set; }
 
-        private bool authorization = true;
         /// <summary>
         /// 授权状态：代表当前任务是否挂起与任务链能否继续
         /// </summary>
-        public bool Authorization { get => authorization; set => authorization = value; }
+        public bool Authorization { get; internal set; } = true;
 
+        bool IAuthorization.Authorization { get => Authorization; set => Authorization = value; }
         #endregion
 
-        [DebuggerHidden]
-        public async void Coroutine()
-        {
-            await this;
-        }
 
 
     }

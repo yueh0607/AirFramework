@@ -19,14 +19,14 @@ namespace AirFramework
         public void OnAddItemLifeCycle(T item)
         {
             //注册生命周期
-            if (item is ILifeCycle) Framework.LifeCycle.AnalyseAddAll(item);
+            if (item is IMessageReceiver) Framework.LifeCycle.AnalyseAddAll(item);
         }
 
 
         public void OnRemoveItemLifeCycle(T item)
         {
             //移除生命周期
-            if (item is ILifeCycle) Framework.LifeCycle.AnalyseRemoveAll(item);
+            if (item is IMessageReceiver) Framework.LifeCycle.AnalyseRemoveAll(item);
         }
 
         public LifeCyclePool(Func<T> onCreate = null, Action<T> onDestroy = null) : base(onCreate, onDestroy)

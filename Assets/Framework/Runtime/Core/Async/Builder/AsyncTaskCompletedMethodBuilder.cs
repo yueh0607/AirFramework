@@ -19,13 +19,17 @@ namespace AirFramework
         [DebuggerHidden]
         public static AsyncTaskCompletedMethodBuilder Create()
         {
-            return new AsyncTaskCompletedMethodBuilder();
+            return new AsyncTaskCompletedMethodBuilder(AsyncTaskCompleted.Create());
+        }
+        public AsyncTaskCompletedMethodBuilder(AsyncTaskCompleted task)
+        {
+            this.task = task;
         }
 
-#pragma warning disable CS0649 // 从未对字段“AsyncTaskCompletedMethodBuilder.task”赋值，字段将一直保持其默认值 null
+
         private AsyncTaskCompleted task;
-#pragma warning restore CS0649 // 从未对字段“AsyncTaskCompletedMethodBuilder.task”赋值，字段将一直保持其默认值 null
-        //2.Task-LikeW
+
+        //2.Current-Like
         public AsyncTaskCompleted Task => task;
 
         // 3. SetException
@@ -44,11 +48,7 @@ namespace AirFramework
         [DebuggerHidden]
         public void AwaitOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) where TAwaiter : INotifyCompletion where TStateMachine : IAsyncStateMachine
         {
-            if (task.Token is not null)
-            {
-                task.Token.Task = awaiter as IAsyncTokenProperty;
-                //$"源任务ID：{task.ID}  源任务令牌ID:{task.Token.ID} 令牌任务当前ID:{task.Token.Task.ID }  授权信息:{task.Token.Task.Authorization}".L();
-            }
+            task.Token.SetCurrent(awaiter as IAsyncTokenProperty);
             awaiter.OnCompleted(stateMachine.MoveNext);
         }
 
@@ -57,11 +57,7 @@ namespace AirFramework
         [SecuritySafeCritical]
         public void AwaitUnsafeOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) where TAwaiter : ICriticalNotifyCompletion where TStateMachine : IAsyncStateMachine
         {
-            if (task.Token is not null)
-            {
-                task.Token.Task = awaiter as IAsyncTokenProperty;
-                //$"源任务ID：{task.ID}  源任务令牌ID:{task.Token.ID} 令牌任务当前ID:{task.Token.Task.ID }  授权信息:{task.Token.Task.Authorization}".L();
-            }
+            task.Token.SetCurrent(awaiter as IAsyncTokenProperty);
             awaiter.UnsafeOnCompleted(stateMachine.MoveNext);
         }
 

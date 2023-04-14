@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 
 namespace AirFramework
 {
@@ -25,42 +24,43 @@ namespace AirFramework
     public sealed class TimerCall : PoolableObject<TimerCall>, IUpdate
     {
 
-       
+
         private bool OnceRecycle { get; set; } = false;
 
         public TimerState State { get; private set; } = TimerState.Idle;
         public float Time { get; private set; } = 0;
 
-        public event Action OnCompleted=null;
+        public event Action OnCompleted = null;
         public float EndTime { get; private set; } = 1f;
 
 
-        
+
         public void Reset()
         {
-            State= TimerState.Idle;
+            State = TimerState.Idle;
             EndTime = 1f;
         }
         public void Pause()
         {
-            State= TimerState.Paused;
+            State = TimerState.Paused;
         }
-        public void Start(float endTime,Action onCompleted=null,bool onceRecycle = false)
+        public void Start(float endTime, Action onCompleted = null, bool onceRecycle = false)
         {
-            OnceRecycle= onceRecycle;
-            OnCompleted+=onCompleted;
-            State= TimerState.Running;
+            OnceRecycle = onceRecycle;
+            OnCompleted += onCompleted;
+            State = TimerState.Running;
         }
 
         void IUpdate.Update(float deltaTime)
         {
+
             if (State != TimerState.Running) return;
-            Time+=deltaTime;
-            if(Time>EndTime)
+            Time += deltaTime;
+            if (Time > EndTime)
             {
                 OnCompleted?.Invoke();
 
-                if(OnceRecycle)
+                if (OnceRecycle)
                 {
                     Dispose();
                 }

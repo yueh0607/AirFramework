@@ -108,9 +108,9 @@ namespace AirFramework
         /// <param name="item"></param>
         public override void RecycleObj(object item)
         {
-            //如果不属于该池，则不回收
+            //如果不属于该池，则不回收,需要抛出异常，以防灾难性后果
             T it = item as T;
-            if (it == null) return;
+            if (it == null) throw new ArgumentException("Error Recycle Operation:Not matched Type");
             //执行回收委托
             onRecycle?.Invoke(it);
             //入池
@@ -185,6 +185,6 @@ namespace AirFramework
         }
         #endregion
 
-       
+
     }
 }

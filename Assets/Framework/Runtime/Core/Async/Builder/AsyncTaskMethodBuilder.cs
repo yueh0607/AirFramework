@@ -23,18 +23,10 @@ namespace AirFramework
 
         public AsyncTaskMethodBuilder(AsyncTask task)
         {
-            this.task = InitToken(task, Framework.Pool.Allocate<AsyncTreeTokenNode>());
-        }
-        private static AsyncTask InitToken(AsyncTask task, AsyncTreeTokenNode token)
-        {
-            task.Token?.Dispose();
-            task.Token = token;
-            token.Task = task;
-            token.RootTask = task;
-            return task;
+            this.task = task;
         }
 
-        // 2. TaskLike Task
+        // 2. TaskLike Current
         [DebuggerHidden]
         public AsyncTask Task => task;
 
@@ -64,11 +56,8 @@ namespace AirFramework
         public void AwaitOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine)
             where TAwaiter : INotifyCompletion where TStateMachine : IAsyncStateMachine
         {
+            task.Token.SetCurrent(awaiter as IAsyncTokenProperty);
 
-            if (task.Token is not null)
-            {
-                task.Token.Task = awaiter as IAsyncTokenProperty;
-            }
             awaiter.OnCompleted(stateMachine.MoveNext);
 
         }
@@ -78,11 +67,12 @@ namespace AirFramework
         public void AwaitUnsafeOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine)
             where TAwaiter : ICriticalNotifyCompletion where TStateMachine : IAsyncStateMachine
         {
-            if (task.Token is not null)
-            {
-                task.Token.Task = awaiter as IAsyncTokenProperty;
-                //$"源任务ID：{task.ID}  源任务令牌ID:{task.Token.ID} 令牌任务当前ID:{task.Token.Task.ID }  授权信息:{task.Token.Task.Authorization}".L();
-            }
+
+            task.Token.SetCurrent(awaiter as IAsyncTokenProperty);
+            //if (task.Token.Current == null) "ERROR".E();
+            // $"切换到{((Unit)task.Token.Current).ID}".L();
+            //$"builder任务ID：{task.ID}  builder令牌ID:{task.Token.ID} buiilder当前任务ID:{((Unit)(task.Token.Current)).ID }  授权:{task.Token.Current.Authorization}".L();
+
             awaiter.OnCompleted(stateMachine.MoveNext);
         }
 

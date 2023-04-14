@@ -9,62 +9,74 @@ using System;
 
 namespace AirFramework
 {
-
-    public class AsyncTreeTokenNode : PoolableObject<AsyncTreeTokenNode>
+    public class AsyncTokenCancelException:System.Exception {}
+    public class AsyncTreeTokenNode 
     {
 
+        //当前MethodBuilder执行的任务
+        public IAsyncTokenProperty Current;
 
-        public IAsyncTokenProperty Task { get; set; }
-        public IAsyncTokenProperty RootTask { get; set; }
+
+        //MethodBuilder代表的任务
+        public IAsyncTokenProperty Root;
+        public AsyncTreeTokenNode (IAsyncTokenProperty Root, IAsyncTokenProperty Current)
+        {
+            this.Current = Current;
+            this.Root = Root;
+        }
+
+
+        internal void SetCurrent(IAsyncTokenProperty current)
+        {
+            this.Current = current;
+        }
+        internal void SetRoot(IAsyncTokenProperty root)
+        {
+            this.Root = root;
+        }
 
         public void Yield()
         {
-            if (Task.Token == null || Task.Token == this)
+            //非Builder任务则空
+            if (Current ==Root)
             {
-                Task.Authorization = false;
+                Current.Authorization = false;
+               // UnityEngine.Debug.Log($"{((Unit)Current).ID}-SetFalse,TaskToken:{Current.Token.ID}");
             }
-            else if (Task.Token != this)
+            else
             {
-                this.Task.Token?.Yield();
+                this.Current.Token.Yield();
             }
         }
         public void Continue()
         {
-            if (Task.Token == null || Task.Token == this)
+            if ( Current == Root)
             {
-                Task.Authorization = true;
+
+                Current.Authorization = true;
             }
-            else if (Task.Token != this)
+            else
             {
-                this.Task.Token?.Yield();
+                this.Current.Token.Yield();
             }
 
         }
         public void Cancel()
         {
-            Yield();
-            if (Task.Token == null || Task.Token == this)
+            
+            if (Current == Root)
             {
-                Task?.SetException(new Exception("Cancel"));
-                RootTask.SetException(new Exception("Cancel"));
+                Current.Authorization = false;
+                Current?.SetException(new AsyncTokenCancelException());
+                //Root.SetException(new AsyncTokenCancelException());
             }
-            else if (Task.Token != this)
+            else
             {
-                this.Task.Token?.Cancel();
+                this.Current.Token.Yield();
+                this.Current.Token.Cancel();
             }
 
 
-        }
-
-
-        public override void OnAllocate()
-        {
-        }
-
-        public override void OnRecycle()
-        {
-            Task = null;
-            RootTask = null;
         }
     }
 

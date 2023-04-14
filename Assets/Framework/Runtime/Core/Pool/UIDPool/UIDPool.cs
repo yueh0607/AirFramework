@@ -14,8 +14,8 @@
         }
 
 
-        public bool IsDeposit { get;  } = false;
-        bool IPool.IsDeposit { get => IsDeposit; set => _= value; }
+        public bool IsDeposit { get; } = false;
+        bool IPool.IsDeposit { get => IsDeposit; set => _ = value; }
 
         public ulong Allocate() => generator.Allocate();
 

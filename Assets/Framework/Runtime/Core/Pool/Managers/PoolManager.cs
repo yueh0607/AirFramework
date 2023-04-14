@@ -48,7 +48,7 @@ namespace AirFramework
                 pools.Add(type, pool);
                 pools[type].RecycleTime = DefaultRecycleCycleTime;
                 pools[type].RecoveryRatio = DefaultRecycleRatio;
-                pool.IsDeposit= true;
+                pool.IsDeposit = true;
             }
             return pools[typeof(T)] as IGenericPool<T>;
         }
@@ -63,7 +63,7 @@ namespace AirFramework
                 pools.Add(type, pool);
                 pools[type].RecycleTime = DefaultRecycleCycleTime;
                 pools[type].RecoveryRatio = DefaultRecycleRatio;
-                pool.IsDeposit= true;
+                pool.IsDeposit = true;
             }
             return pools[type];
         }
@@ -148,7 +148,7 @@ namespace AirFramework
         public void ForeachPools(Action<IManagedPool> action)
         {
             if (action == null) return;
-            foreach(var x in pools)
+            foreach (var x in pools)
             {
                 action(x.Value);
             }

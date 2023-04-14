@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-namespace AirFramework
+﻿namespace AirFramework
 {
     public partial class GenericPool<T> : ObjectPoolBase, IGenericPool<T> where T : class
     {
@@ -23,6 +21,6 @@ namespace AirFramework
         public virtual void Recycle(T item) => RecycleObj(item);
         #endregion
 
-        
+
     }
 }

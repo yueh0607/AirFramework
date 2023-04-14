@@ -60,7 +60,7 @@ namespace AirFramework
         public static void Unload<T>() => Unload(typeof(T));
         public static void UnloadAll()
         {
-            foreach(var x in bucket)
+            foreach (var x in bucket)
             {
                 x.CloseLifeCycle();
             }

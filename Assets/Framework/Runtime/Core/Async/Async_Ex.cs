@@ -14,24 +14,22 @@ namespace AirFramework
     public static partial class Async
     {
         /// <summary>
-        /// 延迟指定秒数,如果不使用endAction则不产生GC Alloc
+        /// 延迟指定秒数
         /// </summary>
         /// <param name="seconds"></param>
         /// <returns></returns>
-        public static AsyncTask Delay(float seconds, Action endAction = null)
+        public static AsyncTaskTimer Delay(float seconds)
         {
-            var task = AsyncTask.Create(true);
-            var timer = Framework.Pool.Allocate<AsyncTimerCall>();
-            timer.OnCompleted += task.SetResult;
-            timer.OnCompleted += endAction;
-            task.OnTaskCompleted += timer.DisposeAction;
-            timer.Start(seconds, task);
-            return task;
+           var timer= Framework.Pool.Allocate<AsyncTaskTimer>();   
+            timer.EndTime = seconds;
+            return timer;
         }
 
 
-        public static async AsyncTaskUpdate WaitForFrame(int count = 1)
+        public static async AsyncTask WaitForFrame(int count = 1)
         {
+           
+            await Complete();
             for (int i = 0; i < count; i++)
             {
                 await Framework.Pool.Allocate<AsyncTaskUpdate>();
@@ -46,7 +44,6 @@ namespace AirFramework
         public static AsyncTaskCompleted Complete(Action action = null)
         {
             action?.Invoke();
-
             return Framework.Pool.Allocate<AsyncTaskCompleted>();
         }
 
@@ -270,11 +267,12 @@ namespace AirFramework
         /// <param name="task"></param>
         /// <param name="token"></param>
         /// <returns></returns>
-        public static AsyncTask WithToken(this AsyncTask task, AsyncToken token)
+        public static void WithToken(this AsyncTask task,out AsyncToken token)
         {
-            token.node = task.Token;
+            var tok = Framework.Pool.Allocate<AsyncToken>();
+            tok.node = task.Token;
             //$"IDDDDD:{token.node.ID}".L();
-            return task;
+            token = tok;
         }
 
 

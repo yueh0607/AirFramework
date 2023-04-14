@@ -1,15 +1,11 @@
-﻿
-
-using UnityEngine;
-
-namespace AirFramework
+﻿namespace AirFramework
 {
 
     public class LateUpdateHandler : LifeCycleHandler<ILateUpdate>
     {
         public override void OnLifeCycleRegister(ILateUpdate item)
         {
-           
+
             Framework.Message.Operator<ILateUpdate>().Subscribe(item.LateUpdate);
         }
 

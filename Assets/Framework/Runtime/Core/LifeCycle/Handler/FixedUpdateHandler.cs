@@ -14,4 +14,4 @@ namespace AirFramework
             Framework.Message.Operator<IFixedUpdate>().UnSubscribe(item.FixedUpdate);
         }
     }
-} 
+}

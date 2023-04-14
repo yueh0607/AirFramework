@@ -19,7 +19,7 @@ namespace AirFramework
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        [DebuggerHidden,MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T DefaultNewCreate<T>() where T : new()
         {
             return new T();
