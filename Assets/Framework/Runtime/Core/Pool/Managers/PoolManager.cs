@@ -14,7 +14,6 @@
 
 using System;
 using System.Collections.Generic;
-
 namespace AirFramework
 {
     public partial class PoolManager : GlobalManager
@@ -59,7 +58,7 @@ namespace AirFramework
             {
                 //Pool
                 Type tp = typeof(LifeCyclePool<>).MakeGenericType(type);
-                var pool = (IManagedPool)Activator.CreateInstance(tp, FuncCreator.GetFunc(type), null, null, null);
+                var pool = (IManagedPool)Activator.CreateInstance(tp, Prefix_FuncCreator.GetFunc(type), null, null, null);
                 pools.Add(type, pool);
                 pools[type].RecycleTime = DefaultRecycleCycleTime;
                 pools[type].RecoveryRatio = DefaultRecycleRatio;

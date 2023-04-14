@@ -1,5 +1,4 @@
 using System;
-
 namespace AirFramework
 {
     public static class SingletonProperty<T> where T : class

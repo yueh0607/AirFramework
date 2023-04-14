@@ -6,10 +6,10 @@
  */
 
 
+using AirFramework.Internal;
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-
 namespace AirFramework
 {
     /// <summary>

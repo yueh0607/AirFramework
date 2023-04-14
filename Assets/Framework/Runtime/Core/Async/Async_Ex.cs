@@ -8,7 +8,6 @@
 
 using System;
 using System.Collections.Generic;
-
 namespace AirFramework
 {
     public static partial class Async
@@ -28,7 +27,7 @@ namespace AirFramework
 
         public static async AsyncTask WaitForFrame(int count = 1)
         {
-            if(count <= 0)
+            if (count <= 0)
             {
                 await Async.Complete();
             }

@@ -2,7 +2,6 @@ using AirFramework;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-
 namespace AirFrameworkEditor
 {
     public static class PanelAnalyser

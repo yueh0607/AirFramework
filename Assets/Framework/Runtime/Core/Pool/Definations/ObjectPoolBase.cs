@@ -5,7 +5,6 @@
  * 建立通用的池模板，要求所有存储引用类型的对象池都自此模板派生
  */
 using System;
-
 namespace AirFramework
 {
     /// <summary>

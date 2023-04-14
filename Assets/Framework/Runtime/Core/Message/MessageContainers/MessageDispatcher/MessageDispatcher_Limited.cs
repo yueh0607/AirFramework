@@ -4,8 +4,8 @@
  * Description : 派发器方法定义，实现一些受限访问的方法
  ********************************************************************************************/
 
+using AirFramework.Internal;
 using System;
-
 namespace AirFramework
 {
     public partial class MessageDispatcher : Unit

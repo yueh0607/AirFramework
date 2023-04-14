@@ -1,5 +1,4 @@
 ﻿using System.Text;
-
 namespace AirFramework
 {
     public class UnitStringBuilder : PoolableValueObject<StringBuilder>

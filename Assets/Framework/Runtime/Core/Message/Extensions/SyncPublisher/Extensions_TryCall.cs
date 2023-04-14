@@ -1,5 +1,5 @@
-﻿using System;
-
+﻿using AirFramework.Internal;
+using System;
 namespace AirFramework
 {
     public static partial class MessageExtensions

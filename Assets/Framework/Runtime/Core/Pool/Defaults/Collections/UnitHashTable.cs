@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-
 namespace AirFramework
 {
     public class UnitHashtable : PoolableValueObject<Hashtable>

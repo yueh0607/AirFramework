@@ -4,8 +4,8 @@
  * Description : 派发器盒子，用来实现协变转换和unsafe转换的容器
  ********************************************************************************************/
 
+using AirFramework.Internal;
 using System.Runtime.InteropServices;
-
 namespace AirFramework
 {
     [StructLayout(LayoutKind.Sequential)]

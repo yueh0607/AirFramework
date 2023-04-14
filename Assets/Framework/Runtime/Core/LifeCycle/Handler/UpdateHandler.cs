@@ -1,6 +1,4 @@
-﻿
-
-namespace AirFramework
+﻿namespace AirFramework
 {
     public class UpdateHandler : LifeCycleHandler<IUpdate>
     {

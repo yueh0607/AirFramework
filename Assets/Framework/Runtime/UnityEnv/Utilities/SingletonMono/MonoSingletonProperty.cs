@@ -1,5 +1,4 @@
 using UnityEngine;
-
 namespace AirFramework
 {
     public static class MonoSingletonProperty<T> where T : MonoBehaviour

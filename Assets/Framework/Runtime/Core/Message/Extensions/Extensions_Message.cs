@@ -1,4 +1,5 @@
-﻿namespace AirFramework
+﻿using AirFramework.Internal;
+namespace AirFramework
 {
     public static partial class MessageExtensions_Operator_Dispatcher
     {

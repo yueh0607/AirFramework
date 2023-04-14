@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-
 namespace AirFramework
 {
     public sealed class CounterCall : PoolableObject<CounterCall>

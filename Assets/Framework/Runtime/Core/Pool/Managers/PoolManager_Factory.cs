@@ -7,7 +7,6 @@
  */
 
 using System;
-
 namespace AirFramework
 {
     public partial class PoolManager : GlobalManager

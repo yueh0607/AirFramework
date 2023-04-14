@@ -1,5 +1,0 @@
-<linker>
-	<assembly fullname="AirFramework.Core">
-		<type fullname="AirFramework.FuncCreator" preserve="all"/>
-	</assembly>
-</linker>

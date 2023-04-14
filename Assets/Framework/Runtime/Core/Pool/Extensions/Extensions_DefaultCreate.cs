@@ -9,7 +9,6 @@
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-
 namespace AirFramework
 {
     public static partial class Pool

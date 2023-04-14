@@ -5,7 +5,6 @@
  * 实现该接口以获取有效授权
  */
 
-
 namespace AirFramework
 {
 

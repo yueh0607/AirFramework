@@ -4,6 +4,7 @@
  * Description : 派发器协变接，为实现泛型约束
  ********************************************************************************************/
 
+using AirFramework.Internal;
 namespace AirFramework
 {
 

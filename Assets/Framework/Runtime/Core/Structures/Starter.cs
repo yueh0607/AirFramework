@@ -1,23 +1,14 @@
 using UnityEngine;
-
-
 namespace AirFramework
 {
-    public class UnityEnvStarter : MonoSingleton<UnityEnvStarter>
+    public static class Starter
     {
-
-
-
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
-        private static void AfterLoadSceneInitialize()
+        public static void AfterLoadSceneInitialize()
         {
-            InitializeAfterSceneLoad();
             GameBucket.TryCreateByReflection();
         }
 
-
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-        static void BeforeLoadSceneInitialize()
+        public static void BeforeLoadSceneInitialize()
         {
             Framework.LifeCycle.AddLifeCycle<IUpdate, UpdateHandler>();
             Framework.LifeCycle.AddLifeCycle<ILateUpdate, LateUpdateHandler>();
@@ -25,23 +16,18 @@ namespace AirFramework
         }
 
 
-        private void LateUpdate()
+        public static void LateUpdate()
         {
             Framework.Message.Operator<ILateUpdate>().Publish();
         }
-        private void FixedUpdate()
+        public static void FixedUpdate()
         {
             Framework.Message.Operator<IFixedUpdate>().Publish(Time.fixedDeltaTime);
         }
 
-        private void Update()
+        public static void Update()
         {
-#if UNITY_EDITOR
-            UnityEngine.Profiling.Profiler.BeginSample("AirFranework.Update");
             Framework.Message.Operator<IUpdate>().Publish(Time.deltaTime);
-            UnityEngine.Profiling.Profiler.EndSample();
-#endif
-
         }
     }
 }

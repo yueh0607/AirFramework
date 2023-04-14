@@ -1,5 +1,4 @@
 ﻿using System;
-
 namespace AirFramework
 {
     public sealed class UpdateCall : PoolableObject<CounterCall>, IUpdate

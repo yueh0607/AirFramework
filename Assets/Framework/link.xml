@@ -1,0 +1,8 @@
+<linker>
+	<assembly fullname="AirFramework.Runtime">
+		<type fullname="Prefix*" preserve="all"/>
+	</assembly>
+	<assembly fullname="Assembly-CSharp">
+		<type fullname="Prefix*" preserve="all"/>
+	</assembly>
+</linker>

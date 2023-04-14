@@ -6,7 +6,6 @@
  * 实现不同的行为接口允许进行一些拓展，能省去调用管理器API的繁琐
  */
 
-
 namespace AirFramework
 {
     public static partial class Pool

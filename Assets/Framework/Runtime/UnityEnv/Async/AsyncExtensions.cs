@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.ResourceManagement.AsyncOperations;
-
 namespace AirFramework
 {
     public static partial class AsyncExtensions

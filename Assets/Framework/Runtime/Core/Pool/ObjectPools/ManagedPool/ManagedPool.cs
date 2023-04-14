@@ -6,8 +6,6 @@
  */
 
 using System;
-using System.Timers;
-
 namespace AirFramework
 {
     /// <summary>
@@ -23,7 +21,7 @@ namespace AirFramework
         //回收
         public void OnEnterPool(T item)
         {
-   
+
             item.IsRecycled = true;
             item.OnRecycle();
         }
@@ -65,11 +63,11 @@ namespace AirFramework
                     if (timer == null)
                     {
                         timer = new TimerCall();
-                        
-                        timer.OnCompleted+= OnCycleRecycle;
+
+                        timer.OnCompleted += OnCycleRecycle;
                     }
                     timer.Interval = recycleTime;
-                    if (timer.State!=TimerState.Running)
+                    if (timer.State != TimerState.Running)
                     {
                         timer.Start();
                     }
@@ -96,17 +94,17 @@ namespace AirFramework
             }
 
             int delta = Count - AllocateCount;
-           
+
             if (delta > 0)
             {
                 int unloadCount = (int)(delta * RecoveryRatio);
-                
+
                 if (unloadCount > 3)
                     await UnloadAsync(unloadCount);
                 else Unload(unloadCount);
             }
             AllocateCount = 0;
-            
+
         }
 
 

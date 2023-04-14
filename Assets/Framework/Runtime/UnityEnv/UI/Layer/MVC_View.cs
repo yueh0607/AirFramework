@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-
 namespace AirFramework
 {
     /// <summary>

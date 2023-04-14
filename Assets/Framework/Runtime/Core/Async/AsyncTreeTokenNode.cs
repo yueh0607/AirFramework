@@ -5,7 +5,7 @@
  * 此类为异步令牌的底层实现，要求形成任务树结构
  */
 
-namespace AirFramework
+namespace AirFramework.Internal
 {
     public class AsyncTokenCancelException : System.Exception { }
     public class AsyncTreeTokenNode

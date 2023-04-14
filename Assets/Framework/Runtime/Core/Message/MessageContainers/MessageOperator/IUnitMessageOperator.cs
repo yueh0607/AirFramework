@@ -4,11 +4,10 @@
  * Description : 操作器逆变接口，实现unsafe转换
  ********************************************************************************************/
 
-
 namespace AirFramework
 {
 
-    public interface IOperatorOut<out T> : IUnsafeOut where T : IMessage
+    public interface IOperatorOut<out T> : IUnsafeOut where T : Internal.IMessage
     {
         /****************************************************************************
          * 警告:此处定义的任何成员严格禁止被访问！！！否则可能引发程序直接崩溃！！！*

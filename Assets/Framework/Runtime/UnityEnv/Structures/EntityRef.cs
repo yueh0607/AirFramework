@@ -1,6 +1,5 @@
 ﻿using System;
 using UnityEngine;
-
 namespace AirFramework
 {
     public class EntityRef : MonoBehaviour

@@ -4,8 +4,8 @@
  * Description : 消息管理器的定义区，仅实现基础字段和定义性质的方法
  ********************************************************************************************/
 
+using AirFramework.Internal;
 using System;
-
 namespace AirFramework
 {
     /// <summary>

@@ -2,13 +2,12 @@
 
 using System;
 using System.Reflection;
-
 namespace AirFramework
 {
     /// <summary>
     /// 反射创建泛型委托创建器
     /// </summary>
-    public static class FuncCreator
+    public static class Prefix_FuncCreator
     {
 
         private static T CreateFunc<T>()
@@ -20,7 +19,7 @@ namespace AirFramework
         public static Delegate GetFunc(Type type)
         {
             Type funcType = typeof(Func<>).MakeGenericType(type);
-            MethodInfo mi = typeof(FuncCreator).GetMethod("CreateFunc", BindingFlags.Static | BindingFlags.NonPublic).MakeGenericMethod(type);
+            MethodInfo mi = typeof(Prefix_FuncCreator).GetMethod("CreateFunc", BindingFlags.Static | BindingFlags.NonPublic).MakeGenericMethod(type);
             return Delegate.CreateDelegate(funcType, mi);
         }
     }

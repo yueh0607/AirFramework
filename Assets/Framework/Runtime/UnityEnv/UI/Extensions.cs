@@ -1,6 +1,5 @@
 ﻿using System.Diagnostics;
 using System.Runtime.CompilerServices;
-
 namespace AirFramework
 {
     public static class UIExtensions

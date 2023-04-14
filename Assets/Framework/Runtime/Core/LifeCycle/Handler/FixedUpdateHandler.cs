@@ -1,6 +1,4 @@
-﻿
-
-namespace AirFramework
+﻿namespace AirFramework
 {
     public class FixedUpdateHandler : LifeCycleHandler<IFixedUpdate>
     {

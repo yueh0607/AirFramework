@@ -7,7 +7,6 @@
  */
 
 using System.Runtime.CompilerServices;
-
 namespace AirFramework
 {
     /// <summary>

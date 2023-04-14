@@ -1,5 +1,4 @@
 ﻿using System;
-
 namespace AirFramework
 {
 
@@ -31,7 +30,7 @@ namespace AirFramework
         public float Time { get; private set; } = 0;
 
         public event Action OnCompleted = null;
-        public float Interval { get;  set; } = 60f;
+        public float Interval { get; set; } = 60f;
 
 
 
@@ -44,7 +43,7 @@ namespace AirFramework
         {
             State = TimerState.Paused;
         }
-        public void Start( bool onceRecycle = false)
+        public void Start(bool onceRecycle = false)
         {
             OnceRecycle = onceRecycle;
             State = TimerState.Running;

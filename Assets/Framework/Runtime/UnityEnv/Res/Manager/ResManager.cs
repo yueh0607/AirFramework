@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-
 namespace AirFramework
 {
     public class ResManager : GlobalManager

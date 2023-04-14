@@ -8,7 +8,6 @@
 
 
 using System;
-
 namespace AirFramework
 {
     public delegate void PropertyChangedEvent<T>(T oldValue, T newValue);
