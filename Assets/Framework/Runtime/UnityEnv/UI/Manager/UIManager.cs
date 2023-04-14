@@ -3,18 +3,11 @@ using UnityEngine;
 namespace AirFramework
 {
 
-    public class UIManager : GlobalManager
+    public class UIManager 
     {
-        public override string Name => "UIManager";
+
         private Canvas canvas = null;
         public bool Initialized => canvas != null;
-
-
-
-        protected override void OnDispose()
-        {
-
-        }
 
         private Dictionary<string, GameObject> mapper = new();
 
@@ -27,7 +20,7 @@ namespace AirFramework
 
         public void Open<T>() where T : Controller
         {
-
+            
 
         }
         public void Close<T>() where T : Controller

@@ -2,16 +2,8 @@
 using System.Collections.Generic;
 namespace AirFramework
 {
-    public class ModelManager : GlobalManager
+    public class ModelManager
     {
-        public override string Name => "ModelManager";
-
-        protected override void OnDispose()
-        {
-            models.ClearAndDispose();
-        }
-
-
 
         private Dictionary<Type, Model> models = new Dictionary<Type, Model>();
 

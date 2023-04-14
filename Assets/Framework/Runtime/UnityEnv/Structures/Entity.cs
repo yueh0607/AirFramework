@@ -3,6 +3,28 @@ using System;
 using UnityEngine;
 namespace AirFramework
 {
+
+    public abstract class UnitGameObject<T> :PoolableObject<T> where T : UnitGameObject<T>
+    {
+        protected override void OnCreate()
+        {
+            base.OnCreate();
+            Framework.Res.LoadAsync<GameObject>(typeof(T).Name);
+        }
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+        }
+        public override void OnAllocate()
+        {
+            throw new NotImplementedException();
+        }
+        public override void OnRecycle()
+        {
+            throw new NotImplementedException();
+
+        }
+    }
     public abstract partial class Entity : PoolableObject<Entity>
     {
         /// <summary>

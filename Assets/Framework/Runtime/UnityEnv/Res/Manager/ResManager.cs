@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 namespace AirFramework
 {
-    public class ResManager : GlobalManager
+    public class ResManager 
     {
 
         public T Load<T>(string path)
@@ -27,11 +27,7 @@ namespace AirFramework
         {
             return (await Addressables.InstantiateAsync(gameObject)).Result;
         }
-        public override string Name => "ResManager";
 
-        protected override void OnDispose()
-        {
 
-        }
     }
 }
