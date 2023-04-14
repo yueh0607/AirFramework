@@ -32,13 +32,13 @@ namespace AirFramework
         public bool Authorization { get; internal set; } = true;
         bool IAuthorization.Authorization { get => Authorization; set => Authorization = value; }
         #endregion
-       
+
 
         [DebuggerHidden]
         public void GetResult() { }
 
         [DebuggerHidden]
-        public void OnCompleted(Action continuation)=> UnsafeOnCompleted(continuation);
+        public void OnCompleted(Action continuation) => UnsafeOnCompleted(continuation);
 
         private Action continuation;
         [DebuggerHidden]

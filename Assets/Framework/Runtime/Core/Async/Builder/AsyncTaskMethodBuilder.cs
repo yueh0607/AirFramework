@@ -15,7 +15,7 @@ namespace AirFramework
 {
     public struct AsyncTaskMethodBuilder
     {
-   
+
         // 1. Static Create method
         [DebuggerHidden]
         public static AsyncTaskMethodBuilder Create() => new AsyncTaskMethodBuilder(AsyncTask.Create(fromPool: true));
@@ -23,7 +23,7 @@ namespace AirFramework
         {
             this.task = task;
         }
-        
+
 
         private AsyncTask task;
         // 2. TaskLike Current

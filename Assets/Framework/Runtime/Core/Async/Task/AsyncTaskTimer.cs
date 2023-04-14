@@ -36,11 +36,11 @@ namespace AirFramework
         public void GetResult() { }
 
         [DebuggerHidden]
-        public void OnCompleted(Action continuation)=>UnsafeOnCompleted(continuation);
-        
+        public void OnCompleted(Action continuation) => UnsafeOnCompleted(continuation);
+
         [DebuggerHidden]
-        public void UnsafeOnCompleted(Action continuation)=>this.continuation = continuation;
-        
+        public void UnsafeOnCompleted(Action continuation) => this.continuation = continuation;
+
 
         private void SetResult()
         {

@@ -36,11 +36,11 @@ namespace AirFramework
 
         // 3. SetException
         [DebuggerHidden]
-        public void SetException(Exception exceptions){}
+        public void SetException(Exception exceptions) { }
 
         // 4. SetResult
         [DebuggerHidden]
-        public void SetResult(){ }
+        public void SetResult() { }
 
 
 
@@ -72,6 +72,6 @@ namespace AirFramework
         }
         // 8. SetStateMachine
         [DebuggerHidden]
-        public void SetStateMachine(IAsyncStateMachine stateMachine){}
+        public void SetStateMachine(IAsyncStateMachine stateMachine) { }
     }
 }

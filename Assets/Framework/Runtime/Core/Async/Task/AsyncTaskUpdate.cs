@@ -86,7 +86,7 @@ namespace AirFramework
             Authorization = false;
             FrameCount = 1;
             current = 0;
-            
+
         }
         public void SetException(Exception exception)
         {
@@ -95,14 +95,14 @@ namespace AirFramework
 
         public int FrameCount { get; set; } = 1;
         int current = 0;
-    
+
         void IUpdate.Update(float deltaTime)
         {
-            if(current++>=FrameCount)
+            if (current++ >= FrameCount)
             {
                 SetResult();
             }
-          
+
         }
     }
 }
