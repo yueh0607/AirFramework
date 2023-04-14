@@ -71,8 +71,8 @@ namespace AirFramework
 
         public override void OnAllocate()
         {
-            Token.SetCurrent(this);
-            Token.SetRoot(this);
+            Token.Current = this;
+            Token.Root = this;
             IsCompleted = false;
             Authorization = true;
             Token = new(this, this);
@@ -80,7 +80,7 @@ namespace AirFramework
         [DebuggerHidden]
         public override void OnRecycle()
         {
-            Authorization= false;
+            Authorization = false;
         }
         public void SetException(Exception exception)
         {

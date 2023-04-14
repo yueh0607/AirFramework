@@ -8,7 +8,6 @@
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-using System.Runtime.ExceptionServices;
 
 namespace AirFramework
 {
@@ -34,11 +33,11 @@ namespace AirFramework
         [DebuggerHidden]
         public override void OnAllocate()
         {
-            Token.SetCurrent(this);
-            Token.SetRoot(this);
+            Token.Current = this;
+            Token.Root = this;
             IsCompleted = false;
             Authorization = true;
-            
+
         }
         [DebuggerHidden]
         public override void OnRecycle()
@@ -97,7 +96,7 @@ namespace AirFramework
         [DebuggerHidden]
         private void SetResultMethod(T result)
         {
-           
+
             if (Authorization)
             {
                 if (IsCompleted) throw new InvalidOperationException("AsyncTask dont allow SetResult repeatly.");
@@ -105,7 +104,7 @@ namespace AirFramework
                 //执行await以后的代码
                 continuation?.Invoke();
             }
-            IsCompleted= true;
+            IsCompleted = true;
             OnTaskCompleted?.Invoke(result);
             //回收到Pool
             this.Dispose();
@@ -123,8 +122,8 @@ namespace AirFramework
             //回收到Pool
             this.Dispose();
         }
-       // [DebuggerHidden]
-       // public ExceptionDispatchInfo Exception { get; private set; }
+        // [DebuggerHidden]
+        // public ExceptionDispatchInfo Exception { get; private set; }
         /// <summary>
         /// 当执行出现异常时状态机调用
         /// </summary>

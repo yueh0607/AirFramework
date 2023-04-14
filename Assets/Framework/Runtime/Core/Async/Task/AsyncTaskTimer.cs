@@ -64,17 +64,17 @@ namespace AirFramework
         public AsyncTaskTimer() => Token = new(this, this);
         public override void OnAllocate()
         {
-            Token.SetCurrent(this);
-            Token.SetRoot(this);
+            Token.Current = this;
+            Token.Root = this;
             currentTime = 0;
-            EndTime = 1000f; 
+            EndTime = 1000f;
             Authorization = true;
-          
+
         }
         [DebuggerHidden]
         public override void OnRecycle()
         {
-            Authorization= false;
+            Authorization = false;
         }
         public void SetException(Exception exception)
         {
@@ -86,10 +86,10 @@ namespace AirFramework
         private float currentTime = 0f;
         void IUpdate.Update(float deltaTime)
         {
-            if(Authorization)
+            if (Authorization)
             {
                 currentTime += deltaTime;
-                if(currentTime >= EndTime)
+                if (currentTime >= EndTime)
                 {
                     SetResult();
                 }

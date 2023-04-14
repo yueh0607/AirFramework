@@ -9,7 +9,6 @@
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-using System.Runtime.ExceptionServices;
 
 namespace AirFramework
 {
@@ -30,18 +29,18 @@ namespace AirFramework
             }
             return new AsyncTask();
         }
-        public AsyncTask() 
+        public AsyncTask()
         {
             Token = new(this, this);
         }
         [DebuggerHidden]
         public override void OnAllocate()
         {
-            Token.SetCurrent(this);
-            Token.SetRoot(this);
+            Token.Current = this;
+            Token.Root = this;
             IsCompleted = false;
             Authorization = true;
-         
+
         }
         [DebuggerHidden]
         public override void OnRecycle()
@@ -149,8 +148,8 @@ namespace AirFramework
         [DebuggerHidden]
         private void SetResultMethod()
         {
-           
-          
+
+
             if (Authorization)
             {
                 if (IsCompleted) throw new InvalidOperationException("AsyncTask dont allow SetResult repeatly.");
@@ -164,8 +163,8 @@ namespace AirFramework
         }
 
 
-      //  [DebuggerHidden]
-      //  public ExceptionDispatchInfo Exception { get; private set; }
+        //  [DebuggerHidden]
+        //  public ExceptionDispatchInfo Exception { get; private set; }
         /// <summary>
         /// 为当前任务设置异常，一种情况为手动调用设置，另一种为异步过程出现异常,取消也是异常
         /// </summary>

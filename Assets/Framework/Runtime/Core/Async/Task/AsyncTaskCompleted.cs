@@ -56,26 +56,26 @@ namespace AirFramework
 
         private void SetResult()
         {
-     
+
             if (Authorization)
             {
-                
+
                 continuation?.Invoke();
             }
             Dispose();
         }
         public override void OnAllocate()
         {
-            Token.SetRoot(this);
-            Token.SetCurrent(this);
-            Authorization= true;
-           
+            Token.Root = this;
+            Token.Current = this;
+            Authorization = true;
+
         }
         [DebuggerHidden]
         public override void OnRecycle()
         {
             Authorization = false;
-    
+
         }
         public void SetException(Exception exception)
         {

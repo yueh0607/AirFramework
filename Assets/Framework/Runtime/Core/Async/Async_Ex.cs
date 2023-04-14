@@ -20,7 +20,7 @@ namespace AirFramework
         /// <returns></returns>
         public static AsyncTaskTimer Delay(float seconds)
         {
-           var timer= Framework.Pool.Allocate<AsyncTaskTimer>();   
+            var timer = Framework.Pool.Allocate<AsyncTaskTimer>();
             timer.EndTime = seconds;
             return timer;
         }
@@ -28,7 +28,7 @@ namespace AirFramework
 
         public static async AsyncTask WaitForFrame(int count = 1)
         {
-           
+
             await Complete();
             for (int i = 0; i < count; i++)
             {
@@ -267,7 +267,7 @@ namespace AirFramework
         /// <param name="task"></param>
         /// <param name="token"></param>
         /// <returns></returns>
-        public static void WithToken(this AsyncTask task,out AsyncToken token)
+        public static void WithToken(this AsyncTask task, out AsyncToken token)
         {
             var tok = Framework.Pool.Allocate<AsyncToken>();
             tok.node = task.Token;

@@ -56,7 +56,7 @@ namespace AirFramework
         public void AwaitOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine)
             where TAwaiter : INotifyCompletion where TStateMachine : IAsyncStateMachine
         {
-            task.Token.SetCurrent(awaiter as IAsyncTokenProperty);
+            task.Token.Current = awaiter as IAsyncTokenProperty;
 
             awaiter.OnCompleted(stateMachine.MoveNext);
 
@@ -68,7 +68,7 @@ namespace AirFramework
             where TAwaiter : ICriticalNotifyCompletion where TStateMachine : IAsyncStateMachine
         {
 
-            task.Token.SetCurrent(awaiter as IAsyncTokenProperty);
+            task.Token.Current = awaiter as IAsyncTokenProperty;
             //if (task.Token.Current == null) "ERROR".E();
             // $"切换到{((Unit)task.Token.Current).ID}".L();
             //$"builder任务ID：{task.ID}  builder令牌ID:{task.Token.ID} buiilder当前任务ID:{((Unit)(task.Token.Current)).ID }  授权:{task.Token.Current.Authorization}".L();

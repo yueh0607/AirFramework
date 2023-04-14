@@ -48,7 +48,7 @@ namespace AirFramework
         [DebuggerHidden]
         public void AwaitOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) where TAwaiter : INotifyCompletion where TStateMachine : IAsyncStateMachine
         {
-            task.Token.SetCurrent(awaiter as IAsyncTokenProperty);
+            task.Token.Current = awaiter as IAsyncTokenProperty;
             awaiter.OnCompleted(stateMachine.MoveNext);
         }
 
@@ -57,7 +57,7 @@ namespace AirFramework
         [SecuritySafeCritical]
         public void AwaitUnsafeOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) where TAwaiter : ICriticalNotifyCompletion where TStateMachine : IAsyncStateMachine
         {
-            task.Token.SetCurrent(awaiter as IAsyncTokenProperty);
+            task.Token.Current = awaiter as IAsyncTokenProperty;
             awaiter.UnsafeOnCompleted(stateMachine.MoveNext);
         }
 

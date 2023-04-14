@@ -5,12 +5,10 @@
  * 此类为异步令牌的底层实现，要求形成任务树结构
  */
 
-using System;
-
 namespace AirFramework
 {
-    public class AsyncTokenCancelException:System.Exception {}
-    public class AsyncTreeTokenNode 
+    public class AsyncTokenCancelException : System.Exception { }
+    public class AsyncTreeTokenNode
     {
 
         //当前MethodBuilder执行的任务
@@ -19,29 +17,19 @@ namespace AirFramework
 
         //MethodBuilder代表的任务
         public IAsyncTokenProperty Root;
-        public AsyncTreeTokenNode (IAsyncTokenProperty Root, IAsyncTokenProperty Current)
+        public AsyncTreeTokenNode(IAsyncTokenProperty Root, IAsyncTokenProperty Current)
         {
             this.Current = Current;
             this.Root = Root;
         }
 
-
-        internal void SetCurrent(IAsyncTokenProperty current)
-        {
-            this.Current = current;
-        }
-        internal void SetRoot(IAsyncTokenProperty root)
-        {
-            this.Root = root;
-        }
-
         public void Yield()
         {
             //非Builder任务则空
-            if (Current ==Root)
+            if (Current == Root)
             {
                 Current.Authorization = false;
-               // UnityEngine.Debug.Log($"{((Unit)Current).ID}-SetFalse,TaskToken:{Current.Token.ID}");
+                // UnityEngine.Debug.Log($"{((Unit)Current).ID}-SetFalse,TaskToken:{Current.Token.ID}");
             }
             else
             {
@@ -50,7 +38,7 @@ namespace AirFramework
         }
         public void Continue()
         {
-            if ( Current == Root)
+            if (Current == Root)
             {
 
                 Current.Authorization = true;
@@ -63,7 +51,7 @@ namespace AirFramework
         }
         public void Cancel()
         {
-            
+
             if (Current == Root)
             {
                 Current.Authorization = false;

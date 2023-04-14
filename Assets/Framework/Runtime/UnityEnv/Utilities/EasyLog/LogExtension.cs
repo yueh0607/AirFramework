@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using UnityEditor.VersionControl;
-using UnityEngine;
 using Debug = UnityEngine.Debug;
 namespace AirFramework
 {
@@ -15,7 +13,7 @@ namespace AirFramework
         /// </summary>
         /// <param name="any"></param>
         [DebuggerHidden]
-        public static void L(this object any,string message=null)
+        public static void L(this object any, string message = null)
         {
 
             Debug.Log($"{message}{(message == null ? string.Empty : ":")}{any}");
@@ -25,9 +23,9 @@ namespace AirFramework
         /// </summary>
         /// <param name="any"></param>
         [DebuggerHidden]
-        public static void W(this object any,string message=null)
+        public static void W(this object any, string message = null)
         {
-            Debug.LogWarning($"{message}{(message==null?string.Empty:":")}{any}");
+            Debug.LogWarning($"{message}{(message == null ? string.Empty : ":")}{any}");
         }
         /// <summary>
         /// 输出错误日志
