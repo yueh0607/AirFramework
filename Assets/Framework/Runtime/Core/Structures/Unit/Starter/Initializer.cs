@@ -1,11 +1,10 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Reflection;
 namespace AirFramework
 {
-    [AttributeUsage(AttributeTargets.Class,AllowMultiple =false,Inherited =false)]
-    public class FrameworkInitializeAttribute : Attribute 
+    [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
+    public class FrameworkInitializeAttribute : Attribute
     {
     }
     public class Initializer
@@ -26,11 +25,11 @@ namespace AirFramework
                     if (result) bucket.TryAdd(type, Activator.CreateInstance(type).StartLifeCycle());
                 }
             }
-           // watch.Stop();
-           // UnityEngine.Debug.Log("花费:" + watch.Elapsed);
+            // watch.Stop();
+            // UnityEngine.Debug.Log("花费:" + watch.Elapsed);
         }
-   
-        
+
+
 
         private static bool Initialized { get; set; } = false;
         internal static void TryCreateByReflection()

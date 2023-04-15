@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 namespace AirFramework
 {
-    public class ResManager 
+    public class ResManager
     {
 
         public T Load<T>(string path)

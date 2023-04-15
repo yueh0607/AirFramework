@@ -11,7 +11,7 @@ namespace AirFramework
     /// <summary>
     /// 消息派发管理器
     /// </summary>
-    public partial class MessageManager :IMessageReceiver
+    public partial class MessageManager : IMessageReceiver
     {
         /// <summary>
         /// 层级容器，存储派发器

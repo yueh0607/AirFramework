@@ -16,7 +16,7 @@ using System;
 using System.Collections.Generic;
 namespace AirFramework
 {
-    public partial class PoolManager 
+    public partial class PoolManager
     {
 
         private readonly Dictionary<Type, IManagedPool> pools = new Dictionary<Type, IManagedPool>();

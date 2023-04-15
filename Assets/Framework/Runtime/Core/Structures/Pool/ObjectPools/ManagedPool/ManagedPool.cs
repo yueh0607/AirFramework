@@ -16,7 +16,7 @@ namespace AirFramework
     {
 
         #region 管理逻辑
-      //  private HandleQueue<T> HandleQueue { get; set; }
+        //  private HandleQueue<T> HandleQueue { get; set; }
         protected int AllocateCount { get; private set; } = 0;
         //回收
         public void OnEnterPool(T item)
@@ -75,7 +75,7 @@ namespace AirFramework
                                 recycleWaitCount--;
                                 Unload(1);
                             }
-                        }; 
+                        };
                     }
                     //设置计时器间隔为回收周期
                     timer.Interval = recycleTime;
@@ -84,7 +84,7 @@ namespace AirFramework
                     {
                         Internal.Starter.UpdateEvent += ((IUpdate)timer).Update;
                         timer.Start();
-                       // HandleQueue.StartLifeCycle();
+                        // HandleQueue.StartLifeCycle();
                     }
 
                 }

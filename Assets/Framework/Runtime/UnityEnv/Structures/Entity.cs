@@ -4,7 +4,7 @@ using UnityEngine;
 namespace AirFramework
 {
 
-    public abstract class UnitGameObject<T> :PoolableObject<T> where T : UnitGameObject<T>
+    public abstract class UnitGameObject<T> : PoolableObject<T> where T : UnitGameObject<T>
     {
         protected override void OnCreate()
         {

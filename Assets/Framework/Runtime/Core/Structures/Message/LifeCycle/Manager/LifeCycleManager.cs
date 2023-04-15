@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 namespace AirFramework
 {
-    public class LifeCycleManager 
+    public class LifeCycleManager
     {
 
 
@@ -36,7 +36,7 @@ namespace AirFramework
 
         private List<Action<object>> lifesAdd = new(), lifesRemove = new();
 
-   
+
 
         /// <summary>
         /// 添加生命周期,每个生命周期都应该通过此函数添加，从而支持对象生命周期的解析

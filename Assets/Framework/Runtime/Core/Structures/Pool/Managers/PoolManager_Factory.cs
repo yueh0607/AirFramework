@@ -9,7 +9,7 @@
 using System;
 namespace AirFramework
 {
-    public partial class PoolManager 
+    public partial class PoolManager
     {
 
 

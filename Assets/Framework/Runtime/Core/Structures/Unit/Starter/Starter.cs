@@ -13,7 +13,7 @@ namespace AirFramework.Internal
         {
             Framework.LifeCycle.AddLifeCycle<IUpdate, UpdateHandler>();
             Framework.LifeCycle.AddLifeCycle<ILateUpdate, LateUpdateHandler>();
-            Framework.LifeCycle.AddLifeCycle<IFixedUpdate, FixedUpdateHandler>(); 
+            Framework.LifeCycle.AddLifeCycle<IFixedUpdate, FixedUpdateHandler>();
         }
 
         private static void LateUpdate()
@@ -29,12 +29,12 @@ namespace AirFramework.Internal
             Framework.Message.Operator<IUpdate>().Publish(Time.deltaTime);
         }
 
-        public static Action LateUpdateEvent=LateUpdate;
-        public static Action<float> FixedUpdateEvent=FixedUpdate;
+        public static Action LateUpdateEvent = LateUpdate;
+        public static Action<float> FixedUpdateEvent = FixedUpdate;
         public static Action<float> UpdateEvent = Update;
         public static Action BeforeLoadSceneEvent = BeforeLoadSceneInitialize;
         public static Action AfterLoadSceneEvent = AfterLoadSceneInitialize;
 
-     
+
     }
 }

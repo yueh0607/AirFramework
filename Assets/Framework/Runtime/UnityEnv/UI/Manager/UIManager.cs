@@ -3,7 +3,7 @@ using UnityEngine;
 namespace AirFramework
 {
 
-    public class UIManager 
+    public class UIManager
     {
 
         private Canvas canvas = null;
@@ -20,7 +20,7 @@ namespace AirFramework
 
         public void Open<T>() where T : Controller
         {
-            
+
 
         }
         public void Close<T>() where T : Controller
