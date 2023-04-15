@@ -82,7 +82,8 @@ namespace AirFramework
                     //如果不在运行，则启动计时器
                     if (timer.State != TimerState.Running)
                     {
-                        timer.StartLifeCycle().Start();
+                        Internal.Starter.UpdateEvent += ((IUpdate)timer).Update;
+                        timer.Start();
                        // HandleQueue.StartLifeCycle();
                     }
 
@@ -90,7 +91,8 @@ namespace AirFramework
                 //如果周期小于等于0，则关闭计时器
                 else
                 {
-                    timer.CloseLifeCycle().Reset();
+                    Internal.Starter.UpdateEvent -= ((IUpdate)timer).Update;
+                    timer.Reset();
                     //HandleQueue.CloseLifeCycle();
                 }
             }
@@ -108,7 +110,6 @@ namespace AirFramework
                 Framework.Pool.UnsafeReleasePool<T>();
                 return;
             }
-
             int delta = Count - AllocateCount;
 
             if (delta > 0)

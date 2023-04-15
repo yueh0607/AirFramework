@@ -1,7 +1,11 @@
-﻿namespace AirFramework
+﻿using System.Diagnostics;
+
+namespace AirFramework
 {
+
     public unsafe class UnsafeHandler
     {
+        [DebuggerHidden]
         public static ref TTo As<TFrom, TTo>(ref TFrom source)
         {
 #if UNITY_2020_1_OR_NEWER

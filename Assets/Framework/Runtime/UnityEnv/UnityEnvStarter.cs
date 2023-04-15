@@ -1,5 +1,5 @@
 using UnityEngine;
-namespace AirFramework
+namespace AirFramework.Internal
 {
     public class UnityEnvStarter : MonoSingleton<UnityEnvStarter>
     {
@@ -9,30 +9,31 @@ namespace AirFramework
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         private static void AfterLoadSceneInitialize()
         {
-            InitializeAfterSceneLoad();
-            Starter.AfterLoadSceneInitialize();
+            SingletonInitializeAfterSceneLoad();
+            Starter.AfterLoadSceneEvent();
+         
         }
 
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         static void BeforeLoadSceneInitialize()
         {
-            Starter.BeforeLoadSceneInitialize();
+            Starter.BeforeLoadSceneEvent();
         }
 
 
         private void LateUpdate()
         {
-            Starter.LateUpdate();
+            Starter.LateUpdateEvent();
         }
         private void FixedUpdate()
         {
-            Starter.FixedUpdate();
+            Starter.FixedUpdateEvent(Time.fixedTime);
         }
 
         private void Update()
         {
-            Starter.Update();
+            Starter.UpdateEvent(Time.deltaTime);
 
         }
     }
