@@ -8,14 +8,14 @@ namespace AirFramework
     public class FrameworkInitializeAttribute : Attribute 
     {
     }
-    public class GameBucket
+    public class Initializer
     {
         private static Dictionary<Type, object> bucket = new();
 
         internal static void CreateByReflection()
         {
 
-            Stopwatch watch = Stopwatch.StartNew();
+            //Stopwatch watch = Stopwatch.StartNew();
             var assemblies = AppDomain.CurrentDomain.GetAssemblies();
             foreach (var assembly in assemblies)
             {
@@ -26,8 +26,8 @@ namespace AirFramework
                     if (result) bucket.TryAdd(type, Activator.CreateInstance(type).StartLifeCycle());
                 }
             }
-            watch.Stop();
-            UnityEngine.Debug.Log("花费:" + watch.Elapsed);
+           // watch.Stop();
+           // UnityEngine.Debug.Log("花费:" + watch.Elapsed);
         }
    
         

@@ -6,7 +6,7 @@ namespace AirFramework.Internal
     {
         private static void AfterLoadSceneInitialize()
         {
-            GameBucket.TryCreateByReflection();
+            Initializer.TryCreateByReflection();
         }
 
         private static void BeforeLoadSceneInitialize()
