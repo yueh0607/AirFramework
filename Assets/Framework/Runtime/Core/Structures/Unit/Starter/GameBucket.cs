@@ -4,8 +4,10 @@ using System.Diagnostics;
 using System.Reflection;
 namespace AirFramework
 {
-    [AttributeUsage(AttributeTargets.Class)]
-    public class AutoInitializeByFrameworkAttribute : Attribute { }
+    [AttributeUsage(AttributeTargets.Class,AllowMultiple =false,Inherited =false)]
+    public class FrameworkInitializeAttribute : Attribute 
+    {
+    }
     public class GameBucket
     {
         private static Dictionary<Type, object> bucket = new();
@@ -20,20 +22,22 @@ namespace AirFramework
                 var types = assembly.GetTypes();
                 foreach (var type in types)
                 {
-                    bool result = type.GetCustomAttribute<AutoInitializeByFrameworkAttribute>() != null;
+                    bool result = type.GetCustomAttribute<FrameworkInitializeAttribute>() != null;
                     if (result) bucket.TryAdd(type, Activator.CreateInstance(type).StartLifeCycle());
                 }
             }
             watch.Stop();
             UnityEngine.Debug.Log("»¨·Ñ:" + watch.Elapsed);
         }
-
+   
+        
 
         private static bool Initialized { get; set; } = false;
         internal static void TryCreateByReflection()
         {
             if (Initialized) return;
             Initialized = true;
+
             CreateByReflection();
         }
 

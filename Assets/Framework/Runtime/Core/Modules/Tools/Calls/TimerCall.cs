@@ -32,7 +32,7 @@ namespace AirFramework
         public event Action OnCompleted = null;
         public float Interval { get; set; } = 60f;
 
-
+        public event Action CallPerFrame = null;
 
         public void Reset()
         {
@@ -53,6 +53,7 @@ namespace AirFramework
         {
 
             if (State != TimerState.Running) return;
+            CallPerFrame?.Invoke();
             Time += deltaTime;
             if (Time > Interval)
             {

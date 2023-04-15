@@ -16,7 +16,7 @@ namespace AirFramework
     {
 
         #region 管理逻辑
-
+      //  private HandleQueue<T> HandleQueue { get; set; }
         protected int AllocateCount { get; private set; } = 0;
         //回收
         public void OnEnterPool(T item)
@@ -57,35 +57,51 @@ namespace AirFramework
             }
             set
             {
+                //更新回收间隔
                 recycleTime = value;
+                //如果大于0，则启动回收
                 if (recycleTime > 0D)
                 {
+                    //如果计时器是空，则初始化并启动
                     if (timer == null)
                     {
                         timer = new TimerCall();
-
+                        //HandleQueue = new HandleQueue<T>(onDestroy,1).StartLifeCycle();
                         timer.OnCompleted += OnCycleRecycle;
+                        timer.CallPerFrame += () =>
+                        {
+                            if (recycleWaitCount > 0)
+                            {
+                                recycleWaitCount--;
+                                Unload(1);
+                            }
+                        }; 
                     }
+                    //设置计时器间隔为回收周期
                     timer.Interval = recycleTime;
+                    //如果不在运行，则启动计时器
                     if (timer.State != TimerState.Running)
                     {
-                        timer.Start();
+                        timer.StartLifeCycle().Start();
+                       // HandleQueue.StartLifeCycle();
                     }
 
                 }
+                //如果周期小于等于0，则关闭计时器
                 else
                 {
-                    timer.Reset();
+                    timer.CloseLifeCycle().Reset();
+                    //HandleQueue.CloseLifeCycle();
                 }
             }
         }
         public float RecoveryRatio { get; set; } = 0.5f;
 
+        private int recycleWaitCount = 0;
 
         #region 回收周期函数
-        protected async void OnCycleRecycle()
+        protected void OnCycleRecycle()
         {
-            await Async.Complete();
             //空池销毁
             if (IsDeposit && Count == 0)
             {
@@ -98,13 +114,9 @@ namespace AirFramework
             if (delta > 0)
             {
                 int unloadCount = (int)(delta * RecoveryRatio);
-
-                if (unloadCount > 3)
-                    await UnloadAsync(unloadCount);
-                else Unload(unloadCount);
+                recycleWaitCount += unloadCount;
             }
             AllocateCount = 0;
-
         }
 
 
@@ -112,4 +124,5 @@ namespace AirFramework
 
         #endregion
     }
+
 }

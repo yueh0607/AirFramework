@@ -59,7 +59,7 @@ namespace AirFramework
         ~Unit()
         {
             IDs.Recycle(_id);
-
+            this.CloseLifeCycle();
         }
 
     }

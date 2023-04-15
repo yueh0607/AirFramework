@@ -180,6 +180,11 @@ namespace AirFramework
             }
             await Async.Complete();
         }
+        protected T GetOne()
+        {
+            return pool.Dequeue();
+        }
+
         #endregion
 
 

@@ -25,5 +25,10 @@
         {
             Framework.LifeCycle.AnalyseRemoveAll(obj);
         }
+        public static T CloseLifeCycle<T>(this T obj)
+        {
+            Framework.LifeCycle.AnalyseRemoveAll(obj);
+            return obj;
+        }
     }
 }
