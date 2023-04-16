@@ -1,11 +1,10 @@
 ﻿
 using System;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace AirFramework
 {
-    public abstract partial class Entity : IPoolable,IMessageReceiver
+    public abstract partial class Entity : IPoolable, IMessageReceiver
     {
         /// <summary>
         /// Mono引用
@@ -51,9 +50,9 @@ namespace AirFramework
         {
             trasnform.SetParent(entity.trasnform);
         }
-        public void SetAsFisrtSlibing()=>trasnform.SetAsFirstSibling();
-        
-        public void SetAsLastSlibing()=>trasnform.SetAsLastSibling();
+        public void SetAsFisrtSlibing() => trasnform.SetAsFirstSibling();
+
+        public void SetAsLastSlibing() => trasnform.SetAsLastSibling();
     }
 
     public abstract partial class Entity : IPoolable, IMessageReceiver
@@ -75,11 +74,11 @@ namespace AirFramework
         protected abstract void OnAllocateEntity();
         protected abstract void OnRecycleEntity();
         protected abstract void OnCreateEntity();
-        
+
         protected abstract void OnDestroyEntity();
 
-        public Entity() =>OnCreateEntity();
-        ~Entity()=>OnDestroyEntity();
+        public Entity() => OnCreateEntity();
+        ~Entity() => OnDestroyEntity();
 
         public static implicit operator GameObject(Entity entity)
         {
@@ -104,15 +103,15 @@ namespace AirFramework
         {
             var origin = CheckAndLoad<T>();
             //实例化到场景
-            GameObject instance = GameObject.Instantiate(origin,parent.MonoEntity.transform);
+            GameObject instance = GameObject.Instantiate(origin, parent.MonoEntity.transform);
             return BindEntityAndGameObject<T>(instance);
         }
 
-        public static T Instantiate<T>(Entity parent,Vector3 postion,Quaternion rotation) where T : Entity
+        public static T Instantiate<T>(Entity parent, Vector3 postion, Quaternion rotation) where T : Entity
         {
             var origin = CheckAndLoad<T>();
             //实例化到场景
-            GameObject instance = GameObject.Instantiate(origin,postion,rotation ,parent.MonoEntity.transform);
+            GameObject instance = GameObject.Instantiate(origin, postion, rotation, parent.MonoEntity.transform);
             return BindEntityAndGameObject<T>(instance);
         }
 

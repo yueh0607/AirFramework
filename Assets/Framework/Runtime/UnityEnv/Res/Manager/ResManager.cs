@@ -1,12 +1,10 @@
 using UnityEngine;
-using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace AirFramework
 {
     public class ResManager
     {
-        
+
         public T Load<T>(string path)
         {
             return Addressables.LoadAssetAsync<T>(path).WaitForCompletion();
@@ -32,8 +30,8 @@ namespace AirFramework
             return Addressables.InstantiateAsync(gameObject);
 
         }
-    
-    
-    
+
+
+
     }
 }

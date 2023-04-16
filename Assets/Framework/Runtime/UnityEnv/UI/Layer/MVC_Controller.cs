@@ -23,7 +23,7 @@ namespace AirFramework
 
         protected override void OnAllocateEntity()
         {
-            
+
 
             OnBindEvents();
             OnBindProperty();
@@ -40,7 +40,7 @@ namespace AirFramework
     }
     public abstract class Controller<T> : Controller where T : View
     {
-        public Controller ()
+        public Controller()
         {
             if (typeof(T).IsAbstract) throw new InvalidOperationException("Abstract classes cannot be used as generic parameters for this class");
         }

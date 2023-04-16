@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 namespace AirFramework
 {
     public abstract class Entity<T> : Entity where T : Entity<T>
@@ -16,6 +12,6 @@ namespace AirFramework
             Entity.Destroy(this);
         }
 
-        
+
     }
 }
