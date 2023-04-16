@@ -17,8 +17,10 @@ Unity3D游戏开发中小型游戏框架
 - 资源管理（采用YooAsset+AsyncExtension)）
 - MVC-UI代码生成(V层自动生成，C层自动生成绑定常用事件代码)
 
-# 推荐项目
+# 参考项目
 - [SDHK/WorldTreeFramework](https://github.com/SDHK/WorldTreeFramework)
 - [OnClick9927/IFramework](https://github.com/OnClick9927/IFramework)
 - [eagmetang/ET](https://github.com/egametang/ET)
 - [Cysharp/UniTask](https://github.com/Cysharp/UniTask)
+# 引用项目
+- [tuyoogame/YooAsset](https://github.com/tuyoogame/YooAsset)
