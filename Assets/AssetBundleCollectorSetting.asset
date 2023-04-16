@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185f6993d5150494d98da50e26cb1c25, type: 3}
+  m_Name: AssetBundleCollectorSetting
+  m_EditorClassIdentifier: 
+  ShowPackageView: 1
+  EnableAddressable: 1
+  UniqueBundleName: 0
+  ShowEditorAlias: 1
+  Packages:
+  - PackageName: TypeNameAddressPackage
+    PackageDesc: "\u5B9E\u73B0\u7C7B\u540D\u6620\u5C04\u7684\u5305"
+    Groups:
+    - GroupName: Panels
+      GroupDesc: "\u5B58\u50A8UIPanelPrefab"
+      AssetTags: UI
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/TestEnv/Panels
+        CollectorGUID: 896d63d71472fe14cac41ce023a2c462
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectPrefab
+        AssetTags: 
+        UserData: 

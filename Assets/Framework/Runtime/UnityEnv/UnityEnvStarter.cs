@@ -1,4 +1,6 @@
 using UnityEngine;
+using YooAsset;
+
 namespace AirFramework.Internal
 {
     public class UnityEnvStarter : MonoSingleton<UnityEnvStarter>
@@ -11,7 +13,7 @@ namespace AirFramework.Internal
         {
             SingletonInitializeAfterSceneLoad();
             Starter.AfterLoadSceneEvent();
-
+            Framework.Res.Initialize();
         }
 
 

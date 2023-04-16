@@ -1,37 +1,22 @@
 using UnityEngine;
-
+using YooAsset;
 namespace AirFramework
 {
     public class ResManager
     {
 
-        public T Load<T>(string path)
+        public AssetOperationHandle LoadSync<T>(string path) where T : Object
         {
-            return Addressables.LoadAssetAsync<T>(path).WaitForCompletion();
+            return YooAssets.LoadAssetSync<T>(path);
         }
-        public AsyncOperationHandle<T> LoadAsync<T>(string path)
+        public AssetOperationHandle LoadAsync<T>(string path) where T : Object
         {
-            return Addressables.LoadAssetAsync<T>(path);
+            return YooAssets.LoadAssetAsync<T>(path);
         }
-        public void Release<T>(T res)
+        public void Initialize()
         {
-            Addressables.Release(res);
+            YooAssets.Initialize();
         }
-        public void ReleaseInstance(GameObject instance)
-        {
-            Addressables.ReleaseInstance(instance);
-        }
-        public AsyncOperationHandle InstantiateAsync(GameObject gameObject)
-        {
-            return Addressables.InstantiateAsync(gameObject);
-        }
-        public AsyncOperationHandle InstantiateAsync(GameObject gameObject, Vector3 position)
-        {
-            return Addressables.InstantiateAsync(gameObject);
-
-        }
-
-
 
     }
 }

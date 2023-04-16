@@ -1,5 +1,7 @@
 ﻿
 using System;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 namespace AirFramework
@@ -94,42 +96,48 @@ namespace AirFramework
 
         public static T Instantiate<T>() where T : Entity
         {
-            var origin = CheckAndLoad<T>();
+            CheckAbstract<T>();
+            var handle = Framework.Res.LoadSync<GameObject>(typeof(T).Name);
             //实例化到场景
-            GameObject instance = GameObject.Instantiate(origin);
+            GameObject instance = GameObject.Instantiate(handle.GetAssetObject<GameObject>());
+            handle.Release();
             return BindEntityAndGameObject<T>(instance);
         }
         public static T Instantiate<T>(Entity parent) where T : Entity
         {
-            var origin = CheckAndLoad<T>();
+            CheckAbstract<T>();
+            var handle = Framework.Res.LoadSync<GameObject>(typeof(T).Name);
             //实例化到场景
-            GameObject instance = GameObject.Instantiate(origin, parent.MonoEntity.transform);
+            GameObject instance = GameObject.Instantiate(handle.GetAssetObject<GameObject>(), parent.MonoEntity.transform);
+            handle.Release();
             return BindEntityAndGameObject<T>(instance);
         }
 
         public static T Instantiate<T>(Entity parent, Vector3 postion, Quaternion rotation) where T : Entity
         {
-            var origin = CheckAndLoad<T>();
+            CheckAbstract<T>();
+            var handle = Framework.Res.LoadSync<GameObject>(typeof(T).Name);
             //实例化到场景
-            GameObject instance = GameObject.Instantiate(origin, postion, rotation, parent.MonoEntity.transform);
+            GameObject instance = GameObject.Instantiate(handle.GetAssetObject<GameObject>(), postion, rotation, parent.MonoEntity.transform);
+            handle.Release();
             return BindEntityAndGameObject<T>(instance);
         }
 
         public static T Instantiate<T>(Entity parent, bool worldPositionStays = false) where T : Entity
         {
-            var origin = CheckAndLoad<T>();
+            CheckAbstract<T>();
+            var handle = Framework.Res.LoadSync<GameObject>(typeof(T).Name);
             //实例化到场景
-            GameObject instance = GameObject.Instantiate(origin, parent.MonoEntity.transform, worldPositionStays);
-
+            GameObject instance = GameObject.Instantiate(handle.GetAssetObject<GameObject>(), parent.MonoEntity.transform, worldPositionStays);
+            handle.Release();
             return BindEntityAndGameObject<T>(instance);
         }
 
-        private static GameObject CheckAndLoad<T>()
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining),DebuggerHidden]
+        private static void CheckAbstract<T>()
         {
             if (typeof(T).IsAbstract) throw new InvalidOperationException("can't Instantiate a abstract type");
-            //加载预制体
-            GameObject origin = Framework.Res.Load<GameObject>(typeof(T).Name);
-            return origin;
         }
         private static T BindEntityAndGameObject<T>(GameObject obj) where T : Entity
         {
