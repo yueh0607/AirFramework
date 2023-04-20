@@ -3,7 +3,7 @@
  * Date : 2023.1.16
  * Blog : https://blog.csdn.net/qq_46273241/article/details/128756164
  * Description : 
- * BindableProperty旨在实现对单一字段值的监听，在该字段值变化时自动触发监听事件
+ * 
  */
 
 
