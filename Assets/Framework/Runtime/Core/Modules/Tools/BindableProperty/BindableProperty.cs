@@ -10,12 +10,12 @@
 using System;
 namespace AirFramework
 {
-    public delegate void PropertyChangedEvent<T>(T oldValue, T newValue);
+
     /// <summary>
     /// 可绑定监听事件的属性
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public sealed class BindableProperty<T> : PoolableObject<BindableProperty<T>>
+    public sealed class BindableProperty<T> : PoolableObject<BindableProperty<T>>,IValueChanged<T>
     {
         private T value;
 
@@ -41,7 +41,13 @@ namespace AirFramework
         /// 事件列表：属性值变更时触发事件
         /// </summary>
         public event PropertyChangedEvent<T> OnValueChanged ;
-        public static void Bind(BindableProperty<T> a,BindableProperty<T> b)
+
+        /// <summary>
+        /// 绑定两个属性
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        public static void Bind(IValueChanged<T> a,IValueChanged<T> b)
         {
           //这里的实现依赖于相同值不会调用ValueChanged事件，所以才能避免循环调用
             a.OnValueChanged += (oldV, newV) =>
@@ -53,22 +59,33 @@ namespace AirFramework
                 a.Value = newV;
             };
         }
-        public void BindTo(BindableProperty<T> target)
+        /// <summary>
+        /// 绑定到属性
+        /// </summary>
+        /// <param name="target"></param>
+        public void BindTo(IValueChanged<T> target)
         {
             target.OnValueChanged += (oldV, newV) =>
             {
                 this.Value = newV;
             };
         }
-
-        public void BindFrom(BindableProperty<T> target)
+        /// <summary>
+        /// 从属性绑定，将当前属性绑定到
+        /// </summary>
+        /// <param name="target"></param>
+        public void BindFrom(IValueChanged<T> target)
         {
             this.OnValueChanged += (oldV, newV) =>
             {
                 target.Value = newV;
             };
         }
-        public void Bind(BindableProperty<T> target)
+        /// <summary>
+        /// 绑定当前与某个属性
+        /// </summary>
+        /// <param name="target"></param>
+        public void Bind(IValueChanged<T> target)
         {
             Bind(this, target);
         }
