@@ -24,7 +24,6 @@ namespace AirFramework
             return timer;
         }
 
-
         public static async AsyncTask WaitForFrame(int count = 1)
         {
             if (count <= 0)
@@ -40,7 +39,7 @@ namespace AirFramework
         }
 
         /// <summary>
-        /// 用于在特定时刻配位await
+        /// 用于在特定时刻配位await并实现异步转同步
         /// </summary>
         /// <param name="action"></param>
         /// <returns></returns>
@@ -261,9 +260,6 @@ namespace AirFramework
 
             return asyncTask;
         }
-
-
-
         /// <summary>
         /// 为指定异步任务设置令牌，可以取消和挂起
         /// </summary>

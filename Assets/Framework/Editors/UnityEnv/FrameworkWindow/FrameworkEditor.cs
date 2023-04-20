@@ -9,7 +9,7 @@ namespace AirFrameworkEditor
     public class FrameworkEditor : OdinMenuEditorWindow
     {
 
-        [MenuItem("Framework/Open")]
+        [MenuItem("Framework/OpenWindow",priority = -999999999)]
         public static void Open()
         {
 

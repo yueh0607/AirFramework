@@ -26,13 +26,18 @@ namespace AirFramework
         /// <typeparam name="T"></typeparam>
         /// <param name="handle"></param>
         /// <returns></returns>
-        public static AsyncTask<AssetOperationHandle> GetAwaiter<T>(this AssetOperationHandle handle)
+        public static AsyncTask<AssetOperationHandle> GetAwaiter(this AssetOperationHandle handle)
         {
             var task = Framework.Pool.Allocate<AsyncTask<AssetOperationHandle>>();
             handle.Completed += task.SetResult;
             return task;
         }
-
+        public static AsyncTask<AsyncOperationBase> GetAwaiter(this InitializationOperation op)
+        {
+            var oper= Framework.Pool.Allocate<AsyncTask<AsyncOperationBase>>();
+            op.Completed += oper.SetResult;
+            return oper;
+        }
 
         public static AssetOperationHandle WaitForComplete(this AssetOperationHandle thisHandle)
         {

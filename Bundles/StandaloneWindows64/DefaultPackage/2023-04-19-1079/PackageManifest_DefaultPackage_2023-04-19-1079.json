@@ -1,0 +1,35 @@
+{
+    "FileVersion": "1.4.6",
+    "EnableAddressable": true,
+    "OutputNameStyle": 1,
+    "PackageName": "DefaultPackage",
+    "PackageVersion": "2023-04-19-1079",
+    "AssetList": [
+        {
+            "Address": "CounterPanel",
+            "AssetPath": "Assets/TestEnv/Panels/CounterPanel.prefab",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependIDs": []
+        },
+        {
+            "Address": "MyEntity",
+            "AssetPath": "Assets/TestEnv/Panels/MyEntity.prefab",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependIDs": []
+        }
+    ],
+    "BundleList": [
+        {
+            "BundleName": "assets_testenv_panels.bundle",
+            "FileHash": "162c457fd8ae50eb54040749729a3b7d",
+            "FileCRC": "e1aa763f",
+            "FileSize": 10635,
+            "IsRawFile": false,
+            "LoadMethod": 0,
+            "Tags": [],
+            "ReferenceIDs": []
+        }
+    ]
+}

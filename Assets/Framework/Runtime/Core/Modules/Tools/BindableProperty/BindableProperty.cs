@@ -28,6 +28,7 @@ namespace AirFramework
             get => value;
             set
             {
+                //注意，双向绑定会依赖于Equal的实现
                 if (!object.Equals(value, this.value))
                 {
                     OnValueChanged?.Invoke(this.value, value);
@@ -39,8 +40,38 @@ namespace AirFramework
         /// <summary>
         /// 事件列表：属性值变更时触发事件
         /// </summary>
-        public event PropertyChangedEvent<T> OnValueChanged;
+        public event PropertyChangedEvent<T> OnValueChanged ;
+        public static void Bind(BindableProperty<T> a,BindableProperty<T> b)
+        {
+          //这里的实现依赖于相同值不会调用ValueChanged事件，所以才能避免循环调用
+            a.OnValueChanged += (oldV, newV) =>
+            {
+                b.Value = newV;
+            };
+            b.OnValueChanged += (oldV, newV) =>
+            {
+                a.Value = newV;
+            };
+        }
+        public void BindTo(BindableProperty<T> target)
+        {
+            target.OnValueChanged += (oldV, newV) =>
+            {
+                this.Value = newV;
+            };
+        }
 
+        public void BindFrom(BindableProperty<T> target)
+        {
+            this.OnValueChanged += (oldV, newV) =>
+            {
+                target.Value = newV;
+            };
+        }
+        public void Bind(BindableProperty<T> target)
+        {
+            Bind(this, target);
+        }
 
         /// <summary>
         /// 初始化：使用初始值初始化可绑定属性,触发实际
