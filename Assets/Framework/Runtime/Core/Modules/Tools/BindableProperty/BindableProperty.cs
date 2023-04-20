@@ -31,8 +31,8 @@ namespace AirFramework
                 //注意，双向绑定会依赖于Equal的实现
                 if (!object.Equals(value, this.value))
                 {
-                    OnValueChanged?.Invoke(this.value, value);
                     this.value = value;
+                    OnValueChanged?.Invoke(this.value, value);
                 }
             }
         }
