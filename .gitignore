@@ -12,6 +12,8 @@
 /[Pp]roject[Ss]ettings/
 /[Aa]ssets/[Pp]lugins/
 /[Aa]ssets/[Tt]estEnv*
+/[Aa]ssets/[Bb]undles/
+/[Aa]ssets/[Ss]and[Bb]ox/
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
 /[Mm]emoryCaptures/
