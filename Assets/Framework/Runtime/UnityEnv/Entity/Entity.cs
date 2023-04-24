@@ -3,10 +3,11 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 namespace AirFramework
 {
-    public abstract partial class Entity : IPoolable, IMessageReceiver
+    public abstract partial class Entity :SimpleUnit, IPoolable, IMessageReceiver
     {
         /// <summary>
         /// Mono引用
@@ -43,7 +44,7 @@ namespace AirFramework
         /// <param name="active"></param>
         public void SetActive(bool active)
         {
-            if (!active) this.CloseLifeCycle(); else this.StartLifeCycle();
+            if (!active) this.CloseLife(); else this.StartLife();
             gameObject.SetActive(active);
 
         }
@@ -57,9 +58,9 @@ namespace AirFramework
         public void SetAsLastSlibing() => trasnform.SetAsLastSibling();
     }
 
-    public abstract partial class Entity : IPoolable, IMessageReceiver
+    public abstract partial class Entity : SimpleUnit, IPoolable, IMessageReceiver
     {
-        bool IPoolable.IsRecycled { get; set; }
+       // bool IPoolable.IsRecycled { get; set; }
         IObjectPool IPoolable.ThisPool { get; set; }
 
         public void OnAllocate()
@@ -71,6 +72,12 @@ namespace AirFramework
         {
             this.SetActive(false);
             OnRecycleEntity();
+        }
+
+        public override void Dispose()
+        {
+            base.Dispose(); 
+            this.RecycleSelf();
         }
 
         protected abstract void OnAllocateEntity();
@@ -87,61 +94,49 @@ namespace AirFramework
             return entity.gameObject;
         }
     }
-    public abstract partial class Entity : IPoolable, IMessageReceiver
+    public abstract partial class Entity :SimpleUnit, IPoolable, IMessageReceiver
     {
+ 
         public static void Destroy(Entity entity)
         {
             UnityEngine.Object.Destroy(entity.gameObject);
+            entity.Dispose();
+           
         }
 
-        public static T Instantiate<T>() where T : Entity
+        protected static T Instantiate<T>(T entity) where T : Entity
         {
-            CheckAbstract<T>();
-            var handle = Framework.Res.LoadSync<GameObject>(typeof(T).Name);
+            Type type = entity.GetType();
+            CheckAbstract(type);
+            var handle = Framework.Res.LoadSync<GameObject>(type.Name);
+            //(handle.GetAssetObject<GameObject>() is null).L();
             //实例化到场景
             GameObject instance = GameObject.Instantiate(handle.GetAssetObject<GameObject>());
+            instance.name = type.Name;
             handle.Release();
-            return BindEntityAndGameObject<T>(instance);
-        }
-        public static T Instantiate<T>(Entity parent) where T : Entity
-        {
-            CheckAbstract<T>();
-            var handle = Framework.Res.LoadSync<GameObject>(typeof(T).Name);
-            //实例化到场景
-            GameObject instance = GameObject.Instantiate(handle.GetAssetObject<GameObject>(), parent.MonoEntity.transform);
-            handle.Release();
-            return BindEntityAndGameObject<T>(instance);
+
+           // var entity = Activator.CreateInstance<T>();
+            return BindEntityAndGameObject<T>(instance,entity);
         }
 
-        public static T Instantiate<T>(Entity parent, Vector3 postion, Quaternion rotation) where T : Entity
+        protected static T Instantiate<T>(GameObject instance,Entity entity) where T : Entity
         {
-            CheckAbstract<T>();
-            var handle = Framework.Res.LoadSync<GameObject>(typeof(T).Name);
-            //实例化到场景
-            GameObject instance = GameObject.Instantiate(handle.GetAssetObject<GameObject>(), postion, rotation, parent.MonoEntity.transform);
-            handle.Release();
-            return BindEntityAndGameObject<T>(instance);
-        }
+            Type type = entity.GetType();
+            CheckAbstract(type);
+            instance.name = type.Name;
 
-        public static T Instantiate<T>(Entity parent, bool worldPositionStays = false) where T : Entity
-        {
-            CheckAbstract<T>();
-            var handle = Framework.Res.LoadSync<GameObject>(typeof(T).Name);
-            //实例化到场景
-            GameObject instance = GameObject.Instantiate(handle.GetAssetObject<GameObject>(), parent.MonoEntity.transform, worldPositionStays);
-            handle.Release();
-            return BindEntityAndGameObject<T>(instance);
+            // var entity = Activator.CreateInstance<T>();
+            return BindEntityAndGameObject<T>(instance, entity);
         }
-
 
         [MethodImpl(MethodImplOptions.AggressiveInlining),DebuggerHidden]
-        private static void CheckAbstract<T>()
+        private static void CheckAbstract(Type entity)
         {
-            if (typeof(T).IsAbstract) throw new InvalidOperationException("can't Instantiate a abstract type");
+            if (entity.IsAbstract) throw new InvalidOperationException("can't Instantiate a abstract type");
         }
-        private static T BindEntityAndGameObject<T>(GameObject obj) where T : Entity
+        private static T BindEntityAndGameObject<T>(GameObject obj,Entity entity) where T : Entity
         {
-            var entity = Activator.CreateInstance<T>();
+          
             GameObject.DontDestroyOnLoad(obj);
             //为物体添加引用组件
             var RefCom = obj.AddComponent<EntityRef>();
@@ -152,7 +147,7 @@ namespace AirFramework
             //更新EntityRef属性
             RefCom.EntityValue = entity;
             RefCom.EntityType = entity.GetType();
-            return entity;
+            return entity as T; 
         }
     }
 }

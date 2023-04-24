@@ -12,7 +12,7 @@ namespace AirFramework.Internal
         private static void AfterLoadSceneInitialize()
         {
             SingletonInitializeAfterSceneLoad();
-            //Framework.Res.Initialize();
+            Framework.Res.Initialize("DefaultPackage");
             Starter.AfterLoadSceneEvent();
             
             

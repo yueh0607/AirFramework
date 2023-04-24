@@ -4,7 +4,7 @@ namespace AirFramework
     {
         protected override void OnCreateEntity()
         {
-            Entity.Instantiate<T>();
+            Entity.Instantiate<Entity<T>>(this);
         }
 
         protected override void OnDestroyEntity()

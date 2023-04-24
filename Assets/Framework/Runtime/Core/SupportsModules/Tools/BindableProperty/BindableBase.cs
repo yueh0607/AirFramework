@@ -1,0 +1,57 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AirFramework
+{
+    public abstract class BindableBase<T>:Unit,IValueChanged<T>
+    {
+
+        /// <summary>
+        /// 属性值：当属性值发生变化时，通知属性变更
+        /// </summary>
+
+        public abstract T Value
+        {
+            get;
+            set;
+        }
+
+        UnitHashSet<ulong> notificationList;
+
+
+        /// <summary>
+        /// 事件列表：属性值变更时触发事件
+        /// </summary>
+        public abstract event PropertyChangedEvent<T> OnValueChanged;
+
+
+        /// <summary>
+        /// 绑定两个属性
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        public static void Bind(BindableBase<T> a, BindableBase<T> b)
+        {
+            a.notificationList.Value.TryAdd(b.ID);
+            b.notificationList.Value.TryAdd(a.ID);
+            
+        }
+        public static void UnBind(BindableBase<T> a,BindableBase<T> b)
+        {
+            a.notificationList.Value.TryRemove(b.ID);
+            b.notificationList.Value.TryRemove(a.ID);
+        }
+
+        public static void PublishValueChanged(BindableBase<T> a,T newValue)
+        {
+            foreach(var item in a.notificationList.Value)
+            {
+                
+            }
+        }
+        
+    }
+}
