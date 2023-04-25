@@ -8,6 +8,9 @@
  * 同时Unit接入ID，方便调试和索引
  */
 
+using System;
+using System.Collections;
+
 namespace AirFramework
 {
     /// <summary>
@@ -29,7 +32,10 @@ namespace AirFramework
 
         public virtual void Dispose()
         {
-            if(_disposed) return;    
+            if(_disposed)
+            {
+                throw new InvalidOperationException("Repeat Dispose!");
+            }
             _disposed = true;
             OnDispose();
         }
@@ -44,7 +50,7 @@ namespace AirFramework
     }
 
     public abstract partial class Unit :
-        IUnit
+        IUnit,IMessageReceiver
     {
         /// <summary>
         /// ID管理器
@@ -69,6 +75,38 @@ namespace AirFramework
             IDs.Recycle(_id);
             Dispose();
         }
+
+    }
+
+
+
+    public abstract partial class Unit : IUnit, IMessageReceiver, IEquatable<Unit>
+    {
+
+        public override bool Equals(object obj)
+        {
+            return Equals(obj as Unit);
+        }
+        public bool Equals(Unit other)
+        {
+            if (other == null) return false;
+            return this.ID== other.ID;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public static bool operator==(Unit a, Unit b)
+        {
+            return Equals(a,b);
+        }
+        public static bool operator !=(Unit a, Unit b)
+        {
+            return !Equals(a,b);
+        }
+
 
     }
 }

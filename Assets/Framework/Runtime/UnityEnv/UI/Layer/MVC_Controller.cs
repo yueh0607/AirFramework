@@ -5,7 +5,7 @@ namespace AirFramework
     /// <summary>
     /// 在VM层内，用户只需要进行数据绑定，非特殊情况下不建议做其他操作
     /// </summary>
-    public abstract class Controller : Entity<Controller>
+    public abstract class Controller : UnitGameObject<Controller>
     {
         public abstract void OnOpenPanel();
 
@@ -21,14 +21,14 @@ namespace AirFramework
         protected abstract void OnBindEvents();
         protected abstract void OnUnBindEvents();
 
-        protected override void OnAllocateEntity()
+        protected override void OnAllocateObject()
         {
 
 
             OnBindEvents();
             OnBindProperty();
         }
-        protected override void OnRecycleEntity()
+        protected override void OnRecycleObject()
         {
             OnUnBindEvents();
             OnUnBindProperty();
@@ -46,16 +46,16 @@ namespace AirFramework
         }
         public T View { get; set; }
 
-        protected override void OnAllocateEntity()
+        protected override void OnAllocateObject()
         {
             View = base.gameObject.AddComponent<T>();
-            base.OnAllocateEntity();
+            base.OnAllocateObject();
 
         }
-        protected override void OnRecycleEntity()
+        protected override void OnRecycleObject()
         {
             View = null;
-            base.OnRecycleEntity();
+            base.OnRecycleObject();
         }
     }
 

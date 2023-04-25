@@ -33,7 +33,7 @@ MonoBehaviour:
         FilterRuleName: CollectAll
         AssetTags: 
         UserData: 
-      - CollectPath: Assets/TestEnv/Panels/MyEntity.prefab
+      - CollectPath: Assets/TestEnv/Panels/MyUnitObj.prefab
         CollectorGUID: 45ea58dc2b6b4f641a81000905d04921
         CollectorType: 0
         AddressRuleName: AddressByFileName

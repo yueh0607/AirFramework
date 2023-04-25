@@ -13,8 +13,8 @@
             "DependIDs": []
         },
         {
-            "Address": "MyEntity",
-            "AssetPath": "Assets/TestEnv/Panels/MyEntity.prefab",
+            "Address": "MyUnitObj",
+            "AssetPath": "Assets/TestEnv/Panels/MyUnitObj.prefab",
             "AssetTags": [],
             "BundleID": 0,
             "DependIDs": []

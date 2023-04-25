@@ -8,31 +8,31 @@
 
 
 using System;
+using System.Collections.Generic;
+
 namespace AirFramework
 {
-    /*
+    
     /// <summary>
     /// 可绑定监听事件的属性
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public sealed class BindableProperty<T> :BindableBase<T>,IPoolable
+    public sealed class BindableProperty<T> :BindableBase<T> where T: IEqualityComparer<T>
     {
-        private T value;
-
-        /// <summary>
-        /// 属性值：当属性值发生变化时，通知属性变更
-        /// </summary>
+        private T _value;
 
         public override T Value
         {
-            get => value;
+            get => _value;
             set
             {
                 //注意，双向绑定会依赖于Equal的实现
-                if (!object.Equals(value, this.value))
+                
+                if (!value.Equals(value, this._value))
                 {
-                    this.value = value;
-                    OnValueChanged?.Invoke(this.value, value);
+                    this._value = value;
+                    OnValueChanged?.Invoke(this._value, value);
+                    PublishValueChanged(this, value);
                 }
             }
         }
@@ -42,52 +42,5 @@ namespace AirFramework
         /// </summary>
         public override event PropertyChangedEvent<T> OnValueChanged ;
 
-
-
-
-        /// <summary>
-        /// 初始化：使用初始值初始化可绑定属性,触发实际
-        /// </summary>
-        /// <param name="value"></param>
-
-        public BindableProperty(T value)
-        {
-            Value = value;
-        }
-        /// <summary>
-        /// 初始化：使用默认值(default)初始化可绑定属性
-        /// </summary>
-
-        public BindableProperty()
-        {
-            this.value = default;
-        }
-        ~BindableProperty()
-        {
-            if(!notificationList.IsRecycled) notificationList.Dispose();
-            if(!subscribeList.IsRecycled) subscribeList.Dispose();
-        }
-        public void OnAllocate()
-        {
-            subscribeList = Framework.Pool.Allocate<UnitList<BindableProperty<T>>>();
-            notificationList =  Framework.Pool.Allocate<UnitList<BindableProperty<T>>>();
-            value = default;
-        }
-
-        public void OnRecycle()
-        {
-            if (!notificationList.IsRecycled) notificationList.Dispose();
-            if (!subscribeList.IsRecycled) subscribeList.Dispose();
-            OnValueChanged = null;
-            value = default;
-        }
-
-        protected override void OnDispose()
-        {
-            this.RecycleSelf();
-        }
-
-        public IObjectPool ThisPool { get ; set ; }
-        public bool IsRecycled { get ; set; }
-    }*/
+    }
 }

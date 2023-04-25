@@ -7,37 +7,38 @@ using static UnityEngine.EventSystems.EventTrigger;
 
 namespace AirFramework
 {
-    public abstract partial class Entity :SimpleUnit, IPoolable, IMessageReceiver
+    public abstract partial class UnitGameObject : SimpleUnit, IPoolable, IMessageReceiver
     {
+        public bool IsAlive { get; internal set; } = true;
         /// <summary>
         /// Mono引用
         /// </summary>
-        public EntityRef MonoEntity { get; internal set; }
+        public MonoRef MonoObject { get; internal set; }
         /// <summary>
         /// 实体类型
         /// </summary>
-        public Type EntityType => MonoEntity.EntityType;
+        public Type UnitType => MonoObject.UnitType;
         /// <summary>
         /// 实体对应的GameObject
         /// </summary>
-        public GameObject gameObject => MonoEntity?.gameObject;
+        public GameObject gameObject => MonoObject?.gameObject;
         /// <summary>
         /// 实体的transform
         /// </summary>
-        public Transform trasnform => MonoEntity?.transform;
+        public Transform trasnform => MonoObject?.transform;
 
         /// <summary>
         /// 获取实体组件
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public T GetComponent<T>() where T : Component => MonoEntity?.GetComponent<T>();
+        public T GetComponent<T>() where T : Component => MonoObject?.GetComponent<T>();
         /// <summary>
         /// 为实体添加组件
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public T AddComponent<T>() where T : Component => MonoEntity?.gameObject.AddComponent<T>();
+        public T AddComponent<T>() where T : Component => MonoObject?.gameObject.AddComponent<T>();
         /// <summary>
         /// 设置实体的显隐性
         /// </summary>
@@ -49,62 +50,69 @@ namespace AirFramework
 
         }
 
-        public void SetParent(Entity entity)
+        
+        public void SetParent(UnitGameObject obj_ref)
         {
-            trasnform.SetParent(entity.trasnform);
+            trasnform.SetParent(obj_ref.trasnform);
         }
         public void SetAsFisrtSlibing() => trasnform.SetAsFirstSibling();
 
         public void SetAsLastSlibing() => trasnform.SetAsLastSibling();
+
+
     }
 
-    public abstract partial class Entity : SimpleUnit, IPoolable, IMessageReceiver
+    public abstract partial class UnitGameObject : SimpleUnit, IPoolable, IMessageReceiver
     {
-       // bool IPoolable.IsRecycled { get; set; }
+
         IObjectPool IPoolable.ThisPool { get; set; }
 
         public void OnAllocate()
         {
             this.SetActive(true);
-            OnAllocateEntity();
+            OnAllocateObject();
         }
         public void OnRecycle()
         {
             this.SetActive(false);
-            OnRecycleEntity();
+            OnRecycleObject();
         }
 
         public override void Dispose()
         {
-            base.Dispose(); 
-            this.RecycleSelf();
+            base.Dispose();
+            if (IsAlive)
+                this.RecycleSelf();
+            
         }
 
-        protected abstract void OnAllocateEntity();
-        protected abstract void OnRecycleEntity();
-        protected abstract void OnCreateEntity();
+        protected abstract void OnAllocateObject();
+        protected abstract void OnRecycleObject();
+        protected abstract void OnCreateObject();
 
-        protected abstract void OnDestroyEntity();
+        protected abstract void OnDestroyObject();
 
-        public Entity() => OnCreateEntity();
-        ~Entity() => OnDestroyEntity();
+        public UnitGameObject() => OnCreateObject();
+        ~UnitGameObject() => OnDestroyObject();
 
-        public static implicit operator GameObject(Entity entity)
+        public static implicit operator GameObject(UnitGameObject entity)
         {
             return entity.gameObject;
         }
     }
-    public abstract partial class Entity :SimpleUnit, IPoolable, IMessageReceiver
+    public abstract partial class UnitGameObject : SimpleUnit, IPoolable, IMessageReceiver
     {
- 
-        public static void Destroy(Entity entity)
+
+        public static void Destroy(UnitGameObject entity)
         {
-            UnityEngine.Object.Destroy(entity.gameObject);
+            if (entity.IsAlive)
+                UnityEngine.Object.Destroy(entity.gameObject);
+            entity.MonoObject= null;
+            entity.IsAlive= false;
             entity.Dispose();
-           
         }
 
-        protected static T Instantiate<T>(T entity) where T : Entity
+        protected static T Instantiate<T>(T entity) where T : UnitGameObject
         {
             Type type = entity.GetType();
             CheckAbstract(type);
@@ -115,39 +123,37 @@ namespace AirFramework
             instance.name = type.Name;
             handle.Release();
 
-           // var entity = Activator.CreateInstance<T>();
-            return BindEntityAndGameObject<T>(instance,entity);
+            // var obj_ref = Activator.CreateInstance<T>();
+            return BindUnitAndGameObject<T>(instance, entity);
         }
 
-        protected static T Instantiate<T>(GameObject instance,Entity entity) where T : Entity
+        protected static T Instantiate<T>(GameObject instance, UnitGameObject entity) where T : UnitGameObject
         {
             Type type = entity.GetType();
             CheckAbstract(type);
-            instance.name = type.Name;
+            
 
-            // var entity = Activator.CreateInstance<T>();
-            return BindEntityAndGameObject<T>(instance, entity);
+            // var obj_ref = Activator.CreateInstance<T>();
+            return BindUnitAndGameObject<T>(instance, entity);
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining),DebuggerHidden]
+        [MethodImpl(MethodImplOptions.AggressiveInlining), DebuggerHidden]
         private static void CheckAbstract(Type entity)
         {
             if (entity.IsAbstract) throw new InvalidOperationException("can't Instantiate a abstract type");
         }
-        private static T BindEntityAndGameObject<T>(GameObject obj,Entity entity) where T : Entity
+        private static T BindUnitAndGameObject<T>(GameObject obj, UnitGameObject entity) where T : UnitGameObject
         {
-          
             GameObject.DontDestroyOnLoad(obj);
             //为物体添加引用组件
-            var RefCom = obj.AddComponent<EntityRef>();
+            var RefCom = obj.AddComponent<MonoRef>();
             //申请实例引用
-            //T entity = Framework.Pool.Allocate<T>();
+            //T obj_ref = Framework.Pool.Allocate<T>();
             //更新Entity属性
-            entity.MonoEntity = RefCom;
+            entity.MonoObject = RefCom;
             //更新EntityRef属性
-            RefCom.EntityValue = entity;
-            RefCom.EntityType = entity.GetType();
-            return entity as T; 
+            RefCom.UnitValue = entity;
+            return entity as T;
         }
     }
 }
