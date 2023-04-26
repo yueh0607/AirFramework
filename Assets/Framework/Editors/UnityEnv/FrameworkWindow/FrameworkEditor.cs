@@ -9,7 +9,7 @@ namespace AirFrameworkEditor
     public class FrameworkEditor : OdinMenuEditorWindow
     {
 
-        [MenuItem("Framework/OpenWindow",priority = -999999999)]
+        [MenuItem("Framework/OpenWindow", priority = -999999999)]
         public static void Open()
         {
 
@@ -22,7 +22,7 @@ namespace AirFrameworkEditor
             var tree = new OdinMenuTree(supportsMultiSelect: false);
             tree.Add("关于", new About(), EditorIcons.Info);
 
-            tree.Add("UI代码生成", new UIGenerateWindow(), EditorIcons.Flag);
+            tree.Add("MVC代码生成", new MVCGenerateWindow(), EditorIcons.Flag);
 
             return tree;
         }

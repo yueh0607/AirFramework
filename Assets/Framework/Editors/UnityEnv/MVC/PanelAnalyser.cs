@@ -33,6 +33,29 @@ namespace AirFrameworkEditor
             }
             return marks;
         }
+
+        public static List<ScriptMark> RemoveMarks(GameObject root)
+        {
+            List<ScriptMark> marks = new();
+            Queue<Transform> queue = new();
+
+            queue.Enqueue(root.transform);
+
+            while (queue.Count > 0)
+            {
+                var node = queue.Dequeue();
+                var mark = node.GetComponents<ScriptMark>();
+                if (mark.Length != 0)
+                {
+                    foreach (var m in mark) Component.Destroy(m);
+                }
+                foreach (Transform child in node)
+                {
+                    queue.Enqueue(child);
+                }
+            }
+            return marks;
+        }
         public static List<MarkData> GetData(List<ScriptMark> marks)
         {
             var markData = new List<MarkData>();
@@ -42,6 +65,13 @@ namespace AirFrameworkEditor
             }
             return markData;
         }
+
+        public static List<MarkData> GetData(GameObject root)
+        {
+            return GetData(GetMarks(root));
+        }
+
+
     }
 
     public class MarkData
@@ -90,7 +120,7 @@ namespace AirFrameworkEditor
         /// </summary>
         public string ViewFiledString => $"public {FullTypeName} {ViewFieldName};";
 
-        public string ViewFindString => $"{ViewFieldName} = transform.Find({BuildName}).GetComponent<{FullTypeName}>();";
+        public string ViewFindString => $"{ViewFieldName} = transform.Find(\"{BuildName}\").GetComponent<{FullTypeName}>();";
 
         #endregion
 

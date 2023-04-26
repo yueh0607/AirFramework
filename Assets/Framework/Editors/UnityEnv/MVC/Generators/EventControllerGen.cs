@@ -1,7 +1,5 @@
 using AirFramework;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace AirFrameworkEditor
 {
@@ -10,11 +8,14 @@ namespace AirFrameworkEditor
 
         private CodeGenBox box = new(true);
 
-        public EventControllerCodeGen(string controllerName,string ViewType, List<MarkData> data)
+        public EventControllerCodeGen(string controllerName, string ViewType, List<MarkData> data)
         {
             Initialize($"{controllerName} : {nameof(Controller)}<{ViewType}>", data);
         }
-
+        public void CreateFileAndClear(string relativePath)
+        {
+            box.CreateAndClear(relativePath);
+        }
 
         public void Initialize(string controlerName, List<MarkData> data)
         {
@@ -25,14 +26,14 @@ namespace AirFrameworkEditor
             foreach (MarkData mark in data)
             {
                 bool result = MVCGenConfig.Instance.TryGetList(mark.MarkType, out var list);
-                if (!result) return;
+                if (!result) break;
 
 
                 foreach (var tag in list)
                 {
-                    string bindCodeTemp = $"{nameof(Controller<View>.TView)}.{mark.ViewFieldName}.Bind({tag.name}_{mark.ViewFieldName});";
-                    string unbindCodeTemp = $"{nameof(Controller<View>.TView)}.{mark.ViewFieldName}.UnBind({tag.name}_{mark.ViewFieldName});";
-                    string methodCodeTemp = tag.GetMethod();
+                    string bindCodeTemp = $"{nameof(Controller<View>.TView)}.{mark.ViewFieldName}.Bind({tag.GetMethodName(mark.ViewFieldName)});";
+                    string unbindCodeTemp = $"{nameof(Controller<View>.TView)}.{mark.ViewFieldName}.UnBind({tag.GetMethodName(mark.ViewFieldName)});";
+                    string methodCodeTemp = tag.GetMethod(mark.ViewFieldName, "private");
 
                     bindCode.Add(bindCodeTemp);
                     unbindCode.Add(unbindCodeTemp);
@@ -41,19 +42,22 @@ namespace AirFrameworkEditor
             }
 
 
-            box.AddLine(TitleInfoGenerator.GetStandardNameSpaceUsing());
+
+            var usings = TitleInfoGenerator.GetStandardNameSpaceUsing();
+            foreach (var us in usings) box.UsingText(us);
+
             box.NameSpaceStart(FrameworkSettings.Instance.defaultNamespace);
 
-            box.ClassStart(controlerName,true);
+            box.ClassStart(controlerName, true);
 
-            box.MethodStart("protected override void OnBindEvents()");
-            foreach(string bindStr in bindCode)
+            box.MethodStart($"protected override void {nameof(Controller.OnBindEvents)}()");
+            foreach (string bindStr in bindCode)
             {
                 box.AddLine(bindStr);
             }
             box.AnyEnd();
 
-            box.MethodStart("protected override void OnUnBindEvents()");
+            box.MethodStart($"protected override void {nameof(Controller.OnUnBindEvents)}()");
             foreach (string unbindStr in unbindCode)
             {
                 box.AddLine(unbindStr);
@@ -61,7 +65,7 @@ namespace AirFrameworkEditor
             box.AnyEnd();
 
 
-            foreach(string method in methodCode)
+            foreach (string method in methodCode)
             {
                 box.AddEmptyMethod(method);
             }

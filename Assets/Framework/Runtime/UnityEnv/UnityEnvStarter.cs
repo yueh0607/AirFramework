@@ -1,5 +1,4 @@
 using UnityEngine;
-using YooAsset;
 
 namespace AirFramework.Internal
 {
@@ -14,8 +13,8 @@ namespace AirFramework.Internal
             SingletonInitializeAfterSceneLoad();
             Framework.Res.Initialize("DefaultPackage");
             Starter.AfterLoadSceneEvent();
-            
-            
+
+
         }
 
 

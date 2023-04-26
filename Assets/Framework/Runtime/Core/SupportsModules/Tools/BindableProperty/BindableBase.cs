@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AirFramework
+﻿namespace AirFramework
 {
     public abstract class BindableBase<T> : Unit, IValueChanged<T>
     {
@@ -49,7 +43,7 @@ namespace AirFramework
             a.notificationList.Value.TryRemove(b);
             b.notificationList.Value.TryRemove(a);
         }
-        public static void BindTo(BindableBase<T> origin,BindableBase<T> target)
+        public static void BindTo(BindableBase<T> origin, BindableBase<T> target)
         {
             target.notificationList.Value.TryAdd(origin);
         }

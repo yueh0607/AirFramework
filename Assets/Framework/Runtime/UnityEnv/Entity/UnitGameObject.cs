@@ -3,7 +3,6 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
-using static UnityEngine.EventSystems.EventTrigger;
 
 namespace AirFramework
 {
@@ -50,7 +49,7 @@ namespace AirFramework
 
         }
 
-        
+
         public void SetParent(UnitGameObject obj_ref)
         {
             trasnform.SetParent(obj_ref.trasnform);
@@ -83,7 +82,7 @@ namespace AirFramework
             base.Dispose();
             if (IsAlive)
                 this.RecycleSelf();
-            
+
         }
 
         protected abstract void OnAllocateObject();
@@ -107,8 +106,8 @@ namespace AirFramework
         {
             if (entity.IsAlive)
                 UnityEngine.Object.Destroy(entity.gameObject);
-            entity.MonoObject= null;
-            entity.IsAlive= false;
+            entity.MonoObject = null;
+            entity.IsAlive = false;
             entity.Dispose();
         }
 
@@ -131,7 +130,7 @@ namespace AirFramework
         {
             Type type = entity.GetType();
             CheckAbstract(type);
-            
+
 
             // var obj_ref = Activator.CreateInstance<T>();
             return BindUnitAndGameObject<T>(instance, entity);

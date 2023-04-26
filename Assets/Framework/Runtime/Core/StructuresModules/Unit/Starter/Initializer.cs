@@ -22,8 +22,8 @@ namespace AirFramework
                 foreach (var type in types)
                 {
                     bool result = type.GetCustomAttribute<FrameworkInitializeAttribute>() != null;
-                   
-                    if(result)
+
+                    if (result)
                     {
                         var obj = Activator.CreateInstance(type);
                         obj.StartObjLife();

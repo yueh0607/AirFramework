@@ -1,20 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
+using UnityEditor;
 using UnityEngine;
 
 namespace AirFrameworkEditor
 {
     public class FileCreateHandle : MonoBehaviour
     {
+        public static void Refresh() => AssetDatabase.Refresh();
+
         public static string AssetPath2AbsPath(string assetPath)
         {
-            return Application.dataPath + "/" + assetPath;
+            return Application.dataPath + "/" + assetPath.Substring("Assets/".Length);
         }
 
         public static string AbsPath2AssetPath(string absPath)
         {
-            if(!absPath.StartsWith(Application.dataPath))
+            if (!absPath.StartsWith(Application.dataPath))
             {
                 throw new InvalidDataException("It's not a asset path");
             }
@@ -27,14 +28,15 @@ namespace AirFrameworkEditor
 
 
         /// <summary>
-        /// 例如: MyFolder/mytxt.txt
+        /// 例如: Assets/MyFolder/mytxt.txt
         /// </summary>
         /// <param name="relativePath"></param>
         /// <returns></returns>
         public static void CreateFileInAssetPath(string path, string text)
         {
-           
+
             File.WriteAllText(AssetPath2AbsPath(path), text, System.Text.Encoding.Unicode);
+            //Refresh();
         }
 
         /// <summary>
@@ -46,6 +48,7 @@ namespace AirFrameworkEditor
         {
             string filePath = path;
             File.WriteAllText(filePath, text, System.Text.Encoding.Unicode);
+            //Refresh();
         }
 
         /// <summary>
@@ -68,7 +71,7 @@ namespace AirFrameworkEditor
         }
 
         /// <summary>
-        /// 例如: MyFolder/mytxt.txt
+        /// 例如: Assets/MyFolder/mytxt.txt
         /// </summary>
         /// <param name="relativePath"></param>
         /// <returns></returns>
@@ -77,7 +80,19 @@ namespace AirFrameworkEditor
             return File.Exists(AssetPath2AbsPath(relativePath));
         }
 
-       
 
+        public static bool ExistAssetFolder(string relativePath)
+        {
+            return Directory.Exists(AssetPath2AbsPath(relativePath));
+        }
+
+        public static void CreateAssetFolder(string relativePath)
+        {
+            if (!ExistAssetFolder(relativePath))
+            {
+                Directory.CreateDirectory(AssetPath2AbsPath(relativePath));
+            }
+
+        }
     }
 }

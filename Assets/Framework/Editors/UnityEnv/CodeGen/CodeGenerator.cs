@@ -6,16 +6,19 @@ namespace AirFrameworkEditor
     /// </summary>
     public class CodeGenerator
     {
-    
+
 
 
         private StringBuilder builder = new();
         private int tabCount = 0;
 
+        /// <summary>
+        /// 当前的不闭合{}数量
+        /// </summary>
         public int EndCount { get; protected set; }
 
         /// <summary>
-        /// 加入using
+        /// 加入using，参数直接写命名空间即可:  System.IO  
         /// </summary>
         /// <param name="np"></param>
         public void UsingText(string np)
@@ -28,7 +31,7 @@ namespace AirFrameworkEditor
         }
 
         /// <summary>
-        /// namespace开始
+        /// namespace开始，参数为命名空间名
         /// </summary>
         /// <param name="name"></param>
         public void NameSpaceStart(string name)
@@ -43,7 +46,7 @@ namespace AirFrameworkEditor
         }
 
         /// <summary>
-        /// 完成一个结构
+        /// 完成一个结构，使{}闭合
         /// </summary>
         public void AnyEnd()
         {
@@ -55,14 +58,14 @@ namespace AirFrameworkEditor
         }
 
         /// <summary>
-        /// 类开始
+        /// 类开始，参数为类名和是否是分部类
         /// </summary>
         /// <param name="name"></param>
         /// <param name="part"></param>
-        public void ClassStart(string name, bool part = false)
+        public void ClassStart(string name, bool part = false, string lev = "public")
         {
             AddTab(tabCount);
-            builder.Append(part ? "public partial class " : "public class ");
+            builder.Append(part ? $"{lev} partial class " : $"{lev} class ");
             builder.AppendLine(name);
             AddTab(tabCount);
             builder.AppendLine("{");
@@ -80,7 +83,7 @@ namespace AirFrameworkEditor
             builder.AppendLine(filed);
         }
         /// <summary>
-        /// 方法开始
+        /// 方法开始，需要给出完整的方法签名如 public void OnClick(int temp)
         /// </summary>
         /// <param name="method"></param>
         public void MethodStart(string method)
@@ -95,7 +98,7 @@ namespace AirFrameworkEditor
 
 
         /// <summary>
-        /// 返回代码
+        /// 返回代码字符串
         /// </summary>
         /// <returns></returns>
         public string GetCode()
@@ -103,14 +106,18 @@ namespace AirFrameworkEditor
             string code = builder.ToString();
             return code;
         }
+
+        /// <summary>
+        /// 清空代码字符串
+        /// </summary>
         public void Clear()
         {
             builder.Clear();
             tabCount = 0;
-            EndCount= 0;
+            EndCount = 0;
         }
         /// <summary>
-        /// 添加TAB
+        /// 内部添加TAB进行对齐
         /// </summary>
         /// <param name="count"></param>
         private void AddTab(int count)

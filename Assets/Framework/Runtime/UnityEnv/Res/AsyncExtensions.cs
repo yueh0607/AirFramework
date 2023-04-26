@@ -20,7 +20,7 @@ namespace AirFramework
 
 
         #region YooAsset
- 
+
         public static AsyncTask<AssetOperationHandle> GetAwaiter(this AssetOperationHandle handle)
         {
             var task = Framework.Pool.Allocate<AsyncTask<AssetOperationHandle>>();

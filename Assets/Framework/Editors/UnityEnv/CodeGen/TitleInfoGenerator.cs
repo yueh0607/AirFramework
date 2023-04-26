@@ -8,7 +8,6 @@
 
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
@@ -17,15 +16,26 @@ namespace AirFrameworkEditor
 {
     public static class TitleInfoGenerator
     {
-        private const string sign = "#SIGN#"; 
-        public static string GetTitle(string author,string date,string description,string version)
+        /// <summary>
+        /// 默认的替换符号
+        /// </summary>
+        public const string Sign = "#SIGN#";
+        /// <summary>
+        /// 获取抬头字符串
+        /// </summary>
+        /// <param name="author"></param>
+        /// <param name="date"></param>
+        /// <param name="description"></param>
+        /// <param name="version"></param>
+        /// <returns></returns>
+        public static string GetTitle(string author, string date, string description, string version)
         {
             string line1 = "/***********************************************************************************";
             string line2 = "************************************************************************************/";
-            string a1 = $" * Author      : {sign}".Replace(sign,author);
-            string a2 = $" * Version     : {sign}".Replace(sign, version);
-            string a3 = $" * Date        : {sign}".Replace(sign, date);
-            string a4 = $" * Description : {sign}".Replace(sign, description);
+            string a1 = $" * Author      : {Sign}".Replace(Sign, author);
+            string a2 = $" * Version     : {Sign}".Replace(Sign, version);
+            string a3 = $" * Date        : {Sign}".Replace(Sign, date);
+            string a4 = $" * Description : {Sign}".Replace(Sign, description);
 
             List<string> lines = new List<string>();
 
@@ -39,7 +49,7 @@ namespace AirFrameworkEditor
 
             StringBuilder builder = new();
 
-            foreach(string line in lines)
+            foreach (string line in lines)
             {
                 builder.AppendLine(line);
             }
@@ -47,6 +57,10 @@ namespace AirFrameworkEditor
             return builder.ToString();
         }
 
+        /// <summary>
+        /// 获取默认的抬头
+        /// </summary>
+        /// <returns></returns>
 
         public static string GetTitleDefault()
         {
@@ -56,11 +70,14 @@ namespace AirFrameworkEditor
 
             string version = Application.unityVersion;
 
-            return GetTitle(author,date,des,version);
+            return GetTitle(author, date, des, version);
         }
 
-
-        public static string GetStandardNameSpaceUsing()
+        /// <summary>
+        /// 获取标准的命名空间文本，可以直接使用CodeGen进行using
+        /// </summary>
+        /// <returns></returns>
+        public static List<string> GetStandardNameSpaceUsing()
         {
             string a1 = "System";
             string a2 = "System.Collections";
@@ -70,20 +87,14 @@ namespace AirFrameworkEditor
 
 
             List<string> lines = new List<string>();
+
             lines.Add(a1);
             lines.Add(a2);
-                
             lines.Add(a3);
             lines.Add(a4);
             lines.Add(a5);
+            return lines;
 
-            StringBuilder builder= new();
-
-
-            foreach(string line in lines) builder.AppendLine(line);
-
-            return builder.ToString();
-            
         }
     }
 }

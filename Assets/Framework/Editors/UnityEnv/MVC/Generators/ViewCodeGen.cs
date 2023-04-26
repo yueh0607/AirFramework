@@ -1,7 +1,5 @@
 using AirFramework;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace AirFrameworkEditor
 {
@@ -10,6 +8,10 @@ namespace AirFrameworkEditor
 
         private CodeGenBox box = new(true);
 
+        public void CreateFileAndClear(string relativePath)
+        {
+            box.CreateAndClear(relativePath);
+        }
         public ViewCodeGen(string viewName, List<MarkData> data)
         {
             Initialize(viewName, data);
@@ -24,10 +26,12 @@ namespace AirFrameworkEditor
 
         public void Initialize(string viewName, List<MarkData> data)
         {
-            box.AddLine(TitleInfoGenerator.GetStandardNameSpaceUsing());
+            var usings = TitleInfoGenerator.GetStandardNameSpaceUsing();
+
+            foreach (var us in usings) box.UsingText(us);
             box.NameSpaceStart(FrameworkSettings.Instance.defaultNamespace);
 
-            box.ClassStart(viewName);
+            box.ClassStart($"{viewName} : {nameof(View)}");
 
 
             foreach (var field in data)
@@ -36,7 +40,7 @@ namespace AirFrameworkEditor
             }
 
 
-            box.MethodStart($"public void {nameof(View.InitComponents)}()");
+            box.MethodStart($"public override void {nameof(View.InitComponents)}()");
             foreach (var field in data)
             {
                 box.AddLine(field.ViewFindString);

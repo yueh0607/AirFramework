@@ -34,9 +34,9 @@ namespace AirFramework
         {
             if (UnitValue != null)
             {
-                UnitValue.IsAlive= false;
-                
-            }    
+                UnitValue.IsAlive = false;
+
+            }
         }
     }
 

@@ -9,14 +9,13 @@
  */
 
 using System;
-using System.Collections;
 
 namespace AirFramework
 {
     /// <summary>
     /// 框架内所有类型的基类
     /// </summary>
-    public abstract partial class Unit : IUnit,IMessageReceiver
+    public abstract partial class Unit : IUnit, IMessageReceiver
     {
         private bool _disposed = false;
         bool IUnit.Disposed
@@ -32,7 +31,7 @@ namespace AirFramework
 
         public virtual void Dispose()
         {
-            if(_disposed)
+            if (_disposed)
             {
                 throw new InvalidOperationException("Repeat Dispose!");
             }
@@ -50,7 +49,7 @@ namespace AirFramework
     }
 
     public abstract partial class Unit :
-        IUnit,IMessageReceiver
+        IUnit, IMessageReceiver
     {
         /// <summary>
         /// ID管理器
@@ -90,7 +89,7 @@ namespace AirFramework
         public bool Equals(Unit other)
         {
             if (other == null) return false;
-            return this.ID== other.ID;
+            return this.ID == other.ID;
         }
 
         public override int GetHashCode()
@@ -98,13 +97,13 @@ namespace AirFramework
             return base.GetHashCode();
         }
 
-        public static bool operator==(Unit a, Unit b)
+        public static bool operator ==(Unit a, Unit b)
         {
-            return Equals(a,b);
+            return Equals(a, b);
         }
         public static bool operator !=(Unit a, Unit b)
         {
-            return !Equals(a,b);
+            return !Equals(a, b);
         }
 
 

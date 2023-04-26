@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AirFramework
+﻿namespace AirFramework
 {
     public delegate void PropertyChangedEvent<T>(T oldValue, T newValue);
     public interface IValueChanged<T> : IValueContainer<T>
@@ -12,5 +6,5 @@ namespace AirFramework
         public event PropertyChangedEvent<T> OnValueChanged;
 
     }
- 
+
 }

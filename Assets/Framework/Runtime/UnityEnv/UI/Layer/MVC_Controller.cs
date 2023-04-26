@@ -9,18 +9,18 @@ namespace AirFramework
     {
         public View View { get; set; }
 
-        public abstract void OnOpen();
+        public abstract void OnShow();
 
-        public abstract void OnClose();
+        public abstract void OnHide();
 
         public abstract void OnLoad();
 
         public abstract void OnUnload();
 
-        protected abstract void OnBindProperty();
-        protected abstract void OnUnBindProperty();
-        protected abstract void OnBindEvents();
-        protected abstract void OnUnBindEvents();
+        public abstract void OnBindProperty();
+        public abstract void OnUnBindProperty();
+        public abstract void OnBindEvents();
+        public abstract void OnUnBindEvents();
 
         protected override void OnAllocateObject()
         {

@@ -18,7 +18,7 @@ namespace AirFramework
         /// </summary>
         internal readonly DynamicQueue<Type, MessageDispatcherBox<IMessage>> dispatchersContainer = new();
 
-        
+
 
 
     }

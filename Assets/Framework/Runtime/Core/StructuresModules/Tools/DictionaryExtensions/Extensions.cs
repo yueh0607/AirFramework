@@ -137,22 +137,22 @@ namespace AirFramework
         }
 
 
-        public static void AddOrSet<T,K>(this IDictionary<T,K> dictionary,T key,K value)
+        public static void AddOrSet<T, K>(this IDictionary<T, K> dictionary, T key, K value)
         {
-            if(dictionary.ContainsKey(key))
+            if (dictionary.ContainsKey(key))
             {
                 dictionary[key] = value;
             }
-            dictionary.Add(key, value); 
+            dictionary.Add(key, value);
         }
 
         #endregion
 
         #region HashSet
 
-        public static bool TryAdd<T> (this ISet<T> set,T key)
+        public static bool TryAdd<T>(this ISet<T> set, T key)
         {
-            if(set.Contains(key))
+            if (set.Contains(key))
             {
                 return false;
             }
@@ -162,7 +162,7 @@ namespace AirFramework
         {
             if (set.Contains(key))
             {
-               set.Remove(key); return true;
+                set.Remove(key); return true;
             }
             return false;
         }
