@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace AirFramework.Assets.Framework.Runtime.UnityEnv.Entity
+namespace AirFramework
 {
     public class EmptyUnitGameObject : UnitGameObject<EmptyUnitGameObject>
     {

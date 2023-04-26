@@ -2,12 +2,17 @@
 namespace AirFrameworkEditor
 {
     /// <summary>
-    /// 用于简单代码生成
+    /// 用于简单代码生成，要求每个需要使用{的结构都需要在适当时候调用AnyEnd
     /// </summary>
     public class CodeGenerator
     {
+    
+
+
         private StringBuilder builder = new();
         private int tabCount = 0;
+
+        public int EndCount { get; protected set; }
 
         /// <summary>
         /// 加入using
@@ -34,17 +39,18 @@ namespace AirFrameworkEditor
             AddTab(tabCount);
             builder.AppendLine("{");
             tabCount++;
+            EndCount++;
         }
 
         /// <summary>
-        /// 完成结构
+        /// 完成一个结构
         /// </summary>
         public void AnyEnd()
         {
 
             AddTab(--tabCount);
             builder.AppendLine("}");
-
+            EndCount--;
 
         }
 
@@ -61,6 +67,7 @@ namespace AirFrameworkEditor
             AddTab(tabCount);
             builder.AppendLine("{");
             tabCount++;
+            EndCount++;
         }
 
         /// <summary>
@@ -83,6 +90,7 @@ namespace AirFrameworkEditor
             AddTab(tabCount);
             builder.AppendLine("{");
             tabCount++;
+            EndCount++;
         }
 
 
@@ -99,7 +107,7 @@ namespace AirFrameworkEditor
         {
             builder.Clear();
             tabCount = 0;
-
+            EndCount= 0;
         }
         /// <summary>
         /// 添加TAB

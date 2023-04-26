@@ -7,14 +7,15 @@ namespace AirFramework
     /// </summary>
     public abstract class Controller : UnitGameObject<Controller>
     {
-        public abstract void OnOpenPanel();
+        public View View { get; set; }
 
+        public abstract void OnOpen();
 
-        public abstract void OnClosePanel();
+        public abstract void OnClose();
 
-        public abstract void OnLoadPanel();
+        public abstract void OnLoad();
 
-        public abstract void OnUnloadPanel();
+        public abstract void OnUnload();
 
         protected abstract void OnBindProperty();
         protected abstract void OnUnBindProperty();
@@ -23,8 +24,6 @@ namespace AirFramework
 
         protected override void OnAllocateObject()
         {
-
-
             OnBindEvents();
             OnBindProperty();
         }
@@ -33,7 +32,7 @@ namespace AirFramework
             OnUnBindEvents();
             OnUnBindProperty();
         }
-        protected K Model<K>() where K : Model
+        protected K GetModel<K>() where K : Model
         {
             return Framework.UI.Models.Get<K>();
         }
@@ -44,7 +43,11 @@ namespace AirFramework
         {
             if (typeof(T).IsAbstract) throw new InvalidOperationException("Abstract classes cannot be used as generic parameters for this class");
         }
-        public T View { get; set; }
+        public T TView
+        {
+            get => (T)View;
+            set => View = value;
+        }
 
         protected override void OnAllocateObject()
         {

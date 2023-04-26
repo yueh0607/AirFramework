@@ -1,7 +1,7 @@
 using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using UnityEngine;
-using UIMark = AirFramework.UIMark;
+using ScriptMark = AirFramework.ScriptMark;
 namespace AirFrameworkEditor
 {
 
@@ -43,7 +43,7 @@ namespace AirFrameworkEditor
             {
                 Debug.LogError("prefab cannot be null");
             }
-            List<UIMark> marks = PanelAnalyser.GetMarks(prefab);
+            List<ScriptMark> marks = PanelAnalyser.GetMarks(prefab);
 
             CreateUIFileHandle.CreateVCByMarks(marks, path, name);
 

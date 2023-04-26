@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 599466759dfae2446aff3a38e5fb1912, type: 3}
   m_Name: Framework.Setting
   m_EditorClassIdentifier: 
-  PanelPath: 
+  authorName: yueh0607
+  defaultNamespace: MyNamespace
