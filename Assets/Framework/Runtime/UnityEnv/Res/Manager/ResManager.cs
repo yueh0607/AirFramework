@@ -173,7 +173,7 @@ namespace AirFramework
         public async AsyncTask<bool> UpdateManifest(ResourcePackage package)
         {
 
-            var op = package.UpdatePackageManifestAsync(package.GetPackageVersion(), 60);
+            var op = package.UpdatePackageManifestAsync(package.GetPackageVersion(),true,DefaultDownloadConfig.TimeOut);
             await op;
             if (op.Status != EOperationStatus.Succeed)
             {
