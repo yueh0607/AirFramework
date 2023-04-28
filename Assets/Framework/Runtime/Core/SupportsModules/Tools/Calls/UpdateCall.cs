@@ -1,7 +1,7 @@
 ﻿using System;
 namespace AirFramework
 {
-    public sealed class UpdateCall : PoolableObject<CounterCall>, IUpdate
+    public sealed class UpdateCall : PoolableObject, IUpdate
     {
         public event Action LifeEvent = null;
 

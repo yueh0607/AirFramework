@@ -3,12 +3,14 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using YooAsset;
 
 namespace AirFramework
 {
-    public abstract partial class UnitGameObject : SimpleUnit, IPoolable, IMessageReceiver
+    public abstract partial class UnitGameObject : IMessageReceiver
     {
-        public bool IsAlive { get; internal set; } = true;
+
+        public bool IsAlive => MonoObject != null;
         /// <summary>
         /// Mono引用
         /// </summary>
@@ -44,7 +46,8 @@ namespace AirFramework
         /// <param name="active"></param>
         public void SetActive(bool active)
         {
-            if (!active) this.CloseLife(); else this.StartLife();
+            if (!active) this.CloseLife();
+            else this.StartLife();
             gameObject.SetActive(active);
 
         }
@@ -61,86 +64,107 @@ namespace AirFramework
 
     }
 
-    public abstract partial class UnitGameObject : SimpleUnit, IPoolable, IMessageReceiver
+    public abstract partial class UnitGameObject : Unit, IPoolable
     {
 
         IObjectPool IPoolable.ThisPool { get; set; }
 
         public void OnAllocate()
         {
-            this.SetActive(true);
+            if (IsAlive)
+                gameObject.SetActive(true);
             OnAllocateObject();
         }
         public void OnRecycle()
         {
-            this.SetActive(false);
+            if (IsAlive)
+                gameObject.SetActive(false);
             OnRecycleObject();
         }
 
-        public override void Dispose()
+        protected override void OnDispose()
         {
-            base.Dispose();
             if (IsAlive)
                 this.RecycleSelf();
-
         }
 
+        /// <summary>
+        /// 在申请时调用
+        /// </summary>
         protected abstract void OnAllocateObject();
+        /// <summary>
+        /// 在回收到池时调用
+        /// </summary>
         protected abstract void OnRecycleObject();
-        protected abstract void OnCreateObject();
 
-        protected abstract void OnDestroyObject();
+        /// <summary>
+        /// 在完成初始化时调用
+        /// </summary>
+        public event Action OnCompleted = null;
 
-        public UnitGameObject() => OnCreateObject();
-        ~UnitGameObject() => OnDestroyObject();
-
+        /// <summary>
+        /// 用于将UnitGameObject隐式转换为GameObject，但是要求完成初始化
+        /// </summary>
+        /// <param name="entity"></param>
         public static implicit operator GameObject(UnitGameObject entity)
         {
             return entity.gameObject;
         }
     }
-    public abstract partial class UnitGameObject : SimpleUnit, IPoolable, IMessageReceiver
+    public abstract partial class UnitGameObject
     {
-
-        public static void Destroy(UnitGameObject entity)
+        /// <summary>
+        /// 释放后禁止使用，除非再进行加载,也只有释放只会才能重复加载
+        /// </summary>
+        /// <param name="entity"></param>
+        internal protected void Destroy()
         {
-            if (entity.IsAlive)
-                UnityEngine.Object.Destroy(entity.gameObject);
-            entity.MonoObject = null;
-            entity.IsAlive = false;
-            entity.Dispose();
+            //如果托管资源没释放，则
+            if (IsAlive)
+                UnityEngine.Object.Destroy(gameObject);
+            MonoObject = null;
+            OnCompleted = null;
+
         }
 
-        protected static T Instantiate<T>(T entity) where T : UnitGameObject
+        /// <summary>
+        /// 实例化一个UnitGameObject，需要等待这个异步任务完成才能使用
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        internal protected async AsyncTask<T> Bind<T>() where T : UnitGameObject
         {
-            Type type = entity.GetType();
-            CheckAbstract(type);
-            var handle = Framework.Res.LoadSync<GameObject>(type.Name);
-            //(handle.GetAssetObject<GameObject>() is null).L();
+            if (IsAlive) throw new InvalidOperationException("Cannot initialize repeatly.");
+            Type type = typeof(T);
+            type.CheckAbstract();
+            var handle = Framework.Res.LoadAsync<GameObject>(type.Name);
+            await handle;
+
             //实例化到场景
             GameObject instance = GameObject.Instantiate(handle.GetAssetObject<GameObject>());
             instance.name = type.Name;
             handle.Release();
 
-            // var obj_ref = Activator.CreateInstance<T>();
-            return BindUnitAndGameObject<T>(instance, entity);
+            return BindUnitAndGameObject<T>(instance, this);
         }
-
-        protected static T Instantiate<T>(GameObject instance, UnitGameObject entity) where T : UnitGameObject
+        /// <summary>
+        /// 手动绑定进行实例化
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="instance"></param>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        internal protected T Bind<T>(GameObject instance) where T : UnitGameObject
         {
-            Type type = entity.GetType();
-            CheckAbstract(type);
-
+            if (IsAlive) throw new InvalidOperationException("Cannot initialize repeatly.");
+            Type type = typeof(T);
+            type.CheckAbstract();
 
             // var obj_ref = Activator.CreateInstance<T>();
-            return BindUnitAndGameObject<T>(instance, entity);
+            return BindUnitAndGameObject<T>(instance, this);
         }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining), DebuggerHidden]
-        private static void CheckAbstract(Type entity)
-        {
-            if (entity.IsAbstract) throw new InvalidOperationException("can't Instantiate a abstract type");
-        }
+        //绑定
         private static T BindUnitAndGameObject<T>(GameObject obj, UnitGameObject entity) where T : UnitGameObject
         {
             GameObject.DontDestroyOnLoad(obj);
@@ -152,6 +176,8 @@ namespace AirFramework
             entity.MonoObject = RefCom;
             //更新EntityRef属性
             RefCom.UnitValue = entity;
+            entity.OnCompleted?.Invoke();
+
             return entity as T;
         }
     }

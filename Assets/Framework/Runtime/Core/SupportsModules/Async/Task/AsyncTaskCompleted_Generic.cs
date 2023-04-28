@@ -13,13 +13,13 @@ using System.Runtime.CompilerServices;
 namespace AirFramework
 {
 
-    [AsyncMethodBuilder(typeof(AsyncTaskCompletedMethodBuilder))]
-    public class AsyncTaskCompleted : PoolableObject, ICriticalNotifyCompletion, IAsyncTokenProperty,IAsyncTask
+    [AsyncMethodBuilder(typeof(AsyncTaskCompletedMethodBuilder<>))]
+    public class AsyncTaskCompleted<T> : PoolableObject, IAsyncTokenProperty, IAsyncTask<T>
     {
-        public static AsyncTaskCompleted Create() => Framework.Pool.Allocate<AsyncTaskCompleted>();
+        public static AsyncTaskCompleted<T> Create() => Framework.Pool.Allocate<AsyncTaskCompleted<T>>();
         public AsyncTaskCompleted() => Token = new(this, this);
         [DebuggerHidden]
-        public AsyncTaskCompleted GetAwaiter() => this;
+        public AsyncTaskCompleted<T> GetAwaiter() => this;
 
 
         [DebuggerHidden]
@@ -32,28 +32,22 @@ namespace AirFramework
         public bool Authorization { get; internal set; } = true;
         bool IAuthorization.Authorization { get => Authorization; set => Authorization = value; }
 
-        Action IAsyncTask.SetResult =>throw new InvalidOperationException("You shouldn't get this Property!");
+        Action<T> IAsyncTask<T>.SetResult => throw new InvalidOperationException("You shouldn't get this Property!");
         #endregion
 
 
         [DebuggerHidden]
-        public void GetResult() { }
-
-        [DebuggerHidden]
         public void OnCompleted(Action continuation) => UnsafeOnCompleted(continuation);
-
 
         [DebuggerHidden]
         public void UnsafeOnCompleted(Action continuation)
         {
             continuation?.Invoke();
-       
         }
-
-        public void SetResult()
+        public T result { get; private set; }
+        public void SetResult(T result)
         {
-
-            
+            this.result = result;
             Dispose();
         }
         public override void OnAllocate()
@@ -69,7 +63,12 @@ namespace AirFramework
         }
         public void SetException(Exception exception)
         {
-            SetResult();
+            SetResult(default);
+        }
+        [DebuggerHidden]
+        public T GetResult()
+        {
+            return result;
         }
     }
 }

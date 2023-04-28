@@ -5,7 +5,7 @@ namespace AirFramework
     /// <summary>
     /// 全局拓展类，包含全局所有的拓展方法
     /// </summary>
-    public static partial class Extensions_Dictionary
+    public static partial class Dictionary_Extensions
     {
         #region Dictionary
         /// <summary>
@@ -146,29 +146,12 @@ namespace AirFramework
             dictionary.Add(key, value);
         }
 
-        #endregion
 
-        #region HashSet
-
-        public static bool TryAdd<T>(this ISet<T> set, T key)
-        {
-            if (set.Contains(key))
-            {
-                return false;
-            }
-            set.Add(key); return true;
-        }
-        public static bool TryRemove<T>(this ISet<T> set, T key)
-        {
-            if (set.Contains(key))
-            {
-                set.Remove(key); return true;
-            }
-            return false;
-        }
 
 
         #endregion
+
+
 
 
     }

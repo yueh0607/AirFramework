@@ -14,7 +14,7 @@ namespace AirFramework
 {
 
     //[AsyncMethodBuilder(typeof(AsyncTaskMethodBuilder))]
-    public class AsyncTaskUpdate : PoolableObject<AsyncTaskUpdate>, ICriticalNotifyCompletion, IAsyncTokenProperty, IUpdate
+    public class AsyncTaskUpdate : PoolableObject, ICriticalNotifyCompletion, IAsyncTokenProperty, IUpdate
     {
         public static void Create() => Framework.Pool.Allocate<AsyncTaskUpdate>();
         public AsyncTaskUpdate() => Token = new(this, this);

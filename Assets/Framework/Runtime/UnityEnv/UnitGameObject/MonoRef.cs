@@ -34,7 +34,8 @@ namespace AirFramework
         {
             if (UnitValue != null)
             {
-                UnitValue.IsAlive = false;
+                UnitValue.MonoObject= null;
+                UnitValue = null;
 
             }
         }

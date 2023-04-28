@@ -24,7 +24,7 @@ namespace AirFramework
         //结束
         Completed
     }
-    public sealed class AsyncToken : PoolableObject<AsyncToken>
+    public sealed class AsyncToken : PoolableObject
     {
         //internal static T BindToken<T>(T task, AsyncTreeTokenNode token) where T : IAsyncTokenProperty
         //{

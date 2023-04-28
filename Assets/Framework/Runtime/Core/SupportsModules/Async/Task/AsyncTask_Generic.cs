@@ -15,7 +15,7 @@ namespace AirFramework
     /// 此分部类负责对象池
     /// </summary>
     [AsyncMethodBuilder(typeof(AsyncTaskMethodBuilder<>))]
-    public partial class AsyncTask<T> : PoolableObject<AsyncTask<T>>, IAsyncTask<T>, IAuthorization, IAsyncTokenProperty
+    public partial class AsyncTask<T> : PoolableObject, IAsyncTask<T>, IAuthorization, IAsyncTokenProperty
     {
         [DebuggerHidden]
         public static AsyncTask<T> Create(bool fromPool = false)
@@ -47,7 +47,7 @@ namespace AirFramework
     /// <summary>
     /// SetResult/SetException
     /// </summary>
-    public partial class AsyncTask<T> : PoolableObject<AsyncTask<T>>, IAsyncTask<T>, IAuthorization, IAsyncTokenProperty
+    public partial class AsyncTask<T> : PoolableObject, IAsyncTask<T>, IAuthorization, IAsyncTokenProperty
     {
         public T Result { get; set; } = default;
         /// <summary>
@@ -121,7 +121,7 @@ namespace AirFramework
     /// <summary>
     /// OnCompleted
     /// </summary>
-    public partial class AsyncTask<T> : PoolableObject<AsyncTask<T>>, IAsyncTask<T>, IAuthorization, IAsyncTokenProperty
+    public partial class AsyncTask<T> : PoolableObject, IAsyncTask<T>, IAuthorization, IAsyncTokenProperty
     {
         #region
         [DebuggerHidden]

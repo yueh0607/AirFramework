@@ -9,13 +9,9 @@ namespace AirFramework
     {
         public View View { get; set; }
 
-        public abstract void OnShow();
+        public abstract AsyncTask OnShow();
 
-        public abstract void OnHide();
-
-        public abstract void OnLoad();
-
-        public abstract void OnUnload();
+        public abstract AsyncTask OnHide();
 
         public abstract void OnBindProperty();
         public abstract void OnUnBindProperty();

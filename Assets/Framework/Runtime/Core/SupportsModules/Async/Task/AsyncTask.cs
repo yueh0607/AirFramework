@@ -16,7 +16,7 @@ namespace AirFramework
     /// 此分部类负责对象池
     /// </summary>
     [AsyncMethodBuilder(typeof(AsyncTaskMethodBuilder))]
-    public partial class AsyncTask : PoolableObject<AsyncTask>, IAsyncTask, IAsyncTokenProperty
+    public partial class AsyncTask : PoolableObject, IAsyncTask, IAsyncTokenProperty
     {
         //  [DebuggerHidden]
         // internal static ManagedPool<AsyncTask> AsyncTaskPool { get; } = Framework.Pool.CreateManagedPool(() => new AsyncTask(), null);
@@ -50,7 +50,7 @@ namespace AirFramework
     }
 
 
-    public partial class AsyncTask : PoolableObject<AsyncTask>, IAsyncTask, IAuthorization, IAsyncTokenProperty
+    public partial class AsyncTask : PoolableObject, IAsyncTask, IAuthorization, IAsyncTokenProperty
     {
         #region Method
         /// <summary>
@@ -112,7 +112,7 @@ namespace AirFramework
     /// <summary>
     /// SetResult/SetException
     /// </summary>
-    public partial class AsyncTask : PoolableObject<AsyncTask>, IAsyncTask, IAuthorization, IAsyncTokenProperty
+    public partial class AsyncTask : PoolableObject, IAsyncTask, IAuthorization, IAsyncTokenProperty
     {
 
         /// <summary>
@@ -121,6 +121,7 @@ namespace AirFramework
         [DebuggerHidden]
         public void GetResult()
         {
+
         }
 
         private Action setResult = null;

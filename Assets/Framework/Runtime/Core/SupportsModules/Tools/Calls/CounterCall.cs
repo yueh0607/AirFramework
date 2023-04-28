@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 namespace AirFramework
 {
-    public sealed class CounterCall : PoolableObject<CounterCall>
+    public sealed class CounterCall : PoolableObject
     {
         /// <summary>
         /// 是否达到一次ClickValue就自动回收到对象池或者销毁
@@ -71,7 +71,7 @@ namespace AirFramework
     }
 
 
-    public class CounterCall<T> : PoolableObject<CounterCall<T>>
+    public class CounterCall<T> : PoolableObject
     {
         /// <summary>
         /// 是否达到一次ClickValue就自动回收到对象池或者销毁

@@ -20,7 +20,7 @@ namespace AirFramework
     /// <summary>
     /// 到达指定时间自动回调
     /// </summary>
-    public sealed class TimerCall : PoolableObject<TimerCall>, IUpdate
+    public sealed class TimerCall : PoolableObject, IUpdate
     {
 
 

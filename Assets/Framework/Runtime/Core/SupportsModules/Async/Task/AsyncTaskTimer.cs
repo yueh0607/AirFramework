@@ -14,7 +14,7 @@ namespace AirFramework
 {
 
     //[AsyncMethodBuilder(typeof(AsyncTaskMethodBuilder))]
-    public class AsyncTaskTimer : PoolableObject<AsyncTaskTimer>, ICriticalNotifyCompletion, IAsyncTokenProperty, IUpdate
+    public class AsyncTaskTimer : PoolableObject, ICriticalNotifyCompletion, IAsyncTokenProperty, IUpdate
     {
         public static void Create() => Framework.Pool.Allocate<AsyncTaskTimer>();
 

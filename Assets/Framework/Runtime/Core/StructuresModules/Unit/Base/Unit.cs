@@ -9,6 +9,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 
 namespace AirFramework
 {
@@ -48,8 +49,7 @@ namespace AirFramework
 
     }
 
-    public abstract partial class Unit :
-        IUnit, IMessageReceiver
+    public abstract partial class Unit :IUnit
     {
         /// <summary>
         /// ID管理器
@@ -79,12 +79,15 @@ namespace AirFramework
 
 
 
-    public abstract partial class Unit : IUnit, IMessageReceiver, IEquatable<Unit>
+    public abstract partial class Unit : IEquatable<Unit>,IEqualityComparer<Unit>
     {
+
+
+
 
         public override bool Equals(object obj)
         {
-            return Equals(obj as Unit);
+            return (obj as Unit).ID==ID;
         }
         public bool Equals(Unit other)
         {
@@ -92,18 +95,28 @@ namespace AirFramework
             return this.ID == other.ID;
         }
 
+        public bool Equals(Unit x, Unit y)
+        {
+            return x.ID == y.ID;
+        }
+
         public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public int GetHashCode(Unit obj)
         {
             return base.GetHashCode();
         }
 
         public static bool operator ==(Unit a, Unit b)
         {
-            return Equals(a, b);
+            return a?.ID == b?.ID;
         }
         public static bool operator !=(Unit a, Unit b)
         {
-            return !Equals(a, b);
+            return a?.ID != b?.ID;
         }
 
 

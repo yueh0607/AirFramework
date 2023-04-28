@@ -1,23 +1,23 @@
-using System;
+ï»¿using System;
 using YooAsset;
 using Object = UnityEngine.Object;
 namespace AirFramework
 {
     public class ResManager
     {
-        #region Ä¬ÈÏÅäÖÃĞÅÏ¢
+        #region é»˜è®¤é…ç½®ä¿¡æ¯
         /// <summary>
-        /// Ä¬ÈÏ°ü£¬ĞèÒª¾­¹ıInitialze£¬·ñÔò»ñÈ¡Îªnull
+        /// é»˜è®¤åŒ…ï¼Œéœ€è¦ç»è¿‡Initialzeï¼Œå¦åˆ™è·å–ä¸ºnull
         /// </summary>
         public ResourcePackage DefaultPackage { get; private set; }
         /// <summary>
-        /// Ä¬ÈÏÏÂÔØÅäÖÃ£¬°ó¶¨µ½DefaultPackage
+        /// é»˜è®¤ä¸‹è½½é…ç½®ï¼Œç»‘å®šåˆ°DefaultPackage
         /// </summary>
         public DownloadConfig DefaultDownloadConfig { get; set; } = new();
 
         #endregion
 
-        #region ¼ÓÔØ
+        #region åŠ è½½
         public AssetOperationHandle LoadSync<T>(string path) where T : Object
         {
             return YooAssets.LoadAssetSync<T>(path);
@@ -26,27 +26,28 @@ namespace AirFramework
         {
             return YooAssets.LoadAssetAsync<T>(path);
         }
+
         #endregion
 
-        #region -1.¹ÜÀíÆ÷³õÊ¼»¯
+        #region -1.ç®¡ç†å™¨åˆå§‹åŒ–
         /// <summary>
-        /// -1.×ÊÔ´¹ÜÀíÆ÷³õÊ¼»¯
+        /// -1.èµ„æºç®¡ç†å™¨åˆå§‹åŒ–
         /// </summary>
         /// <param name="packageName"></param>
         public void Initialize(string packageName)
         {
             YooAssets.Initialize();
-            // ´´½¨Ä¬ÈÏµÄ×ÊÔ´°ü
+            // åˆ›å»ºé»˜è®¤çš„èµ„æºåŒ…
             DefaultPackage = YooAssets.CreatePackage(packageName);
-            // ÉèÖÃ¸Ã×ÊÔ´°üÎªÄ¬ÈÏµÄ×ÊÔ´°ü£¬¿ÉÒÔÊ¹ÓÃYooAssetsÏà¹Ø¼ÓÔØ½Ó¿Ú¼ÓÔØ¸Ã×ÊÔ´°üÄÚÈİ¡£
+            // è®¾ç½®è¯¥èµ„æºåŒ…ä¸ºé»˜è®¤çš„èµ„æºåŒ…ï¼Œå¯ä»¥ä½¿ç”¨YooAssetsç›¸å…³åŠ è½½æ¥å£åŠ è½½è¯¥èµ„æºåŒ…å†…å®¹ã€‚
             YooAssets.SetDefaultPackage(DefaultPackage);
         }
 
         #endregion
-        #region 0.°ü³õÊ¼»¯
+        #region 0.åŒ…åˆå§‹åŒ–
 
         /// <summary>
-        /// Ä¬ÈÏ°ü³õÊ¼»¯
+        /// é»˜è®¤åŒ…åˆå§‹åŒ–
         /// </summary>
         /// <param name="Mode"></param>
         /// <param name="serverPath"></param>
@@ -58,7 +59,7 @@ namespace AirFramework
         }
 
         /// <summary>
-        /// °ü³õÊ¼»¯
+        /// åŒ…åˆå§‹åŒ–
         /// </summary>
         /// <param name="package"></param>
         /// <param name="Mode"></param>
@@ -91,7 +92,7 @@ namespace AirFramework
         }
 
         /// <summary>
-        /// ±à¼­Æ÷Ä£Äâ³õÊ¼»¯°ü
+        /// ç¼–è¾‘å™¨æ¨¡æ‹Ÿåˆå§‹åŒ–åŒ…
         /// </summary>
         /// <param name="package"></param>
         /// <returns></returns>
@@ -102,7 +103,7 @@ namespace AirFramework
             await package.InitializeAsync(initParameters);
         }
         /// <summary>
-        /// µ¥»úÄÚ½¨³õÊ¼»¯°ü
+        /// å•æœºå†…å»ºåˆå§‹åŒ–åŒ…
         /// </summary>
         /// <param name="package"></param>
         /// <returns></returns>
@@ -112,7 +113,7 @@ namespace AirFramework
             await package.InitializeAsync(initParameters);
         }
         /// <summary>
-        /// ÁªÍø¸üĞÂ³õÊ¼»¯
+        /// è”ç½‘æ›´æ–°åˆå§‹åŒ–
         /// </summary>
         /// <param name="package"></param>
         /// <param name="serverPath"></param>
@@ -124,29 +125,29 @@ namespace AirFramework
 
             initParameters.QueryServices = new QueryStreamingAssetsFileServices();
 
-            //Ö÷×ÊÔ´·şÎñÆ÷µØÖ·
+            //ä¸»èµ„æºæœåŠ¡å™¨åœ°å€
             initParameters.DefaultHostServer = serverPath;
-            //±¸ÓÃ×ÊÔ´·şÎñÆ÷µØÖ·
+            //å¤‡ç”¨èµ„æºæœåŠ¡å™¨åœ°å€
             initParameters.FallbackHostServer = serverPath2 == null ? serverPath : serverPath2;
 
             await package.InitializeAsync(initParameters);
 
         }
         #endregion
-        #region 1.¸üĞÂ°æ±¾ºÅ
+        #region 1.æ›´æ–°ç‰ˆæœ¬å·
 
         /// <summary>
-        /// 1.¸üĞÂ°æ±¾ºÅ£¬·µ»Ø³É¹¦×´Ì¬
+        /// 1.æ›´æ–°ç‰ˆæœ¬å·ï¼Œè¿”å›æˆåŠŸçŠ¶æ€
         /// </summary>
         /// <returns></returns>
         public async AsyncTask<bool> UpdateVersion() => await UpdateVersion(DefaultPackage);
         /// <summary>
-        /// 1.¸üĞÂ°æ±¾ºÅ£¬·µ»Ø³É¹¦×´Ì¬
+        /// 1.æ›´æ–°ç‰ˆæœ¬å·ï¼Œè¿”å›æˆåŠŸçŠ¶æ€
         /// </summary>
         /// <returns></returns>
         public async AsyncTask<bool> UpdateVersion(ResourcePackage package)
         {
-            //2.»ñÈ¡×ÊÔ´°æ±¾
+            //2.è·å–èµ„æºç‰ˆæœ¬
             var operation = package.UpdatePackageVersionAsync();
             await operation;
             if (operation.Status != EOperationStatus.Succeed)
@@ -156,16 +157,16 @@ namespace AirFramework
             return true;
         }
         #endregion
-        #region 2.¸üĞÂ×ÊÔ´Çåµ¥
+        #region 2.æ›´æ–°èµ„æºæ¸…å•
 
         /// <summary>
-        /// 2.¸üĞÂ×ÊÔ´Çåµ¥
+        /// 2.æ›´æ–°èµ„æºæ¸…å•
         /// </summary>
         /// <param name="package"></param>
         /// <returns></returns>
         public async AsyncTask<bool> UpdateMainfest() => await UpdateManifest(DefaultPackage);
         /// <summary>
-        /// 2.¸üĞÂ×ÊÔ´Çåµ¥
+        /// 2.æ›´æ–°èµ„æºæ¸…å•
         /// </summary>
         /// <param name="package"></param>
         /// <returns></returns>
@@ -181,9 +182,9 @@ namespace AirFramework
             return true;
         }
         #endregion
-        #region 3.ÏÂÔØ×ÊÔ´
+        #region 3.ä¸‹è½½èµ„æº
         /// <summary>
-        /// ÓÃÓÚÏÂÔØµÄÅäÖÃĞÅÏ¢
+        /// ç”¨äºä¸‹è½½çš„é…ç½®ä¿¡æ¯
         /// </summary>
         public class DownloadConfig
         {
@@ -193,7 +194,7 @@ namespace AirFramework
             private ResourcePackage package = null;
 
             /// <summary>
-            /// Ä¬ÈÏÊÇÖ÷°ü£¬ÔÊĞíĞŞ¸Ä
+            /// é»˜è®¤æ˜¯ä¸»åŒ…ï¼Œå…è®¸ä¿®æ”¹
             /// </summary>
             public ResourcePackage Package
             {
@@ -209,65 +210,65 @@ namespace AirFramework
             }
 
             /// <summary>
-            /// ×î´óÍ¬Ê±ÏÂÔØÊıÁ¿
+            /// æœ€å¤§åŒæ—¶ä¸‹è½½æ•°é‡
             /// </summary>
             public int DownloadMaxNum { get; set; } = 10;
             /// <summary>
-            /// ³¬Ê±ãĞÖµ
+            /// è¶…æ—¶é˜ˆå€¼
             /// </summary>
             public int TimeOut { get; set; } = 60;
             /// <summary>
-            /// ÖØÁ¬´ÎÊı
+            /// é‡è¿æ¬¡æ•°
             /// </summary>
             public int FailedTryAgain { get; set; } = 3;
             /// <summary>
-            /// ³öÏÖ´íÎó»Øµ÷
+            /// å‡ºç°é”™è¯¯å›è°ƒ
             /// </summary>
             public DownloaderOperation.OnDownloadError ErrorCallback { get; set; } = null;
             /// <summary>
-            /// ½áÊø»Øµ÷
+            /// ç»“æŸå›è°ƒ
             /// </summary>
             public DownloaderOperation.OnDownloadOver OverCallback { get; set; } = null;
             /// <summary>
-            /// ½ø¶È»Øµ÷
+            /// è¿›åº¦å›è°ƒ
             /// </summary>
             public DownloaderOperation.OnDownloadProgress ProgressCallback { get; set; } = null;
             /// <summary>
-            /// ¿ªÊ¼ÏÂÔØÃ¿¸öÎÄ¼ş»Øµ÷
+            /// å¼€å§‹ä¸‹è½½æ¯ä¸ªæ–‡ä»¶å›è°ƒ
             /// </summary>
             public DownloaderOperation.OnStartDownloadFile StartDownloadFileCallback { get; set; } = null;
 
         }
 
         /// <summary>
-        /// 3.ÏÂÔØ×ÊÔ´µ½°ü
+        /// 3.ä¸‹è½½èµ„æºåˆ°åŒ…
         /// </summary>
         /// <returns></returns>
         public async AsyncTask<bool> Download() => await Download(DefaultDownloadConfig);
         /// <summary>
-        /// 3.ÏÂÔØ×ÊÔ´µ½°ü
+        /// 3.ä¸‹è½½èµ„æºåˆ°åŒ…
         /// </summary>
         /// <returns></returns>
         public async AsyncTask<bool> Download(DownloadConfig config)
         {
             var downloader = config.Package.CreateResourceDownloader(config.DownloadMaxNum, config.FailedTryAgain, config.TimeOut);
-            //ÏÂÔØÊıÁ¿ÊÇ0£¬Ö±½Ó¾ÍÍê³ÉÁË
+            //ä¸‹è½½æ•°é‡æ˜¯0ï¼Œç›´æ¥å°±å®Œæˆäº†
             if (downloader.TotalDownloadCount == 0)
             {
                 return true;
             }
 
-            //×¢²áÒ»Ğ©»Øµ÷
+            //æ³¨å†Œä¸€äº›å›è°ƒ
             downloader.OnDownloadErrorCallback += config.ErrorCallback;
             downloader.OnDownloadProgressCallback += config.ProgressCallback;
             downloader.OnDownloadOverCallback += config.OverCallback;
             downloader.OnStartDownloadFileCallback += config.StartDownloadFileCallback;
 
-            //¿ªÊ¼ÏÂÔØ
+            //å¼€å§‹ä¸‹è½½
             downloader.BeginDownload();
-            //µÈ´ıÏÂÔØÍê³É
+            //ç­‰å¾…ä¸‹è½½å®Œæˆ
             await downloader;
-            //¼ì²é×´Ì¬
+            //æ£€æŸ¥çŠ¶æ€
             if (downloader.Status != EOperationStatus.Succeed)
             {
                 return false;

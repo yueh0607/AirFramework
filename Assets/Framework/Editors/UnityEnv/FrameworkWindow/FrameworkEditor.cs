@@ -17,6 +17,7 @@ namespace AirFrameworkEditor
             window.position = GUIHelper.GetEditorWindowRect().AlignCenter(800, 600);
         }
 
+
         protected override OdinMenuTree BuildMenuTree()
         {
             var tree = new OdinMenuTree(supportsMultiSelect: false);
