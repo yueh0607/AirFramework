@@ -1,24 +1,56 @@
-﻿namespace AirFramework
+﻿using System;
+using UnityEngine;
+
+namespace AirFramework
 {
+
     public abstract class UnitGameObject<T> : UnitGameObject where T : UnitGameObject<T>
     {
 
         public abstract void OnLoad();
         public abstract void OnUnload();
-
-        public async AsyncTask<T> Initialize()
+        /// <summary>
+        /// 更加安全的初始化，自动类型
+        /// </summary>
+        /// <returns></returns>
+        public async AsyncTask LoadAsync()
         {
-            var unit =  await base.Bind<T>();
-            OnLoad();
-            return unit;
-        }
 
-        public void Release()
+            await base.BindAsync<T>();
+            OnLoad();
+
+        }
+        /// <summary>
+        /// 更加安全的初始化，自动类型
+        /// </summary>
+        /// <returns></returns>
+
+        public void LoadSync()
+        {
+            base.BindSync<T>();
+            OnLoad();
+
+        }
+        /// <summary>
+        /// 更加安全的初始化，自动类型
+        /// </summary>
+        /// <returns></returns>
+        public void LoadSync(GameObject instance)
+        {
+            base.BindInstance<T>(instance);
+            OnLoad();
+
+        }
+        /// <summary>
+        /// 更加安全的初始化，自动类型
+        /// </summary>
+        /// <returns></returns>
+        public override void Unload()
         {
             OnUnload();
-            base.Destroy();
+            base.Unload();
         }
-        
+
 
 
     }

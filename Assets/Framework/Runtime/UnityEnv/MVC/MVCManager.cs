@@ -33,7 +33,7 @@ namespace AirFramework
             typeof(T).CheckAbstract();
             var controller = Framework.Pool.Allocate<T>();
             SafeAdd(typeof(T), controller);
-            await controller;
+            await controller.UnsafeBindAsync(typeof(T));
             await controller.OnShow();
             return controller;
         }

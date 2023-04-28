@@ -1,4 +1,4 @@
-using AirFramework;
+﻿using AirFramework;
 using System.Collections.Generic;
 
 namespace AirFrameworkEditor
@@ -50,14 +50,14 @@ namespace AirFrameworkEditor
 
             box.ClassStart(controlerName, true);
 
-            box.MethodStart($"protected override void {nameof(Controller.OnBindEvents)}()");
+            box.MethodStart($"public override void {nameof(Controller.OnBindEvents)}()");
             foreach (string bindStr in bindCode)
             {
                 box.AddLine(bindStr);
             }
             box.AnyEnd();
 
-            box.MethodStart($"protected override void {nameof(Controller.OnUnBindEvents)}()");
+            box.MethodStart($"public override void {nameof(Controller.OnUnBindEvents)}()");
             foreach (string unbindStr in unbindCode)
             {
                 box.AddLine(unbindStr);

@@ -16,8 +16,10 @@ namespace AirFramework
     [AsyncMethodBuilder(typeof(AsyncTaskCompletedMethodBuilder))]
     public class AsyncTaskCompleted : PoolableObject, ICriticalNotifyCompletion, IAsyncTokenProperty,IAsyncTask
     {
-        public static AsyncTaskCompleted Create() => Framework.Pool.Allocate<AsyncTaskCompleted>();
+        public static AsyncTaskCompleted Create(bool fromPool=false) =>fromPool? Framework.Pool.Allocate<AsyncTaskCompleted>():new();
         public AsyncTaskCompleted() => Token = new(this, this);
+
+
         [DebuggerHidden]
         public AsyncTaskCompleted GetAwaiter() => this;
 
@@ -46,14 +48,18 @@ namespace AirFramework
         [DebuggerHidden]
         public void UnsafeOnCompleted(Action continuation)
         {
-            continuation?.Invoke();
-       
+            this.continuation = continuation;
         }
+
+
+        private Action continuation=null;
 
         public void SetResult()
         {
-
-            
+            if(Authorization)
+            {
+                continuation?.Invoke();
+            }
             Dispose();
         }
         public override void OnAllocate()

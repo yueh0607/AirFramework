@@ -2,32 +2,60 @@
 
 namespace AirFramework
 {
-    /// <summary>
-    /// 在VM层内，用户只需要进行数据绑定，非特殊情况下不建议做其他操作
-    /// </summary>
-    public abstract class Controller : UnitGameObject<Controller>
+
+    public abstract class Controller : UnitGameObject
     {
+        /// <summary>
+        /// 获取View的实例
+        /// </summary>
         public View View { get; set; }
-
+        /// <summary>
+        /// 在View展示时调用，可以试着在里面对V进行动画
+        /// </summary>
+        /// <returns></returns>
         public abstract AsyncTask OnShow();
-
+        /// <summary>
+        /// 在View隐藏时调用，可以试着在里面对V进行动画
+        /// </summary>
+        /// <returns></returns>
         public abstract AsyncTask OnHide();
-
-        public abstract void OnBindProperty();
-        public abstract void OnUnBindProperty();
-        public abstract void OnBindEvents();
-        public abstract void OnUnBindEvents();
-
-        protected override void OnAllocateObject()
+        /// <summary>
+        /// 在V加载时调用，为加载后的预处理工作
+        /// </summary>
+        public virtual void OnLoad()
         {
             OnBindEvents();
             OnBindProperty();
         }
-        protected override void OnRecycleObject()
+        /// <summary>
+        /// 在V卸载时调用，注意这个方法调用比卸载早，卸载前的准备工作
+        /// </summary>
+        public virtual void OnUnload()
         {
             OnUnBindEvents();
             OnUnBindProperty();
         }
+
+
+        /// <summary>
+        /// 在这个方法中写到M层的数据绑定
+        /// </summary>
+        public abstract void OnBindProperty();
+
+        /// <summary>
+        /// 在卸载时对数据绑定解绑
+        /// </summary>
+        public abstract void OnUnBindProperty();
+
+        /// <summary>
+        /// 绑定V层的事件
+        /// </summary>
+        public abstract void OnBindEvents();
+        /// <summary>
+        /// 解绑V层的事件
+        /// </summary>
+        public abstract void OnUnBindEvents();
+
         protected K GetModel<K>() where K : Model
         {
             return Framework.UI.Models.Get<K>();
@@ -45,16 +73,16 @@ namespace AirFramework
             set => View = value;
         }
 
-        protected override void OnAllocateObject()
+        public override void OnLoad()
         {
             View = base.gameObject.AddComponent<T>();
-            base.OnAllocateObject();
+            base.OnLoad();
 
         }
-        protected override void OnRecycleObject()
+        public override void OnUnload()
         {
             View = null;
-            base.OnRecycleObject();
+            base.OnUnload();
         }
     }
 

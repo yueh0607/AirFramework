@@ -1,4 +1,4 @@
-using AirFramework;
+﻿using AirFramework;
 using System.Collections.Generic;
 
 namespace AirFrameworkEditor
@@ -30,8 +30,10 @@ namespace AirFrameworkEditor
 
             box.AddMethod($"public override void {nameof(Controller.OnLoad)}()", new List<string>() { $"{nameof(Controller<View>.TView)}.{nameof(View.InitComponents)}();" });
             box.AddEmptyMethod($"public override void {nameof(Controller.OnUnload)}()");
-            box.AddEmptyMethod($"public override void {nameof(Controller.OnShow)}()");
-            box.AddEmptyMethod($"public override void {nameof(Controller.OnHide)}()");
+
+            List<string> complete = new List<string>() { $"await {nameof(Async)}.{nameof(Async.Complete)}();" };
+            box.AddMethod($"public async override {nameof(AsyncTask)} {nameof(Controller.OnShow)}()",complete);
+            box.AddMethod($"public async override {nameof(AsyncTask)} {nameof(Controller.OnHide)}()",complete);
 
             box.EndAll();
 

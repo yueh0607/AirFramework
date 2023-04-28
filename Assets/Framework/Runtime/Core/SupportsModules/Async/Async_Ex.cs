@@ -54,20 +54,17 @@ namespace AirFramework
         {
             _ = Complete(task);
         }
-        public static T WaitForCompletition<T>(this AsyncTask<T> task)
-        {
-            return Complete(task).result;
-        }
+        //public static T WaitForCompletition<T>(this AsyncTask<T> task)
+        //{
+        //    return Complete(task).result;
+        //}
 
 
         private static async AsyncTaskCompleted Complete(AsyncTask task)
         {
             await task;
         }
-        private static async AsyncTaskCompleted<T> Complete<T>(AsyncTask<T> task)
-        {
-            return await task;
-        }
+    
 
         /// <summary>
         /// 等待任意一个完成即可

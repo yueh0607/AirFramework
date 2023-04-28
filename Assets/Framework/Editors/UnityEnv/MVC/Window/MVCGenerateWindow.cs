@@ -1,4 +1,4 @@
-using Sirenix.OdinInspector;
+ï»¿using Sirenix.OdinInspector;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,12 +13,12 @@ namespace AirFrameworkEditor
         public GameObject prefab;
 
 
-        [LabelText("Éú³ÉÂ·¾¶")]
+        [LabelText("ç”Ÿæˆè·¯å¾„")]
         [FolderPath(AbsolutePath = false, RequireExistingPath = true)]
         [OnValueChanged("SaveCache")]
         public string path;
 
-        [LabelText("×Ô¶¯´´½¨×ÓÄ¿Â¼")]
+        [LabelText("è‡ªåŠ¨åˆ›å»ºå­ç›®å½•")]
         [OnValueChanged("SaveCache")]
         public bool createChildPath = true;
 
@@ -93,16 +93,16 @@ namespace AirFrameworkEditor
             ViewCodeGen viewGen = new(viewName, data);
             string virePath = $"{GenPath}/{viewName}.cs";
 
-            string controllerName = $"{prefab.name}Controller";
+            string controllerName = $"{prefab.name}";
 
 
             BehaviourControllerCodeGen controllerCodeGenBehaviour = new(controllerName, viewName, data);
-            string behaviourPath = $"{GenPath}/{controllerName}.Behaviour.cs";
+            string behaviourPath = $"{GenPath}/{controllerName}{nameof(AirFramework.Controller)}.Behaviour.cs";
 
             UpdateControllerCodeGen controllerCodeGenUpdate = new(controllerName, viewName, data);
-            string updatePath = $"{GenPath}/{controllerName}.Update.cs";
+            string updatePath = $"{GenPath}/{controllerName}{nameof(AirFramework.Controller)}.Update.cs";
             EventControllerCodeGen controllerCodeGenEvent = new(controllerName, viewName, data);
-            string eventPath = $"{GenPath}/{controllerName}.Event.cs";
+            string eventPath = $"{GenPath}/{controllerName}{nameof(AirFramework.Controller)}.Event.cs";
 
 
             viewGen.CreateFileAndClear(virePath);

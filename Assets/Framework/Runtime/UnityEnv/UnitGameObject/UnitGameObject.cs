@@ -7,6 +7,7 @@ using YooAsset;
 
 namespace AirFramework
 {
+
     public abstract partial class UnitGameObject : IMessageReceiver
     {
 
@@ -26,7 +27,7 @@ namespace AirFramework
         /// <summary>
         /// 实体的transform
         /// </summary>
-        public Transform trasnform => MonoObject?.transform;
+        public Transform transform => MonoObject?.transform;
 
         /// <summary>
         /// 获取实体组件
@@ -46,20 +47,19 @@ namespace AirFramework
         /// <param name="active"></param>
         public void SetActive(bool active)
         {
-            if (!active) this.CloseLife();
-            else this.StartLife();
-            gameObject.SetActive(active);
+            if (IsAlive)
+                gameObject.SetActive(active);
 
         }
 
 
         public void SetParent(UnitGameObject obj_ref)
         {
-            trasnform.SetParent(obj_ref.trasnform);
+            transform.SetParent(obj_ref.transform);
         }
-        public void SetAsFisrtSlibing() => trasnform.SetAsFirstSibling();
+        public void SetAsFisrtSlibing() => transform.SetAsFirstSibling();
 
-        public void SetAsLastSlibing() => trasnform.SetAsLastSibling();
+        public void SetAsLastSlibing() => transform.SetAsLastSibling();
 
 
     }
@@ -71,15 +71,12 @@ namespace AirFramework
 
         public void OnAllocate()
         {
-            if (IsAlive)
-                gameObject.SetActive(true);
-            OnAllocateObject();
+            this.SetActive(true);
         }
         public void OnRecycle()
         {
-            if (IsAlive)
-                gameObject.SetActive(false);
-            OnRecycleObject();
+            this.SetActive(false);
+ 
         }
 
         protected override void OnDispose()
@@ -87,15 +84,6 @@ namespace AirFramework
             if (IsAlive)
                 this.RecycleSelf();
         }
-
-        /// <summary>
-        /// 在申请时调用
-        /// </summary>
-        protected abstract void OnAllocateObject();
-        /// <summary>
-        /// 在回收到池时调用
-        /// </summary>
-        protected abstract void OnRecycleObject();
 
         /// <summary>
         /// 在完成初始化时调用
@@ -113,11 +101,12 @@ namespace AirFramework
     }
     public abstract partial class UnitGameObject
     {
+        ~UnitGameObject() =>Unload();
         /// <summary>
         /// 释放后禁止使用，除非再进行加载,也只有释放只会才能重复加载
         /// </summary>
         /// <param name="entity"></param>
-        internal protected void Destroy()
+        public virtual void Unload()
         {
             //如果托管资源没释放，则
             if (IsAlive)
@@ -128,25 +117,89 @@ namespace AirFramework
         }
 
         /// <summary>
-        /// 实例化一个UnitGameObject，需要等待这个异步任务完成才能使用
+        /// 实例化一个UnitGameObject，需要等待这个异步任务完成才能使用，一定要传入一个继承UnitGameObject的非抽象类型
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="entity"></param>
         /// <returns></returns>
-        internal protected async AsyncTask<T> Bind<T>() where T : UnitGameObject
+        public async AsyncTask UnsafeBindAsync(Type type,UnitGameObject parent=null)
         {
             if (IsAlive) throw new InvalidOperationException("Cannot initialize repeatly.");
-            Type type = typeof(T);
             type.CheckAbstract();
+            CheckParentState(parent);
             var handle = Framework.Res.LoadAsync<GameObject>(type.Name);
             await handle;
-
+            if (handle.AssetObject == null) throw new InvalidOperationException("Null Reference");
             //实例化到场景
-            GameObject instance = GameObject.Instantiate(handle.GetAssetObject<GameObject>());
+            GameObject instance = parent!=null?GameObject.Instantiate(handle.GetAssetObject<GameObject>()):
+                GameObject.Instantiate(handle.GetAssetObject<GameObject>(),parent.transform);
             instance.name = type.Name;
             handle.Release();
 
-            return BindUnitAndGameObject<T>(instance, this);
+            BindUnitAndGameObject(instance, this);
+        }
+        /// <summary>
+        /// 异步绑定
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public async AsyncTask BindAsync<T>(UnitGameObject parent=null) where T : UnitGameObject
+        {
+            await UnsafeBindAsync(typeof(T),parent);
+        }
+        /// <summary>
+        /// 同步绑定,注意，一定要传入一个继承UnitGameObject的非抽象类型
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="instance"></param>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public void UnsafeBindSync(Type type,UnitGameObject parent=null)
+        { 
+            if (IsAlive) throw new InvalidOperationException("Cannot initialize repeatly.");
+            CheckParentState(parent);
+            type.CheckAbstract();
+            var handle = Framework.Res.LoadSync<GameObject>(type.Name);
+            if (handle.AssetObject == null) throw new InvalidOperationException("Null Reference");
+            //实例化到场景
+            //实例化到场景
+            GameObject instance = parent != null ? GameObject.Instantiate(handle.GetAssetObject<GameObject>()) :
+                GameObject.Instantiate(handle.GetAssetObject<GameObject>(), parent.transform);
+            instance.name = type.Name;
+            handle.Release();
+
+            BindUnitAndGameObject(instance, this);
+        }
+
+        /// <summary>
+        /// 同步绑定
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="instance"></param>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public void BindSync<T>(UnitGameObject parent=null) where T : UnitGameObject
+        {
+            UnsafeBindSync(typeof(T),parent);
+        }
+
+        /// <summary>
+        /// 手动绑定进行实例化,注意，一定要传入一个继承UnitGameObject的非抽象类型
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="instance"></param>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public void UnsafeBindInstance(Type type,GameObject instance,UnitGameObject parent=null)
+        {
+            if (IsAlive) throw new InvalidOperationException("Cannot initialize repeatly.");
+            CheckParentState(parent);
+            type.CheckAbstract();
+            if (instance == null) throw new InvalidOperationException("Null Reference");
+
+            instance.transform.SetParent(parent.transform);
+            // var obj_ref = Activator.CreateInstance<T>();
+            BindUnitAndGameObject(instance, this);
         }
         /// <summary>
         /// 手动绑定进行实例化
@@ -155,17 +208,21 @@ namespace AirFramework
         /// <param name="instance"></param>
         /// <param name="entity"></param>
         /// <returns></returns>
-        internal protected T Bind<T>(GameObject instance) where T : UnitGameObject
+        public void BindInstance<T>(GameObject instance,UnitGameObject parent=null) where T : UnitGameObject
         {
-            if (IsAlive) throw new InvalidOperationException("Cannot initialize repeatly.");
-            Type type = typeof(T);
-            type.CheckAbstract();
 
-            // var obj_ref = Activator.CreateInstance<T>();
-            return BindUnitAndGameObject<T>(instance, this);
+            UnsafeBindInstance(typeof(T),instance);
         }
+
+        private static void CheckParentState(UnitGameObject parent)
+        {
+            if (parent == null) return;
+
+            if (parent.IsAlive) throw new InvalidOperationException("You must initialize this UnitGameObject! Try call LoadAsync or BindAsync Method");
+        }
+
         //绑定
-        private static T BindUnitAndGameObject<T>(GameObject obj, UnitGameObject entity) where T : UnitGameObject
+        private static void BindUnitAndGameObject(GameObject obj, UnitGameObject entity)
         {
             GameObject.DontDestroyOnLoad(obj);
             //为物体添加引用组件
@@ -177,8 +234,6 @@ namespace AirFramework
             //更新EntityRef属性
             RefCom.UnitValue = entity;
             entity.OnCompleted?.Invoke();
-
-            return entity as T;
         }
     }
 }

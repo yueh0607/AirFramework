@@ -5,13 +5,11 @@ namespace AirFramework
     public class EmptyUnitGameObject : UnitGameObject<EmptyUnitGameObject>
     {
 
-
-        public EmptyUnitGameObject InitializeEmpty()
+        public EmptyUnitGameObject()
         {
-            var unit =  base.Bind<EmptyUnitGameObject>(new GameObject("EmptyGameObject"));
-            OnLoad();
-            return unit;
+            LoadSync(new GameObject("EmptyUnitGameObject"));
         }
+
 
         public override void OnLoad()
         {
@@ -23,14 +21,6 @@ namespace AirFramework
             
         }
 
-        protected override void OnAllocateObject()
-        {
-            
-        }
 
-        protected override void OnRecycleObject()
-        {
-            
-        }
     }
 }

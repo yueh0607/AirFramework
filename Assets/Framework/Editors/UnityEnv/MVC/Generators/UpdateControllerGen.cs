@@ -1,4 +1,4 @@
-using AirFramework;
+﻿using AirFramework;
 using System.Collections.Generic;
 
 namespace AirFrameworkEditor
@@ -28,8 +28,8 @@ namespace AirFrameworkEditor
 
             box.ClassStart(controlerName, true);
 
-            box.AddEmptyMethod($"protected override void {nameof(Controller.OnBindProperty)}()");
-            box.AddEmptyMethod($"protected override void {nameof(Controller.OnUnBindProperty)}()");
+            box.AddEmptyMethod($"public override void {nameof(Controller.OnBindProperty)}()");
+            box.AddEmptyMethod($"public override void {nameof(Controller.OnUnBindProperty)}()");
 
 
             box.EndAll();

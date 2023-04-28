@@ -16,19 +16,11 @@ namespace AirFramework
     /// 此分部类负责对象池
     /// </summary>
     [AsyncMethodBuilder(typeof(AsyncTaskMethodBuilder))]
-    public partial class AsyncTask : PoolableObject, IAsyncTask, IAsyncTokenProperty
+    public partial class AsyncTask : PoolableObject
     {
-        //  [DebuggerHidden]
-        // internal static ManagedPool<AsyncTask> AsyncTaskPool { get; } = Framework.Pool.CreateManagedPool(() => new AsyncTask(), null);
+       
         [DebuggerHidden]
-        public static AsyncTask Create(bool fromPool = false)
-        {
-            if (fromPool)
-            {
-                return Framework.Pool.Allocate<AsyncTask>();
-            }
-            return new AsyncTask();
-        }
+        public static AsyncTask Create(bool fromPool = false)=>fromPool?Framework.Pool.Allocate<AsyncTask>():new();
         public AsyncTask()
         {
             Token = new(this, this);
@@ -50,7 +42,7 @@ namespace AirFramework
     }
 
 
-    public partial class AsyncTask : PoolableObject, IAsyncTask, IAuthorization, IAsyncTokenProperty
+    public partial class AsyncTask : IAuthorization, IAsyncTokenProperty,IAwaitable<AsyncTask>
     {
         #region Method
         /// <summary>
@@ -68,28 +60,7 @@ namespace AirFramework
         {
             await this;
         }
-        #endregion
 
-
-        #region Completed
-        [DebuggerHidden]
-        public bool IsCompleted { get; set; } = false;
-
-        //在结束时调用，无论是否成功
-        public event Action OnTaskCompleted = null;
-
-        private Action continuation;
-        [DebuggerHidden]
-        public void OnCompleted(Action continuation)
-        {
-            UnsafeOnCompleted(continuation);
-        }
-
-        [DebuggerHidden]
-        public void UnsafeOnCompleted(Action continuation)
-        {
-            this.continuation = continuation;
-        }
         #endregion
 
         #region Token
@@ -112,8 +83,29 @@ namespace AirFramework
     /// <summary>
     /// SetResult/SetException
     /// </summary>
-    public partial class AsyncTask : PoolableObject, IAsyncTask, IAuthorization, IAsyncTokenProperty
+    public partial class AsyncTask : PoolableObject, IAsyncTask
     {
+        
+        #region Completed
+        [DebuggerHidden]
+        public bool IsCompleted { get; set; } = false;
+
+        //在结束时调用，无论是否成功
+        public event Action OnTaskCompleted = null;
+
+        private Action continuation;
+        [DebuggerHidden]
+        public void OnCompleted(Action continuation)
+        {
+            UnsafeOnCompleted(continuation);
+        }
+
+        [DebuggerHidden]
+        public void UnsafeOnCompleted(Action continuation)
+        {
+            this.continuation = continuation;
+        }
+        #endregion
 
         /// <summary>
         /// 返回await结果，非必要禁止手动调用
@@ -155,9 +147,6 @@ namespace AirFramework
             this.Dispose();
         }
 
-
-        //  [DebuggerHidden]
-        //  public ExceptionDispatchInfo Exception { get; private set; }
         /// <summary>
         /// 为当前任务设置异常，一种情况为手动调用设置，另一种为异步过程出现异常,取消也是异常
         /// </summary>

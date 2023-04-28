@@ -15,17 +15,11 @@ namespace AirFramework
     /// 此分部类负责对象池
     /// </summary>
     [AsyncMethodBuilder(typeof(AsyncTaskMethodBuilder<>))]
-    public partial class AsyncTask<T> : PoolableObject, IAsyncTask<T>, IAuthorization, IAsyncTokenProperty
+    public partial class AsyncTask<T> : PoolableObject
     {
         [DebuggerHidden]
-        public static AsyncTask<T> Create(bool fromPool = false)
-        {
-            if (fromPool)
-            {
-                return Framework.Pool.Allocate<AsyncTask<T>>();
-            }
-            return new AsyncTask<T>();
-        }
+        public static AsyncTask<T> Create(bool fromPool = false)=>fromPool?  Framework.Pool.Allocate<AsyncTask<T>>(): new();
+        
         public AsyncTask() => Token = new(this, this);
 
         [DebuggerHidden]
@@ -47,8 +41,63 @@ namespace AirFramework
     /// <summary>
     /// SetResult/SetException
     /// </summary>
-    public partial class AsyncTask<T> : PoolableObject, IAsyncTask<T>, IAuthorization, IAsyncTokenProperty
+    public partial class AsyncTask<T> : IAsyncTokenProperty
     {
+        #region Method
+        [DebuggerHidden]
+        public AsyncTask<T> GetAwaiter() => this;
+
+        [DebuggerHidden]
+        public async void Coroutine()
+        {
+            await this;
+        }
+        #endregion
+
+
+
+        #region Token
+        AsyncTreeTokenNode IAsyncTokenProperty.Token { get => Token; set => Token = value; }
+        public AsyncTreeTokenNode Token { get; internal set; }
+
+        /// <summary>
+        /// 授权状态：代表当前任务是否挂起与任务链能否继续
+        /// </summary>
+        public bool Authorization { get; internal set; } = true;
+
+        bool IAuthorization.Authorization { get => Authorization; set => Authorization = value; }
+        #endregion
+    }
+
+    /// <summary>
+    /// OnCompleted
+    /// </summary>
+    public partial class AsyncTask<T> :IAsyncTask<T>
+    {
+      
+
+        #region OnCompleted
+        public event Action<T> OnTaskCompleted = null;
+        private Action continuation;
+        [DebuggerHidden]
+        public bool IsCompleted { get; set; }
+        [DebuggerHidden]
+        public void OnCompleted(Action continuation)
+        {
+            UnsafeOnCompleted(continuation);
+        }
+
+        [DebuggerHidden]
+        public void UnsafeOnCompleted(Action continuation)
+        {
+            this.continuation = continuation;
+        }
+
+        #endregion
+
+
+
+        #region Task
         public T Result { get; set; } = default;
         /// <summary>
         /// 返回await结果
@@ -116,55 +165,8 @@ namespace AirFramework
         {
             SetResultMethod(this.Result);
         }
-    }
-
-    /// <summary>
-    /// OnCompleted
-    /// </summary>
-    public partial class AsyncTask<T> : PoolableObject, IAsyncTask<T>, IAuthorization, IAsyncTokenProperty
-    {
-        #region
-        [DebuggerHidden]
-        public AsyncTask<T> GetAwaiter() => this;
-
-        [DebuggerHidden]
-        public async void Coroutine()
-        {
-            await this;
-        }
-        #endregion
-        #region OnCompleted
-        public event Action<T> OnTaskCompleted = null;
-        private Action continuation;
-        [DebuggerHidden]
-        public bool IsCompleted { get; set; }
-        [DebuggerHidden]
-        public void OnCompleted(Action continuation)
-        {
-            UnsafeOnCompleted(continuation);
-        }
-
-        [DebuggerHidden]
-        public void UnsafeOnCompleted(Action continuation)
-        {
-            this.continuation = continuation;
-        }
 
         #endregion
-
-        #region Token
-        AsyncTreeTokenNode IAsyncTokenProperty.Token { get => Token; set => Token = value; }
-        public AsyncTreeTokenNode Token { get; internal set; }
-
-        /// <summary>
-        /// 授权状态：代表当前任务是否挂起与任务链能否继续
-        /// </summary>
-        public bool Authorization { get; internal set; } = true;
-
-        bool IAuthorization.Authorization { get => Authorization; set => Authorization = value; }
-        #endregion
-
-
 
     }
 }
