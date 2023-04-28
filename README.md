@@ -16,7 +16,7 @@
 - 天然的有限状态机(基于对象池IPoolable的生命派发)
 
 # 开源许可
-- Apache 2.0 LICENSE
+- [Apache 2.0 LICENSE](https://github.com/yueh0607/AirFramework/blob/main/LICENSE)
 
 # 引用项目
 - [tuyoogame/YooAsset](https://github.com/tuyoogame/YooAsset)  （Apache-2.0 LICENSE）
