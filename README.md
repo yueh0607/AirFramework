@@ -1,6 +1,5 @@
 # AirFramework
-基于 Unity3D 的 中小型 弱连网 单机游戏 框架
-始于2023.1.11  奋力开发ing....
+始于2023.1.11，写完再改readme
 
 在未开发完成之前仅建议当成工具类使用，而不是一个框架，
 现在的版本迭代极快，而且编辑器拓展还不完善，可能存在某些隐藏问题请小心使用
@@ -16,10 +15,7 @@
 - 天然的有限状态机(基于对象池IPoolable的生命派发)
 
 # 开源许可
-- Apache 2.0 LICENSE
-
-# 引用项目
-- [tuyoogame/YooAsset](https://github.com/tuyoogame/YooAsset)  （Apache-2.0 LICENSE）
+- [Apache 2.0 LICENSE](https://github.com/yueh0607/AirFramework/blob/main/LICENSE)
 
 # 推荐项目
 - [SDHK/WorldTreeFramework](https://github.com/SDHK/WorldTreeFramework)
