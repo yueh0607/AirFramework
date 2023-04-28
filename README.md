@@ -18,6 +18,12 @@
 # 开源协议
 - MIT LICENSE
 
+## 贡献者
+
+<a href="https://github.com/eryajf/learn-github/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=eryajf/learn-github" />
+</a>
+
 # 引用项目
 - [tuyoogame/YooAsset](https://github.com/tuyoogame/YooAsset)  （Apache-2.0 LICENSE）
 - 
