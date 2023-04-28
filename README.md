@@ -20,8 +20,8 @@
 
 ## 贡献者
 
-<a href="https://github.com/eryajf/learn-github/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=eryajf/learn-github" />
+<a href="https://github.com/yueh0607/AirFramework/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=yueh0607/AirFramework" />
 </a>
 
 # 引用项目
