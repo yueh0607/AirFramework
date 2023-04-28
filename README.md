@@ -18,7 +18,7 @@
 # 开源协议
 - Apache 2.0 LICENSE
 
-# 贡献者（Sort by commit quantity）
+# 贡献者
 
 <a href="https://github.com/yueh0607/AirFramework/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=yueh0607/AirFramework" />
