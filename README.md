@@ -16,9 +16,9 @@
 - 天然的有限状态机(基于对象池IPoolable的生命派发)
 
 # 开源协议
-- MIT LICENSE
+- Apache 2.0 LICENSE
 
-## 贡献者
+## 贡献者（Sort by commit quantity）
 
 <a href="https://github.com/yueh0607/AirFramework/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=yueh0607/AirFramework" />
