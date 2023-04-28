@@ -15,18 +15,12 @@
 - UI管理(栈，无限层级)
 - 天然的有限状态机(基于对象池IPoolable的生命派发)
 
-# 开源协议
+# 开源许可
 - Apache 2.0 LICENSE
-
-# 贡献者
-
-<a href="https://github.com/yueh0607/AirFramework/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=yueh0607/AirFramework" />
-</a>
 
 # 引用项目
 - [tuyoogame/YooAsset](https://github.com/tuyoogame/YooAsset)  （Apache-2.0 LICENSE）
-- 
+
 # 推荐项目
 - [SDHK/WorldTreeFramework](https://github.com/SDHK/WorldTreeFramework)
 - [OnClick9927/IFramework](https://github.com/OnClick9927/IFramework)
