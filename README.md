@@ -18,9 +18,6 @@
 # 开源许可
 - [Apache 2.0 LICENSE](https://github.com/yueh0607/AirFramework/blob/main/LICENSE)
 
-# 引用项目
-- [tuyoogame/YooAsset](https://github.com/tuyoogame/YooAsset)   (Apache-2.0 LICENSE)[https://github.com/tuyoogame/YooAsset/blob/main/LICENSE]
-
 # 推荐项目
 - [SDHK/WorldTreeFramework](https://github.com/SDHK/WorldTreeFramework)
 - [OnClick9927/IFramework](https://github.com/OnClick9927/IFramework)
