@@ -70,6 +70,8 @@ namespace AirFramework
         }
         public void SetException(Exception exception)
         {
+            AirFramework.Internal.Async_Tools.Capture(exception);
+
             SetResult();
         }
 

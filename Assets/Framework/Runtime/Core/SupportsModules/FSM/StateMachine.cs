@@ -1,9 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using static Codice.CM.Common.CmCallContext;
-
-namespace AirFramework
+﻿namespace AirFramework
 {
 
     public abstract class AbstractState : PoolableObject, IUpdate
@@ -26,13 +21,13 @@ namespace AirFramework
 
         public override void OnAllocate()
         {
-           
+
         }
 
         public override void OnRecycle()
         {
             OnExitState();
-            machine= null;
+            machine = null;
         }
 
         void IUpdate.Update(float deltaTime)
@@ -65,7 +60,7 @@ namespace AirFramework
 
             var state = Framework.Pool.Allocate<T>();
             Current = state;
-            state.Machine = this;   
+            state.Machine = this;
             state.OnEnterState();
         }
 

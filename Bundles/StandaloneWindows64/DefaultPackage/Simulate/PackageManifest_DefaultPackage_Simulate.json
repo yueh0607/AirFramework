@@ -7,14 +7,7 @@
     "AssetList": [
         {
             "Address": "CounterPanel",
-            "AssetPath": "Assets/TestEnv/Panels/CounterPanel.prefab",
-            "AssetTags": [],
-            "BundleID": 0,
-            "DependIDs": []
-        },
-        {
-            "Address": "MyUnitObj",
-            "AssetPath": "Assets/TestEnv/Panels/MyUnitObj.prefab",
+            "AssetPath": "Assets/Project/Arts/Prefabs/UIPanels/CounterPanel.prefab",
             "AssetTags": [],
             "BundleID": 0,
             "DependIDs": []
@@ -22,7 +15,7 @@
     ],
     "BundleList": [
         {
-            "BundleName": "assets_testenv_panels.bundle",
+            "BundleName": "assets_project_arts_prefabs_uipanels.bundle",
             "FileHash": "00000000000000000000000000000000",
             "FileCRC": "00000000",
             "FileSize": 0,

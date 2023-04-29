@@ -1,27 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace AirFramework
+ï»¿namespace AirFramework
 {
     public static class String_Ex
     {
         /// <summary>
-        /// ·µ»ØÇø¼ä×Ö·û´®£¬°üº¬Ê×Ä©
+        /// è¿”å›åŒºé—´å­—ç¬¦ä¸²ï¼ŒåŒ…å«é¦–æœ«
         /// </summary>
         /// <param name="str"></param>
         /// <param name="start"></param>
         /// <param name="end"></param>
         /// <returns></returns>
-        public static string SubZone(this string str,int start,int end)
+        public static string SubZone(this string str, int start, int end)
         {
             return str.Substring(start, str.Length - end);
         }
 
-      
+
 
     }
 
 
-   
+
 }

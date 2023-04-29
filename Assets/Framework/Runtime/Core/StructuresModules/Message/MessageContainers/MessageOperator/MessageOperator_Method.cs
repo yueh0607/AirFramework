@@ -14,9 +14,8 @@ namespace AirFramework
     /// </summary>
     public partial class MessageOperator : Unit
     {
-        internal static Func<UnitList<Delegate>> GetUnitListFromPool = () => Framework.Pool.Allocate<UnitList<Delegate>>();
+        internal readonly static Func<UnitList<Delegate>> GetUnitListFromPool = () => Framework.Pool.Allocate<UnitList<Delegate>>();
 
-        #region 延申实现
         /// <summary>
         /// 添加新的事件，通过GetType取得类型
         /// </summary>
@@ -33,6 +32,16 @@ namespace AirFramework
         public void Add<DelegateType>(Delegate dele) where DelegateType : Delegate
         {
             Add(dele, typeof(DelegateType));
+        }
+        /// <summary>
+        /// 添加事件
+        /// </summary>
+        /// <param name="dele"></param>
+        /// <param name="deleType"></param>
+        public void Add(Delegate dele, Type deleType)
+        {
+            if (eventsContainer == null) throw new InvalidOperationException("Add Error");
+            eventsContainer.GetValueOrAddDefault(deleType, GetUnitListFromPool).Value.Add(dele);
         }
         /// <summary>
         /// 存在则移除事件，通过GetType取得类型
@@ -61,23 +70,6 @@ namespace AirFramework
         {
             return TryRemoveType(typeof(T));
         }
-        public void RemoveAll()
-        {
-            Clear();
-        }
-
-        /// <summary>
-        /// 返回同类型可空事件列表，禁止长期持有返回值的引用
-        /// </summary>
-        /// <typeparam name="DelegateType"></typeparam>
-        /// <returns></returns>
-        public List<Delegate> GetNullableDelegateList<DelegateType>()
-        {
-            return GetNullableDelegateList(typeof(DelegateType));
-        }
-        #endregion
-        #region 逻辑实现
-
 
         /// <summary>
         /// 移除该类型事件
@@ -90,16 +82,12 @@ namespace AirFramework
         }
 
 
-        /// <summary>
-        /// 添加事件
-        /// </summary>
-        /// <param name="dele"></param>
-        /// <param name="deleType"></param>
-        public void Add(Delegate dele, Type deleType)
+        public void RemoveAll()
         {
-            if (eventsContainer == null) throw new Exception("meve");
-            eventsContainer.GetValueOrAddDefault(deleType, GetUnitListFromPool).Value.Add(dele);
+            Clear();
         }
+
+
         /// <summary>
         /// 移除事件
         /// </summary>
@@ -117,6 +105,18 @@ namespace AirFramework
             }
         }
 
+
+        /// <summary>
+        /// 返回同类型可空事件列表，禁止长期持有返回值的引用
+        /// </summary>
+        /// <typeparam name="DelegateType"></typeparam>
+        /// <returns></returns>
+        public List<Delegate> GetNullableDelegateList<DelegateType>()
+        {
+            return GetNullableDelegateList(typeof(DelegateType));
+        }
+
+
         /// <summary>
         /// 返回同类型可空事件列表，禁止长期持有返回值的引用
         /// </summary>
@@ -127,7 +127,10 @@ namespace AirFramework
             return eventsContainer.GetValueOrDefault(deleType)?.Value;
         }
 
-        #endregion
+
+      
+     
+
 
     }
 }

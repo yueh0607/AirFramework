@@ -49,7 +49,7 @@ namespace AirFramework
 
     }
 
-    public abstract partial class Unit :IUnit
+    public abstract partial class Unit : IUnit
     {
         /// <summary>
         /// ID管理器
@@ -79,7 +79,7 @@ namespace AirFramework
 
 
 
-    public abstract partial class Unit : IEquatable<Unit>,IEqualityComparer<Unit>
+    public abstract partial class Unit : IEquatable<Unit>, IEqualityComparer<Unit>
     {
 
 
@@ -87,7 +87,7 @@ namespace AirFramework
 
         public override bool Equals(object obj)
         {
-            return (obj as Unit).ID==ID;
+            return (obj as Unit).ID == ID;
         }
         public bool Equals(Unit other)
         {

@@ -4,7 +4,7 @@ namespace AirFramework
 {
     public class MonoRef : MonoBehaviour
     {
-        private WeakReference<UnitGameObject> mono = new(null);
+        private readonly WeakReference<UnitGameObject> mono = new(null);
         public UnitGameObject UnitValue
         {
             get
@@ -34,7 +34,7 @@ namespace AirFramework
         {
             if (UnitValue != null)
             {
-                UnitValue.MonoObject= null;
+                UnitValue.MonoObject = null;
                 UnitValue = null;
 
             }

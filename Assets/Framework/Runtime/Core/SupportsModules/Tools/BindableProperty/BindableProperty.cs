@@ -7,7 +7,7 @@
  */
 
 
-using System.Collections.Generic;
+using System;
 
 namespace AirFramework
 {
@@ -16,8 +16,11 @@ namespace AirFramework
     /// 可绑定监听事件的属性
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public sealed class BindableProperty<T> : BindableBase<T> where T : IEqualityComparer<T>
+    public sealed class BindableProperty<T> : BindableBase<T> where T : IEquatable<T>
     {
+
+
+        public BindableProperty(T defaultValue = default) => _value = defaultValue;
         private T _value;
 
         public override T Value
@@ -27,7 +30,7 @@ namespace AirFramework
             {
                 //注意，双向绑定会依赖于Equal的实现
 
-                if (!value.Equals(value, this._value))
+                if (!value.Equals(this._value))
                 {
                     this._value = value;
                     OnValueChanged?.Invoke(this._value, value);

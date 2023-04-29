@@ -9,6 +9,7 @@ using AirFramework.Internal;
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+
 namespace AirFramework
 {
     /// <summary>
@@ -18,8 +19,8 @@ namespace AirFramework
     public partial class AsyncTask<T> : PoolableObject
     {
         [DebuggerHidden]
-        public static AsyncTask<T> Create(bool fromPool = false)=>fromPool?  Framework.Pool.Allocate<AsyncTask<T>>(): new();
-        
+        public static AsyncTask<T> Create(bool fromPool = false) => fromPool ? Framework.Pool.Allocate<AsyncTask<T>>() : new();
+
         public AsyncTask() => Token = new(this, this);
 
         [DebuggerHidden]
@@ -72,9 +73,9 @@ namespace AirFramework
     /// <summary>
     /// OnCompleted
     /// </summary>
-    public partial class AsyncTask<T> :IAsyncTask<T>
+    public partial class AsyncTask<T> : IAsyncTask<T>
     {
-      
+
 
         #region OnCompleted
         public event Action<T> OnTaskCompleted = null;
@@ -145,6 +146,7 @@ namespace AirFramework
                 this.Result = result;
                 //执行await以后的代码
                 continuation?.Invoke();
+                continuation = null;
             }
             IsCompleted = true;
             OnTaskCompleted?.Invoke(result);
@@ -156,6 +158,9 @@ namespace AirFramework
         {
             SetResult(this.Result);
         }
+
+
+
         /// <summary>
         /// 当执行出现异常时状态机调用
         /// </summary>
@@ -163,6 +168,9 @@ namespace AirFramework
         [DebuggerHidden]
         public void SetException(Exception exception)
         {
+            //AirFramework.Internal.Async_Tools.Capture(exception);
+
+            exception.Throw();
             SetResultMethod(this.Result);
         }
 

@@ -20,11 +20,13 @@ namespace AirFramework
         /// <summary>
         /// 创建时调用该委托对象返回引用对象
         /// </summary>
-        public Func<T> onCreate = null;
+        public Func<T> OnCreate { get; set; } = null;
         /// <summary>
         /// 当申请对象时，回收对象时，销毁对象时，分别调用的委托对象
         /// </summary>
-        public Action<T> onAllocate = null, onRecycle = null, onDestroy = null;
+        public Action<T> OnAllocate { get; set; } = null;
+        public Action<T> OnRecycle { get; set; } = null;
+        public Action<T> OnDestroy { get; set; } = null;
 
         #endregion
 
@@ -63,12 +65,14 @@ namespace AirFramework
         /// </summary>
         /// <param name="objectType"></param>
 
+#pragma warning disable S3427 // Method overloads with default parameter values should not overlap 
         public GenericPool(Func<T> onCreate = null, Action<T> onDestroy = null, Action<T> onRecycle = null, Action<T> onAllocate = null)
+#pragma warning restore S3427 // Method overloads with default parameter values should not overlap 
         {
-            this.onCreate = onCreate ?? Pool.DefaltActivatorCreate<T>;
-            this.onDestroy += onDestroy;
-            this.onRecycle += onRecycle;
-            this.onAllocate += onAllocate;
+            this.OnCreate = onCreate ?? Pool.DefaltActivatorCreate<T>;
+            this.OnDestroy += onDestroy;
+            this.OnRecycle += onRecycle;
+            this.OnAllocate += onAllocate;
         }
         /// <summary>
         /// 当对象销毁时调用
@@ -92,10 +96,10 @@ namespace AirFramework
         {
             T item;
             //空池则创建,非空则从池取出
-            if (pool.Count == 0) item = onCreate();
+            if (pool.Count == 0) item = OnCreate();
             else item = pool.Dequeue();
             //执行申请时行为委托
-            onAllocate?.Invoke(item);
+            OnAllocate?.Invoke(item);
             return item;
         }
 
@@ -109,10 +113,10 @@ namespace AirFramework
             T it = item as T;
             if (it == null) throw new ArgumentException("Error Recycle Operation:Not matched Type");
             //执行回收委托
-            onRecycle?.Invoke(it);
+            OnRecycle?.Invoke(it);
             //入池
             if (Count < MaxCapacity) pool.Enqueue(it);
-            else onDestroy?.Invoke(it);
+            else OnDestroy?.Invoke(it);
         }
 
 
@@ -122,7 +126,7 @@ namespace AirFramework
 
         public override void Clear()
         {
-            while (pool.Count != 0) onDestroy?.Invoke(pool.Dequeue());
+            while (pool.Count != 0) OnDestroy?.Invoke(pool.Dequeue());
         }
 
         /// <summary>
@@ -135,7 +139,7 @@ namespace AirFramework
             T item;
             for (int i = 0; i < count; ++i)
             {
-                item = onCreate();
+                item = OnCreate();
                 pool.Enqueue(item);
             }
 
@@ -153,7 +157,7 @@ namespace AirFramework
             for (int i = 0; i < count; ++i)
             {
                 if (pool.Count != 0)
-                    onDestroy?.Invoke(pool.Dequeue());
+                    OnDestroy?.Invoke(pool.Dequeue());
             }
         }
         /// <summary>
@@ -170,7 +174,7 @@ namespace AirFramework
             {
                 if (pool.Count != 0)
                 {
-                    onDestroy?.Invoke(pool.Dequeue());
+                    OnDestroy?.Invoke(pool.Dequeue());
                     await Async.WaitForFrame(frame);
                 }
                 else

@@ -12,7 +12,7 @@ namespace AirFramework
     {
 
         //这里使用静态创建方法来简化下面获取Dispatcher的代码，同时避免GC
-        internal static Func<MessageOperatorBox<IMessage>> CreateOperator = () => new MessageOperatorBox<IMessage>();
+        internal readonly static Func<MessageOperatorBox<IMessage>> CreateOperator = () => new MessageOperatorBox<IMessage>();
 
         /// <summary>
         /// 访问或添加：获取指定接收者的委托组

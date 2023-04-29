@@ -53,7 +53,7 @@ namespace AirFramework
         /// <param name="serverPath"></param>
         /// <param name="serverPath2"></param>
         /// <returns></returns>
-        public async AsyncTask InitializePackage(EPlayMode Mode=EPlayMode.EditorSimulateMode, string serverPath = null, string serverPath2 = null)
+        public async AsyncTask InitializePackage(EPlayMode Mode = EPlayMode.EditorSimulateMode, string serverPath = null, string serverPath2 = null)
         {
             await InitializePackage(DefaultPackage, Mode, serverPath, serverPath2);
         }
@@ -173,7 +173,7 @@ namespace AirFramework
         public async AsyncTask<bool> UpdateManifest(ResourcePackage package)
         {
 
-            var op = package.UpdatePackageManifestAsync(package.GetPackageVersion(),true,DefaultDownloadConfig.TimeOut);
+            var op = package.UpdatePackageManifestAsync(package.GetPackageVersion(), true, DefaultDownloadConfig.TimeOut);
             await op;
             if (op.Status != EOperationStatus.Succeed)
             {

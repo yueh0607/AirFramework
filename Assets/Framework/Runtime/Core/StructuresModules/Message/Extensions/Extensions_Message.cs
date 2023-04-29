@@ -1,7 +1,7 @@
 ﻿using AirFramework.Internal;
 namespace AirFramework
 {
-    public static partial class MessageExtensions_Operator_Dispatcher
+    public static partial class MessageExDispatcher
     {
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace AirFramework
         #endregion
 
         #region DispatcherGeneric
-        private static MessageDispatcherBox<IMessage> GetDispatcherBoxDefault<T>(this MessageManager manager, IMessageReceiver receiver = null)
+        private static MessageDispatcherBox<IMessage> GetDispatcherBoxDefault<T>(this MessageManager manager)
         {
             return manager.dispatchersContainer.GetValueOrAddDefault(typeof(T), static () => new MessageDispatcherBox<IMessage>());
 

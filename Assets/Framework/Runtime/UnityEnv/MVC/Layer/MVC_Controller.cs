@@ -22,15 +22,16 @@ namespace AirFramework
         /// <summary>
         /// 在V加载时调用，为加载后的预处理工作
         /// </summary>
-        public virtual void OnLoad()
+        public override void OnLoad()
         {
+            View.InitComponents();
             OnBindEvents();
             OnBindProperty();
         }
         /// <summary>
         /// 在V卸载时调用，注意这个方法调用比卸载早，卸载前的准备工作
         /// </summary>
-        public virtual void OnUnload()
+        public override void OnUnload()
         {
             OnUnBindEvents();
             OnUnBindProperty();
@@ -75,14 +76,17 @@ namespace AirFramework
 
         public override void OnLoad()
         {
+            //先添加组件，再执行OnLoad 进行绑定
             View = base.gameObject.AddComponent<T>();
+
             base.OnLoad();
 
         }
         public override void OnUnload()
         {
-            View = null;
+            //先进行解绑，再置空View
             base.OnUnload();
+            View = null;
         }
     }
 

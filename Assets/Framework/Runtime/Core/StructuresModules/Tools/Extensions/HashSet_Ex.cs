@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections.Generic;
 
 namespace AirFramework
 {
-    public static class HashSet_Ex 
+    public static class HashSet_Ex
     {
         #region HashSet
 

@@ -34,7 +34,7 @@ namespace AirFramework
 
         #region 绑定层
 
-        private List<Action<object>> lifesAdd = new(), lifesRemove = new();
+        private readonly List<Action<object>> lifesAdd = new(), lifesRemove = new();
 
 
 
@@ -45,7 +45,7 @@ namespace AirFramework
         public void AddLifeCycle<T, K>() where T : IMessage where K : LifeCycleHandler<T>
         {
             var handler = Activator.CreateInstance<K>();
-            //cycles.Add(typeof(T), handler);
+
             lifesAdd.Add((x) => { if (x is T) handler.OnLifeCycleRegister((T)x); });
             lifesRemove.Add((x) => { if (x is T) handler.OnLifeCycleUnRegister((T)x); });
         }

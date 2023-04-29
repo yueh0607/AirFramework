@@ -10,7 +10,7 @@
 
 namespace AirFramework
 {
-    public interface IValueContainer<T>
+    public interface IValueContainer<out T>
     {
         /// <summary>
         /// ValueContainer封装值

@@ -26,7 +26,7 @@ namespace AirFrameworkEditor
             foreach (MarkData mark in data)
             {
                 bool result = MVCGenConfig.Instance.TryGetList(mark.MarkType, out var list);
-                if (!result) break;
+                if (!result) continue;
 
 
                 foreach (var tag in list)

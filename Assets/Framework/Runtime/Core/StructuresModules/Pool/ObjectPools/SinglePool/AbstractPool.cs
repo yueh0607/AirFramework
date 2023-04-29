@@ -37,10 +37,10 @@ namespace AirFramework
 
         public AbstractPool() : base()
         {
-            base.onCreate = OnCreateItem;
-            base.onDestroy += OnDestroyItem;
-            base.onAllocate += OnAllocateItem;
-            base.onDestroy += OnDestroyItem;
+            base.OnCreate = OnCreateItem;
+            base.OnDestroy += OnDestroyItem;
+            base.OnAllocate += OnAllocateItem;
+            base.OnDestroy += OnDestroyItem;
         }
 
     }

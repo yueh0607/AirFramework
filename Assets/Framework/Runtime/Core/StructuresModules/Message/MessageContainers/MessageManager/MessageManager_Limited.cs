@@ -11,7 +11,7 @@ namespace AirFramework
     public partial class MessageManager : IMessageReceiver
     {
         //静态创建委托，返回新的派发器
-        internal static Func<MessageDispatcherBox<IMessage>> CreateDispatcherBox = () => new MessageDispatcherBox<IMessage>();
+        internal readonly static Func<MessageDispatcherBox<IMessage>> CreateDispatcherBox = () => new MessageDispatcherBox<IMessage>();
 
         /// <summary>
         /// 基础消息注册

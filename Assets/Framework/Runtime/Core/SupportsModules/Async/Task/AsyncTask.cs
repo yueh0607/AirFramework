@@ -10,6 +10,7 @@ using AirFramework.Internal;
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+
 namespace AirFramework
 {
     /// <summary>
@@ -18,9 +19,9 @@ namespace AirFramework
     [AsyncMethodBuilder(typeof(AsyncTaskMethodBuilder))]
     public partial class AsyncTask : PoolableObject
     {
-       
+
         [DebuggerHidden]
-        public static AsyncTask Create(bool fromPool = false)=>fromPool?Framework.Pool.Allocate<AsyncTask>():new();
+        public static AsyncTask Create(bool fromPool = false) => fromPool ? Framework.Pool.Allocate<AsyncTask>() : new();
         public AsyncTask()
         {
             Token = new(this, this);
@@ -42,7 +43,7 @@ namespace AirFramework
     }
 
 
-    public partial class AsyncTask : IAuthorization, IAsyncTokenProperty,IAwaitable<AsyncTask>
+    public partial class AsyncTask : IAsyncTokenProperty, IAwaitable<AsyncTask>
     {
         #region Method
         /// <summary>
@@ -85,7 +86,7 @@ namespace AirFramework
     /// </summary>
     public partial class AsyncTask : PoolableObject, IAsyncTask
     {
-        
+
         #region Completed
         [DebuggerHidden]
         public bool IsCompleted { get; set; } = false;
@@ -113,7 +114,7 @@ namespace AirFramework
         [DebuggerHidden]
         public void GetResult()
         {
-
+            // Method intentionally left empty.
         }
 
         private Action setResult = null;
@@ -125,10 +126,7 @@ namespace AirFramework
         {
             get
             {
-                if (setResult == null)
-                {
-                    setResult = SetResultMethod;
-                }
+                setResult ??= SetResultMethod;
                 return setResult;
             }
         }
@@ -140,12 +138,15 @@ namespace AirFramework
                 if (IsCompleted) throw new InvalidOperationException("AsyncTask dont allow SetResult repeatly.");
                 //执行await以后的代码
                 continuation?.Invoke();
+                continuation = null;
             }
             IsCompleted = true;
             OnTaskCompleted?.Invoke();
             //回收到Pool
             this.Dispose();
         }
+
+
 
         /// <summary>
         /// 为当前任务设置异常，一种情况为手动调用设置，另一种为异步过程出现异常,取消也是异常
@@ -154,6 +155,8 @@ namespace AirFramework
         [DebuggerHidden]
         public void SetException(Exception exception)
         {
+
+            exception.Throw();
             SetResultMethod();
         }
     }

@@ -12,6 +12,10 @@ namespace AirFramework
         {
             target.onValueChanged.AddListener(action);
         }
+        public static void Bind(this Toggle target, UnityAction<bool> action)
+        {
+            target.onValueChanged.AddListener(action);
+        }
         public static void Bind(this Slider target, UnityAction<float> action)
         {
             target.onValueChanged.AddListener(action);
@@ -27,9 +31,16 @@ namespace AirFramework
         {
             target.onValueChanged.RemoveListener(action);
         }
+
+        public static void UnBind(this Toggle target, UnityAction<bool> action)
+        {
+            target.onValueChanged.RemoveListener(action);
+        }
         public static void UnBind(this Slider target, UnityAction<float> action)
         {
             target.onValueChanged.RemoveListener(action);
         }
+
+
     }
 }

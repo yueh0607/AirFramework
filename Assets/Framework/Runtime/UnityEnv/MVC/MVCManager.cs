@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace AirFramework
 {
@@ -33,7 +31,7 @@ namespace AirFramework
             typeof(T).CheckAbstract();
             var controller = Framework.Pool.Allocate<T>();
             SafeAdd(typeof(T), controller);
-            await controller.UnsafeBindAsync(typeof(T));
+            await controller.BindAsync<T>();
             await controller.OnShow();
             return controller;
         }
@@ -74,7 +72,7 @@ namespace AirFramework
             {
                 var list = container[type];
 
-                foreach(var con in list.Value)
+                foreach (var con in list.Value)
                 {
                     await HideOne<T>(con);
                 }

@@ -1,3 +1,4 @@
+﻿using System;
 using UnityEngine;
 
 namespace AirFramework.Internal
@@ -11,6 +12,9 @@ namespace AirFramework.Internal
         private static void AfterLoadSceneInitialize()
         {
             SingletonInitializeAfterSceneLoad();
+            Action<Exception> handler = (x) => Debug.LogError(x);
+            Async_Tools.ExceptionHandler += handler;
+
             Framework.Res.Initialize("DefaultPackage");
             Starter.AfterLoadSceneEvent();
 

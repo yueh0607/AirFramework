@@ -14,7 +14,7 @@ namespace AirFramework
     /// 用于实现支持using释放，可以自主回收到池的类型
     /// </summary>
 
-    public abstract class PoolableObject : Unit, IPoolable 
+    public abstract class PoolableObject : Unit, IPoolable
     {
 
         /// <summary>

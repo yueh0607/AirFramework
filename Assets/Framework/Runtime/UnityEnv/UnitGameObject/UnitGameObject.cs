@@ -1,9 +1,6 @@
 ﻿
 using System;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
 using UnityEngine;
-using YooAsset;
 
 namespace AirFramework
 {
@@ -76,7 +73,7 @@ namespace AirFramework
         public void OnRecycle()
         {
             this.SetActive(false);
- 
+
         }
 
         protected override void OnDispose()
@@ -101,13 +98,18 @@ namespace AirFramework
     }
     public abstract partial class UnitGameObject
     {
-        ~UnitGameObject() =>Unload();
+        public abstract void OnLoad();
+        public abstract void OnUnload();
+
+
+        ~UnitGameObject() => Unload();
         /// <summary>
         /// 释放后禁止使用，除非再进行加载,也只有释放只会才能重复加载
         /// </summary>
         /// <param name="entity"></param>
         public virtual void Unload()
         {
+            OnUnload();
             //如果托管资源没释放，则
             if (IsAlive)
                 UnityEngine.Object.Destroy(gameObject);
@@ -122,7 +124,7 @@ namespace AirFramework
         /// <typeparam name="T"></typeparam>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public async AsyncTask UnsafeBindAsync(Type type,UnitGameObject parent=null)
+        public async AsyncTask UnsafeBindAsync(Type type, UnitGameObject parent = null)
         {
             if (IsAlive) throw new InvalidOperationException("Cannot initialize repeatly.");
             type.CheckAbstract();
@@ -131,21 +133,23 @@ namespace AirFramework
             await handle;
             if (handle.AssetObject == null) throw new InvalidOperationException("Null Reference");
             //实例化到场景
-            GameObject instance = parent!=null?GameObject.Instantiate(handle.GetAssetObject<GameObject>()):
-                GameObject.Instantiate(handle.GetAssetObject<GameObject>(),parent.transform);
+            GameObject instance = parent == null ? GameObject.Instantiate(handle.GetAssetObject<GameObject>()) :
+                GameObject.Instantiate(handle.GetAssetObject<GameObject>(), parent.transform);
             instance.name = type.Name;
             handle.Release();
 
             BindUnitAndGameObject(instance, this);
+            return;
+
         }
         /// <summary>
         /// 异步绑定
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public async AsyncTask BindAsync<T>(UnitGameObject parent=null) where T : UnitGameObject
+        public async AsyncTask BindAsync<T>(UnitGameObject parent = null) where T : UnitGameObject
         {
-            await UnsafeBindAsync(typeof(T),parent);
+            await UnsafeBindAsync(typeof(T), parent);
         }
         /// <summary>
         /// 同步绑定,注意，一定要传入一个继承UnitGameObject的非抽象类型
@@ -154,8 +158,8 @@ namespace AirFramework
         /// <param name="instance"></param>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public void UnsafeBindSync(Type type,UnitGameObject parent=null)
-        { 
+        public void UnsafeBindSync(Type type, UnitGameObject parent = null)
+        {
             if (IsAlive) throw new InvalidOperationException("Cannot initialize repeatly.");
             CheckParentState(parent);
             type.CheckAbstract();
@@ -163,12 +167,13 @@ namespace AirFramework
             if (handle.AssetObject == null) throw new InvalidOperationException("Null Reference");
             //实例化到场景
             //实例化到场景
-            GameObject instance = parent != null ? GameObject.Instantiate(handle.GetAssetObject<GameObject>()) :
+            GameObject instance = parent == null ? GameObject.Instantiate(handle.GetAssetObject<GameObject>()) :
                 GameObject.Instantiate(handle.GetAssetObject<GameObject>(), parent.transform);
             instance.name = type.Name;
             handle.Release();
 
             BindUnitAndGameObject(instance, this);
+
         }
 
         /// <summary>
@@ -178,9 +183,9 @@ namespace AirFramework
         /// <param name="instance"></param>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public void BindSync<T>(UnitGameObject parent=null) where T : UnitGameObject
+        public void BindSync<T>(UnitGameObject parent = null) where T : UnitGameObject
         {
-            UnsafeBindSync(typeof(T),parent);
+            UnsafeBindSync(typeof(T), parent);
         }
 
         /// <summary>
@@ -190,16 +195,17 @@ namespace AirFramework
         /// <param name="instance"></param>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public void UnsafeBindInstance(Type type,GameObject instance,UnitGameObject parent=null)
+        public void UnsafeBindInstance(Type type, GameObject instance, UnitGameObject parent = null)
         {
             if (IsAlive) throw new InvalidOperationException("Cannot initialize repeatly.");
             CheckParentState(parent);
             type.CheckAbstract();
             if (instance == null) throw new InvalidOperationException("Null Reference");
-
-            instance.transform.SetParent(parent.transform);
+            if (parent != null)
+                instance.transform.SetParent(parent.transform);
             // var obj_ref = Activator.CreateInstance<T>();
             BindUnitAndGameObject(instance, this);
+
         }
         /// <summary>
         /// 手动绑定进行实例化
@@ -208,10 +214,10 @@ namespace AirFramework
         /// <param name="instance"></param>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public void BindInstance<T>(GameObject instance,UnitGameObject parent=null) where T : UnitGameObject
+        public void BindInstance<T>(GameObject instance, UnitGameObject parent = null) where T : UnitGameObject
         {
 
-            UnsafeBindInstance(typeof(T),instance);
+            UnsafeBindInstance(typeof(T), instance);
         }
 
         private static void CheckParentState(UnitGameObject parent)
@@ -234,6 +240,7 @@ namespace AirFramework
             //更新EntityRef属性
             RefCom.UnitValue = entity;
             entity.OnCompleted?.Invoke();
+            entity.OnLoad();
         }
     }
 }

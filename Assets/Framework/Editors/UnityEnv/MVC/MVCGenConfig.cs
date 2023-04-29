@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections.Generic;
 
 namespace AirFrameworkEditor
@@ -29,6 +29,8 @@ namespace AirFrameworkEditor
     }
 
 
+
+    //å¯ä»¥åœ¨è¿™é‡Œæ·»åŠ ä¸€äº›ä¸œè¥¿ï¼Œé€‚é…ç”Ÿæˆäº‹ä»¶
     [FilePath("Assets/Framework/Editors/UnityEnv/Configurations/Framework.MVCMap.asset")]
     public class MVCGenConfig : ScriptableSingleton<MVCGenConfig>
     {
@@ -52,6 +54,25 @@ namespace AirFrameworkEditor
                     "void OnValueChanged(string text)",
                 }
             }
+            ,
+            //Slider
+            {
+                typeof(UnityEngine.UI.Slider),
+                new List<string>()
+                {
+                    "void OnValueChanged(float value)",
+                }
+            }
+
+            ,
+            //Toggle
+            {
+                typeof(UnityEngine.UI.Toggle),
+                new List<string>()
+                {
+                    "void OnValueChanged(bool value)",
+                }
+            }
         };
 
 
@@ -63,15 +84,15 @@ namespace AirFrameworkEditor
             {
                 foreach (string eve in map[type])
                 {
-                    //ÀıÈçvoid OnAwake(int x)
+                    //ä¾‹å¦‚void OnAwake(int x)
                     var parts = new string[3];
-                    //²éÕÒµÚÒ»¸ö¿Õ¸ñ 
+                    //æŸ¥æ‰¾ç¬¬ä¸€ä¸ªç©ºæ ¼ 
                     int index = eve.IndexOf(' ');
                     //void
                     parts[0] = eve.Substring(0, index);
-                    //²éÕÒµÚÒ»¸öÀ¨ºÅ
+                    //æŸ¥æ‰¾ç¬¬ä¸€ä¸ªæ‹¬å·
                     int index2 = eve.IndexOf('(');
-                    //¼ÆËã³¤¶È
+                    //è®¡ç®—é•¿åº¦
                     int len = index2 - index - 1;
                     //OnAwake
                     parts[1] = eve.Substring(index + 1, len);

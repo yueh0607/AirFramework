@@ -1,4 +1,4 @@
-
+ï»¿
 using Sirenix.OdinInspector.Editor;
 using Sirenix.Utilities;
 using Sirenix.Utilities.Editor;
@@ -21,9 +21,9 @@ namespace AirFrameworkEditor
         protected override OdinMenuTree BuildMenuTree()
         {
             var tree = new OdinMenuTree(supportsMultiSelect: false);
-            tree.Add("¹ØÓÚ", new About(), EditorIcons.Info);
+            tree.Add("å…³äº", new About(), EditorIcons.Info);
 
-            tree.Add("MVC´úÂëÉú³É", new MVCGenerateWindow(), EditorIcons.Flag);
+            tree.Add("MVCä»£ç ç”Ÿæˆ", new MVCGenerateWindow(), EditorIcons.Flag);
 
             return tree;
         }

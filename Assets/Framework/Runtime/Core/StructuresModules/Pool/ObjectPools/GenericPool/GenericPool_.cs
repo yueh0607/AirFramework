@@ -17,7 +17,7 @@ namespace AirFramework
 
         public GenericPool_() : base()
         {
-            base.onCreate = Pool.DefaultNewCreate<T>;
+            base.OnCreate = Pool.DefaultNewCreate<T>;
         }
     }
 }

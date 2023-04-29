@@ -28,12 +28,14 @@ namespace AirFrameworkEditor
 
             box.ClassStart(controlerName, true);
 
-            box.AddMethod($"public override void {nameof(Controller.OnLoad)}()", new List<string>() { $"{nameof(Controller<View>.TView)}.{nameof(View.InitComponents)}();" });
-            box.AddEmptyMethod($"public override void {nameof(Controller.OnUnload)}()");
+            box.AddMethod($"public override void {nameof(Controller.OnLoad)}()", new List<string>() { $"base.{nameof(Controller.OnLoad)}();", "//Write ... here" });
+
+            box.AddMethod($"public override void {nameof(Controller.OnUnload)}()", new List<string>() { $"base.{nameof(Controller.OnUnload)}();", "//Write ... here" });
+
 
             List<string> complete = new List<string>() { $"await {nameof(Async)}.{nameof(Async.Complete)}();" };
-            box.AddMethod($"public async override {nameof(AsyncTask)} {nameof(Controller.OnShow)}()",complete);
-            box.AddMethod($"public async override {nameof(AsyncTask)} {nameof(Controller.OnHide)}()",complete);
+            box.AddMethod($"public async override {nameof(AsyncTask)} {nameof(Controller.OnShow)}()", complete);
+            box.AddMethod($"public async override {nameof(AsyncTask)} {nameof(Controller.OnHide)}()", complete);
 
             box.EndAll();
 

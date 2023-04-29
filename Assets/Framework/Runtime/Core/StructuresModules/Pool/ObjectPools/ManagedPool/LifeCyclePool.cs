@@ -30,8 +30,8 @@ namespace AirFramework
 
         public LifeCyclePool(Func<T> onCreate = null, Action<T> onDestroy = null) : base(onCreate, onDestroy)
         {
-            base.onRecycle += OnRemoveItemLifeCycle;
-            base.onAllocate += OnAddItemLifeCycle;
+            base.OnRecycle += OnRemoveItemLifeCycle;
+            base.OnAllocate += OnAddItemLifeCycle;
         }
 
     }

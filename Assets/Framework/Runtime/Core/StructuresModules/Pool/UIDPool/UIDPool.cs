@@ -3,7 +3,7 @@
     public class UIDPool : Unit, IPool
     {
 
-        private UIDGenerator generator = new UIDGenerator(100);
+        private readonly UIDGenerator generator = new UIDGenerator(100);
 
         public int Count => generator.Count;
 

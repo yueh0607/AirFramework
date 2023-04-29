@@ -46,25 +46,10 @@ namespace AirFramework
         public static AsyncTaskCompleted Complete(Action action = null)
         {
             action?.Invoke();
-            return Framework.Pool.Allocate<AsyncTaskCompleted>();
+            return AsyncTaskCompleted.Create(true);
         }
 
 
-        public static void WaitForCompletition(this AsyncTask task)
-        {
-            _ = Complete(task);
-        }
-        //public static T WaitForCompletition<T>(this AsyncTask<T> task)
-        //{
-        //    return Complete(task).result;
-        //}
-
-
-        private static async AsyncTaskCompleted Complete(AsyncTask task)
-        {
-            await task;
-        }
-    
 
         /// <summary>
         /// 等待任意一个完成即可
@@ -287,7 +272,7 @@ namespace AirFramework
         {
             var tok = Framework.Pool.Allocate<AsyncToken>();
             tok.node = task.Token;
-            //$"IDDDDD:{token.node.ID}".L();
+
             token = tok;
         }
 

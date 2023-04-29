@@ -41,7 +41,10 @@ namespace AirFramework
         [DebuggerHidden]
         public void SetException(Exception exception)
         {
+            if (task == null) "Error".L();
+            if (exception == null) "E".L();
             task.SetException(exception);
+
         }
 
         // 5. SetResult 

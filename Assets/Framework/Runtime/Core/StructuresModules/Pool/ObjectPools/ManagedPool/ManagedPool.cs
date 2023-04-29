@@ -38,8 +38,8 @@ namespace AirFramework
 
         public ManagedPool(Func<T> onCreate = null, Action<T> onDestroy = null) : base(onCreate, onDestroy, null, null)
         {
-            base.onRecycle += OnEnterPool;
-            base.onAllocate += OnExitPool;
+            base.OnRecycle += OnEnterPool;
+            base.OnAllocate += OnExitPool;
         }
         #endregion
 
@@ -67,7 +67,7 @@ namespace AirFramework
                     if (timer == null)
                     {
                         timer = new TimerCall();
-                        //HandleQueue = new HandleQueue<T>(onDestroy,1).StartObjLife();
+                        //HandleQueue = new HandleQueue<T>(OnDestroy,1).StartObjLife();
                         timer.OnCompleted += OnCycleRecycle;
                         timer.CallPerFrame += () =>
                         {

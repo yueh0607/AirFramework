@@ -14,9 +14,9 @@ namespace AirFramework
 {
 
     [AsyncMethodBuilder(typeof(AsyncTaskCompletedMethodBuilder))]
-    public class AsyncTaskCompleted : PoolableObject, ICriticalNotifyCompletion, IAsyncTokenProperty,IAsyncTask
+    public class AsyncTaskCompleted : PoolableObject, IAsyncTokenProperty, IAsyncTask
     {
-        public static AsyncTaskCompleted Create(bool fromPool=false) =>fromPool? Framework.Pool.Allocate<AsyncTaskCompleted>():new();
+        public static AsyncTaskCompleted Create(bool fromPool = false) => fromPool ? Framework.Pool.Allocate<AsyncTaskCompleted>() : new();
         public AsyncTaskCompleted() => Token = new(this, this);
 
 
@@ -34,7 +34,23 @@ namespace AirFramework
         public bool Authorization { get; internal set; } = true;
         bool IAuthorization.Authorization { get => Authorization; set => Authorization = value; }
 
-        Action IAsyncTask.SetResult =>throw new InvalidOperationException("You shouldn't get this Property!");
+
+        private Action setResult = null;
+        /// <summary>
+        /// 结束当前await并设置结果
+        /// </summary>
+        [DebuggerHidden]
+        public Action SetResult
+        {
+            get
+            {
+                if (setResult == null)
+                {
+                    setResult = SetResultMethod;
+                }
+                return setResult;
+            }
+        }
         #endregion
 
 
@@ -49,16 +65,18 @@ namespace AirFramework
         public void UnsafeOnCompleted(Action continuation)
         {
             this.continuation = continuation;
+            SetResult();
         }
 
 
-        private Action continuation=null;
+        private Action continuation = null;
 
-        public void SetResult()
+        private void SetResultMethod()
         {
-            if(Authorization)
+            if (Authorization)
             {
                 continuation?.Invoke();
+                continuation = null;
             }
             Dispose();
         }
@@ -75,6 +93,8 @@ namespace AirFramework
         }
         public void SetException(Exception exception)
         {
+            AirFramework.Internal.Async_Tools.Capture(exception);
+
             SetResult();
         }
     }
