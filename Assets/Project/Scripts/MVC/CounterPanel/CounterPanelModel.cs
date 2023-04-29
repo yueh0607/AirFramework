@@ -2,5 +2,5 @@
 
 public class CounterPanelModel : Model
 {
-    public BindableProperty<int> Count = new(0);
+    public BindableProperty<int> Count = new(10);
 }

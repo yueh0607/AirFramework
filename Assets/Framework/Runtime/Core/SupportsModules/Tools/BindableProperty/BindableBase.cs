@@ -26,7 +26,22 @@
         /// <summary>
         /// 事件列表：属性值变更时触发事件
         /// </summary>
-        public abstract event PropertyChangedEvent<T> OnValueChanged;
+        protected abstract event PropertyChangedEvent<T> onValueChanged;
+
+        public event PropertyChangedEvent<T> OnValueChanged
+        {
+            add
+            {
+
+                onValueChanged += value;
+                value?.Invoke(Value, Value);
+            }
+            remove
+            {
+                onValueChanged -= value;
+                value?.Invoke(Value, Value);
+            }
+        }
 
         /// <summary>
         /// 绑定两个属性

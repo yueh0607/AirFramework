@@ -6,7 +6,7 @@ namespace AirFramework
     public class BindablePort<T> : BindableBase<T> where T : IEqualityComparer<T>
     {
 
-        public override event PropertyChangedEvent<T> OnValueChanged;
+        protected override event PropertyChangedEvent<T> onValueChanged;
 
         private T _value;
         public override T Value
@@ -23,7 +23,7 @@ namespace AirFramework
                 if (!object.Equals(value, this.getter()))
                 {
                     setter(value);
-                    OnValueChanged?.Invoke(this.getter(), value);
+                    onValueChanged?.Invoke(this.getter(), value);
                     PublishValueChanged(this, Value);
                 }
             }

@@ -20,7 +20,7 @@ namespace AirFramework
     {
 
 
-        public BindableProperty(T defaultValue = default) => _value = defaultValue;
+        public BindableProperty(T defaultValue = default) => Value = defaultValue;
         private T _value;
 
         public override T Value
@@ -33,7 +33,7 @@ namespace AirFramework
                 if (!value.Equals(this._value))
                 {
                     this._value = value;
-                    OnValueChanged?.Invoke(this._value, value);
+                    onValueChanged?.Invoke(this._value, value);
                     PublishValueChanged(this, value);
                 }
             }
@@ -42,7 +42,8 @@ namespace AirFramework
         /// <summary>
         /// 事件列表：属性值变更时触发事件
         /// </summary>
-        public override event PropertyChangedEvent<T> OnValueChanged;
+        protected override event PropertyChangedEvent<T> onValueChanged;
 
+    
     }
 }
