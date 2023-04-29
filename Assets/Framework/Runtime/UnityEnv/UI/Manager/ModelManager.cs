@@ -5,9 +5,9 @@ namespace AirFramework
     public class ModelManager
     {
 
-        private Dictionary<Type, Model> models = new Dictionary<Type, Model>();
+        private Dictionary<Type, IModel> models = new Dictionary<Type, IModel>();
 
-        public T Get<T>() where T : Model
+        public T Get<T>() where T : class,IModel
         {
             if (!models.ContainsKey(typeof(T)))
             {

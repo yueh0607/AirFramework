@@ -7,17 +7,18 @@ namespace AirFrameworkEditor
 
     public class MVCGenerateWindow
     {
-
+        [TabGroup("VCGen")]
         [AssetsOnly]
         [OnValueChanged("SaveCache")]
         public GameObject prefab;
 
-
+        [TabGroup("VCGen")]
         [LabelText("生成路径")]
         [FolderPath(AbsolutePath = false, RequireExistingPath = true)]
         [OnValueChanged("SaveCache")]
         public string path;
 
+        [TabGroup("VCGen")]
         [LabelText("自动创建子目录")]
         [OnValueChanged("SaveCache")]
         public bool createChildPath = true;
@@ -46,7 +47,7 @@ namespace AirFrameworkEditor
         private void TryCreateChildPath(string childPath)
         {
             if (!createChildPath) return;
-            FileCreateHandle.CreateAssetFolder(childPath);
+            FileCreateHelper.CreateAssetFolder(childPath);
         }
         private string GenPath
         {
@@ -110,7 +111,7 @@ namespace AirFrameworkEditor
             controllerCodeGenEvent.CreateFileAndClear(eventPath);
             controllerCodeGenUpdate.CreateFileAndClear(updatePath);
 
-            FileCreateHandle.Refresh();
+            FileCreateHelper.Refresh();
 
         }
 
@@ -129,10 +130,25 @@ namespace AirFrameworkEditor
 
             viewGen.CreateFileAndClear(virePath);
 
-            FileCreateHandle.Refresh();
+            FileCreateHelper.Refresh();
 
         }
 
+
+        [ButtonGroup]
+        [GUIColor(0, 1, 0)]
+        [LabelText("Remove Marks")]
+
+        public void RemoveMarks()
+        {
+
+            if (prefab != null)
+            {
+                PanelAnalyser.RemoveMarks(prefab);
+            }
+            else throw new InvalidOperationException("Select a prefab!");
+
+        }
 
 
     }

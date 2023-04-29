@@ -57,7 +57,7 @@ namespace AirFramework
         /// </summary>
         public abstract void OnUnBindEvents();
 
-        protected K GetModel<K>() where K : Model
+        protected K GetModel<K>() where K :class, IModel
         {
             return Framework.UI.Models.Get<K>();
         }

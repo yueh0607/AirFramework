@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 
 namespace AirFrameworkEditor
 {
@@ -11,7 +11,7 @@ namespace AirFrameworkEditor
         }
 
         /// <summary>
-        /// »ñÈ¡²¢Çå³ı´úÂë×Ö·û´®
+        /// è·å–å¹¶æ¸…é™¤ä»£ç å­—ç¬¦ä¸²
         /// </summary>
         /// <returns></returns>
         public string GetAndClear()
@@ -22,22 +22,22 @@ namespace AirFrameworkEditor
         }
 
         /// <summary>
-        /// ´´½¨ÎÄ¼ş²¢Çå¿Õ´úÂë
+        /// åˆ›å»ºæ–‡ä»¶å¹¶æ¸…ç©ºä»£ç 
         /// </summary>
         /// <param name="assetRelativePath"></param>
         public void CreateAndClear(string assetRelativePath)
         {
-            FileCreateHandle.CreateFileInAssetPath(assetRelativePath, GetAndClear());
+            FileCreateHelper.CreateFileInAssetPath(assetRelativePath, GetAndClear());
         }
 
 
         /// <summary>
-        /// Ìí¼Ó¿ÕĞĞ
+        /// æ·»åŠ ç©ºè¡Œ
         /// </summary>
         public void AddEmptyLine() => AddLine(string.Empty);
 
         /// <summary>
-        /// Ìí¼Óµ¥ĞĞ×¢ÊÍ£¬ÎŞĞëĞ´//,Ö»Ğ´×¢ÊÍÄÚÈİ
+        /// æ·»åŠ å•è¡Œæ³¨é‡Šï¼Œæ— é¡»å†™//,åªå†™æ³¨é‡Šå†…å®¹
         /// </summary>
         /// <param name="commit"></param>
         public void AddCommit(string commit)
@@ -46,7 +46,7 @@ namespace AirFrameworkEditor
         }
 
         /// <summary>
-        /// Ìí¼Ó¿Õ·½·¨£¬ĞèÒª¸ø³öÍêÕû·½·¨Ç©Ãû Èç public void add(int a,int b)
+        /// æ·»åŠ ç©ºæ–¹æ³•ï¼Œéœ€è¦ç»™å‡ºå®Œæ•´æ–¹æ³•ç­¾å å¦‚ public void add(int a,int b)
         /// </summary>
         /// <param name="method"></param>
         public void AddEmptyMethod(string method)
@@ -58,8 +58,8 @@ namespace AirFrameworkEditor
         }
 
         /// <summary>
-        /// Ìí¼Ó·½·¨£¬ĞèÒª¸ø³öÍêÕû·½·¨Ç©Ãû Èç public void add(int a,int b)
-        /// £¬ListÖĞ´úÂë×Ô¶¯Ìí¼Ó»»ĞĞ
+        /// æ·»åŠ æ–¹æ³•ï¼Œéœ€è¦ç»™å‡ºå®Œæ•´æ–¹æ³•ç­¾å å¦‚ public void add(int a,int b)
+        /// ï¼ŒListä¸­ä»£ç è‡ªåŠ¨æ·»åŠ æ¢è¡Œ
         /// </summary>
         /// <param name="method"></param>
         public void AddMethod(string method, List<string> codeLine)
@@ -70,7 +70,7 @@ namespace AirFrameworkEditor
             AnyEnd();
         }
         /// <summary>
-        /// ½áÊøÊäÈëĞèÒªµ÷ÓÃÀ´Íê³ÉËùÓĞ½á¹¹
+        /// ç»“æŸè¾“å…¥éœ€è¦è°ƒç”¨æ¥å®Œæˆæ‰€æœ‰ç»“æ„
         /// </summary>
         public void EndAll()
         {

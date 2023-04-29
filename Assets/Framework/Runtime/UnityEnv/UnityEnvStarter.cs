@@ -16,6 +16,7 @@ namespace AirFramework.Internal
             Async_Tools.ExceptionHandler += handler;
 
             Framework.Res.Initialize("DefaultPackage");
+         
             Starter.AfterLoadSceneEvent();
 
 

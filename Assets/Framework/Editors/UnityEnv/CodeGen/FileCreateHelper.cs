@@ -1,10 +1,10 @@
-using System.IO;
+ï»¿using System.IO;
 using UnityEditor;
 using UnityEngine;
 
 namespace AirFrameworkEditor
 {
-    public class FileCreateHandle : MonoBehaviour
+    public class FileCreateHelper : MonoBehaviour
     {
         public static void Refresh() => AssetDatabase.Refresh();
 
@@ -28,7 +28,7 @@ namespace AirFrameworkEditor
 
 
         /// <summary>
-        /// ÀıÈç: Assets/MyFolder/mytxt.txt
+        /// ä¾‹å¦‚: Assets/MyFolder/mytxt.txt
         /// </summary>
         /// <param name="relativePath"></param>
         /// <returns></returns>
@@ -40,7 +40,7 @@ namespace AirFrameworkEditor
         }
 
         /// <summary>
-        /// ´´½¨ÎÄ¼şµ½¾ø¶ÔÂ·¾¶
+        /// åˆ›å»ºæ–‡ä»¶åˆ°ç»å¯¹è·¯å¾„
         /// </summary>
         /// <param name="path"></param>
         /// <param name="text"></param>
@@ -52,7 +52,7 @@ namespace AirFrameworkEditor
         }
 
         /// <summary>
-        /// ÀıÈç: myFolder/myfolder
+        /// ä¾‹å¦‚: myFolder/myfolder
         /// </summary>
         /// <param name="relativePath"></param>
         /// <returns></returns>
@@ -61,7 +61,7 @@ namespace AirFrameworkEditor
             return File.Exists($"{Application.streamingAssetsPath}/{relativePath}");
         }
         /// <summary>
-        /// ¾ø¶ÔÂ·¾¶ÊÇ·ñ´æÔÚ
+        /// ç»å¯¹è·¯å¾„æ˜¯å¦å­˜åœ¨
         /// </summary>
         /// <param name="path"></param>
         /// <returns></returns>
@@ -71,7 +71,7 @@ namespace AirFrameworkEditor
         }
 
         /// <summary>
-        /// ÀıÈç: Assets/MyFolder/mytxt.txt
+        /// ä¾‹å¦‚: Assets/MyFolder/mytxt.txt
         /// </summary>
         /// <param name="relativePath"></param>
         /// <returns></returns>
@@ -93,6 +93,41 @@ namespace AirFrameworkEditor
                 Directory.CreateDirectory(AssetPath2AbsPath(relativePath));
             }
 
+        }
+
+
+
+        //è·å–é€‰ä¸­è·¯å¾„
+        public static string GetSelectedPathOrFallback()
+        {
+            string path = "Assets";
+            foreach (UnityEngine.Object obj in Selection.GetFiltered(typeof(UnityEngine.Object), SelectionMode.Assets))
+            {
+                path = AssetDatabase.GetAssetPath(obj);
+                if (!string.IsNullOrEmpty(path) && File.Exists(path))
+                {
+                    path = Path.GetDirectoryName(path);
+                    break;
+                }
+            }
+            return path;
+        }
+
+
+        public static void CreateScriptWithTitle(string source,string defaultName="NewScript.cs",Texture2D icon=null)
+        {
+            source = TitleInfoGenerator.GetTitleDefault() + "\n" + source;
+
+            CreateScript(source,defaultName,icon);
+        }
+        internal static void CreateScript(string source, string defaultName = "NewScript.cs", Texture2D icon = null)
+        {
+            //å¼€å§‹ç¼–è¾‘åå­—çš„æ“ä½œ
+            ProjectWindowUtil.StartNameEditingIfProjectWindowExists(0,
+            ScriptableObject.CreateInstance<CreateScriptAsset>(),
+            $"{FileCreateHelper.GetSelectedPathOrFallback()}/{defaultName}",
+            icon, source
+           );
         }
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 namespace AirFramework
 {
 
-    public abstract partial class UnitGameObject : IMessageReceiver
+    public abstract partial class UnitGameObject 
     {
 
         public bool IsAlive => MonoObject != null;
@@ -128,7 +128,7 @@ namespace AirFramework
         {
             if (IsAlive) throw new InvalidOperationException("Cannot initialize repeatly.");
             type.CheckAbstract();
-            CheckParentState(parent);
+            CheckUnitGameObjectAlive(parent);
             var handle = Framework.Res.LoadAsync<GameObject>(type.Name);
             await handle;
             if (handle.AssetObject == null) throw new InvalidOperationException("Null Reference");
@@ -161,7 +161,7 @@ namespace AirFramework
         public void UnsafeBindSync(Type type, UnitGameObject parent = null)
         {
             if (IsAlive) throw new InvalidOperationException("Cannot initialize repeatly.");
-            CheckParentState(parent);
+            CheckUnitGameObjectAlive(parent);
             type.CheckAbstract();
             var handle = Framework.Res.LoadSync<GameObject>(type.Name);
             if (handle.AssetObject == null) throw new InvalidOperationException("Null Reference");
@@ -198,11 +198,10 @@ namespace AirFramework
         public void UnsafeBindInstance(Type type, GameObject instance, UnitGameObject parent = null)
         {
             if (IsAlive) throw new InvalidOperationException("Cannot initialize repeatly.");
-            CheckParentState(parent);
+            
             type.CheckAbstract();
             if (instance == null) throw new InvalidOperationException("Null Reference");
-            if (parent != null)
-                instance.transform.SetParent(parent.transform);
+            TrySetParent(this,parent);
             // var obj_ref = Activator.CreateInstance<T>();
             BindUnitAndGameObject(instance, this);
 
@@ -220,13 +219,17 @@ namespace AirFramework
             UnsafeBindInstance(typeof(T), instance);
         }
 
-        private static void CheckParentState(UnitGameObject parent)
+        private void TrySetParent(UnitGameObject current,UnitGameObject parent)
         {
             if (parent == null) return;
-
-            if (parent.IsAlive) throw new InvalidOperationException("You must initialize this UnitGameObject! Try call LoadAsync or BindAsync Method");
+            if (!parent.IsAlive||!this.IsAlive) throw new InvalidOperationException("You must initialize this UnitGameObject! Try call LoadAsync or BindAsync Method");
+            current.SetParent(parent);
         }
-
+        private void CheckUnitGameObjectAlive(UnitGameObject unit)
+        {
+            if(unit == null) return;
+            if(unit.IsAlive) throw new InvalidOperationException("You must initialize this UnitGameObject! Try call LoadAsync or BindAsync Method");
+        }
         //绑定
         private static void BindUnitAndGameObject(GameObject obj, UnitGameObject entity)
         {
