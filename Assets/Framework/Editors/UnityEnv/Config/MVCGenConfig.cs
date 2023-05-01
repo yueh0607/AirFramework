@@ -51,7 +51,7 @@ namespace AirFrameworkEditor
                 typeof(UnityEngine.UI.InputField),
                 new List<string>()
                 {
-                    "void OnValueChanged(string text)",
+                    "void OnEndEdit(string text)",
                 }
             }
             ,

@@ -1,4 +1,4 @@
-using AirFramework;
+ï»¿using AirFramework;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +7,7 @@ namespace AirFrameworkEditor
     public static class PanelAnalyser
     {
         /// <summary>
-        /// »ñÈ¡Ò»¸öÎïÌåµÄ×ÓÎïÌåÊ÷ÉÏµÄÈ«²¿UIMark
+        /// è·å–ä¸€ä¸ªç‰©ä½“çš„å­ç‰©ä½“æ ‘ä¸Šçš„å…¨éƒ¨UIMark
         /// </summary>
         /// <param name="root"></param>
         /// <returns></returns>
@@ -34,7 +34,7 @@ namespace AirFrameworkEditor
             return marks;
         }
 
-        public static List<ScriptMark> RemoveMarks(GameObject root)
+        public static void RemoveMarks(GameObject root)
         {
             List<ScriptMark> marks = new();
             Queue<Transform> queue = new();
@@ -47,14 +47,14 @@ namespace AirFrameworkEditor
                 var mark = node.GetComponents<ScriptMark>();
                 if (mark.Length != 0)
                 {
-                    foreach (var m in mark) Component.Destroy(m);
+                    foreach (var m in mark) Component.DestroyImmediate(m,true);
                 }
                 foreach (Transform child in node)
                 {
                     queue.Enqueue(child);
                 }
             }
-            return marks;
+            Debug.Log("Remove Marks Completed!");
         }
         public static List<MarkData> GetData(List<ScriptMark> marks)
         {
@@ -79,109 +79,59 @@ namespace AirFrameworkEditor
 
         public MarkData(ScriptMark mark)
         {
-            this.mark = mark;
+            this.Mark = mark;
         }
-        #region »ù´¡ĞÅÏ¢
+        #region åŸºç¡€ä¿¡æ¯
 
         /// <summary>
-        /// »ñÈ¡MarkÊµÀı
+        /// è·å–Markå®ä¾‹
         /// </summary>
-        public ScriptMark mark;
+        public ScriptMark Mark { get; set; }
 
         /// <summary>
-        /// »ñÈ¡Mark±ê¼ÇµÄ×é¼şÀàĞÍ
+        /// è·å–Markæ ‡è®°çš„ç»„ä»¶ç±»å‹
         /// </summary>
         public Type MarkType => BuildTarget.GetType();
         /// <summary>
-        /// »ñÈ¡±ê¼ÇµÄ×é¼şÀàĞÍµÄ¼òµ¥ÀàÃû
+        /// è·å–æ ‡è®°çš„ç»„ä»¶ç±»å‹çš„ç®€å•ç±»å
         /// </summary>
         public string TypeName => MarkType.Name;
         /// <summary>
-        /// »ñÈ¡±»±ê¼ÇµÄ×é¼şµÄÍêÈ«ÀàÃû
+        /// è·å–è¢«æ ‡è®°çš„ç»„ä»¶çš„å®Œå…¨ç±»å
         /// </summary>
         public string FullTypeName => MarkType.FullName;
         /// <summary>
-        /// »ñÈ¡¹ÒÔÚMarkµÄÎïÌåÃû
+        /// è·å–æŒ‚åœ¨Markçš„ç‰©ä½“å
         /// </summary>
         public string BuildName => BuildTarget.gameObject.name;
         /// <summary>
-        /// »ñÈ¡±»¹¹½¨µÄ×é¼şÊµÀı
+        /// è·å–è¢«æ„å»ºçš„ç»„ä»¶å®ä¾‹
         /// </summary>
-        public Component BuildTarget => mark.buildTarget;
+        public Component BuildTarget => Mark.buildTarget;
         #endregion
 
         #region View
         /// <summary>
-        /// »ñÈ¡ViewFieldµÄ±äÁ¿Ãû
+        /// è·å–ViewFieldçš„å˜é‡å
         /// </summary>
         public string ViewFieldName => $"{BuildName}_{TypeName}";
         /// <summary>
-        /// »ñÈ¡Õû¸öViewField
+        /// è·å–æ•´ä¸ªViewField
         /// </summary>
-        public string ViewFiledString => $"public {FullTypeName} {ViewFieldName};";
+        public string ViewFieldString => $"public {FullTypeName} {ViewFieldName};";
 
         public string ViewFindString => $"{ViewFieldName} = transform.Find(\"{BuildName}\").GetComponent<{FullTypeName}>();";
 
+        public bool WithProperty => !MaskHelper.IsNothing(Mark.buildProperty);
+        public List<string> ViewPortString
+        {
+            get
+            {
+                return MaskHelper.SplitToMaskOptions(Mark.buildProperty);
+            }
+        }
         #endregion
-
-
-
-
 
     }
 
-    //public static class MarkDataExtension
-    //{
-    //    public static string[] GetEventList(this List<MarkData> data)
-    //    {
-    //        List<string> strings = new List<string>();
-
-    //        foreach (MarkData item in data)
-    //        {
-    //            string x = item.EventMethodText;
-    //            if (x != string.Empty)
-    //            {
-    //                strings.Add(x);
-    //            }
-    //        }
-    //        return strings.ToArray();
-    //    }
-    //    public static string[] GetViewFieldList(this List<MarkData> data)
-    //    {
-    //        List<string> strings = new List<string>();
-
-    //        foreach (MarkData item in data)
-    //        {
-    //            string x = item.ViewFiledString;
-    //            if (x != string.Empty)
-    //            {
-    //                strings.Add(x);
-    //            }
-    //        }
-    //        return strings.ToArray();
-    //    }
-
-    //    public static List<string> GetBindCode(this List<MarkData> data)
-    //    {
-    //        List<string> r = new List<string>();
-    //        foreach (MarkData item in data)
-    //        {
-    //            string bindstr = item.BindStringText;
-    //            if (bindstr != string.Empty)
-    //                r.Add(bindstr);
-    //        }
-    //        return r;
-    //    }
-    //    public static List<string> GetUnBindCode(this List<MarkData> data)
-    //    {
-    //        List<string> r = new List<string>();
-    //        foreach (MarkData item in data)
-    //        {
-    //            string bindstr = item.UnBindStringText;
-    //            if (bindstr != string.Empty)
-    //                r.Add(bindstr);
-    //        }
-    //        return r;
-    //    }
-    //}
 }

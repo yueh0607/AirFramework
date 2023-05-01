@@ -401,6 +401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildTarget: {fileID: 2825499768144151739}
+  buildProperty: 
 --- !u!1 &6796492579515459723
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,6 +538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildTarget: {fileID: 2396499003418452570}
+  buildProperty: 
 --- !u!1 &7149538230097125789
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,6 +633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildTarget: {fileID: 5691021031344139222}
+  buildProperty: text
 --- !u!1 &7468595813276801371
 GameObject:
   m_ObjectHideFlags: 0

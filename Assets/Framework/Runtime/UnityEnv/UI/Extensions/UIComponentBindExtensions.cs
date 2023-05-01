@@ -10,7 +10,7 @@ namespace AirFramework
         }
         public static void Bind(this InputField target, UnityAction<string> action)
         {
-            target.onValueChanged.AddListener(action);
+            target.onEndEdit.AddListener(action);
         }
         public static void Bind(this Toggle target, UnityAction<bool> action)
         {
@@ -29,7 +29,7 @@ namespace AirFramework
         }
         public static void UnBind(this InputField target, UnityAction<string> action)
         {
-            target.onValueChanged.RemoveListener(action);
+            target.onEndEdit.RemoveListener(action);
         }
 
         public static void UnBind(this Toggle target, UnityAction<bool> action)

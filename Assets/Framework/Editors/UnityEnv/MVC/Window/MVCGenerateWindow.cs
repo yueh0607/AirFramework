@@ -7,18 +7,18 @@ namespace AirFrameworkEditor
 
     public class MVCGenerateWindow
     {
-        [TabGroup("VCGen")]
+      
         [AssetsOnly]
         [OnValueChanged("SaveCache")]
         public GameObject prefab;
 
-        [TabGroup("VCGen")]
+   
         [LabelText("生成路径")]
         [FolderPath(AbsolutePath = false, RequireExistingPath = true)]
         [OnValueChanged("SaveCache")]
         public string path;
 
-        [TabGroup("VCGen")]
+
         [LabelText("自动创建子目录")]
         [OnValueChanged("SaveCache")]
         public bool createChildPath = true;

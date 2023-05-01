@@ -1,6 +1,6 @@
 ﻿namespace AirFramework
 {
-
+  
     public abstract class AbstractState : PoolableObject, IUpdate
     {
         private StateMachine machine = null;
@@ -19,10 +19,7 @@
         public abstract void OnExitState();
         public abstract void OnStayState(float deltaTime);
 
-        public override void OnAllocate()
-        {
-
-        }
+        public override void OnAllocate() {}
 
         public override void OnRecycle()
         {
@@ -34,8 +31,6 @@
         {
             OnStayState(deltaTime);
         }
-
-
     }
 
     public class StateMachine : PoolableObject

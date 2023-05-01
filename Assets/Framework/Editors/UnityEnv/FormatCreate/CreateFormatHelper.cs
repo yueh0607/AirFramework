@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using AirFramework;
+using System.Reflection;
 using UnityEditor;
 
 namespace AirFrameworkEditor
@@ -18,6 +19,26 @@ using AirFramework;
 namespace {FrameworkSettings.Instance.defaultNamespace}
 {{
     public class #NAME#
+    {{
+        
+    }}
+}}
+
+");
+
+        }
+
+
+
+        [MenuItem("Assets/Create/Format/Model Script", false, 0)]
+        public static void CreateModelScript()
+        {
+            FileCreateHelper.CreateScriptWithTitle(@$"
+using AirFramework;
+
+namespace {FrameworkSettings.Instance.defaultNamespace}
+{{
+    public class #NAME# : {nameof(IModel)}
     {{
         
     }}

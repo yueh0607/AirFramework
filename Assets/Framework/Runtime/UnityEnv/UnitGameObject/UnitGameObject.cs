@@ -52,6 +52,11 @@ namespace AirFramework
 
         public void SetParent(UnitGameObject obj_ref)
         {
+            if(obj_ref==null)
+            {
+                transform.SetParent(null);
+                return;
+            }
             transform.SetParent(obj_ref.transform);
         }
         public void SetAsFisrtSlibing() => transform.SetAsFirstSibling();
@@ -124,17 +129,16 @@ namespace AirFramework
         /// <typeparam name="T"></typeparam>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public async AsyncTask UnsafeBindAsync(Type type, UnitGameObject parent = null)
+        public async AsyncTask UnsafeBindAsync(Type type)
         {
             if (IsAlive) throw new InvalidOperationException("Cannot initialize repeatly.");
             type.CheckAbstract();
-            CheckUnitGameObjectAlive(parent);
             var handle = Framework.Res.LoadAsync<GameObject>(type.Name);
             await handle;
             if (handle.AssetObject == null) throw new InvalidOperationException("Null Reference");
             //实例化到场景
-            GameObject instance = parent == null ? GameObject.Instantiate(handle.GetAssetObject<GameObject>()) :
-                GameObject.Instantiate(handle.GetAssetObject<GameObject>(), parent.transform);
+            GameObject instance = GameObject.Instantiate(handle.GetAssetObject<GameObject>());
+               
             instance.name = type.Name;
             handle.Release();
 
@@ -147,9 +151,9 @@ namespace AirFramework
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public async AsyncTask BindAsync<T>(UnitGameObject parent = null) where T : UnitGameObject
+        public async AsyncTask BindAsync<T>() where T : UnitGameObject
         {
-            await UnsafeBindAsync(typeof(T), parent);
+            await UnsafeBindAsync(typeof(T));
         }
         /// <summary>
         /// 同步绑定,注意，一定要传入一个继承UnitGameObject的非抽象类型
@@ -158,17 +162,17 @@ namespace AirFramework
         /// <param name="instance"></param>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public void UnsafeBindSync(Type type, UnitGameObject parent = null)
+        public void UnsafeBindSync(Type type)
         {
             if (IsAlive) throw new InvalidOperationException("Cannot initialize repeatly.");
-            CheckUnitGameObjectAlive(parent);
+      
             type.CheckAbstract();
             var handle = Framework.Res.LoadSync<GameObject>(type.Name);
             if (handle.AssetObject == null) throw new InvalidOperationException("Null Reference");
             //实例化到场景
             //实例化到场景
-            GameObject instance = parent == null ? GameObject.Instantiate(handle.GetAssetObject<GameObject>()) :
-                GameObject.Instantiate(handle.GetAssetObject<GameObject>(), parent.transform);
+            GameObject instance = GameObject.Instantiate(handle.GetAssetObject<GameObject>());
+             
             instance.name = type.Name;
             handle.Release();
 
@@ -183,9 +187,9 @@ namespace AirFramework
         /// <param name="instance"></param>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public void BindSync<T>(UnitGameObject parent = null) where T : UnitGameObject
+        public void BindSync<T>() where T : UnitGameObject
         {
-            UnsafeBindSync(typeof(T), parent);
+            UnsafeBindSync(typeof(T));
         }
 
         /// <summary>
@@ -195,14 +199,14 @@ namespace AirFramework
         /// <param name="instance"></param>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public void UnsafeBindInstance(Type type, GameObject instance, UnitGameObject parent = null)
+        public void UnsafeBindInstance(Type type, GameObject instance)
         {
             if (IsAlive) throw new InvalidOperationException("Cannot initialize repeatly.");
             
             type.CheckAbstract();
             if (instance == null) throw new InvalidOperationException("Null Reference");
-            TrySetParent(this,parent);
-            // var obj_ref = Activator.CreateInstance<T>();
+
+
             BindUnitAndGameObject(instance, this);
 
         }
@@ -213,24 +217,11 @@ namespace AirFramework
         /// <param name="instance"></param>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public void BindInstance<T>(GameObject instance, UnitGameObject parent = null) where T : UnitGameObject
+        public void BindInstance<T>(GameObject instance) where T : UnitGameObject
         {
 
             UnsafeBindInstance(typeof(T), instance);
         }
-
-        private void TrySetParent(UnitGameObject current,UnitGameObject parent)
-        {
-            if (parent == null) return;
-            if (!parent.IsAlive||!this.IsAlive) throw new InvalidOperationException("You must initialize this UnitGameObject! Try call LoadAsync or BindAsync Method");
-            current.SetParent(parent);
-        }
-        private void CheckUnitGameObjectAlive(UnitGameObject unit)
-        {
-            if(unit == null) return;
-            if(unit.IsAlive) throw new InvalidOperationException("You must initialize this UnitGameObject! Try call LoadAsync or BindAsync Method");
-        }
-        //绑定
         private static void BindUnitAndGameObject(GameObject obj, UnitGameObject entity)
         {
             GameObject.DontDestroyOnLoad(obj);

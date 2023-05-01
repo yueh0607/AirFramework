@@ -59,7 +59,7 @@ namespace AirFramework
 
         protected K GetModel<K>() where K :class, IModel
         {
-            return Framework.UI.Models.Get<K>();
+            return Framework.MVC.Models.Get<K>();
         }
     }
     public abstract class Controller<T> : Controller where T : View

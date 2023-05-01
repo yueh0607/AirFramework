@@ -1,4 +1,4 @@
-using System.Diagnostics;
+﻿using System.Diagnostics;
 
 
 namespace AirFramework
@@ -6,6 +6,6 @@ namespace AirFramework
     public static partial class Framework
     {
         [DebuggerHidden]
-        public static ResManager Res { get; } = new ResManager();
+        public static ResManager Res => SingletonProperty<ResManager>.Instance;
     }
 }

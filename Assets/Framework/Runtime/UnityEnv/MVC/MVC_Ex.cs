@@ -1,11 +1,14 @@
-﻿namespace AirFramework
+﻿using UnityEngine;
+
+namespace AirFramework
 {
     public static class MVC_Ex
     {
-        public static AsyncTask Hide<T>(this Controller controller) where T : Controller
+        public static void SetInteractable(this View view,bool interactable )
         {
-            return Framework.MVC.Hide<T>(controller);
+            var canvasGroup = view.GetComponent<CanvasGroup>();
+            canvasGroup.interactable= interactable;
         }
-
+        
     }
 }

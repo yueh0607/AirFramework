@@ -96,7 +96,6 @@ namespace AirFrameworkEditor
         }
 
 
-
         //获取选中路径
         public static string GetSelectedPathOrFallback()
         {
@@ -120,7 +119,7 @@ namespace AirFrameworkEditor
 
             CreateScript(source,defaultName,icon);
         }
-        internal static void CreateScript(string source, string defaultName = "NewScript.cs", Texture2D icon = null)
+        public static void CreateScript(string source, string defaultName = "NewScript.cs", Texture2D icon = null)
         {
             //开始编辑名字的操作
             ProjectWindowUtil.StartNameEditingIfProjectWindowExists(0,

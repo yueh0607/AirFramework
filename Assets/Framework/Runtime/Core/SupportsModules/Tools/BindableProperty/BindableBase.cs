@@ -1,12 +1,7 @@
 ﻿namespace AirFramework
 {
-    public abstract class BindableBase<T> : Unit, IValueChanged<T>
+    public abstract partial class BindableBase<T> : Unit, IValueChanged<T>
     {
-
-        public BindableBase()
-        {
-            notificationList = this.PoolGet<UnitHashSet<BindableBase<T>>>();
-        }
 
         /// <summary>
         /// 属性值：当属性值发生变化时，通知属性变更
@@ -17,11 +12,6 @@
             get;
             set;
         }
-
-
-
-        UnitHashSet<BindableBase<T>> notificationList;
-
 
         /// <summary>
         /// 事件列表：属性值变更时触发事件
@@ -48,36 +38,71 @@
         /// </summary>
         /// <param name="a"></param>
         /// <param name="b"></param>
-        public static void Bind(BindableBase<T> a, BindableBase<T> b)
+        public static void BindTwoWay(BindableBase<T> a, BindableBase<T> b)
         {
-            a.notificationList.Value.TryAdd(b);
-            b.notificationList.Value.TryAdd(a);
-        }
-        public static void UnBind(BindableBase<T> a, BindableBase<T> b)
-        {
-            a.notificationList.Value.TryRemove(b);
-            b.notificationList.Value.TryRemove(a);
-        }
-        public static void BindTo(BindableBase<T> origin, BindableBase<T> target)
-        {
-            target.notificationList.Value.TryAdd(origin);
-        }
-        public static void BindFrom(BindableBase<T> origin, BindableBase<T> target)
-        {
-            origin.notificationList.Value.TryAdd(target);
-        }
-        public static void PublishValueChanged(BindableBase<T> a, T newValue)
-        {
-            foreach (var item in a.notificationList.Value)
+            a.OnValueChanged += (oldV, newV) =>
             {
-                item.Value = newValue;
-            }
+                b.Value = newV;
+            };
+            b.OnValueChanged += (oldV, newV) =>
+            {
+                a.Value = newV;
+            };
         }
-
-
+        public static void UnBindTwoWay(BindableBase<T> a, BindableBase<T> b)
+        {
+            a.OnValueChanged -= (oldV, newV) =>
+            {
+                b.Value = newV;
+            };
+            b.OnValueChanged -= (oldV, newV) =>
+            {
+                a.Value = newV;
+            };
+        }
+        public static void Bind(BindableBase<T> origin, BindableBase<T> target)
+        {
+            target.OnValueChanged += (oldV, newV) =>
+            {
+                origin.Value = newV;
+            };
+        }
+        public static void UnBind(BindableBase<T> origin, BindableBase<T> target)
+        {
+            target.OnValueChanged -= (oldV, newV) =>
+            {
+                origin.Value = newV;
+            };
+        }
         protected override void OnDispose()
         {
-            notificationList.Dispose();
+
         }
+    }
+
+    public abstract partial class BindableBase<T>
+
+    {
+        public void BindTwoWay(BindableBase<T> b)
+        {
+            BindTwoWay(this, b);
+        }
+        public void UnBindTwoWay(BindableBase<T> a)
+        {
+            UnBindTwoWay(this, a);
+        }
+        public void Bind(BindableBase<T> target)
+        {
+            Bind(this, target);
+        }
+        public void UnBind(BindableBase<T> target)
+        {
+            target.OnValueChanged -= (oldV, newV) =>
+            {
+                this.Value = newV;
+            };
+        }
+
+
     }
 }

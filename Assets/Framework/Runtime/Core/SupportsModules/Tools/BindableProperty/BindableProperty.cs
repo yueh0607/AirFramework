@@ -34,7 +34,7 @@ namespace AirFramework
                 {
                     this._value = value;
                     onValueChanged?.Invoke(this._value, value);
-                    PublishValueChanged(this, value);
+
                 }
             }
         }
