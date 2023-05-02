@@ -56,19 +56,19 @@ namespace AirFrameworkEditor
             }
             Debug.Log("Remove Marks Completed!");
         }
-        public static List<MarkData> GetData(List<ScriptMark> marks)
+        public static List<MarkData> GetData(List<ScriptMark> marks,GameObject root)
         {
             var markData = new List<MarkData>();
             foreach (var mark in marks)
             {
-                markData.Add(new MarkData(mark));
+                markData.Add(new MarkData(mark,root));
             }
             return markData;
         }
 
         public static List<MarkData> GetData(GameObject root)
         {
-            return GetData(GetMarks(root));
+            return GetData(GetMarks(root),root);
         }
 
 
@@ -77,9 +77,11 @@ namespace AirFrameworkEditor
     public class MarkData
     {
 
-        public MarkData(ScriptMark mark)
+        public GameObject Panel { get; set; }
+        public MarkData(ScriptMark mark,GameObject panel)
         {
             this.Mark = mark;
+            this.Panel = panel;
         }
         #region 基础信息
 
@@ -101,7 +103,7 @@ namespace AirFrameworkEditor
         /// </summary>
         public string FullTypeName => MarkType.FullName;
         /// <summary>
-        /// 获取挂在Mark的物体名
+        /// 获取挂Mark的物体名
         /// </summary>
         public string BuildName => BuildTarget.gameObject.name;
         /// <summary>
@@ -120,7 +122,15 @@ namespace AirFrameworkEditor
         /// </summary>
         public string ViewFieldString => $"public {FullTypeName} {ViewFieldName};";
 
-        public string ViewFindString => $"{ViewFieldName} = transform.Find(\"{BuildName}\").GetComponent<{FullTypeName}>();";
+        public string ViewFindString
+        {
+            get
+            {
+                if(BuildName==Panel.name) return $"{ViewFieldName} = transform.GetComponent<{FullTypeName}>();";
+                return $"{ViewFieldName} = transform.Find(\"{BuildName}\").GetComponent<{FullTypeName}>();";
+            }
+            
+        }
 
         public bool WithProperty => !MaskHelper.IsNothing(Mark.buildProperty);
         public List<string> ViewPortString

@@ -16,10 +16,11 @@ namespace AirFramework
         public abstract float Evaluate(float x);
     }
 
-
-    public class MyCurve : Curve
+    [Serializable]
+    public class AnimCurve : Curve
     {
-        private AnimationCurve curve;
+        [SerializeField]
+        AnimationCurve curve;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override float Evaluate(float x)
@@ -27,7 +28,7 @@ namespace AirFramework
             return curve.Evaluate(x);
         }
 
-        public MyCurve(AnimationCurve curve)
+        public AnimCurve(AnimationCurve curve)
         {
             this.curve = curve;
         }

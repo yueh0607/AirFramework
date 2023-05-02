@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace AirFramework
 {
-    public class TimeMachine :PoolableObject, ITweenMachine, IUpdate
+    public class TimeMachine :PoolableObject, IUpdate
     {
         /// <summary>
         /// 时间起点

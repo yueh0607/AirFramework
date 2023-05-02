@@ -12,6 +12,10 @@ GameObject:
   - component: {fileID: 4554923426654407050}
   - component: {fileID: 6376181393198345986}
   - component: {fileID: 6342449832537186583}
+  - component: {fileID: 2989828605199862195}
+  - component: {fileID: 8648955039171369792}
+  - component: {fileID: 8610470380083036621}
+  - component: {fileID: 6113347959260440791}
   m_Layer: 5
   m_Name: CounterPanel
   m_TagString: Untagged
@@ -53,7 +57,7 @@ Canvas:
   m_GameObject: {fileID: 2102795594456606251}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 2
+  m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -87,7 +91,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &6342449832537186583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,6 +109,86 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 55
+--- !u!225 &2989828605199862195
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102795594456606251}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &8648955039171369792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102795594456606251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d43083ba4bd99a4583615dda2688487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildTarget: {fileID: 2989828605199862195}
+  buildProperty: alpha
+--- !u!114 &8610470380083036621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102795594456606251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78cd835b08ed0e44584f338fbadd4410, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curve:
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 0
+      m_RotationOrder: 4
+  duration: 1
+  direction: 1
+  Loop: 0
+--- !u!114 &6113347959260440791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102795594456606251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d43083ba4bd99a4583615dda2688487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildTarget: {fileID: 8610470380083036621}
+  buildProperty: 
 --- !u!1 &2882224628647762384
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,7 +729,6 @@ GameObject:
   - component: {fileID: 1903577597062550078}
   - component: {fileID: 7088850931624749771}
   - component: {fileID: 7060269711199513606}
-  - component: {fileID: 9211331957250663888}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -711,20 +794,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &9211331957250663888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7468595813276801371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d43083ba4bd99a4583615dda2688487, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buildTarget: {fileID: 7060269711199513606}
-  buildProperty: color
 --- !u!1 &9049787949226903204
 GameObject:
   m_ObjectHideFlags: 0
