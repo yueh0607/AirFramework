@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 6376181393198345986}
   - component: {fileID: 6342449832537186583}
   - component: {fileID: 2989828605199862195}
-  - component: {fileID: 8648955039171369792}
   - component: {fileID: 8610470380083036621}
   - component: {fileID: 6113347959260440791}
+  - component: {fileID: 2610492245349768733}
   m_Layer: 5
   m_Name: CounterPanel
   m_TagString: Untagged
@@ -32,7 +32,7 @@ RectTransform:
   m_GameObject: {fileID: 2102795594456606251}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1903577597062550078}
@@ -46,8 +46,8 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4554923426654407050
 Canvas:
   m_ObjectHideFlags: 0
@@ -57,7 +57,7 @@ Canvas:
   m_GameObject: {fileID: 2102795594456606251}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 2
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &6342449832537186583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,20 +121,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &8648955039171369792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2102795594456606251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d43083ba4bd99a4583615dda2688487, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buildTarget: {fileID: 2989828605199862195}
-  buildProperty: alpha
 --- !u!114 &8610470380083036621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,23 +140,23 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0
         value: 0
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
         time: 1
         value: 1
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0
         outWeight: 0
       m_PreInfinity: 2
-      m_PostInfinity: 0
+      m_PostInfinity: 2
       m_RotationOrder: 4
   duration: 1
   direction: 1
@@ -189,6 +175,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildTarget: {fileID: 8610470380083036621}
   buildProperty: 
+--- !u!114 &2610492245349768733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102795594456606251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d43083ba4bd99a4583615dda2688487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildTarget: {fileID: 4277120142845628428}
+  buildProperty: position
 --- !u!1 &2882224628647762384
 GameObject:
   m_ObjectHideFlags: 0
