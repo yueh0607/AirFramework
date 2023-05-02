@@ -52,8 +52,6 @@ namespace AirFramework
 
     public class BuiltInCurve
     {
-
-
         public static ICurve GetCurve(EaseCurve curveType)
         {
             switch (curveType)

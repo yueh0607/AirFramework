@@ -18,6 +18,24 @@ namespace AirFramework
             tween.Machine.Curve= curve;
             return tween;
         }
+
+        public static Tween SetCurve(this Tween tween, EaseCurve curve)
+        {
+            tween.Machine.Curve = BuiltInCurve.GetCurve(curve);
+            return tween;
+        }
+
+        public static Tween SetCurve(this Tween tween, Func<float ,float > curve)
+        {
+            tween.Machine.Curve = new FuncCurve(curve);
+            return tween;
+        }
+        public static Tween SetCurve(this Tween tween, AnimationCurve curve)
+        {
+            tween.Machine.Curve = new AnimCurve(curve);
+            return tween;
+        }
+
         public static Tween SetDuration(this Tween tween,float duration)
         {
             tween.Machine.Time= duration;
