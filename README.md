@@ -6,10 +6,10 @@
 - 协变约束全局消息系统 (全局广播，指定派发，异步消息，语法约束，生命管理，call-response)
 - 单线程异步(tasklike+pool)
 - 通用工具
-- 资源管理（采用YooAsset+Async_Extension）
-- MVC-代码生成(V层自动生成，C层自动生成绑定常用事件代码)
-- UI管理(Stack 管理Panel，自由Panel，天然层级)
-- 天然FSM(基于对象池IPoolable的生命派发)
+- 资源管理（YooAsset+tasklike）
+- MVC-代码生成(数据绑定，V层生成，C层生成并绑常用事件，简单生命周期)
+- UI管理(Stack管理Panel，自由Panel，层级)
+- 天然FSM(每个可以被池管理的对象都可以是State)
 - Tween(倒放，速度，循环，曲线，拓展)
 
 # 开源许可
