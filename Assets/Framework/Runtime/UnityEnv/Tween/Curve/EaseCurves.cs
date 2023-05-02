@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using static Codice.Client.Common.Servers.RecentlyUsedServers;
 
 namespace AirFramework
 {
@@ -293,7 +289,7 @@ namespace AirFramework
     {
         public float Evaluate(float x)
         {
-            const float c5 = (2 * (float)Math.PI) / 4.5f;
+            const float c5 = (2f * (float)Math.PI) / 4.5f;
             return (float)((x == 0) ? 0 : ((x == 1) ? 1 : (x < 0.5f ? -(Math.Pow(2, 20 * x - 10) * Math.Sin((20 * x - 11.125f) * c5)) / 2 : (Math.Pow(2, -20 * x + 10) * Math.Sin((20 * x - 11.125f) * c5)) / 2 + 1)));
         }
     }
@@ -342,7 +338,7 @@ namespace AirFramework
     {
         public float Evaluate(float x)
         {
-            return x < 0.5f? (1 - OutBounceCurve.Instance.Evaluate(1 - 2 * x)) / 2: (1 + OutBounceCurve.Instance.Evaluate(2 * x - 1)) / 2;
+            return x < 0.5f? (1 - Evaluate(1 - 2 * x)) / 2: (1 + Evaluate(2 * x - 1)) / 2;
         }
     }
     #endregion
