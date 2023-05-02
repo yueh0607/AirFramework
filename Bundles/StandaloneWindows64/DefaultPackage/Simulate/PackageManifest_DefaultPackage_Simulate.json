@@ -11,6 +11,20 @@
             "AssetTags": [],
             "BundleID": 0,
             "DependIDs": []
+        },
+        {
+            "Address": "TestPanelA",
+            "AssetPath": "Assets/Project/Arts/Prefabs/UIPanels/TestPanelA.prefab",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependIDs": []
+        },
+        {
+            "Address": "TestPanelB",
+            "AssetPath": "Assets/Project/Arts/Prefabs/UIPanels/TestPanelB.prefab",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependIDs": []
         }
     ],
     "BundleList": [

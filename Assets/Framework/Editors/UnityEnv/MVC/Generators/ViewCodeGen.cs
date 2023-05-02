@@ -44,7 +44,7 @@ namespace AirFrameworkEditor
                 foreach (var port in field.ViewPortString)
                 {
                     //获取绑定端口类型
-                    string type = ReflectionHelper.GetFieldOrPropertyTypeByName(port, field.MarkType).Name;
+                    string type = ReflectionHelper.GetFieldOrPropertyTypeByName(port, field.MarkType).FullName;
                     //端口提升命名
                     string portName =port.Length>1? char.ToUpper(port[0]) + port.Substring(1):port.ToUpper();
                     //生成端口字段

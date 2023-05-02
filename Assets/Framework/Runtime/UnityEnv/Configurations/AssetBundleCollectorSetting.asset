@@ -25,11 +25,11 @@ MonoBehaviour:
       AssetTags: 
       ActiveRuleName: EnableGroup
       Collectors:
-      - CollectPath: Assets/Project/Arts/Prefabs/UIPanels/CounterPanel.prefab
-        CollectorGUID: 67b792bd7e5980a4e9ba470169043b93
+      - CollectPath: Assets/Project/Arts/Prefabs/UIPanels
+        CollectorGUID: 41e070d08a0730b43a3daf2ed29bc0c5
         CollectorType: 0
         AddressRuleName: AddressByFileName
         PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
+        FilterRuleName: CollectPrefab
         AssetTags: 
         UserData: 

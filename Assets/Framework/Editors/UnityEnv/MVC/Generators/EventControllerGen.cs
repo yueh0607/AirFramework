@@ -31,8 +31,8 @@ namespace AirFrameworkEditor
 
                 foreach (var tag in list)
                 {
-                    string bindCodeTemp = $"{nameof(Controller<View>.TView)}.{mark.ViewFieldName}.BindTwoWay({tag.GetMethodName(mark.ViewFieldName)});";
-                    string unbindCodeTemp = $"{nameof(Controller<View>.TView)}.{mark.ViewFieldName}.UnBindTwoWay({tag.GetMethodName(mark.ViewFieldName)});";
+                    string bindCodeTemp = $"{nameof(Controller<View>.TView)}.{mark.ViewFieldName}.Bind({tag.GetMethodName(mark.ViewFieldName)});";
+                    string unbindCodeTemp = $"{nameof(Controller<View>.TView)}.{mark.ViewFieldName}.UnBind({tag.GetMethodName(mark.ViewFieldName)});";
                     string methodCodeTemp = tag.GetMethod(mark.ViewFieldName, "private");
 
                     bindCode.Add(bindCodeTemp);

@@ -26,14 +26,21 @@ public class MyTestUnit : SimpleUnit
     TextMeshPro tmp;
     public async void LoadAsync()
     {
-      
+       
         await Framework.Res.InitializePackage();
 
         await Framework.UI.Open<CounterPanel>();
-        await Async.Delay(5);
+        await Async.Delay(3);
         await Framework.UI.Close<CounterPanel>();
-        await Async.Delay(5);
+        await Async.Delay(3);
         await Framework.UI.Open<CounterPanel>();
+
+        await Async.Delay(3);
+        await Framework.UI.Open<TestPanelA>();
+        await Async.Delay(1);
+        await Framework.UI.Open<TestPanelB>();
+
+
     }
 
 
