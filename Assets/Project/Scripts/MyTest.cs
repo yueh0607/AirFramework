@@ -35,10 +35,10 @@ public class MyTestUnit : SimpleUnit
         await Async.Delay(5);
         await Framework.UI.Open<CounterPanel>();
 
-        //await Async.Delay(3);
-        //await Framework.UI.Open<TestPanelA>();
-        //await Async.Delay(1);
-        //await Framework.UI.Open<TestPanelB>();
+        await Async.Delay(3);
+        await Framework.UI.Open<TestPanelA>();
+        await Async.Delay(1);
+        await Framework.UI.Open<TestPanelB>();
 
 
     }

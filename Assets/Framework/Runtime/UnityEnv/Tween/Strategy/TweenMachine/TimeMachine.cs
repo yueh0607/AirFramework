@@ -91,7 +91,7 @@ namespace AirFramework
             //在起始和终点插值
             time  = Math.Clamp(time+deltaTime*Speed, timeStart,timeEnd);
             //步进
-            Steper.MoveNext(Curve.Evaluate(time));
+            Steper.MoveNext(Curve.Evaluate(Percent));
             //边界条件
             if (time >= timeEnd||time<=timeStart)
             {

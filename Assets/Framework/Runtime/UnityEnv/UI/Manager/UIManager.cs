@@ -24,6 +24,7 @@ namespace AirFramework
         private Stack<Controller> panel_stack = new();
         private Dictionary<Type, int> indexMap = new Dictionary<Type, int>();
 
+        
         private async AsyncTask<bool> TryEnStack<T>() where T : Controller
         {
             Type type = typeof(T);
@@ -33,7 +34,6 @@ namespace AirFramework
             }
             var controller = await Framework.MVC.Show<T>();
             controller.SetParent(UIRoot);
-            controller.SetAsLastSlibing();
             indexMap.Add(type, panel_stack.Count);
             panel_stack.Push(controller);
             return true;
