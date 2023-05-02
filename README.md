@@ -10,6 +10,7 @@
 - MVC-代码生成(V层自动生成，C层自动生成绑定常用事件代码)
 - UI管理(Stack 管理Panel，自由Panel，天然层级)
 - 天然FSM(基于对象池IPoolable的生命派发)
+- Tween(倒放，速度，循环，曲线，拓展)
 
 # 开源许可
 - [Apache 2.0 LICENSE](https://github.com/yueh0607/AirFramework/blob/main/LICENSE)
