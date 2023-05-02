@@ -47,7 +47,7 @@ namespace AirFramework
         /// <summary>
         /// 曲线
         /// </summary>
-        public ICurve Curve { get; set; } = LinerCurve.Instance;
+        public ICurve Curve { get; set; } = LinearCurve.Instance;
 
         public LoopType Loop { get; set; } = LoopType.None;
 
