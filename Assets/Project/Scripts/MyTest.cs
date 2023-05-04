@@ -1,5 +1,6 @@
 ﻿using AirFramework;
 using MyNamespace;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Reflection;
 using TMPro;
@@ -44,10 +45,23 @@ public class MyTestUnit : SimpleUnit
     }
 
 
+
+
+    Dictionary<string, string> data = new Dictionary<string, string>()
+    {
+
+        {"xxxx","yyyy" },
+        {"tttt","kkkkk" }
+    };
+
     public MyTestUnit()
     {
-        
-        LoadAsync();
+
+        //LoadAsync();
+
+        JsonConvert.SerializeObject(data).L();
+
+
     }
 
 }

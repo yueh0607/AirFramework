@@ -72,7 +72,7 @@ namespace AirFramework
         ~Unit()
         {
             IDs.Recycle(_id);
-            Dispose();
+            if(!Disposed)Dispose();
         }
 
     }
