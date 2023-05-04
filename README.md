@@ -11,7 +11,7 @@
 - UI管理(Stack管理Panel，自由Panel，层级)
 - 天然FSM(每个可以被池管理的对象都可以是State)
 - Tween(倒放，速度，循环，曲线，拓展)
-
+- 序列化持久化(Newtonsoft.Json)(特性自动存储，手动存储，字符串格式化转换)
 # 开源许可
 - [Apache 2.0 LICENSE](https://github.com/yueh0607/AirFramework/blob/main/LICENSE)
 
