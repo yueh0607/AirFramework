@@ -25,11 +25,28 @@
             "AssetTags": [],
             "BundleID": 0,
             "DependIDs": []
+        },
+        {
+            "Address": "UICamera",
+            "AssetPath": "Assets/Project/Arts/Prefabs/UICamera.prefab",
+            "AssetTags": [],
+            "BundleID": 1,
+            "DependIDs": []
         }
     ],
     "BundleList": [
         {
             "BundleName": "assets_project_arts_prefabs_uipanels.bundle",
+            "FileHash": "00000000000000000000000000000000",
+            "FileCRC": "00000000",
+            "FileSize": 0,
+            "IsRawFile": false,
+            "LoadMethod": 0,
+            "Tags": [],
+            "ReferenceIDs": []
+        },
+        {
+            "BundleName": "assets_project_arts_prefabs.bundle",
             "FileHash": "00000000000000000000000000000000",
             "FileCRC": "00000000",
             "FileSize": 0,

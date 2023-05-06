@@ -33,3 +33,11 @@ MonoBehaviour:
         FilterRuleName: CollectPrefab
         AssetTags: 
         UserData: 
+      - CollectPath: Assets/Project/Arts/Prefabs/UICamera.prefab
+        CollectorGUID: 96a30841bdfb8fb4c9c9a4f1f6a4aaaf
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 

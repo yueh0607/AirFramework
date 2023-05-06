@@ -92,11 +92,7 @@ namespace AirFramework
         }
 
 
-        /// <summary>
-        /// ModelManager
-        /// </summary>
-        public ModelManager Models { get; protected set; } = new ModelManager();
-
+  
 
     }
 }

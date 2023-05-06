@@ -9,9 +9,9 @@ namespace AirFramework
 {
 
 
-    public class DataConnection
+    public class DataConnection 
     {
-        private readonly FileStream fileHandle;
+
 
         Dictionary<string, string> data = null;
         Dictionary<string, string> Data
@@ -29,6 +29,7 @@ namespace AirFramework
         public DataConnection(string path)
         {
             Path = path;
+            FileHelper.CheckCreatePath(Path);
         }
 
         public void Initialize()
@@ -58,7 +59,7 @@ namespace AirFramework
             await System.IO.File.WriteAllTextAsync(Path, txt);
         }
 
-        public void Set(string key, string value)
+        private void SetStr(string key, string value)
         {
             if (Data.ContainsKey(key)) Data[key] = value;
             else Data.Add(key, value);
@@ -69,12 +70,31 @@ namespace AirFramework
             if (Data.ContainsKey(key)) Data.Remove(key);
         }
 
-        public string Get(string key)
+        private string GetStr(string key)
         {
-            if(Data.ContainsKey(key)) return Data[key];
+            if (Data.ContainsKey(key)) return Data[key];
             return null;
         }
 
- 
+        public bool Exist(string key)
+        {
+            return Data.ContainsKey(key);
+        }
+
+
+
+        public void Set<T>(string key, T value)
+        {
+            string str = DataConverter.Instance.ToString<T>(value);
+            SetStr(key, str);
+        }
+
+        public T Get<T>(string key)
+        {
+            string str =GetStr(key);
+            return DataConverter.Instance.ToObject<T>(key);
+        }
+
+
     }
 }

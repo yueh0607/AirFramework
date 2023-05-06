@@ -1,6 +1,6 @@
 ﻿namespace AirFramework
 {
-    public abstract partial class BindableBase<T> : Unit, IValueChanged<T>
+    public abstract partial class BindableBase<T> :  IValueChanged<T>
     {
 
         /// <summary>
@@ -74,10 +74,7 @@
                 origin.Value = newV;
             };
         }
-        protected override void OnDispose()
-        {
-
-        }
+    
     }
 
     public abstract partial class BindableBase<T>

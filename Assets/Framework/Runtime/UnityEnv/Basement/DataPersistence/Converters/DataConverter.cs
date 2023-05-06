@@ -73,12 +73,13 @@ namespace AirFramework
         }
 
 
-        public T ConvertToObject<T>(string value)
+
+        public T ToObject<T>(string value)
         {
             return GetConverter<T>().ToObject(value);
         }
 
-        public string ConvertToString<T>(T value)
+        public string ToString<T>(T value)
         {
             return GetConverter<T>().ToString(value);
         }

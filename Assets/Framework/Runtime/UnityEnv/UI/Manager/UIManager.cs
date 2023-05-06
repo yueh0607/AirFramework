@@ -11,20 +11,43 @@ namespace AirFramework
         public UnitGameObject UIRoot { get; private set; }
         public UnitGameObject UIEventSystem { get; private set; }
 
+        public UICamera UICamera { get; set; }
+
+        public bool Initialized { get; private set; } = false;
+        public async AsyncTask InitializeAsync()
+        {
+
+            try
+            {
+                UICamera = Framework.Pool.Allocate<UICamera>();
+                await UICamera.LoadAsync();
+            }
+            catch 
+            {
+                Debug.LogWarning("Not found UICamera prefab! Event may be invalid.");
+            }
+            Initialized = true;
+        }
+
+
+
         public UIManager()
         {
             UIRoot = Framework.Pool.Allocate<EmptyUnitGameObject>();
             UIRoot.gameObject.name = "UIRoot";
-            UIEventSystem= Framework.Pool.Allocate<EmptyUnitGameObject>();
+            UIEventSystem = Framework.Pool.Allocate<EmptyUnitGameObject>();
             UIEventSystem.gameObject.name = "EventSystem";
             UIEventSystem.AddComponent<EventSystem>();
             UIEventSystem.AddComponent<StandaloneInputModule>();
+
+
         }
 
         private Stack<Controller> panel_stack = new();
         private Dictionary<Type, int> indexMap = new Dictionary<Type, int>();
 
-        
+
+
         private async AsyncTask<bool> TryEnStack<T>() where T : Controller
         {
             Type type = typeof(T);
@@ -34,6 +57,7 @@ namespace AirFramework
             }
             var controller = await Framework.MVC.Show<T>();
             controller.SetParent(UIRoot);
+            controller.GetComponent<Canvas>().worldCamera = UICamera?.Camera;
             indexMap.Add(type, panel_stack.Count);
             panel_stack.Push(controller);
             return true;
@@ -49,10 +73,10 @@ namespace AirFramework
             for (int i = 0; i < count; i++)
             {
                 var con = panel_stack.Pop();
-               
-                indexMap.Remove(con.GetType ());
+
+                indexMap.Remove(con.GetType());
                 await Framework.MVC.Hide<T>(con);
-            
+
             }
             return true;
         }
@@ -63,9 +87,10 @@ namespace AirFramework
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         /// <exception cref="InvalidOperationException"></exception>
-        public async  AsyncTask Open<T>() where T : Controller
+        public async AsyncTask Open<T>() where T : Controller
         {
-            if (await TryEnStack<T>()) { } 
+            if (!Initialized) await InitializeAsync();
+            if (await TryEnStack<T>()) { }
             else throw new InvalidOperationException("Cannot open panels of the same type.");
 
         }
@@ -89,7 +114,7 @@ namespace AirFramework
             var con = panel_stack.Pop();
             Type type = con.GetType();
             indexMap.Remove(type);
-           
+
             await Framework.MVC.Hide(con);
         }
         /// <summary>
@@ -99,8 +124,10 @@ namespace AirFramework
         /// <returns></returns>
         public async AsyncTask<Controller> OpenFree<T>() where T : Controller
         {
+            if (!Initialized) await InitializeAsync();
             var controller = await Framework.MVC.Show<T>();
             controller.SetParent(UIRoot);
+            controller.GetComponent<Canvas>().worldCamera = UICamera?.Camera;
             return controller;
         }
         /// <summary>
@@ -109,7 +136,7 @@ namespace AirFramework
         /// <typeparam name="T"></typeparam>
         /// <param name="controller"></param>
         /// <returns></returns>
-        public async AsyncTask CloseFree<T>(Controller controller=null) where T : Controller
+        public async AsyncTask CloseFree<T>(Controller controller = null) where T : Controller
         {
             await Framework.MVC.Hide<T>(controller);
         }
@@ -122,12 +149,14 @@ namespace AirFramework
         {
             if (!indexMap.ContainsKey(typeof(T))) return default;
             int index = indexMap[typeof(T)];
-            foreach(var con in panel_stack)
+            foreach (var con in panel_stack)
             {
-                if(index--==0) return con;
+                if (index-- == 0) return con;
             }
             return default;
         }
+
+
 
     }
 }
