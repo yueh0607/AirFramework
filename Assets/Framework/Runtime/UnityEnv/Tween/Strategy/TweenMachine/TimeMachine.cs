@@ -53,10 +53,26 @@ namespace AirFramework
 
         public event Action OnCompleted=null;
 
+
+        private bool enable = false;
         /// <summary>
         /// 启动状态
         /// </summary>
-        public bool Enable { get; set; } = false;
+        public bool Enable
+        {
+            get
+            {
+                return enable;
+            }
+            set
+            {
+                enable = value;
+                if(enable)
+                {
+                    Steper.MoveNext(Curve.Evaluate(Percent));
+                }
+            }
+        }
 
         public override void OnAllocate()
         {
@@ -75,6 +91,9 @@ namespace AirFramework
             timeEnd = 0;
         }
 
+
+        private void MoveNext() => Steper.MoveNext(Curve.Evaluate(Percent));
+
         public void Complete(bool stop =true)
         {
             Steper.MoveNext(timeEnd);
@@ -91,7 +110,7 @@ namespace AirFramework
             //在起始和终点插值
             time  = Math.Clamp(time+deltaTime*Speed, timeStart,timeEnd);
             //步进
-            Steper.MoveNext(Curve.Evaluate(Percent));
+            MoveNext();
             //边界条件
             if (time >= timeEnd||time<=timeStart)
             {

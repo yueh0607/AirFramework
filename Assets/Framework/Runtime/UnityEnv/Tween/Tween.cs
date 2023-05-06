@@ -65,7 +65,7 @@ namespace AirFramework
 
         
 
-        public static Tween Initialize<T>(T start, T end, BindableBase<T> port) where T : IEquatable<T>
+        public static Tween CreateFromPool<T>(T start, T end, BindableBase<T> port) where T : IEquatable<T>
         {
             var tween = Framework.Pool.Allocate<Tween>();
             var steper = StrategyEx.GetSteperWithParm<T>(start, end, port);

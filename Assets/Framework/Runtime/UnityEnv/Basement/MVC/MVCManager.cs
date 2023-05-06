@@ -19,6 +19,7 @@ namespace AirFramework
             if (!container.ContainsKey(type))
                 return;
             container[type].Value.Remove(controller);
+            if (container[type].Value.Count==0) container.RemoveAndDispose(type);
         }
 
         /// <summary>
@@ -90,9 +91,6 @@ namespace AirFramework
             }
             await Async.Complete();
         }
-
-
-  
 
     }
 }

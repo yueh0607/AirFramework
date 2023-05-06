@@ -16,7 +16,6 @@ namespace AirFramework
         public bool Initialized { get; private set; } = false;
         public async AsyncTask InitializeAsync()
         {
-
             try
             {
                 UICamera = Framework.Pool.Allocate<UICamera>();

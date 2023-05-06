@@ -15,7 +15,7 @@ namespace AirFramework
 
         public Tween GetTween<T>(BindableBase<T> port,T start,T end) where T:IEquatable<T>
         { 
-            return Tween.Initialize(start, end, port).SetCurve(curve).SetDirection(direction).SetLoop(Loop)
+            return Tween.CreateFromPool(start, end, port).SetCurve(curve).SetDirection(direction).SetLoop(Loop)
                 .SetDuration(duration);
         }
             

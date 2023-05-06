@@ -26,20 +26,27 @@ public class MyUnitObj : UnitGameObject<MyUnitObj>
 [FrameworkInitialize]
 public class MyTestUnit : SimpleUnit
 {
-    TextMeshPro tmp;
+
     public async void LoadAsync()
     {
-        Application.persistentDataPath.L();
+        //初始化资源管理系统
         await Framework.Res.InitializePackage();
+        //加载全部Model
         await Framework.Models.LoadAsync();
-    
+        
         await Framework.UI.Open<CounterPanel>();
-        await Async.Delay(5);
+        await Async.Delay(3);
+
         await Framework.UI.Close<CounterPanel>();
-        await Async.Delay(5);
+        await Async.Delay(3);
+
         await Framework.UI.Open<CounterPanel>();
+        await Async.Delay(3);
+        await Framework.UI.Close<CounterPanel>();
 
+        await Async.Delay(3);
 
+        //保存Model
         await Framework.Models.SaveAsync();
 
 
@@ -48,22 +55,12 @@ public class MyTestUnit : SimpleUnit
 
 
 
-    Dictionary<Type, object> data = new ();
+    Dictionary<Type, object> data = new();
 
     public MyTestUnit()
     {
-
         LoadAsync();
-        //JsonSerializerSettings settings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.Auto };
-        //data.Add(typeof(CounterPanelModel), new CounterPanelModel());
 
-        //(data[typeof(CounterPanelModel)] as CounterPanelModel).Count.Value = 100;
-        //string json = JsonConvert.SerializeObject(data, settings);
-        //json.L();
-
-        //var n = Framework.Data.ReadAsJson<Dictionary<Type, object>>("PlayerSave.json");
-       // n.Count.L();
-      //  (n[typeof(CounterPanelModel)] as CounterPanelModel).Count.Value.L();
 
 
     }

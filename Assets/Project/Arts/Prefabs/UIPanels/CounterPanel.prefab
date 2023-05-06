@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2989828605199862195}
   - component: {fileID: 8610470380083036621}
   - component: {fileID: 6113347959260440791}
-  - component: {fileID: 2610492245349768733}
+  - component: {fileID: 9131211743793964319}
   m_Layer: 5
   m_Name: CounterPanel
   m_TagString: Untagged
@@ -57,7 +57,7 @@ Canvas:
   m_GameObject: {fileID: 2102795594456606251}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 2
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &6342449832537186583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildTarget: {fileID: 8610470380083036621}
   buildProperty: 
---- !u!114 &2610492245349768733
+--- !u!114 &9131211743793964319
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -187,8 +187,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d43083ba4bd99a4583615dda2688487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildTarget: {fileID: 4277120142845628428}
-  buildProperty: position
+  buildTarget: {fileID: 2989828605199862195}
+  buildProperty: alpha|interactable
 --- !u!1 &2882224628647762384
 GameObject:
   m_ObjectHideFlags: 0
