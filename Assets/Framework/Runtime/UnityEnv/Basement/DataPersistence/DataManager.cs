@@ -16,80 +16,32 @@ namespace AirFramework
         public DataConnection defaultConnection { get; set; }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private string ToClassPeristent(string name) => $"{Path}/ClassData/{name}";
-
-
-        public DataManager()
-        {
-            defaultConnection = new($"{Path}/KVPSaves/DefaultKVP.json");
-            defaultConnection.Initialize();
-        }
-
-
-
-        public void Set<T>(string key, T value)
-        {
-            defaultConnection.Set<T>(key, value);
-        }
-
-        public T Get<T>(string key)
-        {
-            return defaultConnection.Get<T>(key);
-        }
-
-        public bool Exist(string key) => defaultConnection.Exist(key);
-
-        public void Delete(string key) => defaultConnection.Delete(key);
-
-        public void Save() => defaultConnection.Save();
-
-        public AsyncTask SaveAsync() => defaultConnection.SaveAsync();
-
-
-
-        private Dictionary<string, DataConnection> datas = new Dictionary<string, DataConnection>();
-
-        public DataConnection GetConnection(string connectionName)
-        {
-            if (!datas.ContainsKey(connectionName))
-            {
-                datas.Add(connectionName, new DataConnection(connectionName));
-            }
-            return datas[connectionName];
-        }
-
-        public void CloseConnection(string connectionName)
-        {
-            datas.Remove(connectionName);
-        }
-
-
-
+        private string ToModelPeristent(string name) => $"{Path}/ModelData/{name}";
 
 
 
         private JsonSerializerSettings jsonSerializerSettings = new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.Auto};
 
-        public async AsyncTask SaveAsJsonAsync(string name, object obj)
+        public async AsyncTask SaveToFileAsync(string name, object obj)
         {
-            name = ToClassPeristent(name);
+            name = ToModelPeristent(name);
             FileHelper.CheckCreatePath(name);
             string temp = JsonConvert.SerializeObject(obj, jsonSerializerSettings);
             await File.WriteAllTextAsync(name,temp);
   
         }
 
-        public void SaveAsJson(string name, object obj)
+        public void SaveToFile(string name, object obj)
         {
-            name = ToClassPeristent(name);
+            name = ToModelPeristent(name);
             FileHelper.CheckCreatePath(name);
 
             File.WriteAllText(name, JsonConvert.SerializeObject(obj, jsonSerializerSettings));
         }
 
-        public async AsyncTask<T> ReadAsJsonAsync<T>(string name)
+        public async AsyncTask<T> ReadFromFileAsync<T>(string name)
         {
-            name = ToClassPeristent(name);
+            name = ToModelPeristent(name);
 
             T item;
             try
@@ -109,10 +61,9 @@ namespace AirFramework
             return item;
         }
 
-
-        public T ReadAsJson<T>(string name)
+        public T ReadFromFile<T>(string name)
         {
-            name = ToClassPeristent(name);
+            name = ToModelPeristent(name);
             T item;
             try
             {
@@ -130,6 +81,10 @@ namespace AirFramework
 
             return item;
         }
+
+
+
+       
 
 
     }

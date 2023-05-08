@@ -32,22 +32,15 @@ public class MyTestUnit : SimpleUnit
         //初始化资源管理系统
         await Framework.Res.InitializePackage();
         //加载全部Model
-        await Framework.Models.LoadAsync();
+        await Framework.Models.LoadAllAsync();
         
         await Framework.UI.Open<CounterPanel>();
         await Async.Delay(3);
-
-        await Framework.UI.Close<CounterPanel>();
-        await Async.Delay(3);
-
-        await Framework.UI.Open<CounterPanel>();
-        await Async.Delay(3);
         await Framework.UI.Close<CounterPanel>();
 
-        await Async.Delay(3);
 
         //保存Model
-        await Framework.Models.SaveAsync();
+        await Framework.Models.SaveAllAsync();
 
 
     }
@@ -59,6 +52,7 @@ public class MyTestUnit : SimpleUnit
 
     public MyTestUnit()
     {
+        Application.persistentDataPath.L();
         LoadAsync();
 
 

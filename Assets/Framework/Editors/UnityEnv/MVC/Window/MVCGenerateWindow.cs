@@ -72,7 +72,7 @@ namespace AirFrameworkEditor
 
         private bool Check()
         {
-            if (path == null) throw new ArgumentNullException("Path cannot be null");
+            if (path == null) throw new ArgumentNullException("FolderPath cannot be null");
             if (prefab == null) throw new ArgumentNullException("Prefab cannot be null");
 
             return true;
