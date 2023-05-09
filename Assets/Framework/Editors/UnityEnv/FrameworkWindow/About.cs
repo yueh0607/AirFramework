@@ -1,5 +1,6 @@
 ﻿using Sirenix.OdinInspector;
 using Sirenix.Utilities.Editor;
+using System.IO;
 using UnityEngine;
 namespace AirFrameworkEditor
 {
@@ -7,6 +8,7 @@ namespace AirFrameworkEditor
     public class About
     {
 
+        #region 作者
         [TabGroup("A", "作者")]
         [DisplayAsString]
         [LabelText("作者")]
@@ -32,8 +34,7 @@ namespace AirFrameworkEditor
         [DisplayAsString]
         [InlineButton("OpenBili", "Open")]
         public string Bilibili = "https://space.bilibili.com/493858666";
-
-
+        
 
         public void CopyQQ() => Clipboard.Copy(QQ);
         public void CopyName() => Clipboard.Copy(author);
@@ -48,7 +49,9 @@ namespace AirFrameworkEditor
 
         private static void OpenURL(string x) => Application.OpenURL(x);
 
+        #endregion
 
+        #region 开源
         [Title("Open Source License")]
         [TabGroup("A", "开源")]
         [Multiline(165)]
@@ -64,18 +67,231 @@ namespace AirFrameworkEditor
             Clipboard.Copy(license);
         }
 
+        #endregion
+
+        #region 框架设置
+
+        [TabGroup("A", "框架设置")]
+        [LabelText("默认用户名")]
+        [OnValueChanged("SaveSetting")]
+        public string authorName="UserName";
+
+        [TabGroup("A", "框架设置")]
+        [LabelText("默认命名空间")]
+        [OnValueChanged("SaveSetting")]
+        public string nameSpaceName= "MyNamespace";
+
+        public About() => ReadSetting();
+        void ReadSetting()
+        {
+            authorName = FrameworkSettings.Instance.authorName;
+            nameSpaceName = FrameworkSettings.Instance.defaultNamespace;
+            InitSystemInfo();
+        }
+        void SaveSetting()
+        {
+            FrameworkSettings.Instance.authorName= authorName;
+            FrameworkSettings.Instance.defaultNamespace = nameSpaceName;
+        }
 
 
-        [TabGroup("A", "介绍")]
+        #endregion
+
+        #region 系统
+
+        
+        [TabGroup("A", "系统信息")]
         [DisplayAsString]
-        [HideLabel]
-
-        public string words1 = "暂无";
-        [TabGroup("A", "介绍")]
+        [LabelText("设备名称")]
+        public string ComputerName;
+        
+        [TabGroup("A", "系统信息")]
         [DisplayAsString]
-        [HideLabel]
+        [LabelText("设备类型")]
+        public string ComputerType; // 设备的类型，如台式机、笔记本、服务器等。
+        
+        [TabGroup("A", "系统信息")]
+        [DisplayAsString]
+        [LabelText("设备型号")]
+        public string ComputerModel; // 设备的具体型号，如ThinkPad T480、MacBook Pro 13-inch等。
+        
+        [TabGroup("A", "系统信息")]
+        [DisplayAsString]
+        [LabelText("显卡名称")]
+        public string CardName; // 设备所使用的显卡名称，如NVIDIA GeForce GTX 1060、Intel HD Graphics 620等。
+        
+        [TabGroup("A", "系统信息")]
+        [DisplayAsString]
+        [LabelText("显存大小")]
+        public string CardMemory; // 显卡的显存大小，单位可以是GB或MB。
+        
+        [TabGroup("A", "系统信息")]
+        [DisplayAsString]
+        [LabelText("内存大小")]
+        public string MemorySize; // 设备的内存大小，单位可以是GB或MB。
 
-        public string words2 = "";
+
+        
+        [TabGroup("A", "系统信息")]
+        [DisplayAsString]
+        [LabelText("CPU型号")]
+        public string CPUModel; // 设备所使用的处理器型号，如Intel Core i7-8700K、AMD Ryzen 5 3600等。
+        
+        [TabGroup("A", "系统信息")]
+        [DisplayAsString]
+        [LabelText("CPU核心数")]
+        public int CPUCores; // 处理器的核心数，例如4核心、6核心、8核心等。
+        
+        [TabGroup("A", "系统信息")]
+        [DisplayAsString]
+        [LabelText("CPU频率")]
+        public string CPUFrequency; // 处理器的基础频率，单位可以是GHz或MHz。
+        
+        [TabGroup("A", "系统信息")]
+        [DisplayAsString]
+        [LabelText("硬盘型号")]
+        public string HardDriveModel; // 设备所使用的硬盘型号，如Samsung 970 EVO Plus、WD Blue等。
+        
+        [TabGroup("A", "系统信息")]
+        [DisplayAsString]
+        [LabelText("硬盘容量")]
+        public string HardDriveSize; // 硬盘的容量，单位可以是TB、GB或MB。
+        
+        [TabGroup("A", "系统信息")]
+        [DisplayAsString]
+        [LabelText("操作系统")]
+        public string OperatingSystem; // 设备所运行的操作系统，如Windows 10、macOS等。
+        
+        [TabGroup("A", "系统信息")]
+        [DisplayAsString]
+        [LabelText("屏幕尺寸")]
+        public string ScreenSize; // 设备的屏幕尺寸，单位可以是英寸或厘米。
+        [TabGroup("A", "系统信息")]
+
+        [DisplayAsString]
+        [LabelText("屏幕分辨率")]
+        public string ScreenResolution; // 屏幕的分辨率，例如1920x1080、2560x1440等。
+
+
+
+        public void InitSystemInfo()
+        {
+            // 初始化设备名称
+            ComputerName = SystemInfo.deviceName;
+
+            // 初始化设备类型
+            if (SystemInfo.deviceType == DeviceType.Desktop)
+            {
+                ComputerType = "台式机";
+            }
+            else if (SystemInfo.deviceType == DeviceType.Handheld)
+            {
+                ComputerType = "手持设备";
+            }
+            else if (SystemInfo.deviceType == DeviceType.Console)
+            {
+                ComputerType = "游戏机";
+            }
+            else if (SystemInfo.deviceType == DeviceType.Unknown)
+            {
+                ComputerType = "未知设备";
+            }
+            else
+            {
+                ComputerType = "笔记本电脑";
+            }
+
+            // 初始化设备型号
+            ComputerModel = SystemInfo.deviceModel;
+
+            // 初始化显卡名称
+            CardName = SystemInfo.graphicsDeviceName;
+
+            // 初始化显存大小
+            CardMemory = SystemInfo.graphicsMemorySize.ToString() + " MB";
+
+            // 初始化内存大小
+            MemorySize = (SystemInfo.systemMemorySize / 1024).ToString() + " GB";
+
+            // 初始化处理器型号
+            CPUModel = SystemInfo.processorType;
+
+            // 初始化处理器核心数
+            CPUCores = SystemInfo.processorCount;
+
+            // 初始化处理器频率
+            CPUFrequency = SystemInfo.processorFrequency.ToString() + " MHz";
+
+            // 初始化硬盘型号
+            HardDriveModel = SystemInfo.deviceModel;
+
+            // 初始化硬盘容量
+            long totalSize = 0;
+            foreach (DriveInfo drive in DriveInfo.GetDrives())
+            {
+                if (drive.IsReady)
+                {
+                    totalSize += drive.TotalSize;
+                }
+            }
+            HardDriveSize = (totalSize / (1024 * 1024 * 1024)).ToString() + " GB";
+
+            // 初始化操作系统
+            OperatingSystem = SystemInfo.operatingSystem;
+
+            // 初始化屏幕尺寸
+            ScreenSize = Screen.currentResolution.width.ToString() + " x " + Screen.currentResolution.height.ToString();
+
+            // 初始化屏幕分辨率
+            ScreenResolution = Screen.currentResolution.width.ToString() + " x " + Screen.currentResolution.height.ToString();
+        }
+
+
+
+
+        [TabGroup("A", "系统信息")]
+        [LabelText("")]
+        [Button("Open PersistentDataPath")]
+        public void OpenPersistentPath()
+        {
+            Application.OpenURL(Application.persistentDataPath);
+        }
+        
+        [TabGroup("A", "系统信息")]
+        [LabelText("")]
+        [Button("Open DataPath")]
+        public void OpenDataPath()
+        {
+            Application.OpenURL(Application.dataPath);
+        }
+        
+        [TabGroup("A", "系统信息")]
+        [LabelText("")]
+        [Button("Open StreamingAssetPath")]
+        public void OpenStreamingPath()
+        {
+            Application.OpenURL(Application.streamingAssetsPath);
+        }
+        
+        [TabGroup("A", "系统信息")]
+        [LabelText("")]
+        [Button("Open LogFilePath")]
+        public void OpenLogPath()
+        {
+            Application.OpenURL(Application.consoleLogPath);
+        }
+
+        
+        [TabGroup("A", "系统信息")]
+        [LabelText("")]
+        [Button("Open TemporaryCachePath")]
+        public void OpenCahcePath()
+        {
+            Application.OpenURL(Application.temporaryCachePath);
+        }
+        #endregion
+
+
 
     }
 }
