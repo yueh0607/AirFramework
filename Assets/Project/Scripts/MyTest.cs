@@ -23,6 +23,26 @@ public class MyUnitObj : UnitGameObject<MyUnitObj>
 
 }
 
+public class MyClass :IPoolable
+{
+    public IObjectPool ThisPool { get ; set ; }
+
+    public bool Disposed { get; set; }
+    public void OnAllocate()
+    {
+        
+    }
+
+    public void OnRecycle()
+    {
+        
+    }
+
+   
+}
+
+
+
 [FrameworkInitialize]
 public class MyTestUnit : SimpleUnit
 {

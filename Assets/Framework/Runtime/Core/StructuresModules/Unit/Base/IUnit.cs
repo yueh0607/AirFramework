@@ -1,19 +1,23 @@
-using System;
+ï»¿using System;
 /********************************************************************************************
  * Author : YueZhenpeng
  * Date : 2023.1.13
  * Description : 
- * Éè¼ÆÕâÑùÒ»¸öIUnit½Ó¿Ú£¬×÷Îª¿ò¼ÜÄÚÈ«²¿ÀàµÄ»ù½Ó¿Ú£¬¼Ì³ĞIDisposableÔÊĞíusingÊÍ·Å
+ * è®¾è®¡è¿™æ ·ä¸€ä¸ªIUnitæ¥å£ï¼Œä½œä¸ºæ¡†æ¶å†…å…¨éƒ¨ç±»çš„åŸºæ¥å£ï¼Œç»§æ‰¿IDisposableå…è®¸usingé‡Šæ”¾
  */
 namespace AirFramework
 {
-    public interface IUnit : IDisposable
+
+    public interface IDisposedUnit
     {
         /// <summary>
-        /// ·ÇÍĞ¹Ü×ÊÔ´ÊÇ·ñÒÑ¾­ÊÍ·Å
+        /// éæ‰˜ç®¡èµ„æºæ˜¯å¦å·²ç»é‡Šæ”¾
         /// </summary>
-        bool Disposed { get; internal set; }
-
+        public bool Disposed { get; set; }
+    }
+    public interface IUnit : IDisposable, IDisposedUnit
+    {
+       
         ulong ID { get; }
 
 

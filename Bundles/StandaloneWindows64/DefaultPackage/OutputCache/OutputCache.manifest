@@ -1,7 +1,0 @@
-ManifestFileVersion: 0
-CRC: 1098845858
-AssetBundleManifest:
-  AssetBundleInfos:
-    Info_0:
-      Name: assets_testenv_panels.bundle
-      Dependencies: {}

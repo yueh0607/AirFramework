@@ -19,12 +19,12 @@ namespace AirFramework
     public abstract partial class Unit : IUnit, IMessageReceiver
     {
         private bool _disposed = false;
-        bool IUnit.Disposed
+        public bool Disposed
         {
             get { return _disposed; }
             set { _disposed = value; }
         }
-        public bool Disposed => _disposed;
+      
 
         /// <summary>
         /// 释放非托管资源

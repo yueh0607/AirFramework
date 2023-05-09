@@ -10,7 +10,7 @@ namespace AirFramework
     /// <summary>
     /// 用于实现托管池对象类型
     /// </summary>
-    public interface IPoolable:IUnit
+    public interface IPoolable:IDisposedUnit
     {
         /// <summary>
         /// 回收时
@@ -21,6 +21,7 @@ namespace AirFramework
         /// </summary>
         void OnAllocate();
 
+
         /// <summary>
         /// 由Framework调用，在申请或回收时自动绑定Pool,手动修改可能引起未定义的行为
         /// </summary>
@@ -30,6 +31,9 @@ namespace AirFramework
         /// 由Framework调用，在BindablePool入池时和出池时自动设置，手动修改可能引起未定义的行为
         /// </summary>
         //public bool IsRecycled { get; set; }
+
+
+
     }
 
 }

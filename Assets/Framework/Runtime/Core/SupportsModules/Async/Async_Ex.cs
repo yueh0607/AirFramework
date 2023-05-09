@@ -276,7 +276,19 @@ namespace AirFramework
             token = tok;
         }
 
+        /// <summary>
+        /// 为指定异步任务设置令牌，可以取消和挂起
+        /// </summary>
+        /// <param name="task"></param>
+        /// <param name="token"></param>
+        /// <returns></returns>
+        public static void WithToken<T>(this AsyncTask<T> task, out AsyncToken token)
+        {
+            var tok = Framework.Pool.Allocate<AsyncToken>();
+            tok.node = task.Token;
 
+            token = tok;
+        }
 
     }
 }
