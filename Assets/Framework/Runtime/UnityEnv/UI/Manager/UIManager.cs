@@ -25,6 +25,19 @@ namespace AirFramework
             {
                 Debug.LogWarning("Not found UICamera prefab! Event may be invalid.");
             }
+
+            try
+            {
+                var ec =  Framework.Pool.Allocate<UIEventSystem>();
+                UIEventSystem= ec;
+                await ec.LoadAsync();
+            }
+            catch
+            {
+                Debug.LogWarning("Not found UIEventSystem prefab! Event may be invalid.");
+            }
+
+
             Initialized = true;
         }
 
@@ -34,12 +47,6 @@ namespace AirFramework
         {
             UIRoot = Framework.Pool.Allocate<EmptyUnitGameObject>();
             UIRoot.gameObject.name = "UIRoot";
-            UIEventSystem = Framework.Pool.Allocate<EmptyUnitGameObject>();
-            UIEventSystem.gameObject.name = "EventSystem";
-            UIEventSystem.AddComponent<EventSystem>();
-            UIEventSystem.AddComponent<StandaloneInputModule>();
-
-
         }
 
         private Stack<Controller> panel_stack = new();

@@ -41,3 +41,11 @@ MonoBehaviour:
         FilterRuleName: CollectAll
         AssetTags: 
         UserData: 
+      - CollectPath: Assets/Project/Arts/Prefabs/UIEventSystem.prefab
+        CollectorGUID: 58e6dc86ce3db4e4abacf0677205bb5e
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 

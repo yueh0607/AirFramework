@@ -1,12 +1,10 @@
 ﻿using AirFramework;
 using MyNamespace;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Reflection;
-using TMPro;
 using UnityEngine;
-using UnityEngine.TextCore;
+using YooAsset;
+
 public class MyUnitObj : UnitGameObject<MyUnitObj>
 {
 
@@ -50,7 +48,7 @@ public class MyTestUnit : SimpleUnit
     public async void LoadAsync()
     {
         //初始化资源管理系统
-        await Framework.Res.InitializePackage();
+        await Framework.Res.InitializePackage(EPlayMode.OfflinePlayMode);
         //加载全部Model
         await Framework.Models.LoadAllAsync();
         

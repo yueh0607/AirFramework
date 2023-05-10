@@ -1,8 +1,14 @@
 ﻿using System;
 using UnityEngine;
 
+
+
+
 namespace AirFramework.Internal
 {
+
+    
+
     public class UnityEnvStarter : MonoSingleton<UnityEnvStarter>
     {
 
@@ -12,14 +18,13 @@ namespace AirFramework.Internal
         private static void AfterLoadSceneInitialize()
         {
             SingletonInitializeAfterSceneLoad();
-            Action<Exception> handler = (x) => Debug.LogError(x);
-            Async_Tools.ExceptionHandler += handler;
-
-            Framework.Res.Initialize("DefaultPackage");
-         
+            //Async 异常处理器
+            Action<Exception> handler = (x) => x.Throw();
+            Async_Setting.ExceptionHandler += handler;
+            //初始值资源系统
+            Framework.Res.Initialize();
+            
             Starter.AfterLoadSceneEvent();
-
-
         }
 
 

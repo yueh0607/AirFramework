@@ -168,9 +168,9 @@ namespace AirFramework
         [DebuggerHidden]
         public void SetException(Exception exception)
         {
-            //AirFramework.Internal.Async_Tools.Capture(exception);
+            //AirFramework.Internal.Async_Setting.Capture(exception);
 
-            exception.Throw();
+            Async_Setting.ExceptionHandler?.Invoke(exception);
             SetResultMethod(this.Result);
         }
 

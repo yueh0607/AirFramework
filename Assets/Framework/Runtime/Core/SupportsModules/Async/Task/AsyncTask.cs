@@ -156,7 +156,7 @@ namespace AirFramework
         public void SetException(Exception exception)
         {
 
-            exception.Throw();
+            Async_Setting.ExceptionHandler?.Invoke(exception);
             SetResultMethod();
         }
     }
