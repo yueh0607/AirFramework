@@ -237,9 +237,6 @@ namespace AirFramework.StringEvent
             else throw new SendParmNotMatchException();
         }
 
-
-
-
         #endregion
 
 
