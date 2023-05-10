@@ -21,7 +21,7 @@ namespace AirFramework
 
         private readonly Dictionary<Type, IManagedPool> pools = new Dictionary<Type, IManagedPool>();
 
-        public float DefaultRecycleCycleTime = 60_000F;
+        public float DefaultRecycleCycleTime = 60.0_000F;
         public float DefaultRecycleRatio = 0.5F;
 
 
