@@ -6,7 +6,7 @@ namespace AirFramework
     public class MVCManager
     {
 
-        private Dictionary<Type,UnitList<Controller>> container = new();
+        private Dictionary<Type, UnitList<Controller>> container = new();
 
         private void SafeAdd(Type type, Controller controller)
         {
@@ -19,7 +19,7 @@ namespace AirFramework
             if (!container.ContainsKey(type))
                 return;
             container[type].Value.Remove(controller);
-            if (container[type].Value.Count==0) container.RemoveAndDispose(type);
+            if (container[type].Value.Count == 0) container.RemoveAndDispose(type);
         }
 
         /// <summary>
@@ -45,22 +45,20 @@ namespace AirFramework
         /// <typeparam name="T"></typeparam>
         /// <param name="controller"></param>
         /// <returns></returns>
-        public async AsyncTask Hide<T>(Controller controller = null) where T : Controller
+        public async AsyncTask Hide<T>(Controller controller) where T : Controller
         {
             Type type = typeof(T);
             type.CheckAbstract();
-
-            if (controller == null)
-            {
-                await HideAll(type);
-            }
-            else
-            {
-                await HideOne(type,controller);
-            }
+            if (controller == null) throw new InvalidOperationException("Null reference of controller");
+                await HideOne(type, controller);
             await Async.Complete();
         }
-
+        public async AsyncTask Hide<T>() where T : Controller
+        {
+            Type type = typeof(T);
+            type.CheckAbstract();
+            await HideAll(type);
+        }
         /// <summary>
         /// 隐藏一个Controller
         /// </summary>
@@ -68,9 +66,9 @@ namespace AirFramework
         /// <returns></returns>
         public async AsyncTask Hide(Controller controller)
         {
-            await HideOne(controller.GetType(),controller);
+            await HideOne(controller.GetType(), controller);
         }
-        private async AsyncTask HideOne(Type type,Controller controller)
+        private async AsyncTask HideOne(Type type, Controller controller)
         {
             await controller.OnHide();
             controller.Dispose();
@@ -78,7 +76,7 @@ namespace AirFramework
         }
         private async AsyncTask HideAll(Type type)
         {
-  
+
             type.CheckAbstract();
             if (container.ContainsKey(type))
             {
@@ -86,7 +84,7 @@ namespace AirFramework
 
                 foreach (var con in list.Value)
                 {
-                    await HideOne(type,con);
+                    await HideOne(type, con);
                 }
             }
             await Async.Complete();

@@ -135,9 +135,13 @@ namespace AirFramework
         /// <typeparam name="T"></typeparam>
         /// <param name="controller"></param>
         /// <returns></returns>
-        public async AsyncTask CloseFree<T>(Controller controller = null) where T : Controller
+        public async AsyncTask CloseFree<T>(Controller controller) where T : Controller
         {
             await Framework.MVC.Hide<T>(controller);
+        }
+        public async AsyncTask CloseFree<T>() where T : Controller
+        {
+            await Framework.MVC.Hide<T>();
         }
         /// <summary>
         /// 获取一个栈面板
