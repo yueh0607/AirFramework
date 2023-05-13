@@ -25,24 +25,16 @@ MonoBehaviour:
       AssetTags: 
       ActiveRuleName: EnableGroup
       Collectors:
-      - CollectPath: Assets/Project/Arts/Prefabs/UIPanels
-        CollectorGUID: 41e070d08a0730b43a3daf2ed29bc0c5
+      - CollectPath: Assets/Project/Arts
+        CollectorGUID: 7c2f7f32b7ad712449aaf64be2e4a35e
         CollectorType: 0
         AddressRuleName: AddressByFileName
         PackRuleName: PackDirectory
         FilterRuleName: CollectPrefab
         AssetTags: 
         UserData: 
-      - CollectPath: Assets/Project/Arts/Prefabs/UICamera.prefab
-        CollectorGUID: 96a30841bdfb8fb4c9c9a4f1f6a4aaaf
-        CollectorType: 0
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: 
-        UserData: 
-      - CollectPath: Assets/Project/Arts/Prefabs/UIEventSystem.prefab
-        CollectorGUID: 58e6dc86ce3db4e4abacf0677205bb5e
+      - CollectPath: Assets/Project/Arts/Materials
+        CollectorGUID: aa192c0d2a039f84f9c2613f4e4cdcc8
         CollectorType: 0
         AddressRuleName: AddressByFileName
         PackRuleName: PackDirectory

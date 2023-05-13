@@ -41,6 +41,7 @@ namespace AirFramework
             base.OnDestroy += OnDestroyItem;
             base.OnAllocate += OnAllocateItem;
             base.OnRecycle+= OnRecycleItem;
+
         }
 
     }

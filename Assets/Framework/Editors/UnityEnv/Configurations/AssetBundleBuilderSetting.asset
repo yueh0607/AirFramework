@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AssetBundleBuilderSetting
   m_EditorClassIdentifier: 
   BuildPipeline: 0
-  BuildMode: 0
+  BuildMode: 3
   BuildPackage: DefaultPackage
   CompressOption: 2
   OutputNameStyle: 1
