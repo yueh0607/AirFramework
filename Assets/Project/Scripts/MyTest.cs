@@ -7,7 +7,6 @@ using YooAsset;
 
 public class MyUnitObj : UnitGameObject<MyUnitObj>
 {
-
     public override void OnLoad()
     {
         "OnLoad".L();
@@ -17,8 +16,6 @@ public class MyUnitObj : UnitGameObject<MyUnitObj>
     {
         "OnUnLoad".L();
     }
-
-
 }
 
 public class MyClass :IPoolable
@@ -48,17 +45,17 @@ public class MyTestUnit : SimpleUnit
     public async void LoadAsync()
     {
         //初始化资源管理系统
-        await Framework.Res.InitializePackage(EPlayMode.OfflinePlayMode);
+        await Framework.Res.InitializePackage(EPlayMode.EditorSimulateMode);
         //加载全部Model
-        await Framework.Models.LoadAllAsync();
+        //await Framework.Models.LoadAllAsync();
         
-        await Framework.UI.Open<CounterPanel>();
-        await Async.Delay(3);
-        await Framework.UI.Close<CounterPanel>();
+        //await Framework.UI.Open<CounterPanel>();
+        //await Async.Delay(3);
+        //await Framework.UI.Close<CounterPanel>();
 
 
-        //保存Model
-        await Framework.Models.SaveAllAsync();
+        ////保存Model
+        //await Framework.Models.SaveAllAsync();
 
 
     }
@@ -66,15 +63,12 @@ public class MyTestUnit : SimpleUnit
 
 
 
-    Dictionary<Type, object> data = new();
-
     public MyTestUnit()
     {
-        Application.persistentDataPath.L();
+
         LoadAsync();
 
-
-
+    
     }
 
 }
