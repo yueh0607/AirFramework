@@ -40,7 +40,7 @@ namespace AirFramework
             base.OnCreate = OnCreateItem;
             base.OnDestroy += OnDestroyItem;
             base.OnAllocate += OnAllocateItem;
-            base.OnDestroy += OnDestroyItem;
+            base.OnRecycle+= OnRecycleItem;
         }
 
     }
