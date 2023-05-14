@@ -1,21 +1,26 @@
 ﻿/***********************************************************************************
  * Author      : yueh0607
  * Version     : 2021.3.22f1c1
- * Date        : 2023/5/14 20:02:55
+ * Date        : 2023/5/14 23:02:23
  * Description : Describe the function here.
 ************************************************************************************/
 
 
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using AirFramework;
+using UnityEngine;
 
-namespace MyNamespace
+namespace AirFramework
 {
-    public class PoolableGameObject
+    public class OnCollisionEnterListener:MonoBehaviour
     {
-        
+        public event Action<Collision> OnTrigger;
+
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            OnTrigger?.Invoke(collision);
+        }
+
     }
 }
 
