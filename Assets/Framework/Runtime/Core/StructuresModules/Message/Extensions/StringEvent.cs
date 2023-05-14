@@ -123,7 +123,7 @@ namespace AirFramework.StringEvent
             else if (map[tag] is MessageDelegate newEvent)
             {
                 map[tag] = newEvent - events;
-                if (map[tag] == null) map.Remove(tag);
+                if (map[tag] == null||map[tag].GetInvocationList().Length == 0) map.Remove(tag);
             }
             else throw new RemoveNotMatchTypeException();
         }
@@ -137,7 +137,7 @@ namespace AirFramework.StringEvent
             else if (map[tag] is MessageDelegate<T1> newEvent)
             {
                 map[tag] = newEvent - events;
-                if (map[tag] == null) map.Remove(tag);
+                if (map[tag] == null || map[tag].GetInvocationList().Length == 0) map.Remove(tag);
             }
             else throw new RemoveNotMatchTypeException();
 
@@ -152,7 +152,7 @@ namespace AirFramework.StringEvent
             else if (map[tag] is MessageDelegate<T1, T2> newEvent)
             {
                 map[tag] = newEvent - events;
-                if (map[tag] == null) map.Remove(tag);
+                if (map[tag] == null || map[tag].GetInvocationList().Length == 0) map.Remove(tag);
             }
             else throw new RemoveNotMatchTypeException();
 
@@ -167,7 +167,7 @@ namespace AirFramework.StringEvent
             else if (map[tag] is MessageDelegate<T1, T2, T3> newEvent)
             {
                 map[tag] = newEvent - events;
-                if (map[tag] == null) map.Remove(tag);
+                if (map[tag] == null || map[tag].GetInvocationList().Length == 0) map.Remove(tag);
             }
             else throw new RemoveNotMatchTypeException();
 
@@ -182,7 +182,7 @@ namespace AirFramework.StringEvent
             else if (map[tag] is MessageDelegate<T1, T2, T3, T4> newEvent)
             {
                 map[tag] = newEvent - events;
-                if (map[tag] == null) map.Remove(tag);
+                if (map[tag] == null || map[tag].GetInvocationList().Length == 0) map.Remove(tag);
             }
             else throw new RemoveNotMatchTypeException();
 
