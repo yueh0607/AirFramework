@@ -15,20 +15,19 @@ namespace AirFramework
     public class LifeCyclePool<T> : ManagedPool<T> where T : class, IPoolable
     {
 
-        public void OnAddItemLifeCycle(T item)
+        private void OnAddItemLifeCycle(T item)
         {
             //注册生命周期
             if (item is IMessageReceiver) Framework.LifeCycle.AnalyseAddAll(item);
         }
 
-
-        public void OnRemoveItemLifeCycle(T item)
+        private void OnRemoveItemLifeCycle(T item)
         {
             //移除生命周期
             if (item is IMessageReceiver) Framework.LifeCycle.AnalyseRemoveAll(item);
         }
 
-        public LifeCyclePool(Func<T> onCreate = null, Action<T> onDestroy = null) : base(onCreate, onDestroy)
+        public LifeCyclePool(Func<T> onCreate = null, Action<T> onDestroy = null, Action<T> onRecycle = null, Action<T> onAllocate = null) : base(onCreate, onDestroy,onRecycle,onAllocate)
         {
             base.OnRecycle += OnRemoveItemLifeCycle;
             base.OnAllocate += OnAddItemLifeCycle;

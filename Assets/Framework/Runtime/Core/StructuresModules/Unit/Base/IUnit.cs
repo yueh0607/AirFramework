@@ -8,18 +8,21 @@
 namespace AirFramework
 {
 
-    public interface IDisposedUnit
+    public interface IDisposedUnit:IDisposable
     {
         /// <summary>
-        /// 非托管资源是否已经释放
+        /// 是否已经释放
         /// </summary>
         public bool Disposed { get; set; }
     }
-    public interface IUnit : IDisposable, IDisposedUnit
+    public interface IGUID
     {
-       
-        ulong ID { get; }
-
+        public ulong ID { get; }
+    }
+    public interface IUnit :  IDisposedUnit,IGUID
+    {
 
     }
+
+   
 }

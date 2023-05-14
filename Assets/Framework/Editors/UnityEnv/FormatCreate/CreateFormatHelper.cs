@@ -132,6 +132,42 @@ namespace {FrameworkSettings.Instance.defaultNamespace}
 
 ");
         }
+
+
+
+
+
+        [MenuItem("Assets/Create/Format/Interface Script", false, 0)]
+        public static void CreateInterfaceScript()
+        {
+            FileCreateHelper.CreateScriptWithTitle(@$"
+
+namespace {FrameworkSettings.Instance.defaultNamespace}
+{{
+    public interface #NAME#
+    {{
+        
+    }}
+}}
+");
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
-  
+
+
+
+
+
 }

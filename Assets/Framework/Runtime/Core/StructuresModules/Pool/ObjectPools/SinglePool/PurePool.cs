@@ -6,17 +6,13 @@ namespace AirFramework
     /// 纯净池类型
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class PurePool<T> : Unit, IDepositablePool<T>
+    public class PurePool<T> : Unit, IPool<T>
     {
         /// <summary>
         /// 缓存数量
         /// </summary>
         public int Count => queue.Count;
-        /// <summary>
-        /// 是否是托管池
-        /// </summary>
-        public bool IsDeposit { get; } = false;
-        bool IDepositablePool.IsDeposit { get => IsDeposit; set => _ = value; }
+ 
 
         private readonly Queue<T> queue = new Queue<T>();
 

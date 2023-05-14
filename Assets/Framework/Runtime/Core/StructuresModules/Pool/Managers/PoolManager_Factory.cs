@@ -66,7 +66,7 @@ namespace AirFramework
             where T : class, IPoolable
         {
 
-            ManagedPool<T> pool = new ManagedPool<T>(
+            ManagedPool<T> pool = new(
                         onCreate ?? Pool.DefaltActivatorCreate<T>,
                         onDestroy
 
@@ -87,7 +87,7 @@ namespace AirFramework
         /// <returns></returns> 
         public LifeCyclePool<T> CreateLifeCyclePool<T>(Func<T> onCreate = null, Action<T> onDestroy = null) where T : class, IPoolable
         {
-            LifeCyclePool<T> pool = new LifeCyclePool<T>(onCreate ?? Pool.DefaltActivatorCreate<T>, onDestroy);
+            LifeCyclePool<T> pool = new(onCreate ?? Pool.DefaltActivatorCreate<T>, onDestroy);
             return pool;
         }
 
