@@ -10,7 +10,7 @@ namespace AirFramework
         public static void Publish(this IDispatcherOut<IGenericMessage> container)
         {
             //获取动态队列
-            var dic = ((MessageDispatcherBox<IMessage>)container).Value.eventsContainer;
+            var dic = ((MessageDispatcherBox<IMessage>)container).Value.EventsContainer;
             //刷新动态队列数量
             dic.RefreshTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
@@ -31,7 +31,7 @@ namespace AirFramework
         public static void Publish<T1>(this IDispatcherOut<IGenericMessage<T1>> container, T1 arg1)
         {
             //事件集合
-            var dic = ((MessageDispatcherBox<IMessage>)container).Value.eventsContainer;
+            var dic = ((MessageDispatcherBox<IMessage>)container).Value.EventsContainer;
             dic.RefreshTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
             {
@@ -50,7 +50,7 @@ namespace AirFramework
         public static void Publish<T1, T2>(this IDispatcherOut<IGenericMessage<T1, T2>> container, T1 arg1, T2 arg2)
         {
             //事件集合
-            var dic = ((MessageDispatcherBox<IMessage>)container).Value.eventsContainer;
+            var dic = ((MessageDispatcherBox<IMessage>)container).Value.EventsContainer;
             dic.RefreshTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
             {
@@ -69,7 +69,7 @@ namespace AirFramework
         public static void Publish<T1, T2, T3>(this IDispatcherOut<IGenericMessage<T1, T2, T3>> container, T1 arg1, T2 arg2, T3 arg3)
         {
             //事件集合
-            var dic = ((MessageDispatcherBox<IMessage>)container).Value.eventsContainer;
+            var dic = ((MessageDispatcherBox<IMessage>)container).Value.EventsContainer;
             dic.RefreshTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
             {
@@ -87,7 +87,7 @@ namespace AirFramework
         public static void Publish<T1, T2, T3, T4>(this IDispatcherOut<IGenericMessage<T1, T2, T3, T4>> container, T1 arg1, T2 arg2, T3 arg3, T4 arg4)
         {
             //事件集合
-            var dic = ((MessageDispatcherBox<IMessage>)container).Value.eventsContainer;
+            var dic = ((MessageDispatcherBox<IMessage>)container).Value.EventsContainer;
             dic.RefreshTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
             {
@@ -104,7 +104,7 @@ namespace AirFramework
         public static void Publish<T1, T2, T3, T4, T5>(this IDispatcherOut<IGenericMessage<T1, T2, T3, T4, T5>> container, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5)
         {
             //事件集合
-            var dic = ((MessageDispatcherBox<IMessage>)container).Value.eventsContainer;
+            var dic = ((MessageDispatcherBox<IMessage>)container).Value.EventsContainer;
             dic.RefreshTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
             {

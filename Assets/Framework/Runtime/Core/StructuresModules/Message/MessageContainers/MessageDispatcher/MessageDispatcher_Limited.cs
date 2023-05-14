@@ -21,7 +21,7 @@ namespace AirFramework
         /// <returns></returns>
         internal MessageOperatorBox<IMessage> GetOrAddOperator(IMessageReceiver receiver)
         {
-            return eventsContainer.GetValueOrAddDefault(receiver, CreateOperator);
+            return EventsContainer.GetValueOrAddDefault(receiver, CreateOperator);
         }
         /// <summary>
         /// 添加：为接收者添加指定的委托
@@ -31,7 +31,7 @@ namespace AirFramework
         /// <param name="dele"></param>
         internal void AddToReceiver(IMessageReceiver receiver, Delegate dele)
         {
-            eventsContainer.GetValueOrAddDefault(receiver, CreateOperator).Value.Add(dele);
+            EventsContainer.GetValueOrAddDefault(receiver, CreateOperator).Value.Add(dele);
         }
         /// <summary>
         /// 移除：为接收者移除指定委托
@@ -41,17 +41,29 @@ namespace AirFramework
         /// <param name="dele"></param>
         internal bool TryRemoveFromReceiver(IMessageReceiver receiver, Delegate dele)
         {
-            if (eventsContainer.TryGetValue(receiver, out var group))
+            if (EventsContainer.TryGetValue(receiver, out var group))
             {
                 group.Value.Remove(dele);
                 if (group.Value.Count == 0)
                 {
-                    eventsContainer.Remove(receiver);
+                    EventsContainer.Remove(receiver);
                 }
             }
             return true;
         }
 
+
+        /// <summary>
+        /// 移除：为接收者移除全部委托派发
+        /// </summary>
+        /// <param name="receiver"></param>
+        /// <param name="deleType"></param>
+        /// <param name="dele"></param>
+        public bool TryRemoveAllFromReceiver(IMessageReceiver receiver)
+        {
+            EventsContainer.TryRemove(receiver);
+            return true;
+        }
 
 
 

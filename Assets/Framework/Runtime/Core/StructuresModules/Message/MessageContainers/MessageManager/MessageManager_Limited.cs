@@ -104,5 +104,25 @@ namespace AirFramework
             return true;
         }
 
+
+        /// <summary>
+        /// 消息移除：移除全局所有的该类消息
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        public bool TryRemoveTypeFromGlobal<T>() where T : IMessage
+        {
+            return TryRemoveTypeFromGlobal(typeof(T));
+        }
+
+        /// <summary>
+        /// 消息移除：移除该对象所有的该类消息
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="receiver"></param>
+        public bool TryRemoveTypeFromReceiver<T>(IMessageReceiver receiver) where T : IMessage
+        {
+            return TryRemoveTypeFromReceiver(typeof(T), receiver);
+        }
+
     }
 }

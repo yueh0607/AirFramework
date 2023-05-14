@@ -10,16 +10,16 @@ namespace AirFramework
 
     public partial class MessageDispatcher : Unit
     {
-        public int Count => eventsContainer.Count;
+        public int Count => EventsContainer.Count;
 
-        internal DynamicQueue<IMessageReceiver, MessageOperatorBox<IMessage>> eventsContainer { get; private set; } = new();
+        internal DynamicQueue<IMessageReceiver, MessageOperatorBox<IMessage>> EventsContainer { get; private set; } = new();
 
         /// <summary>
         /// 清空全部委托派发
         /// </summary>
         internal void Clear()
         {
-            eventsContainer.Clear();
+            EventsContainer.Clear();
         }
 
         protected override void OnDispose()
@@ -28,18 +28,6 @@ namespace AirFramework
         }
 
 
-
-        /// <summary>
-        /// 移除：为接收者移除全部委托派发
-        /// </summary>
-        /// <param name="receiver"></param>
-        /// <param name="deleType"></param>
-        /// <param name="dele"></param>
-        public bool TryRemoveAllFromReceiver(IMessageReceiver receiver)
-        {
-            eventsContainer.TryRemove(receiver);
-            return true;
-        }
 
     }
 }

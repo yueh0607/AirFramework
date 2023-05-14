@@ -8,7 +8,7 @@ namespace AirFramework
         {
             var result = Framework.Pool.Allocate<UnitList<T1>>();
             //获取动态队列
-            var dic = ((MessageDispatcherBox<IMessage>)container).Value.eventsContainer;
+            var dic = ((MessageDispatcherBox<IMessage>)container).Value.EventsContainer;
             //刷新动态队列数量
             dic.RefreshTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
@@ -28,7 +28,7 @@ namespace AirFramework
         {
             var result = Framework.Pool.Allocate<UnitList<T2>>();
             //获取动态队列
-            var dic = ((MessageDispatcherBox<IMessage>)container).Value.eventsContainer;
+            var dic = ((MessageDispatcherBox<IMessage>)container).Value.EventsContainer;
             //刷新动态队列数量
             dic.RefreshTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
@@ -48,7 +48,7 @@ namespace AirFramework
         {
             var result = Framework.Pool.Allocate<UnitList<T3>>();
             //获取动态队列
-            var dic = ((MessageDispatcherBox<IMessage>)container).Value.eventsContainer;
+            var dic = ((MessageDispatcherBox<IMessage>)container).Value.EventsContainer;
             //刷新动态队列数量
             dic.RefreshTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
@@ -68,7 +68,7 @@ namespace AirFramework
         {
             var result = Framework.Pool.Allocate<UnitList<T4>>();
             //获取动态队列
-            var dic = ((MessageDispatcherBox<IMessage>)container).Value.eventsContainer;
+            var dic = ((MessageDispatcherBox<IMessage>)container).Value.EventsContainer;
             //刷新动态队列数量
             dic.RefreshTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
@@ -88,7 +88,7 @@ namespace AirFramework
         {
             var result = Framework.Pool.Allocate<UnitList<T5>>();
             //获取动态队列
-            var dic = ((MessageDispatcherBox<IMessage>)container).Value.eventsContainer;
+            var dic = ((MessageDispatcherBox<IMessage>)container).Value.EventsContainer;
             //刷新动态队列数量
             dic.RefreshTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
@@ -109,7 +109,7 @@ namespace AirFramework
         {
             var result = Framework.Pool.Allocate<UnitList<T6>>();
             //获取动态队列
-            var dic = ((MessageDispatcherBox<IMessage>)container).Value.eventsContainer;
+            var dic = ((MessageDispatcherBox<IMessage>)container).Value.EventsContainer;
             //刷新动态队列数量
             dic.RefreshTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
