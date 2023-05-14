@@ -1,6 +1,6 @@
 ﻿namespace AirFramework
 {
-    public class UIDPool : Unit, IPool
+    public class UIDPool : Unit, IDepositablePool
     {
 
         private readonly UIDGenerator generator = new UIDGenerator(100);
@@ -15,7 +15,7 @@
 
 
         public bool IsDeposit { get; } = false;
-        bool IPool.IsDeposit { get => IsDeposit; set => _ = value; }
+        bool IDepositablePool.IsDeposit { get => IsDeposit; set => _ = value; }
 
         public ulong Allocate() => generator.Allocate();
 

@@ -18,7 +18,7 @@ namespace AirFramework
         public bool IsDeposit { get; internal set; } = false;
 
         // 实现 IObjectPool 接口中定义的 IsDeposit 属性
-        bool IPool.IsDeposit
+        bool IDepositablePool.IsDeposit
         {
             get { return IsDeposit; }
             set { IsDeposit = value; }
