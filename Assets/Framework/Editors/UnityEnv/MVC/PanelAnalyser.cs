@@ -7,7 +7,7 @@ namespace AirFrameworkEditor
     public static class PanelAnalyser
     {
         /// <summary>
-        /// 获取一个物体的子物体树上的全部UIMark
+        /// 获取一个物体的子物体树上的全部UIMark.
         /// </summary>
         /// <param name="root"></param>
         /// <returns></returns>
