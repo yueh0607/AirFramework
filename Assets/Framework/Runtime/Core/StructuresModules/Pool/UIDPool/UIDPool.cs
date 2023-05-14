@@ -22,19 +22,12 @@
         public void Recycle(ulong id) => generator.Recycle(id);
 
 
-        public void Clear()
-        {
-            generator.Clear();
-        }
+        public void Clear()=> generator.Clear();
+       
+        protected override void OnDispose()=> Clear();
+        
 
-        protected override void OnDispose()
-        {
-            Clear();
-        }
-
-        public UIDPool(int repeatCount)
-        {
-            RepeatCount = repeatCount;
-        }
+        public UIDPool(int repeatCount)=> RepeatCount = repeatCount;
+        
     }
 }
