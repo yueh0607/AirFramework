@@ -12,27 +12,13 @@ namespace AirFramework
     /// </summary>
     public partial class MessageOperator : Unit
     {
-        internal DynamicQueue<Type, UnitList<Delegate>> eventsContainer = new();
+        public UnitList<Delegate> EventsContainer { get; private set; } = new();
 
         /// <summary>
         /// 委托类型数
         /// </summary>
-        public int Count => eventsContainer.Count;
-        /// <summary>
-        /// 委托总数(计算重载),复杂度O(n)
-        /// </summary>
-        public int CountAll
-        {
-            get
-            {
-                int allCount = 0;
-                foreach (var kvp in eventsContainer)
-                {
-                    allCount += kvp.Value.Value.Count;
-                }
-                return allCount;
-            }
-        }
+        public int Count => EventsContainer.Value.Count;
+
 
         protected override void OnDispose()
         {
@@ -42,10 +28,23 @@ namespace AirFramework
         /// <summary>
         /// 清空操作器
         /// </summary>
-        internal void Clear()
+        public void Clear()
         {
-            eventsContainer.ClearAndDispose();
+            EventsContainer.Value.Clear();
         }
 
+
+
+        public void Add(Delegate dele)
+        {
+            EventsContainer.Value.Add(dele);
+        }
+
+        public bool Remove(Delegate dele)
+        {
+            return EventsContainer.Value.Remove(dele);
+        }
+
+       
     }
 }

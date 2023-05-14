@@ -20,9 +20,9 @@ namespace AirFramework
         /// <param name="receiver"></param>
         /// <param name="deleType"></param>
         /// <param name="message"></param>
-        internal void AddOperationToReceiver(Type messageType, IMessageReceiver receiver, Type deleType, Delegate message)
+        internal void AddOperationToReceiver(Type messageType, IMessageReceiver receiver, Delegate message)
         {
-            dispatchersContainer.GetValueOrAddDefault(messageType, CreateDispatcherBox).Value.AddToReceiver(receiver, deleType, message);
+            dispatchersContainer.GetValueOrAddDefault(messageType, CreateDispatcherBox).Value.AddToReceiver(receiver, message);
         }
         /// <summary>
         /// 基础消息移除
@@ -31,13 +31,13 @@ namespace AirFramework
         /// <param name="receiver"></param>
         /// <param name="deleType"></param>
         /// <param name="message"></param>
-        internal bool TryRemoveFromOperator(Type messageType, IMessageReceiver receiver, Type deleType, Delegate message)
+        internal bool TryRemoveFromOperator(Type messageType, IMessageReceiver receiver,  Delegate message)
         {
             //尝试获取派发器
             if (dispatchersContainer.TryGetValue(messageType, out var dispatcher))
             {
                 //从派发器移除指定委托
-                dispatcher.Value.TryRemoveFromReceiver(receiver, deleType, message);
+                dispatcher.Value.TryRemoveFromReceiver(receiver,  message);
                 //移除空派发器
                 if (dispatcher.Value.Count == 0)
                 {

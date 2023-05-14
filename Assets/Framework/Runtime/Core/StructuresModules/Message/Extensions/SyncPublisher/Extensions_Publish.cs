@@ -10,7 +10,7 @@ namespace AirFramework
         /// <param name="container"></param>
         public static void Publish(this IOperatorOut<IGenericMessage> container)
         {
-            var events = ((MessageOperatorBox<IMessage>)container)?.Value.GetNullableDelegateList<Action>();
+            var events = ((MessageOperatorBox<IMessage>)container)?.Value.EventsContainer.Value;
             if (events == null || events.Count == 0) return;
             for (int i = 0; i < events.Count; i++)
             {
@@ -24,7 +24,7 @@ namespace AirFramework
         /// <param name="container"></param>
         public static void Publish<T1>(this IOperatorOut<IGenericMessage<T1>> container, T1 arg1)
         {
-            var events = ((MessageOperatorBox<IMessage>)container)?.Value.GetNullableDelegateList<Action<T1>>();
+            var events = ((MessageOperatorBox<IMessage>)container)?.Value.EventsContainer.Value;
             if (events == null || events.Count == 0) return;
             for (int i = 0; i < events.Count; i++)
             {
@@ -33,7 +33,7 @@ namespace AirFramework
         }
         public static void Publish<T1, T2>(this IOperatorOut<IGenericMessage<T1, T2>> container, T1 arg1, T2 arg2)
         {
-            var events = ((MessageOperatorBox<IMessage>)container)?.Value.GetNullableDelegateList<Action<T1, T2>>();
+            var events = ((MessageOperatorBox<IMessage>)container)?.Value.EventsContainer.Value;
             if (events == null || events.Count == 0) return;
             for (int i = 0; i < events.Count; i++)
             {
@@ -46,7 +46,7 @@ namespace AirFramework
         /// <param name="container"></param>
         public static void Publish<T1, T2, T3>(this IOperatorOut<IGenericMessage<T1, T2, T3>> container, T1 arg1, T2 arg2, T3 arg3)
         {
-            var events = ((MessageOperatorBox<IMessage>)container)?.Value.GetNullableDelegateList<Action<T1, T2, T3>>();
+            var events = ((MessageOperatorBox<IMessage>)container)?.Value.EventsContainer.Value;
             if (events == null || events.Count == 0) return;
             for (int i = 0; i < events.Count; i++)
             {
@@ -55,7 +55,7 @@ namespace AirFramework
         }
         public static void Publish<T1, T2, T3, T4>(this IOperatorOut<IGenericMessage<T1, T2, T3, T4>> container, T1 arg1, T2 arg2, T3 arg3, T4 arg4)
         {
-            var events = ((MessageOperatorBox<IMessage>)container)?.Value.GetNullableDelegateList<Action<T1, T2, T3, T4>>();
+            var events = ((MessageOperatorBox<IMessage>)container)?.Value.EventsContainer.Value;
             if (events == null || events.Count == 0) return;
             for (int i = 0; i < events.Count; i++)
             {
@@ -68,7 +68,7 @@ namespace AirFramework
         /// <param name="container"></param>
         public static void Publish<T1, T2, T3, T4, T5>(this IOperatorOut<IGenericMessage<T1, T2, T3, T4, T5>> container, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5)
         {
-            var events = ((MessageOperatorBox<IMessage>)container)?.Value.GetNullableDelegateList<Action<T1, T2, T3, T4, T5>>();
+            var events = ((MessageOperatorBox<IMessage>)container)?.Value.EventsContainer.Value;
             if (events == null || events.Count == 0) return;
             for (int i = 0; i < events.Count; i++)
             {
