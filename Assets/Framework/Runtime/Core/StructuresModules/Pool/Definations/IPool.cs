@@ -7,15 +7,9 @@
 
 namespace AirFramework
 {
-    /// <summary>
-    /// 用于实现所有池类型
-    /// </summary>
-    public interface IPool : IUnit
+
+    public interface IPool:IUnit
     {
-        /// <summary>
-        /// 是否托管
-        /// </summary>
-        bool IsDeposit { get; internal set; }
         /// <summary>
         /// 池容量
         /// </summary>s
@@ -25,15 +19,12 @@ namespace AirFramework
         /// 清空缓存
         /// </summary>
         void Clear();
-
     }
-    /// <summary>
-    /// 用于实现所有池类型
-    /// </summary>
+
     public interface IPool<T> : IPool
     {
         T Allocate();
         void Recycle(T item);
-
     }
+   
 }

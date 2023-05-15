@@ -123,6 +123,24 @@ namespace AirFramework
 
         }
 
+
+        public async AsyncTask StringBindAsync(string name)
+        {
+            if (IsAlive) throw new InvalidOperationException("Cannot initialize repeatly.");
+
+            var handle = Framework.Res.LoadAsync<GameObject>(name);
+            await handle;
+            if (handle.AssetObject == null) throw new InvalidOperationException("Null Reference");
+            //实例化到场景
+            GameObject instance = GameObject.Instantiate(handle.GetAssetObject<GameObject>());
+
+            instance.name = name;
+            handle.Release();
+
+            BindUnitAndGameObject(instance, this);
+            return;
+        }
+
         /// <summary>
         /// 实例化一个UnitGameObject，需要等待这个异步任务完成才能使用，一定要传入一个继承UnitGameObject的非抽象类型
         /// </summary>
@@ -205,10 +223,7 @@ namespace AirFramework
             
             type.CheckAbstract();
             if (instance == null) throw new InvalidOperationException("Null Reference");
-
-
             BindUnitAndGameObject(instance, this);
-
         }
         /// <summary>
         /// 手动绑定进行实例化
@@ -219,7 +234,6 @@ namespace AirFramework
         /// <returns></returns>
         public void BindInstance<T>(GameObject instance) where T : UnitGameObject
         {
-
             UnsafeBindInstance(typeof(T), instance);
         }
         private static void BindUnitAndGameObject(GameObject obj, UnitGameObject entity)

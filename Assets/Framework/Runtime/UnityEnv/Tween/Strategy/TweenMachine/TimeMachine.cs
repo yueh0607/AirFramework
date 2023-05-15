@@ -35,7 +35,14 @@ namespace AirFramework
         /// 总时
         /// </summary>
         public float TotalTime => timeEnd-timeStart;
-        public float Percent=>(time-timeStart) / TotalTime;
+        public float Percent
+        {
+            get
+            {
+                if (TotalTime == 0) return 1f;
+                return Math.Clamp((time - timeStart)/ TotalTime,0f,1f);
+            }
+        }
         /// <summary>
         /// 插值速度
         /// </summary>

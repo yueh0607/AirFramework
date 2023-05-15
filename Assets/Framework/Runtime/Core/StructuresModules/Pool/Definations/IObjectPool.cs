@@ -12,7 +12,7 @@ namespace AirFramework
     /// <summary>
     /// 用于实现存储引用类型对象的池
     /// </summary>
-    public interface IObjectPool : IPool
+    public interface IObjectPool : IDepositablePool
     {
 
 

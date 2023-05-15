@@ -160,30 +160,25 @@ namespace AirFramework
                     OnDestroy?.Invoke(pool.Dequeue());
             }
         }
-        /// <summary>
-        /// 异步卸载
-        /// </summary>
-        /// <param name="count">卸载总数量</param>
-        /// <param name="frame">间隔帧</param>
-        /// <returns></returns>
-        public override async AsyncTask UnloadAsync(int count, int frame = 1)
-        {
-            //取小数量
-            count = count > Count ? Count : count;
-            for (int i = 0; i < count; ++i)
-            {
-                if (pool.Count != 0)
-                {
-                    OnDestroy?.Invoke(pool.Dequeue());
-                    await Async.WaitForFrame(frame);
-                }
-                else
-                {
-                    break;
-                }
-            }
-            await Async.Complete();
-        }
+
+        //public override async AsyncTask UnloadAsync(int count, int frame = 1)
+        //{
+        //    //取小数量
+        //    count = count > Count ? Count : count;
+        //    for (int i = 0; i < count; ++i)
+        //    {
+        //        if (pool.Count != 0)
+        //        {
+        //            OnDestroy?.Invoke(pool.Dequeue());
+        //            await Async.WaitForFrame(frame);
+        //        }
+        //        else
+        //        {
+        //            break;
+        //        }
+        //    }
+        //    await Async.Complete();
+        //}
         protected T GetOne()
         {
             return pool.Dequeue();

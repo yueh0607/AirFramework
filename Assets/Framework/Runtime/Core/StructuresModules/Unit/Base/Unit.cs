@@ -27,7 +27,7 @@ namespace AirFramework
       
 
         /// <summary>
-        /// 释放非托管资源
+        /// 释放
         /// </summary>
 
         public virtual void Dispose()
@@ -58,7 +58,9 @@ namespace AirFramework
 
 
         private ulong _id;
-        //唯一ID
+        /// <summary>
+        /// 存活唯一ID
+        /// </summary>
         public ulong ID
         {
             get => _id;

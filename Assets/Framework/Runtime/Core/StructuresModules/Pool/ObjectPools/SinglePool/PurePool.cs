@@ -12,11 +12,9 @@ namespace AirFramework
         /// 缓存数量
         /// </summary>
         public int Count => queue.Count;
+ 
 
-        public bool IsDeposit { get; } = false;
-        bool IPool.IsDeposit { get => IsDeposit; set => _ = value; }
-
-        private Queue<T> queue = new Queue<T>();
+        private readonly Queue<T> queue = new Queue<T>();
 
 
         #region 行为委托

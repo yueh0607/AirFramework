@@ -8,9 +8,9 @@
 namespace AirFramework
 {
 
-    public interface IGenericPool<T> : IObjectPool, IPool<T>
+    public interface IGenericPool<T> : IObjectPool, IDepositablePool<T>
     {
 
-        public AsyncTask UnloadAsync(int count, int frame = 1);
+        //public AsyncTask UnloadAsync(int count, int frame = 1);
     }
 }
