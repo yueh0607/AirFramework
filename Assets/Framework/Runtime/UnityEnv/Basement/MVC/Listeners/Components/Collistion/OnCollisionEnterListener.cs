@@ -11,8 +11,9 @@ using UnityEngine;
 
 namespace AirFramework
 {
-    public class OnCollisionExitListener:MonoBehaviour
+    public class OnCollisionEnterListener : MonoBehaviour
     {
+
         private MessageOperatorBox<IGenericMessage<Collision>> action_list = new();
 
         public event Action<Collision> OnTrigger
@@ -22,10 +23,18 @@ namespace AirFramework
         }
 
 
-        private void OnCollisionExit(Collision collision)
+        private void OnCollisionEnter(Collision collision)
         {
             action_list.Publish(collision);
         }
+
+    }
+
+    public static partial class ComponentEx
+    {
+        public static void Bind(this OnCollisionEnterListener listener, Action<Collision> action)
+        {
+            listener.OnTrigger += action;
+        }
     }
 }
-
