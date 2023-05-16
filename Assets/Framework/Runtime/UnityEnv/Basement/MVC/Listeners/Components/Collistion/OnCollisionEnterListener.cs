@@ -30,7 +30,7 @@ namespace AirFramework
 
     }
 
-    public static partial class ComponentEx
+    public static partial class Listener_Ex
     {
         public static void Bind(this OnCollisionEnterListener listener, Action<Collision> action)
         {

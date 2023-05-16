@@ -1,4 +1,4 @@
-using log4net.Core;
+﻿using log4net.Core;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -23,7 +23,7 @@ namespace AirFramework
       
     }
 
-    public static partial class ComponentEx
+    public static partial class Listener_Ex
     {
         public static void Bind(this OnJointBreakListener listener, Action<float> action)
         {

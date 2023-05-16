@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,7 +23,7 @@ namespace AirFramework
 
     }
 
-    public static partial class ComponentEx
+    public static partial class Listener_Ex
     {
         public static void Bind(this OnMouseOverListener listener, Action action)
         {
