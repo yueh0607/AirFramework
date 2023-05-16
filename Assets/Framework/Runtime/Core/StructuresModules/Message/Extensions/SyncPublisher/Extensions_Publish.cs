@@ -10,13 +10,12 @@ namespace AirFramework
         /// <param name="container"></param>
         public static void Publish(this IOperatorOut<IGenericMessage> container)
         {
-            var events = ((MessageOperatorBox<IMessage>)container)?.Value.EventsContainer.Value;
-            if (events == null || events.Count == 0) return;
-            for (int i = 0; i < events.Count; i++)
+            var mop = ((MessageOperatorBox<IMessage>)container)?.Value;
+            while(mop.GetNext(out var current))
             {
-                (events[i] as Action)?.Invoke();
+                ((Action)current).Invoke();
             }
-
+            mop.Reset();
         }
         /// <summary>
         /// 发布
@@ -24,21 +23,21 @@ namespace AirFramework
         /// <param name="container"></param>
         public static void Publish<T1>(this IOperatorOut<IGenericMessage<T1>> container, T1 arg1)
         {
-            var events = ((MessageOperatorBox<IMessage>)container)?.Value.EventsContainer.Value;
-            if (events == null || events.Count == 0) return;
-            for (int i = 0; i < events.Count; i++)
+            var mop = ((MessageOperatorBox<IMessage>)container)?.Value;
+            while (mop.GetNext(out var current))
             {
-                (events[i] as Action<T1>)?.Invoke(arg1);
+                ((Action<T1>)current).Invoke(arg1);
             }
+            mop.Reset();
         }
         public static void Publish<T1, T2>(this IOperatorOut<IGenericMessage<T1, T2>> container, T1 arg1, T2 arg2)
         {
-            var events = ((MessageOperatorBox<IMessage>)container)?.Value.EventsContainer.Value;
-            if (events == null || events.Count == 0) return;
-            for (int i = 0; i < events.Count; i++)
+            var mop = ((MessageOperatorBox<IMessage>)container)?.Value;
+            while (mop.GetNext(out var current))
             {
-                (events[i] as Action<T1, T2>)?.Invoke(arg1, arg2);
+                ((Action<T1,T2>)current).Invoke(arg1,arg2);
             }
+            mop.Reset();
         }
         /// <summary>
         /// 发布
@@ -46,21 +45,21 @@ namespace AirFramework
         /// <param name="container"></param>
         public static void Publish<T1, T2, T3>(this IOperatorOut<IGenericMessage<T1, T2, T3>> container, T1 arg1, T2 arg2, T3 arg3)
         {
-            var events = ((MessageOperatorBox<IMessage>)container)?.Value.EventsContainer.Value;
-            if (events == null || events.Count == 0) return;
-            for (int i = 0; i < events.Count; i++)
+            var mop = ((MessageOperatorBox<IMessage>)container)?.Value;
+            while (mop.GetNext(out var current))
             {
-                (events[i] as Action<T1, T2, T3>)?.Invoke(arg1, arg2, arg3);
+                ((Action<T1, T2,T3>)current).Invoke(arg1, arg2,arg3);
             }
+            mop.Reset();
         }
         public static void Publish<T1, T2, T3, T4>(this IOperatorOut<IGenericMessage<T1, T2, T3, T4>> container, T1 arg1, T2 arg2, T3 arg3, T4 arg4)
         {
-            var events = ((MessageOperatorBox<IMessage>)container)?.Value.EventsContainer.Value;
-            if (events == null || events.Count == 0) return;
-            for (int i = 0; i < events.Count; i++)
+            var mop = ((MessageOperatorBox<IMessage>)container)?.Value;
+            while (mop.GetNext(out var current))
             {
-                (events[i] as Action<T1, T2, T3, T4>)?.Invoke(arg1, arg2, arg3, arg4);
+                ((Action<T1, T2, T3,T4>)current).Invoke(arg1, arg2, arg3,arg4);
             }
+            mop.Reset();
         }
         /// <summary>
         /// 发布
@@ -68,12 +67,12 @@ namespace AirFramework
         /// <param name="container"></param>
         public static void Publish<T1, T2, T3, T4, T5>(this IOperatorOut<IGenericMessage<T1, T2, T3, T4, T5>> container, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5)
         {
-            var events = ((MessageOperatorBox<IMessage>)container)?.Value.EventsContainer.Value;
-            if (events == null || events.Count == 0) return;
-            for (int i = 0; i < events.Count; i++)
+            var mop = ((MessageOperatorBox<IMessage>)container)?.Value;
+            while (mop.GetNext(out var current))
             {
-                (events[i] as Action<T1, T2, T3, T4, T5>)?.Invoke(arg1, arg2, arg3, arg4, arg5);
+                ((Action<T1, T2, T3, T4,T5>)current).Invoke(arg1, arg2, arg3, arg4,arg5);
             }
+            mop.Reset();
         }
     }
 }

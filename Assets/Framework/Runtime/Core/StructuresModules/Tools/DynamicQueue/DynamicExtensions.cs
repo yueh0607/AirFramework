@@ -3,7 +3,7 @@ namespace AirFramework
 {
     public static class DynamicQueueExtensions
     {
-        public static K GetValueOrDefault<T, K>(this DynamicQueue<T, K> queue, T key, K value = default)
+        public static K GetValueOrDefault<T, K>(this DynamicDictionary<T, K> queue, T key, K value = default)
         {
             if (queue.ContainsKey(key))
             {
@@ -12,7 +12,7 @@ namespace AirFramework
             return value;
 
         }
-        public static K GetValueOrAddDefault<T, K>(this DynamicQueue<T, K> queue, T key, K value = default)
+        public static K GetValueOrAddDefault<T, K>(this DynamicDictionary<T, K> queue, T key, K value = default)
         {
             if (queue.ContainsKey(key))
             {
@@ -21,7 +21,7 @@ namespace AirFramework
             queue.Enqueue(key, value);
             return queue[key];
         }
-        public static K GetValueOrAddDefault<T, K>(this DynamicQueue<T, K> queue, T key, Func<K> getter = null)
+        public static K GetValueOrAddDefault<T, K>(this DynamicDictionary<T, K> queue, T key, Func<K> getter = null)
         {
             if (queue.ContainsKey(key))
             {
@@ -31,7 +31,7 @@ namespace AirFramework
             queue.Enqueue(key, getter == null ? default : getter());
             return queue[key];
         }
-        public static bool TryGetValue<T, K>(this DynamicQueue<T, K> queue, T key, out K value)
+        public static bool TryGetValue<T, K>(this DynamicDictionary<T, K> queue, T key, out K value)
         {
             if (queue.ContainsKey(key))
             {
@@ -42,7 +42,7 @@ namespace AirFramework
             return false;
         }
 
-        public static bool TryRemoveAndDispose<T, K>(this DynamicQueue<T, K> queue, T key) where K : Unit
+        public static bool TryRemoveAndDispose<T, K>(this DynamicDictionary<T, K> queue, T key) where K : Unit
         {
             if (queue.TryGetValue(key, out var value))
             {
@@ -54,12 +54,12 @@ namespace AirFramework
 
         }
 
-        public static void RemoveAndDispose<T, K>(this DynamicQueue<T, K> queue, T key) where K : IUnit
+        public static void RemoveAndDispose<T, K>(this DynamicDictionary<T, K> queue, T key) where K : IUnit
         {
             queue[key].Dispose();
             queue.Remove(key);
         }
-        public static void ClearAndDispose<T, K>(this DynamicQueue<T, K> queue) where K : Unit
+        public static void ClearAndDispose<T, K>(this DynamicDictionary<T, K> queue) where K : Unit
         {
             while (queue.Count > 0)
             {

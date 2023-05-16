@@ -10,13 +10,13 @@ using System.Collections;
 using System.Collections.Generic;
 namespace AirFramework
 {
-    public class DynamicQueue<T, K> : IEnumerable<KeyValuePair<T, K>> where T : notnull
+    public class DynamicDictionary<T, K> : IEnumerable<KeyValuePair<T, K>> where T : notnull
     {
         private Queue<T> queue;
         private Dictionary<T, K> dictionary;
         private Dictionary<T, int> state;
 
-        public DynamicQueue()
+        public DynamicDictionary()
         {
             queue = new Queue<T>();
             dictionary = new Dictionary<T, K>();
