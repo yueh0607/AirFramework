@@ -7,12 +7,26 @@ namespace AirFramework
 {
     public class OnApplicationFocusListener : MonoBehaviour
     {
-        public event Action<bool> OnTrigger;
+        private MessageOperatorBox<IGenericMessage<bool>> action_list = new();
 
+        public event Action<bool> OnTrigger
+        {
+            add => action_list.Value.Add(value);
+            remove => action_list.Value.Remove(value);
+        }
 
         private void OnApplicationFocus(bool focus)
         {
-            OnTrigger?.Invoke(focus);
+            action_list.Publish(focus);
+        }
+
+    }
+
+    public static partial class ComponentEx
+    {
+        public static void Bind(this OnApplicationFocusListener listener, Action<bool> action)
+        {
+            listener.OnTrigger += action;
         }
     }
 }

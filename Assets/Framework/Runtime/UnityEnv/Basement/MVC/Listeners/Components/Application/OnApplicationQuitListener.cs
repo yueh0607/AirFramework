@@ -7,12 +7,26 @@ namespace AirFramework
 {
     public class OnApplicationQuitListener : MonoBehaviour
     {
-        public event Action OnTrigger;
+        private MessageOperatorBox<IGenericMessage> action_list = new();
 
+        public event Action OnTrigger
+        {
+            add => action_list.Value.Add(value);
+            remove => action_list.Value.Remove(value);
+        }
 
         private void OnApplicationQuit()
         {
-            OnTrigger?.Invoke();
+            action_list.Publish();
+        }
+
+    }
+
+    public static partial class ComponentEx
+    {
+        public static void Bind(this OnApplicationQuitListener listener, Action action)
+        {
+            listener.OnTrigger += action;
         }
     }
 }

@@ -1,0 +1,34 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace AirFramework
+{
+    public class OnParticleCollisionListener : MonoBehaviour
+    {
+        private MessageOperatorBox<IGenericMessage<GameObject>> action_list = new();
+
+        public event Action<GameObject> OnTrigger
+        {
+            add => action_list.Value.Add(value);
+            remove => action_list.Value.Remove(value);
+        }
+
+
+        private void OnParticleCollision(GameObject other)
+        {
+            action_list.Publish(other);
+        }
+
+    }
+
+    public static partial class ComponentEx
+    {
+        public static void Bind(this OnParticleCollisionListener listener, Action<GameObject> action)
+        {
+            listener.OnTrigger += action;
+        }
+    }
+}
+

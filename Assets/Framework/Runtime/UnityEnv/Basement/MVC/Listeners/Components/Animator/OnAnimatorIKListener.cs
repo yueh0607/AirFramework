@@ -7,12 +7,26 @@ namespace AirFramework
 {
     public class OnAnimatorIKListener : MonoBehaviour
     {
-        public event Action<int> OnTrigger;
+        private MessageOperatorBox<IGenericMessage<int>> action_list = new();
 
+        public event Action<int> OnTrigger
+        {
+            add => action_list.Value.Add(value);
+            remove => action_list.Value.Remove(value);
+        }
 
         private void OnAnimatorIK(int layerIndex)
         {
-            OnTrigger?.Invoke(layerIndex);
+            action_list.Publish(layerIndex);
+        }
+
+    }
+
+    public static partial class ComponentEx
+    {
+        public static void Bind(this OnAnimatorIKListener listener, Action<int> action)
+        {
+            listener.OnTrigger += action;
         }
     }
 }
