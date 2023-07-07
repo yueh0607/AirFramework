@@ -29,7 +29,7 @@ namespace AirFramework
         public async AsyncTask SaveAllAsync()
         {
             folder.Clear();
-            await Async.Complete();
+             await Async.CompletedTask();
             foreach (var model in models)
             {
                 await folder.WriteFileAsync(model.Key.Name + ".model", JsonConvert.SerializeObject(model.Value, jsonSerializerSettings));
@@ -39,7 +39,7 @@ namespace AirFramework
         public async AsyncTask LoadAllAsync()
         {
             models.Clear();
-            await Async.Complete();
+             await Async.CompletedTask();
             foreach (var path in folder.FilePaths)
             {
                 try

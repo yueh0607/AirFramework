@@ -10,16 +10,30 @@ public class MyTest : IUpdate
 {
    public async void Load()
     {
+        //await Async.Delay(1);
+        Debug.Log("hah");
         await Framework.Res.InitializePackage();
 
         await Framework.UI.Open<CounterPanel>();
 
     }
 
-    public MyTest() =>Load();
 
-    public void Update(float deltaTime)
+
+    async void Test()
     {
-        "xxx".L(); 
+        await Async.Delay(3);
+        333.L();
     }
+    public MyTest()
+    {
+        Test();
+    }
+
+
+    void IUpdate.Update(float x)
+    {
+        11.L();
+    }
+
 }

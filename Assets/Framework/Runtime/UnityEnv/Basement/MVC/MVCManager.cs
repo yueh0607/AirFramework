@@ -33,7 +33,7 @@ namespace AirFramework
             var controller = Framework.Pool.Allocate<T>();
             SafeAdd(typeof(T), controller);
             if (!controller.IsAlive) await controller.BindAsync<T>();
-            else await Async.Complete();
+            else  await Async.CompletedTask();
             await controller.OnShow();
             return controller;
         }
@@ -51,7 +51,7 @@ namespace AirFramework
             type.CheckAbstract();
             if (controller == null) throw new InvalidOperationException("Null reference of controller");
                 await HideOne(type, controller);
-            await Async.Complete();
+             await Async.CompletedTask();
         }
         public async AsyncTask Hide<T>() where T : Controller
         {
@@ -87,7 +87,7 @@ namespace AirFramework
                     await HideOne(type, con);
                 }
             }
-            await Async.Complete();
+             await Async.CompletedTask();
         }
 
     }

@@ -18,9 +18,7 @@ namespace AirFramework
     [AsyncMethodBuilder(typeof(AsyncTaskMethodBuilder<>))]
     public partial class AsyncTask<T> : PoolableObject
     {
-        [DebuggerHidden]
-        public static AsyncTask<T> Create(bool fromPool = false) => fromPool ? Framework.Pool.Allocate<AsyncTask<T>>() : new();
-
+       
         public AsyncTask() => Token = new(this, this);
 
         [DebuggerHidden]
@@ -42,20 +40,30 @@ namespace AirFramework
     /// <summary>
     /// SetResult/SetException
     /// </summary>
-    public partial class AsyncTask<T> : IAsyncTokenProperty
+    public partial class AsyncTask<T> : IAsyncTokenProperty,IAsyncTask<T>,IAwaitable<AsyncTask<T>,T>
     {
         #region Method
         [DebuggerHidden]
         public AsyncTask<T> GetAwaiter() => this;
 
         [DebuggerHidden]
-        public async void Coroutine()
-        {
-            await this;
-        }
+        public async void Coroutine()=>await this;
+        
         #endregion
 
+        #region OnCompleted
+        public event Action<T> OnTaskCompleted = null;
+        private Action continuation=null;
+        [DebuggerHidden]
+        public bool IsCompleted { get; set; } = false;
+        [DebuggerHidden]
+        public void OnCompleted(Action continuation)=> UnsafeOnCompleted(continuation);
+       
+        [DebuggerHidden]
+        public void UnsafeOnCompleted(Action continuation)=>this.continuation = continuation;
+        
 
+        #endregion
 
         #region Token
         AsyncTreeTokenNode IAsyncTokenProperty.Token { get => Token; set => Token = value; }
@@ -68,37 +76,9 @@ namespace AirFramework
 
         bool IAuthorization.Authorization { get => Authorization; set => Authorization = value; }
         #endregion
-    }
-
-    /// <summary>
-    /// OnCompleted
-    /// </summary>
-    public partial class AsyncTask<T> : IAsyncTask<T>
-    {
-
-
-        #region OnCompleted
-        public event Action<T> OnTaskCompleted = null;
-        private Action continuation;
-        [DebuggerHidden]
-        public bool IsCompleted { get; set; }
-        [DebuggerHidden]
-        public void OnCompleted(Action continuation)
-        {
-            UnsafeOnCompleted(continuation);
-        }
-
-        [DebuggerHidden]
-        public void UnsafeOnCompleted(Action continuation)
-        {
-            this.continuation = continuation;
-        }
-
-        #endregion
-
-
-
-        #region Task
+ 
+        
+        #region Result
         public T Result { get; set; } = default;
         /// <summary>
         /// 返回await结果
@@ -115,10 +95,7 @@ namespace AirFramework
         {
             get
             {
-                if (setResult == null)
-                {
-                    setResult = SetResultMethod;
-                }
+                setResult ??= SetResultMethod;
                 return setResult;
             }
         }
@@ -130,10 +107,7 @@ namespace AirFramework
         {
             get
             {
-                if (unsafeSetResult == null)
-                {
-                    unsafeSetResult = UnsafeSetResultMethod;
-                }
+                unsafeSetResult ??= UnsafeSetResultMethod;
                 return unsafeSetResult;
             }
         }
@@ -154,26 +128,15 @@ namespace AirFramework
             this.Dispose();
         }
         [DebuggerHidden]
-        private void UnsafeSetResultMethod()
-        {
-            SetResult(this.Result);
-        }
+        private void UnsafeSetResultMethod()=>SetResultMethod(this.Result);
 
-
-
-        /// <summary>
-        /// 当执行出现异常时状态机调用
-        /// </summary>
-        /// <param name="exception"></param>
         [DebuggerHidden]
         public void SetException(Exception exception)
         {
-            //AirFramework.Internal.Async_Setting.Capture(exception);
-
             Async_Setting.ExceptionHandler?.Invoke(exception);
             SetResultMethod(this.Result);
         }
-
+        public void SetCancel() => SetResultMethod(default);
         #endregion
 
     }

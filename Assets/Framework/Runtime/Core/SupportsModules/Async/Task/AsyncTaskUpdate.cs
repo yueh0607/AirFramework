@@ -13,10 +13,8 @@ using System.Runtime.CompilerServices;
 namespace AirFramework
 {
 
-    //[AsyncMethodBuilder(typeof(AsyncTaskMethodBuilder))]
     public class AsyncTaskUpdate : PoolableObject, ICriticalNotifyCompletion, IAsyncTokenProperty, IUpdate
     {
-        public static void Create() => Framework.Pool.Allocate<AsyncTaskUpdate>();
         public AsyncTaskUpdate() => Token = new(this, this);
 
         [DebuggerHidden]
@@ -90,9 +88,8 @@ namespace AirFramework
         }
         public void SetException(Exception exception)
         {
-            Async_Setting.ExceptionHandler?.Invoke(exception);
-
             SetResult();
+            Async_Setting.ExceptionHandler?.Invoke(exception); 
         }
 
         public int FrameCount { get; set; } = 1;
@@ -106,5 +103,7 @@ namespace AirFramework
             }
 
         }
+
+        public void SetCancel()=>SetResult();
     }
 }

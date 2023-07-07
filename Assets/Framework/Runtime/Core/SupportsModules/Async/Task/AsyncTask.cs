@@ -19,13 +19,8 @@ namespace AirFramework
     [AsyncMethodBuilder(typeof(AsyncTaskMethodBuilder))]
     public partial class AsyncTask : PoolableObject
     {
-
-        [DebuggerHidden]
-        public static AsyncTask Create(bool fromPool = false) => fromPool ? Framework.Pool.Allocate<AsyncTask>() : new();
-        public AsyncTask()
-        {
-            Token = new(this, this);
-        }
+        public AsyncTask()=>Token = new(this, this);
+        
         [DebuggerHidden]
         public override void OnAllocate()
         {
@@ -43,7 +38,7 @@ namespace AirFramework
     }
 
 
-    public partial class AsyncTask : IAsyncTokenProperty, IAwaitable<AsyncTask>
+    public partial class AsyncTask : IAsyncTokenProperty, IAwaitable<AsyncTask>,IAsyncTask
     {
         #region Method
         /// <summary>
@@ -64,6 +59,23 @@ namespace AirFramework
 
         #endregion
 
+
+        #region Completed
+        [DebuggerHidden]
+        public bool IsCompleted { get; set; } = false;
+
+        //在结束时调用，无论是否成功
+        public event Action OnTaskCompleted = null;
+
+        private Action continuation;
+        [DebuggerHidden]
+        public void OnCompleted(Action continuation) => UnsafeOnCompleted(continuation);
+
+        [DebuggerHidden]
+        public void UnsafeOnCompleted(Action continuation) => this.continuation = continuation;
+
+        #endregion
+
         #region Token
         /// <summary>
         /// 异步令牌，与AsyncToken作用相同
@@ -79,34 +91,7 @@ namespace AirFramework
         bool IAuthorization.Authorization { get => Authorization; set => Authorization = value; }
         #endregion
 
-    }
-
-    /// <summary>
-    /// SetResult/SetException
-    /// </summary>
-    public partial class AsyncTask : PoolableObject, IAsyncTask
-    {
-
-        #region Completed
-        [DebuggerHidden]
-        public bool IsCompleted { get; set; } = false;
-
-        //在结束时调用，无论是否成功
-        public event Action OnTaskCompleted = null;
-
-        private Action continuation;
-        [DebuggerHidden]
-        public void OnCompleted(Action continuation)
-        {
-            UnsafeOnCompleted(continuation);
-        }
-
-        [DebuggerHidden]
-        public void UnsafeOnCompleted(Action continuation)
-        {
-            this.continuation = continuation;
-        }
-        #endregion
+        #region Result
 
         /// <summary>
         /// 返回await结果，非必要禁止手动调用
@@ -146,8 +131,6 @@ namespace AirFramework
             this.Dispose();
         }
 
-
-
         /// <summary>
         /// 为当前任务设置异常，一种情况为手动调用设置，另一种为异步过程出现异常,取消也是异常
         /// </summary>
@@ -155,10 +138,13 @@ namespace AirFramework
         [DebuggerHidden]
         public void SetException(Exception exception)
         {
-
-            Async_Setting.ExceptionHandler?.Invoke(exception);
             SetResultMethod();
+            Async_Setting.ExceptionHandler?.Invoke(exception);
         }
+
+        public void SetCancel()=>SetResultMethod();
+        #endregion
     }
+
 
 }

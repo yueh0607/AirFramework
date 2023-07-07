@@ -20,7 +20,7 @@ namespace AirFramework
         [DebuggerHidden]
         public static AsyncTaskMethodBuilder<T> Create()
         {
-            return new AsyncTaskMethodBuilder<T>(AsyncTask<T>.Create(fromPool: true));
+            return new AsyncTaskMethodBuilder<T>(Framework.Pool.Allocate<AsyncTask<T>>());
         }
         public AsyncTaskMethodBuilder(AsyncTask<T> task)
         {
@@ -39,6 +39,7 @@ namespace AirFramework
         public void SetException(Exception exception)
         {
             task.SetException(exception);
+
         }
 
         // 4. SetResult

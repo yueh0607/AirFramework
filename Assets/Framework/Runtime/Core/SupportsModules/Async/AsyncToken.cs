@@ -26,20 +26,11 @@ namespace AirFramework
     }
     public sealed class AsyncToken : PoolableObject
     {
-        //internal static T BindToken<T>(T task, AsyncTreeTokenNode token) where T : IAsyncTokenProperty
-        //{
-        //    task.Token?.Dispose();
-        //    task.Token = token;
-        //    token.Current = task;
-        //    token.Root = task;
-        //    return task;
-        //}
 
         internal AsyncTreeTokenNode node;
 
         public AsyncStatus Status { get; private set; } = AsyncStatus.Pending;
 
-        //private AsyncToken() { }
         public void Yield()
         {
             if (Status == AsyncStatus.Completed) throw new InvalidOperationException();

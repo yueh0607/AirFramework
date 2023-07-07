@@ -16,7 +16,7 @@ namespace AirFramework
 
         // 1. Static Create method
         [DebuggerHidden]
-        public static AsyncTaskMethodBuilder Create() => new AsyncTaskMethodBuilder(AsyncTask.Create(fromPool: true));
+        public static AsyncTaskMethodBuilder Create() => new(Framework.Pool.Allocate<AsyncTask>());
         public AsyncTaskMethodBuilder(AsyncTask task)
         {
             this.task = task;

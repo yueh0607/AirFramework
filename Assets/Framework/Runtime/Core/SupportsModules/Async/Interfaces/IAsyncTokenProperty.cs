@@ -17,7 +17,7 @@ namespace AirFramework
     {
         AsyncTreeTokenNode Token { get; internal set; }
 
-        public void SetException(Exception exception);
+        public void SetCancel();
     }
 
 }

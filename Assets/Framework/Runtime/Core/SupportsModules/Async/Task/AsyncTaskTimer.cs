@@ -13,10 +13,8 @@ using System.Runtime.CompilerServices;
 namespace AirFramework
 {
 
-    //[AsyncMethodBuilder(typeof(AsyncTaskMethodBuilder))]
     public class AsyncTaskTimer : PoolableObject, ICriticalNotifyCompletion, IAsyncTokenProperty, IUpdate
     {
-        public static void Create() => Framework.Pool.Allocate<AsyncTaskTimer>();
 
         [DebuggerHidden]
         public AsyncTaskTimer GetAwaiter() => this;
@@ -54,6 +52,9 @@ namespace AirFramework
         }
 
         public AsyncTaskTimer() => Token = new(this, this);
+
+
+        [DebuggerHidden]
         public override void OnAllocate()
         {
             Token.Current = this;
@@ -61,18 +62,14 @@ namespace AirFramework
             currentTime = 0;
             EndTime = 1000f;
             Authorization = true;
-
         }
         [DebuggerHidden]
-        public override void OnRecycle()
-        {
-            Authorization = false;
-        }
+        public override void OnRecycle()=>Authorization = false;
+        
         public void SetException(Exception exception)
         {
-            Async_Setting.ExceptionHandler?.Invoke(exception);
-
             SetResult();
+            Async_Setting.ExceptionHandler?.Invoke(exception);
         }
 
 
@@ -89,5 +86,7 @@ namespace AirFramework
                 }
             }
         }
+
+        public void SetCancel()=>SetResult();
     }
 }

@@ -33,7 +33,7 @@ namespace AirFrameworkEditor
             box.AddMethod($"public override void {nameof(Controller.OnUnload)}()", new List<string>() { $"base.{nameof(Controller.OnUnload)}();", "//Write ... here" });
 
 
-            List<string> complete = new List<string>() { $"await {nameof(Async)}.{nameof(Async.Complete)}();" };
+            List<string> complete = new List<string>() { $"await {nameof(Async)}.{nameof(Async.CompletedTask)}();" };
             box.AddMethod($"public async override {nameof(AsyncTask)} {nameof(Controller.OnShow)}()", complete);
             box.AddMethod($"public async override {nameof(AsyncTask)} {nameof(Controller.OnHide)}()", complete);
 

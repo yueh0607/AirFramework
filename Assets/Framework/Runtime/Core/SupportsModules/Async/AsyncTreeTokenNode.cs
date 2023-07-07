@@ -55,8 +55,7 @@ namespace AirFramework.Internal
             if (Current == Root)
             {
                 Current.Authorization = false;
-                Current?.SetException(new AsyncTokenCancelException());
-                //Root.SetException(new AsyncTokenCancelException());
+                Current?.SetCancel();
             }
             else
             {
