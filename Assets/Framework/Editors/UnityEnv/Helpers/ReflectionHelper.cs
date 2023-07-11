@@ -58,7 +58,7 @@ namespace AirFrameworkEditor
             foreach (FieldInfo p in fieldsArray)
             {
                 if (p.IsLiteral || p.IsInitOnly) continue;
-
+                fields.Add(p);
             }
 
             return fields;
