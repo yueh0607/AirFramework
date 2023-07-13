@@ -89,7 +89,7 @@ namespace AirFramework
         public void SetException(Exception exception)
         {
             SetResult();
-            Async_Setting.ExceptionHandler?.Invoke(exception); 
+            Async_Setting.ExceptionHandler?.Invoke(exception);
         }
 
         public int FrameCount { get; set; } = 1;
@@ -104,6 +104,6 @@ namespace AirFramework
 
         }
 
-        public void SetCancel()=>SetResult();
+        public void SetCancel() => SetResult();
     }
 }

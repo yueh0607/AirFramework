@@ -10,7 +10,7 @@ namespace AirFramework
             //获取动态队列
             var dic = ((MessageDispatcherBox<IMessage>)container).Value.EventsContainer;
             //刷新动态队列数量
-            dic.RefreshTraversalCount();
+            dic.ResetTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
             {
                 //尝试出列
@@ -30,7 +30,7 @@ namespace AirFramework
             //获取动态队列
             var dic = ((MessageDispatcherBox<IMessage>)container).Value.EventsContainer;
             //刷新动态队列数量
-            dic.RefreshTraversalCount();
+            dic.ResetTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
             {
                 //尝试出列
@@ -50,7 +50,7 @@ namespace AirFramework
             //获取动态队列
             var dic = ((MessageDispatcherBox<IMessage>)container).Value.EventsContainer;
             //刷新动态队列数量
-            dic.RefreshTraversalCount();
+            dic.ResetTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
             {
                 //尝试出列
@@ -70,7 +70,7 @@ namespace AirFramework
             //获取动态队列
             var dic = ((MessageDispatcherBox<IMessage>)container).Value.EventsContainer;
             //刷新动态队列数量
-            dic.RefreshTraversalCount();
+            dic.ResetTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
             {
                 //尝试出列
@@ -90,7 +90,7 @@ namespace AirFramework
             //获取动态队列
             var dic = ((MessageDispatcherBox<IMessage>)container).Value.EventsContainer;
             //刷新动态队列数量
-            dic.RefreshTraversalCount();
+            dic.ResetTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
             {
                 //尝试出列
@@ -111,7 +111,7 @@ namespace AirFramework
             //获取动态队列
             var dic = ((MessageDispatcherBox<IMessage>)container).Value.EventsContainer;
             //刷新动态队列数量
-            dic.RefreshTraversalCount();
+            dic.ResetTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
             {
                 //尝试出列

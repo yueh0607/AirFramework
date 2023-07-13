@@ -34,7 +34,7 @@ namespace AirFramework
         /// -1.资源管理器初始化
         /// </summary>
         /// <param name="packageName"></param>
-        public void Initialize(string packageName="DefaultPackage")
+        public void Initialize(string packageName = "DefaultPackage")
         {
             YooAssets.Initialize();
             // 创建默认的资源包

@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace AirFramework
+﻿namespace AirFramework
 {
     public class FloatSteper : TweenSteper<float>
     {
@@ -13,7 +9,7 @@ namespace AirFramework
 
         public override void MoveNext(float step)
         {
-            Current.Value = Lerper.Lerp(Start,End,step);
+            Current.Value = Lerper.Lerp(Start, End, step);
         }
 
 

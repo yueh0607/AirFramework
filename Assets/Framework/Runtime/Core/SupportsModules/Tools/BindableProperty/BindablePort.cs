@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace AirFramework
 {
@@ -11,7 +10,7 @@ namespace AirFramework
         {
             get
             {
-   
+
                 return getter();
             }
             set
@@ -33,7 +32,7 @@ namespace AirFramework
             this.setter = setter;
             this.getter = getter;
             if (setter == null || getter == null) throw new InvalidOperationException("No Setter or getter!");
-     
+
         }
 
         private Func<T> getter = null;

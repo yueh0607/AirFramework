@@ -6,7 +6,6 @@
  */
 
 
-using AirFramework.Internal;
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
@@ -14,9 +13,9 @@ namespace AirFramework
 {
 
     [AsyncMethodBuilder(typeof(AsyncTaskCompletedMethodBuilder))]
-    public struct AsyncTaskCompleted: ICriticalNotifyCompletion
+    public struct AsyncTaskCompleted : ICriticalNotifyCompletion
     {
-       
+
         [DebuggerHidden]
         public AsyncTaskCompleted GetAwaiter() => this;
         [DebuggerHidden]

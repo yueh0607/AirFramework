@@ -18,7 +18,7 @@ namespace AirFramework
     [AsyncMethodBuilder(typeof(AsyncTaskMethodBuilder<>))]
     public partial class AsyncTask<T> : PoolableObject
     {
-       
+
         public AsyncTask() => Token = new(this, this);
 
         [DebuggerHidden]
@@ -40,28 +40,28 @@ namespace AirFramework
     /// <summary>
     /// SetResult/SetException
     /// </summary>
-    public partial class AsyncTask<T> : IAsyncTokenProperty,IAsyncTask<T>,IAwaitable<AsyncTask<T>,T>
+    public partial class AsyncTask<T> : IAsyncTokenProperty, IAsyncTask<T>, IAwaitable<AsyncTask<T>, T>
     {
         #region Method
         [DebuggerHidden]
         public AsyncTask<T> GetAwaiter() => this;
 
         [DebuggerHidden]
-        public async void Coroutine()=>await this;
-        
+        public async void Coroutine() => await this;
+
         #endregion
 
         #region OnCompleted
         public event Action<T> OnTaskCompleted = null;
-        private Action continuation=null;
+        private Action continuation = null;
         [DebuggerHidden]
         public bool IsCompleted { get; set; } = false;
         [DebuggerHidden]
-        public void OnCompleted(Action continuation)=> UnsafeOnCompleted(continuation);
-       
+        public void OnCompleted(Action continuation) => UnsafeOnCompleted(continuation);
+
         [DebuggerHidden]
-        public void UnsafeOnCompleted(Action continuation)=>this.continuation = continuation;
-        
+        public void UnsafeOnCompleted(Action continuation) => this.continuation = continuation;
+
 
         #endregion
 
@@ -76,8 +76,8 @@ namespace AirFramework
 
         bool IAuthorization.Authorization { get => Authorization; set => Authorization = value; }
         #endregion
- 
-        
+
+
         #region Result
         public T Result { get; set; } = default;
         /// <summary>
@@ -128,7 +128,7 @@ namespace AirFramework
             this.Dispose();
         }
         [DebuggerHidden]
-        private void UnsafeSetResultMethod()=>SetResultMethod(this.Result);
+        private void UnsafeSetResultMethod() => SetResultMethod(this.Result);
 
         [DebuggerHidden]
         public void SetException(Exception exception)

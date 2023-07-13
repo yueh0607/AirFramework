@@ -64,8 +64,8 @@ namespace AirFramework
             Authorization = true;
         }
         [DebuggerHidden]
-        public override void OnRecycle()=>Authorization = false;
-        
+        public override void OnRecycle() => Authorization = false;
+
         public void SetException(Exception exception)
         {
             SetResult();
@@ -87,6 +87,6 @@ namespace AirFramework
             }
         }
 
-        public void SetCancel()=>SetResult();
+        public void SetCancel() => SetResult();
     }
 }

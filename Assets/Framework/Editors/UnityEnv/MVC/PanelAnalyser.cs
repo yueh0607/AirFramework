@@ -47,7 +47,7 @@ namespace AirFrameworkEditor
                 var mark = node.GetComponents<ScriptMark>();
                 if (mark.Length != 0)
                 {
-                    foreach (var m in mark) Component.DestroyImmediate(m,true);
+                    foreach (var m in mark) Component.DestroyImmediate(m, true);
                 }
                 foreach (Transform child in node)
                 {
@@ -56,19 +56,19 @@ namespace AirFrameworkEditor
             }
             Debug.Log("Remove Marks Completed!");
         }
-        public static List<MarkData> GetData(List<ScriptMark> marks,GameObject root)
+        public static List<MarkData> GetData(List<ScriptMark> marks, GameObject root)
         {
             var markData = new List<MarkData>();
             foreach (var mark in marks)
             {
-                markData.Add(new MarkData(mark,root));
+                markData.Add(new MarkData(mark, root));
             }
             return markData;
         }
 
         public static List<MarkData> GetData(GameObject root)
         {
-            return GetData(GetMarks(root),root);
+            return GetData(GetMarks(root), root);
         }
 
 
@@ -78,7 +78,7 @@ namespace AirFrameworkEditor
     {
 
         public GameObject Panel { get; set; }
-        public MarkData(ScriptMark mark,GameObject panel)
+        public MarkData(ScriptMark mark, GameObject panel)
         {
             this.Mark = mark;
             this.Panel = panel;
@@ -126,10 +126,10 @@ namespace AirFrameworkEditor
         {
             get
             {
-                if(BuildName==Panel.name) return $"{ViewFieldName} = transform.GetComponent<{FullTypeName}>();";
+                if (BuildName == Panel.name) return $"{ViewFieldName} = transform.GetComponent<{FullTypeName}>();";
                 return $"{ViewFieldName} = transform.Find(\"{BuildName}\").GetComponent<{FullTypeName}>();";
             }
-            
+
         }
 
         public bool WithProperty => !MaskHelper.IsNothing(Mark.buildProperty);

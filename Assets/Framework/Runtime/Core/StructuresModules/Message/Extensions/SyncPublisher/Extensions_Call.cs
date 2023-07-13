@@ -1,6 +1,4 @@
-﻿using System.Runtime.Serialization;
-
-namespace AirFramework
+﻿namespace AirFramework
 {
     public class TryCallException : System.Exception
     {

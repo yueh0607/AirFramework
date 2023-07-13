@@ -19,7 +19,7 @@ namespace AirFramework
         /// </summary>
         public int Count => EventsContainer.Value.Count;
 
-        public int IntervalIndex= 0;
+        public int IntervalIndex = 0;
 
         protected override void OnDispose()
         {
@@ -44,25 +44,25 @@ namespace AirFramework
         public bool Remove(Delegate dele)
         {
             int index = EventsContainer.Value.IndexOf(dele);
-            if(index<=IntervalIndex)--IntervalIndex;
-            
+            if (index <= IntervalIndex) --IntervalIndex;
+
             return EventsContainer.Value.Remove(dele);
         }
 
         public bool GetNext(out Delegate dele)
         {
-            if(IntervalIndex>0&&IntervalIndex<EventsContainer.Value.Count)
+            if (IntervalIndex > 0 && IntervalIndex < EventsContainer.Value.Count)
             {
                 ++IntervalIndex;
-                dele  = EventsContainer.Value[IntervalIndex];
+                dele = EventsContainer.Value[IntervalIndex];
             }
             dele = null;
             return false;
         }
-       
+
         public void Reset()
         {
-            IntervalIndex= 0;
+            IntervalIndex = 0;
         }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 namespace AirFramework
 {
@@ -21,15 +20,15 @@ namespace AirFramework
                 UICamera = Framework.Pool.Allocate<UICamera>();
                 await UICamera.LoadAsync();
             }
-            catch 
+            catch
             {
                 Debug.LogWarning("Not found UICamera prefab! Event may be invalid.");
             }
 
             try
             {
-                var ec =  Framework.Pool.Allocate<UIEventSystem>();
-                UIEventSystem= ec;
+                var ec = Framework.Pool.Allocate<UIEventSystem>();
+                UIEventSystem = ec;
                 await ec.LoadAsync();
             }
             catch

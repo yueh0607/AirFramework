@@ -5,7 +5,7 @@ using UnityEngine;
 namespace AirFramework
 {
 
-    public abstract partial class UnitGameObject 
+    public abstract partial class UnitGameObject
     {
 
         public bool IsAlive => MonoObject != null;
@@ -52,7 +52,7 @@ namespace AirFramework
 
         public void SetParent(UnitGameObject obj_ref)
         {
-            if(obj_ref==null)
+            if (obj_ref == null)
             {
                 transform.SetParent(null);
                 return;
@@ -150,13 +150,13 @@ namespace AirFramework
         public async AsyncTask UnsafeBindAsync(Type type)
         {
             if (IsAlive) throw new InvalidOperationException("Cannot initialize repeatly.");
-            type.CheckAbstract();
+            type.IfAbstractThrowException();
             var handle = Framework.Res.LoadAsync<GameObject>(type.Name);
             await handle;
             if (handle.AssetObject == null) throw new InvalidOperationException("Null Reference");
             //实例化到场景
             GameObject instance = GameObject.Instantiate(handle.GetAssetObject<GameObject>());
-               
+
             instance.name = type.Name;
             handle.Release();
 
@@ -183,14 +183,14 @@ namespace AirFramework
         public void UnsafeBindSync(Type type)
         {
             if (IsAlive) throw new InvalidOperationException("Cannot initialize repeatly.");
-      
-            type.CheckAbstract();
+
+            type.IfAbstractThrowException();
             var handle = Framework.Res.LoadSync<GameObject>(type.Name);
             if (handle.AssetObject == null) throw new InvalidOperationException("Null Reference");
             //实例化到场景
             //实例化到场景
             GameObject instance = GameObject.Instantiate(handle.GetAssetObject<GameObject>());
-             
+
             instance.name = type.Name;
             handle.Release();
 
@@ -220,8 +220,8 @@ namespace AirFramework
         public void UnsafeBindInstance(Type type, GameObject instance)
         {
             if (IsAlive) throw new InvalidOperationException("Cannot initialize repeatly.");
-            
-            type.CheckAbstract();
+
+            type.IfAbstractThrowException();
             if (instance == null) throw new InvalidOperationException("Null Reference");
             BindUnitAndGameObject(instance, this);
         }

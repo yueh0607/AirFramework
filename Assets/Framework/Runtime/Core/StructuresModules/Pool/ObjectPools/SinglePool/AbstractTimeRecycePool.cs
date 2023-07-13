@@ -5,22 +5,16 @@
  * Description : Describe the function here.
 ************************************************************************************/
 
-
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using AirFramework;
-
 namespace AirFramework
 {
-    public abstract class AbstractTimeRecycePool <T>: TimeRecyclePool<T> where T : class
+    public abstract class AbstractTimeRecycePool<T> : TimeRecyclePool<T> where T : class
     {
-        public AbstractTimeRecycePool() : base (null) 
+        public AbstractTimeRecycePool() : base(null)
         {
             base.OnCreate += OnCreateItem;
             base.OnDestroy += OnDestroyItem;
-            base.OnRecycle+= OnRecycleItem;
-            base.OnAllocate+= OnAllocateItem;
+            base.OnRecycle += OnRecycleItem;
+            base.OnAllocate += OnAllocateItem;
         }
 
 

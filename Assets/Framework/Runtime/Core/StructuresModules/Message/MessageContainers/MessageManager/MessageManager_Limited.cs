@@ -31,13 +31,13 @@ namespace AirFramework
         /// <param name="receiver"></param>
         /// <param name="deleType"></param>
         /// <param name="message"></param>
-        internal bool TryRemoveFromOperator(Type messageType, IMessageReceiver receiver,  Delegate message)
+        internal bool TryRemoveFromOperator(Type messageType, IMessageReceiver receiver, Delegate message)
         {
             //尝试获取派发器
             if (dispatchersContainer.TryGetValue(messageType, out var dispatcher))
             {
                 //从派发器移除指定委托
-                dispatcher.Value.TryRemoveFromReceiver(receiver,  message);
+                dispatcher.Value.TryRemoveFromReceiver(receiver, message);
                 //移除空派发器
                 if (dispatcher.Value.Count == 0)
                 {

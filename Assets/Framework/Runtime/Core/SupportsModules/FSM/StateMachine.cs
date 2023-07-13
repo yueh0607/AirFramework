@@ -1,6 +1,6 @@
 ﻿namespace AirFramework
 {
-  
+
     public abstract class AbstractState : PoolableObject, IUpdate
     {
         private StateMachine machine = null;
@@ -19,7 +19,7 @@
         public abstract void OnExitState();
         public abstract void OnStayState(float deltaTime);
 
-        public override void OnAllocate() {}
+        public override void OnAllocate() { }
 
         public override void OnRecycle()
         {
@@ -38,7 +38,7 @@
         public IPoolable Current { get; private set; } = default;
         public void Move<T>() where T : class, IPoolable
         {
-            typeof(T).CheckAbstract();
+            typeof(T).IfAbstractThrowException();
             if (Current != default)
             {
                 Current.RecycleSelf();
@@ -47,7 +47,7 @@
         }
         public void MoveState<T>() where T : AbstractState
         {
-            typeof(T).CheckAbstract();
+            typeof(T).IfAbstractThrowException();
             if (Current != default)
             {
                 Current.RecycleSelf();

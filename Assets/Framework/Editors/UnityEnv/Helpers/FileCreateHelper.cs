@@ -113,11 +113,11 @@ namespace AirFrameworkEditor
         }
 
 
-        public static void CreateScriptWithTitle(string source,string defaultName="NewScript.cs",Texture2D icon=null)
+        public static void CreateScriptWithTitle(string source, string defaultName = "NewScript.cs", Texture2D icon = null)
         {
             source = TitleInfoGenerator.GetTitleDefault() + "\n" + source;
 
-            CreateScript(source,defaultName,icon);
+            CreateScript(source, defaultName, icon);
         }
         public static void CreateScript(string source, string defaultName = "NewScript.cs", Texture2D icon = null)
         {

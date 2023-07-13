@@ -17,9 +17,9 @@ namespace AirFramework
     {
         // 1. Static PoolGet method.
         [DebuggerHidden]
-        public static AsyncTaskCompletedMethodBuilder Create()=>new(new());
-        
-        public AsyncTaskCompletedMethodBuilder(AsyncTaskCompleted task)=>this.task = task;
+        public static AsyncTaskCompletedMethodBuilder Create() => new(new());
+
+        public AsyncTaskCompletedMethodBuilder(AsyncTaskCompleted task) => this.task = task;
 
 
         private AsyncTaskCompleted task;
@@ -28,7 +28,7 @@ namespace AirFramework
 
         // 3. SetException
         [DebuggerHidden]
-        public void SetException(Exception exceptions) =>Async_Setting.ExceptionHandler(exceptions);
+        public void SetException(Exception exceptions) => Async_Setting.ExceptionHandler(exceptions);
 
         // 4. SetResult
         [DebuggerHidden]

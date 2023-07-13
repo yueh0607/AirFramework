@@ -10,7 +10,7 @@ namespace AirFramework
     /// <summary>
     /// 用于实现托管池对象类型
     /// </summary>
-    public interface IPoolable:IDisposedUnit
+    public interface IPoolable : IDisposedUnit
     {
         /// <summary>
         /// 回收时

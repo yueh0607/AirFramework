@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 namespace AirFramework
 {
@@ -44,7 +41,7 @@ namespace AirFramework
         {
             Enable = true;
         }
-      
+
 
         //反转播放方向
         public void Rewind(PlayDirection direction = PlayDirection.Backward)
@@ -63,7 +60,7 @@ namespace AirFramework
             Enable = false;
         }
 
-        
+
 
         public static Tween CreateFromPool<T>(T start, T end, BindableBase<T> port) where T : IEquatable<T>
         {

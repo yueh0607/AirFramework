@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace AirFramework
 {
-    public static class StrategyEx 
+    public static class StrategyEx
     {
 
-        internal static ISteper GetSteper<T>() where T :IEquatable<T>
+        internal static ISteper GetSteper<T>() where T : IEquatable<T>
         {
             Type type = typeof(T);
 
@@ -22,13 +20,13 @@ namespace AirFramework
             throw new InvalidOperationException($"Do not Have Steper<{type}>!");
         }
 
-        internal static ISteper GetSteperWithParm<T>(T start,T end, BindableBase<T> port) where T : IEquatable<T>
+        internal static ISteper GetSteperWithParm<T>(T start, T end, BindableBase<T> port) where T : IEquatable<T>
         {
-            var stepter = (TweenSteper<T>) GetSteper<T>();
+            var stepter = (TweenSteper<T>)GetSteper<T>();
 
             stepter.Start = start;
             stepter.End = end;
-            stepter.Current= port;
+            stepter.Current = port;
             return stepter;
         }
 

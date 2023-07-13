@@ -1,11 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace AirFramework
@@ -20,15 +16,15 @@ namespace AirFramework
 
 
 
-        private JsonSerializerSettings jsonSerializerSettings = new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.Auto};
+        private JsonSerializerSettings jsonSerializerSettings = new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.Auto };
 
         public async AsyncTask SaveToFileAsync(string name, object obj)
         {
             name = ToModelPeristent(name);
             FileHelper.CheckCreatePath(name);
             string temp = JsonConvert.SerializeObject(obj, jsonSerializerSettings);
-            await File.WriteAllTextAsync(name,temp);
-  
+            await File.WriteAllTextAsync(name, temp);
+
         }
 
         public void SaveToFile(string name, object obj)
@@ -47,7 +43,7 @@ namespace AirFramework
             try
             {
 
-                item =  JsonConvert.DeserializeObject<T>(await File.ReadAllTextAsync(name), jsonSerializerSettings);
+                item = JsonConvert.DeserializeObject<T>(await File.ReadAllTextAsync(name), jsonSerializerSettings);
             }
             catch (Exception ex)
             {
@@ -68,7 +64,7 @@ namespace AirFramework
             try
             {
 
-                item = JsonConvert.DeserializeObject<T>( File.ReadAllText(name), jsonSerializerSettings);
+                item = JsonConvert.DeserializeObject<T>(File.ReadAllText(name), jsonSerializerSettings);
             }
             catch (Exception ex)
             {
@@ -84,7 +80,7 @@ namespace AirFramework
 
 
 
-       
+
 
 
     }

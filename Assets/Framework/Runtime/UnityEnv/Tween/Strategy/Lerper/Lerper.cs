@@ -6,8 +6,6 @@
 ************************************************************************************/
 
 
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 namespace AirFramework
@@ -17,11 +15,11 @@ namespace AirFramework
 
     public static class Lerper
     {
-        public static float Lerp(float start,float end,float step)
+        public static float Lerp(float start, float end, float step)
         {
-            return start + step * (end-start);
+            return start + step * (end - start);
         }
-        public static double Lerp(double start,double end,float step)
+        public static double Lerp(double start, double end, float step)
         {
             return start + step * (end - start);
         }
@@ -29,7 +27,7 @@ namespace AirFramework
         {
             return start + (int)(step * (end - start));
         }
-        public static Vector2 Lerp(Vector2 start,Vector2 end,float step)
+        public static Vector2 Lerp(Vector2 start, Vector2 end, float step)
         {
             return Vector2.LerpUnclamped(start, end, step);
         }
@@ -41,7 +39,7 @@ namespace AirFramework
         {
             return Color.LerpUnclamped(start, end, step);
         }
-        
+
     }
 }
 

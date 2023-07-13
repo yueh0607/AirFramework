@@ -29,11 +29,11 @@ namespace AirFramework
         /// <returns></returns>
         public async AsyncTask<T> Show<T>() where T : Controller
         {
-            typeof(T).CheckAbstract();
+            typeof(T).IfAbstractThrowException();
             var controller = Framework.Pool.Allocate<T>();
             SafeAdd(typeof(T), controller);
             if (!controller.IsAlive) await controller.BindAsync<T>();
-            else  await Async.CompletedTask();
+            else await Async.CompletedTask();
             await controller.OnShow();
             return controller;
         }
@@ -48,15 +48,15 @@ namespace AirFramework
         public async AsyncTask Hide<T>(Controller controller) where T : Controller
         {
             Type type = typeof(T);
-            type.CheckAbstract();
+            type.IfAbstractThrowException();
             if (controller == null) throw new InvalidOperationException("Null reference of controller");
-                await HideOne(type, controller);
-             await Async.CompletedTask();
+            await HideOne(type, controller);
+            await Async.CompletedTask();
         }
         public async AsyncTask Hide<T>() where T : Controller
         {
             Type type = typeof(T);
-            type.CheckAbstract();
+            type.IfAbstractThrowException();
             await HideAll(type);
         }
         /// <summary>
@@ -77,7 +77,7 @@ namespace AirFramework
         private async AsyncTask HideAll(Type type)
         {
 
-            type.CheckAbstract();
+            type.IfAbstractThrowException();
             if (container.ContainsKey(type))
             {
                 var list = container[type];
@@ -87,7 +87,7 @@ namespace AirFramework
                     await HideOne(type, con);
                 }
             }
-             await Async.CompletedTask();
+            await Async.CompletedTask();
         }
 
     }

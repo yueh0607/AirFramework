@@ -1,10 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace AirFramework
+﻿namespace AirFramework
 {
-    public interface IStringConverter <T>
+    public interface IStringConverter<T>
     {
         public string ToString(T obj);
 

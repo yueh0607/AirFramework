@@ -1,33 +1,31 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace AirFramework
 {
     public class OnParticleTriggerListener : MonoBehaviour
     {
-            private MessageOperatorBox<IGenericMessage> action_list = new();
+        private MessageOperatorBox<IGenericMessage> action_list = new();
 
-            public event Action OnTrigger
-            {
-                add => action_list.Value.Add(value);
-                remove => action_list.Value.Remove(value);
-            }
-
-
-            private void OnParticleTrigger()
-            {
-                action_list.Publish();
-            }
-
-        }
-
-        public static partial class Listener_Ex
+        public event Action OnTrigger
         {
-            public static void Bind(this OnParticleTriggerListener listener, Action action)
-            {
-                listener.OnTrigger += action;
-            }
+            add => action_list.Value.Add(value);
+            remove => action_list.Value.Remove(value);
         }
+
+
+        private void OnParticleTrigger()
+        {
+            action_list.Publish();
+        }
+
+    }
+
+    public static partial class Listener_Ex
+    {
+        public static void Bind(this OnParticleTriggerListener listener, Action action)
+        {
+            listener.OnTrigger += action;
+        }
+    }
 }

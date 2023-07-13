@@ -1,14 +1,12 @@
 ﻿using AirFramework;
 using MyNamespace;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
 [FrameworkInitialize]
 public class MyTest : IUpdate
 {
-   public async void Load()
+    public async void Load()
     {
         //await Async.Delay(1);
         Debug.Log("hah");

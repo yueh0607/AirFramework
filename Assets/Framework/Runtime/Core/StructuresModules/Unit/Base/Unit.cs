@@ -9,7 +9,6 @@
  */
 
 using System;
-using System.Collections.Generic;
 
 namespace AirFramework
 {
@@ -24,7 +23,7 @@ namespace AirFramework
             get { return _disposed; }
             set { _disposed = value; }
         }
-      
+
 
         /// <summary>
         /// 释放
@@ -54,14 +53,14 @@ namespace AirFramework
         /// <summary>
         /// ID管理器
         /// </summary>
-        public static UIDGenerator IDs { get; private set; } = new(100);
+        public static UIDGenerator IDs { get; private set; } = new UIDGenerator();
 
 
-        private ulong _id;
+        private long _id;
         /// <summary>
         /// 存活唯一ID
         /// </summary>
-        public ulong ID
+        public long ID
         {
             get => _id;
             private set => _id = value;
@@ -73,53 +72,25 @@ namespace AirFramework
         }
         ~Unit()
         {
-            IDs.Recycle(_id);
-            if(!Disposed)Dispose();
+            IDs.Release(_id);
+            if (!Disposed) Dispose();
         }
 
     }
 
 
 
-    public abstract partial class Unit : IEquatable<Unit>, IEqualityComparer<Unit>
+    public abstract partial class Unit : IEquatable<Unit>
     {
+        public bool Equals(Unit other) => this.ID == other.ID;
 
+        public override bool Equals(object obj) => base.Equals(obj);
 
+        public override int GetHashCode() => base.GetHashCode();
 
-
-        public override bool Equals(object obj)
-        {
-            return (obj as Unit).ID == ID;
-        }
-        public bool Equals(Unit other)
-        {
-            if (other == null) return false;
-            return this.ID == other.ID;
-        }
-
-        public bool Equals(Unit x, Unit y)
-        {
-            return x.ID == y.ID;
-        }
-
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
-
-        public int GetHashCode(Unit obj)
-        {
-            return base.GetHashCode();
-        }
-
-        public static bool operator ==(Unit a, Unit b)
-        {
-            return a?.ID == b?.ID;
-        }
-        public static bool operator !=(Unit a, Unit b)
-        {
-            return a?.ID != b?.ID;
-        }
+        public override string ToString() => $"[{typeof(Unit).FullName}]:ID={ID}";
+        public static bool operator ==(Unit a, Unit b) => a.ID == b.ID;
+        public static bool operator !=(Unit a, Unit b) => a.ID != b.ID;
 
 
     }

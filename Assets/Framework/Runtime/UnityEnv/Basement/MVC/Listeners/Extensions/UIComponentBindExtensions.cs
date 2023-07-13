@@ -1,5 +1,4 @@
-﻿using UnityEngine;
-using UnityEngine.Events;
+﻿using UnityEngine.Events;
 using UnityEngine.UI;
 namespace AirFramework
 {
@@ -21,7 +20,7 @@ namespace AirFramework
         {
             target.onValueChanged.AddListener(action);
         }
-       
+
     }
     public static class UIComponentUnBindExtensions
     {

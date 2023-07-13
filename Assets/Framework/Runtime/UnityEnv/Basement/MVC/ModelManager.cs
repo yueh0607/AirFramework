@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace AirFramework
@@ -29,7 +28,7 @@ namespace AirFramework
         public async AsyncTask SaveAllAsync()
         {
             folder.Clear();
-             await Async.CompletedTask();
+            await Async.CompletedTask();
             foreach (var model in models)
             {
                 await folder.WriteFileAsync(model.Key.Name + ".model", JsonConvert.SerializeObject(model.Value, jsonSerializerSettings));
@@ -39,7 +38,7 @@ namespace AirFramework
         public async AsyncTask LoadAllAsync()
         {
             models.Clear();
-             await Async.CompletedTask();
+            await Async.CompletedTask();
             foreach (var path in folder.FilePaths)
             {
                 try
@@ -77,7 +76,7 @@ namespace AirFramework
             {
                 Debug.LogError(ex);
             }
-            
+
         }
 
     }

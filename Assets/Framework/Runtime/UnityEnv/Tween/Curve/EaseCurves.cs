@@ -189,7 +189,7 @@ namespace AirFramework
 
 
     #endregion
-  
+
 
 
     #region Circ
@@ -338,7 +338,7 @@ namespace AirFramework
     {
         public float Evaluate(float x)
         {
-            return x < 0.5f? (1 - Evaluate(1 - 2 * x)) / 2: (1 + Evaluate(2 * x - 1)) / 2;
+            return x < 0.5f ? (1 - Evaluate(1 - 2 * x)) / 2 : (1 + Evaluate(2 * x - 1)) / 2;
         }
     }
     #endregion

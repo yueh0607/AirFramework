@@ -35,7 +35,7 @@ namespace AirFramework.StringEvent
     {
         public SendParmNotMatchException() : base("调用参数与注册时参数不匹配!") { }
     }
-    public class RemoveNotExistException:System.Exception
+    public class RemoveNotExistException : System.Exception
     {
 
     }
@@ -123,7 +123,7 @@ namespace AirFramework.StringEvent
             else if (map[tag] is MessageDelegate newEvent)
             {
                 map[tag] = newEvent - events;
-                if (map[tag] == null||map[tag].GetInvocationList().Length == 0) map.Remove(tag);
+                if (map[tag] == null || map[tag].GetInvocationList().Length == 0) map.Remove(tag);
             }
             else throw new RemoveNotMatchTypeException();
         }

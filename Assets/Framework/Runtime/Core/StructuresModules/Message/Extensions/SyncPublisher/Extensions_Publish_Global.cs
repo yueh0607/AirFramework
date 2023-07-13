@@ -12,7 +12,7 @@ namespace AirFramework
             //获取动态队列
             var dic = ((MessageDispatcherBox<IMessage>)container).Value.EventsContainer;
             //刷新动态队列数量
-            dic.RefreshTraversalCount();
+            dic.ResetTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
             {
                 //尝试出列
@@ -32,7 +32,7 @@ namespace AirFramework
         {
             //事件集合
             var dic = ((MessageDispatcherBox<IMessage>)container).Value.EventsContainer;
-            dic.RefreshTraversalCount();
+            dic.ResetTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
             {
                 if (dic.TryDequeue(out var operations, out var key))
@@ -51,7 +51,7 @@ namespace AirFramework
         {
             //事件集合
             var dic = ((MessageDispatcherBox<IMessage>)container).Value.EventsContainer;
-            dic.RefreshTraversalCount();
+            dic.ResetTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
             {
                 if (dic.TryDequeue(out var operations, out var key))
@@ -70,7 +70,7 @@ namespace AirFramework
         {
             //事件集合
             var dic = ((MessageDispatcherBox<IMessage>)container).Value.EventsContainer;
-            dic.RefreshTraversalCount();
+            dic.ResetTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
             {
                 if (dic.TryDequeue(out var operations, out var key))
@@ -88,7 +88,7 @@ namespace AirFramework
         {
             //事件集合
             var dic = ((MessageDispatcherBox<IMessage>)container).Value.EventsContainer;
-            dic.RefreshTraversalCount();
+            dic.ResetTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
             {
                 if (dic.TryDequeue(out var operations, out var key))
@@ -105,7 +105,7 @@ namespace AirFramework
         {
             //事件集合
             var dic = ((MessageDispatcherBox<IMessage>)container).Value.EventsContainer;
-            dic.RefreshTraversalCount();
+            dic.ResetTraversalCount();
             for (int i = 0; i < dic.TraversalCount; i++)
             {
                 if (dic.TryDequeue(out var operations, out var key))

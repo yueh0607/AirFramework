@@ -1,6 +1,4 @@
-﻿using AirFramework;
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -77,11 +75,11 @@ namespace AirFrameworkEditor
                 if (p.CanRead && p.CanWrite) properties.Add(p);
 
             }
-           
+
             return properties;
         }
 
-        public static Type GetFieldOrPropertyTypeByName(string name,object origin)
+        public static Type GetFieldOrPropertyTypeByName(string name, object origin)
         {
             return GetFieldOrPropertyTypeByName(name, origin.GetType());
         }
@@ -89,7 +87,7 @@ namespace AirFrameworkEditor
         {
             var fi = origin.GetField(name);
             var pi = origin.GetProperty(name);
-            return fi?.FieldType??pi?.PropertyType;
+            return fi?.FieldType ?? pi?.PropertyType;
         }
         public static List<Component> FindAllCompinents(GameObject gameObject)
         {

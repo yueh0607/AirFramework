@@ -44,6 +44,6 @@ namespace AirFramework
         /// </summary>
         protected override event PropertyChangedEvent<T> onValueChanged;
 
-    
+
     }
 }

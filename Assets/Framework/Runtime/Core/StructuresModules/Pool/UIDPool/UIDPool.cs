@@ -3,31 +3,26 @@
     public class UIDPool : Unit, IDepositablePool
     {
 
-        private readonly UIDGenerator generator = new UIDGenerator(100);
+        private readonly UIDGenerator generator;
 
-        public int Count => generator.Count;
+        public int Count => generator.SurvivalCapacity;
 
-        public int RepeatCount
-        {
-            get => generator.RepeatCount;
-            set => generator.RepeatCount = value;
-        }
 
 
         public bool IsDeposit { get; } = false;
         bool IDepositablePool.IsDeposit { get => IsDeposit; set => _ = value; }
 
-        public ulong Allocate() => generator.Allocate();
+        public long Allocate() => generator.Allocate();
 
-        public void Recycle(ulong id) => generator.Recycle(id);
+        public void Recycle(long id) => generator.Release(id);
 
 
-        public void Clear()=> generator.Clear();
-       
-        protected override void OnDispose()=> Clear();
-        
+        public void Clear() => generator.ForceReleaseAll();
 
-        public UIDPool(int repeatCount)=> RepeatCount = repeatCount;
-        
+        protected override void OnDispose() => Clear();
+
+
+        public UIDPool(int defaultCount = 0) => new UIDGenerator(defaultCount);
+
     }
 }

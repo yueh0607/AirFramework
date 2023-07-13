@@ -10,11 +10,13 @@ namespace AirFramework
     public static class Prefix_FuncCreator
     {
 
+#pragma warning disable IDE0051 // 删除未使用的私有成员
         private static T CreateFunc<T>()
+
         {
             return Activator.CreateInstance<T>();
         }
-
+#pragma warning restore IDE0051 // 删除未使用的私有成员
 
         public static Delegate GetFunc(Type type)
         {

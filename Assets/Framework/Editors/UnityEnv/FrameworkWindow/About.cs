@@ -34,7 +34,7 @@ namespace AirFrameworkEditor
         [DisplayAsString]
         [InlineButton("OpenBili", "Open")]
         public string Bilibili = "https://space.bilibili.com/493858666";
-        
+
 
         public void CopyQQ() => Clipboard.Copy(QQ);
         public void CopyName() => Clipboard.Copy(author);
@@ -74,12 +74,12 @@ namespace AirFrameworkEditor
         [TabGroup("A", "框架设置")]
         [LabelText("默认用户名")]
         [OnValueChanged("SaveSetting")]
-        public string authorName="UserName";
+        public string authorName = "UserName";
 
         [TabGroup("A", "框架设置")]
         [LabelText("默认命名空间")]
         [OnValueChanged("SaveSetting")]
-        public string nameSpaceName= "MyNamespace";
+        public string nameSpaceName = "MyNamespace";
 
         public About() => ReadSetting();
         void ReadSetting()
@@ -90,7 +90,7 @@ namespace AirFrameworkEditor
         }
         void SaveSetting()
         {
-            FrameworkSettings.Instance.authorName= authorName;
+            FrameworkSettings.Instance.authorName = authorName;
             FrameworkSettings.Instance.defaultNamespace = nameSpaceName;
         }
 
@@ -99,69 +99,69 @@ namespace AirFrameworkEditor
 
         #region 系统
 
-        
+
         [TabGroup("A", "系统信息")]
         [DisplayAsString]
         [LabelText("设备名称")]
         public string ComputerName;
-        
+
         [TabGroup("A", "系统信息")]
         [DisplayAsString]
         [LabelText("设备类型")]
         public string ComputerType; // 设备的类型，如台式机、笔记本、服务器等。
-        
+
         [TabGroup("A", "系统信息")]
         [DisplayAsString]
         [LabelText("设备型号")]
         public string ComputerModel; // 设备的具体型号，如ThinkPad T480、MacBook Pro 13-inch等。
-        
+
         [TabGroup("A", "系统信息")]
         [DisplayAsString]
         [LabelText("显卡名称")]
         public string CardName; // 设备所使用的显卡名称，如NVIDIA GeForce GTX 1060、Intel HD Graphics 620等。
-        
+
         [TabGroup("A", "系统信息")]
         [DisplayAsString]
         [LabelText("显存大小")]
         public string CardMemory; // 显卡的显存大小，单位可以是GB或MB。
-        
+
         [TabGroup("A", "系统信息")]
         [DisplayAsString]
         [LabelText("内存大小")]
         public string MemorySize; // 设备的内存大小，单位可以是GB或MB。
 
 
-        
+
         [TabGroup("A", "系统信息")]
         [DisplayAsString]
         [LabelText("CPU型号")]
         public string CPUModel; // 设备所使用的处理器型号，如Intel Core i7-8700K、AMD Ryzen 5 3600等。
-        
+
         [TabGroup("A", "系统信息")]
         [DisplayAsString]
         [LabelText("CPU核心数")]
         public int CPUCores; // 处理器的核心数，例如4核心、6核心、8核心等。
-        
+
         [TabGroup("A", "系统信息")]
         [DisplayAsString]
         [LabelText("CPU频率")]
         public string CPUFrequency; // 处理器的基础频率，单位可以是GHz或MHz。
-        
+
         [TabGroup("A", "系统信息")]
         [DisplayAsString]
         [LabelText("硬盘型号")]
         public string HardDriveModel; // 设备所使用的硬盘型号，如Samsung 970 EVO Plus、WD Blue等。
-        
+
         [TabGroup("A", "系统信息")]
         [DisplayAsString]
         [LabelText("硬盘容量")]
         public string HardDriveSize; // 硬盘的容量，单位可以是TB、GB或MB。
-        
+
         [TabGroup("A", "系统信息")]
         [DisplayAsString]
         [LabelText("操作系统")]
         public string OperatingSystem; // 设备所运行的操作系统，如Windows 10、macOS等。
-        
+
         [TabGroup("A", "系统信息")]
         [DisplayAsString]
         [LabelText("屏幕尺寸")]
@@ -256,7 +256,7 @@ namespace AirFrameworkEditor
         {
             Application.OpenURL(Application.persistentDataPath);
         }
-        
+
         [TabGroup("A", "系统信息")]
         [LabelText("")]
         [Button("Open DataPath")]
@@ -264,7 +264,7 @@ namespace AirFrameworkEditor
         {
             Application.OpenURL(Application.dataPath);
         }
-        
+
         [TabGroup("A", "系统信息")]
         [LabelText("")]
         [Button("Open StreamingAssetPath")]
@@ -272,7 +272,7 @@ namespace AirFrameworkEditor
         {
             Application.OpenURL(Application.streamingAssetsPath);
         }
-        
+
         [TabGroup("A", "系统信息")]
         [LabelText("")]
         [Button("Open LogFilePath")]
@@ -281,7 +281,7 @@ namespace AirFrameworkEditor
             Application.OpenURL(Application.consoleLogPath);
         }
 
-        
+
         [TabGroup("A", "系统信息")]
         [LabelText("")]
         [Button("Open TemporaryCachePath")]

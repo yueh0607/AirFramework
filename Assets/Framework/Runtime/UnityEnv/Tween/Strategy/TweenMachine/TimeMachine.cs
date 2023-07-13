@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 namespace AirFramework
 {
-    public class TimeMachine :PoolableObject, IUpdate
+    public class TimeMachine : PoolableObject, IUpdate
     {
         /// <summary>
         /// 时间起点
@@ -34,13 +31,13 @@ namespace AirFramework
         /// <summary>
         /// 总时
         /// </summary>
-        public float TotalTime => timeEnd-timeStart;
+        public float TotalTime => timeEnd - timeStart;
         public float Percent
         {
             get
             {
                 if (TotalTime == 0) return 1f;
-                return Math.Clamp((time - timeStart)/ TotalTime,0f,1f);
+                return Math.Clamp((time - timeStart) / TotalTime, 0f, 1f);
             }
         }
         /// <summary>
@@ -58,7 +55,7 @@ namespace AirFramework
 
         public LoopType Loop { get; set; } = LoopType.None;
 
-        public event Action OnCompleted=null;
+        public event Action OnCompleted = null;
 
 
         private bool enable = false;
@@ -74,7 +71,7 @@ namespace AirFramework
             set
             {
                 enable = value;
-                if(enable)
+                if (enable)
                 {
                     Steper.MoveNext(Curve.Evaluate(Percent));
                 }
@@ -83,17 +80,17 @@ namespace AirFramework
 
         public override void OnAllocate()
         {
-            
+
         }
 
         public override void OnRecycle()
         {
-            Enable= false;
+            Enable = false;
 
-            Steper= null;
+            Steper = null;
             Curve = null;
 
-            Speed= 1;
+            Speed = 1;
             timeStart = 0;
             timeEnd = 0;
         }
@@ -101,11 +98,11 @@ namespace AirFramework
 
         private void MoveNext() => Steper.MoveNext(Curve.Evaluate(Percent));
 
-        public void Complete(bool stop =true)
+        public void Complete(bool stop = true)
         {
             Steper.MoveNext(timeEnd);
 
-            if(stop)
+            if (stop)
             {
                 Enable = false;
             }
@@ -115,21 +112,21 @@ namespace AirFramework
         {
             if (!Enable) return;
             //在起始和终点插值
-            time  = Math.Clamp(time+deltaTime*Speed, timeStart,timeEnd);
+            time = Math.Clamp(time + deltaTime * Speed, timeStart, timeEnd);
             //步进
             MoveNext();
             //边界条件
-            if (time >= timeEnd||time<=timeStart)
+            if (time >= timeEnd || time <= timeStart)
             {
-                if(Loop == LoopType.None)
+                if (Loop == LoopType.None)
                 {
                     Enable = false;
                 }
-                else if(Loop == LoopType.Restart)
+                else if (Loop == LoopType.Restart)
                 {
                     time = 0;
                 }
-                else if(Loop ==LoopType.Pingpong)
+                else if (Loop == LoopType.Pingpong)
                 {
 
                     Speed *= -1;

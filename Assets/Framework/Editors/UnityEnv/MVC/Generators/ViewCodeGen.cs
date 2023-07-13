@@ -27,7 +27,7 @@ namespace AirFrameworkEditor
         public void Initialize(string viewName, List<MarkData> data)
         {
             var usings = TitleInfoGenerator.GetStandardNameSpaceUsing();
-            
+
 
 
             foreach (var us in usings) box.UsingText(us);
@@ -46,7 +46,7 @@ namespace AirFrameworkEditor
                     //获取绑定端口类型
                     string type = ReflectionHelper.GetFieldOrPropertyTypeByName(port, field.MarkType).FullName;
                     //端口提升命名
-                    string portName =port.Length>1? char.ToUpper(port[0]) + port.Substring(1):port.ToUpper();
+                    string portName = port.Length > 1 ? char.ToUpper(port[0]) + port.Substring(1) : port.ToUpper();
                     //生成端口字段
                     string bindanlePortStr = $"public BindablePort<{type}> {field.ViewFieldName}_{portName};";
                     box.AddLine(bindanlePortStr);

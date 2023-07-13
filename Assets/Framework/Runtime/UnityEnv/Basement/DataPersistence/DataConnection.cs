@@ -1,15 +1,12 @@
-﻿using System.Collections;
+﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
-using UnityEngine;
-using System.Text;
-using Newtonsoft.Json;
 
 namespace AirFramework
 {
 
 
-    public class DataConnection 
+    public class DataConnection
     {
 
 
@@ -91,7 +88,7 @@ namespace AirFramework
 
         public T Get<T>(string key)
         {
-            string str =GetStr(key);
+            string str = GetStr(key);
             return DataConverter.Instance.ToObject<T>(key);
         }
 

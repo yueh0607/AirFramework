@@ -27,7 +27,7 @@ namespace AirFramework
             if (item is IMessageReceiver) Framework.LifeCycle.AnalyseRemoveAll(item);
         }
 
-        public LifeCyclePool(Func<T> onCreate = null, Action<T> onDestroy = null, Action<T> onRecycle = null, Action<T> onAllocate = null) : base(onCreate, onDestroy,onRecycle,onAllocate)
+        public LifeCyclePool(Func<T> onCreate = null, Action<T> onDestroy = null, Action<T> onRecycle = null, Action<T> onAllocate = null) : base(onCreate, onDestroy, onRecycle, onAllocate)
         {
             base.OnRecycle += OnRemoveItemLifeCycle;
             base.OnAllocate += OnAddItemLifeCycle;

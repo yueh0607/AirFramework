@@ -1,74 +1,81 @@
-﻿using System.Collections.Generic;
+﻿/********************************************************************************************
+ * Date : 2023.1.30
+ * Description : 
+ * 存活对象唯一ID生成器 
+ ********************************************************************************************/
+
+using System.Collections.Generic;
+
 namespace AirFramework
 {
+
     public class UIDGenerator
     {
+        private readonly HashSet<long> _pool;
+        private long _pointer = 0;
 
+        public UIDGenerator(int defaultCount = 0)
+        {
+            _pool = new HashSet<long>(defaultCount);
+        }
 
         /// <summary>
-        /// 已经占用的ID
+        /// 存活的ID数量
         /// </summary>
-        private HashSet<ulong> guids = new HashSet<ulong>();
-        /// <summary>
-        /// 已经回收的ID
-        /// </summary>
-        private Queue<ulong> queue_recycle = new Queue<ulong>();
-
+        public int SurvivalCapacity => _pool.Count;
 
         /// <summary>
-        /// 已注册ID数量
-        /// </summary>
-        public int Count => guids.Count;
-        public int RepeatCount { get; set; }
-
-        private ulong uid_adder = 0;
-
-        /// <summary>
-        /// 申请ID
+        /// 从生成器申请ID
         /// </summary>
         /// <returns></returns>
-        public ulong Allocate()
+        public long Allocate()
         {
-            if (queue_recycle.Count > RepeatCount)
+            if (SurvivalCapacity >= int.MaxValue) throw new IDOverflowException();
+            //使用while在ulong溢出时不会导致深循环，溢出时全部ID接近于MAX，突然重置为0后一般在极少的循环
+            //次数内即可找到未占用的ID值，即时有少量的长期占用区域，也可以被快速跳过
+            while (_pool.Contains(_pointer++))
             {
-                ulong id = queue_recycle.Dequeue();
-                guids.Add(id);
-                return id;
+                if (_pointer == long.MaxValue) _pointer = 0;
             }
-
-            while (guids.Contains(uid_adder)) uid_adder++;
-            guids.Add(uid_adder);
-            return uid_adder++;
+            _pool.Add(_pointer);
+            return _pointer;
         }
 
         /// <summary>
-        /// 清空ID占用
+        /// 将ID释放会生成器，注意这个步骤是必要的，否则终有一刻ID将会因为耗尽无法生成
         /// </summary>
-        public void Clear()
+        /// <param name="id"></param>
+        public void Release(long id)
         {
-            guids.Clear();
-            queue_recycle.Clear();
+            _pool.Remove(id);
         }
 
         /// <summary>
-        /// 回收ID
+        /// 强制清空ID占用，注意这个操作可能导致ID重复发生不可挽回的后果
         /// </summary>
-        /// <param name="item"></param>
-        public void Recycle(ulong item)
+        public void ForceReleaseAll()
         {
-            guids.Remove(item);
-            queue_recycle.Enqueue(item);
+            _pool.Clear();
         }
 
-
-
         /// <summary>
-        /// 超过申请100个ID可能会跟曾经的重复
+        /// 强行占用该ID，主要用于ID生成器的数据持久化加载
         /// </summary>
-        /// <param name="repeatCount"></param>
-        public UIDGenerator(int repeatCount = 100)
+        /// <param name="id"></param>
+        public void ForceOccupy(long id)
         {
-            this.RepeatCount = repeatCount;
+            _pool.Add(id);
+            _pointer = _pointer < id ? id : _pointer;
+        }
+
+    }
+
+
+    public class IDOverflowException : System.Exception
+    {
+        public IDOverflowException() : base($"For each generator, the maximum number of IDs that exist simultaneously is {int.MaxValue}, please check if there are any IDs that have not been released")
+        {
+
         }
     }
 }

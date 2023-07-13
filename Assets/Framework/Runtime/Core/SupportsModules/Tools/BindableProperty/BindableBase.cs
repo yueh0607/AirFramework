@@ -1,6 +1,6 @@
 ﻿namespace AirFramework
 {
-    public abstract partial class BindableBase<T> :  IValueChanged<T>
+    public abstract partial class BindableBase<T> : IValueChanged<T>
     {
 
         /// <summary>
@@ -74,7 +74,7 @@
                 origin.Value = newV;
             };
         }
-    
+
     }
 
     public abstract partial class BindableBase<T>

@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
+﻿using UnityEngine;
 namespace AirFramework
 {
 
@@ -11,7 +9,7 @@ namespace AirFramework
 
         public Component buildTarget = null;
 
-        public string buildProperty =null;
+        public string buildProperty = null;
 
 #endif
 

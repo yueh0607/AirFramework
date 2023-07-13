@@ -1,10 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace AirFramework
+﻿namespace AirFramework
 {
-    public static partial class Framework 
+    public static partial class Framework
     {
         public static DataManager Data => SingletonProperty<DataManager>.Instance;
     }

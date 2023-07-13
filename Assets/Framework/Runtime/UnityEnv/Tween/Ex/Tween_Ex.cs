@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace AirFramework
 {
     public static class Tween_Ex
     {
-        public static Tween SetLoop(this Tween tween,LoopType loopType)
+        public static Tween SetLoop(this Tween tween, LoopType loopType)
         {
             tween.Machine.Loop = loopType;
             return tween;
@@ -15,7 +13,7 @@ namespace AirFramework
 
         public static Tween SetCurve(this Tween tween, ICurve curve)
         {
-            tween.Machine.Curve= curve;
+            tween.Machine.Curve = curve;
             return tween;
         }
 
@@ -25,7 +23,7 @@ namespace AirFramework
             return tween;
         }
 
-        public static Tween SetCurve(this Tween tween, Func<float ,float > curve)
+        public static Tween SetCurve(this Tween tween, Func<float, float> curve)
         {
             tween.Machine.Curve = new FuncCurve(curve);
             return tween;
@@ -36,20 +34,20 @@ namespace AirFramework
             return tween;
         }
 
-        public static Tween SetDuration(this Tween tween,float duration)
+        public static Tween SetDuration(this Tween tween, float duration)
         {
-            tween.Machine.Time= duration;
+            tween.Machine.Time = duration;
             return tween;
         }
-        public static Tween SetSpeed(this Tween tween,float speed)
+        public static Tween SetSpeed(this Tween tween, float speed)
         {
-            tween.Machine.Speed= speed;
+            tween.Machine.Speed = speed;
             return tween;
         }
 
-        public static Tween SetDirection(this Tween tween ,PlayDirection direction)
+        public static Tween SetDirection(this Tween tween, PlayDirection direction)
         {
-            tween.Speed = Math.Abs(tween.Speed) * (int) direction;
+            tween.Speed = Math.Abs(tween.Speed) * (int)direction;
             return tween;
         }
 

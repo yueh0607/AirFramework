@@ -5,7 +5,7 @@ namespace AirFramework
     public static class UIExtensions
     {
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static T GetModel<T>(this Controller controller) where T :class, IModel
+        public static T GetModel<T>(this Controller controller) where T : class, IModel
         {
             return Framework.Models.Get<T>();
         }

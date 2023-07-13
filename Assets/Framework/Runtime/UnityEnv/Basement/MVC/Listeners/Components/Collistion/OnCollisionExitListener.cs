@@ -11,7 +11,7 @@ using UnityEngine;
 
 namespace AirFramework
 {
-    public class OnCollisionExitListener:MonoBehaviour
+    public class OnCollisionExitListener : MonoBehaviour
     {
         private MessageOperatorBox<IGenericMessage<Collision>> action_list = new();
 

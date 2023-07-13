@@ -11,7 +11,7 @@ namespace AirFramework
         public static void Publish(this IOperatorOut<IGenericMessage> container)
         {
             var mop = ((MessageOperatorBox<IMessage>)container)?.Value;
-            while(mop.GetNext(out var current))
+            while (mop.GetNext(out var current))
             {
                 ((Action)current).Invoke();
             }
@@ -35,7 +35,7 @@ namespace AirFramework
             var mop = ((MessageOperatorBox<IMessage>)container)?.Value;
             while (mop.GetNext(out var current))
             {
-                ((Action<T1,T2>)current).Invoke(arg1,arg2);
+                ((Action<T1, T2>)current).Invoke(arg1, arg2);
             }
             mop.Reset();
         }
@@ -48,7 +48,7 @@ namespace AirFramework
             var mop = ((MessageOperatorBox<IMessage>)container)?.Value;
             while (mop.GetNext(out var current))
             {
-                ((Action<T1, T2,T3>)current).Invoke(arg1, arg2,arg3);
+                ((Action<T1, T2, T3>)current).Invoke(arg1, arg2, arg3);
             }
             mop.Reset();
         }
@@ -57,7 +57,7 @@ namespace AirFramework
             var mop = ((MessageOperatorBox<IMessage>)container)?.Value;
             while (mop.GetNext(out var current))
             {
-                ((Action<T1, T2, T3,T4>)current).Invoke(arg1, arg2, arg3,arg4);
+                ((Action<T1, T2, T3, T4>)current).Invoke(arg1, arg2, arg3, arg4);
             }
             mop.Reset();
         }
@@ -70,7 +70,7 @@ namespace AirFramework
             var mop = ((MessageOperatorBox<IMessage>)container)?.Value;
             while (mop.GetNext(out var current))
             {
-                ((Action<T1, T2, T3, T4,T5>)current).Invoke(arg1, arg2, arg3, arg4,arg5);
+                ((Action<T1, T2, T3, T4, T5>)current).Invoke(arg1, arg2, arg3, arg4, arg5);
             }
             mop.Reset();
         }

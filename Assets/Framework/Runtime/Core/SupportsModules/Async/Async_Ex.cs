@@ -6,7 +6,6 @@
  */
 
 
-using System;
 using System.Collections.Generic;
 namespace AirFramework
 {
@@ -84,7 +83,7 @@ namespace AirFramework
             //使用一次就自动回收
             counterCall.OnceRecycle = true;
             //申请异步任务
-            var asyncTask =  Framework.Pool.Allocate<AsyncTask>();
+            var asyncTask = Framework.Pool.Allocate<AsyncTask>();
 
             //计数器任务绑定，此步骤仅第一次从池申请有GC
             counterCall.OnClick += asyncTask.SetResult;
@@ -109,7 +108,7 @@ namespace AirFramework
             counterCall.ClickValue = 1;
             counterCall.OnceRecycle = true;
             //申请异步任务
-            var asyncTask =  Framework.Pool.Allocate<AsyncTask<T>>();
+            var asyncTask = Framework.Pool.Allocate<AsyncTask<T>>();
 
             //计数器任务绑定
             counterCall.OnClick += (x) => { asyncTask.SetResult(x[0]); };
@@ -135,7 +134,7 @@ namespace AirFramework
             counterCall.ClickValue = 1;
             counterCall.OnceRecycle = true;
             //申请异步任务
-            var asyncTask =  Framework.Pool.Allocate<AsyncTask<T>>();
+            var asyncTask = Framework.Pool.Allocate<AsyncTask<T>>();
 
             //计数器任务绑定
             counterCall.OnClick += (x) => { asyncTask.SetResult(x[0]); };
@@ -163,7 +162,7 @@ namespace AirFramework
             //使用一次就回收
             counterCall.OnceRecycle = true;
             //申请任务
-            var asyncTask =  Framework.Pool.Allocate<AsyncTask>();
+            var asyncTask = Framework.Pool.Allocate<AsyncTask>();
 
             //绑定结束事件，仅第一次存在GC
             counterCall.OnClick += asyncTask.SetResult;
@@ -189,7 +188,7 @@ namespace AirFramework
             counterCall.ClickValue = tasks.Count;
             counterCall.OnceRecycle = true;
             //申请任务
-            var asyncTask =  Framework.Pool.Allocate<AsyncTask>();
+            var asyncTask = Framework.Pool.Allocate<AsyncTask>();
 
             //绑定结束事件
             counterCall.OnClick += asyncTask.SetResult;

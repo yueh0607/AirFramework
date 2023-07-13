@@ -7,12 +7,12 @@ namespace AirFrameworkEditor
 
     public class MVCGenerateWindow
     {
-      
+
         [AssetsOnly]
         [OnValueChanged("SaveCache")]
         public GameObject prefab;
 
-   
+
         [LabelText("生成路径")]
         [FolderPath(AbsolutePath = false, RequireExistingPath = true)]
         [OnValueChanged("SaveCache")]

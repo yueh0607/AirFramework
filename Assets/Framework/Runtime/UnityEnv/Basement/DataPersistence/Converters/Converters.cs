@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 namespace AirFramework
 {
@@ -285,13 +282,13 @@ namespace AirFramework
     }
 
     // EnumConverter (通用枚举转换器，适用于任何枚举类型)
-    internal class EnumConverter<TEnum> : Singleton<EnumConverter<TEnum>>, IStringConverter<TEnum> 
+    internal class EnumConverter<TEnum> : Singleton<EnumConverter<TEnum>>, IStringConverter<TEnum>
     {
         public TEnum ToObject(string str)
         {
             //Type type = typeof(TEnum);
             //if (!type.IsEnum || !type.IsValueType) throw new InvalidCastException($"string to EnumType<{type.FullName}> Error");
-            return (TEnum)Enum.Parse(typeof(TEnum),str);
+            return (TEnum)Enum.Parse(typeof(TEnum), str);
         }
 
         public string ToString(TEnum obj)
@@ -301,9 +298,9 @@ namespace AirFramework
     }
 
 
-  
 
-    internal class BindablePropertyConverter<T> : IStringConverter<BindableProperty<T>> where T:IEquatable<T>
+
+    internal class BindablePropertyConverter<T> : IStringConverter<BindableProperty<T>> where T : IEquatable<T>
     {
         public BindableProperty<T> ToObject(string str)
         {
@@ -315,6 +312,6 @@ namespace AirFramework
             return DataConverter.Instance.GetConverter<T>().ToString(obj.Value);
         }
     }
-    
+
 
 }

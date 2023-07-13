@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.EventSystems;
+﻿using UnityEngine.EventSystems;
 
 namespace AirFramework
 {
@@ -12,7 +9,7 @@ namespace AirFramework
 
         public override void OnLoad()
         {
-            eventSystem= GetComponent<EventSystem>();
+            eventSystem = GetComponent<EventSystem>();
         }
 
         public override void OnUnload()

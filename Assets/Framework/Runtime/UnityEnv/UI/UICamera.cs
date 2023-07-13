@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace AirFramework
 {
@@ -11,12 +9,12 @@ namespace AirFramework
 
         public override void OnLoad()
         {
-            Camera= GetComponent<Camera>();
+            Camera = GetComponent<Camera>();
         }
 
         public override void OnUnload()
         {
-            Camera= null;
+            Camera = null;
         }
     }
 }

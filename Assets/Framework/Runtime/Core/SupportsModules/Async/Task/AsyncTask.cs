@@ -19,8 +19,8 @@ namespace AirFramework
     [AsyncMethodBuilder(typeof(AsyncTaskMethodBuilder))]
     public partial class AsyncTask : PoolableObject
     {
-        public AsyncTask()=>Token = new(this, this);
-        
+        public AsyncTask() => Token = new(this, this);
+
         [DebuggerHidden]
         public override void OnAllocate()
         {
@@ -38,7 +38,7 @@ namespace AirFramework
     }
 
 
-    public partial class AsyncTask : IAsyncTokenProperty, IAwaitable<AsyncTask>,IAsyncTask
+    public partial class AsyncTask : IAsyncTokenProperty, IAwaitable<AsyncTask>, IAsyncTask
     {
         #region Method
         /// <summary>
@@ -142,7 +142,7 @@ namespace AirFramework
             Async_Setting.ExceptionHandler?.Invoke(exception);
         }
 
-        public void SetCancel()=>SetResultMethod();
+        public void SetCancel() => SetResultMethod();
         #endregion
     }
 

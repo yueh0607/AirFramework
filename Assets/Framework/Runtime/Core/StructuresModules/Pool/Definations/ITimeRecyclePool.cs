@@ -1,7 +1,7 @@
 ﻿namespace AirFramework
 {
 
-    public interface ITimeRecyclePool : IObjectPool,IPool
+    public interface ITimeRecyclePool : IObjectPool, IPool
     {
         public float RecycleTime
         {

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 namespace AirFramework
 {
@@ -13,14 +10,14 @@ namespace AirFramework
 
     }
 
-    public abstract class TweenSteper<T> :PoolableObject,ISteper where T : IEquatable<T>
+    public abstract class TweenSteper<T> : PoolableObject, ISteper where T : IEquatable<T>
     {
         public T Start { get; set; }
 
         public T End { get; set; }
 
         public BindableBase<T> Current { get; set; } = null;
-   
+
         public abstract void MoveNext(float step);
         //public abstract float GetDistance();
 
@@ -33,9 +30,9 @@ namespace AirFramework
 
         public override void OnAllocate()
         {
-            
+
         }
-        
+
 
     }
 }

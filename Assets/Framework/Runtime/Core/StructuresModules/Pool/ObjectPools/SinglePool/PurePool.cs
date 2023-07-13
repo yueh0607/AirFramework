@@ -12,7 +12,7 @@ namespace AirFramework
         /// 缓存数量
         /// </summary>
         public int Count => queue.Count;
- 
+
 
         private readonly Queue<T> queue = new Queue<T>();
 

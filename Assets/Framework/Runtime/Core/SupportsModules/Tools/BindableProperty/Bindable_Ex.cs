@@ -1,13 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace AirFramework
+﻿namespace AirFramework
 {
-    public static class Bindable_Ex 
+    public static class Bindable_Ex
     {
         //string
-        public static void Bind<T>(this BindableBase<T> binder,BindableBase<string> target)
+        public static void Bind<T>(this BindableBase<T> binder, BindableBase<string> target)
         {
             binder.OnValueChanged += (oldV, newV) => target.Value = newV.ToString();
         }

@@ -7,7 +7,7 @@ using UnityEngine;
 namespace AirFramework.Internal
 {
 
-    
+
 
     public class UnityEnvStarter : MonoSingleton<UnityEnvStarter>
     {
@@ -23,7 +23,7 @@ namespace AirFramework.Internal
             Async_Setting.ExceptionHandler += handler;
             //初始值资源系统
             Framework.Res.Initialize();
-            
+
             Starter.AfterLoadSceneEvent();
         }
 

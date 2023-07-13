@@ -8,7 +8,7 @@
 namespace AirFramework
 {
 
-    public interface IPool:IUnit
+    public interface IPool : IUnit
     {
         /// <summary>
         /// 池容量
@@ -26,5 +26,5 @@ namespace AirFramework
         T Allocate();
         void Recycle(T item);
     }
-   
+
 }

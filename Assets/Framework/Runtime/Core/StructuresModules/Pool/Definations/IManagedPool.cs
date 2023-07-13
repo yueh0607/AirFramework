@@ -9,8 +9,8 @@
 
 namespace AirFramework
 {
-    public interface IManagedPool:ITimeRecyclePool
+    public interface IManagedPool : ITimeRecyclePool
     {
-        
+
     }
 }
