@@ -167,9 +167,9 @@ namespace AirFramework
         //    count = count > Count ? Count : count;
         //    for (int i = 0; i < count; ++i)
         //    {
-        //        if (pool.Count != 0)
+        //        if (_pool.Count != 0)
         //        {
-        //            OnDestroy?.Invoke(pool.Dequeue());
+        //            OnDestroy?.Invoke(_pool.Dequeue());
         //            await Async.WaitForFrame(frame);
         //        }
         //        else

@@ -2,7 +2,7 @@
 using UnityEngine;
 namespace AirFramework.Internal
 {
-    public static class Starter
+    public static class FrameworkEngine
     {
         private static void AfterLoadSceneInitialize()
         {
@@ -33,8 +33,7 @@ namespace AirFramework.Internal
         public static Action<float> FixedUpdateEvent = FixedUpdate;
         public static Action<float> UpdateEvent = Update;
         public static Action BeforeLoadSceneEvent = BeforeLoadSceneInitialize;
-        public static Action AfterLoadSceneEvent = AfterLoadSceneInitialize;
-
+        public static Action OnFrameworkStart = AfterLoadSceneInitialize;
 
     }
 }

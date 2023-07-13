@@ -11,9 +11,6 @@ namespace AirFramework.Internal
 
     public class UnityEnvStarter : MonoSingleton<UnityEnvStarter>
     {
-
-
-
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         private static void AfterLoadSceneInitialize()
         {
@@ -24,29 +21,29 @@ namespace AirFramework.Internal
             //初始值资源系统
             Framework.Res.Initialize();
 
-            Starter.AfterLoadSceneEvent();
+            FrameworkEngine.AfterLoadSceneEvent();
         }
 
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         static void BeforeLoadSceneInitialize()
         {
-            Starter.BeforeLoadSceneEvent();
+            FrameworkEngine.BeforeLoadSceneEvent();
         }
 
 
         private void LateUpdate()
         {
-            Starter.LateUpdateEvent();
+            FrameworkEngine.LateUpdateEvent();
         }
         private void FixedUpdate()
         {
-            Starter.FixedUpdateEvent(Time.fixedTime);
+            FrameworkEngine.FixedUpdateEvent(Time.fixedTime);
         }
 
         private void Update()
         {
-            Starter.UpdateEvent(Time.deltaTime);
+            FrameworkEngine.UpdateEvent(Time.deltaTime);
 
         }
     }

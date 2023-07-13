@@ -9,6 +9,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 
 namespace AirFramework
 {
@@ -65,16 +66,29 @@ namespace AirFramework
             get => _id;
             private set => _id = value;
         }
+
+
+
         public Unit()
         {
             _id = IDs.Allocate();
-
         }
         ~Unit()
         {
             IDs.Release(_id);
             if (!Disposed) Dispose();
         }
+
+        //private static Dictionary<long,WeakReference> _references= new Dictionary<long,WeakReference>();
+        //public static object GetRef(long id)
+        //{
+        //    if() 
+        //}
+        //public static T GetRef<T>(long id)
+        //{
+
+        //}
+
 
     }
 
@@ -88,7 +102,7 @@ namespace AirFramework
 
         public override int GetHashCode() => base.GetHashCode();
 
-        public override string ToString() => $"[{typeof(Unit).FullName}]:ID={ID}";
+        public override string ToString() => $"[{this.GetType().FullName},ID={ID}]";
         public static bool operator ==(Unit a, Unit b) => a.ID == b.ID;
         public static bool operator !=(Unit a, Unit b) => a.ID != b.ID;
 

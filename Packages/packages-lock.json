@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.tuyoogame.yooasset": {
-      "version": "1.4.12",
+      "version": "1.4.17",
       "depth": 0,
       "source": "registry",
       "dependencies": {

@@ -71,7 +71,7 @@ namespace AirFramework
                     //如果不在运行，则启动计时器
                     if (timer.State != TimerState.Running)
                     {
-                        Internal.Starter.UpdateEvent += ((IUpdate)timer).Update;
+                        Internal.FrameworkEngine.UpdateEvent += ((IUpdate)timer).Update;
                         timer.Start();
                         // HandleQueue.StartObjLife();
                     }
@@ -80,7 +80,7 @@ namespace AirFramework
                 //如果周期小于等于0，则关闭计时器
                 else
                 {
-                    Internal.Starter.UpdateEvent -= ((IUpdate)timer).Update;
+                    Internal.FrameworkEngine.UpdateEvent -= ((IUpdate)timer).Update;
                     timer.Reset();
                     //HandleQueue.CloseObjLife();
                 }

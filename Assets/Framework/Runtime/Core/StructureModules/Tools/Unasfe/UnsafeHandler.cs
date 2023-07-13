@@ -13,7 +13,7 @@ namespace AirFramework
 #elif NETCOREAPP
                 return ref System.Runtime.CompilerServices.Unsafe.As<TFrom,TTo>(ref source);
 #else 
-#error 消息系统仅支持 Unity3D 2020.1或更新，以及有.NET Core支持的平台。
+#error 事件系统仅支持 Unity3D 2020.1或更新，以及有.NET Core支持的平台。
 #endif
         }
 

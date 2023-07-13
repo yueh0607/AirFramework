@@ -137,7 +137,7 @@ namespace AirFramework
         /// <exception cref="InvalidOperationException"></exception>
         public void RecycleOrigin(object item)
         {
-            if (item is not IPoolable) throw new InvalidOperationException("The managed pool must implement the IPoolable interface");
+            if (item is not IPoolable) throw new InvalidOperationException("The managed _pool must implement the IPoolable interface");
 
             GetPool(item.GetType()).RecycleObj(item);
         }

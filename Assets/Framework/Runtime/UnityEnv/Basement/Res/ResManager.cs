@@ -125,6 +125,7 @@ namespace AirFramework
 
             initParameters.QueryServices = new QueryStreamingAssetsFileServices();
 
+            //initParameters.RemoteServices = new IRemoteServices(serverPath,serverPath2);
             //主资源服务器地址
             initParameters.DefaultHostServer = serverPath;
             //备用资源服务器地址
