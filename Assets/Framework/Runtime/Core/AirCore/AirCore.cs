@@ -9,18 +9,41 @@ namespace AirFramework
     {
 
         #region Driver
+        public static float DeltaTime { get; private set; } = 0;
+        public static float TimeScale = 1;
         /// <summary>
         /// 框架调用：禁止用户手动进行调用驱动器更新函数
         /// </summary>
-        public static void DriveUpdate()
+        public static void DriveUpdate(float deltaTime)
         {
+            AirCore.DeltaTime= deltaTime * TimeScale;
             _releaseQueue.Dequeue();
         }
         #endregion
 
 
+        #region Module
+        
+
+
+        #endregion
+
         #region LifeCycle
 
+        public static void ConfigLifeMap()
+        {
+
+        }
+
+        public static void AddLifeCycle(object target)
+        {
+
+        }
+
+        public static void RemoveLifeCycle(object target)
+        {
+
+        }
 
         #endregion
 
