@@ -1,0 +1,18 @@
+{
+    "name": "AirFramework.Editor.Utility",
+    "rootNamespace": "",
+    "references": [
+        "GUID:24e8af817f14eeb4fb2babd5c567f8c8"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

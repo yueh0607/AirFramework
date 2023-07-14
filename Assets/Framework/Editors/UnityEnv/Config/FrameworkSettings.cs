@@ -1,6 +1,8 @@
+﻿using UnityEditor;
+
 namespace AirFrameworkEditor
 {
-    [FilePath("Assets/Framework/Editors/UnityEnv/Configurations/Framework.Setting.asset")]
+    //[FilePath("Assets/Framework/Editors/UnityEnv/Configurations/Framework.Setting.asset")]
     public class FrameworkSettings : ScriptableSingleton<FrameworkSettings>
     {
         public string authorName = "#unknown#";

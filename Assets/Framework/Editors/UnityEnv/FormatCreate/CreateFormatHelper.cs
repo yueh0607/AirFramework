@@ -15,7 +15,7 @@ using System.Collections;
 using System.Collections.Generic;
 using AirFramework;
 
-namespace {FrameworkSettings.Instance.defaultNamespace}
+namespace {FrameworkSettings.instance.defaultNamespace}
 {{
     public class #NAME#
     {{
@@ -29,23 +29,23 @@ namespace {FrameworkSettings.Instance.defaultNamespace}
 
 
 
-        [MenuItem("Assets/Create/Format/Model Script", false, 0)]
-        public static void CreateModelScript()
-        {
-            FileCreateHelper.CreateScriptWithTitle(@$"
-using AirFramework;
+        //        [MenuItem("Assets/Create/Format/Model Script", false, 0)]
+        //        public static void CreateModelScript()
+        //        {
+        //            FileCreateHelper.CreateScriptWithTitle(@$"
+        //using AirFramework;
 
-namespace {FrameworkSettings.Instance.defaultNamespace}
-{{
-    public class #NAME# : {nameof(IModel)}
-    {{
-        
-    }}
-}}
+        //namespace {FrameworkSettings.instance.defaultNamespace}
+        //{{
+        //    public class #NAME# : {nameof(IModel)}
+        //    {{
 
-");
+        //    }}
+        //}}
 
-        }
+        //");
+
+        //        }
         [MenuItem("Assets/Create/Format/Mono Script", false, 0)]
         public static void CreateMonoScript()
         {
@@ -56,7 +56,7 @@ using System.Collections;
 using System.Collections.Generic;
 using AirFramework;
 
-namespace {FrameworkSettings.Instance.defaultNamespace}
+namespace {FrameworkSettings.instance.defaultNamespace}
 {{
     public class #NAME# : MonoBehaviour
     {{
@@ -89,7 +89,7 @@ using System.Collections;
 using System.Collections.Generic;
 using AirFramework;
 
-namespace {FrameworkSettings.Instance.defaultNamespace}
+namespace {FrameworkSettings.instance.defaultNamespace}
 {{
     public class #NAME# : Unit
     {{
@@ -114,7 +114,7 @@ using System.Collections;
 using System.Collections.Generic;
 using AirFramework;
 
-namespace {FrameworkSettings.Instance.defaultNamespace}
+namespace {FrameworkSettings.instance.defaultNamespace}
 {{
     public class #NAME# : PoolableObject
     {{
@@ -141,7 +141,7 @@ namespace {FrameworkSettings.Instance.defaultNamespace}
         {
             FileCreateHelper.CreateScriptWithTitle(@$"
 
-namespace {FrameworkSettings.Instance.defaultNamespace}
+namespace {FrameworkSettings.instance.defaultNamespace}
 {{
     public interface #NAME#
     {{
@@ -151,22 +151,11 @@ namespace {FrameworkSettings.Instance.defaultNamespace}
 ");
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
     }
-
-
-
-
-
 }
+
+
+
+
+
+
