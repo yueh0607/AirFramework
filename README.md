@@ -1,5 +1,5 @@
 # AirFramework 
-始于2023.1.11，自用的小框架
+始于2023.1.11，自用的小框架  最近在爆改，请先用别的方案
 
 [《AirFramework-Documents》](https://github.com/yueh0607/AirFramework/blob/main/Assets/Docs-Example/%E3%80%8AAirFramework%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C%E3%80%8B.md)
 
