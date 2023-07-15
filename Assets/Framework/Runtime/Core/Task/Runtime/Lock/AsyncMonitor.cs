@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AirFramework.Internal;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -110,9 +111,7 @@ namespace AirFramework
                     }
                 }
             }
-
-            var module = Framework.GetModule<TaskModule>();
-            module.Mono.StartCoroutine(WaitUnlockedTask(obj, task));
+            AirEngine.StartCoroutine(WaitUnlockedTask(obj, task));
             return task;
         }
 
@@ -155,7 +154,7 @@ namespace AirFramework
 
             public override void OnAllocate()
             {
-               
+
             }
 
             public override void OnRecycle()
@@ -175,7 +174,7 @@ namespace AirFramework
                 Framework.Pool.RecycleByType(this);
             }
 
-           
+
         }
 
 

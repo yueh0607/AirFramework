@@ -1,6 +1,6 @@
 ﻿namespace AirFramework
 {
-    public interface IFixedUpdate : IGenericEvent<float>, IMessageReceiver
+    public interface IFixedUpdate : ISendEvent<float>, IMessageReceiver
     {
         void FixedUpdate(float fixedTime);
     }

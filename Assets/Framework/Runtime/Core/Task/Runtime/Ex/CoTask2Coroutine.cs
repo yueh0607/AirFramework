@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AirFramework.Internal;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -103,13 +104,8 @@ namespace AirFramework
                 }
                 task.Finish(ETaskStatus.Succeed);
             }
-
-
-            var module = Framework.GetModule<TaskModule>();
             AsyncTask task = Framework.Pool.Allocate<AsyncTask>();
-
-            module.Mono.StartCoroutine(RunEnumerator(enumerator, task));
-
+            AirEngine.StartCoroutine(RunEnumerator(enumerator, task));
             return task;
         }
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]

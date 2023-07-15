@@ -23,7 +23,7 @@ namespace AirFramework
         /// 消息管理器
         /// </summary>
         [DebuggerHidden]
-        public static MessageManager Message { get; } = new MessageManager();
+        public static MessageManager Message =>Framework.GetModule<MessageManager>();
 
 
     }

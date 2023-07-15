@@ -23,7 +23,7 @@ namespace AirFramework
             set => AirEngine.TimeScale = value; 
         }
 
-        public static event Action Update
+        public static event Action<float> Update
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             add=> AirEngine.Update += value;

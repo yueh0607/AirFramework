@@ -6,6 +6,7 @@
  */
 
 
+using AirFramework.Internal;
 using System;
 using System.Collections;
 
@@ -42,8 +43,7 @@ namespace AirFramework
                 task.Finish(ETaskStatus.Succeed);
             }
             var task =Framework.Pool.Allocate<AsyncTask>();
-            var module = Framework.GetModule<TaskModule>();
-            module.Mono.StartCoroutine(DelayTask(seconds, task));
+            AirEngine.StartCoroutine(DelayTask(seconds, task));
             return task;
         }
         /// <summary>
@@ -80,7 +80,7 @@ namespace AirFramework
             if (count > 0)
             {
                 var module = Framework.GetModule<TaskModule>();
-                module.Mono.StartCoroutine(DelayFrame(count, task));
+                AirEngine.StartCoroutine(DelayFrame(count, task));
             }
             else task.Finish(ETaskStatus.Succeed);
             return task;
@@ -163,8 +163,8 @@ namespace AirFramework
                 }
             }
             AsyncTask task = Framework.Pool.Allocate<AsyncTask>();
-            var module = Framework.GetModule<TaskModule>();
-            module.Mono.StartCoroutine(WaitAnyTask(tasks, task, onlySucceed));
+
+            AirEngine.StartCoroutine(WaitAnyTask(tasks, task, onlySucceed));
             return task;
         }
         /// <summary>
@@ -206,8 +206,8 @@ namespace AirFramework
                 }
             }
             AsyncTask<T> task = Framework.Pool.Allocate<AsyncTask<T>>();
-            var module = Framework.GetModule<TaskModule>();
-            module.Mono.StartCoroutine(WaitAnyTask(tasks, task, onlySucceed));
+           
+            AirEngine.StartCoroutine(WaitAnyTask(tasks, task, onlySucceed));
             return task;
         }
 
@@ -247,8 +247,7 @@ namespace AirFramework
                 }
             }
             AsyncTask task = Framework.Pool.Allocate<AsyncTask>();
-            var module = Framework.GetModule<TaskModule>();
-            module.Mono.StartCoroutine(WaitAnyTask(tasks, task));
+            AirEngine.StartCoroutine(WaitAnyTask(tasks, task));
             return task;
         }
 
@@ -307,8 +306,7 @@ namespace AirFramework
                 }
             }
             AsyncTask<T[]> task = Framework.Pool.Allocate<AsyncTask<T[]>>(); 
-            var module = Framework.GetModule<TaskModule>();
-            module.Mono.StartCoroutine(WaitAnyTask(tasks, task, sorted));
+            AirEngine.StartCoroutine(WaitAnyTask(tasks, task, sorted));
             return task;
         }
 

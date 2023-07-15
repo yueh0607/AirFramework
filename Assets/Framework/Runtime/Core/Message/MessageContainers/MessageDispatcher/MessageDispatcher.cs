@@ -10,6 +10,9 @@ namespace AirFramework
 
     public partial class MessageDispatcher : Unit
     {
+        /// <summary>
+        /// 带有该事件的对象数量
+        /// </summary>
         public int Count => EventsContainer.Count;
 
         internal DynamicDictionary<IMessageReceiver, MessageOperatorBox<IMessage>> EventsContainer { get; private set; } = new();

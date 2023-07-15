@@ -59,7 +59,7 @@ namespace AirFramework.Utility.RefBuild
         }
 
         T oldValue;
-        void ListenChanged()
+        void ListenChanged(float deltaTime)
         {
             _value = _getter();
             if (!oldValue.Equals(_value))

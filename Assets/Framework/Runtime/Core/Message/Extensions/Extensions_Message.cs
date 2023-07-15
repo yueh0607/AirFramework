@@ -8,8 +8,6 @@ namespace AirFramework
         /// 清空操作器
         /// </summary>
         /// <param name="container"></param>
-
-
         public static void Clear(this MessageOperatorBox<IMessage> container)
         {
             container?.Clear();
@@ -78,46 +76,46 @@ namespace AirFramework
 
         }
 
-        public static IDispatcherOut<IGenericEvent> GenericDispatcher<M>(this MessageManager manager, IMessageReceiver receiver = null) where M : IGenericEvent
+        public static IDispatcherOut<ISendEvent> GenericDispatcher<M>(this MessageManager manager, IMessageReceiver receiver = null) where M : ISendEvent
         {
             var x = manager.GetDispatcherBoxDefault<M>();
-            return UnsafeHandler.As<MessageDispatcherBox<IMessage>, MessageDispatcherBox<IGenericEvent>>(ref x);
+            return UnsafeHandler.As<MessageDispatcherBox<IMessage>, MessageDispatcherBox<ISendEvent>>(ref x);
 
         }
-        public static IDispatcherOut<IGenericEvent<T1>> GenericDispatcher<M, T1>(this MessageManager manager, IMessageReceiver receiver = null) where M : IGenericEvent<T1>
+        public static IDispatcherOut<ISendEvent<T1>> GenericDispatcher<M, T1>(this MessageManager manager, IMessageReceiver receiver = null) where M : ISendEvent<T1>
         {
             var x = manager.GetDispatcherBoxDefault<M>();
-            return UnsafeHandler.As<MessageDispatcherBox<IMessage>, MessageDispatcherBox<IGenericEvent<T1>>>(ref x);
+            return UnsafeHandler.As<MessageDispatcherBox<IMessage>, MessageDispatcherBox<ISendEvent<T1>>>(ref x);
 
         }
-        public static IDispatcherOut<IGenericEvent<T1, T2>> GenericDispatcher<M, T1, T2>(this MessageManager manager, IMessageReceiver receiver = null) where M : IGenericEvent<T1, T2>
+        public static IDispatcherOut<ISendEvent<T1, T2>> GenericDispatcher<M, T1, T2>(this MessageManager manager, IMessageReceiver receiver = null) where M : ISendEvent<T1, T2>
         {
             var x = manager.GetDispatcherBoxDefault<M>();
-            return UnsafeHandler.As<MessageDispatcherBox<IMessage>, MessageDispatcherBox<IGenericEvent<T1, T2>>>(ref x);
+            return UnsafeHandler.As<MessageDispatcherBox<IMessage>, MessageDispatcherBox<ISendEvent<T1, T2>>>(ref x);
         }
 
-        public static IDispatcherOut<IGenericEvent<T1, T2, T3>> GenericDispatcher<M, T1, T2, T3>(this MessageManager manager, IMessageReceiver receiver = null) where M : IGenericEvent<T1, T2, T3>
+        public static IDispatcherOut<ISendEvent<T1, T2, T3>> GenericDispatcher<M, T1, T2, T3>(this MessageManager manager, IMessageReceiver receiver = null) where M : ISendEvent<T1, T2, T3>
         {
             var x = manager.GetDispatcherBoxDefault<M>();
-            return UnsafeHandler.As<MessageDispatcherBox<IMessage>, MessageDispatcherBox<IGenericEvent<T1, T2, T3>>>(ref x);
+            return UnsafeHandler.As<MessageDispatcherBox<IMessage>, MessageDispatcherBox<ISendEvent<T1, T2, T3>>>(ref x);
         }
 
-        public static IDispatcherOut<IGenericEvent<T1, T2, T3, T4>> GenericDispatcher<M, T1, T2, T3, T4>(this MessageManager manager, IMessageReceiver receiver = null) where M : IGenericEvent<T1, T2, T3, T4>
+        public static IDispatcherOut<ISendEvent<T1, T2, T3, T4>> GenericDispatcher<M, T1, T2, T3, T4>(this MessageManager manager, IMessageReceiver receiver = null) where M : ISendEvent<T1, T2, T3, T4>
         {
             var x = manager.GetDispatcherBoxDefault<M>();
-            return UnsafeHandler.As<MessageDispatcherBox<IMessage>, MessageDispatcherBox<IGenericEvent<T1, T2, T3, T4>>>(ref x);
+            return UnsafeHandler.As<MessageDispatcherBox<IMessage>, MessageDispatcherBox<ISendEvent<T1, T2, T3, T4>>>(ref x);
         }
 
-        public static IDispatcherOut<IGenericEvent<T1, T2, T3, T4, T5>> GenericDispatcher<M, T1, T2, T3, T4, T5>(this MessageManager manager, IMessageReceiver receiver = null) where M : IGenericEvent<T1, T2, T3, T4, T5>
+        public static IDispatcherOut<ISendEvent<T1, T2, T3, T4, T5>> GenericDispatcher<M, T1, T2, T3, T4, T5>(this MessageManager manager, IMessageReceiver receiver = null) where M : ISendEvent<T1, T2, T3, T4, T5>
         {
             var x = manager.GetDispatcherBoxDefault<M>();
-            return UnsafeHandler.As<MessageDispatcherBox<IMessage>, MessageDispatcherBox<IGenericEvent<T1, T2, T3, T4, T5>>>(ref x);
+            return UnsafeHandler.As<MessageDispatcherBox<IMessage>, MessageDispatcherBox<ISendEvent<T1, T2, T3, T4, T5>>>(ref x);
         }
 
-        public static IDispatcherOut<IGenericEvent<T1, T2, T3, T4, T5, T6>> GenericDispatcher<M, T1, T2, T3, T4, T5, T6>(this MessageManager manager, IMessageReceiver receiver = null) where M : IGenericEvent<T1, T2, T3, T4, T5, T6>
+        public static IDispatcherOut<ISendEvent<T1, T2, T3, T4, T5, T6>> GenericDispatcher<M, T1, T2, T3, T4, T5, T6>(this MessageManager manager, IMessageReceiver receiver = null) where M : ISendEvent<T1, T2, T3, T4, T5, T6>
         {
             var x = manager.GetDispatcherBoxDefault<M>();
-            return UnsafeHandler.As<MessageDispatcherBox<IMessage>, MessageDispatcherBox<IGenericEvent<T1, T2, T3, T4, T5, T6>>>(ref x);
+            return UnsafeHandler.As<MessageDispatcherBox<IMessage>, MessageDispatcherBox<ISendEvent<T1, T2, T3, T4, T5, T6>>>(ref x);
         }
         #endregion
 

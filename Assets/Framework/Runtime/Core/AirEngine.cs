@@ -12,7 +12,7 @@ namespace AirFramework.Internal
         public static float DeltaTime { get; private set; } = 0;
         public static float TimeScale = 1;
 
-        public static event Action Update = null;
+        public static event Action<float> Update = null;
         /// <summary>
         /// 框架调用：禁止用户手动进行调用驱动器更新函数
         /// </summary>
@@ -32,13 +32,23 @@ namespace AirFramework.Internal
                     _modules.TryEnqueue(key, module);
                 }
             }
-            Update?.Invoke();
+            Update?.Invoke(deltaTime);
         }
 
-        public static void Initialize()
+        private static Action<IEnumerator> coroutineRunner;
+
+        public static void StartCoroutine(IEnumerator enumerator)
         {
+            coroutineRunner.Invoke(enumerator);
+        }
+
+        public static void Initialize(Action<IEnumerator> CoroutineRunner)
+        {
+            coroutineRunner = CoroutineRunner;
             Framework.CreateModule<PoolManager>();
             Framework.CreateModule<MessageManager>();
+            Framework.Message.LifeCycle.AddLifeCycle<IUpdate, UpdateHandler>();
+  
             Framework.CreateModule<TaskModule>();
         }
         #endregion

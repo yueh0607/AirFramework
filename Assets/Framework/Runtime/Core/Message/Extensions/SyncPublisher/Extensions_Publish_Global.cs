@@ -7,7 +7,7 @@ namespace AirFramework
         /// <summary>
         /// 发布全局消息
         /// </summary>
-        public static void Publish(this IDispatcherOut<IGenericEvent> container)
+        public static void Publish(this IDispatcherOut<ISendEvent> container)
         {
             //获取动态队列
             var dic = ((MessageDispatcherBox<IMessage>)container).Value.EventsContainer;
@@ -18,7 +18,7 @@ namespace AirFramework
                 //尝试出列
                 if (dic.TryDequeue(out var operations, out var key))
                 {
-                    ((IOperatorOut<IGenericEvent>)operations).Publish();
+                    ((IOperatorOut<ISendEvent>)operations).Publish();
                     //归队
                     dic.Enqueue(key, operations);
 
@@ -28,7 +28,7 @@ namespace AirFramework
         /// <summary>
         /// 发布全局消息
         /// </summary>
-        public static void Publish<T1>(this IDispatcherOut<IGenericEvent<T1>> container, T1 arg1)
+        public static void Publish<T1>(this IDispatcherOut<ISendEvent<T1>> container, T1 arg1)
         {
             //事件集合
             var dic = ((MessageDispatcherBox<IMessage>)container).Value.EventsContainer;
@@ -37,7 +37,7 @@ namespace AirFramework
             {
                 if (dic.TryDequeue(out var operations, out var key))
                 {
-                    ((IOperatorOut<IGenericEvent<T1>>)operations).Publish(arg1);
+                    ((IOperatorOut<ISendEvent<T1>>)operations).Publish(arg1);
                     //归队
                     dic.Enqueue(key, operations);
                 }
@@ -47,7 +47,7 @@ namespace AirFramework
         /// <summary>
         /// 发布全局消息
         /// </summary>
-        public static void Publish<T1, T2>(this IDispatcherOut<IGenericEvent<T1, T2>> container, T1 arg1, T2 arg2)
+        public static void Publish<T1, T2>(this IDispatcherOut<ISendEvent<T1, T2>> container, T1 arg1, T2 arg2)
         {
             //事件集合
             var dic = ((MessageDispatcherBox<IMessage>)container).Value.EventsContainer;
@@ -56,7 +56,7 @@ namespace AirFramework
             {
                 if (dic.TryDequeue(out var operations, out var key))
                 {
-                    ((IOperatorOut<IGenericEvent<T1, T2>>)operations).Publish(arg1, arg2);
+                    ((IOperatorOut<ISendEvent<T1, T2>>)operations).Publish(arg1, arg2);
                     //归队
                     dic.Enqueue(key, operations);
                 }
@@ -66,7 +66,7 @@ namespace AirFramework
         /// 发布全局消息
         /// </summary>
 
-        public static void Publish<T1, T2, T3>(this IDispatcherOut<IGenericEvent<T1, T2, T3>> container, T1 arg1, T2 arg2, T3 arg3)
+        public static void Publish<T1, T2, T3>(this IDispatcherOut<ISendEvent<T1, T2, T3>> container, T1 arg1, T2 arg2, T3 arg3)
         {
             //事件集合
             var dic = ((MessageDispatcherBox<IMessage>)container).Value.EventsContainer;
@@ -75,7 +75,7 @@ namespace AirFramework
             {
                 if (dic.TryDequeue(out var operations, out var key))
                 {
-                    ((IOperatorOut<IGenericEvent<T1, T2, T3>>)operations).Publish(arg1, arg2, arg3);
+                    ((IOperatorOut<ISendEvent<T1, T2, T3>>)operations).Publish(arg1, arg2, arg3);
                     dic.Enqueue(key, operations);
                 }
             }
@@ -84,7 +84,7 @@ namespace AirFramework
         /// 发布全局消息
         /// </summary>
 
-        public static void Publish<T1, T2, T3, T4>(this IDispatcherOut<IGenericEvent<T1, T2, T3, T4>> container, T1 arg1, T2 arg2, T3 arg3, T4 arg4)
+        public static void Publish<T1, T2, T3, T4>(this IDispatcherOut<ISendEvent<T1, T2, T3, T4>> container, T1 arg1, T2 arg2, T3 arg3, T4 arg4)
         {
             //事件集合
             var dic = ((MessageDispatcherBox<IMessage>)container).Value.EventsContainer;
@@ -93,7 +93,7 @@ namespace AirFramework
             {
                 if (dic.TryDequeue(out var operations, out var key))
                 {
-                    ((IOperatorOut<IGenericEvent<T1, T2, T3, T4>>)operations).Publish(arg1, arg2, arg3, arg4);
+                    ((IOperatorOut<ISendEvent<T1, T2, T3, T4>>)operations).Publish(arg1, arg2, arg3, arg4);
                     dic.Enqueue(key, operations);
                 }
             }
@@ -101,7 +101,7 @@ namespace AirFramework
         /// <summary>
         /// 发布全局消息
         /// </summary>
-        public static void Publish<T1, T2, T3, T4, T5>(this IDispatcherOut<IGenericEvent<T1, T2, T3, T4, T5>> container, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5)
+        public static void Publish<T1, T2, T3, T4, T5>(this IDispatcherOut<ISendEvent<T1, T2, T3, T4, T5>> container, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5)
         {
             //事件集合
             var dic = ((MessageDispatcherBox<IMessage>)container).Value.EventsContainer;
@@ -110,7 +110,7 @@ namespace AirFramework
             {
                 if (dic.TryDequeue(out var operations, out var key))
                 {
-                    ((IOperatorOut<IGenericEvent<T1, T2, T3, T4, T5>>)operations).Publish(arg1, arg2, arg3, arg4, arg5);
+                    ((IOperatorOut<ISendEvent<T1, T2, T3, T4, T5>>)operations).Publish(arg1, arg2, arg3, arg4, arg5);
                     dic.Enqueue(key, operations);
                 }
             }
