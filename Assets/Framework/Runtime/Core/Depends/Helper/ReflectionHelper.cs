@@ -7,8 +7,49 @@ using UnityEngine;
 
 namespace AirFramework.Utility
 {
-    public class ReflectionHelper : MonoBehaviour
+    public static class ReflectionHelper
     {
+
+        public static bool HasInterface(this Type type, Type _interface)
+        {
+            return _interface.IsAssignableFrom(type);
+        }
+
+        /// <summary>
+        /// 判断是否派生于某泛型类,参数为 typeof(XXX<>)
+        /// </summary>
+        /// <param name="genericType"></param>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        public static bool IsSubclassOfRawGeneric(this Type type, Type genericType)
+        {
+            while (type != null && type != typeof(object))
+            {
+                var currentType = type.IsGenericType ? type.GetGenericTypeDefinition() : type;
+                if (genericType == currentType)
+                    return true;
+                type = type.BaseType;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// 获取父类及更高的类的指定泛型类信息,例如获取父类  xxx<T>需要给出xxx<>，不存在返回null
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="genericType"></param>
+        /// <returns></returns>
+        public static Type GetRawGeneric(this Type type, Type genericType)
+        {
+
+            while (type != null && type != typeof(object))
+            {
+                var currentType = type.IsGenericType ? type.GetGenericTypeDefinition() : type;
+                if (genericType == currentType) return currentType.MakeGenericType(type.GetGenericArguments());
+                type = type.BaseType;
+            }
+            return null;
+        }
 
         /// <summary>
         /// 反射获取对象的公开实例字段，以及可读可写的属性
@@ -157,16 +198,16 @@ namespace AirFramework.Utility
         }
 
 
-        public static List<Type> GetPublicTypeFromAllAssemblies(Func<Type, bool> condition)
+        public static List<Type> GetTypesFromAllAssemblies(Func<Type, bool> condition=null)
         {
             List<Type> result = new List<Type>();
             Assembly[] ass = AppDomain.CurrentDomain.GetAssemblies();
             for (int i = 0; i < ass.Length; i++)
             {
-                var assType = ass[i].GetExportedTypes();
+                var assType = ass[i].GetTypes();
                 foreach (var type in assType)
                 {
-                    if (condition(type))
+                    if (condition==null||condition(type))
                     {
                         result.Add(type);
                     }

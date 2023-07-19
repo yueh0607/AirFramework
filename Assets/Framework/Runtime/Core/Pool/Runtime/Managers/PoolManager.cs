@@ -21,7 +21,7 @@ namespace AirFramework
     public partial class PoolManager : AbstractModule
     {
 
-        private readonly Dictionary<Type, IManagedPool> pools = new Dictionary<Type, IManagedPool>();
+        private readonly Dictionary<Type, ITimeManagedPool> pools = new Dictionary<Type, ITimeManagedPool>();
 
         public float DefaultRecycleCycleTime = 60.0_000F;
         public float DefaultRecycleRatio = 0.5F;
@@ -32,7 +32,7 @@ namespace AirFramework
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
 
-        public IGenericPool<T> GetOrCreatePool<T>() where T : class, IPoolable
+        public IGenericPool<T> GetOrCreatePool<T>() where T : class
         {
             var type = typeof(T);
             if (!pools.ContainsKey(type))
@@ -56,7 +56,7 @@ namespace AirFramework
             {
                 //Pool
                 Type tp = typeof(LifeCyclePool<>).MakeGenericType(type);
-                var pool = (IManagedPool)Activator.CreateInstance(tp, Prefix_FuncCreator.GetFunc(type), null, null, null);
+                var pool = (ITimeManagedPool)Activator.CreateInstance(tp, Prefix_FuncCreator.GetFunc(type), null, null, null);
                 pools.Add(type, pool);
                 pools[type].RecycleTime = DefaultRecycleCycleTime;
                 pools[type].RecoveryRatio = DefaultRecycleRatio;
@@ -85,7 +85,7 @@ namespace AirFramework
         /// </summary>
         /// <typeparam name="T"></typeparam>
 
-        public void ReleasePool<T>() where T : class, IPoolable=>ReleasePool(typeof(T));
+        public void ReleasePool<T>() where T : class=>ReleasePool(typeof(T));
         
         /// <summary>
         /// 不安全的释放池,需要自行保证T是IPoolable
@@ -102,23 +102,11 @@ namespace AirFramework
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
 
-        public T Allocate<T>() where T : class, IPoolable
+        public T Allocate<T>() where T : class
         {
             return GetOrCreatePool<T>().Allocate();
         }
 
-
-        /// <summary>
-        /// 回收对象到托管池
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="item"></param>
-
-        public void RecycleByType<T>(T item) where T : class, IPoolable
-        {
-
-            GetOrCreatePool<T>().Recycle(item);
-        }
         /// <summary>
         /// 强行回收对象到真实类型对应托管池
         /// </summary>
@@ -133,7 +121,7 @@ namespace AirFramework
         /// 使用委托遍历全部池以进行批量设置
         /// </summary>
         /// <param name="action"></param>
-        public void ForeachPools(Action<IManagedPool> action)
+        public void ForeachPools(Action<ITimeManagedPool> action)
         {
             if (action == null) return;
             foreach (var x in pools)

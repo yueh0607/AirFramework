@@ -52,30 +52,6 @@ namespace AirFramework
 
 
 
-
-        /// <summary>
-        /// 创建带自动绑定的对象池
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="onCreate"></param>
-        /// <param name="onDestroy"></param>
-        /// <param name="onRecycle"></param>
-        /// <param name="onAllocate"></param>
-        /// <returns></returns>        
-        public ManagedPool<T> CreateManagedPool<T>(Func<T> onCreate = null, Action<T> onDestroy = null)
-            where T : class, IPoolable
-        {
-
-            ManagedPool<T> pool = new(
-                        onCreate ?? Pool.DefaltActivatorCreate<T>,
-                        onDestroy
-
-                        );
-
-            return pool;
-        }
-
-
         /// <summary>
         /// 创建带自动绑定且可以自动处理生命周期的池
         /// </summary>
@@ -85,7 +61,7 @@ namespace AirFramework
         /// <param name="onRecycle"></param>
         /// <param name="onAllocate"></param>
         /// <returns></returns> 
-        public LifeCyclePool<T> CreateLifeCyclePool<T>(Func<T> onCreate = null, Action<T> onDestroy = null) where T : class, IPoolable
+        public LifeCyclePool<T> CreateLifeCyclePool<T>(Func<T> onCreate = null, Action<T> onDestroy = null) where T : class
         {
             LifeCyclePool<T> pool = new(onCreate ?? Pool.DefaltActivatorCreate<T>, onDestroy);
             return pool;

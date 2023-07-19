@@ -7,7 +7,7 @@
 
 namespace AirFramework
 {
-    public abstract class AbstractTimeRecycePool<T> : TimeRecyclePool<T> where T : class
+    public abstract class AbstractTimeRecycePool<T> : TimeManagedPool<T> where T : class
     {
         public AbstractTimeRecycePool() : base(null)
         {

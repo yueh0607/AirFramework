@@ -12,7 +12,7 @@ namespace AirFramework
     /// </summary>
     public partial class MessageOperator : Unit
     {
-        public UnitList<Delegate> EventsContainer { get; private set; } = new();
+        internal UnitList<Delegate> EventsContainer { get; private set; } = new();
 
         /// <summary>
         /// 委托类型数

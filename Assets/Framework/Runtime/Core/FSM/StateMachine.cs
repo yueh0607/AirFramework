@@ -35,13 +35,13 @@
 
     public class StateMachine : PoolableObject
     {
-        public IPoolable Current { get; private set; } = default;
-        public void Move<T>() where T : class, IPoolable
+        public object Current { get; private set; } = default;
+        public void Move<T>() where T : class
         {
             typeof(T).IfAbstractThrowException();
             if (Current != default)
             {
-                Current.RecycleSelf();
+                Framework.Pool.Recycle(Current);
             }
             Current = Framework.Pool.Allocate<T>();
         }
@@ -50,7 +50,7 @@
             typeof(T).IfAbstractThrowException();
             if (Current != default)
             {
-                Current.RecycleSelf();
+                Framework.Pool.Recycle(Current);
             }
 
             var state = Framework.Pool.Allocate<T>();

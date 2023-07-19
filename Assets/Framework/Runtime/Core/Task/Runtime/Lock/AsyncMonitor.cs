@@ -171,7 +171,7 @@ namespace AirFramework
                 if (target == null) throw new InvalidOperationException("Cannot unlock handle repeatly.");
                 AsyncMonitor.TryExit(target);
                 target = null;
-                Framework.Pool.RecycleByType(this);
+                Framework.Pool.Recycle(this);
             }
 
 

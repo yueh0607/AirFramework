@@ -14,13 +14,9 @@ namespace AirFramework
     /// 用于实现支持using释放，可以自主回收到池的类型
     /// </summary>
 
-    public abstract class PoolableObject : Unit, IPoolable
+    public abstract class PoolableObject : Unit, IAllocate,IRecycle
     {
 
-        /// <summary>
-        /// 绑定回收到的池
-        /// </summary>
-        public IObjectPool ThisPool { get; set; } = null;
 
         /// <summary>
         /// 当申请时由对象池调用,如非必要请勿主动调用
@@ -50,18 +46,7 @@ namespace AirFramework
         /// </summary>
         protected override void OnDispose()
         {
-            this.RecycleSelf();
-        }
-
-
-        private Action disposeAction = null;
-        public Action DisposeAction
-        {
-            get
-            {
-                if (disposeAction == null) disposeAction = Dispose;
-                return disposeAction;
-            }
+            Framework.Pool.Recycle(this);
         }
     }
 }

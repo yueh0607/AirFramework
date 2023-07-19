@@ -12,37 +12,60 @@ using System.Collections.Generic;
 using AirFramework;
 using AirFramework.Internal;
 
-namespace MyNamespace
+namespace AirFramework
 {
-    public class Extensions_Dispatcher1
+    public static class Extensions_Dispatcher1
     {
         /// <summary>
-        /// 消息派发器访问：获取指定类型的消息派发器，可进行全局行为
+        /// 针对ISendEvent的派发器访问
         /// </summary>
         /// <typeparam name="MessageType"></typeparam>
         /// <returns></returns>
-        public IDispatcherOut<MessageType> Dispatcher<MessageType>() where MessageType : ISendEventBase
+        public static IDispatcherOut<MessageType> Dispatcher<MessageType>(this MessageManager message, bool autoCreate = true) where MessageType : ISendEventBase
         {
-            var x = Framework.Message.dispatchersContainer.GetValueOrAddDefault(typeof(MessageType), MessageManager.CreateDispatcherBox);
+            MessageDispatcherBox<IMessage> x = null;
+            if (autoCreate)
+            {
+                x = message.dispatchersContainer.
+                GetValueOrAddDefault(typeof(MessageType),
+                MessageManager.CreateDispatcherBox);
+            }
+            else
+            {
+                x = message.dispatchersContainer.GetValueOrDefault(typeof(MessageType));
+            }
+            if (x == null) return null;
             return UnsafeHandler.As<MessageDispatcherBox<IMessage>, MessageDispatcherBox<MessageType>>(ref x);
         }
     }
 
-    public class Extensions_Dispatcher2
+    public static class Extensions_Dispatcher2
     {
         /// <summary>
-        /// 消息派发器访问：获取指定类型的消息派发器，可进行全局行为
+        /// 针对ICallEvent的派发器访问
         /// </summary>
         /// <typeparam name="MessageType"></typeparam>
         /// <returns></returns>
-        public IDispatcherOut<MessageType> Dispatcher<MessageType>() where MessageType : ICallEventBase
+        public static IDispatcherOut<MessageType> Dispatcher<MessageType>(this MessageManager message, bool autoCreate = true) where MessageType : ICallEventBase
         {
-            var x = Framework.Message.dispatchersContainer.GetValueOrAddDefault(typeof(MessageType), MessageManager.CreateDispatcherBox);
+            MessageDispatcherBox<IMessage> x = null;
+            if (autoCreate)
+            {
+                x = message.dispatchersContainer.
+                GetValueOrAddDefault(typeof(MessageType),
+                MessageManager.CreateDispatcherBox);
+            }
+            else
+            {
+                x = message.dispatchersContainer.GetValueOrDefault(typeof(MessageType));
+            }
+
+            if (x == null) return null;
             return UnsafeHandler.As<MessageDispatcherBox<IMessage>, MessageDispatcherBox<MessageType>>(ref x);
         }
     }
 
 
-  
+
 }
 

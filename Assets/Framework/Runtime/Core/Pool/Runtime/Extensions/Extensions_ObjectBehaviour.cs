@@ -15,9 +15,9 @@ namespace AirFramework
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="item"></param>
-        public static void RecycleSelf(this IPoolable item)
+        public static void RecycleSelf(this IMessageReceiver item)
         {
-            item.ThisPool?.RecycleObj(item);
+            Framework.Pool.Recycle(item);
         }
 
         /// <summary>
@@ -27,7 +27,7 @@ namespace AirFramework
         /// <param name="item"></param>
         /// <returns></returns>
 
-        public static T PoolGet<T>(this Unit item) where T : class, IPoolable
+        public static T PoolGet<T>(this Unit item) where T : class
         {
             return Framework.Pool.Allocate<T>();
         }

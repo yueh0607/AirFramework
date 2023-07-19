@@ -33,7 +33,6 @@ namespace AirFramework
                 {
                     if (activatorCreate) value = Activator.CreateInstance<T>();
                     else value = valueGetter();
-                    value = valueGetter();
                     firstGet = false;
                 }
                 return value;

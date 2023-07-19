@@ -6,12 +6,12 @@
         public override void OnLifeCycleRegister(ILateUpdate item)
         {
 
-            Framework.Message.Operator<ILateUpdate>().Subscribe(item.LateUpdate);
+            item.Operator<ILateUpdate>().Subscribe(item.LateUpdate);
         }
 
         public override void OnLifeCycleUnRegister(ILateUpdate item)
         {
-            Framework.Message.Operator<ILateUpdate>().UnSubscribe(item.LateUpdate);
+            item.Operator<ILateUpdate>().UnSubscribe(item.LateUpdate);
         }
     }
 }

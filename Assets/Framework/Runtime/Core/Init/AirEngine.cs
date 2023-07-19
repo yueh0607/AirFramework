@@ -1,17 +1,42 @@
-﻿using System;
+﻿using AirFramework.Utility;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Sockets;
 using UnityEngine;
 
 namespace AirFramework.Internal
 {
     public static class AirEngine
     {
+        public static void Initialize(Action<IEnumerator> CoroutineRunner)
+        {
+            //协程执行器
+            coroutineRunner = CoroutineRunner;
+            //池管理器
+            Framework.CreateModule<PoolManager>();
+            //事件管理器-生命管理器
+            Framework.CreateModule<MessageManager>();
+            //注册驱动更新
+            Framework.Message.Operator<IUpdate>().Subscribe(AirEngine.DriveUpdate);
+            //部署全局程序反射初始化步骤
+            ReflectInitialize();
+            //异步任务
+            Framework.CreateModule<TaskModule>();
+        }
 
         #region Driver
+        /// <summary>
+        /// 上一帧经历的时间
+        /// </summary>
         public static float DeltaTime { get; private set; } = 0;
+        /// <summary>
+        /// 时间流速
+        /// </summary>
         public static float TimeScale = 1;
-
+        /// <summary>
+        /// 框架Update生命周期
+        /// </summary>
         public static event Action<float> Update = null;
         /// <summary>
         /// 框架调用：禁止用户手动进行调用驱动器更新函数
@@ -19,8 +44,6 @@ namespace AirFramework.Internal
         public static void DriveUpdate(float deltaTime)
         {
             AirEngine.DeltaTime = deltaTime * TimeScale;
-            
-            
 
             _modules.ResetTraversalCount();
             int traversalCount = _modules.TraversalCount;
@@ -36,21 +59,50 @@ namespace AirFramework.Internal
         }
 
         private static Action<IEnumerator> coroutineRunner;
-
+        /// <summary>
+        /// 开启协程
+        /// </summary>
+        /// <param name="enumerator"></param>
         public static void StartCoroutine(IEnumerator enumerator)
         {
             coroutineRunner.Invoke(enumerator);
         }
 
-        public static void Initialize(Action<IEnumerator> CoroutineRunner)
+
+        /// <summary>
+        /// 初始反射操作
+        /// </summary>
+        public static event Action<Type> InitialReflection
         {
-            coroutineRunner = CoroutineRunner;
-            Framework.CreateModule<PoolManager>();
-            Framework.CreateModule<MessageManager>();
-            Framework.Message.LifeCycle.AddLifeCycle<IUpdate, UpdateHandler>();
-  
-            Framework.CreateModule<TaskModule>();
+            add
+            {
+                InitialReflectionBehaviourList.Add(value);
+            }
+            remove
+            {
+                InitialReflectionBehaviourList.Remove(value);
+            }
         }
+        private static List<Type> AllTypes = null;
+        private static List<Action<Type>> InitialReflectionBehaviourList = new List<Action<Type>>();
+        private static void ReflectInitialize()
+        {
+            ReflectionProcess.RegisterProcess();
+            if (InitialReflectionBehaviourList.Count == 0) return;
+            AllTypes = ReflectionHelper.GetTypesFromAllAssemblies();
+            for (int j = 0; j < InitialReflectionBehaviourList.Count; j++)
+            {
+                for (int i = 0; i < AllTypes.Count; i++)
+                {
+                    InitialReflectionBehaviourList[j](AllTypes[i]);
+                }
+            }
+            AllTypes.Clear();
+            InitialReflectionBehaviourList.Clear();
+            AllTypes = null;
+            InitialReflectionBehaviourList = null;
+        }
+
         #endregion
 
         #region Module
@@ -150,7 +202,7 @@ namespace AirFramework.Internal
         #endregion
 
 
-        
+
 
 
     }

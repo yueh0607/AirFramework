@@ -24,6 +24,20 @@ namespace AirFramework
             return EventsContainer.GetValueOrAddDefault(receiver, CreateOperator);
         }
         /// <summary>
+        /// 访问或添加：尝试获取指定接收者的委托组
+        /// </summary>
+        /// <param name="receiver"></param>
+        /// <returns></returns>
+        internal MessageOperatorBox<IMessage> GetOperatorOrDefault(IMessageReceiver receiver)
+        {
+            if (EventsContainer.TryGetValue(receiver, out var result))
+            {
+                return result;
+            }
+            return null;
+        }
+
+        /// <summary>
         /// 添加：为接收者添加指定的委托
         /// </summary>
         /// <param name="receiver"></param>
@@ -51,8 +65,6 @@ namespace AirFramework
             }
             return true;
         }
-
-
         /// <summary>
         /// 移除：为接收者移除全部委托派发
         /// </summary>
@@ -64,8 +76,5 @@ namespace AirFramework
             EventsContainer.TryRemove(receiver);
             return true;
         }
-
-
-
     }
 }

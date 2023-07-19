@@ -1,4 +1,5 @@
 ﻿using AirFramework.Internal;
+using AirFramework.Utility;
 using System;
 using System.Collections.Generic;
 namespace AirFramework
@@ -14,6 +15,7 @@ namespace AirFramework
         /// <param name="instance"></param>
         public void AnalyseAddAll(object instance)
         {
+            //UnityEngine.Debug.Log(lifesAdd.Count);
             foreach (var item in lifesAdd)
             {
                 item(instance);
@@ -46,10 +48,35 @@ namespace AirFramework
         {
             var handler = Activator.CreateInstance<K>();
 
-            lifesAdd.Add((x) => { if (x is T) handler.OnLifeCycleRegister((T)x); });
-            lifesRemove.Add((x) => { if (x is T) handler.OnLifeCycleUnRegister((T)x); });
+            lifesAdd.Add((x) => { if (x is T t) handler.OnLifeCycleRegister(t); });
+            lifesRemove.Add((x) => { if (x is T t) handler.OnLifeCycleUnRegister(t); });
         }
 
+        /// <summary>
+        /// T是生命接口，K是处理器
+        /// </summary>
+        /// <param name="t"></param>
+        /// <param name="k"></param>
+        internal void AddLifeCycle(Type t, Type k)
+        {
+            if(!t.IsInterface) throw new InvalidOperationException("T must be interface!");
+            var handler = (LifeCycleHandler)Activator.CreateInstance(k);
+            lifesAdd.Add((x) => 
+            {
+                if (ReflectionHelper.HasInterface(x.GetType(), t))
+                {
+                    handler.OnLifeCycleRegister(x);
+                    //UnityEngine.Debug.Log($"{x.GetType().Name}有生命：{t.Name}");
+                }
+                    
+             
+            });
+            lifesRemove.Add((x) => 
+            { 
+                if (ReflectionHelper.HasInterface(x.GetType(), t)) 
+                    handler.OnLifeCycleUnRegister(t); 
+            });
+        }
         #endregion
     }
 }

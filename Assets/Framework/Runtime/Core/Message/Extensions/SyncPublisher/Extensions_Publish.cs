@@ -10,6 +10,7 @@ namespace AirFramework
         /// <param name="container"></param>
         public static void Publish(this IOperatorOut<ISendEvent> container)
         {
+            if (container is null) return;
             var mop = ((MessageOperatorBox<IMessage>)container)?.Value;
             while (mop.GetNext(out var current))
             {
@@ -23,6 +24,7 @@ namespace AirFramework
         /// <param name="container"></param>
         public static void Publish<T1>(this IOperatorOut<ISendEvent<T1>> container, T1 arg1)
         {
+            if (container is null) return;
             var mop = ((MessageOperatorBox<IMessage>)container)?.Value;
             while (mop.GetNext(out var current))
             {
@@ -32,6 +34,7 @@ namespace AirFramework
         }
         public static void Publish<T1, T2>(this IOperatorOut<ISendEvent<T1, T2>> container, T1 arg1, T2 arg2)
         {
+            if (container is null) return;
             var mop = ((MessageOperatorBox<IMessage>)container)?.Value;
             while (mop.GetNext(out var current))
             {
@@ -45,6 +48,7 @@ namespace AirFramework
         /// <param name="container"></param>
         public static void Publish<T1, T2, T3>(this IOperatorOut<ISendEvent<T1, T2, T3>> container, T1 arg1, T2 arg2, T3 arg3)
         {
+            if (container is null) return;
             var mop = ((MessageOperatorBox<IMessage>)container)?.Value;
             while (mop.GetNext(out var current))
             {
@@ -54,6 +58,7 @@ namespace AirFramework
         }
         public static void Publish<T1, T2, T3, T4>(this IOperatorOut<ISendEvent<T1, T2, T3, T4>> container, T1 arg1, T2 arg2, T3 arg3, T4 arg4)
         {
+            if (container is null) return;
             var mop = ((MessageOperatorBox<IMessage>)container)?.Value;
             while (mop.GetNext(out var current))
             {
@@ -67,6 +72,7 @@ namespace AirFramework
         /// <param name="container"></param>
         public static void Publish<T1, T2, T3, T4, T5>(this IOperatorOut<ISendEvent<T1, T2, T3, T4, T5>> container, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5)
         {
+            if (container is null) return;
             var mop = ((MessageOperatorBox<IMessage>)container)?.Value;
             while (mop.GetNext(out var current))
             {

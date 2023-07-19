@@ -6,6 +6,8 @@
 
 using AirFramework.Internal;
 using System.Runtime.InteropServices;
+using UnityEditor;
+
 namespace AirFramework
 {
     [StructLayout(LayoutKind.Sequential)]
@@ -14,7 +16,7 @@ namespace AirFramework
 
         public MessageDispatcher Value { get; } = new MessageDispatcher();
 
-
+      
         public MessageDispatcherBox()
         {
 

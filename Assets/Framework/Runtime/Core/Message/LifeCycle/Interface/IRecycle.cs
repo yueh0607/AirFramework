@@ -1,7 +1,7 @@
 ﻿/***********************************************************************************
- * Author      : yueh0607
- * Version     : 2021.3.22f1c1
- * Date        : 2023/5/14 20:48:41
+ * Author      : #unknown#
+ * Version     : 2021.3.24f1c1
+ * Date        : 2023/7/15 17:32:35
  * Description : Describe the function here.
 ************************************************************************************/
 
@@ -9,8 +9,8 @@
 
 namespace AirFramework
 {
-    public interface IManagedPool : ITimeRecyclePool
+    public interface IRecycle:ISendEvent
     {
-
+        public void OnRecycle();
     }
 }

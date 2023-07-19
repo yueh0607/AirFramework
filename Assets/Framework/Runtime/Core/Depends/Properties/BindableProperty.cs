@@ -37,6 +37,8 @@ namespace AirFramework.Utility.RefBuild
         public event Action<T, T> OnPropertyChanged = null;
 
         private bool _loopListen = false;
+
+        Action<float > tempListenAction=null;
         public BindableProperty(Func<T> getter, Action<T> setter, bool loopListen = false)
         {
             mode = true;
@@ -45,7 +47,8 @@ namespace AirFramework.Utility.RefBuild
             _loopListen = loopListen;
             if (loopListen)
             {
-                Framework.Update += ListenChanged;
+                tempListenAction ??= ListenChanged;
+                Framework.Update += tempListenAction;
             }
         }
         public BindableProperty(T initValue)
@@ -55,7 +58,7 @@ namespace AirFramework.Utility.RefBuild
         }
         ~BindableProperty()
         {
-            if (_loopListen) Framework.Update -= ListenChanged;
+            if (_loopListen) Framework.Update -= tempListenAction;
         }
 
         T oldValue;

@@ -4,12 +4,12 @@
     {
         public override void OnLifeCycleRegister(IAllocate item)
         {
-            Framework.Message.Operator<IAllocate>().Subscribe(item.OnAllocate);
+            item.Operator<IAllocate>().Subscribe(item.OnAllocate);
         }
 
         public override void OnLifeCycleUnRegister(IAllocate item)
         {
-            Framework.Message.Operator<IAllocate>().UnSubscribe(item.OnAllocate);
+            item.Operator<IAllocate>().UnSubscribe(item.OnAllocate);
         }
     }
 }

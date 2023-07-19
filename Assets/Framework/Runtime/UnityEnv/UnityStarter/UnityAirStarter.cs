@@ -21,9 +21,6 @@ namespace AirFramework
         static void Initialize()
         {
             SingletonInitializeAfterSceneLoad();
-
-           
-
         }
 
         private void Awake()
@@ -36,24 +33,22 @@ namespace AirFramework
 
             AirEngine.Initialize(coroutineRunner);
 
-            Framework.Message.Operator<IUpdate>().Subscribe(AirEngine.DriveUpdate);
-
-            Initializer.TryCreateByReflection();
+            
         }
 
         private void Update()
         {
-            Framework.GetModule<MessageManager>().Operator<IUpdate>().Publish(Time.deltaTime);
+            Framework.GetModule<MessageManager>().Dispatcher<IUpdate>().Publish(Time.deltaTime);
         }
 
         private void FixedUpdate()
         {
-            Framework.GetModule<MessageManager>().Operator<IFixedUpdate>().Publish(Time.fixedDeltaTime);
+            Framework.GetModule<MessageManager>().Dispatcher<IFixedUpdate>().Publish(Time.fixedDeltaTime);
         }
 
-        private void LateUpdate()
+        private void LateUpdate() 
         {
-            Framework.GetModule<MessageManager>().Operator<ILateUpdate>().Publish();
+            Framework.GetModule<MessageManager>().Dispatcher<ILateUpdate>().Publish();
         }
 
         private void OnDestroy()

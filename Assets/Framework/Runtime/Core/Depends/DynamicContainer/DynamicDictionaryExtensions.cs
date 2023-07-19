@@ -80,6 +80,27 @@ namespace AirFramework
         }
 
         /// <summary>
+        /// 尝试从动态字典获取一个值，如果该值存在则返回true并传出Value
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="K"></typeparam>
+        /// <param name="dictionary"></param>
+        /// <param name="key"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static bool GetValueOrDefault<T, K>(this DynamicDictionary<T, K> dictionary, T key, out K value)
+        {
+            if (dictionary.ContainsKey(key))
+            {
+                value = dictionary[key];
+                return true;
+            }
+            value = default;
+            return false;
+        }
+
+
+        /// <summary>
         /// 尝试从动态字典移除一个值并调用Dispose，如果该值存在则返回true
         /// </summary>
         /// <typeparam name="T"></typeparam>

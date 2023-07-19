@@ -1,4 +1,4 @@
-using System;
+锘縰sing System;
 using System.Collections.Generic;
 using System.Reflection;
 namespace AirFramework
@@ -6,44 +6,22 @@ namespace AirFramework
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
     public class FrameworkInitializeAttribute : Attribute
     {
+
     }
-    public class Initializer
+    public class FrameworkInitializer
     {
         private static Dictionary<Type, object> bucket = new();
 
-        internal static void CreateByReflection()
+        internal static void CreateByReflection(Type type)
         {
-
-            //Stopwatch watch = Stopwatch.StartNew();
-            var assemblies = AppDomain.CurrentDomain.GetAssemblies();
-            foreach (var assembly in assemblies)
+            if (type.IsAbstract || type.IsInterface) return;
+            bool result = type.GetCustomAttribute<FrameworkInitializeAttribute>() != null;
+            if (result)
             {
-                var types = assembly.GetTypes();
-                foreach (var type in types)
-                {
-                    bool result = type.GetCustomAttribute<FrameworkInitializeAttribute>() != null;
-
-                    if (result)
-                    {
-                        var obj = Activator.CreateInstance(type);
-                        obj.StartObjLife();
-                        bucket.TryAdd(type, obj);
-                    }
-                }
+                var obj = Activator.CreateInstance(type);
+                obj.StartObjLife();
+                bucket.TryAdd(type, obj);
             }
-            // watch.Stop();
-            // UnityEngine.Debug.Log("花费:" + watch.Elapsed);
-        }
-
-
-
-        private static bool Initialized { get; set; } = false;
-        internal static void TryCreateByReflection()
-        {
-            if (Initialized) return;
-            Initialized = true;
-
-            CreateByReflection();
         }
 
         public static bool Exist(Type type) => bucket.ContainsKey(type);
@@ -51,7 +29,7 @@ namespace AirFramework
 
 
         /// <summary>
-        /// 尝试安全卸载
+        /// 灏濊瘯瀹夊叏鍗歌浇
         /// </summary>
         /// <param name="type"></param>
         public static void Unload(Type type)
@@ -63,7 +41,7 @@ namespace AirFramework
             }
         }
         /// <summary>
-        /// 尝试安全卸载
+        /// 灏濊瘯瀹夊叏鍗歌浇
         /// </summary>
         /// <param name="type"></param>
         public static void Unload<T>() => Unload(typeof(T));
@@ -76,7 +54,7 @@ namespace AirFramework
             bucket.Clear();
         }
         /// <summary>
-        /// 尝试获取，可能为default
+        /// 灏濊瘯鑾峰彇锛屽彲鑳戒负default
         /// </summary>
         /// <param name="type"></param>
         public static object GetToObject(Type type)
@@ -85,7 +63,7 @@ namespace AirFramework
             return result;
         }
         /// <summary>
-        /// 尝试获取，可能为default
+        /// 灏濊瘯鑾峰彇锛屽彲鑳戒负default
         /// </summary>
         /// <param name="type"></param>
         public static object GetToObject<T>()
@@ -93,7 +71,7 @@ namespace AirFramework
             return GetToObject(typeof(T));
         }
         /// <summary>
-        /// 尝试获取，可能为default
+        /// 灏濊瘯鑾峰彇锛屽彲鑳戒负default
         /// </summary>
         /// <param name="type"></param>
         public static T GetToGeneric<T>()

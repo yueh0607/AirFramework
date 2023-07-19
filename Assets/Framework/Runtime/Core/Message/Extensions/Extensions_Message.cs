@@ -13,13 +13,17 @@ namespace AirFramework
             container?.Clear();
         }
 
+        /// <summary>
+        /// 移除对象身上的的全部事件
+        /// </summary>
+        /// <param name="item"></param>
         public static void RemoveAllMessage(this IMessageReceiver item)
         {
             Framework.Message.TryRemoveAllFromReceiver(item);
         }
 
         #region OperatorGeneric
-        private static MessageOperatorBox<IMessage> GetMessageBoxDefault<T>(this MessageManager manager, IMessageReceiver receiver = null)
+        private static MessageOperatorBox<IMessage> GetMessageBoxDefault<T>(this MessageManager manager, IMessageReceiver receiver = null,bool autoCreate = true)
         {
             return manager.dispatchersContainer.GetValueOrAddDefault(typeof(T), static () => new MessageDispatcherBox<IMessage>())
                     .Value.GetOrAddOperator(receiver ?? manager);
@@ -35,7 +39,6 @@ namespace AirFramework
         {
             var x = manager.GetMessageBoxDefault<M>();
             return UnsafeHandler.As<MessageOperatorBox<IMessage>, MessageOperatorBox<IGenericEvent<T1>>>(ref x);
-
         }
         public static IOperatorOut<IGenericEvent<T1, T2>> GenericOperator<M, T1, T2>(this MessageManager manager, IMessageReceiver receiver = null) where M : IGenericEvent<T1, T2>
         {

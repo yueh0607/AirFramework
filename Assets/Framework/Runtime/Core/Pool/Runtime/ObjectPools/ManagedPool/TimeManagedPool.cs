@@ -14,7 +14,7 @@ namespace AirFramework
     /// 管理可以自动管理的对象
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class TimeRecyclePool<T> : GenericPool<T>, ITimeRecyclePool where T : class
+    public class TimeManagedPool<T> : GenericPool<T>, ITimeManagedPool where T : class
     {
 
         protected int AllocateCountPerCycle { get; private set; } = 0;
@@ -26,7 +26,7 @@ namespace AirFramework
             AllocateCountPerCycle++;
         }
 
-        public TimeRecyclePool(Func<T> onCreate = null, Action<T> onDestroy = null, Action<T> onRecycle = null, Action<T> onAllocate = null) : base(onCreate, onDestroy, onRecycle, onAllocate)
+        public TimeManagedPool(Func<T> onCreate = null, Action<T> onDestroy = null, Action<T> onRecycle = null, Action<T> onAllocate = null) : base(onCreate, onDestroy, onRecycle, onAllocate)
         {
             
         }
@@ -52,7 +52,7 @@ namespace AirFramework
                     //如果计时器是空，则初始化并启动
                     if (timer == null)
                     {
-                        timer = new ();
+                        timer = new TimerCall();
                         //HandleQueue = new HandleQueue<T>(OnDestroy,1).StartObjLife();
                         timer.OnCompleted += OnCycleRecycle;
                         timer.CallPerFrame += () =>
@@ -69,18 +69,17 @@ namespace AirFramework
                     //如果不在运行，则启动计时器
                     if (timer.State != TimerState.Running)
                     {
-                        Internal.AirEngine.Update += ((IUpdate)timer).Update;
+                        //Internal.AirEngine.Update += ((IUpdate)timer).Update;
+                        timer.StartLife();
                         timer.Start();
-                        //HandleQueue.StartObjLife();
                     }
 
                 }
                 //如果周期小于等于0，则关闭计时器
                 else
                 {
-                    Internal.AirEngine.Update -= ((IUpdate)timer).Update;
+                    timer.CloseLife();
                     timer.Reset();
-                    //HandleQueue.CloseObjLife();
                 }
             }
         }
