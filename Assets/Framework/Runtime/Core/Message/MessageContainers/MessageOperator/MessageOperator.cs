@@ -21,7 +21,7 @@ namespace AirFramework
         /// <summary>
         /// 遍历位置
         /// </summary>
-        public int IntervalIndex = 0;
+        public int IntervalIndex { get; private set; } = 0;
         private int MaxIndex = -1;
         protected override void OnDispose()
         {

@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace AirFrameworkEditor
+namespace AirFramework.Editor
 {
     public class FileCreateHelper : MonoBehaviour
     {

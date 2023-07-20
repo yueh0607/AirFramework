@@ -1,6 +1,9 @@
 ﻿namespace AirFramework
 {
-
+    public interface ILateUpdate : ISendEvent, IMessageReceiver
+    {
+        void LateUpdate();
+    }
     public class LateUpdateHandler : LifeCycleHandler<ILateUpdate>
     {
         public override void OnLifeCycleRegister(ILateUpdate item)

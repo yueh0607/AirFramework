@@ -5,7 +5,7 @@ namespace AirFramework
     {
 
         /// <summary>
-        /// 发布全局消息
+        /// 对全局的事件进行Publish
         /// </summary>
         public static void Publish(this IDispatcherOut<ISendEvent> container)
         {
@@ -28,7 +28,7 @@ namespace AirFramework
             }
         }
         /// <summary>
-        /// 发布全局消息
+        /// 对全局的事件进行Publish
         /// </summary>
         public static void Publish<T1>(this IDispatcherOut<ISendEvent<T1>> container, T1 arg1)
         {
@@ -46,9 +46,8 @@ namespace AirFramework
                 }
             }
         }
-
         /// <summary>
-        /// 发布全局消息
+        /// 对全局的事件进行Publish
         /// </summary>
         public static void Publish<T1, T2>(this IDispatcherOut<ISendEvent<T1, T2>> container, T1 arg1, T2 arg2)
         {
@@ -67,9 +66,8 @@ namespace AirFramework
             }
         }
         /// <summary>
-        /// 发布全局消息
+        /// 对全局的事件进行Publish
         /// </summary>
-
         public static void Publish<T1, T2, T3>(this IDispatcherOut<ISendEvent<T1, T2, T3>> container, T1 arg1, T2 arg2, T3 arg3)
         {
             if (container is null) return;
@@ -86,9 +84,8 @@ namespace AirFramework
             }
         }
         /// <summary>
-        /// 发布全局消息
+        /// 对全局的事件进行Publish
         /// </summary>
-
         public static void Publish<T1, T2, T3, T4>(this IDispatcherOut<ISendEvent<T1, T2, T3, T4>> container, T1 arg1, T2 arg2, T3 arg3, T4 arg4)
         {
             if (container is null) return;
@@ -105,7 +102,7 @@ namespace AirFramework
             }
         }
         /// <summary>
-        /// 发布全局消息
+        /// 对全局的事件进行Publish
         /// </summary>
         public static void Publish<T1, T2, T3, T4, T5>(this IDispatcherOut<ISendEvent<T1, T2, T3, T4, T5>> container, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5)
         {

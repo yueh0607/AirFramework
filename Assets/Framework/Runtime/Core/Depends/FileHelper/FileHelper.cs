@@ -15,7 +15,7 @@ namespace AirFramework
     public class FileHelper
     {
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void CheckCreatePath(string path)
+        public static void CheckAndCreatePath(string path)
         {
             string directoryName = Path.GetDirectoryName(path);
             if (!Directory.Exists(directoryName)) Directory.CreateDirectory(directoryName);

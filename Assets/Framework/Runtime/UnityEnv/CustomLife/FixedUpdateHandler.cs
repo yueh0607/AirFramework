@@ -1,5 +1,9 @@
 ﻿namespace AirFramework
 {
+    public interface IFixedUpdate : ISendEvent<float>, IMessageReceiver
+    {
+        void FixedUpdate(float fixedTime);
+    }
     public class FixedUpdateHandler : LifeCycleHandler<IFixedUpdate>
     {
         public override void OnLifeCycleRegister(IFixedUpdate item)

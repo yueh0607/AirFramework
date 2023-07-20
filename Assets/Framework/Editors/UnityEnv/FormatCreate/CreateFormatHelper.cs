@@ -1,7 +1,7 @@
 ﻿using AirFramework;
 using UnityEditor;
 
-namespace AirFrameworkEditor
+namespace AirFramework.Editor
 {
     public class CreateFormatHelper
     {

@@ -4,7 +4,7 @@ using System.Text;
 using UnityEditor;
 using UnityEditor.ProjectWindowCallback;
 
-namespace AirFrameworkEditor
+namespace AirFramework.Editor
 {
     //用于创建文本
     class CreateScriptAsset : EndNameEditAction

@@ -1,6 +1,6 @@
 {
     "name": "AirFramework.Editor",
-    "rootNamespace": "AirFrameworkEditor",
+    "rootNamespace": "",
     "references": [
         "GUID:24e8af817f14eeb4fb2babd5c567f8c8"
     ],

@@ -56,6 +56,9 @@ namespace AirFramework
             }
             mop.Reset();
         }
+        /// <summary>
+        /// 发布
+        /// </summary>
         public static void Publish<T1, T2, T3, T4>(this IOperatorOut<ISendEvent<T1, T2, T3, T4>> container, T1 arg1, T2 arg2, T3 arg3, T4 arg4)
         {
             if (container is null) return;
