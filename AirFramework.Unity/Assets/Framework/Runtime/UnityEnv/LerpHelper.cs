@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace AirFramework
 {
-    public static partial class LerpHelper
+    public static class UnityLerpHelper
     {
         public static Vector2 Lerp(Vector2 start, Vector2 end, float step)
         {

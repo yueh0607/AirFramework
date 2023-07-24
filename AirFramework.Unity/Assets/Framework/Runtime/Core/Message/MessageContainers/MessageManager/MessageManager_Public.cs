@@ -4,7 +4,6 @@
  * Description : 管理器公开方法，通过这些方法实现核心操作的匹配和泛型约束
  ********************************************************************************************/
 
-using AirFramework.Internal;
 namespace AirFramework
 {
     /// <summary>
@@ -12,8 +11,8 @@ namespace AirFramework
     /// </summary>
     public partial class MessageManager : IMessageReceiver
     {
-        
-        public LifeCycleManager LifeCycle { get;  } = new LifeCycleManager();
+
+        public LifeCycleManager LifeCycle { get; } = new LifeCycleManager();
 
 
 

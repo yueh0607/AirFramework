@@ -11,7 +11,7 @@ namespace AirFramework
         /// <returns></returns>
         public static UnitList<T1> Call<T1>(this IDispatcherOut<ICallEvent<T1>> container)
         {
-          
+
             var result = Framework.Pool.Allocate<UnitList<T1>>();
             if (container is null) return result;
             //获取动态队列

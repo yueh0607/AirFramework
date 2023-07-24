@@ -1,16 +1,11 @@
-﻿using AirFramework;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace AirFramework
+﻿namespace AirFramework
 {
-    public abstract class AbstractModule : Unit,IUpdate
+    public abstract class AbstractModule : Unit, IUpdate
     {
 
         public abstract void OnCreate();
         public abstract void Update(float deltaTime);
 
-        
+
     }
 }

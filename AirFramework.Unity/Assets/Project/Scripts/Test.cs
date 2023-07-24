@@ -1,11 +1,5 @@
 ﻿using AirFramework;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
-using UnityEngine.Analytics;
-using UnityEngine.Profiling;
 
 
 class Test2 : Unit, IAllocate, IRecycle
@@ -40,7 +34,7 @@ public class Test : IUpdate
 
     //async AsyncTask DoA()
     //{
-        
+
     //}
     //async AsyncTask DoB()
     //{

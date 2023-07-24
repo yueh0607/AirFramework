@@ -34,9 +34,9 @@ namespace AirFramework
             return OnCreate();
         }
         protected virtual void OnItemAllocate(T item)
-        { 
+        {
             OnAllocate?.Invoke(item);
-            
+
         }
 
         protected virtual void OnItemRecycle(T item)

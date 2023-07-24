@@ -9,7 +9,6 @@
  */
 
 using System;
-using System.Collections.Generic;
 
 namespace AirFramework
 {
@@ -41,10 +40,10 @@ namespace AirFramework
             OnDispose();
 
             Parent?.RemoveChild(this, false);
-            Parent= null;
+            Parent = null;
             childs?.Dispose();
-            components?.Dispose() ;
-            
+            components?.Dispose();
+
         }
 
         /// <summary>
@@ -78,7 +77,7 @@ namespace AirFramework
 
         public Unit()
         {
-            
+
             _id = IDs.Allocate();
         }
         ~Unit()
@@ -87,8 +86,8 @@ namespace AirFramework
             if (!Disposed) Dispose();
             childs?.Dispose();
             components?.Dispose();
-            childs= null;
-            components= null;
+            childs = null;
+            components = null;
         }
     }
 
@@ -112,16 +111,16 @@ namespace AirFramework
     public abstract partial class Unit
     {
 
-        private UnitKeyDynamicDictionary<long, Unit> childs=null;
+        private UnitKeyDynamicDictionary<long, Unit> childs = null;
         public UnitKeyDynamicDictionary<long, Unit> Childs
         {
             get
             {
-                if(childs==null) childs = Framework.Pool.Allocate<UnitKeyDynamicDictionary<long, Unit>>();
+                if (childs == null) childs = Framework.Pool.Allocate<UnitKeyDynamicDictionary<long, Unit>>();
                 return childs;
             }
         }
-        private UnitKeyDynamicDictionary<Type,Unit> components=null;
+        private UnitKeyDynamicDictionary<Type, Unit> components = null;
 
         public UnitKeyDynamicDictionary<Type, Unit> Components
         {
@@ -165,23 +164,23 @@ namespace AirFramework
 
         public Unit GetChild(long id)
         {
-            if(Childs.Value.ContainsKey(id)) return Childs.Value[id];
+            if (Childs.Value.ContainsKey(id)) return Childs.Value[id];
             return null;
         }
         public Unit GetComponent(Type type)
         {
-            if(Components.Value.ContainsKey(type)) return Components.Value[type];
+            if (Components.Value.ContainsKey(type)) return Components.Value[type];
             return null;
         }
 
-        public T GetComponent<T>() where T:Unit
+        public T GetComponent<T>() where T : Unit
         {
-            return (T) GetComponent(typeof(T));
+            return (T)GetComponent(typeof(T));
         }
-        public UnitList<T> GetComponents<T>() where T:Unit
+        public UnitList<T> GetComponents<T>() where T : Unit
         {
             UnitList<T> list = Framework.Pool.Allocate<UnitList<T>>();
-            foreach(var component in Components.Value)
+            foreach (var component in Components.Value)
             {
                 if (component.Value is T) list.Value.Add((T)(component.Value));
             }

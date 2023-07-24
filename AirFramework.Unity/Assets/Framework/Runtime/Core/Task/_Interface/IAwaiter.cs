@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using UnityEngine;
+﻿using System.Runtime.CompilerServices;
 
 namespace AirFramework
 {
@@ -18,12 +15,12 @@ namespace AirFramework
         bool IsCompleted { get; }
         T GetResult();
     }
-    public interface ICriticalAwaiter : IAwaiter,ICriticalNotifyCompletion
+    public interface ICriticalAwaiter : IAwaiter, ICriticalNotifyCompletion
     {
-       
+
     }
 
-    public interface ICriticalAwaiter<T> : IAwaiter<T>,ICriticalNotifyCompletion
+    public interface ICriticalAwaiter<T> : IAwaiter<T>, ICriticalNotifyCompletion
     {
 
     }

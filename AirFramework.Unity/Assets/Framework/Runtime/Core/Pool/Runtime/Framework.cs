@@ -22,7 +22,7 @@ namespace AirFramework
         /// 托管池管理器
         /// </summary>
         [DebuggerHidden]
-        public static PoolManager Pool =>GetModule<PoolManager>();
+        public static PoolManager Pool => GetModule<PoolManager>();
 
 
 

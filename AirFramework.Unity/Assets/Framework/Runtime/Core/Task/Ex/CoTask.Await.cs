@@ -42,7 +42,7 @@ namespace AirFramework
                 }
                 task.Finish(ETaskStatus.Succeed);
             }
-            var task =Framework.Pool.Allocate<AsyncTask>();
+            var task = Framework.Pool.Allocate<AsyncTask>();
             AirEngine.StartCoroutine(DelayTask(seconds, task));
             return task;
         }
@@ -76,7 +76,7 @@ namespace AirFramework
                 }
                 task.Finish(ETaskStatus.Succeed);
             }
-            var task =Framework.Pool.Allocate<AsyncTask>();
+            var task = Framework.Pool.Allocate<AsyncTask>();
             if (count > 0)
             {
                 var module = Framework.GetModule<TaskModule>();
@@ -106,7 +106,7 @@ namespace AirFramework
         /// <returns></returns>
         public static AsyncTask Refer(Func<AsyncTask> task)
         {
-            AsyncTask _task =  Framework.Pool.Allocate<AsyncTask>();
+            AsyncTask _task = Framework.Pool.Allocate<AsyncTask>();
             _task.OnAwait += task;
             return _task;
         }
@@ -206,7 +206,7 @@ namespace AirFramework
                 }
             }
             AsyncTask<T> task = Framework.Pool.Allocate<AsyncTask<T>>();
-           
+
             AirEngine.StartCoroutine(WaitAnyTask(tasks, task, onlySucceed));
             return task;
         }
@@ -305,7 +305,7 @@ namespace AirFramework
                     yield return null;
                 }
             }
-            AsyncTask<T[]> task = Framework.Pool.Allocate<AsyncTask<T[]>>(); 
+            AsyncTask<T[]> task = Framework.Pool.Allocate<AsyncTask<T[]>>();
             AirEngine.StartCoroutine(WaitAnyTask(tasks, task, sorted));
             return task;
         }

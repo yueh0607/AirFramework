@@ -7,14 +7,13 @@
  * 直接调用Dispose方法直接回收到池内，如果是通过PoolManager申请，回收时将自动重置
  */
 
-using System;
 namespace AirFramework
 {
     /// <summary>
     /// 用于实现支持using释放，可以自主回收到池的类型
     /// </summary>
 
-    public abstract class PoolableObject : Unit, IAllocate,IRecycle
+    public abstract class PoolableObject : Unit, IAllocate, IRecycle
     {
 
 

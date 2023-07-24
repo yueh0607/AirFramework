@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace AirFramework.Utility
+﻿namespace AirFramework.Utility
 {
     public static class LerpHelper
     {
@@ -16,7 +14,7 @@ namespace AirFramework.Utility
         {
             return start + (int)(step * (end - start));
         }
-  
+
 
     }
 }

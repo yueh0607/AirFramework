@@ -1,11 +1,6 @@
 ﻿using AirFramework.Internal;
-using CodiceApp.EventTracking;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-using UnityEngine;
 
 namespace AirFramework
 {

@@ -1,13 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace AirFramework
+﻿namespace AirFramework
 {
     public class MVModule : AbstractModule
     {
 
-        
+
         public override void OnCreate()
         {
 
@@ -32,7 +28,7 @@ namespace AirFramework
 
         public async AsyncTask Hide()
         {
-            
+
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 namespace AirFramework
 {
     [AsyncMethodBuilder(typeof(AsyncTaskBuilder))]
-    public partial class AsyncTask : AsyncTaskBase,IAsyncTokenProperty,IAsyncTask
+    public partial class AsyncTask : AsyncTaskBase, IAsyncTokenProperty, IAsyncTask
     {
 
         /// <summary>
@@ -219,7 +219,7 @@ namespace AirFramework
             this.continuation = continuation;
         }
 
-      
+
 
         public static explicit operator AsyncTask(AsyncTask<T> task)
         {
@@ -260,7 +260,7 @@ namespace AirFramework
             }
             remove
             {
-                
+
             }
         }
     }

@@ -1,10 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace AirFramework
+﻿namespace AirFramework
 {
-    public interface IAwaitable 
+    public interface IAwaitable
     {
         public IAwaiter GetAwaiter();
     }

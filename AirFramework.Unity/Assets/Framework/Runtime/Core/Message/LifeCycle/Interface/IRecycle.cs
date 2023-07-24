@@ -9,7 +9,7 @@
 
 namespace AirFramework
 {
-    public interface IRecycle:ISendEvent
+    public interface IRecycle : ISendEvent
     {
         public void OnRecycle();
     }

@@ -20,7 +20,7 @@ namespace AirFramework
     /// <summary>
     /// 到达指定时间自动回调
     /// </summary>
-    public sealed class TimerCall : PoolableObject, IUpdate,ITaskCancelatable
+    public sealed class TimerCall : PoolableObject, IUpdate, ITaskCancelatable
     {
 
         private bool OnceRecycle { get; set; } = false;
@@ -83,7 +83,7 @@ namespace AirFramework
 
         void ITaskCancelatable.OnPause()
         {
-           Pause();
+            Pause();
         }
 
         void ITaskCancelatable.OnResume()

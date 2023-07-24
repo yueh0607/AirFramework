@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 namespace AirFramework
 {
@@ -16,7 +13,7 @@ namespace AirFramework
         /// <returns></returns>
         public static bool RoundEqual(this float a, float b, int bitCount = 6)
         {
-            
+
             return Math.Abs(a - b) < Math.Pow(10D, -bitCount);
         }
         /// <summary>
@@ -28,7 +25,7 @@ namespace AirFramework
         /// <returns></returns>
         public static bool RoundEqual(this double a, double b, int bitCount = 15)
         {
-            
+
             return Math.Abs(a - b) < Math.Pow(10D, -bitCount);
         }
         /// <summary>
@@ -49,7 +46,7 @@ namespace AirFramework
         /// <returns></returns>
         public static int RoundToInt(this double a)
         {
-            return (int)(Math.Round(a)+0.5D);
+            return (int)(Math.Round(a) + 0.5D);
         }
 
 

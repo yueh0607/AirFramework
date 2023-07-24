@@ -1,11 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace AirFramework
+﻿namespace AirFramework
 {
-    public interface IModel 
+    public interface IModel
     {
-        
+
     }
 }

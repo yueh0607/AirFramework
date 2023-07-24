@@ -12,7 +12,7 @@ namespace AirFramework
     /// 能自动绑定生命的池
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class LifeCyclePool<T> :TimeManagedPool<T> where T : class
+    public class LifeCyclePool<T> : TimeManagedPool<T> where T : class
     {
 
         protected override void OnItemAllocate(T item)
@@ -23,10 +23,10 @@ namespace AirFramework
             if (item is IMessageReceiver receiver)
             {
                 Framework.Message.LifeCycle.AnalyseAddAll(item);
-                if(item is IAllocate)
-                receiver.Operator<IAllocate>().Publish();
+                if (item is IAllocate)
+                    receiver.Operator<IAllocate>().Publish();
             }
-            
+
         }
 
         protected override void OnItemRecycle(T item)
@@ -38,14 +38,14 @@ namespace AirFramework
             {
                 ((IMessageReceiver)item)?.Operator<IRecycle>().Publish();
                 Framework.Message.LifeCycle.AnalyseRemoveAll(item);
-                
+
             }
         }
 
         public LifeCyclePool(Func<T> onCreate = null, Action<T> onDestroy = null, Action<T> onRecycle = null, Action<T> onAllocate = null) : base(onCreate, onDestroy, onRecycle, onAllocate)
         {
 
-            
+
         }
 
     }

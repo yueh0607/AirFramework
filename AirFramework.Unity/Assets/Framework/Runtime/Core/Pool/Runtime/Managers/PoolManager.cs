@@ -14,7 +14,6 @@
 
 using System;
 using System.Collections.Generic;
-using static UnityEditor.Progress;
 
 namespace AirFramework
 {
@@ -85,15 +84,15 @@ namespace AirFramework
         /// </summary>
         /// <typeparam name="T"></typeparam>
 
-        public void ReleasePool<T>() where T : class=>ReleasePool(typeof(T));
-        
+        public void ReleasePool<T>() where T : class => ReleasePool(typeof(T));
+
         /// <summary>
         /// 不安全的释放池,需要自行保证T是IPoolable
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        internal void UnsafeReleasePool<T>() where T : class=>ReleasePool(typeof(T));
+        internal void UnsafeReleasePool<T>() where T : class => ReleasePool(typeof(T));
 
-        
+
 
 
         /// <summary>
@@ -132,12 +131,12 @@ namespace AirFramework
 
         public override void OnCreate()
         {
-            
+
         }
 
         public override void Update(float deltaTime)
         {
-        
+
         }
 
         protected override void OnDispose()

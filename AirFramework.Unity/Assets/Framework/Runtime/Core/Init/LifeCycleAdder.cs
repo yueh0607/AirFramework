@@ -1,9 +1,5 @@
 ﻿using AirFramework.Utility;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Reflection;
-using UnityEngine;
 
 namespace AirFramework
 {
@@ -13,7 +9,7 @@ namespace AirFramework
         public static void AddAllLifeCycle(Type type)
         {
             if (!type.IsClass || type.IsAbstract || type.IsInterface) return;
-            if (!typeof(LifeCycleHandler).IsAssignableFrom(type))return;
+            if (!typeof(LifeCycleHandler).IsAssignableFrom(type)) return;
 
             var gen = ReflectionHelper.GetRawGeneric(type, typeof(LifeCycleHandler<>));
             if (gen == null) return;
@@ -22,7 +18,7 @@ namespace AirFramework
             //Debug.Log($"添加:{inter.Name},{type.Name}");
         }
 
-      
+
     }
-   
+
 }

@@ -20,7 +20,7 @@ namespace AirFramework
     /// </summary>
     public interface IMessageReceiver { }
     //标记消息
-    public interface IMessageBase:IMessage { }
+    public interface IMessageBase : IMessage { }
 
 
 

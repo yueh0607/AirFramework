@@ -9,7 +9,7 @@
 
 namespace AirFramework
 {
-    public interface IAllocate:ISendEvent
+    public interface IAllocate : ISendEvent
     {
         public void OnAllocate();
     }

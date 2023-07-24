@@ -11,7 +11,7 @@ namespace AirFramework
     /// <summary>
     /// 消息派发管理器
     /// </summary>
-    public partial class MessageManager :AbstractModule, IMessageReceiver
+    public partial class MessageManager : AbstractModule, IMessageReceiver
     {
         /// <summary>
         /// 层级容器，存储派发器
@@ -20,17 +20,17 @@ namespace AirFramework
 
         public override void OnCreate()
         {
-            
+
         }
 
         public override void Update(float deltaTime)
         {
-            
+
         }
 
         protected override void OnDispose()
         {
-            
+
         }
     }
 }

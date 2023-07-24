@@ -6,7 +6,6 @@
 
 using AirFramework.Internal;
 using System.Runtime.InteropServices;
-using UnityEditor;
 
 namespace AirFramework
 {
@@ -16,7 +15,7 @@ namespace AirFramework
 
         public MessageDispatcher Value { get; } = new MessageDispatcher();
 
-      
+
         public MessageDispatcherBox()
         {
 

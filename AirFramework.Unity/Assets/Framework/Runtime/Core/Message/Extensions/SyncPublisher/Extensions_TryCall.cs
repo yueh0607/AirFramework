@@ -13,13 +13,13 @@ namespace AirFramework
         /// <exception cref="CallNullEventException"></exception>
         public static bool TryCall<T1>(this IOperatorOut<ICallEvent<T1>> container, out T1 result)
         {
-            result= default;
+            result = default;
             if (container is null) return false;
             var events = ((MessageOperatorBox<IMessage>)container)?.Value;
             if (events == null || events.Count == 0) return false;
             while (events.GetNext(out var dele))
             {
-                result=(dele as Func<T1>).Invoke();
+                result = (dele as Func<T1>).Invoke();
             }
             events.Reset();
             return true;
@@ -39,7 +39,7 @@ namespace AirFramework
             if (events == null || events.Count == 0) return false;
             while (events.GetNext(out var dele))
             {
-                result = (dele as Func<T1,T2>).Invoke(arg1);
+                result = (dele as Func<T1, T2>).Invoke(arg1);
             }
             events.Reset();
             return true;

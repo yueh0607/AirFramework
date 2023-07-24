@@ -78,7 +78,7 @@ namespace AirFramework
         /// <param name="token"></param>
         /// <returns></returns>
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static T WithToken<T>(this T task, out AsyncToken token) where T:IAsyncTokenProperty
+        public static T WithToken<T>(this T task, out AsyncToken token) where T : IAsyncTokenProperty
         {
             var tok = Framework.Pool.Allocate<AsyncToken>();
             tok.node = task.Token;
@@ -86,7 +86,7 @@ namespace AirFramework
             return task;
         }
 
-    
+
 
 #if !IS_WEBGL
 

@@ -66,7 +66,7 @@ namespace AirFramework
         /// <returns></returns>
         public bool GetNext(out Delegate dele)
         {
-            if (MaxIndex == -1) MaxIndex = EventsContainer.Value.Count ;
+            if (MaxIndex == -1) MaxIndex = EventsContainer.Value.Count;
             if (IntervalIndex >= 0 && IntervalIndex < Math.Min(EventsContainer.Value.Count, MaxIndex))
             {
                 dele = EventsContainer.Value[IntervalIndex++];

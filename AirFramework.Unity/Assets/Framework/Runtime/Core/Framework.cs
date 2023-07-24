@@ -1,40 +1,37 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using AirFramework.Internal;
+using System;
 using System.Runtime.CompilerServices;
-using UnityEngine;
-using AirFramework.Internal;
 namespace AirFramework
 {
     public static partial class Framework
     {
         #region Time
-        public static float DeltaTime 
+        public static float DeltaTime
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get =>AirEngine.DeltaTime; 
+            get => AirEngine.DeltaTime;
         }
 
-        public static float TimeScale 
+        public static float TimeScale
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => AirEngine.TimeScale; 
+            get => AirEngine.TimeScale;
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => AirEngine.TimeScale = value; 
+            set => AirEngine.TimeScale = value;
         }
 
         public static event Action<float> Update
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            add=> AirEngine.Update += value;
+            add => AirEngine.Update += value;
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             remove => AirEngine.Update -= value;
         }
 
         public static event Action<Type> InitialReflection
         {
-            add=> AirEngine.InitialReflection += value;
-            remove=> AirEngine.InitialReflection -= value;
+            add => AirEngine.InitialReflection += value;
+            remove => AirEngine.InitialReflection -= value;
         }
         #endregion
 
@@ -45,21 +42,21 @@ namespace AirFramework
         /// </summary>
         /// <typeparam name="T"></typeparam>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void CreateModule(Type type)=>AirEngine.CreateModule(type);
+        public static void CreateModule(Type type) => AirEngine.CreateModule(type);
         /// <summary>
         /// 存在时返回模块，不存在时返回null
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static AbstractModule GetModule(Type type)=>AirEngine.GetModule(type);
+        public static AbstractModule GetModule(Type type) => AirEngine.GetModule(type);
 
         /// <summary>
         /// 销毁模块，exThrow为true时，不存在则异常，否则不存在则静默处理
         /// </summary>
         /// <typeparam name="T"></typeparam>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void DestroyModule(Type type, bool exThrow = false)=>AirEngine.DestroyModule(type, exThrow);
+        public static void DestroyModule(Type type, bool exThrow = false) => AirEngine.DestroyModule(type, exThrow);
 
         /// <summary>
         /// 检查是否存在模块，如果不存在则创建
@@ -88,7 +85,7 @@ namespace AirFramework
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool HasModule(Type type) =>AirEngine.HasModule(type);
+        public static bool HasModule(Type type) => AirEngine.HasModule(type);
         /// <summary>
         /// 存在模块时返回，不存在时创建
         /// </summary>
@@ -96,7 +93,7 @@ namespace AirFramework
         /// <param name="parameters"></param>
         /// <returns></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static T GetOrCreateModule<T>() where T : AbstractModule=>AirEngine.GetOrCreateModule<T>();
+        public static T GetOrCreateModule<T>() where T : AbstractModule => AirEngine.GetOrCreateModule<T>();
         /// <summary>
         /// 销毁模块，exThrow为true时，不存在则异常，否则不存在则静默处理
         /// </summary>
@@ -106,6 +103,6 @@ namespace AirFramework
         #endregion
 
 
- 
+
     }
 }

@@ -7,9 +7,6 @@
 
 
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using AirFramework;
 
 namespace AirFramework
 {
@@ -54,16 +51,16 @@ namespace AirFramework
         /// <param name="getter"></param>
         public LazyProperty(Func<T> getter)
         {
-            activatorCreate= false;
+            activatorCreate = false;
             valueGetter = getter;
         }
 
         /// <summary>
         /// 使用Activator进行默认构造函数的自动创建
         /// </summary>
-        public LazyProperty() 
+        public LazyProperty()
         {
-            activatorCreate= true;
+            activatorCreate = true;
         }
     }
 }

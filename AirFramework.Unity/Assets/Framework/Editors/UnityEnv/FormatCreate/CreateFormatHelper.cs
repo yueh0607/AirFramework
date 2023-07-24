@@ -1,5 +1,4 @@
-﻿using AirFramework;
-using UnityEditor;
+﻿using UnityEditor;
 
 namespace AirFramework.Editor
 {

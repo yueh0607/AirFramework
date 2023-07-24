@@ -1,6 +1,5 @@
 ﻿using AirFramework.Internal;
 using UnityEditor;
-using UnityEditor.VersionControl;
 
 namespace AirFramework
 {

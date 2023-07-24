@@ -6,11 +6,9 @@
 ************************************************************************************/
 
 
+using AirFramework.Internal;
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using AirFramework;
-using AirFramework.Internal;
 using UnityEngine;
 
 namespace AirFramework
@@ -33,7 +31,7 @@ namespace AirFramework
 
             AirEngine.Initialize(coroutineRunner);
 
-            
+
         }
 
         private void Update()
@@ -46,7 +44,7 @@ namespace AirFramework
             Framework.GetModule<MessageManager>().Dispatcher<IFixedUpdate>().Publish(Time.fixedDeltaTime);
         }
 
-        private void LateUpdate() 
+        private void LateUpdate()
         {
             Framework.GetModule<MessageManager>().Dispatcher<ILateUpdate>().Publish();
         }

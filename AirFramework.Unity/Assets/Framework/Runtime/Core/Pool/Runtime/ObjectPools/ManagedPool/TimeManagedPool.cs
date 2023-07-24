@@ -6,7 +6,6 @@
  */
 
 using System;
-using System.Diagnostics;
 
 namespace AirFramework
 {
@@ -28,12 +27,12 @@ namespace AirFramework
 
         public TimeManagedPool(Func<T> onCreate = null, Action<T> onDestroy = null, Action<T> onRecycle = null, Action<T> onAllocate = null) : base(onCreate, onDestroy, onRecycle, onAllocate)
         {
-            
+
         }
 
 
         TimerCall timer;
-        
+
 
         private float recycleTime = -1;
         public float RecycleTime

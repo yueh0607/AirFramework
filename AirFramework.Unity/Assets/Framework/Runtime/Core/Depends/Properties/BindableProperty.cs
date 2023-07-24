@@ -38,7 +38,7 @@ namespace AirFramework.Utility.RefBuild
 
         private bool _loopListen = false;
 
-        Action<float > tempListenAction=null;
+        Action<float> tempListenAction = null;
         public BindableProperty(Func<T> getter, Action<T> setter, bool loopListen = false)
         {
             mode = true;
