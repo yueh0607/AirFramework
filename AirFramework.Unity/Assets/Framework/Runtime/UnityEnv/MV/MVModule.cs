@@ -22,5 +22,17 @@ namespace AirFramework
         {
 
         }
+
+
+
+        public async AsyncTask Show()
+        {
+
+        }
+
+        public async AsyncTask Hide()
+        {
+            
+        }
     }
 }
