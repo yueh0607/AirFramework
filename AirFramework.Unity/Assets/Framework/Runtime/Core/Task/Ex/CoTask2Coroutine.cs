@@ -12,7 +12,7 @@ namespace AirFramework
     {
 
         /// <summary>
-        /// 把CoTask转为协程，注意可以使用异步lambda来获取未在执行的协程
+        /// 把AsyncTask转为协程，注意可以使用异步lambda来获取未在执行的协程
         /// </summary>
         /// <param name="method"></param>
         /// <returns></returns>
@@ -27,7 +27,7 @@ namespace AirFramework
 
 
         /// <summary>
-        /// 把CoTask转为协程，注意可以使用异步lambda来获取未在执行的协程
+        /// 把AsyncTask转为协程，注意可以使用异步lambda来获取未在执行的协程
         /// </summary>
         /// <param name="method"></param>
         /// <returns></returns>
@@ -42,7 +42,7 @@ namespace AirFramework
 
 
         /// <summary>
-        /// 把CoTask转为协程，注意这个协程可能是正在运行的，可能是不在运行的，取决于参数Task是否在运行
+        /// 把AsyncTask转为协程，注意这个协程可能是正在运行的，可能是不在运行的，取决于参数Task是否在运行
         /// </summary>
         /// <param name="task"></param>
         /// <returns></returns>
@@ -57,7 +57,7 @@ namespace AirFramework
 
 
         /// <summary>
-        /// 把CoTask转为协程，注意这个协程可能是正在运行的，可能是不在运行的，取决于参数Task是否在运行
+        /// 把AsyncTask转为协程，注意这个协程可能是正在运行的，可能是不在运行的，取决于参数Task是否在运行
         /// </summary>
         /// <param name="task"></param>
         /// <returns></returns>
@@ -73,7 +73,7 @@ namespace AirFramework
     }
 
 
-    public static class CoTask2Coroutine
+    public static class AsyncTask2Coroutine
     {
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static AsyncTask GetAwaiter(this IEnumerator enumerator)

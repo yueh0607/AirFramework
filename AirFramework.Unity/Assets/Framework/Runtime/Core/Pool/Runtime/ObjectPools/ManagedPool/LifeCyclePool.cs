@@ -38,7 +38,6 @@ namespace AirFramework
             {
                 ((IMessageReceiver)item)?.Operator<IRecycle>().Publish();
                 Framework.Message.LifeCycle.AnalyseRemoveAll(item);
-
             }
         }
 

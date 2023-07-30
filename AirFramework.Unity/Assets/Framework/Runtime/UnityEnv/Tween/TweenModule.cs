@@ -1,32 +1,21 @@
-﻿namespace AirFramework
+﻿using AirFramework;
+using System;
+
+namespace AirFramework
 {
-    public class MVModule : AbstractModule
+    public class TweenModule : AbstractModule
     {
-
-
         public override void OnCreate()
         {
-
+    
         }
 
         public override void Update(float deltaTime)
         {
-
+   
         }
 
         protected override void OnDispose()
-        {
-
-        }
-
-
-
-        public async AsyncTask Show<T>()
-        {
-
-        }
-
-        public async AsyncTask Hide<T>()
         {
 
         }

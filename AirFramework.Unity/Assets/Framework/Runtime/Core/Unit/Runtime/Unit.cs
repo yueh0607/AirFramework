@@ -23,7 +23,8 @@ namespace AirFramework
             get { return _disposed; }
             set { _disposed = value; }
         }
-
+        private bool isDestruction = false;
+        public bool IsDestruction=>isDestruction;
 
         /// <summary>
         /// 释放
@@ -79,9 +80,12 @@ namespace AirFramework
         {
 
             _id = IDs.Allocate();
+            
+            //UnityEngine.Debug.Log($"id:{_id} , Type:{this.GetType().Name}");
         }
         ~Unit()
         {
+            isDestruction= true;
             IDs.Release(_id);
             if (!Disposed) Dispose();
             childs?.Dispose();

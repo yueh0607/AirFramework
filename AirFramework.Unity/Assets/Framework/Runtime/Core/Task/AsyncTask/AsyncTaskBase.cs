@@ -129,12 +129,10 @@ namespace AirFramework
 
         #endregion
         #region Pool
-        /// <summary>
-        /// 对TaskBase的初始化
-        /// </summary>
+
 
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
-        protected void BaseAllocate()
+        public override void OnAllocate()
         {
             Status = ETaskStatus.None;
             var token = ((IAsyncTokenProperty)this).Token;
@@ -143,13 +141,15 @@ namespace AirFramework
             token.Authorization = true;
             token.IsCanceld = false;
         }
+        
+
 
         /// <summary>
         /// 对TaskBase的终结或回收
         /// </summary>
 
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
-        protected void BaseRecycle()
+        public override void OnRecycle()
         {
             var token = ((IAsyncTokenProperty)this).Token;
             token.Authorization = false;

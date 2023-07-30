@@ -13,7 +13,7 @@ namespace AirFramework
     /// 管理可以自动管理的对象
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class TimeManagedPool<T> : GenericPool<T>, ITimeManagedPool where T : class
+    public class TimeManagedPool<T> : UnitTestPool<T>, ITimeManagedPool where T : class
     {
 
         protected int AllocateCountPerCycle { get; private set; } = 0;

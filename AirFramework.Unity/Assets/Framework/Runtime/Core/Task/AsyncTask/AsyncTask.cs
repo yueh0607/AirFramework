@@ -30,10 +30,6 @@ namespace AirFramework
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void GetResult() { }
 
-        /// <summary>
-        /// 在任务完成时被调用
-        /// </summary>
-        public event Func<AsyncTask> OnAwait = null;
 
         /// <summary>
         /// 编编译器调用警告：本方法由编译器调用以支持await关键字
@@ -41,10 +37,7 @@ namespace AirFramework
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public AsyncTask GetAwaiter()
         {
-            if (OnAwait == null) return this;
-            var task = OnAwait();
-            task.Completed += FinishWith;
-            return task;
+            return this;
         }
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         void INotifyCompletion.OnCompleted(Action continuation) => ((ICriticalNotifyCompletion)this).UnsafeOnCompleted(continuation);
@@ -91,14 +84,13 @@ namespace AirFramework
         public override void OnRecycle()
         {
             _callback = null;
-            base.BaseRecycle();
+            base.OnRecycle();
             continuation = null;
         }
 
         public override void OnAllocate()
         {
-            this.BaseAllocate();
-            this.OnAwait = null;
+            base.OnAllocate();
             this.continuation = null;
             this._callback = null;
         }
@@ -109,7 +101,7 @@ namespace AirFramework
 
     [AsyncMethodBuilder(typeof(AsyncTaskBuilder<>))]
 
-    public partial class AsyncTask<T> : AsyncTaskBase, IAsyncTask<T>, IAsyncTokenProperty
+    public partial class AsyncTask<T> : AsyncTaskBase, IAsyncTask<T>
     {
 
         [DebuggerHidden]
@@ -133,26 +125,18 @@ namespace AirFramework
 
         public bool IsCompleted => base.IsDone;
 
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
-        //public static AsyncTask<T> GetFromPool()
-        //{
-        //    AsyncTask<T> task = Framework.Pool.Allocate<AsyncTask<T>>();
-
-        //    return task;
-        //}
 
         public override void OnAllocate()
         {
-            this.BaseAllocate();
+            base.OnAllocate();
             this.Result = default;
-            this.OnAwait = null;
             this.continuation = null;
             this._callback = null;
         }
 
         public override void OnRecycle()
         {
-            base.BaseRecycle();
+            base.OnRecycle();
         }
 
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -164,15 +148,13 @@ namespace AirFramework
         /// </summary>
 
 
-        public event Func<AsyncTask<T>> OnAwait = null;
+
 
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public AsyncTask<T> GetAwaiter()
         {
-            if (OnAwait == null) return this;
-            var task = OnAwait();
-            task.Completed += FinishWith;
-            return task;
+            return this;
+         
         }
 
         protected Action<AsyncTask<T>> _callback = null;
@@ -238,7 +220,7 @@ namespace AirFramework
 
 
 
-    public struct CoTaskCompleted : INotifyCompletion, ITask
+    public struct AsyncTaskCompleted : INotifyCompletion, ITask
     {
         [DebuggerHidden]
         public bool IsCompleted => true;
@@ -248,7 +230,7 @@ namespace AirFramework
         public void SetException(Exception exception) { }
 
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public CoTaskCompleted GetAwaiter() => this;
+        public AsyncTaskCompleted GetAwaiter() => this;
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void OnCompleted(Action continuation) { }
 
@@ -263,5 +245,57 @@ namespace AirFramework
 
             }
         }
+    }
+
+
+
+    public class AsyncTaskTokenCatch : AsyncTaskBase,IAsyncTask<IAsyncTokenProperty>
+    {
+        public bool IsCompleted => base.IsDone;
+
+        public override void OnAllocate()
+        {
+            this.OnAllocate();
+            this.continuation = null;
+        }
+
+        public override void OnRecycle()
+        {
+            base.OnRecycle();
+        }
+
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public IAsyncTokenProperty GetResult()
+        {
+            var node =  Token.Root;
+            if (node == null) return this;
+            return node;
+        }
+        /// <summary>
+        /// 在任务await时被调用
+        /// </summary>
+
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public AsyncTaskTokenCatch GetAwaiter()
+        {
+            Finish(ETaskStatus.Succeed);
+            return this;
+        }
+        private Action continuation = null;
+
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        protected override void OnFinish()
+        {
+            continuation?.Invoke();
+        }
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        void INotifyCompletion.OnCompleted(Action continuation) => ((ICriticalNotifyCompletion)this).UnsafeOnCompleted(continuation);
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        void ICriticalNotifyCompletion.UnsafeOnCompleted(Action continuation)
+        {
+            this.continuation = continuation;
+        }
+
+
     }
 }

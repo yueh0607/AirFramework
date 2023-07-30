@@ -18,7 +18,7 @@ namespace AirFramework
     }
 
 
-    public abstract class LifeCycleHandler<T> : LifeCycleHandler, ILifeCycleHandler where T : IMessage
+    public abstract class LifeCycleHandler<T> : LifeCycleHandler, ILifeCycleHandler where T : IEventBase
     {
 
         internal override void OnLifeCycleRegister(object item)

@@ -14,6 +14,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace AirFramework
 {
@@ -41,14 +42,29 @@ namespace AirFramework
                         null
                         );
                 pools.Add(type, pool);
-                pools[type].RecycleTime = DefaultRecycleCycleTime;
-                pools[type].RecoveryRatio = DefaultRecycleRatio;
+
+                var settings = type.GetCustomAttribute<PoolSettings>();
+                if (settings != null && !settings.UsePool)
+                {
+                    return null;
+                }
+                if (settings == null)
+                {
+                    pools[type].RecycleTime = DefaultRecycleCycleTime;
+                    pools[type].RecoveryRatio = DefaultRecycleRatio;
+                }
+                else
+                {
+                    pools[type].RecycleTime = settings.RecycleInterval;
+                    pools[type].RecoveryRatio = settings.RecycleRatio;
+                }
+
                 pool.IsDeposit = true;
             }
             return pools[typeof(T)] as IGenericPool<T>;
         }
 
-        //不安全的GetPool，需要自行保证Type是IPoolable
+        //不安全的反射GetPool
         private IObjectPool GetOrCreatePool(Type type)
         {
             if (!pools.ContainsKey(type))
@@ -57,8 +73,23 @@ namespace AirFramework
                 Type tp = typeof(LifeCyclePool<>).MakeGenericType(type);
                 var pool = (ITimeManagedPool)Activator.CreateInstance(tp, Prefix_FuncCreator.GetFunc(type), null, null, null);
                 pools.Add(type, pool);
-                pools[type].RecycleTime = DefaultRecycleCycleTime;
-                pools[type].RecoveryRatio = DefaultRecycleRatio;
+                var settings = type.GetCustomAttribute<PoolSettings>();
+
+                if (settings != null && !settings.UsePool)
+                {
+                    return null;
+                }
+
+                if (settings == null)
+                {
+                    pools[type].RecycleTime = DefaultRecycleCycleTime;
+                    pools[type].RecoveryRatio = DefaultRecycleRatio;
+                }
+                else
+                {
+                    pools[type].RecycleTime = settings.RecycleInterval;
+                    pools[type].RecoveryRatio = settings.RecycleRatio;
+                }
                 pool.IsDeposit = true;
             }
             return pools[type];
@@ -103,7 +134,18 @@ namespace AirFramework
 
         public T Allocate<T>() where T : class
         {
-            return GetOrCreatePool<T>().Allocate();
+
+            var pool = GetOrCreatePool<T>();
+            if(pool == null)
+            {
+                var item = Activator.CreateInstance<T>();
+                if(item is IAllocate it)
+                {
+                    it.OnAllocate();
+                }
+                return item;
+            }
+            return pool.Allocate();
         }
 
         /// <summary>
@@ -113,7 +155,18 @@ namespace AirFramework
         /// <exception cref="InvalidOperationException"></exception>
         public void Recycle(object item)
         {
-            GetOrCreatePool(item.GetType()).RecycleObj(item);
+            var type = item.GetType();
+            var pool = GetOrCreatePool(type);
+            if (pool == null)
+            {
+                if (item is IRecycle it)
+                {
+                    it.OnRecycle();
+                    
+                }
+                return;
+            }
+            pool.RecycleObj(item);
         }
 
         /// <summary>

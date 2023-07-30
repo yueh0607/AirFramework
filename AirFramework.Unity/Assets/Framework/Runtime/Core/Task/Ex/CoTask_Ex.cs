@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public static partial class CoTask_Ex
+    public static partial class AsyncTask_Ex
     {
         /// <summary>
         /// 遗忘任务，使用本方法无任何效果，可以消除返回值警告
@@ -24,7 +24,7 @@ namespace AirFramework
         }
 
         /// <summary>
-        /// 启动一个未执行的CoTask，如果该任务已经执行，则该方法返回效果与原任务等同
+        /// 启动一个未执行的AsyncTask，如果该任务已经执行，则该方法返回效果与原任务等同
         /// </summary>
         /// <param name="task"></param>
         /// <returns></returns>
@@ -34,7 +34,7 @@ namespace AirFramework
             await task;
         }
         /// <summary>
-        /// 启动一个未执行的CoTask，如果该任务已经执行，则该方法返回效果与原任务等同
+        /// 启动一个未执行的AsyncTask，如果该任务已经执行，则该方法返回效果与原任务等同
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="task"></param>
@@ -92,7 +92,7 @@ namespace AirFramework
 
 
         /// <summary>
-        /// 把CoTask转为Task，注意CoTask在结束后会完成所有出自于此的Task
+        /// 把AsyncTask转为Task，注意AsyncTask在结束后会完成所有出自于此的Task
         /// </summary>
         /// <param name="task"></param>
         /// <returns></returns>
@@ -105,7 +105,7 @@ namespace AirFramework
         }
 
         /// <summary>
-        /// 把CoTask转为Task，注意CoTask在结束后会完成所有出自于此的Task
+        /// 把AsyncTask转为Task，注意AsyncTask在结束后会完成所有出自于此的Task
         /// </summary>
         /// <param name="task"></param>
         /// <returns></returns>
@@ -118,14 +118,14 @@ namespace AirFramework
         }
 
         /// <summary>
-        /// 把Task转为CoTask，注意点如下：
-        /// 1.Task为多线程，CoTask为单线程，Task完毕后会在主线程同步完成CoTask
+        /// 把Task转为AsyncTask，注意点如下：
+        /// 1.Task为多线程，AsyncTask为单线程，Task完毕后会在主线程同步完成AsyncTask
         /// 2.Task内无法访问Unity3D资源
         /// </summary>
         /// <param name="task"></param>
         /// <returns></returns>
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static AsyncTask AsCoTask(this Task task)
+        public static AsyncTask AsAsyncTask(this Task task)
         {
             SynchronizationContext context = SynchronizationContext.Current;
             AsyncTask coTask = Framework.Pool.Allocate<AsyncTask>();
@@ -159,14 +159,14 @@ namespace AirFramework
         }
 
         /// <summary>
-        /// 把Task转为CoTask，注意点如下：
-        /// 1.Task为多线程，CoTask为单线程，Task完毕后会在主线程同步完成CoTask
+        /// 把Task转为AsyncTask，注意点如下：
+        /// 1.Task为多线程，AsyncTask为单线程，Task完毕后会在主线程同步完成AsyncTask
         /// 2.Task内无法访问Unity3D资源
         /// </summary>
         /// <param name="task"></param>
         /// <returns></returns>
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static AsyncTask<T> AsCoTask<T>(this Task<T> task)
+        public static AsyncTask<T> AsAsyncTask<T>(this Task<T> task)
         {
             SynchronizationContext context = SynchronizationContext.Current;
             AsyncTask<T> coTask = Framework.Pool.Allocate<AsyncTask<T>>();

@@ -15,7 +15,7 @@ namespace AirFramework
         /// <param name="instance"></param>
         public void AnalyseAddAll(object instance)
         {
-            //UnityEngine.Debug.Log(lifesAdd.Count);
+            //UnityEngine.Debug.Log(lifesAdd.EventCount);
             foreach (var item in lifesAdd)
             {
                 item(instance);
@@ -44,7 +44,7 @@ namespace AirFramework
         /// 添加生命周期,每个生命周期都应该通过此函数添加，从而支持对象生命周期的解析
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        public void AddLifeCycle<T, K>() where T : IMessage where K : LifeCycleHandler<T>
+        public void AddLifeCycle<T, K>() where T : IEventBase where K : LifeCycleHandler<T>
         {
             var handler = Activator.CreateInstance<K>();
 
@@ -74,7 +74,7 @@ namespace AirFramework
             lifesRemove.Add((x) =>
             {
                 if (ReflectionHelper.HasInterface(x.GetType(), t))
-                    handler.OnLifeCycleUnRegister(t);
+                    handler.OnLifeCycleUnRegister(x);
             });
         }
         #endregion

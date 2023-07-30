@@ -45,6 +45,7 @@ namespace AirFramework
         /// </summary>
         protected override void OnDispose()
         {
+            if(!IsDestruction)
             Framework.Pool.Recycle(this);
         }
     }

@@ -76,8 +76,9 @@ namespace AirFramework
         /// <param name="value"></param>
         public void Enqueue(T key, K value)
         {
+
             if (TryEnqueue(key, value)) return;
-            throw new InvalidOperationException("The operation on an empty container is invalid");
+            throw new InvalidOperationException("The container has same Key");
         }
         /// <summary>
         /// 尝试入队

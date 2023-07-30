@@ -29,6 +29,7 @@ namespace AirFramework.Internal
         /// </summary>
         public IAsyncTokenProperty Root;
 
+        public ITaskTokenHolder TokenHolder { get; set; }= null;
 
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public AsyncTreeTokenNode(IAsyncTokenProperty Root, IAsyncTokenProperty Current)
@@ -51,6 +52,7 @@ namespace AirFramework.Internal
         public void Yield()
         {
             Authorization = false;
+            TokenHolder?.Operator<ITaskPause>().Publish();
             //非Builder任务则空
             if (Current != Root) this.Current.Token?.Yield();
         }
@@ -62,6 +64,7 @@ namespace AirFramework.Internal
         public void Continue()
         {
             Authorization = true;
+            TokenHolder?.Operator<ITaskContinue>().Publish();
             if (Current != Root) this.Current.Token?.Continue();
         }
 
@@ -77,6 +80,7 @@ namespace AirFramework.Internal
                 this.Current.Token?.Cancel();
             }
             IsCanceld = true;
+            TokenHolder?.Operator<ITaskCancel>().Publish();
         }
 
 
