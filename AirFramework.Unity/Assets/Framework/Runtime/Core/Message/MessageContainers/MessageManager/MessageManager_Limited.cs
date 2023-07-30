@@ -41,6 +41,7 @@ namespace AirFramework
                 //移除空派发器
                 if (dispatcher.Value.Count == 0)
                 {
+                    dispatcherPool.Recycle(dispatcher);
                     dispatchersContainer.Remove(messageType);
                 }
             }
@@ -61,6 +62,7 @@ namespace AirFramework
                 //移除空派发器
                 if (dispatcher.Value.Count == 0)
                 {
+                    dispatcherPool.Recycle(dispatcher);
                     dispatchersContainer.Remove(messageType);
                 }
             }
@@ -72,16 +74,25 @@ namespace AirFramework
         /// <param name="messageType"></param>
         internal bool TryRemoveTypeFromGlobal(Type messageType)
         {
-            dispatchersContainer.TryRemove(messageType);
-            return true;
+            if(dispatchersContainer.ContainsKey(messageType))
+            {
+                dispatcherPool.Recycle(dispatchersContainer[messageType]);
+                dispatchersContainer.Remove(messageType);
+                return true;
+            }
+ 
+            return false;
         }
         /// <summary>
         /// 基础消息移除：移除全局所有消息
         /// </summary>
-        internal bool TryRemoveAllFromGlobal()
+        internal void RemoveAllFromGlobal()
         {
+            foreach(var dispatcher in dispatchersContainer)
+            {
+                dispatcherPool.Recycle(dispatcher.Value);
+            }
             dispatchersContainer.Clear();
-            return true;
         }
 
         /// <summary>
