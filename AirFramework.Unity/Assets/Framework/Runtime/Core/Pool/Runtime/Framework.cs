@@ -25,7 +25,8 @@ namespace AirFramework
         public static PoolManager Pool => GetModule<PoolManager>();
 
 
-
+        public static T AnyGet<T>() where T : class => Framework.Pool.Allocate<T>();
+        public static void AnySet(object item) => Framework.Pool.Recycle(item);
 
     }
 }

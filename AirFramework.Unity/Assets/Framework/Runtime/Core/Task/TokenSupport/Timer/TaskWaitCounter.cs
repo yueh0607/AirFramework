@@ -9,7 +9,7 @@ namespace AirFramework
     public class TaskWaitCounter  :PoolableObject, ITaskTokenHolder,IRecycle
     {
 
-        public AsyncTaskBase BindTask { get; set; } = null;
+        public AirTaskBase BindTask { get; set; } = null;
         public int Current { get; private set; } = 0;
 
         private bool enable = false;

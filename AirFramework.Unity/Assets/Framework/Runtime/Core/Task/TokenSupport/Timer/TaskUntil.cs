@@ -9,7 +9,7 @@ namespace AirFramework
     public class TaskUntil : PoolableObject, ITaskTokenHolder, IRecycle, IUpdate
     {
 
-        public AsyncTaskBase BindTask { get; set; } = null;
+        public AirTaskBase BindTask { get; set; } = null;
         public Func<bool> Condition = null;
 
         private bool enable = false;

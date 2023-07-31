@@ -12,16 +12,16 @@ using System.Collections;
 
 namespace AirFramework
 {
-    public partial class AsyncTask
+    public partial class AirTask
     {
         /// <summary>
         /// 延迟指定秒数并立刻开始
         /// </summary>
         /// <param name="seconds"></param>
         /// <returns></returns>
-        public static AsyncTask Delay(float seconds)
+        public static AirTask Delay(float seconds)
         {
-            var task = Framework.Pool.Allocate<AsyncTask>();        
+            var task = Framework.Pool.Allocate<AirTask>();        
             var timer = Framework.Pool.Allocate<TaskTimer>();
             timer.BindTask = task;
             task.Token.TokenHolder = timer;
@@ -34,7 +34,7 @@ namespace AirFramework
         /// </summary>
         /// <param name="seconds"></param>
         /// <returns></returns>
-        public static AsyncTask Delay(TimeSpan span)
+        public static AirTask Delay(TimeSpan span)
         {
             return Delay((float)span.TotalSeconds);
         }
@@ -44,10 +44,10 @@ namespace AirFramework
         /// </summary>
         /// <param name="count"></param>
         /// <returns></returns>
-        public static AsyncTask WaitFrame(int count = 1)
+        public static AirTask WaitFrame(int count = 1)
         {
            
-            var task = Framework.Pool.Allocate<AsyncTask>();
+            var task = Framework.Pool.Allocate<AirTask>();
             var frame = Framework.Pool.Allocate<TaskFrame>();
             frame.BindTask = task;
             task.Token.TokenHolder = frame;
@@ -59,14 +59,14 @@ namespace AirFramework
         /// <summary>
         /// 等待直到下一帧
         /// </summary>
-        public static AsyncTask NextFrame => WaitFrame(1);
+        public static AirTask NextFrame => WaitFrame(1);
 
-        private static AsyncTaskCompleted completedTask = new AsyncTaskCompleted();
+        private static AirTaskCompleted completedTask = new AirTaskCompleted();
 
         /// <summary>
         /// 已经完成的Task
         /// </summary>
-        public static ref AsyncTaskCompleted CompletedTask => ref completedTask;
+        public static ref AirTaskCompleted CompletedTask => ref completedTask;
 
 
         /// <summary>
@@ -74,15 +74,15 @@ namespace AirFramework
         /// </summary>
         /// <param name="tasks"></param>
         /// <returns></returns>
-        public static AsyncTask WaitAny(params AsyncTask[] tasks)
+        public static AirTask WaitAny(params AirTask[] tasks)
         {
-            if (tasks.Length == 0) throw new InvalidOperationException("Passing in an empty AsyncTask array is not allowed");
-            AsyncTask task = Framework.Pool.Allocate<AsyncTask>();
+            if (tasks.Length == 0) throw new InvalidOperationException("Passing in an empty AirTask array is not allowed");
+            AirTask task = Framework.Pool.Allocate<AirTask>();
             var counter = Framework.Pool.Allocate<TaskWaitCounter>();
             counter.BindTask = task;
             counter.TriggerCount = 1;
             task.Token.TokenHolder = counter;
-            Action<AsyncTask> poster = (x) =>
+            Action<AirTask> poster = (x) =>
             {
                 counter.Add();
             };
@@ -98,15 +98,15 @@ namespace AirFramework
         /// </summary>
         /// <param name="tasks"></param>
         /// <returns></returns>
-        public static AsyncTask<T[]> WaitAny<T>( params AsyncTask<T>[] tasks)
+        public static AirTask<T[]> WaitAny<T>( params AirTask<T>[] tasks)
         {
-            if (tasks.Length == 0) throw new InvalidOperationException("Passing in an empty AsyncTask array is not allowed");
-            var task = Framework.Pool.Allocate<AsyncTask<T[]>>();
+            if (tasks.Length == 0) throw new InvalidOperationException("Passing in an empty AirTask array is not allowed");
+            var task = Framework.Pool.Allocate<AirTask<T[]>>();
             var counter = Framework.Pool.Allocate<TaskWaitCounter<T>>();
             counter.BindTask = task;
             counter.AllTaskCount = 1;
             task.Token.TokenHolder = counter;
-            Action<AsyncTask<T>> poster = (x) =>
+            Action<AirTask<T>> poster = (x) =>
             {
                 counter.Add(0,x.Result);
             };
@@ -123,16 +123,16 @@ namespace AirFramework
         /// </summary>
         /// <param name="tasks"></param>
         /// <returns></returns>
-        public static AsyncTask WaitAll(params AsyncTask[] tasks)
+        public static AirTask WaitAll(params AirTask[] tasks)
         {
-            if (tasks.Length == 0) throw new InvalidOperationException("Passing in an empty AsyncTask array is not allowed");
-            AsyncTask task = Framework.Pool.Allocate<AsyncTask>();
+            if (tasks.Length == 0) throw new InvalidOperationException("Passing in an empty AirTask array is not allowed");
+            AirTask task = Framework.Pool.Allocate<AirTask>();
             if (tasks.Length == 0) throw new InvalidOperationException("No any task to wait ");
             var counter = Framework.Pool.Allocate<TaskWaitCounter>();
             counter.BindTask = task;
             counter.TriggerCount = tasks.Length;
             task.Token.TokenHolder = counter;
-            Action<AsyncTask> poster = (x) =>
+            Action<AirTask> poster = (x) =>
             {
                 counter.Add();
             };
@@ -149,15 +149,15 @@ namespace AirFramework
         /// </summary>
         /// <param name="tasks"></param>
         /// <returns></returns>
-        public static AsyncTask<T[]> WaitAll<T>(bool sorted = true, params AsyncTask<T>[] tasks)
+        public static AirTask<T[]> WaitAll<T>(bool sorted = true, params AirTask<T>[] tasks)
         {
-            if (tasks.Length == 0) throw new InvalidOperationException("Passing in an empty AsyncTask array is not allowed");
-            var task = Framework.Pool.Allocate<AsyncTask<T[]>>();
+            if (tasks.Length == 0) throw new InvalidOperationException("Passing in an empty AirTask array is not allowed");
+            var task = Framework.Pool.Allocate<AirTask<T[]>>();
             var counter = Framework.Pool.Allocate<TaskWaitCounter<T>>();
             counter.BindTask = task;
             counter.AllTaskCount = 1;
             task.Token.TokenHolder = counter;
-            Action<AsyncTask<T>> poster = (x) =>
+            Action<AirTask<T>> poster = (x) =>
             {
                 int i = 0;
                 for (i = 0; i < tasks.Length; i++)
@@ -185,10 +185,10 @@ namespace AirFramework
         /// <param name="predicate"></param>
         /// <returns></returns>
         /// <exception cref="ArgumentNullException"></exception>
-        public static AsyncTask WaitUntil(Func<bool> predicate)
+        public static AirTask WaitUntil(Func<bool> predicate)
         {
             if (predicate == null) throw new ArgumentNullException("Null condition");
-            AsyncTask task = Framework.Pool.Allocate<AsyncTask>();
+            AirTask task = Framework.Pool.Allocate<AirTask>();
             var until = Framework.Pool.Allocate<TaskUntil>();
             until.BindTask = task;
             until.Condition= predicate;
@@ -196,9 +196,9 @@ namespace AirFramework
             return task; 
         }
 
-        public static async AsyncTask<AsyncToken> CatchToken()
+        public static async AirTask<AsyncToken> CatchToken()
         {
-            var taskCatch = Framework.Pool.Allocate<AsyncTaskTokenCatch>();
+            var taskCatch = Framework.Pool.Allocate<AirTaskTokenCatch>();
             var node = await taskCatch;
             node.WithToken(out var token);
             return token;

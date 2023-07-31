@@ -8,7 +8,7 @@ namespace AirFramework
 {
     public class TaskTimer :PoolableObject, IUpdate,ITaskTokenHolder,IRecycle
     {
-        public AsyncTaskBase BindTask { get; set; } = null;
+        public AirTaskBase BindTask { get; set; } = null;
 
         public float Current { get; private set; } = 0;
         public float Max { get; set; } = 1;

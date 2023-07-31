@@ -6,24 +6,24 @@ using System.Runtime.ExceptionServices;
 
 namespace AirFramework
 {
-    public struct AsyncTaskBuilder
+    public struct AirTaskBuilder
     {
 
         // 1. Static GetFromPool method
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static AsyncTaskBuilder Create() => new AsyncTaskBuilder(Framework.Pool.Allocate<AsyncTask>());
+        public static AirTaskBuilder Create() => new AirTaskBuilder(Framework.Pool.Allocate<AirTask>());
 
 
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public AsyncTaskBuilder(AsyncTask task) => this.task = task;
+        public AirTaskBuilder(AirTask task) => this.task = task;
 
 
-        private readonly AsyncTask task;
+        private readonly AirTask task;
 
 
 
         [DebuggerHidden]
-        public AsyncTask Task => task;
+        public AirTask Task => task;
 
 
 
@@ -76,19 +76,19 @@ namespace AirFramework
         }
     }
 
-    public struct AsyncTaskBuilder<T>
+    public struct AirTaskBuilder<T>
     {
 
         // 1. Static GetFromPool method
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static AsyncTaskBuilder<T> Create() => new AsyncTaskBuilder<T>(Framework.Pool.Allocate<AsyncTask<T>>());
+        public static AirTaskBuilder<T> Create() => new AirTaskBuilder<T>(Framework.Pool.Allocate<AirTask<T>>());
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public AsyncTaskBuilder(AsyncTask<T> task) => this.task = task;
+        public AirTaskBuilder(AirTask<T> task) => this.task = task;
 
-        private readonly AsyncTask<T> task;
+        private readonly AirTask<T> task;
         // 2. TaskLike Current
         [DebuggerHidden]
-        public AsyncTask<T> Task => task;
+        public AirTask<T> Task => task;
 
 
         // 3. Start 构造之后开启状态机

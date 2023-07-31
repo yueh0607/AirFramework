@@ -66,13 +66,13 @@ namespace AirFramework
         /// </summary>
         /// <param name="tween"></param>
         /// <returns></returns>
-        public static AsyncTask PlayAsync(this Tween tween)
+        public static AirTask PlayAsync(this Tween tween)
         {
-            var task = Framework.Pool.Allocate<AsyncTask>();
+            var task = Framework.Pool.Allocate<AirTask>();
             AirEngine.StartCoroutine(AsyncTween(tween, task));
             return task;
         }
-        private static IEnumerator AsyncTween(Tween tween, AsyncTask task)
+        private static IEnumerator AsyncTween(Tween tween, AirTask task)
         {
             bool completed = false;
             tween.Machine.OnCompleted += () => completed = true;

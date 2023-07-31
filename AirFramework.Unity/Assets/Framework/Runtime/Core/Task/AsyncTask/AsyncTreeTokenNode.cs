@@ -19,13 +19,13 @@ namespace AirFramework.Internal
         [DebuggerHidden]
         public bool Authorization { get; internal set; } = true;
         /// <summary>
-        /// 当前AsyncTaskMethodBuilder执行的子任务，如果任务不实现IAsyncTokenProperty，为空
+        /// 当前AirTaskMethodBuilder执行的子任务，如果任务不实现IAsyncTokenProperty，为空
         /// </summary>
         public IAsyncTokenProperty Current;
 
 
         /// <summary>
-        /// AsyncTaskMethodBuilder代表的根任务
+        /// AirTaskMethodBuilder代表的根任务
         /// </summary>
         public IAsyncTokenProperty Root;
 

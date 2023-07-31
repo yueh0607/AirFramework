@@ -8,7 +8,7 @@ namespace AirFramework
     public class TaskFrame :PoolableObject, ITaskTokenHolder,IUpdate,IRecycle
     {
 
-        public AsyncTaskBase BindTask { get; set; } = null;
+        public AirTaskBase BindTask { get; set; } = null;
 
         public int FrameCount { get; set; } = 1;
 

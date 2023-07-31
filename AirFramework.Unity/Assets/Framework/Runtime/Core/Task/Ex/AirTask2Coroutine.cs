@@ -8,47 +8,47 @@ using UnityEngine;
 
 namespace AirFramework
 {
-    public partial class AsyncTask
+    public partial class AirTask
     {
 
         /// <summary>
-        /// 把AsyncTask转为协程，注意可以使用异步lambda来获取未在执行的协程
+        /// 把AirTask转为协程，注意可以使用异步lambda来获取未在执行的协程
         /// </summary>
         /// <param name="method"></param>
         /// <returns></returns>
         /// <exception cref="ArgumentNullException"></exception>
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static IEnumerator ToCoroutine(Func<AsyncTask> method)
+        public static IEnumerator ToCoroutine(Func<AirTask> method)
         {
             if (method == null) throw new ArgumentNullException("task null ");
-            AsyncTask task = method();
+            AirTask task = method();
             while (!task.IsDone) yield return null;
         }
 
 
         /// <summary>
-        /// 把AsyncTask转为协程，注意可以使用异步lambda来获取未在执行的协程
+        /// 把AirTask转为协程，注意可以使用异步lambda来获取未在执行的协程
         /// </summary>
         /// <param name="method"></param>
         /// <returns></returns>
         /// <exception cref="ArgumentNullException"></exception>
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static IEnumerator<T> ToCoroutine<T>(Func<AsyncTask<T>> method)
+        public static IEnumerator<T> ToCoroutine<T>(Func<AirTask<T>> method)
         {
             if (method == null) throw new ArgumentNullException("task null");
-            AsyncTask<T> task = method();
+            AirTask<T> task = method();
             while (!task.IsDone) yield return default;
         }
 
 
         /// <summary>
-        /// 把AsyncTask转为协程，注意这个协程可能是正在运行的，可能是不在运行的，取决于参数Task是否在运行
+        /// 把AirTask转为协程，注意这个协程可能是正在运行的，可能是不在运行的，取决于参数Task是否在运行
         /// </summary>
         /// <param name="task"></param>
         /// <returns></returns>
         /// <exception cref="ArgumentNullException"></exception>
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static IEnumerator ToCoroutine(AsyncTask task)
+        public static IEnumerator ToCoroutine(AirTask task)
         {
             if (task == null) throw new ArgumentNullException("task null");
 
@@ -57,13 +57,13 @@ namespace AirFramework
 
 
         /// <summary>
-        /// 把AsyncTask转为协程，注意这个协程可能是正在运行的，可能是不在运行的，取决于参数Task是否在运行
+        /// 把AirTask转为协程，注意这个协程可能是正在运行的，可能是不在运行的，取决于参数Task是否在运行
         /// </summary>
         /// <param name="task"></param>
         /// <returns></returns>
         /// <exception cref="ArgumentNullException"></exception>
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static IEnumerator<T> ToCoroutine<T>(AsyncTask<T> task)
+        public static IEnumerator<T> ToCoroutine<T>(AirTask<T> task)
         {
             if (task == null) throw new ArgumentNullException("task null");
 
@@ -73,12 +73,12 @@ namespace AirFramework
     }
 
 
-    public static class AsyncTask2Coroutine
+    public static class AirTask2Coroutine
     {
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static AsyncTask GetAwaiter(this IEnumerator enumerator)
+        public static AirTask GetAwaiter(this IEnumerator enumerator)
         {
-            static IEnumerator RunEnumerator(IEnumerator _enumerator, AsyncTask task)
+            static IEnumerator RunEnumerator(IEnumerator _enumerator, AirTask task)
             {
                 while (true)
                 {
@@ -104,12 +104,12 @@ namespace AirFramework
                 }
                 task.Finish(ETaskStatus.Succeed);
             }
-            AsyncTask task = Framework.Pool.Allocate<AsyncTask>();
+            AirTask task = Framework.Pool.Allocate<AirTask>();
             AirEngine.StartCoroutine(RunEnumerator(enumerator, task));
             return task;
         }
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static AsyncTask GetAwaiter<T>(this T instruction) where T : YieldInstruction
+        public static AirTask GetAwaiter<T>(this T instruction) where T : YieldInstruction
         {
             static IEnumerator GetEnumerator(T instruction)
             {

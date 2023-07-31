@@ -7,8 +7,8 @@ using System.Runtime.CompilerServices;
 
 namespace AirFramework
 {
-    [AsyncMethodBuilder(typeof(AsyncTaskBuilder))]
-    public partial class AsyncTask : AsyncTaskBase, IAsyncTokenProperty, IAsyncTask
+    [AsyncMethodBuilder(typeof(AirTaskBuilder))]
+    public partial class AirTask : AirTaskBase, IAsyncTokenProperty, IAirTask
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace AirFramework
         /// 编编译器调用警告：本方法由编译器调用以支持await关键字
         /// </summary>
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public AsyncTask GetAwaiter()
+        public AirTask GetAwaiter()
         {
             return this;
         }
@@ -47,12 +47,12 @@ namespace AirFramework
             this.continuation = continuation;
         }
 
-        protected Action<AsyncTask> _callback = null;
+        protected Action<AirTask> _callback = null;
 
         /// <summary>
         /// 在任务完成时被调用
         /// </summary>
-        public event Action<AsyncTask> Completed
+        public event Action<AirTask> Completed
         {
             add
             {
@@ -99,9 +99,9 @@ namespace AirFramework
     }
 
 
-    [AsyncMethodBuilder(typeof(AsyncTaskBuilder<>))]
+    [AsyncMethodBuilder(typeof(AirTaskBuilder<>))]
 
-    public partial class AsyncTask<T> : AsyncTaskBase, IAsyncTask<T>
+    public partial class AirTask<T> : AirTaskBase, IAirTask<T>
     {
 
         [DebuggerHidden]
@@ -151,20 +151,20 @@ namespace AirFramework
 
 
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public AsyncTask<T> GetAwaiter()
+        public AirTask<T> GetAwaiter()
         {
             return this;
          
         }
 
-        protected Action<AsyncTask<T>> _callback = null;
+        protected Action<AirTask<T>> _callback = null;
         private Action continuation = null;
 
         /// <summary>
         /// 在任务完成时被调用
         /// </summary>
 
-        public event Action<AsyncTask<T>> Completed
+        public event Action<AirTask<T>> Completed
         {
             add
             {
@@ -203,9 +203,9 @@ namespace AirFramework
 
 
 
-        public static explicit operator AsyncTask(AsyncTask<T> task)
+        public static explicit operator AirTask(AirTask<T> task)
         {
-            AsyncTask _task = Framework.Pool.Allocate<AsyncTask>();
+            AirTask _task = Framework.Pool.Allocate<AirTask>();
 
             task._callback += (t) =>
                 {
@@ -220,7 +220,7 @@ namespace AirFramework
 
 
 
-    public struct AsyncTaskCompleted : INotifyCompletion, ITask
+    public struct AirTaskCompleted : INotifyCompletion, ITask
     {
         [DebuggerHidden]
         public bool IsCompleted => true;
@@ -230,7 +230,7 @@ namespace AirFramework
         public void SetException(Exception exception) { }
 
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public AsyncTaskCompleted GetAwaiter() => this;
+        public AirTaskCompleted GetAwaiter() => this;
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void OnCompleted(Action continuation) { }
 
@@ -249,7 +249,7 @@ namespace AirFramework
 
 
 
-    public class AsyncTaskTokenCatch : AsyncTaskBase,IAsyncTask<IAsyncTokenProperty>
+    public class AirTaskTokenCatch : AirTaskBase,IAirTask<IAsyncTokenProperty>
     {
         public bool IsCompleted => base.IsDone;
 
@@ -276,7 +276,7 @@ namespace AirFramework
         /// </summary>
 
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public AsyncTaskTokenCatch GetAwaiter()
+        public AirTaskTokenCatch GetAwaiter()
         {
             Finish(ETaskStatus.Succeed);
             return this;

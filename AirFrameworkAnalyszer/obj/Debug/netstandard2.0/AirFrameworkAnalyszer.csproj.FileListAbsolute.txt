@@ -1,0 +1,10 @@
+X:\Projects\Framework\AirFrameworkAnalyszer\bin\Debug\netstandard2.0\AirFrameworkAnalyszer.deps.json
+X:\Projects\Framework\AirFrameworkAnalyszer\bin\Debug\netstandard2.0\AirFrameworkAnalyszer.dll
+X:\Projects\Framework\AirFrameworkAnalyszer\bin\Debug\netstandard2.0\AirFrameworkAnalyszer.pdb
+X:\Projects\Framework\AirFrameworkAnalyszer\obj\Debug\netstandard2.0\AirFrameworkAnalyszer.csproj.AssemblyReference.cache
+X:\Projects\Framework\AirFrameworkAnalyszer\obj\Debug\netstandard2.0\AirFrameworkAnalyszer.GeneratedMSBuildEditorConfig.editorconfig
+X:\Projects\Framework\AirFrameworkAnalyszer\obj\Debug\netstandard2.0\AirFrameworkAnalyszer.AssemblyInfoInputs.cache
+X:\Projects\Framework\AirFrameworkAnalyszer\obj\Debug\netstandard2.0\AirFrameworkAnalyszer.AssemblyInfo.cs
+X:\Projects\Framework\AirFrameworkAnalyszer\obj\Debug\netstandard2.0\AirFrameworkAnalyszer.csproj.CoreCompileInputs.cache
+X:\Projects\Framework\AirFrameworkAnalyszer\obj\Debug\netstandard2.0\AirFrameworkAnalyszer.dll
+X:\Projects\Framework\AirFrameworkAnalyszer\obj\Debug\netstandard2.0\AirFrameworkAnalyszer.pdb

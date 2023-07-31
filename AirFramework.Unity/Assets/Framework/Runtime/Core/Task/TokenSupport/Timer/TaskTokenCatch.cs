@@ -6,7 +6,7 @@ namespace AirFramework
 {
     public class TaskTokenCatch : PoolableObject, ITaskTokenHolder, IRecycle
     {
-        public AsyncTaskBase BindTask { get; set; } = null;
+        public AirTaskBase BindTask { get; set; } = null;
 
         private bool enable = false;
         private bool completed = false;

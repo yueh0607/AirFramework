@@ -8,7 +8,7 @@ using System.Runtime.ExceptionServices;
 namespace AirFramework
 {
 
-    public abstract class AsyncTaskBase
+    public abstract class AirTaskBase
         : PoolableObject, IAsyncTokenProperty
     {
 
@@ -95,13 +95,13 @@ namespace AirFramework
 
 
 
-        private Action<AsyncTaskBase> finishWith = null;
+        private Action<AirTaskBase> finishWith = null;
 
         /// <summary>
         /// 通过另一个任务完成该任务
         /// </summary>
         [DebuggerHidden]
-        public Action<AsyncTaskBase> FinishWith
+        public Action<AirTaskBase> FinishWith
         {
             get
             {
@@ -111,7 +111,7 @@ namespace AirFramework
         }
 
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public AsyncTaskBase()
+        public AirTaskBase()
         {
             Token = new AsyncTreeTokenNode(this, this);
         }

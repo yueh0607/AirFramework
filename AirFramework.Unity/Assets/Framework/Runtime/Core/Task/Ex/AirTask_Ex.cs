@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace AirFramework
 {
-    public static partial class AsyncTask_Ex
+    public static partial class AirTask_Ex
     {
         /// <summary>
         /// 遗忘任务，使用本方法无任何效果，可以消除返回值警告
@@ -24,23 +24,23 @@ namespace AirFramework
         }
 
         /// <summary>
-        /// 启动一个未执行的AsyncTask，如果该任务已经执行，则该方法返回效果与原任务等同
+        /// 启动一个未执行的AirTask，如果该任务已经执行，则该方法返回效果与原任务等同
         /// </summary>
         /// <param name="task"></param>
         /// <returns></returns>
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static async AsyncTask Invoke(this AsyncTask task)
+        public static async AirTask Invoke(this AirTask task)
         {
             await task;
         }
         /// <summary>
-        /// 启动一个未执行的AsyncTask，如果该任务已经执行，则该方法返回效果与原任务等同
+        /// 启动一个未执行的AirTask，如果该任务已经执行，则该方法返回效果与原任务等同
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="task"></param>
         /// <returns></returns>
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static async AsyncTask<T> Invoke<T>(this AsyncTask<T> task)
+        public static async AirTask<T> Invoke<T>(this AirTask<T> task)
         {
             return await task;
         }
@@ -50,7 +50,7 @@ namespace AirFramework
         ///// </summary>
         ///// <param name="task"></param>
         //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
-        //public static void Wait(this AsyncTask task)
+        //public static void Wait(this AirTask task)
         //{
         //    TaskCompletionSource<ETaskStatus> source = new TaskCompletionSource<ETaskStatus>();
         //    task.Completed += (x) => source.SetResult(x.Status);
@@ -63,7 +63,7 @@ namespace AirFramework
         ///// <param name="task"></param>
         ///// <returns></returns>
         //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
-        //public static T Wait<T>(this AsyncTask<T> task)
+        //public static T Wait<T>(this AirTask<T> task)
         //{
         //    TaskCompletionSource<ETaskStatus> source = new TaskCompletionSource<ETaskStatus>();
         //    task.Completed += (x) => source.SetResult(x.Status);
@@ -92,12 +92,12 @@ namespace AirFramework
 
 
         /// <summary>
-        /// 把AsyncTask转为Task，注意AsyncTask在结束后会完成所有出自于此的Task
+        /// 把AirTask转为Task，注意AirTask在结束后会完成所有出自于此的Task
         /// </summary>
         /// <param name="task"></param>
         /// <returns></returns>
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Task AsTask(this AsyncTask task)
+        public static Task AsTask(this AirTask task)
         {
             TaskCompletionSource<ETaskStatus> source = new TaskCompletionSource<ETaskStatus>();
             task.Completed += (x) => source.SetResult(x.Status);
@@ -105,12 +105,12 @@ namespace AirFramework
         }
 
         /// <summary>
-        /// 把AsyncTask转为Task，注意AsyncTask在结束后会完成所有出自于此的Task
+        /// 把AirTask转为Task，注意AirTask在结束后会完成所有出自于此的Task
         /// </summary>
         /// <param name="task"></param>
         /// <returns></returns>
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Task<T> AsTask<T>(this AsyncTask<T> task)
+        public static Task<T> AsTask<T>(this AirTask<T> task)
         {
             TaskCompletionSource<T> source = new TaskCompletionSource<T>();
             task.Completed += (x) => source.SetResult(x.Result);
@@ -118,17 +118,17 @@ namespace AirFramework
         }
 
         /// <summary>
-        /// 把Task转为AsyncTask，注意点如下：
-        /// 1.Task为多线程，AsyncTask为单线程，Task完毕后会在主线程同步完成AsyncTask
+        /// 把Task转为AirTask，注意点如下：
+        /// 1.Task为多线程，AirTask为单线程，Task完毕后会在主线程同步完成AirTask
         /// 2.Task内无法访问Unity3D资源
         /// </summary>
         /// <param name="task"></param>
         /// <returns></returns>
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static AsyncTask AsAsyncTask(this Task task)
+        public static AirTask AsAirTask(this Task task)
         {
             SynchronizationContext context = SynchronizationContext.Current;
-            AsyncTask coTask = Framework.Pool.Allocate<AsyncTask>();
+            AirTask coTask = Framework.Pool.Allocate<AirTask>();
 
             // 在主线程上运行任务
             context.Post(async _ =>
@@ -159,17 +159,17 @@ namespace AirFramework
         }
 
         /// <summary>
-        /// 把Task转为AsyncTask，注意点如下：
-        /// 1.Task为多线程，AsyncTask为单线程，Task完毕后会在主线程同步完成AsyncTask
+        /// 把Task转为AirTask，注意点如下：
+        /// 1.Task为多线程，AirTask为单线程，Task完毕后会在主线程同步完成AirTask
         /// 2.Task内无法访问Unity3D资源
         /// </summary>
         /// <param name="task"></param>
         /// <returns></returns>
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static AsyncTask<T> AsAsyncTask<T>(this Task<T> task)
+        public static AirTask<T> AsAirTask<T>(this Task<T> task)
         {
             SynchronizationContext context = SynchronizationContext.Current;
-            AsyncTask<T> coTask = Framework.Pool.Allocate<AsyncTask<T>>();
+            AirTask<T> coTask = Framework.Pool.Allocate<AirTask<T>>();
 
             // 在主线程上运行任务
             context.Post(async _ =>

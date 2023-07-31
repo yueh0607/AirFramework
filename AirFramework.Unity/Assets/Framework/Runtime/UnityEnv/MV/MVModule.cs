@@ -20,13 +20,18 @@
         }
 
 
-
-        public async AsyncTask Show<T>()
+        public string GetLocationByType<T>()
         {
+            return typeof(T).Name;
+        }
+
+        public async AirTask Show<T>()
+        {
+            
 
         }
 
-        public async AsyncTask Hide<T>()
+        public async AirTask Hide<T>()
         {
 
         }

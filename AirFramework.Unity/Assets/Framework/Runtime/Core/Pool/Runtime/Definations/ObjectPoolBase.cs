@@ -69,7 +69,7 @@ namespace AirFramework
         /// <param name="count"></param>
         /// <param name="frame"></param>
         /// <returns></returns>
-        //public abstract AsyncTask UnloadAsync(int count, int frame = 1);
+        //public abstract AirTask UnloadAsync(int count, int frame = 1);
 
     }
 }
