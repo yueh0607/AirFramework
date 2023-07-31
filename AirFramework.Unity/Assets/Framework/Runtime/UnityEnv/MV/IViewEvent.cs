@@ -6,10 +6,18 @@ namespace AirFramework
 {
     public interface IViewShow: ICallEvent<AirTask>
     {
+        /// <summary>
+        /// 在View状态转为Show时被框架调用
+        /// </summary>
+        /// <returns></returns>
         AirTask OnViewShow();
     }
     public interface IViewHide : ICallEvent<AirTask> 
     {
+        /// <summary>
+        /// 在View状态转为Hide时被框架调用
+        /// </summary>
+        /// <returns></returns>
         AirTask OnViewHide();
     }
 
@@ -39,6 +47,10 @@ namespace AirFramework
     }
     public interface IViewInitialize : ICallEvent<AirTask>
     {
+        /// <summary>
+        /// 在View在初始化时被框架调用
+        /// </summary>
+        /// <returns></returns>
         AirTask OnViewInitialize();
     }
     public class ViewInitializeHandler : LifeCycleHandler<IViewHide>

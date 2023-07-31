@@ -1,8 +1,9 @@
 {
-    "name": "AirFramework.Editor.Utility",
+    "name": "AirEditor.Utility",
     "rootNamespace": "",
     "references": [
-        "GUID:24e8af817f14eeb4fb2babd5c567f8c8"
+        "GUID:24e8af817f14eeb4fb2babd5c567f8c8",
+        "GUID:e3bb9870b1dd9b142a6505b91530c38e"
     ],
     "includePlatforms": [
         "Editor"

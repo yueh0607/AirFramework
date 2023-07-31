@@ -1,4 +1,6 @@
-﻿using AirFramework.Utility;
+﻿
+using AirEditor;
+using AirFramework.Utility;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -26,11 +28,13 @@ namespace AirFramework.MV.RefBuild.Editor
         string nameSpaceName = "";
         string className;
         bool autoCreatePath = false;
-        private const string binderName = "BindableProperty";
+        private const string binderName = "AirFramework.MV.RefBuild.BindableProperty";
         bool awakeInit = false;
 
         private void OnEnable()
         {
+            //target = BuilderPreference.instance.buildPrefab;
+            //className = BuilderPreference.instance.className;
             path = BuilderPreference.instance.defaultPath;
             increase = BuilderPreference.instance.increase;
             part = BuilderPreference.instance.part;
@@ -40,6 +44,8 @@ namespace AirFramework.MV.RefBuild.Editor
         }
         private void OnDisable()
         {
+            //BuilderPreference.instance.buildPrefab = target;
+            //BuilderPreference.instance.className = className;
             BuilderPreference.instance.defaultPath = path;
             BuilderPreference.instance.increase = increase;
             BuilderPreference.instance.part = part;
@@ -223,7 +229,6 @@ namespace AirFramework.MV.RefBuild.Editor
  * UVersion : #VERSION#
  *******************************************************/
 using UnityEngine;
-using AirFramework.MV.RefBuild;
 
 namespace #NAMESPACE#
 {
@@ -248,7 +253,7 @@ namespace #NAMESPACE#
                 model = model.Replace("#NAMESPACE#", _namespace);
                 model = model.Replace("#CLASS#", _class);
                 model = model.Replace("#PART#", part ? "partial " : string.Empty);
-
+                model = model.Replace("NAMESPACE", FrameworkSettings.instance.defaultNamespace);
                 model = model.Replace("#NEWFUNC#", awakeInit ?
 @"
         private void Awake()

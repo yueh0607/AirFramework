@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 
-namespace AirFramework.Editor
+namespace AirEditor
 {
     public static class TitleInfoGenerator
     {
