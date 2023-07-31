@@ -31,6 +31,7 @@ namespace AirFramework
 
         protected virtual T OnItemCreate()
         {
+
             return OnCreate();
         }
         protected virtual void OnItemAllocate(T item)
@@ -119,7 +120,7 @@ namespace AirFramework
         {
             T item;
             //空池则创建,非空则从池取出
-            if (pool.Count == 0) item = OnCreate();
+            if (pool.Count == 0) item = OnItemCreate();
             else item = pool.Dequeue();
             //执行申请时行为委托
             OnItemAllocate(item);

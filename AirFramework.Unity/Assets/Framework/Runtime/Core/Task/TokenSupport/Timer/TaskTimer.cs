@@ -47,13 +47,13 @@ namespace AirFramework
         {
             if (!Enable) return;
             Current += deltaTime;
+            UnityEngine. Debug.Log("CurrentTime :{Current}");
             if(Current >= Max)
             {
+                //UnityEngine.Debug.Log($"尝试完成任务:{BindTask.ID}");
                 //保证在执行Completed的时候值是等于Max的
                 Enable= false;
-                Current = Max;
                 BindTask.Finish(ETaskStatus.Succeed);
-        
                 Dispose();
             }
         }

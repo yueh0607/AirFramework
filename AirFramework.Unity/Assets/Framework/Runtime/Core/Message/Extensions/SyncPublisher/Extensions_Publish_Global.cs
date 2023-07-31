@@ -22,7 +22,7 @@ namespace AirFramework
 
                     UnsafeHandler.As<MessageOperatorBox<IMessage>, MessageOperatorBox<ISendEvent>>(ref operations).Publish();
                     //归队
-                    dic.Enqueue(key, operations);
+                    dic.TryEnqueue(key, operations);
 
                 }
             }
@@ -42,7 +42,7 @@ namespace AirFramework
                 {
                     UnsafeHandler.As<MessageOperatorBox<IMessage>, MessageOperatorBox<ISendEvent<T1>>>(ref operations).Publish(arg1);
                     //归队
-                    dic.Enqueue(key, operations);
+                    dic.TryEnqueue(key, operations);
                 }
             }
         }
@@ -61,7 +61,7 @@ namespace AirFramework
                 {
                     UnsafeHandler.As<MessageOperatorBox<IMessage>, MessageOperatorBox<ISendEvent<T1, T2>>>(ref operations).Publish(arg1, arg2);
                     //归队
-                    dic.Enqueue(key, operations);
+                    dic.TryEnqueue(key, operations);
                 }
             }
         }
@@ -79,7 +79,7 @@ namespace AirFramework
                 if (dic.TryDequeue(out var operations, out var key))
                 {
                     UnsafeHandler.As<MessageOperatorBox<IMessage>, MessageOperatorBox<ISendEvent<T1, T2, T3>>>(ref operations).Publish(arg1, arg2, arg3);
-                    dic.Enqueue(key, operations);
+                    dic.TryEnqueue(key, operations);
                 }
             }
         }
@@ -97,7 +97,7 @@ namespace AirFramework
                 if (dic.TryDequeue(out var operations, out var key))
                 {
                     UnsafeHandler.As<MessageOperatorBox<IMessage>, MessageOperatorBox<ISendEvent<T1, T2, T3, T4>>>(ref operations).Publish(arg1, arg2, arg3, arg4);
-                    dic.Enqueue(key, operations);
+                    dic.TryEnqueue(key, operations);
                 }
             }
         }
@@ -115,7 +115,7 @@ namespace AirFramework
                 if (dic.TryDequeue(out var operations, out var key))
                 {
                     UnsafeHandler.As<MessageOperatorBox<IMessage>, MessageOperatorBox<ISendEvent<T1, T2, T3, T4, T5>>>(ref operations).Publish(arg1, arg2, arg3, arg4, arg5);
-                    dic.Enqueue(key, operations);
+                    dic.TryEnqueue(key, operations);
                 }
             }
         }

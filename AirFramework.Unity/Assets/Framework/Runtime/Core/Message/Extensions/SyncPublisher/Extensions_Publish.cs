@@ -12,6 +12,7 @@ namespace AirFramework
         {
             if (container is null) return;
             var mop = ((MessageOperatorBox<IMessage>)container)?.Value;
+            if (!mop.Enable) return;
             while (mop.GetNext(out var current))
             {
                 ((Action)current).Invoke();
@@ -26,6 +27,7 @@ namespace AirFramework
         {
             if (container is null) return;
             var mop = ((MessageOperatorBox<IMessage>)container)?.Value;
+            if (!mop.Enable) return;
             while (mop.GetNext(out var current))
             {
                 ((Action<T1>)current).Invoke(arg1);
@@ -36,6 +38,7 @@ namespace AirFramework
         {
             if (container is null) return;
             var mop = ((MessageOperatorBox<IMessage>)container)?.Value;
+            if (!mop.Enable) return;
             while (mop.GetNext(out var current))
             {
                 ((Action<T1, T2>)current).Invoke(arg1, arg2);
@@ -50,6 +53,7 @@ namespace AirFramework
         {
             if (container is null) return;
             var mop = ((MessageOperatorBox<IMessage>)container)?.Value;
+            if (!mop.Enable) return;
             while (mop.GetNext(out var current))
             {
                 ((Action<T1, T2, T3>)current).Invoke(arg1, arg2, arg3);
@@ -63,6 +67,7 @@ namespace AirFramework
         {
             if (container is null) return;
             var mop = ((MessageOperatorBox<IMessage>)container)?.Value;
+            if (!mop.Enable) return;
             while (mop.GetNext(out var current))
             {
                 ((Action<T1, T2, T3, T4>)current).Invoke(arg1, arg2, arg3, arg4);
@@ -77,6 +82,7 @@ namespace AirFramework
         {
             if (container is null) return;
             var mop = ((MessageOperatorBox<IMessage>)container)?.Value;
+            if (!mop.Enable) return;
             while (mop.GetNext(out var current))
             {
                 ((Action<T1, T2, T3, T4, T5>)current).Invoke(arg1, arg2, arg3, arg4, arg5);

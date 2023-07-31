@@ -6,6 +6,8 @@
  */
 
 using System;
+using UnityEngine;
+
 namespace AirFramework
 {
     /// <summary>
@@ -14,7 +16,15 @@ namespace AirFramework
     /// <typeparam name="T"></typeparam>
     public class LifeCyclePool<T> : TimeManagedPool<T> where T : class
     {
-
+        protected override T OnItemCreate()
+        {
+            var item = base.OnItemCreate();
+  
+               // Debug .Log($"生成事件：{typeof(T).GetType().Name}");
+                Framework.Message.LifeCycle.AnalyseAddAll(item);
+            
+            return item;
+        }
         protected override void OnItemAllocate(T item)
         {
             base.OnItemAllocate(item);
@@ -22,7 +32,7 @@ namespace AirFramework
             //注册生命周期
             if (item is IMessageReceiver receiver)
             {
-                Framework.Message.LifeCycle.AnalyseAddAll(item);
+                receiver.SetActive(true);
                 if (item is IAllocate)
                     receiver.Operator<IAllocate>().Publish();
             }
@@ -37,7 +47,8 @@ namespace AirFramework
             if (item is IMessageReceiver receiver)
             {
                 ((IMessageReceiver)item)?.Operator<IRecycle>().Publish();
-                Framework.Message.LifeCycle.AnalyseRemoveAll(item);
+                receiver.SetActive(false);
+                //Framework.Message.LifeCycle.AnalyseRemoveAll(item);
             }
         }
 

@@ -21,11 +21,7 @@ namespace AirFramework
         /// <returns></returns>
         public static AsyncTask Delay(float seconds)
         {
-            var task = Framework.Pool.Allocate<AsyncTask>();
-            if(task.IsDone)
-            {
-                int x = 0;
-            }
+            var task = Framework.Pool.Allocate<AsyncTask>();        
             var timer = Framework.Pool.Allocate<TaskTimer>();
             timer.BindTask = task;
             task.Token.TokenHolder = timer;

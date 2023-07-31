@@ -14,6 +14,8 @@ namespace AirFramework
     {
         internal UnitList<Delegate> EventsContainer { get; private set; } = new();
 
+
+        public bool Enable { get; set; } = true;
         /// <summary>
         /// 委托类型数
         /// </summary>

@@ -136,13 +136,17 @@ namespace AirFramework
         {
 
             var pool = GetOrCreatePool<T>();
-            if(pool == null)
+            if (pool == null)
             {
                 var item = Activator.CreateInstance<T>();
-                if(item is IAllocate it)
+
+                Framework.Message.LifeCycle.AnalyseAddAll(item);
+                if (item is IAllocate it)
                 {
                     it.OnAllocate();
                 }
+
+
                 return item;
             }
             return pool.Allocate();
@@ -159,10 +163,11 @@ namespace AirFramework
             var pool = GetOrCreatePool(type);
             if (pool == null)
             {
+                Framework.Message.LifeCycle.AnalyseRemoveAll(item);
                 if (item is IRecycle it)
                 {
                     it.OnRecycle();
-                    
+
                 }
                 return;
             }

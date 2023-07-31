@@ -25,7 +25,7 @@ namespace AirFramework
                 {
                     result.Value.Add(UnsafeHandler.As<MessageOperatorBox<IMessage>, MessageOperatorBox<ICallEvent<T1>>>(ref operations).Call());
                     //归队
-                    dic.Enqueue(key, operations);
+                    dic.TryEnqueue(key, operations);
                 }
             }
             return result;
@@ -53,7 +53,7 @@ namespace AirFramework
                 {
                     result.Value.Add(UnsafeHandler.As<MessageOperatorBox<IMessage>, MessageOperatorBox<ICallEvent<T1, T2>>>(ref operations).Call(arg1));
                     //归队
-                    dic.Enqueue(key, operations);
+                    dic.TryEnqueue(key, operations);
                 }
             }
             return result;
@@ -83,7 +83,7 @@ namespace AirFramework
                 {
                     result.Value.Add(UnsafeHandler.As<MessageOperatorBox<IMessage>, MessageOperatorBox<ICallEvent<T1, T2, T3>>>(ref operations).Call(arg1, arg2));
                     //归队
-                    dic.Enqueue(key, operations);
+                    dic.TryEnqueue(key, operations);
                 }
             }
             return result;
@@ -115,7 +115,7 @@ namespace AirFramework
                 {
                     result.Value.Add(UnsafeHandler.As<MessageOperatorBox<IMessage>, MessageOperatorBox<ICallEvent<T1, T2, T3, T4>>>(ref operations).Call(arg1, arg2, arg3));
                     //归队
-                    dic.Enqueue(key, operations);
+                    dic.TryEnqueue(key, operations);
                 }
             }
             return result;
@@ -150,7 +150,7 @@ namespace AirFramework
                     //强转发布
                     result.Value.Add(UnsafeHandler.As<MessageOperatorBox<IMessage>, MessageOperatorBox<ICallEvent<T1, T2, T3, T4, T5>>>(ref operations).Call(arg1, arg2, arg3, arg4));
                     //归队
-                    dic.Enqueue(key, operations);
+                    dic.TryEnqueue(key, operations);
                 }
             }
             return result;
@@ -187,7 +187,7 @@ namespace AirFramework
                     //强转发布
                     result.Value.Add(UnsafeHandler.As<MessageOperatorBox<IMessage>, MessageOperatorBox<ICallEvent<T1, T2, T3, T4, T5, T6>>>(ref operations).Call(arg1, arg2, arg3, arg4, arg5));
                     //归队
-                    dic.Enqueue(key, operations);
+                    dic.TryEnqueue(key, operations);
                 }
             }
             return result;

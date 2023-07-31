@@ -80,7 +80,7 @@ namespace AirFramework
         {
 
             _id = IDs.Allocate();
-            
+            //if (this is IMessageReceiver) Framework.Message.LifeCycle.AnalyseAddAll(this);
             //UnityEngine.Debug.Log($"id:{_id} , Type:{this.GetType().Name}");
         }
         ~Unit()

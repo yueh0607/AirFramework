@@ -29,6 +29,7 @@ namespace AirFramework
             () => new(), null, (x) =>
             {
                 x.Value.Clear();
+                
             }, null);
 
         public override void OnCreate()

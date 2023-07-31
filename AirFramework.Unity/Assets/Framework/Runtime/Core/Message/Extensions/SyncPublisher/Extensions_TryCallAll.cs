@@ -18,6 +18,7 @@ namespace AirFramework
             if (container is null) return false;
             var events = ((MessageOperatorBox<IMessage>)container)?.Value;
             if (events == null || events.Count == 0) return false;
+            if (!events.Enable) return false;
             while (events.GetNext(out var dele))
             {
                 _result.Value.Add((dele as Func<T1>).Invoke());
@@ -39,6 +40,7 @@ namespace AirFramework
             if (container is null) return false;
             var events = ((MessageOperatorBox<IMessage>)container)?.Value;
             if (events == null || events.Count == 0) return false;
+            if (!events.Enable) return false;
             while (events.GetNext(out var dele))
             {
                 _result.Value.Add((dele as Func<T1, T2>).Invoke(arg1));
@@ -60,6 +62,7 @@ namespace AirFramework
             if (container is null) return false;
             var events = ((MessageOperatorBox<IMessage>)container)?.Value;
             if (events == null || events.Count == 0) return false;
+            if (!events.Enable) return false;
             while (events.GetNext(out var dele))
             {
                 _result.Value.Add((dele as Func<T1, T2, T3>).Invoke(arg1, arg2));
@@ -81,6 +84,7 @@ namespace AirFramework
             if (container is null) return false;
             var events = ((MessageOperatorBox<IMessage>)container)?.Value;
             if (events == null || events.Count == 0) return false;
+            if (!events.Enable) return false;
             while (events.GetNext(out var dele))
             {
                 _result.Value.Add((dele as Func<T1, T2, T3, T4>).Invoke(arg1, arg2, arg3));
@@ -102,6 +106,7 @@ namespace AirFramework
             if (container is null) return false;
             var events = ((MessageOperatorBox<IMessage>)container)?.Value;
             if (events == null || events.Count == 0) return false;
+            if (!events.Enable) return false;
             while (events.GetNext(out var dele))
             {
                 _result.Value.Add((dele as Func<T1, T2, T3, T4, T5>).Invoke(arg1, arg2, arg3, arg4));
@@ -123,6 +128,7 @@ namespace AirFramework
             if (container is null) return false;
             var events = ((MessageOperatorBox<IMessage>)container)?.Value;
             if (events == null || events.Count == 0) return false;
+            if (!events.Enable) return false;
             while (events.GetNext(out var dele))
             {
                 _result.Value.Add((dele as Func<T1, T2, T3, T4, T5, T6>).Invoke(arg1, arg2, arg3, arg4, arg5));
