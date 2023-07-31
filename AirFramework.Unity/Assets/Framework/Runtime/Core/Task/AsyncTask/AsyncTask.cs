@@ -255,7 +255,7 @@ namespace AirFramework
 
         public override void OnAllocate()
         {
-            this.OnAllocate();
+            base.OnAllocate();
             this.continuation = null;
         }
 
