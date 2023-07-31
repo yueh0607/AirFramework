@@ -14,8 +14,7 @@ GameObject:
   - component: {fileID: 6342449832537186583}
   - component: {fileID: 2989828605199862195}
   - component: {fileID: 8610470380083036621}
-  - component: {fileID: 6113347959260440791}
-  - component: {fileID: 9131211743793964319}
+  - component: {fileID: 4288608840822293852}
   m_Layer: 5
   m_Name: CounterPanel
   m_TagString: Untagged
@@ -161,7 +160,7 @@ MonoBehaviour:
   duration: 2
   direction: 1
   Loop: 0
---- !u!114 &6113347959260440791
+--- !u!114 &4288608840822293852
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,25 +169,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2102795594456606251}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d43083ba4bd99a4583615dda2688487, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buildTarget: {fileID: 8610470380083036621}
-  buildProperty: 
---- !u!114 &9131211743793964319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2102795594456606251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d43083ba4bd99a4583615dda2688487, type: 3}
+  m_Script: {fileID: 11500000, guid: ae68113a4a8a00742aebc81d5fb3f7db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buildTarget: {fileID: 2989828605199862195}
-  buildProperty: alpha|interactable
+  buildProperty: alpha
 --- !u!1 &2882224628647762384
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,7 +346,6 @@ GameObject:
   - component: {fileID: 70627648353320875}
   - component: {fileID: 5835812634519184714}
   - component: {fileID: 2825499768144151739}
-  - component: {fileID: 2170955564475958510}
   m_Layer: 5
   m_Name: Plus
   m_TagString: Untagged
@@ -472,20 +456,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &2170955564475958510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6753791218292147930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d43083ba4bd99a4583615dda2688487, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buildTarget: {fileID: 2825499768144151739}
-  buildProperty: 
 --- !u!1 &6796492579515459723
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,7 +468,6 @@ GameObject:
   - component: {fileID: 1853212772906340415}
   - component: {fileID: 979041074459357853}
   - component: {fileID: 2396499003418452570}
-  - component: {fileID: 4934017211222547147}
   m_Layer: 5
   m_Name: Minus
   m_TagString: Untagged
@@ -609,20 +578,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &4934017211222547147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6796492579515459723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d43083ba4bd99a4583615dda2688487, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buildTarget: {fileID: 2396499003418452570}
-  buildProperty: 
 --- !u!1 &7149538230097125789
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,7 +589,6 @@ GameObject:
   - component: {fileID: 6327935613398604410}
   - component: {fileID: 9163342855543579382}
   - component: {fileID: 5691021031344139222}
-  - component: {fileID: 7842179012755948925}
   m_Layer: 5
   m_Name: Monitor
   m_TagString: Untagged
@@ -704,20 +658,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 0
---- !u!114 &7842179012755948925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7149538230097125789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d43083ba4bd99a4583615dda2688487, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buildTarget: {fileID: 5691021031344139222}
-  buildProperty: text
 --- !u!1 &7468595813276801371
 GameObject:
   m_ObjectHideFlags: 0

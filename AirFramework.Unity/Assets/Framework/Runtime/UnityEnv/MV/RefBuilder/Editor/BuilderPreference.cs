@@ -1,11 +1,11 @@
 ﻿using UnityEditor;
 
-namespace AirFramework.Utility.RefBuild.Editor
+namespace AirFramework.MV.RefBuild.Editor
 {
 
     public class BuilderPreference : ScriptableSingleton<BuilderPreference>
     {
-        public string defaultNameSpace = "AirFramework.Utility.RefBuild.Cache";
+        public string defaultNameSpace = "AirFramework.MV.RefBuild.Cache";
         public string defaultPath = "Assets/Project/Scripts/RefBuilds";
         public bool increase = false;
         public bool part = false;

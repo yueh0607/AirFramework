@@ -1,11 +1,12 @@
-﻿using System;
+﻿using AirFramework.Utility;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using UnityEditor;
 using UnityEngine;
 
-namespace AirFramework.Utility.RefBuild.Editor
+namespace AirFramework.MV.RefBuild.Editor
 {
     public class MarkBuilder : EditorWindow
     {
@@ -60,30 +61,30 @@ namespace AirFramework.Utility.RefBuild.Editor
 
 
             path = EditorGUILayout.TextField("BuildPath", path);
-            GUILayout.BeginHorizontal();
-            GUILayout.Label("CreatePath      ");
-            autoCreatePath = EditorGUILayout.Toggle(autoCreatePath);
-            GUILayout.EndHorizontal();
+           
             className = EditorGUILayout.TextField("ClassName", className);
 
+            GUILayout.BeginHorizontal();
+            autoCreatePath = GUILayout.Toggle(autoCreatePath, "TryCreateBuildPath");
+            GUILayout.EndHorizontal();
 
             //一个物体有多个相同组件时，开启增量生成将使得组件名唯一，但是名字会更长
             GUILayout.BeginHorizontal();
-            GUILayout.Label("IncreaseName");
-            increase = EditorGUILayout.Toggle(increase);
+            increase = GUILayout.Toggle(increase, "IncreaseNameMode");
             GUILayout.EndHorizontal();
 
             //表明将引用生成为分部类，不会自动调用初始化，否则生成为Mono
             GUILayout.BeginHorizontal();
-            GUILayout.Label("IsPartialClass ");
-            part = EditorGUILayout.Toggle(part);
+            part = GUILayout.Toggle(part,"IsPartialClass");
             GUILayout.EndHorizontal();
 
             //表明是否生成Awake自动调用
             GUILayout.BeginHorizontal();
-            GUILayout.Label("AwakeAutoInit   ");
-            awakeInit = EditorGUILayout.Toggle(awakeInit);
+           
+            awakeInit = GUILayout.Toggle(awakeInit,"InitOnAwake");
             GUILayout.EndHorizontal();
+
+
 
 
             // 路径拖拽
@@ -222,7 +223,7 @@ namespace AirFramework.Utility.RefBuild.Editor
  * UVersion : #VERSION#
  *******************************************************/
 using UnityEngine;
-using AirFramework.Utility.RefBuild;
+using AirFramework.MV.RefBuild;
 
 namespace #NAMESPACE#
 {

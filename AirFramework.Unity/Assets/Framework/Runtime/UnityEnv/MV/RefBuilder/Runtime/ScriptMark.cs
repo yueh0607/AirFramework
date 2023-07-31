@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-namespace AirFramework.Utility.RefBuild
+namespace AirFramework.MV.RefBuild
 {
 
     public class ScriptMark : MonoBehaviour

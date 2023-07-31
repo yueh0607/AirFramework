@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AirFramework.Utility.RefBuild
+namespace AirFramework.MV.RefBuild
 {
     public class BindableProperty<T> where T : IEquatable<T>
     {
