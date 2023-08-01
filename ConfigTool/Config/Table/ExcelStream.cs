@@ -24,7 +24,9 @@ namespace AirFramework
             }
         }
 
+        public int RowCount => data.RowCount;
 
+        public int ColumnCount => data.ColumnCount;
 
         public string this[int row, int column]
         {

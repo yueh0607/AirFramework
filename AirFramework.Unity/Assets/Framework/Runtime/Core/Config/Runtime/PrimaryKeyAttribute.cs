@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace AirFramework
+{
+
+    /// <summary>
+    /// 用于标记主键
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false)]
+    public class PrimaryKeyAttribute : System.Attribute
+    {
+
+    }
+}
