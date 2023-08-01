@@ -10,7 +10,7 @@ namespace AirFramework
      /// <param name="container"></param>
      /// <returns></returns>
      /// <exception cref="CallNullEventException"></exception>
-        public static async AirTask SendAsync<T1>(this IOperatorOut<ICallEvent<AirTask>> container)
+        public static async AirTask SendAsync(this IOperatorOut<ICallEvent<AirTask>> container)
         {
             var x = container.TryCall(out var result);
             if (x) await result;

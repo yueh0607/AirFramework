@@ -31,10 +31,12 @@ namespace AirFramework.MV.RefBuild.Editor
         private const string binderName = "AirFramework.MV.RefBuild.BindableProperty";
         bool awakeInit = false;
 
+        bool language_cn = true;
         private void OnEnable()
         {
             //target = BuilderPreference.instance.buildPrefab;
             //className = BuilderPreference.instance.className;
+            language_cn = BuilderPreference.instance.Language_CN;
             path = BuilderPreference.instance.defaultPath;
             increase = BuilderPreference.instance.increase;
             part = BuilderPreference.instance.part;
@@ -46,6 +48,7 @@ namespace AirFramework.MV.RefBuild.Editor
         {
             //BuilderPreference.instance.buildPrefab = target;
             //BuilderPreference.instance.className = className;
+            BuilderPreference.instance.Language_CN = language_cn;
             BuilderPreference.instance.defaultPath = path;
             BuilderPreference.instance.increase = increase;
             BuilderPreference.instance.part = part;
@@ -58,7 +61,7 @@ namespace AirFramework.MV.RefBuild.Editor
 
         private void OnGUI()
         {
-            var tempT = (GameObject)EditorGUILayout.ObjectField("BuildTarget", target, typeof(GameObject), true);
+            var tempT = (GameObject)EditorGUILayout.ObjectField(language_cn ? "生成目标" : "BuildTarget", target, typeof(GameObject), true);
             if (tempT != target)
             {
                 className = tempT.name;
@@ -66,31 +69,35 @@ namespace AirFramework.MV.RefBuild.Editor
             target = tempT;
 
 
-            path = EditorGUILayout.TextField("BuildPath", path);
-           
-            className = EditorGUILayout.TextField("ClassName", className);
+            path = EditorGUILayout.TextField(language_cn ? "生成路径" : "BuildPath", path);
+
+            className = EditorGUILayout.TextField(language_cn ? "生成类名" : "ClassName", className);
 
             GUILayout.BeginHorizontal();
-            autoCreatePath = GUILayout.Toggle(autoCreatePath, "TryCreateBuildPath");
+            autoCreatePath = GUILayout.Toggle(autoCreatePath, language_cn ? "自动创建目录" : "TryCreateBuildPath");
             GUILayout.EndHorizontal();
 
             //一个物体有多个相同组件时，开启增量生成将使得组件名唯一，但是名字会更长
             GUILayout.BeginHorizontal();
-            increase = GUILayout.Toggle(increase, "IncreaseNameMode");
+            increase = GUILayout.Toggle(increase, language_cn ? "增量名称模式" : "IncreaseNameMode");
             GUILayout.EndHorizontal();
 
             //表明将引用生成为分部类，不会自动调用初始化，否则生成为Mono
             GUILayout.BeginHorizontal();
-            part = GUILayout.Toggle(part,"IsPartialClass");
+            part = GUILayout.Toggle(part, language_cn ? "是分部类" : "IsPartialClass");
             GUILayout.EndHorizontal();
 
             //表明是否生成Awake自动调用
             GUILayout.BeginHorizontal();
-           
-            awakeInit = GUILayout.Toggle(awakeInit,"InitOnAwake");
+
+            awakeInit = GUILayout.Toggle(awakeInit, language_cn ? "唤醒初始化" : "InitOnAwake");
             GUILayout.EndHorizontal();
 
+            //表明是否生成Awake自动调用
+            GUILayout.BeginHorizontal();
 
+            language_cn = GUILayout.Toggle(language_cn, language_cn ? "中文" : "CN");
+            GUILayout.EndHorizontal();
 
 
             // 路径拖拽

@@ -14,5 +14,7 @@ namespace AirFramework.MV.RefBuild.Editor
         public bool part = false;
         public bool autoCreatePath = true;
         public bool awakrInit = false;
+
+        public bool Language_CN = true;
     }
 }
