@@ -1,29 +1,11 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {
-      "AirFramework/1.0.0": {
-        "type": "project",
-        "compile": {
-          "bin/placeholder/AirFramework.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/AirFramework.dll": {}
-        }
-      }
-    }
+    "net6.0": {}
   },
-  "libraries": {
-    "AirFramework/1.0.0": {
-      "type": "project",
-      "path": "../AirFramework.Unity/AirFramework.csproj",
-      "msbuildProject": "../AirFramework.Unity/AirFramework.csproj"
-    }
-  },
+  "libraries": {},
   "projectFileDependencyGroups": {
-    "net6.0": [
-      "AirFramework >= 1.0.0"
-    ]
+    "net6.0": []
   },
   "packageFolders": {
     "C:\\Users\\imyue\\.nuget\\packages\\": {},
@@ -32,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "X:\\Projects\\Framework\\ConfigTool\\ConfigTool.csproj",
-      "projectName": "ConfigTool",
-      "projectPath": "X:\\Projects\\Framework\\ConfigTool\\ConfigTool.csproj",
+      "projectUniqueName": "X:\\Projects\\Framework\\AirFramework.Core\\AirFramework.Core.csproj",
+      "projectName": "AirFramework.Core",
+      "projectPath": "X:\\Projects\\Framework\\AirFramework.Core\\AirFramework.Core.csproj",
       "packagesPath": "C:\\Users\\imyue\\.nuget\\packages\\",
-      "outputPath": "X:\\Projects\\Framework\\ConfigTool\\obj\\",
+      "outputPath": "X:\\Projects\\Framework\\AirFramework.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -57,11 +39,7 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {
-            "X:\\Projects\\Framework\\AirFramework.Unity\\AirFramework.csproj": {
-              "projectPath": "X:\\Projects\\Framework\\AirFramework.Unity\\AirFramework.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
