@@ -6,7 +6,6 @@ namespace AirFramework
 {
     public static partial class TypeExtensions
     {
-
         /// <summary>
         /// 抽象则抛异常
         /// </summary>
@@ -14,12 +13,12 @@ namespace AirFramework
         /// <exception cref="ArgumentException"></exception>
         [DebuggerHidden]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void IfAbstractThrowException(this Type type)
+        public static void IfNullThrowException(this object obj)
         {
-            if (type.IsAbstract) throw new ArgumentException("Type parameters are not allowed to be abstract");
+            if (obj == null) throw new ArgumentException("Empty references are not allowed to be used here");
         }
 
 
-        
+
     }
 }

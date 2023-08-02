@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace AirFramework
 {
-    public class ModelManager
+    public class ModelModule : AbstractModule
     {
         private Dictionary<Type, IModel> models = new Dictionary<Type, IModel>();
 
@@ -38,6 +38,23 @@ namespace AirFramework
         public void LoadAll()
         {
 
+        }
+
+
+
+        public override void OnCreate()
+        {
+      
+        }
+        
+        public override void Update(float deltaTime)
+        {
+   
+        }
+
+        protected override void OnDispose()
+        {
+ 
         }
     }
 }

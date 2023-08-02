@@ -1,19 +1,30 @@
-﻿using System.Collections;
+﻿using OfficeOpenXml.FormulaParsing.Excel.Functions.Text;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using YooAsset;
 
 namespace AirFramework
 {
-    public class View<T> : PoolableObject,IView where T : MonoBehaviour
+
+    public abstract class View : PoolableObject, IView
+    {
+
+
+        protected static AssetOperationHandle prefabHandle = null;
+
+        public bool IsLoaded { get; protected set; } = false;
+        public bool IsLoading { get; protected set; } = false;
+        public abstract AirTask LoadAsync();
+        public bool IsShowing { get; protected set; } = false;
+
+    }
+
+    public abstract class View<T> : View where T : MonoBehaviour
     {
         public T Refs { get; set; }
 
-        private static AssetOperationHandle prefabHandle = null;
-
-        public bool IsLoaded { get; private set; } = false;
-        public bool IsLoading { get; private set; } = false;
-        public async AirTask LoadAsync()
+        public override async AirTask LoadAsync()
         {
             IsLoading = true;
             if (prefabHandle == null)
@@ -37,71 +48,37 @@ namespace AirFramework
             }
 
             Refs = objHandle.Result.AddComponent<T>();
+
+            if(this is IViewInitialize)
+            {
+                await this.Operator<IViewInitialize>().TrySendAsync();
+            }
+
             IsLoading = false;
             IsLoaded = true;
 
 
         }
 
-        public bool IsShowing { get; private set; } = false;
-
-        public async AirTask Show()
-        {
-            if (!IsLoaded)
-            {
-                if(!IsLoading)
-                {
-                    await LoadAsync();
-                }
-                await AirTask.WaitUntil(() => IsLoaded);
-            }
-            
-            if(Refs is IViewShow show)
-            {
-                await show.Operator<IViewShow>().TrySendAsync();
-            }
-            await AirTask.CompletedTask;
-        }
-
-        public async AirTask Hide()
-        {
-
-        }
-
-
-
-        private void PublishShow()
-        {
-            
-        }
-
-        private void PublishHide()
-        {
-
-        }
-
-        private void PublishInitialize()
-        {
-
-        }
-
-
         public override void OnAllocate()
         {
-            IsLoaded = false;
-            IsLoading = false;
-            Refs = default;
-
+            Refs.gameObject.SetActive(true);
+            IsShowing = true;
         }
 
         public override void OnRecycle()
         {
-
+            Refs.gameObject.SetActive(false);
+            IsShowing = false;
         }
 
         protected override void OnDestroy()
         {
-            GameObject.Destroy(Refs.gameObject);
+            if (!IsLoaded)
+                GameObject.Destroy(Refs.gameObject);
+            IsLoaded = false;
+
         }
+
     }
 }

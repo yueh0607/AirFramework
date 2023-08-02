@@ -154,6 +154,8 @@ namespace AirFramework.MV.RefBuild.Editor
         }
 
 
+
+        const string inhernt = "UnityEngine.MonoBehaviour,AirFramework.IViewRef";
         void Build(string buildPath, GameObject buildTarget, string _namespace, string _class, bool increase, bool part)
         {
 
@@ -239,7 +241,7 @@ using UnityEngine;
 
 namespace #NAMESPACE#
 {
-    public #PART#class #CLASS# : UnityEngine.MonoBehaviour
+    public #PART#class #CLASS# : #INHE#
     {
 #FIELDS#
 
@@ -253,6 +255,7 @@ namespace #NAMESPACE#
     
 }
 ";
+                model = model.Replace("INHE", inhernt);
                 model = model.Replace("#VERSION#", Application.unityVersion);
                 model = model.Replace("#DATETIME#", DateTime.Now.ToString());
                 model = model.Replace("#FIELDS#", fields_builder.ToString());
