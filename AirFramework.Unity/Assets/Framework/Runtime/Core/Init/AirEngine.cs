@@ -17,10 +17,12 @@ namespace AirFramework.Internal
             Framework.CreateModule<MessageManager>();
             //注册驱动更新
             Framework.Message.Operator<IUpdate>().Subscribe(AirEngine.DriveUpdate);
+            //异步任务
+            Framework.CreateModule<TaskModule>();
             //部署全局程序反射初始化步骤
             ReflectInitialize();
-            //异步任务
-            //Framework.CreateModule<TaskModule>();
+            
+
         }
 
         #region Driver
@@ -117,6 +119,9 @@ namespace AirFramework.Internal
             if (_modules.ContainsKey(type)) return;
             _modules.Enqueue(type, (AbstractModule)Activator.CreateInstance(type));
             _modules[type].OnCreate();
+//#if DEBUG
+//            UnityEngine.Debug.Log($"{type.Name} Initialized");
+//#endif
         }
 
         /// <summary>

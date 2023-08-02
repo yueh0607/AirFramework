@@ -66,29 +66,29 @@ namespace AirFramework
             //抽象检查
             var type = typeof(T);
             type.IfAbstractThrowException();
-            //空检查
-            if (view == null)
-            {
-                view = Framework.Pool.Allocate<T>();
-            }
+
+            var _view = view ?? Framework.Pool.Allocate<T>();
+
+       
             //非托管加载检查
-            if (!view.IsLoaded && !view.IsLoading)
+            if (!_view.IsLoaded && !_view.IsLoading)
             {
-                await view.LoadAsync();
+                await _view.LoadAsync();
             }
             //加载中等待
-            if (view.IsLoading)
+            if (_view.IsLoading)
             {
-                await AirTask.WaitUntil(() => view.IsLoaded);
+                await AirTask.WaitUntil(() => _view.IsLoaded);
             }
+
             //展示事件检查
-            if (view is IViewShow)
+            if (_view is IViewShow)
             {
-                await view.Operator<IViewShow>().TrySendAsync();
+                await _view.Operator<IViewShow>().TrySendAsync();
             }
             await AirTask.CompletedTask;
 
-            return view;
+            return _view;
         }
         /// <summary>
         /// 隐藏一个View
@@ -113,6 +113,7 @@ namespace AirFramework
             {
                 if (view is IViewHide)
                 {
+                    
                     await view.Operator<IViewHide>().TrySendAsync();
                 }
             }

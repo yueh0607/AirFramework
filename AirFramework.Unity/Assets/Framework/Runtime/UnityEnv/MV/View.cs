@@ -26,13 +26,14 @@ namespace AirFramework
 
         public override async AirTask LoadAsync()
         {
+
             IsLoading = true;
             if (prefabHandle == null)
             {
                 string location = typeof(T).Name;
                 prefabHandle = Framework.Res.LoadAsync<GameObject>(location);
-
             }
+
             if (!prefabHandle.IsDone)
                 await prefabHandle;
 
@@ -42,14 +43,9 @@ namespace AirFramework
             await objHandle;
             GameObject.DontDestroyOnLoad(objHandle.Result);
 
-            if (Refs is IViewInitialize initializer)
-            {
-                await initializer.Operator<IViewInitialize>().TrySendAsync();
-            }
-
             Refs = objHandle.Result.AddComponent<T>();
 
-            if(this is IViewInitialize)
+            if (this is IViewInitialize)
             {
                 await this.Operator<IViewInitialize>().TrySendAsync();
             }
@@ -62,13 +58,13 @@ namespace AirFramework
 
         public override void OnAllocate()
         {
-            Refs.gameObject.SetActive(true);
+            //Refs.gameObject.SetActive(true);
             IsShowing = true;
         }
 
         public override void OnRecycle()
         {
-            Refs.gameObject.SetActive(false);
+            //Refs.gameObject.SetActive(false);
             IsShowing = false;
         }
 

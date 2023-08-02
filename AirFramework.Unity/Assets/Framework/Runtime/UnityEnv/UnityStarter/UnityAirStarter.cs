@@ -21,7 +21,7 @@ namespace AirFramework
             SingletonInitializeAfterSceneLoad();
         }
 
-        private void Awake()
+        private async void Awake()
         {
             gameObject.name = $"[{nameof(AirFramework)}.{nameof(UnityEngine)}]";
             Action<IEnumerator> coroutineRunner = (x) =>
@@ -32,6 +32,17 @@ namespace AirFramework
             AirEngine.Initialize(coroutineRunner);
 
 
+            Framework.CreateModule<ResModule>();
+            var module = Framework.GetModule<ResModule>();
+            module.Initialize();
+            await module.InitializePackage();
+
+            Framework.CreateModule<ModelModule>();
+
+            Framework.CreateModule<ViewModule>();
+
+
+            Framework.Message.Dispatcher<IFrameworkInitialize>().Publish();
         }
 
         private void Update()

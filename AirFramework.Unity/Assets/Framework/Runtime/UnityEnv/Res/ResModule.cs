@@ -3,7 +3,7 @@ using YooAsset;
 using Object = UnityEngine.Object;
 namespace AirFramework
 {
-    public class ResManager:AbstractModule
+    public class ResModule:AbstractModule
     {
         #region 默认配置信息
         /// <summary>
@@ -279,17 +279,17 @@ namespace AirFramework
 
         public override void OnCreate()
         {
-            throw new NotImplementedException();
+    
         }
 
         public override void Update(float deltaTime)
         {
-            throw new NotImplementedException();
+     
         }
 
         protected override void OnDispose()
         {
-            throw new NotImplementedException();
+
         }
         #endregion
     }

@@ -19,10 +19,10 @@ namespace AirFramework
         protected override T OnItemCreate()
         {
             var item = base.OnItemCreate();
-  
-               // Debug .Log($"生成事件：{typeof(T).GetType().Name}");
-                Framework.Message.LifeCycle.AnalyseAddAll(item);
-            
+
+             //Debug .Log($"生成事件：{item.GetType().FullName}");
+            Framework.Message.LifeCycle.AnalyseAddAll(item);
+
             return item;
         }
         protected override void OnItemAllocate(T item)

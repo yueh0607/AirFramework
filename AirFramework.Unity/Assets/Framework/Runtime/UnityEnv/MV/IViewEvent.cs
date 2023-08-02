@@ -49,16 +49,16 @@
         /// <returns></returns>
         AirTask OnViewInitialize();
     }
-    public class ViewInitializeHandler : LifeCycleHandler<IViewHide>
+    public class ViewInitializeHandler : LifeCycleHandler<IViewInitialize>
     {
-        public override void OnLifeCycleRegister(IViewHide item)
+        public override void OnLifeCycleRegister(IViewInitialize item)
         {
-            item.Operator<IViewShow>().Subscribe(item.OnViewHide);
+            item.Operator<IViewInitialize>().Subscribe(item.OnViewInitialize);
         }
 
-        public override void OnLifeCycleUnRegister(IViewHide item)
+        public override void OnLifeCycleUnRegister(IViewInitialize item)
         {
-            item.Operator<IViewShow>().UnSubscribe(item.OnViewHide);
+            item.Operator<IViewInitialize>().UnSubscribe(item.OnViewInitialize);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿using AirFramework;
+using UnityEditor;
 
 namespace AirEditor
 {
@@ -28,23 +29,23 @@ namespace {FrameworkSettings.instance.defaultNamespace}
 
 
 
-        //        [MenuItem("Assets/Create/Format/Model Script", false, 0)]
-        //        public static void CreateModelScript()
-        //        {
-        //            FileCreateHelper.CreateScriptWithTitle(@$"
-        //using AirFramework;
+        [MenuItem("Assets/Create/Format/Model Script", false, 0)]
+        public static void CreateModelScript()
+        {
+            FileCreateHelper.CreateScriptWithTitle(@$"
+        using AirFramework;
 
-        //namespace {FrameworkSettings.instance.defaultNamespace}
-        //{{
-        //    public class #NAME# : {nameof(IModel)}
-        //    {{
+        namespace {FrameworkSettings.instance.defaultNamespace}
+        {{
+            public class #NAME# : {typeof(IModel).FullName}
+            {{
 
-        //    }}
-        //}}
+            }}
+        }}
 
-        //");
+        ");
 
-        //        }
+        }
         [MenuItem("Assets/Create/Format/Mono Script", false, 0)]
         public static void CreateMonoScript()
         {
@@ -150,6 +151,35 @@ namespace {FrameworkSettings.instance.defaultNamespace}
 ");
         }
 
+
+
+        [MenuItem("Assets/Create/Format/Event Script", false, 0)]
+        public static void CreateEventScript()
+        {
+            FileCreateHelper.CreateScriptWithTitle(@$"
+namespace AirFramework
+{{
+    public interface #NAME# : ISendEvent, IMessageReceiver
+    {{
+        void #NAME#();
+    }}
+    public class #NAME#Handler : LifeCycleHandler<#NAME#>
+    {{
+        public override void OnLifeCycleRegister(#NAME# item)
+        {{
+
+            item.Operator<#NAME#>().Subscribe(item.#NAME#);
+        }}
+
+        public override void OnLifeCycleUnRegister(#NAME# item)
+        {{
+            item.Operator<#NAME#>().UnSubscribe(item.#NAME#);
+        }}
+    }}
+}}
+
+");
+        }
     }
 }
 

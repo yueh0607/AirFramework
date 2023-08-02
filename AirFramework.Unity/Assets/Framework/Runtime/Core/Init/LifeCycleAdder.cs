@@ -15,7 +15,7 @@ namespace AirFramework
             if (gen == null) return;
             var inter = gen.GenericTypeArguments[0];
             Framework.Message.LifeCycle.AddLifeCycle(inter, type);
-            //Debug.Log($"添加:{inter.Name},{type.Name}");
+            //UnityEngine.Debug.Log($"添加:{inter.Name},{type.Name}");
         }
 
 

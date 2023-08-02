@@ -16,7 +16,7 @@ namespace AirFramework
         {
             var x = container.TryCall(out var result);
             if (x) await result;
-            else await AirTask.CompletedTask;
+            await AirTask.CompletedTask;
         }
         /// <summary>
         /// 对指定对象进行TrySendAsync,返回最后一个结果
@@ -25,11 +25,11 @@ namespace AirFramework
         /// <param name="container"></param>
         /// <returns></returns>
         /// <exception cref="CallNullEventException"></exception>
-        public static async AirTask TrySendAsync<T1>(this IOperatorOut<ICallEvent<T1,AirTask>> container,T1 arg1) 
+        public static async AirTask TrySendAsync<T1>(this IOperatorOut<ICallEvent<T1, AirTask>> container, T1 arg1)
         {
-            var x = container.TryCall(arg1,out var result);
+            var x = container.TryCall(arg1, out var result);
             if (x) await result;
-            else await AirTask.CompletedTask;
+            await AirTask.CompletedTask;
         }
         /// <summary>
         /// 对指定对象进行TrySendAsync,返回最后一个结果
@@ -41,7 +41,7 @@ namespace AirFramework
         {
             var x = container.TryCall(arg1, arg2, out var result);
             if (x) await result;
-            else await AirTask.CompletedTask;
+            await AirTask.CompletedTask;
         }
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace AirFramework
         {
             var x = container.TryCall(arg1, arg2, arg3, out var result);
             if (x) await result;
-            else await AirTask.CompletedTask;
+            await AirTask.CompletedTask;
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace AirFramework
         {
             var x = container.TryCall(arg1, arg2, arg3, arg4, out var result);
             if (x) await result;
-            else await AirTask.CompletedTask;
+            await AirTask.CompletedTask;
         }
 
         /// <summary>
@@ -80,10 +80,10 @@ namespace AirFramework
         {
             var x = container.TryCall(arg1, arg2, arg3, arg4, arg5, out var result);
             if (x) await result;
-            else await AirTask.CompletedTask;
+            await AirTask.CompletedTask;
         }
 
-     
+
 
     }
 }
