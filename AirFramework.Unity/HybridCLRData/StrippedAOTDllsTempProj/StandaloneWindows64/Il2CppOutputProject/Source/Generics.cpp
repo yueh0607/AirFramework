@@ -29002,17 +29002,17 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AirTask_GetResult_m7E806F0EB
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AirTaskBuilder_SetException_m1DC25889C8265E827EA7AE68D4512F54DF868914_inline (AirTaskBuilder_t45EA2AB4D80A59544ADB854A233B4E590A45FFAD* __this, Exception_t* ___0_exception, const RuntimeMethod* method) 
 {
 	{
-		// task.Finish(ETaskStatus.Failed);
-		AirTask_tC970C760B30CD51ED650CFEF4548203762BC72A5* L_0 = __this->___task_0;
-		NullCheck(L_0);
-		AirTaskBase_Finish_m630387E2AB00569617832FB17555EA3DE145E1D6_inline(L_0, 3, NULL);
 		// task.PostException(ExceptionDispatchInfo.Capture(exception));
-		AirTask_tC970C760B30CD51ED650CFEF4548203762BC72A5* L_1 = __this->___task_0;
-		Exception_t* L_2 = ___0_exception;
-		ExceptionDispatchInfo_tD7AF19E75FEC22F4A8329FD1E9EDF96615CB2757* L_3;
-		L_3 = ExceptionDispatchInfo_Capture_mC1C1C30D83DC04B2B7813DFCB67D07CCD4909803(L_2, NULL);
-		NullCheck(L_1);
-		AirTaskBase_PostException_m324406A5CA13964D92AF468CB24DA15EEA389AD3_inline(L_1, L_3, NULL);
+		AirTask_tC970C760B30CD51ED650CFEF4548203762BC72A5* L_0 = __this->___task_0;
+		Exception_t* L_1 = ___0_exception;
+		ExceptionDispatchInfo_tD7AF19E75FEC22F4A8329FD1E9EDF96615CB2757* L_2;
+		L_2 = ExceptionDispatchInfo_Capture_mC1C1C30D83DC04B2B7813DFCB67D07CCD4909803(L_1, NULL);
+		NullCheck(L_0);
+		AirTaskBase_PostException_m324406A5CA13964D92AF468CB24DA15EEA389AD3_inline(L_0, L_2, NULL);
+		// task.Finish(ETaskStatus.Failed);
+		AirTask_tC970C760B30CD51ED650CFEF4548203762BC72A5* L_3 = __this->___task_0;
+		NullCheck(L_3);
+		AirTaskBase_Finish_m630387E2AB00569617832FB17555EA3DE145E1D6_inline(L_3, 3, NULL);
 		// }
 		return;
 	}

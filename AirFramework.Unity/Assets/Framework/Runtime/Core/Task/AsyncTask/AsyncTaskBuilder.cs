@@ -38,9 +38,9 @@ namespace AirFramework
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void SetException(Exception exception)
         {
-
-            task.Finish(ETaskStatus.Failed);
             task.PostException(ExceptionDispatchInfo.Capture(exception));
+            task.Finish(ETaskStatus.Failed);
+       
         }
 
         // 5. SetResult 

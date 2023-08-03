@@ -14,14 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowPackageView: 0
   EnableAddressable: 1
+  LocationToLower: 0
+  IncludeAssetGUID: 0
   UniqueBundleName: 0
   ShowEditorAlias: 1
   Packages:
   - PackageName: DefaultPackage
     PackageDesc: "\u4E3B\u5305"
     Groups:
-    - GroupName: UI
-      GroupDesc: Panels
+    - GroupName: Art
+      GroupDesc: "\u7F8E\u672F\u8D44\u6E90"
       AssetTags: 
       ActiveRuleName: EnableGroup
       Collectors:
@@ -38,6 +40,32 @@ MonoBehaviour:
         CollectorType: 0
         AddressRuleName: AddressByFileName
         PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+    - GroupName: HotUpdateAssemblies
+      GroupDesc: "\u70ED\u66F4\u7A0B\u5E8F\u96C6"
+      AssetTags: HotUpdateAssembly
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/Project/HotFix/HotUpdate
+        CollectorGUID: dd0d54eb1dafa224ab17dad9cf93acde
+        CollectorType: 0
+        AddressRuleName: AddressByGroupAndFileName
+        PackRuleName: PackRawFile
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+    - GroupName: MetaDataAssemblies
+      GroupDesc: "\u8865\u5145\u5143\u6570\u636E\u7A0B\u5E8F\u96C6"
+      AssetTags: MetaDataAssembly
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/Project/HotFix/MetaData
+        CollectorGUID: fd3746bb3f37f3a4bbb1d623e1fe2f9a
+        CollectorType: 0
+        AddressRuleName: AddressByGroupAndFileName
+        PackRuleName: PackRawFile
         FilterRuleName: CollectAll
         AssetTags: 
         UserData: 

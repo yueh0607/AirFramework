@@ -102,7 +102,7 @@ namespace AirFramework
                     yield return _enumerator.Current;
 
                 }
-
+                if(!task.IsDone)
                 task.Finish(ETaskStatus.Succeed);
             }
             AirTask task = Framework.Pool.Allocate<AirTask>();

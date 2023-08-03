@@ -1,4 +1,5 @@
 ﻿using AirFramework;
+using DG.Tweening;
 using UnityEngine;
 
 class Test2 : PoolableObject, IUpdate
@@ -26,21 +27,19 @@ public interface ITestAsyncEvent : ICallEvent<AirTask>
 [FrameworkInitialize]
 public class Test : IFrameworkInitialize, ITestAsyncEvent
 {
-
-
-
     void IFrameworkInitialize.OnFrameworkInitialize()
     {
-        this.Operator<ITestAsyncEvent>().Subscribe(Dooo);
-        DoSom().Forget();
 
+        
+
+        //this.Operator<ITestAsyncEvent>().Subscribe(Dooo);
+        //DoSom().Forget();
     }
     async AirTask Dooo()
     {
         await AirTask.Delay(3);
         Debug.Log("Test");
     }
-
     async AirTask DoSom()
     {
         await this.Operator<ITestAsyncEvent>().TrySendAsync();
@@ -48,6 +47,5 @@ public class Test : IFrameworkInitialize, ITestAsyncEvent
         var x = await Framework.GetModule<ViewModule>().Show<CounterPanelView>();
         Debug.Log("Do");
         await x.Operator<IViewShow>().TrySendAsync();
-
     }
 }

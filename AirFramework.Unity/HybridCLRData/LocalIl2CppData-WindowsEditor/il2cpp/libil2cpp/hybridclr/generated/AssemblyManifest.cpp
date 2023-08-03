@@ -6,6 +6,7 @@ namespace hybridclr
 	{
 		//!!!{{PLACE_HOLDER
 		"HotUpdate",
+		"Assembly-CSharp",
 
 		//!!!}}PLACE_HOLDER
 		nullptr,

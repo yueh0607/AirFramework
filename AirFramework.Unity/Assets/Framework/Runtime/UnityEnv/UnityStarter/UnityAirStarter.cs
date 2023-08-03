@@ -36,13 +36,16 @@ namespace AirFramework
             Framework.CreateModule<ResModule>();
             var module = Framework.GetModule<ResModule>();
             module.Initialize();
-            await module.InitializePackage(EPlayMode.OfflinePlayMode);
+            await module.InitializePackage(EPlayMode.EditorSimulateMode);
 
             Framework.CreateModule<ModelModule>();
 
             Framework.CreateModule<ViewModule>();
 
-
+            Framework.CreateModule<HotUpdateModule>();
+           await Framework.GetModule<HotUpdateModule>().Initialize();
+            
+            AirEngine.ReflectInitialize();
             Framework.Message.Dispatcher<IFrameworkInitialize>().Publish();
         }
 

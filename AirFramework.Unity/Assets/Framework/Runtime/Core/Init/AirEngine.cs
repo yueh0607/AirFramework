@@ -20,7 +20,7 @@ namespace AirFramework.Internal
             //异步任务
             Framework.CreateModule<TaskModule>();
             //部署全局程序反射初始化步骤
-            ReflectInitialize();
+            //ReflectInitialize();
 
 
         }
@@ -85,7 +85,7 @@ namespace AirFramework.Internal
         }
         private static List<Type> AllTypes = null;
         private static List<Action<Type>> InitialReflectionBehaviourList = new List<Action<Type>>();
-        private static void ReflectInitialize()
+        public static void ReflectInitialize()
         {
             ReflectionProcess.RegisterProcess();
             if (InitialReflectionBehaviourList.Count == 0) return;

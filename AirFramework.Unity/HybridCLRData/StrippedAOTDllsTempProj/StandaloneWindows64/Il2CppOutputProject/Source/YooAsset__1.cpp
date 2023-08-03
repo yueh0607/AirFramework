@@ -76,6 +76,8 @@ struct InterfaceActionInvoker1
 	}
 };
 
+// System.Action`1<YooAsset.RawFileOperationHandle>
+struct Action_1_tAE9E4C9E74E41797813DF44AC91EEDDBBEF23457;
 // System.Collections.Generic.Dictionary`2<System.Int32,System.Text.Encoding>
 struct Dictionary_2_t87EDE08B2E48F793A22DE50D6B3CC2E7EBB2DB54;
 // System.Collections.Generic.List`1<YooAsset.DebugPackageData>
@@ -86,6 +88,8 @@ struct List_1_t4DFB46B24368137D834DCCB7BF2ADC98F76EEB3A;
 struct List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D;
 // System.Collections.Generic.List`1<YooAsset.ResourcePackage>
 struct List_1_t34A5F992A0C261FD9E072E04F6EB044CC633B43A;
+// YooAsset.AssetInfo[]
+struct AssetInfoU5BU5D_tF3D57109F5DA58F74C0720CAAC3755EBA9C6A0C9;
 // System.Byte[]
 struct ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031;
 // System.Char[]
@@ -108,6 +112,8 @@ struct StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248;
 struct UInt32U5BU5D_t02FBD658AD156A17574ECE6106CF1FBFCC9807FA;
 // System.ArgumentNullException
 struct ArgumentNullException_t327031E412FAB2351B0022DD5DAD47E67E597129;
+// YooAsset.AssetInfo
+struct AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456;
 // YooAsset.AssetSystemImpl
 struct AssetSystemImpl_t81D235BF692751145D6B2C3F3431BC7D8290BD38;
 // YooAsset.BufferReader
@@ -156,6 +162,12 @@ struct MD5CryptoServiceProvider_tEBA22E49E733DDFE74A3F52711BB1EF82FBF653B;
 struct MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71;
 // UnityEngine.Object
 struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C;
+// YooAsset.PackageAsset
+struct PackageAsset_t1A8378733AF6E05264E4FC8D3EA1C24668313C91;
+// YooAsset.ProviderBase
+struct ProviderBase_t07CDF30CF91BB924A36026623C4136B7E1D0F758;
+// YooAsset.RawFileOperationHandle
+struct RawFileOperationHandle_tFF3082CB8C57077D320C10FDD406DC6284DFB171;
 // YooAsset.ResourcePackage
 struct ResourcePackage_t6B28B6B3A6DEAB641E6CBB06F383D7B947198022;
 // Microsoft.Win32.SafeHandles.SafeFileHandle
@@ -174,6 +186,8 @@ struct Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE;
 struct String_t;
 // System.Text.StringBuilder
 struct StringBuilder_t;
+// System.Type
+struct Type_t;
 // System.Void
 struct Void_t4861ACF8F4594C3437BB48B6E56783494B843915;
 // YooAsset.YooAssetSettings
@@ -261,6 +275,7 @@ IL2CPP_EXTERN_C const RuntimeMethod* YooAssets_HasPackage_m835B2DF39108F56037BAC
 struct Exception_t_marshaled_com;
 struct Exception_t_marshaled_pinvoke;
 
+struct AssetInfoU5BU5D_tF3D57109F5DA58F74C0720CAAC3755EBA9C6A0C9;
 struct ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031;
 struct Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C;
 struct ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918;
@@ -313,6 +328,19 @@ struct List_1_t34A5F992A0C261FD9E072E04F6EB044CC633B43A  : public RuntimeObject
 	int32_t ____version_3;
 	// System.Object System.Collections.Generic.List`1::_syncRoot
 	RuntimeObject* ____syncRoot_4;
+};
+
+// YooAsset.AssetInfo
+struct AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456  : public RuntimeObject
+{
+	// YooAsset.PackageAsset YooAsset.AssetInfo::_packageAsset
+	PackageAsset_t1A8378733AF6E05264E4FC8D3EA1C24668313C91* ____packageAsset_0;
+	// System.String YooAsset.AssetInfo::_providerGUID
+	String_t* ____providerGUID_1;
+	// System.Type YooAsset.AssetInfo::<AssetType>k__BackingField
+	Type_t* ___U3CAssetTypeU3Ek__BackingField_2;
+	// System.String YooAsset.AssetInfo::<Error>k__BackingField
+	String_t* ___U3CErrorU3Ek__BackingField_3;
 };
 
 // System.BitConverter
@@ -411,6 +439,15 @@ struct MarshalByRefObject_t8C2F4C5854177FD60439EB1FCCFC1B3CFAFE8DCE_marshaled_pi
 struct MarshalByRefObject_t8C2F4C5854177FD60439EB1FCCFC1B3CFAFE8DCE_marshaled_com
 {
 	Il2CppIUnknown* ____identity_0;
+};
+
+// YooAsset.OperationHandleBase
+struct OperationHandleBase_tADAF436129FFA906751706F53E79482B8201377C  : public RuntimeObject
+{
+	// YooAsset.AssetInfo YooAsset.OperationHandleBase::_assetInfo
+	AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* ____assetInfo_0;
+	// YooAsset.ProviderBase YooAsset.OperationHandleBase::<Provider>k__BackingField
+	ProviderBase_t07CDF30CF91BB924A36026623C4136B7E1D0F758* ___U3CProviderU3Ek__BackingField_1;
 };
 
 // YooAsset.PathUtility
@@ -602,6 +639,13 @@ struct IntPtr_t
 // System.Security.Cryptography.MD5
 struct MD5_t808E6AE387D5FCC368DBB86576572C1564D17E5A  : public HashAlgorithm_t299ECE61BBF4582B1F75734D43A96DDEC9B2004D
 {
+};
+
+// YooAsset.RawFileOperationHandle
+struct RawFileOperationHandle_tFF3082CB8C57077D320C10FDD406DC6284DFB171  : public OperationHandleBase_tADAF436129FFA906751706F53E79482B8201377C
+{
+	// System.Action`1<YooAsset.RawFileOperationHandle> YooAsset.RawFileOperationHandle::_callback
+	Action_1_tAE9E4C9E74E41797813DF44AC91EEDDBBEF23457* ____callback_2;
 };
 
 // System.IO.Stream
@@ -935,6 +979,10 @@ struct List_1_t34A5F992A0C261FD9E072E04F6EB044CC633B43A_StaticFields
 
 // System.Collections.Generic.List`1<YooAsset.ResourcePackage>
 
+// YooAsset.AssetInfo
+
+// YooAsset.AssetInfo
+
 // System.BitConverter
 struct BitConverter_t6E99605185963BC12B3D369E13F2B88997E64A27_StaticFields
 {
@@ -1113,6 +1161,10 @@ struct CRC32Algorithm_t586EF2FEB80231B16D50813BE2ED0DC1DFD2014A_StaticFields
 // System.Int64
 
 // System.Int64
+
+// YooAsset.RawFileOperationHandle
+
+// YooAsset.RawFileOperationHandle
 
 // System.IO.Stream
 struct Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE_StaticFields
@@ -1389,6 +1441,41 @@ struct ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918  : public RuntimeA
 		Il2CppCodeGenWriteBarrier((void**)m_Items + index, (void*)value);
 	}
 };
+// YooAsset.AssetInfo[]
+struct AssetInfoU5BU5D_tF3D57109F5DA58F74C0720CAAC3755EBA9C6A0C9  : public RuntimeArray
+{
+	ALIGN_FIELD (8) AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* m_Items[1];
+
+	inline AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* GetAt(il2cpp_array_size_t index) const
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items[index];
+	}
+	inline AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456** GetAddressAt(il2cpp_array_size_t index)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items + index;
+	}
+	inline void SetAt(il2cpp_array_size_t index, AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* value)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		m_Items[index] = value;
+		Il2CppCodeGenWriteBarrier((void**)m_Items + index, (void*)value);
+	}
+	inline AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* GetAtUnchecked(il2cpp_array_size_t index) const
+	{
+		return m_Items[index];
+	}
+	inline AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456** GetAddressAtUnchecked(il2cpp_array_size_t index)
+	{
+		return m_Items + index;
+	}
+	inline void SetAtUnchecked(il2cpp_array_size_t index, AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* value)
+	{
+		m_Items[index] = value;
+		Il2CppCodeGenWriteBarrier((void**)m_Items + index, (void*)value);
+	}
+};
 
 
 // T UnityEngine.Resources::Load<System.Object>(System.String)
@@ -1625,6 +1712,10 @@ inline void List_1_Add_m3862DC825E6A36DF761CD17216E737FD0659A17F_inline (List_1_
 {
 	((  void (*) (List_1_t0E950133D5AE7CE75AAFA523B610CD7BC2CF17C6*, DebugPackageData_tAC74E09749E23F2CEF7B95B009C511890AEB72C9*, const RuntimeMethod*))List_1_Add_mEBCF994CC3814631017F46A387B1A192ED6C85C7_gshared_inline)(__this, ___0_item, method);
 }
+// YooAsset.AssetInfo[] YooAsset.ResourcePackage::GetAssetInfos(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AssetInfoU5BU5D_tF3D57109F5DA58F74C0720CAAC3755EBA9C6A0C9* ResourcePackage_GetAssetInfos_mE6348F8DFF65DCCEAE8A6FB0C34668C429802FBE (ResourcePackage_t6B28B6B3A6DEAB641E6CBB06F383D7B947198022* __this, String_t* ___0_tag, const RuntimeMethod* method) ;
+// YooAsset.RawFileOperationHandle YooAsset.ResourcePackage::LoadRawFileAsync(YooAsset.AssetInfo)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RawFileOperationHandle_tFF3082CB8C57077D320C10FDD406DC6284DFB171* ResourcePackage_LoadRawFileAsync_mC5F2EAA9892BC46E6D829DF23C6F1AFF6309F8DA (ResourcePackage_t6B28B6B3A6DEAB641E6CBB06F383D7B947198022* __this, AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* ___0_assetInfo, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.List`1<YooAsset.ResourcePackage>::.ctor()
 inline void List_1__ctor_m805D9AF46F7DBDCA253420C8366FC1BF8055C728 (List_1_t34A5F992A0C261FD9E072E04F6EB044CC633B43A* __this, const RuntimeMethod* method)
 {
@@ -4742,6 +4833,46 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void YooAssets_SetDefaultPackage_mB83D34E411C
 		Il2CppCodeGenWriteBarrier((void**)(&((YooAssets_tD00B5B9911F87CF8AC643076BF1ECB1F10DEBA56_StaticFields*)il2cpp_codegen_static_fields_for(YooAssets_tD00B5B9911F87CF8AC643076BF1ECB1F10DEBA56_il2cpp_TypeInfo_var))->____defaultPackage_3), (void*)L_0);
 		// }
 		return;
+	}
+}
+// YooAsset.AssetInfo[] YooAsset.YooAssets::GetAssetInfos(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AssetInfoU5BU5D_tF3D57109F5DA58F74C0720CAAC3755EBA9C6A0C9* YooAssets_GetAssetInfos_m9A10C055F33EBF1DC21B693796C8CB7B595F27ED (String_t* ___0_tag, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&YooAssets_tD00B5B9911F87CF8AC643076BF1ECB1F10DEBA56_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		// return _defaultPackage.GetAssetInfos(tag);
+		il2cpp_codegen_runtime_class_init_inline(YooAssets_tD00B5B9911F87CF8AC643076BF1ECB1F10DEBA56_il2cpp_TypeInfo_var);
+		ResourcePackage_t6B28B6B3A6DEAB641E6CBB06F383D7B947198022* L_0 = ((YooAssets_tD00B5B9911F87CF8AC643076BF1ECB1F10DEBA56_StaticFields*)il2cpp_codegen_static_fields_for(YooAssets_tD00B5B9911F87CF8AC643076BF1ECB1F10DEBA56_il2cpp_TypeInfo_var))->____defaultPackage_3;
+		String_t* L_1 = ___0_tag;
+		NullCheck(L_0);
+		AssetInfoU5BU5D_tF3D57109F5DA58F74C0720CAAC3755EBA9C6A0C9* L_2;
+		L_2 = ResourcePackage_GetAssetInfos_mE6348F8DFF65DCCEAE8A6FB0C34668C429802FBE(L_0, L_1, NULL);
+		return L_2;
+	}
+}
+// YooAsset.RawFileOperationHandle YooAsset.YooAssets::LoadRawFileAsync(YooAsset.AssetInfo)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RawFileOperationHandle_tFF3082CB8C57077D320C10FDD406DC6284DFB171* YooAssets_LoadRawFileAsync_m0A7BC63FD1B1CD7D59C7B9D978C8A32F5E04C52E (AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* ___0_assetInfo, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&YooAssets_tD00B5B9911F87CF8AC643076BF1ECB1F10DEBA56_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		// return _defaultPackage.LoadRawFileAsync(assetInfo);
+		il2cpp_codegen_runtime_class_init_inline(YooAssets_tD00B5B9911F87CF8AC643076BF1ECB1F10DEBA56_il2cpp_TypeInfo_var);
+		ResourcePackage_t6B28B6B3A6DEAB641E6CBB06F383D7B947198022* L_0 = ((YooAssets_tD00B5B9911F87CF8AC643076BF1ECB1F10DEBA56_StaticFields*)il2cpp_codegen_static_fields_for(YooAssets_tD00B5B9911F87CF8AC643076BF1ECB1F10DEBA56_il2cpp_TypeInfo_var))->____defaultPackage_3;
+		AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* L_1 = ___0_assetInfo;
+		NullCheck(L_0);
+		RawFileOperationHandle_tFF3082CB8C57077D320C10FDD406DC6284DFB171* L_2;
+		L_2 = ResourcePackage_LoadRawFileAsync_mC5F2EAA9892BC46E6D829DF23C6F1AFF6309F8DA(L_0, L_1, NULL);
+		return L_2;
 	}
 }
 // System.Void YooAsset.YooAssets::.cctor()

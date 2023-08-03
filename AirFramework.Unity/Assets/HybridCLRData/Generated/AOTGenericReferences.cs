@@ -23,8 +23,8 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// AirFramework.MV.RefBuild.BindableProperty<float>
 	// AirFramework.View<object>
 	// System.Action<float>
+	// System.Collections.Generic.List<object>
 	// System.Func<float>
-	// System.Func<object>
 	// }}
 
 	public void RefMethods()
@@ -40,7 +40,6 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 		// System.Void AirFramework.AirTaskBuilder.Start<Test.<DoSom>d__2>(Test.<DoSom>d__2&)
 		// System.Void AirFramework.AirTaskBuilder.Start<Test.<Dooo>d__1>(Test.<Dooo>d__1&)
 		// object AirFramework.Framework.GetModule<object>()
-		// System.Void AirFramework.MessageExtensions.Subscribe<object>(AirFramework.IOperatorOut<AirFramework.ICallEvent<object>>,System.Func<object>)
 		// AirFramework.MessageOperatorBox<object> AirFramework.OperatorEx2.Operator<object>(AirFramework.IMessageReceiver,bool)
 		// AirFramework.AirTask<object> AirFramework.ViewModule.Show<object>(object)
 		// object UnityEngine.Component.GetComponent<object>()

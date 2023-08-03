@@ -251,6 +251,8 @@ struct IEnumerable_1_tC61234C675E197381ED0C6E05C543D07C5A595D6;
 struct IEnumerable_1_tF95C9E01A913DD50575531C8305932628663D9E9;
 // System.Collections.Generic.IEnumerable`1<YooAsset.OperationHandleBase>
 struct IEnumerable_1_t09FBDCB7D811148C1CEF90957A6FCA5D3B34493F;
+// System.Collections.Generic.IEnumerable`1<System.String>
+struct IEnumerable_1_t349E66EC5F09B881A8E52EE40A1AB9EC60E08E44;
 // System.Collections.Generic.IEnumerator`1<System.IO.DirectoryInfo>
 struct IEnumerator_1_t233F687658257E96B7B98D96BA04344B9BDDA39F;
 // System.Collections.Generic.IEqualityComparer`1<System.String>
@@ -273,6 +275,8 @@ struct KeyCollection_tC70DE4EDEFE1F4661396BD1EECD7F03B07A7B9E5;
 struct KeyCollection_t2EDD317F5771E575ACB63527B5AFB71291040342;
 // System.Collections.Generic.Dictionary`2/KeyCollection<System.String,YooAsset.PackageCache/RecordWrapper>
 struct KeyCollection_t80A28F10AB709A572B8B19FB82844D86A620E945;
+// System.Collections.Generic.List`1<YooAsset.AssetInfo>
+struct List_1_t64BBFD7D8701A33FFC144445CD5159BC576FFEE2;
 // System.Collections.Generic.List`1<YooAsset.AsyncOperationBase>
 struct List_1_t4F5C3340A86A42936A99CE1A6B886F090535F6ED;
 // System.Collections.Generic.List`1<YooAsset.BundleInfo>
@@ -351,6 +355,8 @@ struct EntryU5BU5D_tAF5AF64CCDA1DC3A41845D2D0219900FAF114134;
 struct EntryU5BU5D_t1AF33AD0B7330843448956EC4277517081658AE7;
 // System.Collections.Generic.Dictionary`2/Entry<System.String,YooAsset.PackageCache/RecordWrapper>[]
 struct EntryU5BU5D_t336D4BEDE3B33FF89555084169842EBAF9595A32;
+// YooAsset.AssetInfo[]
+struct AssetInfoU5BU5D_tF3D57109F5DA58F74C0720CAAC3755EBA9C6A0C9;
 // YooAsset.AsyncOperationBase[]
 struct AsyncOperationBaseU5BU5D_t853BE2FFEAFABBA0218F6640FDC55A5BB47C2183;
 // YooAsset.BundleInfo[]
@@ -437,6 +443,8 @@ struct BundleInfo_t9765601F6F4EE4ABC6315E2C38FE429BFB5AB2F2;
 struct BundleLoaderBase_tE902CF39F3DA959883DB9EC74F4318A2B7A38A1C;
 // YooAsset.BundledAssetProvider
 struct BundledAssetProvider_t21E5ADEAF8F3E96CF1DA19584979CC30364F891E;
+// YooAsset.BundledRawFileProvider
+struct BundledRawFileProvider_t2853E7DF83EEA844EFC8A87728D795FB446250D1;
 // UnityEngine.Networking.CertificateHandler
 struct CertificateHandler_t148B524FA5DB39F3ABADB181CD420FC505C33804;
 // System.Globalization.CodePageDataItem
@@ -445,6 +453,8 @@ struct CodePageDataItem_t52460FA30AE37F4F26ACB81055E58002262F19F2;
 struct CompletedProvider_t6EA52E7956ACE7D5FD4718AFCF162085E79BD0C9;
 // YooAsset.DatabaseAssetProvider
 struct DatabaseAssetProvider_t1192DF215FAC7360DEBB967E1AB3919FC6EC805E;
+// YooAsset.DatabaseRawFileProvider
+struct DatabaseRawFileProvider_t0E8A0F08FE1A351C7393157966DCA5DE1CB12E2C;
 // YooAsset.DebugBundleInfo
 struct DebugBundleInfo_tC3BB57D8DB5A7937073319BBDC828F9FD476BA71;
 // YooAsset.DebugPackageData
@@ -698,11 +708,13 @@ IL2CPP_EXTERN_C RuntimeClass* BufferReader_t058D020315958551EDFFB188DDAB89E05EF5
 IL2CPP_EXTERN_C RuntimeClass* BufferWriter_tB11C275753FDCC1BA6675F7676FA91387456F886_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* BundleInfo_t9765601F6F4EE4ABC6315E2C38FE429BFB5AB2F2_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* BundledAssetProvider_t21E5ADEAF8F3E96CF1DA19584979CC30364F891E_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* BundledRawFileProvider_t2853E7DF83EEA844EFC8A87728D795FB446250D1_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* CacheFileInfo_t2041B4989C799C04229DEDADEB5A679193B78042_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* CacheSystem_t62DD0E41CB600DD2E653FE1ECD06DFD620BE8087_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* CompletedProvider_t6EA52E7956ACE7D5FD4718AFCF162085E79BD0C9_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* ConcurrentQueue_1_tC8B0BCCEA7ED64CA00454B9EB2F35771723A00D3_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* DatabaseAssetProvider_t1192DF215FAC7360DEBB967E1AB3919FC6EC805E_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* DatabaseRawFileProvider_t0E8A0F08FE1A351C7393157966DCA5DE1CB12E2C_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* DebugBundleInfo_tC3BB57D8DB5A7937073319BBDC828F9FD476BA71_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* DebugPackageData_tAC74E09749E23F2CEF7B95B009C511890AEB72C9_il2cpp_TypeInfo_var;
@@ -761,6 +773,7 @@ IL2CPP_EXTERN_C RuntimeClass* List_1_t1F7449D98AADDC78A54D629F7AF999996F0A527E_i
 IL2CPP_EXTERN_C RuntimeClass* List_1_t329F6ED977D5B08C2BB1B2E24A3E37F4B1DC7AF9_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* List_1_t4DFB46B24368137D834DCCB7BF2ADC98F76EEB3A_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* List_1_t4F5C3340A86A42936A99CE1A6B886F090535F6ED_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* List_1_t64BBFD7D8701A33FFC144445CD5159BC576FFEE2_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* List_1_t77C2174B5012E5EF8FE5C6F908B221D380B6853D_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* List_1_t841F6F4B46390AA4940E17B18F889620E9953164_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* List_1_t8AE7C8B65A3C23662D844FE071A5AEADE79E0435_il2cpp_TypeInfo_var;
@@ -798,6 +811,7 @@ IL2CPP_EXTERN_C RuntimeClass* RemoteDebuggerDefine_t7D6599E6CE58A1FBA4730A57AD64
 IL2CPP_EXTERN_C RuntimeClass* ResourceDownloaderOperation_t022BAEC63FD9C86C18D0B517E14CA5568160C8C3_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* SendOrPostCallback_t5C292A12062F24027A98492F52ECFE9802AA6F0E_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Stopwatch_tA188A210449E22C07053A7D3014DD182C7369043_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* StringUtility_tA17F666E86C899041F159E0C2A19E43DDE1A6686_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* String_t_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* TempDownloader_t11E7FD1996D5EE9F4A4BE6664C0CD719410B9048_il2cpp_TypeInfo_var;
@@ -882,6 +896,7 @@ IL2CPP_EXTERN_C String_t* _stringLiteralAC6664BEE32198FA562FA97BBFD84C5C4D93F6ED
 IL2CPP_EXTERN_C String_t* _stringLiteralB1FF7A8F5444015A413F5D94B5CD397332DA17F8;
 IL2CPP_EXTERN_C String_t* _stringLiteralB7C768D15ADA516450CAF135D1C5571075EBB9FF;
 IL2CPP_EXTERN_C String_t* _stringLiteralB8AF841571A74F253E765FD2BCC5564634B067BF;
+IL2CPP_EXTERN_C String_t* _stringLiteralBAC784589B07E210E3AB0DB041EF3E40B2AC55AF;
 IL2CPP_EXTERN_C String_t* _stringLiteralBB01DFC617CCE6BDE587E207A03466BAD445F965;
 IL2CPP_EXTERN_C String_t* _stringLiteralC10ABA6F888AE7331BB3E59CE6D73DAE1B854902;
 IL2CPP_EXTERN_C String_t* _stringLiteralCA208DA7773463746B1D33B37BA1DC3394D1C096;
@@ -912,6 +927,7 @@ IL2CPP_EXTERN_C String_t* _stringLiteralFB8AF9008F0C1AD080E8708BA807C00226BB16FF
 IL2CPP_EXTERN_C String_t* _stringLiteralFEA104BE09EB46A713CBF860607511E6F497A63F;
 IL2CPP_EXTERN_C const RuntimeMethod* AssetBundleFileLoader_Update_mBF9E70E219584A10D172B1699CD30C0CE4C81A4F_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* AssetInfo__ctor_mBCA57B01F1B48EDC7E997F0A6685C161E788C556_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* AssetInfo__ctor_mE3A2AB75778CE74ACFD8E6450FD98E0574296BD9_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* BundledAssetProvider_Update_m82B0F66D9D085CE48B96E8AAC9921E7BF2FA07D8_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* ConcurrentQueue_1_Enqueue_mB2A5332EE6591094624C43E356CF17B5D82C55A7_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* ConcurrentQueue_1_TryDequeue_mFC6C166C257C6A89AE250C19132DB4961E9887BC_RuntimeMethod_var;
@@ -953,6 +969,7 @@ IL2CPP_EXTERN_C const RuntimeMethod* EditorSimulateModeHelper_SimulateBuild_m6BF
 IL2CPP_EXTERN_C const RuntimeMethod* EditorSimulateModeImpl_CreateBundleInfo_m75E0466827F8D24370CB8C82D4BF534528216ADE_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* EditorSimulateModeImpl_YooAsset_IBundleServices_GetAllDependBundleInfos_m895328C974D5E5AAE1D11F0C975942D2FF381FE7_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* EditorSimulateModeImpl_YooAsset_IBundleServices_GetBundleInfo_m86A1095DE70F3D3AC2B20D01D62FA97420A26CA0_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* Enumerable_Contains_TisString_t_m903B1A64070B00925A8E4E7979330AA7D7B0FB33_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Enumerator_Dispose_m00449AE6B0AD13AE0363FF912023234D0A0E923C_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Enumerator_Dispose_m1EF2B30E6B46252E364D344E08884AEB4CE02149_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Enumerator_Dispose_m240FA6D954C66B386C4469A38ABADD0AD207E1CE_RuntimeMethod_var;
@@ -995,6 +1012,7 @@ IL2CPP_EXTERN_C const RuntimeMethod* List_1_Add_m500AC8826D41F920F2D17D95EC3B956
 IL2CPP_EXTERN_C const RuntimeMethod* List_1_Add_m5A69AB6C3CFE843F6189A17BC34EE38209BB9570_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* List_1_Add_m656551046E48A1482125A26CBE1BFDB5B761AAFC_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* List_1_Add_m71AC10932AA2FC2A4B9140CE5F7410630F88774D_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* List_1_Add_m7A56D946C2285D2DB29CB8EE1CAEFBE38A33696C_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* List_1_Add_m89C5123589221CBD3A99AD2FC315DC112E0F0A19_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* List_1_Add_mC3DCA5D7C4442F7BC59451E1644BF80DE8FA2F0B_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* List_1_Add_mD7C0B48140344D264D29E68106D2043F4475A4CD_RuntimeMethod_var;
@@ -1023,6 +1041,7 @@ IL2CPP_EXTERN_C const RuntimeMethod* List_1_Remove_mFC5DCC42DA972F9F788FFD683F5B
 IL2CPP_EXTERN_C const RuntimeMethod* List_1_ToArray_m2C402D882AA60FC1D5C7C09A129BE7779F833B4A_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* List_1_ToArray_m5AFE06CDDDBE8395D245FEB73C778DE195E8B86C_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* List_1_ToArray_mD1480C1D67B03EC4BAFC3EC72059FD0AF2F51DA1_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* List_1_ToArray_mE6D6C72788F5D4627829FC9A9A207F179067D1B2_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* List_1__ctor_m054EC6CC5A164CF0313CF26897C5A4885BB33C62_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* List_1__ctor_m109B0312EE31B70584A2FF9CE2867028E39227F9_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* List_1__ctor_m1A062F45FE926079CE2D4FD38A3BF15F7AEB89AF_RuntimeMethod_var;
@@ -1040,6 +1059,7 @@ IL2CPP_EXTERN_C const RuntimeMethod* List_1__ctor_mB13E7E312DD3D2E4A9CC53DBE5B9C
 IL2CPP_EXTERN_C const RuntimeMethod* List_1__ctor_mC51EADE3374DCAC28B6523A5EF06F49AD48AB44F_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* List_1__ctor_mCA8DD57EAC70C2B5923DBB9D5A77CEAC22E7068E_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* List_1__ctor_mD6DF2AAC5F70EEFC68FB745172FC92DD0E424177_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* List_1__ctor_mE56D6BA260D5DB6FA481C841F821934F1E1E8630_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* List_1__ctor_mEA52BA992BD677FA4345322731FC611A211D53F5_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* List_1_get_Count_m25DFD3ED80017E461982C3FF14CCA3BCFD0915A3_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* List_1_get_Count_m5E36D8A8E1175C44C7CBF4F1550621836B06E810_RuntimeMethod_var;
@@ -1066,6 +1086,7 @@ IL2CPP_EXTERN_C const RuntimeMethod* PackageCache_Record_mA437E54C825CA3F45C1FE2
 IL2CPP_EXTERN_C const RuntimeMethod* PackageManifest_GetAllDependencies_m3817D9A9A715EFF8F22F069C657D0A40D9AAF167_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* PackageManifest_GetMainPackageBundle_mD24F33C464D5F9D29503C8E315A3F6B39853720A_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* ProviderBase_CreateHandle_TisAssetOperationHandle_t3C4EE34040385828202FA37D72CC91D7668FB32B_mFF009E307E98AF982C5D3D040D6DA791014CFBF5_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* ProviderBase_CreateHandle_TisRawFileOperationHandle_tFF3082CB8C57077D320C10FDD406DC6284DFB171_m4C47AC6E01F73C0DD4F7E7F89A6F5B076C92470D_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* ProviderBase_ReleaseHandle_mE51C1750FC7D68E794520CE42205AFD56883EA06_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* RawBundleFileLoader_Update_mAA49C91F58B749D674D5A2ED0E9E43A923864735_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* RemoteDebuggerInRuntime_OnHandleEditorMessage_m3A425C6E6D9BDA34934DA8FF472380C3DC4E0D2E_RuntimeMethod_var;
@@ -1088,6 +1109,7 @@ struct UnityWebRequest_t6233B8E22992FC2364A831C1ACB033EF3260C39F_marshaled_com;
 struct UnityWebRequest_t6233B8E22992FC2364A831C1ACB033EF3260C39F_marshaled_pinvoke;
 struct UploadHandler_t7E504B1A83346248A0C8C4AF73A893226CB83EF6_marshaled_com;
 
+struct AssetInfoU5BU5D_tF3D57109F5DA58F74C0720CAAC3755EBA9C6A0C9;
 struct BundleInfoU5BU5D_t987F93FAAFCE06F9320D57B052C55EE1709FC3F3;
 struct ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031;
 struct DelegateU5BU5D_tC5AB7E8F745616680F337909D3A8E6C722CDF771;
@@ -1346,6 +1368,19 @@ struct Dictionary_2_t250A358D3556050D0843A9F83E0B3BC2494160E9  : public RuntimeO
 	ValueCollection_t7EC1FCD9FBD544F116CDCA6ACCB9A5BA13AD513D* ____values_8;
 	// System.Object System.Collections.Generic.Dictionary`2::_syncRoot
 	RuntimeObject* ____syncRoot_9;
+};
+
+// System.Collections.Generic.List`1<YooAsset.AssetInfo>
+struct List_1_t64BBFD7D8701A33FFC144445CD5159BC576FFEE2  : public RuntimeObject
+{
+	// T[] System.Collections.Generic.List`1::_items
+	AssetInfoU5BU5D_tF3D57109F5DA58F74C0720CAAC3755EBA9C6A0C9* ____items_1;
+	// System.Int32 System.Collections.Generic.List`1::_size
+	int32_t ____size_2;
+	// System.Int32 System.Collections.Generic.List`1::_version
+	int32_t ____version_3;
+	// System.Object System.Collections.Generic.List`1::_syncRoot
+	RuntimeObject* ____syncRoot_4;
 };
 
 // System.Collections.Generic.List`1<YooAsset.AsyncOperationBase>
@@ -1993,32 +2028,34 @@ struct ProviderBase_t07CDF30CF91BB924A36026623C4136B7E1D0F758  : public RuntimeO
 	AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* ___U3CMainAssetInfoU3Ek__BackingField_2;
 	// UnityEngine.Object YooAsset.ProviderBase::<AssetObject>k__BackingField
 	Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___U3CAssetObjectU3Ek__BackingField_3;
+	// System.String YooAsset.ProviderBase::<RawFilePath>k__BackingField
+	String_t* ___U3CRawFilePathU3Ek__BackingField_4;
 	// YooAsset.ProviderBase/EStatus YooAsset.ProviderBase::<Status>k__BackingField
-	int32_t ___U3CStatusU3Ek__BackingField_4;
+	int32_t ___U3CStatusU3Ek__BackingField_5;
 	// System.String YooAsset.ProviderBase::<LastError>k__BackingField
-	String_t* ___U3CLastErrorU3Ek__BackingField_5;
+	String_t* ___U3CLastErrorU3Ek__BackingField_6;
 	// System.Single YooAsset.ProviderBase::<Progress>k__BackingField
-	float ___U3CProgressU3Ek__BackingField_6;
+	float ___U3CProgressU3Ek__BackingField_7;
 	// System.Int32 YooAsset.ProviderBase::<RefCount>k__BackingField
-	int32_t ___U3CRefCountU3Ek__BackingField_7;
+	int32_t ___U3CRefCountU3Ek__BackingField_8;
 	// System.Boolean YooAsset.ProviderBase::<IsDestroyed>k__BackingField
-	bool ___U3CIsDestroyedU3Ek__BackingField_8;
+	bool ___U3CIsDestroyedU3Ek__BackingField_9;
 	// YooAsset.BundleLoaderBase YooAsset.ProviderBase::<OwnerBundle>k__BackingField
-	BundleLoaderBase_tE902CF39F3DA959883DB9EC74F4318A2B7A38A1C* ___U3COwnerBundleU3Ek__BackingField_9;
+	BundleLoaderBase_tE902CF39F3DA959883DB9EC74F4318A2B7A38A1C* ___U3COwnerBundleU3Ek__BackingField_10;
 	// YooAsset.DependAssetBundles YooAsset.ProviderBase::<DependBundles>k__BackingField
-	DependAssetBundles_t476EA7FB3EBF213BD9F6FC9FA3A33917EF3FF60D* ___U3CDependBundlesU3Ek__BackingField_10;
+	DependAssetBundles_t476EA7FB3EBF213BD9F6FC9FA3A33917EF3FF60D* ___U3CDependBundlesU3Ek__BackingField_11;
 	// System.Boolean YooAsset.ProviderBase::<IsWaitForAsyncComplete>k__BackingField
-	bool ___U3CIsWaitForAsyncCompleteU3Ek__BackingField_11;
+	bool ___U3CIsWaitForAsyncCompleteU3Ek__BackingField_12;
 	// System.Collections.Generic.List`1<YooAsset.OperationHandleBase> YooAsset.ProviderBase::_handles
-	List_1_tCC46A17BA7796DA00FE23D17E1FA59B8A1C5AEA8* ____handles_12;
+	List_1_tCC46A17BA7796DA00FE23D17E1FA59B8A1C5AEA8* ____handles_13;
 	// System.Threading.Tasks.TaskCompletionSource`1<System.Object> YooAsset.ProviderBase::_taskCompletionSource
-	TaskCompletionSource_1_tB4EF81F69CCF7C4F0D956F9B26127C0634A24A37* ____taskCompletionSource_13;
+	TaskCompletionSource_1_tB4EF81F69CCF7C4F0D956F9B26127C0634A24A37* ____taskCompletionSource_14;
 	// System.String YooAsset.ProviderBase::SpawnScene
-	String_t* ___SpawnScene_14;
+	String_t* ___SpawnScene_15;
 	// System.String YooAsset.ProviderBase::SpawnTime
-	String_t* ___SpawnTime_15;
+	String_t* ___SpawnTime_16;
 	// System.Int64 YooAsset.ProviderBase::<LoadingTime>k__BackingField
-	int64_t ___U3CLoadingTimeU3Ek__BackingField_16;
+	int64_t ___U3CLoadingTimeU3Ek__BackingField_17;
 };
 
 // YooAsset.RemoteCommand
@@ -2396,7 +2433,12 @@ struct Boolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22
 struct BundledAssetProvider_t21E5ADEAF8F3E96CF1DA19584979CC30364F891E  : public ProviderBase_t07CDF30CF91BB924A36026623C4136B7E1D0F758
 {
 	// UnityEngine.AssetBundleRequest YooAsset.BundledAssetProvider::_cacheRequest
-	AssetBundleRequest_tED9F5504E75ED1BCFF8DA9B51F5C7356617E6621* ____cacheRequest_17;
+	AssetBundleRequest_tED9F5504E75ED1BCFF8DA9B51F5C7356617E6621* ____cacheRequest_18;
+};
+
+// YooAsset.BundledRawFileProvider
+struct BundledRawFileProvider_t2853E7DF83EEA844EFC8A87728D795FB446250D1  : public ProviderBase_t07CDF30CF91BB924A36026623C4136B7E1D0F758
+{
 };
 
 // System.Byte
@@ -2420,6 +2462,11 @@ struct CompletedProvider_t6EA52E7956ACE7D5FD4718AFCF162085E79BD0C9  : public Pro
 
 // YooAsset.DatabaseAssetProvider
 struct DatabaseAssetProvider_t1192DF215FAC7360DEBB967E1AB3919FC6EC805E  : public ProviderBase_t07CDF30CF91BB924A36026623C4136B7E1D0F758
+{
+};
+
+// YooAsset.DatabaseRawFileProvider
+struct DatabaseRawFileProvider_t0E8A0F08FE1A351C7393157966DCA5DE1CB12E2C  : public ProviderBase_t07CDF30CF91BB924A36026623C4136B7E1D0F758
 {
 };
 
@@ -3840,6 +3887,15 @@ struct RemoteDebuggerInRuntime_tCFF7D2FC4E4F858B6F9EFC6AB7E90EA8DDE4F39B  : publ
 
 // System.Collections.Generic.Dictionary`2<System.String,YooAsset.PackageCache/RecordWrapper>
 
+// System.Collections.Generic.List`1<YooAsset.AssetInfo>
+struct List_1_t64BBFD7D8701A33FFC144445CD5159BC576FFEE2_StaticFields
+{
+	// T[] System.Collections.Generic.List`1::s_emptyArray
+	AssetInfoU5BU5D_tF3D57109F5DA58F74C0720CAAC3755EBA9C6A0C9* ___s_emptyArray_5;
+};
+
+// System.Collections.Generic.List`1<YooAsset.AssetInfo>
+
 // System.Collections.Generic.List`1<YooAsset.AsyncOperationBase>
 struct List_1_t4F5C3340A86A42936A99CE1A6B886F090535F6ED_StaticFields
 {
@@ -4340,6 +4396,10 @@ struct Boolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_StaticFields
 
 // YooAsset.BundledAssetProvider
 
+// YooAsset.BundledRawFileProvider
+
+// YooAsset.BundledRawFileProvider
+
 // System.Byte
 
 // System.Byte
@@ -4360,6 +4420,10 @@ struct Char_t521A6F19B456D956AF452D926C32709DC03D6B17_StaticFields
 // YooAsset.DatabaseAssetProvider
 
 // YooAsset.DatabaseAssetProvider
+
+// YooAsset.DatabaseRawFileProvider
+
+// YooAsset.DatabaseRawFileProvider
 
 // System.DateTime
 struct DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D_StaticFields
@@ -5147,6 +5211,41 @@ struct PackageBundleU5BU5D_t693F0398CD01B42E9903585D77B714BD40BB510D  : public R
 		Il2CppCodeGenWriteBarrier((void**)m_Items + index, (void*)value);
 	}
 };
+// YooAsset.AssetInfo[]
+struct AssetInfoU5BU5D_tF3D57109F5DA58F74C0720CAAC3755EBA9C6A0C9  : public RuntimeArray
+{
+	ALIGN_FIELD (8) AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* m_Items[1];
+
+	inline AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* GetAt(il2cpp_array_size_t index) const
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items[index];
+	}
+	inline AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456** GetAddressAt(il2cpp_array_size_t index)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		return m_Items + index;
+	}
+	inline void SetAt(il2cpp_array_size_t index, AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* value)
+	{
+		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
+		m_Items[index] = value;
+		Il2CppCodeGenWriteBarrier((void**)m_Items + index, (void*)value);
+	}
+	inline AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* GetAtUnchecked(il2cpp_array_size_t index) const
+	{
+		return m_Items[index];
+	}
+	inline AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456** GetAddressAtUnchecked(il2cpp_array_size_t index)
+	{
+		return m_Items + index;
+	}
+	inline void SetAtUnchecked(il2cpp_array_size_t index, AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* value)
+	{
+		m_Items[index] = value;
+		Il2CppCodeGenWriteBarrier((void**)m_Items + index, (void*)value);
+	}
+};
 // System.Object[]
 struct ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918  : public RuntimeArray
 {
@@ -5264,6 +5363,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConcurrentQueue_1_TryDequeue_m04C6B697D8
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConcurrentQueue_1_Enqueue_m6E14BFDDF046BB59B8EEF4A398D5AB7F4720D0A4_gshared (ConcurrentQueue_1_t38466BAF2E0933882FAC022407D638F7900CEED4* __this, RuntimeObject* ___0_item, const RuntimeMethod* method) ;
 // System.Void System.Collections.Concurrent.ConcurrentQueue`1<System.Object>::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConcurrentQueue_1__ctor_m45A2A2E43BA42D4368773A687E7BB6CBCD510345_gshared (ConcurrentQueue_1_t38466BAF2E0933882FAC022407D638F7900CEED4* __this, const RuntimeMethod* method) ;
+// System.Boolean System.Linq.Enumerable::Contains<System.Object>(System.Collections.Generic.IEnumerable`1<TSource>,TSource)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Enumerable_Contains_TisRuntimeObject_mBCDB5870C52FC5BD2B6AE472A749FC03B9CF8958_gshared (RuntimeObject* ___0_source, RuntimeObject* ___1_value, const RuntimeMethod* method) ;
 // T[] System.Collections.Generic.List`1<System.Object>::ToArray()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* List_1_ToArray_mD7E4F8E7C11C3C67CB5739FCC0A6E86106A6291F_gshared (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, const RuntimeMethod* method) ;
 // System.Void System.Action`1<System.Object>::.ctor(System.Object,System.IntPtr)
@@ -5346,6 +5447,15 @@ inline void Dictionary_2_Add_mAC82CC0C0123C5ECEDD34C35EECE531AB0C439ED (Dictiona
 {
 	((  void (*) (Dictionary_2_t41D3F18AE3E7E60283B82F00076DCB994EA23562*, String_t*, ProviderBase_t07CDF30CF91BB924A36026623C4136B7E1D0F758*, const RuntimeMethod*))Dictionary_2_Add_m93FFFABE8FCE7FA9793F0915E2A8842C7CD0C0C1_gshared)(__this, ___0_key, ___1_value, method);
 }
+// T YooAsset.ProviderBase::CreateHandle<YooAsset.RawFileOperationHandle>()
+inline RawFileOperationHandle_tFF3082CB8C57077D320C10FDD406DC6284DFB171* ProviderBase_CreateHandle_TisRawFileOperationHandle_tFF3082CB8C57077D320C10FDD406DC6284DFB171_m4C47AC6E01F73C0DD4F7E7F89A6F5B076C92470D (ProviderBase_t07CDF30CF91BB924A36026623C4136B7E1D0F758* __this, const RuntimeMethod* method)
+{
+	return ((  RawFileOperationHandle_tFF3082CB8C57077D320C10FDD406DC6284DFB171* (*) (ProviderBase_t07CDF30CF91BB924A36026623C4136B7E1D0F758*, const RuntimeMethod*))ProviderBase_CreateHandle_TisRuntimeObject_mDE6391D37AF086187F659628E6CCDA229B7E9C81_gshared)(__this, method);
+}
+// System.Void YooAsset.DatabaseRawFileProvider::.ctor(YooAsset.AssetSystemImpl,System.String,YooAsset.AssetInfo)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DatabaseRawFileProvider__ctor_m612547219B834A0D98618A0AEBF42FF4254550E2 (DatabaseRawFileProvider_t0E8A0F08FE1A351C7393157966DCA5DE1CB12E2C* __this, AssetSystemImpl_t81D235BF692751145D6B2C3F3431BC7D8290BD38* ___0_impl, String_t* ___1_providerGUID, AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* ___2_assetInfo, const RuntimeMethod* method) ;
+// System.Void YooAsset.BundledRawFileProvider::.ctor(YooAsset.AssetSystemImpl,System.String,YooAsset.AssetInfo)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BundledRawFileProvider__ctor_m1E6DFEB807017468756A4751D7AA723D003E0ED5 (BundledRawFileProvider_t2853E7DF83EEA844EFC8A87728D795FB446250D1* __this, AssetSystemImpl_t81D235BF692751145D6B2C3F3431BC7D8290BD38* ___0_impl, String_t* ___1_providerGUID, AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* ___2_assetInfo, const RuntimeMethod* method) ;
 // YooAsset.IBundleServices YooAsset.AssetSystemImpl::get_BundleServices()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* AssetSystemImpl_get_BundleServices_m59EF502C9F4112A338D6F616A6C7DBA538460774_inline (AssetSystemImpl_t81D235BF692751145D6B2C3F3431BC7D8290BD38* __this, const RuntimeMethod* method) ;
 // YooAsset.BundleLoaderBase YooAsset.AssetSystemImpl::CreateAssetBundleLoaderInternal(YooAsset.BundleInfo)
@@ -5505,6 +5615,12 @@ inline void Action_1_Invoke_m3B27F2F00599414B3DDB3EEF8F3AD60C1564E065_inline (Ac
 {
 	((  void (*) (Action_1_tAE9E4C9E74E41797813DF44AC91EEDDBBEF23457*, RawFileOperationHandle_tFF3082CB8C57077D320C10FDD406DC6284DFB171*, const RuntimeMethod*))Action_1_Invoke_mF2422B2DD29F74CE66F791C3F68E288EC7C3DB9E_gshared_inline)(__this, ___0_obj, method);
 }
+// System.String YooAsset.ProviderBase::get_RawFilePath()
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* ProviderBase_get_RawFilePath_m290E1555F373CD704396E74095F6DDC5D1B3EF9E_inline (ProviderBase_t07CDF30CF91BB924A36026623C4136B7E1D0F758* __this, const RuntimeMethod* method) ;
+// System.Boolean System.IO.File::Exists(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool File_Exists_m95E329ABBE3EAD6750FE1989BBA6884457136D4A (String_t* ___0_path, const RuntimeMethod* method) ;
+// System.Byte[] System.IO.File::ReadAllBytes(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* File_ReadAllBytes_m704CBBA3F130C94F5A3E0BE2A93D9E9D79DC3E24 (String_t* ___0_path, const RuntimeMethod* method) ;
 // System.Void System.Action`1<YooAsset.SceneOperationHandle>::Invoke(T)
 inline void Action_1_Invoke_m71019C0150F65613CBDDF79031E55519E2F7A166_inline (Action_1_tC9A2B8C23FB07361EFAFDD3FC34948FC12C263AB* __this, SceneOperationHandle_t9850DA88031CC19F7DAAC54D967383CA96D4F12F* ___0_obj, const RuntimeMethod* method)
 {
@@ -5625,8 +5741,6 @@ inline void List_1_Add_m4119253171AFE392DFAA1EF5BEED3759A0F87DD1_inline (List_1_
 {
 	((  void (*) (List_1_t8AE7C8B65A3C23662D844FE071A5AEADE79E0435*, DebugBundleInfo_tC3BB57D8DB5A7937073319BBDC828F9FD476BA71*, const RuntimeMethod*))List_1_Add_mEBCF994CC3814631017F46A387B1A192ED6C85C7_gshared_inline)(__this, ___0_item, method);
 }
-// System.Boolean System.IO.File::Exists(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool File_Exists_m95E329ABBE3EAD6750FE1989BBA6884457136D4A (String_t* ___0_path, const RuntimeMethod* method) ;
 // System.Void YooAsset.AsyncOperationBase::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AsyncOperationBase__ctor_m6E069866A4E12BC19498D615996FB34064428FCE (AsyncOperationBase_t3324BDEE0DD12D5653A50876950C3E50AE795032* __this, const RuntimeMethod* method) ;
 // System.Void YooAsset.AsyncOperationBase::set_Status(YooAsset.EOperationStatus)
@@ -5711,6 +5825,8 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void ProviderBase_set_Progress_m6
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Concat_m093934F71A9B351911EE46311674ED463B180006 (String_t* ___0_str0, String_t* ___1_str1, String_t* ___2_str2, String_t* ___3_str3, const RuntimeMethod* method) ;
 // System.String System.String::Format(System.String,System.Object,System.Object,System.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Format_mA0534D6E2AE4D67A6BD8D45B3321323930EB930C (String_t* ___0_format, RuntimeObject* ___1_arg0, RuntimeObject* ___2_arg1, RuntimeObject* ___3_arg2, const RuntimeMethod* method) ;
+// System.Void YooAsset.ProviderBase::set_RawFilePath(System.String)
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void ProviderBase_set_RawFilePath_mD6BC08B52F9103B5951AA3F6B5A50F86E53F5743_inline (ProviderBase_t07CDF30CF91BB924A36026623C4136B7E1D0F758* __this, String_t* ___0_value, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.List`1<YooAsset.OperationHandleBase>::.ctor()
 inline void List_1__ctor_m8E339B0B0F252DDBF12EE283F16AFBE291B5061C (List_1_tCC46A17BA7796DA00FE23D17E1FA59B8A1C5AEA8* __this, const RuntimeMethod* method)
 {
@@ -6757,8 +6873,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadCacheManifestOperation_ClearCacheFil
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* HashUtility_FileMD5_mC15CC81E0A046E46B138159FC30AADD0E4012B6B (String_t* ___0_filePath, const RuntimeMethod* method) ;
 // System.String YooAsset.QueryCachePackageHashOperation::get_PackageHash()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* QueryCachePackageHashOperation_get_PackageHash_mBDE85304573564EE66E9D6FEB736D99F2B6EE4CB_inline (QueryCachePackageHashOperation_t18BA1950E316CBA7566A2D2C612C72424D630B54* __this, const RuntimeMethod* method) ;
-// System.Byte[] System.IO.File::ReadAllBytes(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* File_ReadAllBytes_m704CBBA3F130C94F5A3E0BE2A93D9E9D79DC3E24 (String_t* ___0_path, const RuntimeMethod* method) ;
 // System.Void YooAsset.LoadCacheManifestOperation::set_Manifest(YooAsset.PackageManifest)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void LoadCacheManifestOperation_set_Manifest_m8CAB20FC003C4D18804FDB3420DCF0D8A0FF742C_inline (LoadCacheManifestOperation_t09310C983462ABCD1F6860C7A0A52C020E14E128* __this, PackageManifest_tA9B8D10262EB5900AEB4329BF3B22F0353554CB5* ___0_value, const RuntimeMethod* method) ;
 // System.Void YooAsset.LoadEditorManifestOperation::set_Manifest(YooAsset.PackageManifest)
@@ -6797,6 +6911,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UpdatePackageVersionOperation__ctor_m97C
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void QueryRemotePackageVersionOperation__ctor_m899C06ECEF2DFA34C572DF2CEAE87B03F8F8EA54 (QueryRemotePackageVersionOperation_t58F50D6C8F18AFF5274B7FC85E62C90B824372AA* __this, RuntimeObject* ___0_remoteServices, String_t* ___1_packageName, bool ___2_appendTimeTicks, int32_t ___3_timeout, const RuntimeMethod* method) ;
 // System.Void YooAsset.UpdatePackageVersionOperation::set_PackageVersion(System.String)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void UpdatePackageVersionOperation_set_PackageVersion_m4CE801FE704812A71303170193CD85E7F3BE8432_inline (UpdatePackageVersionOperation_t3D1E74936C0BE09EC750805BD6E519B0A80C249C* __this, String_t* ___0_value, const RuntimeMethod* method) ;
+// System.Boolean System.Linq.Enumerable::Contains<System.String>(System.Collections.Generic.IEnumerable`1<TSource>,TSource)
+inline bool Enumerable_Contains_TisString_t_m903B1A64070B00925A8E4E7979330AA7D7B0FB33 (RuntimeObject* ___0_source, String_t* ___1_value, const RuntimeMethod* method)
+{
+	return ((  bool (*) (RuntimeObject*, String_t*, const RuntimeMethod*))Enumerable_Contains_TisRuntimeObject_mBCDB5870C52FC5BD2B6AE472A749FC03B9CF8958_gshared)(___0_source, ___1_value, method);
+}
 // System.String System.String::Substring(System.Int32,System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Substring_mB1D94F47935D22E130FF2C01DBB6A4135FBB76CE (String_t* __this, int32_t ___0_startIndex, int32_t ___1_length, const RuntimeMethod* method) ;
 // System.String YooAsset.PackageBundle::get_FileName()
@@ -6827,18 +6946,10 @@ inline PackageBundleU5BU5D_t693F0398CD01B42E9903585D77B714BD40BB510D* List_1_ToA
 {
 	return ((  PackageBundleU5BU5D_t693F0398CD01B42E9903585D77B714BD40BB510D* (*) (List_1_t77C2174B5012E5EF8FE5C6F908B221D380B6853D*, const RuntimeMethod*))List_1_ToArray_mD7E4F8E7C11C3C67CB5739FCC0A6E86106A6291F_gshared)(__this, method);
 }
-// System.String YooAsset.PackageManifest::ConvertLocationToAssetInfoMapping(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* PackageManifest_ConvertLocationToAssetInfoMapping_m5714E8C073B9AB56D2E928E54E153B6BBDD6F953 (PackageManifest_tA9B8D10262EB5900AEB4329BF3B22F0353554CB5* __this, String_t* ___0_location, const RuntimeMethod* method) ;
-// System.Boolean YooAsset.PackageManifest::TryGetPackageAsset(System.String,YooAsset.PackageAsset&)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PackageManifest_TryGetPackageAsset_mE625FD56E01662F36FCC80275CEFC47D857B8719 (PackageManifest_tA9B8D10262EB5900AEB4329BF3B22F0353554CB5* __this, String_t* ___0_assetPath, PackageAsset_t1A8378733AF6E05264E4FC8D3EA1C24668313C91** ___1_result, const RuntimeMethod* method) ;
-// System.Void YooAsset.AssetInfo::.ctor(YooAsset.PackageAsset,System.Type)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AssetInfo__ctor_mBCA57B01F1B48EDC7E997F0A6685C161E788C556 (AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* __this, PackageAsset_t1A8378733AF6E05264E4FC8D3EA1C24668313C91* ___0_packageAsset, Type_t* ___1_assetType, const RuntimeMethod* method) ;
-// System.Void YooAsset.AssetInfo::.ctor(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AssetInfo__ctor_m3FBC08A7217B08A964DE5768108419C86F0BA4AF (AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* __this, String_t* ___0_error, const RuntimeMethod* method) ;
-// System.Void System.Collections.Generic.List`1<System.String>::.ctor()
-inline void List_1__ctor_mCA8DD57EAC70C2B5923DBB9D5A77CEAC22E7068E (List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* __this, const RuntimeMethod* method)
+// System.Void System.Collections.Generic.List`1<YooAsset.AssetInfo>::.ctor(System.Int32)
+inline void List_1__ctor_mE56D6BA260D5DB6FA481C841F821934F1E1E8630 (List_1_t64BBFD7D8701A33FFC144445CD5159BC576FFEE2* __this, int32_t ___0_capacity, const RuntimeMethod* method)
 {
-	((  void (*) (List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD*, const RuntimeMethod*))List_1__ctor_m7F078BB342729BDF11327FD89D7872265328F690_gshared)(__this, method);
+	((  void (*) (List_1_t64BBFD7D8701A33FFC144445CD5159BC576FFEE2*, int32_t, const RuntimeMethod*))List_1__ctor_m76CBBC3E2F0583F5AD30CE592CEA1225C06A0428_gshared)(__this, ___0_capacity, method);
 }
 // System.Collections.Generic.List`1/Enumerator<T> System.Collections.Generic.List`1<YooAsset.PackageAsset>::GetEnumerator()
 inline Enumerator_tDA9C4A32D5EE089EDCF2CD990FA9E48ABB504E2E List_1_GetEnumerator_m81DA2500BDEE61FC5C60024FF899D00F5E0E24E8 (List_1_t1F7449D98AADDC78A54D629F7AF999996F0A527E* __this, const RuntimeMethod* method)
@@ -6855,10 +6966,37 @@ inline PackageAsset_t1A8378733AF6E05264E4FC8D3EA1C24668313C91* Enumerator_get_Cu
 {
 	return ((  PackageAsset_t1A8378733AF6E05264E4FC8D3EA1C24668313C91* (*) (Enumerator_tDA9C4A32D5EE089EDCF2CD990FA9E48ABB504E2E*, const RuntimeMethod*))Enumerator_get_Current_m6330F15D18EE4F547C05DF9BF83C5EB710376027_gshared_inline)(__this, method);
 }
+// System.Boolean YooAsset.PackageAsset::HasTag(System.String[])
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PackageAsset_HasTag_mBC2FD8D06A449CFDBA1F72267AF03BFF9EF62D93 (PackageAsset_t1A8378733AF6E05264E4FC8D3EA1C24668313C91* __this, StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___0_tags, const RuntimeMethod* method) ;
+// System.Void YooAsset.AssetInfo::.ctor(YooAsset.PackageAsset)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AssetInfo__ctor_mE3A2AB75778CE74ACFD8E6450FD98E0574296BD9 (AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* __this, PackageAsset_t1A8378733AF6E05264E4FC8D3EA1C24668313C91* ___0_packageAsset, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<YooAsset.AssetInfo>::Add(T)
+inline void List_1_Add_m7A56D946C2285D2DB29CB8EE1CAEFBE38A33696C_inline (List_1_t64BBFD7D8701A33FFC144445CD5159BC576FFEE2* __this, AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* ___0_item, const RuntimeMethod* method)
+{
+	((  void (*) (List_1_t64BBFD7D8701A33FFC144445CD5159BC576FFEE2*, AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456*, const RuntimeMethod*))List_1_Add_mEBCF994CC3814631017F46A387B1A192ED6C85C7_gshared_inline)(__this, ___0_item, method);
+}
 // System.Boolean System.Collections.Generic.List`1/Enumerator<YooAsset.PackageAsset>::MoveNext()
 inline bool Enumerator_MoveNext_mD5C7A24854C72ADD45FFADB658A262E0C2836C3F (Enumerator_tDA9C4A32D5EE089EDCF2CD990FA9E48ABB504E2E* __this, const RuntimeMethod* method)
 {
 	return ((  bool (*) (Enumerator_tDA9C4A32D5EE089EDCF2CD990FA9E48ABB504E2E*, const RuntimeMethod*))Enumerator_MoveNext_mE921CC8F29FBBDE7CC3209A0ED0D921D58D00BCB_gshared)(__this, method);
+}
+// T[] System.Collections.Generic.List`1<YooAsset.AssetInfo>::ToArray()
+inline AssetInfoU5BU5D_tF3D57109F5DA58F74C0720CAAC3755EBA9C6A0C9* List_1_ToArray_mE6D6C72788F5D4627829FC9A9A207F179067D1B2 (List_1_t64BBFD7D8701A33FFC144445CD5159BC576FFEE2* __this, const RuntimeMethod* method)
+{
+	return ((  AssetInfoU5BU5D_tF3D57109F5DA58F74C0720CAAC3755EBA9C6A0C9* (*) (List_1_t64BBFD7D8701A33FFC144445CD5159BC576FFEE2*, const RuntimeMethod*))List_1_ToArray_mD7E4F8E7C11C3C67CB5739FCC0A6E86106A6291F_gshared)(__this, method);
+}
+// System.String YooAsset.PackageManifest::ConvertLocationToAssetInfoMapping(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* PackageManifest_ConvertLocationToAssetInfoMapping_m5714E8C073B9AB56D2E928E54E153B6BBDD6F953 (PackageManifest_tA9B8D10262EB5900AEB4329BF3B22F0353554CB5* __this, String_t* ___0_location, const RuntimeMethod* method) ;
+// System.Boolean YooAsset.PackageManifest::TryGetPackageAsset(System.String,YooAsset.PackageAsset&)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PackageManifest_TryGetPackageAsset_mE625FD56E01662F36FCC80275CEFC47D857B8719 (PackageManifest_tA9B8D10262EB5900AEB4329BF3B22F0353554CB5* __this, String_t* ___0_assetPath, PackageAsset_t1A8378733AF6E05264E4FC8D3EA1C24668313C91** ___1_result, const RuntimeMethod* method) ;
+// System.Void YooAsset.AssetInfo::.ctor(YooAsset.PackageAsset,System.Type)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AssetInfo__ctor_mBCA57B01F1B48EDC7E997F0A6685C161E788C556 (AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* __this, PackageAsset_t1A8378733AF6E05264E4FC8D3EA1C24668313C91* ___0_packageAsset, Type_t* ___1_assetType, const RuntimeMethod* method) ;
+// System.Void YooAsset.AssetInfo::.ctor(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AssetInfo__ctor_m3FBC08A7217B08A964DE5768108419C86F0BA4AF (AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* __this, String_t* ___0_error, const RuntimeMethod* method) ;
+// System.Void System.Collections.Generic.List`1<System.String>::.ctor()
+inline void List_1__ctor_mCA8DD57EAC70C2B5923DBB9D5A77CEAC22E7068E (List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* __this, const RuntimeMethod* method)
+{
+	((  void (*) (List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD*, const RuntimeMethod*))List_1__ctor_m7F078BB342729BDF11327FD89D7872265328F690_gshared)(__this, method);
 }
 // T[] System.Collections.Generic.List`1<System.String>::ToArray()
 inline StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* List_1_ToArray_m2C402D882AA60FC1D5C7C09A129BE7779F833B4A (List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* __this, const RuntimeMethod* method)
@@ -6993,6 +7131,14 @@ inline void Action_1__ctor_mBED8F885C42ECE71AAE02CC21C958749C58934C9 (Action_1_t
 }
 // System.Void YooAsset.AsyncOperationBase::add_Completed(System.Action`1<YooAsset.AsyncOperationBase>)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AsyncOperationBase_add_Completed_mF08EC59081506CDB0573F0D1B40CEF9F45773D5C (AsyncOperationBase_t3324BDEE0DD12D5653A50876950C3E50AE795032* __this, Action_1_t2B402C842742EFCB5D9827C1981184ECC4F57FDF* ___0_value, const RuntimeMethod* method) ;
+// YooAsset.AssetInfo[] YooAsset.PackageManifest::GetAssetsInfoByTags(System.String[])
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AssetInfoU5BU5D_tF3D57109F5DA58F74C0720CAAC3755EBA9C6A0C9* PackageManifest_GetAssetsInfoByTags_m28A83DB815A513DAB54A7507BD22A2E0799F3290 (PackageManifest_tA9B8D10262EB5900AEB4329BF3B22F0353554CB5* __this, StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___0_tags, const RuntimeMethod* method) ;
+// YooAsset.RawFileOperationHandle YooAsset.ResourcePackage::LoadRawFileInternal(YooAsset.AssetInfo,System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RawFileOperationHandle_tFF3082CB8C57077D320C10FDD406DC6284DFB171* ResourcePackage_LoadRawFileInternal_m6C3DB54DFFDD2C5C15E8B9C84DBDBA9EF32E6324 (ResourcePackage_t6B28B6B3A6DEAB641E6CBB06F383D7B947198022* __this, AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* ___0_assetInfo, bool ___1_waitForAsyncComplete, const RuntimeMethod* method) ;
+// YooAsset.RawFileOperationHandle YooAsset.AssetSystemImpl::LoadRawFileAsync(YooAsset.AssetInfo)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RawFileOperationHandle_tFF3082CB8C57077D320C10FDD406DC6284DFB171* AssetSystemImpl_LoadRawFileAsync_mAFD556F5CF623EF56F20A6186C9BB8EF0BB9F1DC (AssetSystemImpl_t81D235BF692751145D6B2C3F3431BC7D8290BD38* __this, AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* ___0_assetInfo, const RuntimeMethod* method) ;
+// System.Void YooAsset.RawFileOperationHandle::WaitForAsyncComplete()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RawFileOperationHandle_WaitForAsyncComplete_mB52232D6FE870F75FB650D6A5D51626508DA3F2F (RawFileOperationHandle_tFF3082CB8C57077D320C10FDD406DC6284DFB171* __this, const RuntimeMethod* method) ;
 // YooAsset.AssetOperationHandle YooAsset.AssetSystemImpl::LoadAssetAsync(YooAsset.AssetInfo)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AssetOperationHandle_t3C4EE34040385828202FA37D72CC91D7668FB32B* AssetSystemImpl_LoadAssetAsync_m145F54D631BF37B8F1D0B41C5E711FC2C903F998 (AssetSystemImpl_t81D235BF692751145D6B2C3F3431BC7D8290BD38* __this, AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* ___0_assetInfo, const RuntimeMethod* method) ;
 // System.Void YooAsset.AssetOperationHandle::WaitForAsyncComplete()
@@ -7394,6 +7540,138 @@ IL_007c:
 		return L_29;
 	}
 }
+// YooAsset.RawFileOperationHandle YooAsset.AssetSystemImpl::LoadRawFileAsync(YooAsset.AssetInfo)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RawFileOperationHandle_tFF3082CB8C57077D320C10FDD406DC6284DFB171* AssetSystemImpl_LoadRawFileAsync_mAFD556F5CF623EF56F20A6186C9BB8EF0BB9F1DC (AssetSystemImpl_t81D235BF692751145D6B2C3F3431BC7D8290BD38* __this, AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* ___0_assetInfo, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&BundledRawFileProvider_t2853E7DF83EEA844EFC8A87728D795FB446250D1_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&CompletedProvider_t6EA52E7956ACE7D5FD4718AFCF162085E79BD0C9_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&DatabaseRawFileProvider_t0E8A0F08FE1A351C7393157966DCA5DE1CB12E2C_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Dictionary_2_Add_mAC82CC0C0123C5ECEDD34C35EECE531AB0C439ED_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_Add_mC3DCA5D7C4442F7BC59451E1644BF80DE8FA2F0B_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ProviderBase_CreateHandle_TisRawFileOperationHandle_tFF3082CB8C57077D320C10FDD406DC6284DFB171_m4C47AC6E01F73C0DD4F7E7F89A6F5B076C92470D_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralBAC784589B07E210E3AB0DB041EF3E40B2AC55AF);
+		s_Il2CppMethodInitialized = true;
+	}
+	String_t* V_0 = NULL;
+	ProviderBase_t07CDF30CF91BB924A36026623C4136B7E1D0F758* V_1 = NULL;
+	{
+		// if (assetInfo.IsInvalid)
+		AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* L_0 = ___0_assetInfo;
+		NullCheck(L_0);
+		bool L_1;
+		L_1 = AssetInfo_get_IsInvalid_mE49DFEE2F21AF8068B2EE8D70698866D3E6D1309(L_0, NULL);
+		if (!L_1)
+		{
+			goto IL_0035;
+		}
+	}
+	{
+		// YooLogger.Error($"Failed to load raw file ! {assetInfo.Error}");
+		AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* L_2 = ___0_assetInfo;
+		NullCheck(L_2);
+		String_t* L_3;
+		L_3 = AssetInfo_get_Error_mC9133119BEDF740145FDEE6781E8A90CACE0B6F3_inline(L_2, NULL);
+		String_t* L_4;
+		L_4 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(_stringLiteralBAC784589B07E210E3AB0DB041EF3E40B2AC55AF, L_3, NULL);
+		YooLogger_Error_m30690253373083BEEF5813486E22F990791F7E14(L_4, NULL);
+		// CompletedProvider completedProvider = new CompletedProvider(assetInfo);
+		AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* L_5 = ___0_assetInfo;
+		CompletedProvider_t6EA52E7956ACE7D5FD4718AFCF162085E79BD0C9* L_6 = (CompletedProvider_t6EA52E7956ACE7D5FD4718AFCF162085E79BD0C9*)il2cpp_codegen_object_new(CompletedProvider_t6EA52E7956ACE7D5FD4718AFCF162085E79BD0C9_il2cpp_TypeInfo_var);
+		NullCheck(L_6);
+		CompletedProvider__ctor_m434F04FAB1BC117BFC9A0F1C6B8C9ABC4FE69A90(L_6, L_5, NULL);
+		// completedProvider.SetCompleted(assetInfo.Error);
+		CompletedProvider_t6EA52E7956ACE7D5FD4718AFCF162085E79BD0C9* L_7 = L_6;
+		AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* L_8 = ___0_assetInfo;
+		NullCheck(L_8);
+		String_t* L_9;
+		L_9 = AssetInfo_get_Error_mC9133119BEDF740145FDEE6781E8A90CACE0B6F3_inline(L_8, NULL);
+		NullCheck(L_7);
+		CompletedProvider_SetCompleted_m5A50766A836E05BF447BF3B52F5A290AC9FA58DF(L_7, L_9, NULL);
+		// return completedProvider.CreateHandle<RawFileOperationHandle>();
+		NullCheck(L_7);
+		RawFileOperationHandle_tFF3082CB8C57077D320C10FDD406DC6284DFB171* L_10;
+		L_10 = ProviderBase_CreateHandle_TisRawFileOperationHandle_tFF3082CB8C57077D320C10FDD406DC6284DFB171_m4C47AC6E01F73C0DD4F7E7F89A6F5B076C92470D(L_7, ProviderBase_CreateHandle_TisRawFileOperationHandle_tFF3082CB8C57077D320C10FDD406DC6284DFB171_m4C47AC6E01F73C0DD4F7E7F89A6F5B076C92470D_RuntimeMethod_var);
+		return L_10;
+	}
+
+IL_0035:
+	{
+		// string providerGUID = assetInfo.GUID;
+		AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* L_11 = ___0_assetInfo;
+		NullCheck(L_11);
+		String_t* L_12;
+		L_12 = AssetInfo_get_GUID_mB0C6C83736E4A04557E24F6F1E6E85EDD3F1E91A(L_11, NULL);
+		V_0 = L_12;
+		// ProviderBase provider = TryGetProvider(providerGUID);
+		String_t* L_13 = V_0;
+		ProviderBase_t07CDF30CF91BB924A36026623C4136B7E1D0F758* L_14;
+		L_14 = AssetSystemImpl_TryGetProvider_mBB8085FAFAF0C22C0687B593B36F7AD262114A33(__this, L_13, NULL);
+		V_1 = L_14;
+		// if (provider == null)
+		ProviderBase_t07CDF30CF91BB924A36026623C4136B7E1D0F758* L_15 = V_1;
+		if (L_15)
+		{
+			goto IL_007c;
+		}
+	}
+	{
+		// if (_simulationOnEditor)
+		bool L_16 = __this->____simulationOnEditor_8;
+		if (!L_16)
+		{
+			goto IL_005a;
+		}
+	}
+	{
+		// provider = new DatabaseRawFileProvider(this, providerGUID, assetInfo);
+		String_t* L_17 = V_0;
+		AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* L_18 = ___0_assetInfo;
+		DatabaseRawFileProvider_t0E8A0F08FE1A351C7393157966DCA5DE1CB12E2C* L_19 = (DatabaseRawFileProvider_t0E8A0F08FE1A351C7393157966DCA5DE1CB12E2C*)il2cpp_codegen_object_new(DatabaseRawFileProvider_t0E8A0F08FE1A351C7393157966DCA5DE1CB12E2C_il2cpp_TypeInfo_var);
+		NullCheck(L_19);
+		DatabaseRawFileProvider__ctor_m612547219B834A0D98618A0AEBF42FF4254550E2(L_19, __this, L_17, L_18, NULL);
+		V_1 = L_19;
+		goto IL_0063;
+	}
+
+IL_005a:
+	{
+		// provider = new BundledRawFileProvider(this, providerGUID, assetInfo);
+		String_t* L_20 = V_0;
+		AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* L_21 = ___0_assetInfo;
+		BundledRawFileProvider_t2853E7DF83EEA844EFC8A87728D795FB446250D1* L_22 = (BundledRawFileProvider_t2853E7DF83EEA844EFC8A87728D795FB446250D1*)il2cpp_codegen_object_new(BundledRawFileProvider_t2853E7DF83EEA844EFC8A87728D795FB446250D1_il2cpp_TypeInfo_var);
+		NullCheck(L_22);
+		BundledRawFileProvider__ctor_m1E6DFEB807017468756A4751D7AA723D003E0ED5(L_22, __this, L_20, L_21, NULL);
+		V_1 = L_22;
+	}
+
+IL_0063:
+	{
+		// _providerList.Add(provider);
+		List_1_t841F6F4B46390AA4940E17B18F889620E9953164* L_23 = __this->____providerList_3;
+		ProviderBase_t07CDF30CF91BB924A36026623C4136B7E1D0F758* L_24 = V_1;
+		NullCheck(L_23);
+		List_1_Add_mC3DCA5D7C4442F7BC59451E1644BF80DE8FA2F0B_inline(L_23, L_24, List_1_Add_mC3DCA5D7C4442F7BC59451E1644BF80DE8FA2F0B_RuntimeMethod_var);
+		// _providerDic.Add(providerGUID, provider);
+		Dictionary_2_t41D3F18AE3E7E60283B82F00076DCB994EA23562* L_25 = __this->____providerDic_2;
+		String_t* L_26 = V_0;
+		ProviderBase_t07CDF30CF91BB924A36026623C4136B7E1D0F758* L_27 = V_1;
+		NullCheck(L_25);
+		Dictionary_2_Add_mAC82CC0C0123C5ECEDD34C35EECE531AB0C439ED(L_25, L_26, L_27, Dictionary_2_Add_mAC82CC0C0123C5ECEDD34C35EECE531AB0C439ED_RuntimeMethod_var);
+	}
+
+IL_007c:
+	{
+		// return provider.CreateHandle<RawFileOperationHandle>();
+		ProviderBase_t07CDF30CF91BB924A36026623C4136B7E1D0F758* L_28 = V_1;
+		NullCheck(L_28);
+		RawFileOperationHandle_tFF3082CB8C57077D320C10FDD406DC6284DFB171* L_29;
+		L_29 = ProviderBase_CreateHandle_TisRawFileOperationHandle_tFF3082CB8C57077D320C10FDD406DC6284DFB171_m4C47AC6E01F73C0DD4F7E7F89A6F5B076C92470D(L_28, ProviderBase_CreateHandle_TisRawFileOperationHandle_tFF3082CB8C57077D320C10FDD406DC6284DFB171_m4C47AC6E01F73C0DD4F7E7F89A6F5B076C92470D_RuntimeMethod_var);
+		return L_29;
+	}
+}
 // YooAsset.BundleLoaderBase YooAsset.AssetSystemImpl::CreateOwnerAssetBundleLoader(YooAsset.AssetInfo)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR BundleLoaderBase_tE902CF39F3DA959883DB9EC74F4318A2B7A38A1C* AssetSystemImpl_CreateOwnerAssetBundleLoader_m22A7C54611423C4D7837E6B5C46ED46A61DA2690 (AssetSystemImpl_t81D235BF692751145D6B2C3F3431BC7D8290BD38* __this, AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* ___0_assetInfo, const RuntimeMethod* method) 
 {
@@ -7763,7 +8041,7 @@ IL_0022_1:
 				DebugProviderInfo_t7B04F307953C32ACBAC0D992743ABCD7F76F7FC9* L_11 = V_3;
 				ProviderBase_t07CDF30CF91BB924A36026623C4136B7E1D0F758* L_12 = V_2;
 				NullCheck(L_12);
-				String_t* L_13 = L_12->___SpawnScene_14;
+				String_t* L_13 = L_12->___SpawnScene_15;
 				NullCheck(L_11);
 				L_11->___SpawnScene_1 = L_13;
 				Il2CppCodeGenWriteBarrier((void**)(&L_11->___SpawnScene_1), (void*)L_13);
@@ -7771,7 +8049,7 @@ IL_0022_1:
 				DebugProviderInfo_t7B04F307953C32ACBAC0D992743ABCD7F76F7FC9* L_14 = V_3;
 				ProviderBase_t07CDF30CF91BB924A36026623C4136B7E1D0F758* L_15 = V_2;
 				NullCheck(L_15);
-				String_t* L_16 = L_15->___SpawnTime_15;
+				String_t* L_16 = L_15->___SpawnTime_16;
 				NullCheck(L_14);
 				L_14->___SpawnTime_2 = L_16;
 				Il2CppCodeGenWriteBarrier((void**)(&L_14->___SpawnTime_2), (void*)L_16);
@@ -8437,6 +8715,34 @@ IL_000b:
 		return;
 	}
 }
+// System.Void YooAsset.RawFileOperationHandle::WaitForAsyncComplete()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RawFileOperationHandle_WaitForAsyncComplete_mB52232D6FE870F75FB650D6A5D51626508DA3F2F (RawFileOperationHandle_tFF3082CB8C57077D320C10FDD406DC6284DFB171* __this, const RuntimeMethod* method) 
+{
+	{
+		// if (IsValidWithWarning == false)
+		bool L_0;
+		L_0 = OperationHandleBase_get_IsValidWithWarning_m7FA8D394EE66229760142866AEDC6F33FA806DBB(__this, NULL);
+		if (L_0)
+		{
+			goto IL_0009;
+		}
+	}
+	{
+		// return;
+		return;
+	}
+
+IL_0009:
+	{
+		// Provider.WaitForAsyncComplete();
+		ProviderBase_t07CDF30CF91BB924A36026623C4136B7E1D0F758* L_1;
+		L_1 = OperationHandleBase_get_Provider_m690C24030C2F7E0A2F889FF309B6782CAE464C2E_inline(__this, NULL);
+		NullCheck(L_1);
+		ProviderBase_WaitForAsyncComplete_mAC66971066FF9C66D70925C130AAB44FF13819F3(L_1, NULL);
+		// }
+		return;
+	}
+}
 // System.Void YooAsset.RawFileOperationHandle::Dispose()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RawFileOperationHandle_Dispose_mBA215B9AE245DFCC4B849FDD2FF1A7A3EA62B5D7 (RawFileOperationHandle_tFF3082CB8C57077D320C10FDD406DC6284DFB171* __this, const RuntimeMethod* method) 
 {
@@ -8445,6 +8751,56 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RawFileOperationHandle_Dispose_mBA215B9A
 		OperationHandleBase_ReleaseInternal_mC1EC358AD2AF06D124E4873FED33F65711FDACBA(__this, NULL);
 		// }
 		return;
+	}
+}
+// System.Byte[] YooAsset.RawFileOperationHandle::GetRawFileData()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* RawFileOperationHandle_GetRawFileData_mDCC71B9DF13DA27B3D2E418C9C2A12493CE11619 (RawFileOperationHandle_tFF3082CB8C57077D320C10FDD406DC6284DFB171* __this, const RuntimeMethod* method) 
+{
+	String_t* V_0 = NULL;
+	{
+		// if (IsValidWithWarning == false)
+		bool L_0;
+		L_0 = OperationHandleBase_get_IsValidWithWarning_m7FA8D394EE66229760142866AEDC6F33FA806DBB(__this, NULL);
+		if (L_0)
+		{
+			goto IL_000a;
+		}
+	}
+	{
+		// return null;
+		return (ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*)NULL;
+	}
+
+IL_000a:
+	{
+		// string filePath = Provider.RawFilePath;
+		ProviderBase_t07CDF30CF91BB924A36026623C4136B7E1D0F758* L_1;
+		L_1 = OperationHandleBase_get_Provider_m690C24030C2F7E0A2F889FF309B6782CAE464C2E_inline(__this, NULL);
+		NullCheck(L_1);
+		String_t* L_2;
+		L_2 = ProviderBase_get_RawFilePath_m290E1555F373CD704396E74095F6DDC5D1B3EF9E_inline(L_1, NULL);
+		V_0 = L_2;
+		// if (File.Exists(filePath) == false)
+		String_t* L_3 = V_0;
+		bool L_4;
+		L_4 = File_Exists_m95E329ABBE3EAD6750FE1989BBA6884457136D4A(L_3, NULL);
+		if (L_4)
+		{
+			goto IL_0020;
+		}
+	}
+	{
+		// return null;
+		return (ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*)NULL;
+	}
+
+IL_0020:
+	{
+		// return File.ReadAllBytes(filePath);
+		String_t* L_5 = V_0;
+		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_6;
+		L_6 = File_ReadAllBytes_m704CBBA3F130C94F5A3E0BE2A93D9E9D79DC3E24(L_5, NULL);
+		return L_6;
 	}
 }
 #ifdef __clang__
@@ -11757,8 +12113,8 @@ IL_01a7:
 		NullCheck(L_51);
 		AssetBundleRequest_tED9F5504E75ED1BCFF8DA9B51F5C7356617E6621* L_54;
 		L_54 = AssetBundle_LoadAssetAsync_m686CB93D1D35DD784C74FFE8343D5626D736FF32(L_51, L_53, NULL);
-		__this->____cacheRequest_17 = L_54;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____cacheRequest_17), (void*)L_54);
+		__this->____cacheRequest_18 = L_54;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____cacheRequest_18), (void*)L_54);
 		goto IL_0209;
 	}
 
@@ -11783,8 +12139,8 @@ IL_01dd:
 		NullCheck(L_56);
 		AssetBundleRequest_tED9F5504E75ED1BCFF8DA9B51F5C7356617E6621* L_61;
 		L_61 = AssetBundle_LoadAssetAsync_mDAE70E6DD6F9D5360A5D0C7A74F3989174C2FEDB(L_56, L_58, L_60, NULL);
-		__this->____cacheRequest_17 = L_61;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____cacheRequest_17), (void*)L_61);
+		__this->____cacheRequest_18 = L_61;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____cacheRequest_18), (void*)L_61);
 	}
 
 IL_0209:
@@ -11805,7 +12161,7 @@ IL_0210:
 	}
 	{
 		// if (_cacheRequest != null)
-		AssetBundleRequest_tED9F5504E75ED1BCFF8DA9B51F5C7356617E6621* L_63 = __this->____cacheRequest_17;
+		AssetBundleRequest_tED9F5504E75ED1BCFF8DA9B51F5C7356617E6621* L_63 = __this->____cacheRequest_18;
 		if (!L_63)
 		{
 			goto IL_0279;
@@ -11824,7 +12180,7 @@ IL_0210:
 		// YooLogger.Warning("Suspend the main thread to load unity asset.");
 		YooLogger_Warning_m0FDCABFC6EB0F423424F5FAB4C63AD86D2142724(_stringLiteral5F6688D1F2DFB69E4F4EF23AEF94B04F34D52483, NULL);
 		// AssetObject = _cacheRequest.asset;
-		AssetBundleRequest_tED9F5504E75ED1BCFF8DA9B51F5C7356617E6621* L_65 = __this->____cacheRequest_17;
+		AssetBundleRequest_tED9F5504E75ED1BCFF8DA9B51F5C7356617E6621* L_65 = __this->____cacheRequest_18;
 		NullCheck(L_65);
 		Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* L_66;
 		L_66 = AssetBundleRequest_get_asset_mE9FDA3900215925371E7D15E7E19AA98713F5D6C(L_65, NULL);
@@ -11835,13 +12191,13 @@ IL_0210:
 IL_0249:
 	{
 		// Progress = _cacheRequest.progress;
-		AssetBundleRequest_tED9F5504E75ED1BCFF8DA9B51F5C7356617E6621* L_67 = __this->____cacheRequest_17;
+		AssetBundleRequest_tED9F5504E75ED1BCFF8DA9B51F5C7356617E6621* L_67 = __this->____cacheRequest_18;
 		NullCheck(L_67);
 		float L_68;
 		L_68 = AsyncOperation_get_progress_mF3B2837C1A5DDF3C2F7A3BA1E449DD4C71C632EE(L_67, NULL);
 		ProviderBase_set_Progress_m6F3E72FD757E68F26DD9BBA9FEC82459B778DC17_inline(__this, L_68, NULL);
 		// if (_cacheRequest.isDone == false)
-		AssetBundleRequest_tED9F5504E75ED1BCFF8DA9B51F5C7356617E6621* L_69 = __this->____cacheRequest_17;
+		AssetBundleRequest_tED9F5504E75ED1BCFF8DA9B51F5C7356617E6621* L_69 = __this->____cacheRequest_18;
 		NullCheck(L_69);
 		bool L_70;
 		L_70 = AsyncOperation_get_isDone_m68A0682777E2132FC033182E9F50303566AA354D(L_69, NULL);
@@ -11858,7 +12214,7 @@ IL_0249:
 IL_0268:
 	{
 		// AssetObject = _cacheRequest.asset;
-		AssetBundleRequest_tED9F5504E75ED1BCFF8DA9B51F5C7356617E6621* L_71 = __this->____cacheRequest_17;
+		AssetBundleRequest_tED9F5504E75ED1BCFF8DA9B51F5C7356617E6621* L_71 = __this->____cacheRequest_18;
 		NullCheck(L_71);
 		Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* L_72;
 		L_72 = AssetBundleRequest_get_asset_mE9FDA3900215925371E7D15E7E19AA98713F5D6C(L_71, NULL);
@@ -11996,6 +12352,169 @@ IL_0333:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+// System.Void YooAsset.BundledRawFileProvider::.ctor(YooAsset.AssetSystemImpl,System.String,YooAsset.AssetInfo)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BundledRawFileProvider__ctor_m1E6DFEB807017468756A4751D7AA723D003E0ED5 (BundledRawFileProvider_t2853E7DF83EEA844EFC8A87728D795FB446250D1* __this, AssetSystemImpl_t81D235BF692751145D6B2C3F3431BC7D8290BD38* ___0_impl, String_t* ___1_providerGUID, AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* ___2_assetInfo, const RuntimeMethod* method) 
+{
+	{
+		// public BundledRawFileProvider(AssetSystemImpl impl, string providerGUID, AssetInfo assetInfo) : base(impl, providerGUID, assetInfo)
+		AssetSystemImpl_t81D235BF692751145D6B2C3F3431BC7D8290BD38* L_0 = ___0_impl;
+		String_t* L_1 = ___1_providerGUID;
+		AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* L_2 = ___2_assetInfo;
+		ProviderBase__ctor_mD12AACF29516E2C9D72AD60F6576AB9888B178BD(__this, L_0, L_1, L_2, NULL);
+		// }
+		return;
+	}
+}
+// System.Void YooAsset.BundledRawFileProvider::Update()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BundledRawFileProvider_Update_mC1AA0D91668124DF4454C915287359668779DE3A (BundledRawFileProvider_t2853E7DF83EEA844EFC8A87728D795FB446250D1* __this, const RuntimeMethod* method) 
+{
+	{
+		// if (IsDone)
+		bool L_0;
+		L_0 = ProviderBase_get_IsDone_mDC67CD40EBB69AE947A570597E5E5EFD02FA55DC(__this, NULL);
+		if (!L_0)
+		{
+			goto IL_0009;
+		}
+	}
+	{
+		// return;
+		return;
+	}
+
+IL_0009:
+	{
+		// if (Status == EStatus.None)
+		int32_t L_1;
+		L_1 = ProviderBase_get_Status_m554793B8C05485673807064D08E3AD0DD4804A1D_inline(__this, NULL);
+		if (L_1)
+		{
+			goto IL_0018;
+		}
+	}
+	{
+		// Status = EStatus.CheckBundle;
+		ProviderBase_set_Status_mAFD3221C47FC17E51E44CC1F5CDD54E474AB005A_inline(__this, 1, NULL);
+	}
+
+IL_0018:
+	{
+		// if (Status == EStatus.CheckBundle)
+		int32_t L_2;
+		L_2 = ProviderBase_get_Status_m554793B8C05485673807064D08E3AD0DD4804A1D_inline(__this, NULL);
+		if ((!(((uint32_t)L_2) == ((uint32_t)1))))
+		{
+			goto IL_0076;
+		}
+	}
+	{
+		// if (IsWaitForAsyncComplete)
+		bool L_3;
+		L_3 = ProviderBase_get_IsWaitForAsyncComplete_m43BC1A8A3665CB7DD0714A681B11DFAA1B644E01_inline(__this, NULL);
+		if (!L_3)
+		{
+			goto IL_0034;
+		}
+	}
+	{
+		// OwnerBundle.WaitForAsyncComplete();
+		BundleLoaderBase_tE902CF39F3DA959883DB9EC74F4318A2B7A38A1C* L_4;
+		L_4 = ProviderBase_get_OwnerBundle_mD30E224FA1E9CF05BECBF7515E086FECFA0482C6_inline(__this, NULL);
+		NullCheck(L_4);
+		VirtualActionInvoker0::Invoke(5 /* System.Void YooAsset.BundleLoaderBase::WaitForAsyncComplete() */, L_4);
+	}
+
+IL_0034:
+	{
+		// if (OwnerBundle.IsDone() == false)
+		BundleLoaderBase_tE902CF39F3DA959883DB9EC74F4318A2B7A38A1C* L_5;
+		L_5 = ProviderBase_get_OwnerBundle_mD30E224FA1E9CF05BECBF7515E086FECFA0482C6_inline(__this, NULL);
+		NullCheck(L_5);
+		bool L_6;
+		L_6 = BundleLoaderBase_IsDone_m8AC3FCA517CEAFA5CD486CDE82494FC66859874B(L_5, NULL);
+		if (L_6)
+		{
+			goto IL_0042;
+		}
+	}
+	{
+		// return;
+		return;
+	}
+
+IL_0042:
+	{
+		// if (OwnerBundle.Status != BundleLoaderBase.EStatus.Succeed)
+		BundleLoaderBase_tE902CF39F3DA959883DB9EC74F4318A2B7A38A1C* L_7;
+		L_7 = ProviderBase_get_OwnerBundle_mD30E224FA1E9CF05BECBF7515E086FECFA0482C6_inline(__this, NULL);
+		NullCheck(L_7);
+		int32_t L_8;
+		L_8 = BundleLoaderBase_get_Status_mF346C8178DB6BA34A1B5D5202C8C1166618A62D3_inline(L_7, NULL);
+		if ((((int32_t)L_8) == ((int32_t)1)))
+		{
+			goto IL_006f;
+		}
+	}
+	{
+		// Status = EStatus.Failed;
+		ProviderBase_set_Status_mAFD3221C47FC17E51E44CC1F5CDD54E474AB005A_inline(__this, 5, NULL);
+		// LastError = OwnerBundle.LastError;
+		BundleLoaderBase_tE902CF39F3DA959883DB9EC74F4318A2B7A38A1C* L_9;
+		L_9 = ProviderBase_get_OwnerBundle_mD30E224FA1E9CF05BECBF7515E086FECFA0482C6_inline(__this, NULL);
+		NullCheck(L_9);
+		String_t* L_10;
+		L_10 = BundleLoaderBase_get_LastError_m3A6088FB41B634965DF6F349F9449BA8AEB93A94_inline(L_9, NULL);
+		ProviderBase_set_LastError_m4F7F87603F9DD98BB9E0977CD8A327EDE02C42A2_inline(__this, L_10, NULL);
+		// InvokeCompletion();
+		ProviderBase_InvokeCompletion_m7D99F50070EBD895A5E65C6F1249CCFC08720328(__this, NULL);
+		// return;
+		return;
+	}
+
+IL_006f:
+	{
+		// Status = EStatus.Checking;
+		ProviderBase_set_Status_mAFD3221C47FC17E51E44CC1F5CDD54E474AB005A_inline(__this, 3, NULL);
+	}
+
+IL_0076:
+	{
+		// if (Status == EStatus.Checking)
+		int32_t L_11;
+		L_11 = ProviderBase_get_Status_m554793B8C05485673807064D08E3AD0DD4804A1D_inline(__this, NULL);
+		if ((!(((uint32_t)L_11) == ((uint32_t)3))))
+		{
+			goto IL_009d;
+		}
+	}
+	{
+		// RawFilePath = OwnerBundle.FileLoadPath;
+		BundleLoaderBase_tE902CF39F3DA959883DB9EC74F4318A2B7A38A1C* L_12;
+		L_12 = ProviderBase_get_OwnerBundle_mD30E224FA1E9CF05BECBF7515E086FECFA0482C6_inline(__this, NULL);
+		NullCheck(L_12);
+		String_t* L_13;
+		L_13 = BundleLoaderBase_get_FileLoadPath_m179D3775EE4A73EBC9E885F8B59143B83ED3CD31_inline(L_12, NULL);
+		ProviderBase_set_RawFilePath_mD6BC08B52F9103B5951AA3F6B5A50F86E53F5743_inline(__this, L_13, NULL);
+		// Status = EStatus.Succeed;
+		ProviderBase_set_Status_mAFD3221C47FC17E51E44CC1F5CDD54E474AB005A_inline(__this, 4, NULL);
+		// InvokeCompletion();
+		ProviderBase_InvokeCompletion_m7D99F50070EBD895A5E65C6F1249CCFC08720328(__this, NULL);
+	}
+
+IL_009d:
+	{
+		// }
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
 // System.Void YooAsset.CompletedProvider::.ctor(YooAsset.AssetInfo)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CompletedProvider__ctor_m434F04FAB1BC117BFC9A0F1C6B8C9ABC4FE69A90 (CompletedProvider_t6EA52E7956ACE7D5FD4718AFCF162085E79BD0C9* __this, AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* ___0_assetInfo, const RuntimeMethod* method) 
 {
@@ -12087,6 +12606,35 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DatabaseAssetProvider_Update_mCAA6971A52
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+// System.Void YooAsset.DatabaseRawFileProvider::.ctor(YooAsset.AssetSystemImpl,System.String,YooAsset.AssetInfo)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DatabaseRawFileProvider__ctor_m612547219B834A0D98618A0AEBF42FF4254550E2 (DatabaseRawFileProvider_t0E8A0F08FE1A351C7393157966DCA5DE1CB12E2C* __this, AssetSystemImpl_t81D235BF692751145D6B2C3F3431BC7D8290BD38* ___0_impl, String_t* ___1_providerGUID, AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* ___2_assetInfo, const RuntimeMethod* method) 
+{
+	{
+		// public DatabaseRawFileProvider(AssetSystemImpl impl, string providerGUID, AssetInfo assetInfo) : base(impl, providerGUID, assetInfo)
+		AssetSystemImpl_t81D235BF692751145D6B2C3F3431BC7D8290BD38* L_0 = ___0_impl;
+		String_t* L_1 = ___1_providerGUID;
+		AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* L_2 = ___2_assetInfo;
+		ProviderBase__ctor_mD12AACF29516E2C9D72AD60F6576AB9888B178BD(__this, L_0, L_1, L_2, NULL);
+		// }
+		return;
+	}
+}
+// System.Void YooAsset.DatabaseRawFileProvider::Update()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DatabaseRawFileProvider_Update_m6E42F126AF9523AFDEA3E41A7B8CC57D591D87FE (DatabaseRawFileProvider_t0E8A0F08FE1A351C7393157966DCA5DE1CB12E2C* __this, const RuntimeMethod* method) 
+{
+	{
+		// }
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
 // System.Void YooAsset.ProviderBase::set_ProviderGUID(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ProviderBase_set_ProviderGUID_m988E19C4404A6CA6F53C58A930588FA9D9981DA7 (ProviderBase_t07CDF30CF91BB924A36026623C4136B7E1D0F758* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
@@ -12149,13 +12697,33 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D971
 		return L_0;
 	}
 }
+// System.Void YooAsset.ProviderBase::set_RawFilePath(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ProviderBase_set_RawFilePath_mD6BC08B52F9103B5951AA3F6B5A50F86E53F5743 (ProviderBase_t07CDF30CF91BB924A36026623C4136B7E1D0F758* __this, String_t* ___0_value, const RuntimeMethod* method) 
+{
+	{
+		// public string RawFilePath { protected set; get; }
+		String_t* L_0 = ___0_value;
+		__this->___U3CRawFilePathU3Ek__BackingField_4 = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CRawFilePathU3Ek__BackingField_4), (void*)L_0);
+		return;
+	}
+}
+// System.String YooAsset.ProviderBase::get_RawFilePath()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ProviderBase_get_RawFilePath_m290E1555F373CD704396E74095F6DDC5D1B3EF9E (ProviderBase_t07CDF30CF91BB924A36026623C4136B7E1D0F758* __this, const RuntimeMethod* method) 
+{
+	{
+		// public string RawFilePath { protected set; get; }
+		String_t* L_0 = __this->___U3CRawFilePathU3Ek__BackingField_4;
+		return L_0;
+	}
+}
 // System.Void YooAsset.ProviderBase::set_Status(YooAsset.ProviderBase/EStatus)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ProviderBase_set_Status_mAFD3221C47FC17E51E44CC1F5CDD54E474AB005A (ProviderBase_t07CDF30CF91BB924A36026623C4136B7E1D0F758* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
 		// public EStatus Status { protected set; get; } = EStatus.None;
 		int32_t L_0 = ___0_value;
-		__this->___U3CStatusU3Ek__BackingField_4 = L_0;
+		__this->___U3CStatusU3Ek__BackingField_5 = L_0;
 		return;
 	}
 }
@@ -12164,7 +12732,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ProviderBase_get_Status_m554793B8C054
 {
 	{
 		// public EStatus Status { protected set; get; } = EStatus.None;
-		int32_t L_0 = __this->___U3CStatusU3Ek__BackingField_4;
+		int32_t L_0 = __this->___U3CStatusU3Ek__BackingField_5;
 		return L_0;
 	}
 }
@@ -12174,8 +12742,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ProviderBase_set_LastError_m4F7F87603F9D
 	{
 		// public string LastError { protected set; get; } = string.Empty;
 		String_t* L_0 = ___0_value;
-		__this->___U3CLastErrorU3Ek__BackingField_5 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CLastErrorU3Ek__BackingField_5), (void*)L_0);
+		__this->___U3CLastErrorU3Ek__BackingField_6 = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CLastErrorU3Ek__BackingField_6), (void*)L_0);
 		return;
 	}
 }
@@ -12184,7 +12752,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* ProviderBase_get_LastError_m664E03F
 {
 	{
 		// public string LastError { protected set; get; } = string.Empty;
-		String_t* L_0 = __this->___U3CLastErrorU3Ek__BackingField_5;
+		String_t* L_0 = __this->___U3CLastErrorU3Ek__BackingField_6;
 		return L_0;
 	}
 }
@@ -12194,7 +12762,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ProviderBase_set_Progress_m6F3E72FD757E6
 	{
 		// public float Progress { protected set; get; } = 0f;
 		float L_0 = ___0_value;
-		__this->___U3CProgressU3Ek__BackingField_6 = L_0;
+		__this->___U3CProgressU3Ek__BackingField_7 = L_0;
 		return;
 	}
 }
@@ -12204,7 +12772,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ProviderBase_set_RefCount_m5AB0D77FFE3D1
 	{
 		// public int RefCount { private set; get; } = 0;
 		int32_t L_0 = ___0_value;
-		__this->___U3CRefCountU3Ek__BackingField_7 = L_0;
+		__this->___U3CRefCountU3Ek__BackingField_8 = L_0;
 		return;
 	}
 }
@@ -12213,7 +12781,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ProviderBase_get_RefCount_m5081C763FA
 {
 	{
 		// public int RefCount { private set; get; } = 0;
-		int32_t L_0 = __this->___U3CRefCountU3Ek__BackingField_7;
+		int32_t L_0 = __this->___U3CRefCountU3Ek__BackingField_8;
 		return L_0;
 	}
 }
@@ -12222,7 +12790,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ProviderBase_get_IsDestroyed_m617A0F3651
 {
 	{
 		// public bool IsDestroyed { private set; get; } = false;
-		bool L_0 = __this->___U3CIsDestroyedU3Ek__BackingField_8;
+		bool L_0 = __this->___U3CIsDestroyedU3Ek__BackingField_9;
 		return L_0;
 	}
 }
@@ -12255,8 +12823,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ProviderBase_set_OwnerBundle_m6715260C82
 	{
 		// protected BundleLoaderBase OwnerBundle { private set; get; }
 		BundleLoaderBase_tE902CF39F3DA959883DB9EC74F4318A2B7A38A1C* L_0 = ___0_value;
-		__this->___U3COwnerBundleU3Ek__BackingField_9 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3COwnerBundleU3Ek__BackingField_9), (void*)L_0);
+		__this->___U3COwnerBundleU3Ek__BackingField_10 = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3COwnerBundleU3Ek__BackingField_10), (void*)L_0);
 		return;
 	}
 }
@@ -12265,7 +12833,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR BundleLoaderBase_tE902CF39F3DA959883DB9EC74F4
 {
 	{
 		// protected BundleLoaderBase OwnerBundle { private set; get; }
-		BundleLoaderBase_tE902CF39F3DA959883DB9EC74F4318A2B7A38A1C* L_0 = __this->___U3COwnerBundleU3Ek__BackingField_9;
+		BundleLoaderBase_tE902CF39F3DA959883DB9EC74F4318A2B7A38A1C* L_0 = __this->___U3COwnerBundleU3Ek__BackingField_10;
 		return L_0;
 	}
 }
@@ -12275,8 +12843,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ProviderBase_set_DependBundles_m4EAAC567
 	{
 		// protected DependAssetBundles DependBundles { private set; get; }
 		DependAssetBundles_t476EA7FB3EBF213BD9F6FC9FA3A33917EF3FF60D* L_0 = ___0_value;
-		__this->___U3CDependBundlesU3Ek__BackingField_10 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CDependBundlesU3Ek__BackingField_10), (void*)L_0);
+		__this->___U3CDependBundlesU3Ek__BackingField_11 = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CDependBundlesU3Ek__BackingField_11), (void*)L_0);
 		return;
 	}
 }
@@ -12285,7 +12853,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR DependAssetBundles_t476EA7FB3EBF213BD9F6FC9FA
 {
 	{
 		// protected DependAssetBundles DependBundles { private set; get; }
-		DependAssetBundles_t476EA7FB3EBF213BD9F6FC9FA3A33917EF3FF60D* L_0 = __this->___U3CDependBundlesU3Ek__BackingField_10;
+		DependAssetBundles_t476EA7FB3EBF213BD9F6FC9FA3A33917EF3FF60D* L_0 = __this->___U3CDependBundlesU3Ek__BackingField_11;
 		return L_0;
 	}
 }
@@ -12295,7 +12863,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ProviderBase_set_IsWaitForAsyncComplete_
 	{
 		// protected bool IsWaitForAsyncComplete { private set; get; } = false;
 		bool L_0 = ___0_value;
-		__this->___U3CIsWaitForAsyncCompleteU3Ek__BackingField_11 = L_0;
+		__this->___U3CIsWaitForAsyncCompleteU3Ek__BackingField_12 = L_0;
 		return;
 	}
 }
@@ -12304,7 +12872,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ProviderBase_get_IsWaitForAsyncComplete_
 {
 	{
 		// protected bool IsWaitForAsyncComplete { private set; get; } = false;
-		bool L_0 = __this->___U3CIsWaitForAsyncCompleteU3Ek__BackingField_11;
+		bool L_0 = __this->___U3CIsWaitForAsyncCompleteU3Ek__BackingField_12;
 		return L_0;
 	}
 }
@@ -12324,22 +12892,22 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ProviderBase__ctor_mD12AACF29516E2C9D72A
 	{
 		// public string LastError { protected set; get; } = string.Empty;
 		String_t* L_0 = ((String_t_StaticFields*)il2cpp_codegen_static_fields_for(String_t_il2cpp_TypeInfo_var))->___Empty_6;
-		__this->___U3CLastErrorU3Ek__BackingField_5 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CLastErrorU3Ek__BackingField_5), (void*)L_0);
+		__this->___U3CLastErrorU3Ek__BackingField_6 = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CLastErrorU3Ek__BackingField_6), (void*)L_0);
 		// private readonly List<OperationHandleBase> _handles = new List<OperationHandleBase>();
 		List_1_tCC46A17BA7796DA00FE23D17E1FA59B8A1C5AEA8* L_1 = (List_1_tCC46A17BA7796DA00FE23D17E1FA59B8A1C5AEA8*)il2cpp_codegen_object_new(List_1_tCC46A17BA7796DA00FE23D17E1FA59B8A1C5AEA8_il2cpp_TypeInfo_var);
 		NullCheck(L_1);
 		List_1__ctor_m8E339B0B0F252DDBF12EE283F16AFBE291B5061C(L_1, List_1__ctor_m8E339B0B0F252DDBF12EE283F16AFBE291B5061C_RuntimeMethod_var);
-		__this->____handles_12 = L_1;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____handles_12), (void*)L_1);
+		__this->____handles_13 = L_1;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____handles_13), (void*)L_1);
 		// public string SpawnScene = string.Empty;
 		String_t* L_2 = ((String_t_StaticFields*)il2cpp_codegen_static_fields_for(String_t_il2cpp_TypeInfo_var))->___Empty_6;
-		__this->___SpawnScene_14 = L_2;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___SpawnScene_14), (void*)L_2);
+		__this->___SpawnScene_15 = L_2;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___SpawnScene_15), (void*)L_2);
 		// public string SpawnTime = string.Empty;
 		String_t* L_3 = ((String_t_StaticFields*)il2cpp_codegen_static_fields_for(String_t_il2cpp_TypeInfo_var))->___Empty_6;
-		__this->___SpawnTime_15 = L_3;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___SpawnTime_15), (void*)L_3);
+		__this->___SpawnTime_16 = L_3;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___SpawnTime_16), (void*)L_3);
 		// public ProviderBase(AssetSystemImpl impl, string providerGUID, AssetInfo assetInfo)
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
 		// Impl = impl;
@@ -12430,7 +12998,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ProviderBase_ReleaseHandle_mE51C1750FC7D
 IL_0013:
 	{
 		// if (_handles.Remove(handle) == false)
-		List_1_tCC46A17BA7796DA00FE23D17E1FA59B8A1C5AEA8* L_1 = __this->____handles_12;
+		List_1_tCC46A17BA7796DA00FE23D17E1FA59B8A1C5AEA8* L_1 = __this->____handles_13;
 		OperationHandleBase_tADAF436129FFA906751706F53E79482B8201377C* L_2 = ___0_handle;
 		NullCheck(L_1);
 		bool L_3;
@@ -12522,7 +13090,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ProviderBase_InvokeCompletion_m7D99F5007
 		// Progress = 1f;
 		ProviderBase_set_Progress_m6F3E72FD757E68F26DD9BBA9FEC82459B778DC17_inline(__this, (1.0f), NULL);
 		// List<OperationHandleBase> tempers = new List<OperationHandleBase>(_handles);
-		List_1_tCC46A17BA7796DA00FE23D17E1FA59B8A1C5AEA8* L_0 = __this->____handles_12;
+		List_1_tCC46A17BA7796DA00FE23D17E1FA59B8A1C5AEA8* L_0 = __this->____handles_13;
 		List_1_tCC46A17BA7796DA00FE23D17E1FA59B8A1C5AEA8* L_1 = (List_1_tCC46A17BA7796DA00FE23D17E1FA59B8A1C5AEA8*)il2cpp_codegen_object_new(List_1_tCC46A17BA7796DA00FE23D17E1FA59B8A1C5AEA8_il2cpp_TypeInfo_var);
 		NullCheck(L_1);
 		List_1__ctor_m054EC6CC5A164CF0313CF26897C5A4885BB33C62(L_1, L_0, List_1__ctor_m054EC6CC5A164CF0313CF26897C5A4885BB33C62_RuntimeMethod_var);
@@ -12594,7 +13162,7 @@ IL_0034_1:
 IL_004d:
 	{
 		// if (_taskCompletionSource != null)
-		TaskCompletionSource_1_tB4EF81F69CCF7C4F0D956F9B26127C0634A24A37* L_8 = __this->____taskCompletionSource_13;
+		TaskCompletionSource_1_tB4EF81F69CCF7C4F0D956F9B26127C0634A24A37* L_8 = __this->____taskCompletionSource_14;
 		if (!L_8)
 		{
 			goto IL_0062;
@@ -12602,7 +13170,7 @@ IL_004d:
 	}
 	{
 		// _taskCompletionSource.TrySetResult(null);
-		TaskCompletionSource_1_tB4EF81F69CCF7C4F0D956F9B26127C0634A24A37* L_9 = __this->____taskCompletionSource_13;
+		TaskCompletionSource_1_tB4EF81F69CCF7C4F0D956F9B26127C0634A24A37* L_9 = __this->____taskCompletionSource_14;
 		NullCheck(L_9);
 		bool L_10;
 		L_10 = TaskCompletionSource_1_TrySetResult_m7A0F162733257CA73B347B6BB9677F25A0AB0F9B(L_9, NULL, TaskCompletionSource_1_TrySetResult_m7A0F162733257CA73B347B6BB9677F25A0AB0F9B_RuntimeMethod_var);
@@ -12619,7 +13187,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t ProviderBase_get_LoadingTime_m3C876F3
 {
 	{
 		// public long LoadingTime { protected set; get; }
-		int64_t L_0 = __this->___U3CLoadingTimeU3Ek__BackingField_16;
+		int64_t L_0 = __this->___U3CLoadingTimeU3Ek__BackingField_17;
 		return L_0;
 	}
 }
@@ -20092,6 +20660,52 @@ IL_0014:
 		return;
 	}
 }
+// System.Void YooAsset.AssetInfo::.ctor(YooAsset.PackageAsset)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AssetInfo__ctor_mE3A2AB75778CE74ACFD8E6450FD98E0574296BD9 (AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* __this, PackageAsset_t1A8378733AF6E05264E4FC8D3EA1C24668313C91* ___0_packageAsset, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&String_t_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		// internal AssetInfo(PackageAsset packageAsset)
+		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
+		// if (packageAsset == null)
+		PackageAsset_t1A8378733AF6E05264E4FC8D3EA1C24668313C91* L_0 = ___0_packageAsset;
+		if (L_0)
+		{
+			goto IL_0014;
+		}
+	}
+	{
+		// throw new System.Exception("Should never get here !");
+		Exception_t* L_1 = (Exception_t*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&Exception_t_il2cpp_TypeInfo_var)));
+		NullCheck(L_1);
+		Exception__ctor_m9B2BD92CD68916245A75109105D9071C9D430E7F(L_1, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral358961743E33B317DCC502CE329A008EAD710BC6)), NULL);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_1, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&AssetInfo__ctor_mE3A2AB75778CE74ACFD8E6450FD98E0574296BD9_RuntimeMethod_var)));
+	}
+
+IL_0014:
+	{
+		// _providerGUID = string.Empty;
+		String_t* L_2 = ((String_t_StaticFields*)il2cpp_codegen_static_fields_for(String_t_il2cpp_TypeInfo_var))->___Empty_6;
+		__this->____providerGUID_1 = L_2;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____providerGUID_1), (void*)L_2);
+		// _packageAsset = packageAsset;
+		PackageAsset_t1A8378733AF6E05264E4FC8D3EA1C24668313C91* L_3 = ___0_packageAsset;
+		__this->____packageAsset_0 = L_3;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____packageAsset_0), (void*)L_3);
+		// AssetType = null;
+		AssetInfo_set_AssetType_m08F73CC1E8FFEBC41584D40201DDB1B83F24297B_inline(__this, (Type_t*)NULL, NULL);
+		// Error = string.Empty;
+		String_t* L_4 = ((String_t_StaticFields*)il2cpp_codegen_static_fields_for(String_t_il2cpp_TypeInfo_var))->___Empty_6;
+		AssetInfo_set_Error_mDCFC1E8F4428CF30849ED358E83C9AD6E7331D45_inline(__this, L_4, NULL);
+		// }
+		return;
+	}
+}
 // System.Void YooAsset.AssetInfo::.ctor(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AssetInfo__ctor_m3FBC08A7217B08A964DE5768108419C86F0BA4AF (AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* __this, String_t* ___0_error, const RuntimeMethod* method) 
 {
@@ -27268,6 +27882,120 @@ IL_00af:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+// System.Boolean YooAsset.PackageAsset::HasTag(System.String[])
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PackageAsset_HasTag_mBC2FD8D06A449CFDBA1F72267AF03BFF9EF62D93 (PackageAsset_t1A8378733AF6E05264E4FC8D3EA1C24668313C91* __this, StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___0_tags, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Enumerable_Contains_TisString_t_m903B1A64070B00925A8E4E7979330AA7D7B0FB33_RuntimeMethod_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* V_0 = NULL;
+	int32_t V_1 = 0;
+	String_t* V_2 = NULL;
+	{
+		// if (tags == null || tags.Length == 0)
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_0 = ___0_tags;
+		if (!L_0)
+		{
+			goto IL_0007;
+		}
+	}
+	{
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_1 = ___0_tags;
+		NullCheck(L_1);
+		if ((((RuntimeArray*)L_1)->max_length))
+		{
+			goto IL_0009;
+		}
+	}
+
+IL_0007:
+	{
+		// return false;
+		return (bool)0;
+	}
+
+IL_0009:
+	{
+		// if (AssetTags == null || AssetTags.Length == 0)
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_2 = __this->___AssetTags_3;
+		if (!L_2)
+		{
+			goto IL_001a;
+		}
+	}
+	{
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_3 = __this->___AssetTags_3;
+		NullCheck(L_3);
+		if ((((RuntimeArray*)L_3)->max_length))
+		{
+			goto IL_001c;
+		}
+	}
+
+IL_001a:
+	{
+		// return false;
+		return (bool)0;
+	}
+
+IL_001c:
+	{
+		// foreach (var tag in tags)
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_4 = ___0_tags;
+		V_0 = L_4;
+		V_1 = 0;
+		goto IL_003a;
+	}
+
+IL_0022:
+	{
+		// foreach (var tag in tags)
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_5 = V_0;
+		int32_t L_6 = V_1;
+		NullCheck(L_5);
+		int32_t L_7 = L_6;
+		String_t* L_8 = (L_5)->GetAt(static_cast<il2cpp_array_size_t>(L_7));
+		V_2 = L_8;
+		// if (AssetTags.Contains(tag))
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_9 = __this->___AssetTags_3;
+		String_t* L_10 = V_2;
+		bool L_11;
+		L_11 = Enumerable_Contains_TisString_t_m903B1A64070B00925A8E4E7979330AA7D7B0FB33((RuntimeObject*)L_9, L_10, Enumerable_Contains_TisString_t_m903B1A64070B00925A8E4E7979330AA7D7B0FB33_RuntimeMethod_var);
+		if (!L_11)
+		{
+			goto IL_0036;
+		}
+	}
+	{
+		// return true;
+		return (bool)1;
+	}
+
+IL_0036:
+	{
+		int32_t L_12 = V_1;
+		V_1 = ((int32_t)il2cpp_codegen_add(L_12, 1));
+	}
+
+IL_003a:
+	{
+		// foreach (var tag in tags)
+		int32_t L_13 = V_1;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_14 = V_0;
+		NullCheck(L_14);
+		if ((((int32_t)L_13) < ((int32_t)((int32_t)(((RuntimeArray*)L_14)->max_length)))))
+		{
+			goto IL_0022;
+		}
+	}
+	{
+		// return false;
+		return (bool)0;
+	}
+}
 // System.Void YooAsset.PackageAsset::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PackageAsset__ctor_mE5A281B6AD7AA9CC7C536A3AF7D523A4434BD562 (PackageAsset_t1A8378733AF6E05264E4FC8D3EA1C24668313C91* __this, const RuntimeMethod* method) 
 {
@@ -27900,6 +28628,118 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PackageManifest_TryGetPackageAsset_mE625
 		bool L_3;
 		L_3 = Dictionary_2_TryGetValue_m99145AD6EB9FF2F23C202418974AA7ACFFE94D4E(L_0, L_1, L_2, Dictionary_2_TryGetValue_m99145AD6EB9FF2F23C202418974AA7ACFFE94D4E_RuntimeMethod_var);
 		return L_3;
+	}
+}
+// YooAsset.AssetInfo[] YooAsset.PackageManifest::GetAssetsInfoByTags(System.String[])
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AssetInfoU5BU5D_tF3D57109F5DA58F74C0720CAAC3755EBA9C6A0C9* PackageManifest_GetAssetsInfoByTags_m28A83DB815A513DAB54A7507BD22A2E0799F3290 (PackageManifest_tA9B8D10262EB5900AEB4329BF3B22F0353554CB5* __this, StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* ___0_tags, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Enumerator_Dispose_m240FA6D954C66B386C4469A38ABADD0AD207E1CE_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Enumerator_MoveNext_mD5C7A24854C72ADD45FFADB658A262E0C2836C3F_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Enumerator_get_Current_mE3DD364B849B4CF5C450D99AF3FE61CC3E4876BF_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_Add_m7A56D946C2285D2DB29CB8EE1CAEFBE38A33696C_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_GetEnumerator_m81DA2500BDEE61FC5C60024FF899D00F5E0E24E8_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_ToArray_mE6D6C72788F5D4627829FC9A9A207F179067D1B2_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1__ctor_mE56D6BA260D5DB6FA481C841F821934F1E1E8630_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_t64BBFD7D8701A33FFC144445CD5159BC576FFEE2_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	List_1_t64BBFD7D8701A33FFC144445CD5159BC576FFEE2* V_0 = NULL;
+	Enumerator_tDA9C4A32D5EE089EDCF2CD990FA9E48ABB504E2E V_1;
+	memset((&V_1), 0, sizeof(V_1));
+	PackageAsset_t1A8378733AF6E05264E4FC8D3EA1C24668313C91* V_2 = NULL;
+	AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* V_3 = NULL;
+	{
+		// List<AssetInfo> result = new List<AssetInfo>(100);
+		List_1_t64BBFD7D8701A33FFC144445CD5159BC576FFEE2* L_0 = (List_1_t64BBFD7D8701A33FFC144445CD5159BC576FFEE2*)il2cpp_codegen_object_new(List_1_t64BBFD7D8701A33FFC144445CD5159BC576FFEE2_il2cpp_TypeInfo_var);
+		NullCheck(L_0);
+		List_1__ctor_mE56D6BA260D5DB6FA481C841F821934F1E1E8630(L_0, ((int32_t)100), List_1__ctor_mE56D6BA260D5DB6FA481C841F821934F1E1E8630_RuntimeMethod_var);
+		V_0 = L_0;
+		// foreach (var packageAsset in AssetList)
+		List_1_t1F7449D98AADDC78A54D629F7AF999996F0A527E* L_1 = __this->___AssetList_7;
+		NullCheck(L_1);
+		Enumerator_tDA9C4A32D5EE089EDCF2CD990FA9E48ABB504E2E L_2;
+		L_2 = List_1_GetEnumerator_m81DA2500BDEE61FC5C60024FF899D00F5E0E24E8(L_1, List_1_GetEnumerator_m81DA2500BDEE61FC5C60024FF899D00F5E0E24E8_RuntimeMethod_var);
+		V_1 = L_2;
+	}
+	{
+		auto __finallyBlock = il2cpp::utils::Finally([&]
+		{
+
+FINALLY_0040:
+			{// begin finally (depth: 1)
+				Enumerator_Dispose_m240FA6D954C66B386C4469A38ABADD0AD207E1CE((&V_1), Enumerator_Dispose_m240FA6D954C66B386C4469A38ABADD0AD207E1CE_RuntimeMethod_var);
+				return;
+			}// end finally (depth: 1)
+		});
+		try
+		{// begin try (depth: 1)
+			{
+				goto IL_0035_1;
+			}
+
+IL_0016_1:
+			{
+				// foreach (var packageAsset in AssetList)
+				PackageAsset_t1A8378733AF6E05264E4FC8D3EA1C24668313C91* L_3;
+				L_3 = Enumerator_get_Current_mE3DD364B849B4CF5C450D99AF3FE61CC3E4876BF_inline((&V_1), Enumerator_get_Current_mE3DD364B849B4CF5C450D99AF3FE61CC3E4876BF_RuntimeMethod_var);
+				V_2 = L_3;
+				// if (packageAsset.HasTag(tags))
+				PackageAsset_t1A8378733AF6E05264E4FC8D3EA1C24668313C91* L_4 = V_2;
+				StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_5 = ___0_tags;
+				NullCheck(L_4);
+				bool L_6;
+				L_6 = PackageAsset_HasTag_mBC2FD8D06A449CFDBA1F72267AF03BFF9EF62D93(L_4, L_5, NULL);
+				if (!L_6)
+				{
+					goto IL_0035_1;
+				}
+			}
+			{
+				// AssetInfo assetInfo = new AssetInfo(packageAsset);
+				PackageAsset_t1A8378733AF6E05264E4FC8D3EA1C24668313C91* L_7 = V_2;
+				AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* L_8 = (AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456*)il2cpp_codegen_object_new(AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456_il2cpp_TypeInfo_var);
+				NullCheck(L_8);
+				AssetInfo__ctor_mE3A2AB75778CE74ACFD8E6450FD98E0574296BD9(L_8, L_7, NULL);
+				V_3 = L_8;
+				// result.Add(assetInfo);
+				List_1_t64BBFD7D8701A33FFC144445CD5159BC576FFEE2* L_9 = V_0;
+				AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* L_10 = V_3;
+				NullCheck(L_9);
+				List_1_Add_m7A56D946C2285D2DB29CB8EE1CAEFBE38A33696C_inline(L_9, L_10, List_1_Add_m7A56D946C2285D2DB29CB8EE1CAEFBE38A33696C_RuntimeMethod_var);
+			}
+
+IL_0035_1:
+			{
+				// foreach (var packageAsset in AssetList)
+				bool L_11;
+				L_11 = Enumerator_MoveNext_mD5C7A24854C72ADD45FFADB658A262E0C2836C3F((&V_1), Enumerator_MoveNext_mD5C7A24854C72ADD45FFADB658A262E0C2836C3F_RuntimeMethod_var);
+				if (L_11)
+				{
+					goto IL_0016_1;
+				}
+			}
+			{
+				goto IL_004e;
+			}
+		}// end try (depth: 1)
+		catch(Il2CppExceptionWrapper& e)
+		{
+			__finallyBlock.StoreException(e.ex);
+		}
+	}
+
+IL_004e:
+	{
+		// return result.ToArray();
+		List_1_t64BBFD7D8701A33FFC144445CD5159BC576FFEE2* L_12 = V_0;
+		NullCheck(L_12);
+		AssetInfoU5BU5D_tF3D57109F5DA58F74C0720CAAC3755EBA9C6A0C9* L_13;
+		L_13 = List_1_ToArray_mE6D6C72788F5D4627829FC9A9A207F179067D1B2(L_12, List_1_ToArray_mE6D6C72788F5D4627829FC9A9A207F179067D1B2_RuntimeMethod_var);
+		return L_13;
 	}
 }
 // YooAsset.AssetInfo YooAsset.PackageManifest::ConvertLocationToAssetInfo(System.String,System.Type)
@@ -30350,6 +31190,82 @@ IL_0013:
 		return L_5;
 	}
 }
+// YooAsset.AssetInfo[] YooAsset.ResourcePackage::GetAssetInfos(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AssetInfoU5BU5D_tF3D57109F5DA58F74C0720CAAC3755EBA9C6A0C9* ResourcePackage_GetAssetInfos_mE6348F8DFF65DCCEAE8A6FB0C34668C429802FBE (ResourcePackage_t6B28B6B3A6DEAB641E6CBB06F383D7B947198022* __this, String_t* ___0_tag, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IPlayModeServices_tAA52527E1B8B45CA174AECC67517825F92790C7A_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* V_0 = NULL;
+	{
+		// string[] tags = new string[] { tag };
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_0 = (StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)SZArrayNew(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248_il2cpp_TypeInfo_var, (uint32_t)1);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_1 = L_0;
+		String_t* L_2 = ___0_tag;
+		NullCheck(L_1);
+		ArrayElementTypeCheck (L_1, L_2);
+		(L_1)->SetAt(static_cast<il2cpp_array_size_t>(0), (String_t*)L_2);
+		V_0 = L_1;
+		// return _playModeServices.ActiveManifest.GetAssetsInfoByTags(tags);
+		RuntimeObject* L_3 = __this->____playModeServices_5;
+		NullCheck(L_3);
+		PackageManifest_tA9B8D10262EB5900AEB4329BF3B22F0353554CB5* L_4;
+		L_4 = InterfaceFuncInvoker0< PackageManifest_tA9B8D10262EB5900AEB4329BF3B22F0353554CB5* >::Invoke(0 /* YooAsset.PackageManifest YooAsset.IPlayModeServices::get_ActiveManifest() */, IPlayModeServices_tAA52527E1B8B45CA174AECC67517825F92790C7A_il2cpp_TypeInfo_var, L_3);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_5 = V_0;
+		NullCheck(L_4);
+		AssetInfoU5BU5D_tF3D57109F5DA58F74C0720CAAC3755EBA9C6A0C9* L_6;
+		L_6 = PackageManifest_GetAssetsInfoByTags_m28A83DB815A513DAB54A7507BD22A2E0799F3290(L_4, L_5, NULL);
+		return L_6;
+	}
+}
+// YooAsset.RawFileOperationHandle YooAsset.ResourcePackage::LoadRawFileAsync(YooAsset.AssetInfo)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RawFileOperationHandle_tFF3082CB8C57077D320C10FDD406DC6284DFB171* ResourcePackage_LoadRawFileAsync_mC5F2EAA9892BC46E6D829DF23C6F1AFF6309F8DA (ResourcePackage_t6B28B6B3A6DEAB641E6CBB06F383D7B947198022* __this, AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* ___0_assetInfo, const RuntimeMethod* method) 
+{
+	{
+		// return LoadRawFileInternal(assetInfo, false);
+		AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* L_0 = ___0_assetInfo;
+		RawFileOperationHandle_tFF3082CB8C57077D320C10FDD406DC6284DFB171* L_1;
+		L_1 = ResourcePackage_LoadRawFileInternal_m6C3DB54DFFDD2C5C15E8B9C84DBDBA9EF32E6324(__this, L_0, (bool)0, NULL);
+		return L_1;
+	}
+}
+// YooAsset.RawFileOperationHandle YooAsset.ResourcePackage::LoadRawFileInternal(YooAsset.AssetInfo,System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RawFileOperationHandle_tFF3082CB8C57077D320C10FDD406DC6284DFB171* ResourcePackage_LoadRawFileInternal_m6C3DB54DFFDD2C5C15E8B9C84DBDBA9EF32E6324 (ResourcePackage_t6B28B6B3A6DEAB641E6CBB06F383D7B947198022* __this, AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* ___0_assetInfo, bool ___1_waitForAsyncComplete, const RuntimeMethod* method) 
+{
+	RawFileOperationHandle_tFF3082CB8C57077D320C10FDD406DC6284DFB171* V_0 = NULL;
+	{
+		// var handle = _assetSystemImpl.LoadRawFileAsync(assetInfo);
+		AssetSystemImpl_t81D235BF692751145D6B2C3F3431BC7D8290BD38* L_0 = __this->____assetSystemImpl_6;
+		AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* L_1 = ___0_assetInfo;
+		NullCheck(L_0);
+		RawFileOperationHandle_tFF3082CB8C57077D320C10FDD406DC6284DFB171* L_2;
+		L_2 = AssetSystemImpl_LoadRawFileAsync_mAFD556F5CF623EF56F20A6186C9BB8EF0BB9F1DC(L_0, L_1, NULL);
+		V_0 = L_2;
+		// if (waitForAsyncComplete)
+		bool L_3 = ___1_waitForAsyncComplete;
+		if (!L_3)
+		{
+			goto IL_0016;
+		}
+	}
+	{
+		// handle.WaitForAsyncComplete();
+		RawFileOperationHandle_tFF3082CB8C57077D320C10FDD406DC6284DFB171* L_4 = V_0;
+		NullCheck(L_4);
+		RawFileOperationHandle_WaitForAsyncComplete_mB52232D6FE870F75FB650D6A5D51626508DA3F2F(L_4, NULL);
+	}
+
+IL_0016:
+	{
+		// return handle;
+		RawFileOperationHandle_tFF3082CB8C57077D320C10FDD406DC6284DFB171* L_5 = V_0;
+		return L_5;
+	}
+}
 // YooAsset.AssetOperationHandle YooAsset.ResourcePackage::LoadAssetInternal(YooAsset.AssetInfo,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AssetOperationHandle_t3C4EE34040385828202FA37D72CC91D7668FB32B* ResourcePackage_LoadAssetInternal_mD606BD7FFC1941FF81F817B249BB0334B1A41662 (ResourcePackage_t6B28B6B3A6DEAB641E6CBB06F383D7B947198022* __this, AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* ___0_assetInfo, bool ___1_waitForAsyncComplete, const RuntimeMethod* method) 
 {
@@ -30521,7 +31437,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int64_t ProviderBase_get_LoadingT
 {
 	{
 		// public long LoadingTime { protected set; get; }
-		int64_t L_0 = __this->___U3CLoadingTimeU3Ek__BackingField_16;
+		int64_t L_0 = __this->___U3CLoadingTimeU3Ek__BackingField_17;
 		return L_0;
 	}
 }
@@ -30529,7 +31445,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t ProviderBase_get_RefCount
 {
 	{
 		// public int RefCount { private set; get; } = 0;
-		int32_t L_0 = __this->___U3CRefCountU3Ek__BackingField_7;
+		int32_t L_0 = __this->___U3CRefCountU3Ek__BackingField_8;
 		return L_0;
 	}
 }
@@ -30537,7 +31453,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t ProviderBase_get_Status_m
 {
 	{
 		// public EStatus Status { protected set; get; } = EStatus.None;
-		int32_t L_0 = __this->___U3CStatusU3Ek__BackingField_4;
+		int32_t L_0 = __this->___U3CStatusU3Ek__BackingField_5;
 		return L_0;
 	}
 }
@@ -30615,7 +31531,15 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool ProviderBase_get_IsDestroyed
 {
 	{
 		// public bool IsDestroyed { private set; get; } = false;
-		bool L_0 = __this->___U3CIsDestroyedU3Ek__BackingField_8;
+		bool L_0 = __this->___U3CIsDestroyedU3Ek__BackingField_9;
+		return L_0;
+	}
+}
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* ProviderBase_get_RawFilePath_m290E1555F373CD704396E74095F6DDC5D1B3EF9E_inline (ProviderBase_t07CDF30CF91BB924A36026623C4136B7E1D0F758* __this, const RuntimeMethod* method) 
+{
+	{
+		// public string RawFilePath { protected set; get; }
+		String_t* L_0 = __this->___U3CRawFilePathU3Ek__BackingField_4;
 		return L_0;
 	}
 }
@@ -30833,7 +31757,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void ProviderBase_set_Status_mAFD
 	{
 		// public EStatus Status { protected set; get; } = EStatus.None;
 		int32_t L_0 = ___0_value;
-		__this->___U3CStatusU3Ek__BackingField_4 = L_0;
+		__this->___U3CStatusU3Ek__BackingField_5 = L_0;
 		return;
 	}
 }
@@ -30841,7 +31765,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool ProviderBase_get_IsWaitForAs
 {
 	{
 		// protected bool IsWaitForAsyncComplete { private set; get; } = false;
-		bool L_0 = __this->___U3CIsWaitForAsyncCompleteU3Ek__BackingField_11;
+		bool L_0 = __this->___U3CIsWaitForAsyncCompleteU3Ek__BackingField_12;
 		return L_0;
 	}
 }
@@ -30849,7 +31773,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR DependAssetBundles_t476EA7FB3EBF2
 {
 	{
 		// protected DependAssetBundles DependBundles { private set; get; }
-		DependAssetBundles_t476EA7FB3EBF213BD9F6FC9FA3A33917EF3FF60D* L_0 = __this->___U3CDependBundlesU3Ek__BackingField_10;
+		DependAssetBundles_t476EA7FB3EBF213BD9F6FC9FA3A33917EF3FF60D* L_0 = __this->___U3CDependBundlesU3Ek__BackingField_11;
 		return L_0;
 	}
 }
@@ -30857,7 +31781,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR BundleLoaderBase_tE902CF39F3DA959
 {
 	{
 		// protected BundleLoaderBase OwnerBundle { private set; get; }
-		BundleLoaderBase_tE902CF39F3DA959883DB9EC74F4318A2B7A38A1C* L_0 = __this->___U3COwnerBundleU3Ek__BackingField_9;
+		BundleLoaderBase_tE902CF39F3DA959883DB9EC74F4318A2B7A38A1C* L_0 = __this->___U3COwnerBundleU3Ek__BackingField_10;
 		return L_0;
 	}
 }
@@ -30866,8 +31790,8 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void ProviderBase_set_LastError_m
 	{
 		// public string LastError { protected set; get; } = string.Empty;
 		String_t* L_0 = ___0_value;
-		__this->___U3CLastErrorU3Ek__BackingField_5 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CLastErrorU3Ek__BackingField_5), (void*)L_0);
+		__this->___U3CLastErrorU3Ek__BackingField_6 = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CLastErrorU3Ek__BackingField_6), (void*)L_0);
 		return;
 	}
 }
@@ -30883,7 +31807,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* ProviderBase_get_LastEr
 {
 	{
 		// public string LastError { protected set; get; } = string.Empty;
-		String_t* L_0 = __this->___U3CLastErrorU3Ek__BackingField_5;
+		String_t* L_0 = __this->___U3CLastErrorU3Ek__BackingField_6;
 		return L_0;
 	}
 }
@@ -30910,7 +31834,17 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void ProviderBase_set_Progress_m6
 	{
 		// public float Progress { protected set; get; } = 0f;
 		float L_0 = ___0_value;
-		__this->___U3CProgressU3Ek__BackingField_6 = L_0;
+		__this->___U3CProgressU3Ek__BackingField_7 = L_0;
+		return;
+	}
+}
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void ProviderBase_set_RawFilePath_mD6BC08B52F9103B5951AA3F6B5A50F86E53F5743_inline (ProviderBase_t07CDF30CF91BB924A36026623C4136B7E1D0F758* __this, String_t* ___0_value, const RuntimeMethod* method) 
+{
+	{
+		// public string RawFilePath { protected set; get; }
+		String_t* L_0 = ___0_value;
+		__this->___U3CRawFilePathU3Ek__BackingField_4 = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CRawFilePathU3Ek__BackingField_4), (void*)L_0);
 		return;
 	}
 }
@@ -30949,8 +31883,8 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void ProviderBase_set_OwnerBundle
 	{
 		// protected BundleLoaderBase OwnerBundle { private set; get; }
 		BundleLoaderBase_tE902CF39F3DA959883DB9EC74F4318A2B7A38A1C* L_0 = ___0_value;
-		__this->___U3COwnerBundleU3Ek__BackingField_9 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3COwnerBundleU3Ek__BackingField_9), (void*)L_0);
+		__this->___U3COwnerBundleU3Ek__BackingField_10 = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3COwnerBundleU3Ek__BackingField_10), (void*)L_0);
 		return;
 	}
 }
@@ -30959,8 +31893,8 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void ProviderBase_set_DependBundl
 	{
 		// protected DependAssetBundles DependBundles { private set; get; }
 		DependAssetBundles_t476EA7FB3EBF213BD9F6FC9FA3A33917EF3FF60D* L_0 = ___0_value;
-		__this->___U3CDependBundlesU3Ek__BackingField_10 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CDependBundlesU3Ek__BackingField_10), (void*)L_0);
+		__this->___U3CDependBundlesU3Ek__BackingField_11 = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CDependBundlesU3Ek__BackingField_11), (void*)L_0);
 		return;
 	}
 }
@@ -30969,7 +31903,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void ProviderBase_set_RefCount_m5
 	{
 		// public int RefCount { private set; get; } = 0;
 		int32_t L_0 = ___0_value;
-		__this->___U3CRefCountU3Ek__BackingField_7 = L_0;
+		__this->___U3CRefCountU3Ek__BackingField_8 = L_0;
 		return;
 	}
 }
@@ -30978,7 +31912,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void ProviderBase_set_IsWaitForAs
 	{
 		// protected bool IsWaitForAsyncComplete { private set; get; } = false;
 		bool L_0 = ___0_value;
-		__this->___U3CIsWaitForAsyncCompleteU3Ek__BackingField_11 = L_0;
+		__this->___U3CIsWaitForAsyncCompleteU3Ek__BackingField_12 = L_0;
 		return;
 	}
 }

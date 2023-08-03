@@ -39,11 +39,21 @@
     </ClCompile>
     <ClCompile Include="Source\AirFramework__1.cpp">
     </ClCompile>
-    <ClCompile Include="Source\Assembly-CSharp.cpp">
+    <ClCompile Include="Source\Assembly-CSharp-firstpass.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\DOTween.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\DOTween__1.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\DOTween__2.cpp">
     </ClCompile>
     <ClCompile Include="Source\GenericMethods.cpp">
     </ClCompile>
     <ClCompile Include="Source\GenericMethods__1.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\GenericMethods__10.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\GenericMethods__11.cpp">
     </ClCompile>
     <ClCompile Include="Source\GenericMethods__2.cpp">
     </ClCompile>
@@ -123,7 +133,17 @@
     </ClCompile>
     <ClCompile Include="Source\Generics__36.cpp">
     </ClCompile>
+    <ClCompile Include="Source\Generics__37.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics__38.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics__39.cpp">
+    </ClCompile>
     <ClCompile Include="Source\Generics__4.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics__40.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics__41.cpp">
     </ClCompile>
     <ClCompile Include="Source\Generics__5.cpp">
     </ClCompile>
@@ -134,6 +154,8 @@
     <ClCompile Include="Source\Generics__8.cpp">
     </ClCompile>
     <ClCompile Include="Source\Generics__9.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\HybridCLR.Runtime.cpp">
     </ClCompile>
     <ClCompile Include="Source\Il2CppCCalculateFieldValues.cpp">
     </ClCompile>
@@ -361,7 +383,11 @@
     </ClCompile>
     <ClCompile Include="Source\AirFramework_CodeGen.c">
     </ClCompile>
-    <ClCompile Include="Source\Assembly-CSharp_CodeGen.c">
+    <ClCompile Include="Source\Assembly-CSharp-firstpass_CodeGen.c">
+    </ClCompile>
+    <ClCompile Include="Source\DOTween_CodeGen.c">
+    </ClCompile>
+    <ClCompile Include="Source\HybridCLR.Runtime_CodeGen.c">
     </ClCompile>
     <ClCompile Include="Source\Il2CppGenericAdjustorThunkTable.c">
     </ClCompile>

@@ -3,7 +3,6 @@
   <assembly fullname="AirFramework">
     <type fullname="AirFramework.AirTask" preserve="all" />
     <type fullname="AirFramework.AirTaskBuilder" preserve="all" />
-    <type fullname="AirFramework.AirTask_Ex" preserve="all" />
     <type fullname="AirFramework.AirTask`1" preserve="all" />
     <type fullname="AirFramework.Framework" preserve="all" />
     <type fullname="AirFramework.FrameworkInitializeAttribute" preserve="all" />
@@ -18,7 +17,6 @@
     <type fullname="AirFramework.ISendEvent" preserve="all" />
     <type fullname="AirFramework.ISendEventBase" preserve="all" />
     <type fullname="AirFramework.ISendEvent`1" preserve="all" />
-    <type fullname="AirFramework.ITask" preserve="all" />
     <type fullname="AirFramework.IUpdate" preserve="all" />
     <type fullname="AirFramework.IViewHide" preserve="all" />
     <type fullname="AirFramework.IViewInitialize" preserve="all" />
@@ -43,6 +41,8 @@
   </assembly>
   <assembly fullname="mscorlib">
     <type fullname="System.Action`1" preserve="all" />
+    <type fullname="System.Collections.Generic.IReadOnlyList`1" preserve="all" />
+    <type fullname="System.Collections.Generic.List`1" preserve="all" />
     <type fullname="System.Diagnostics.DebuggableAttribute" preserve="all" />
     <type fullname="System.Diagnostics.DebuggableAttribute/DebuggingModes" preserve="all" />
     <type fullname="System.Diagnostics.DebuggerHiddenAttribute" preserve="all" />
