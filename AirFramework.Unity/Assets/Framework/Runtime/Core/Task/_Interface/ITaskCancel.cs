@@ -1,16 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace AirFramework
+﻿namespace AirFramework
 {
-    public interface ITaskCancel: ISendEvent
+    public interface ITaskCancel : ISendEvent
     {
-   
+
         void OnTaskCancel();
     }
 
-    public class TaskCancelHandler : LifeCycleHandler<ITaskCancel> 
+    public class TaskCancelHandler : LifeCycleHandler<ITaskCancel>
     {
         public override void OnLifeCycleRegister(ITaskCancel item)
         {

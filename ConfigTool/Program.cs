@@ -1,7 +1,4 @@
-﻿using System;
-
-
-namespace AirFramework.ConfigTool
+﻿namespace AirFramework.ConfigTool
 {
     public class ConfigToolProgram
     {
@@ -9,7 +6,7 @@ namespace AirFramework.ConfigTool
 
         public static void Main(string[] args)
         {
-            FileStream file = new FileStream("ConfigTool.data",FileMode.OpenOrCreate,FileAccess.ReadWrite);
+            FileStream file = new FileStream("ConfigTool.data", FileMode.OpenOrCreate, FileAccess.ReadWrite);
 
             Console.WriteLine("------------------AirFramework Config Tool------------------------------------------");
 

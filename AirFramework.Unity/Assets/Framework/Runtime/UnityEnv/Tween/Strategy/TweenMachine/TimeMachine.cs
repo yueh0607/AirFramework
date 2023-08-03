@@ -117,9 +117,9 @@ namespace AirFramework
         }
         internal void Update(float deltaTime)
         {
-       
+
             if (!Enable) return;
-           
+
             //在起始和终点插值
             TimeCurrent = Math.Clamp(TimeCurrent + Framework.DeltaTime * Speed, TimeStart, TimeEnd);
             //步进

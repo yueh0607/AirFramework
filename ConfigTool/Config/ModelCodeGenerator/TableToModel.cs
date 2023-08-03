@@ -1,10 +1,5 @@
-﻿using AirEditor;
-using AirFramework;
-using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using AirFramework;
 using System.Text;
-using UnityEngine;
 
 
 class Testitem
@@ -63,7 +58,7 @@ namespace {FrameworkSettings.instance.defaultNamespace}
         code = code.Replace("#MODELNAME#", modelName);
         code = code.Replace("#ITEMNAME#", itemName);
         code = code.Replace("#CODE#", GenerateCode(table));
-        code = code.Replace("#PRIMARYKEYTYPE#", SyntaxStrategy.GetTrueType(table[0,0]).FullName);
+        code = code.Replace("#PRIMARYKEYTYPE#", SyntaxStrategy.GetTrueType(table[0, 0]).FullName);
         code = code.Replace("#PRIMARYKEYNAME#", table[1, 0]);
         code = code.Replace("GENERATEDATA", GenerateData(table, itemName));
         return code;
@@ -74,7 +69,7 @@ namespace {FrameworkSettings.instance.defaultNamespace}
         StringBuilder builder = new StringBuilder();
         StringBuilder temp = new StringBuilder();
 
-        builder.AppendLine($"{space}[{typeof(PrimaryKeyAttribute).FullName.Replace("Attribute",string.Empty)}]");
+        builder.AppendLine($"{space}[{typeof(PrimaryKeyAttribute).FullName.Replace("Attribute", string.Empty)}]");
         for (int i = 0; i < table.ColumnCount; i++)
         {
             Type trueType = SyntaxStrategy.GetTrueType(table[0, i]);
@@ -97,20 +92,20 @@ namespace {FrameworkSettings.instance.defaultNamespace}
         return builder.ToString();
     }
 
-    private static string GenerateData(ITable<string> table,string itemName)
+    private static string GenerateData(ITable<string> table, string itemName)
     {
         StringBuilder builder = new StringBuilder();
         List<string> items = new List<string>();
-        for(int i =0; i < table.RowCount - FilterStrategy.IgnoreDataRowCount;++i)
+        for (int i = 0; i < table.RowCount - FilterStrategy.IgnoreDataRowCount; ++i)
         {
             builder.Append($"new {itemName}()");
             builder.Append("{");
-            for (int j = 0;j < table.ColumnCount;++j)
+            for (int j = 0; j < table.ColumnCount; ++j)
             {
 
-                builder.Append($"{(i==0?"":',')}{table[1,j]} = {SyntaxStrategy.GetValue(table[i, j], table[0,j])}");
+                builder.Append($"{(i == 0 ? "" : ',')}{table[1, j]} = {SyntaxStrategy.GetValue(table[i, j], table[0, j])}");
             }
-            
+
             builder.Append("}");
             items.Add(builder.ToString());
             builder.Clear();
@@ -119,7 +114,7 @@ namespace {FrameworkSettings.instance.defaultNamespace}
         {
             builder.Append(item);
             builder.Append(',');
-            
+
         }
         string result = builder.ToString().TrimEnd(',');
         return result;

@@ -63,7 +63,7 @@ namespace AirFramework
             Clear();
         }
 
-    
+
 
         public PurePool(Func<T> onCreate, Action<T> onDestroy = null, Action<T> onRecycle = null, Action<T> onAllocate = null)
         {

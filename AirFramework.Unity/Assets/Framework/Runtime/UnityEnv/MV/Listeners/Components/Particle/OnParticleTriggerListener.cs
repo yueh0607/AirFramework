@@ -1,5 +1,4 @@
-﻿using AirFramework.Internal;
-using System;
+﻿using System;
 using UnityEngine;
 
 namespace AirFramework

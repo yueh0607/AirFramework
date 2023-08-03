@@ -11,7 +11,7 @@ namespace AirFramework
         Backward = -1
     }
 
-    public class Tween:Unit
+    public class Tween : Unit
     {
         /// <summary>
         /// 时光机器-穿梭时空！！！欧耶！￥%呀呼
@@ -82,7 +82,7 @@ namespace AirFramework
             Machine = null;
         }
 
-    
-        
+
+
     }
 }

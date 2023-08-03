@@ -1,7 +1,4 @@
-﻿using AirFramework.Internal;
-using Codice.Client.BaseCommands;
-using System;
-namespace AirFramework
+﻿namespace AirFramework
 {
     public static partial class MessageExtensions
     {/// <summary>
@@ -87,7 +84,7 @@ namespace AirFramework
             else throw new CallNullEventException();
         }
 
- 
+
 
     }
 }

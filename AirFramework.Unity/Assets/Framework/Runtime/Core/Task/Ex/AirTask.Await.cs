@@ -6,9 +6,7 @@
  */
 
 
-using AirFramework.Internal;
 using System;
-using System.Collections;
 
 namespace AirFramework
 {
@@ -21,7 +19,7 @@ namespace AirFramework
         /// <returns></returns>
         public static AirTask Delay(float seconds)
         {
-            var task = Framework.Pool.Allocate<AirTask>();        
+            var task = Framework.Pool.Allocate<AirTask>();
             var timer = Framework.Pool.Allocate<TaskTimer>();
             timer.BindTask = task;
             task.Token.TokenHolder = timer;
@@ -46,12 +44,12 @@ namespace AirFramework
         /// <returns></returns>
         public static AirTask WaitFrame(int count = 1)
         {
-           
+
             var task = Framework.Pool.Allocate<AirTask>();
             var frame = Framework.Pool.Allocate<TaskFrame>();
             frame.BindTask = task;
             task.Token.TokenHolder = frame;
-            frame.FrameCount= count;
+            frame.FrameCount = count;
             frame.Enable = true;
             return task;
         }
@@ -86,7 +84,7 @@ namespace AirFramework
             {
                 counter.Add();
             };
-            counter.Enable= true;
+            counter.Enable = true;
             foreach (var one in tasks)
             {
                 one.Completed += poster;
@@ -98,7 +96,7 @@ namespace AirFramework
         /// </summary>
         /// <param name="tasks"></param>
         /// <returns></returns>
-        public static AirTask<T[]> WaitAny<T>( params AirTask<T>[] tasks)
+        public static AirTask<T[]> WaitAny<T>(params AirTask<T>[] tasks)
         {
             if (tasks.Length == 0) throw new InvalidOperationException("Passing in an empty AirTask array is not allowed");
             var task = Framework.Pool.Allocate<AirTask<T[]>>();
@@ -108,7 +106,7 @@ namespace AirFramework
             task.Token.TokenHolder = counter;
             Action<AirTask<T>> poster = (x) =>
             {
-                counter.Add(0,x.Result);
+                counter.Add(0, x.Result);
             };
             counter.Enable = true;
             foreach (var one in tasks)
@@ -191,9 +189,9 @@ namespace AirFramework
             AirTask task = Framework.Pool.Allocate<AirTask>();
             var until = Framework.Pool.Allocate<TaskUntil>();
             until.BindTask = task;
-            until.Condition= predicate;
-            until.Enable= true;
-            return task; 
+            until.Condition = predicate;
+            until.Enable = true;
+            return task;
         }
 
         public static async AirTask<AsyncToken> CatchToken()

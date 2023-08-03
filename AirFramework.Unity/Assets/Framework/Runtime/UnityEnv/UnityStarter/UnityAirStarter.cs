@@ -10,6 +10,7 @@ using AirFramework.Internal;
 using System;
 using System.Collections;
 using UnityEngine;
+using YooAsset;
 
 namespace AirFramework
 {
@@ -35,7 +36,7 @@ namespace AirFramework
             Framework.CreateModule<ResModule>();
             var module = Framework.GetModule<ResModule>();
             module.Initialize();
-            await module.InitializePackage();
+            await module.InitializePackage(EPlayMode.OfflinePlayMode);
 
             Framework.CreateModule<ModelModule>();
 

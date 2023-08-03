@@ -1,6 +1,6 @@
 ﻿namespace AirFramework
 {
-    public interface IViewShow: ICallEvent<AirTask>
+    public interface IViewShow : ICallEvent<AirTask>
     {
         /// <summary>
         /// 在View状态转为Show时被框架调用
@@ -8,7 +8,7 @@
         /// <returns></returns>
         AirTask OnViewShow();
     }
-    public interface IViewHide : ICallEvent<AirTask> 
+    public interface IViewHide : ICallEvent<AirTask>
     {
         /// <summary>
         /// 在View状态转为Hide时被框架调用

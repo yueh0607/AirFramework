@@ -24,7 +24,7 @@ namespace AirFramework
             set { _disposed = value; }
         }
         private bool isDestruction = false;
-        public bool IsDestruction=>isDestruction;
+        public bool IsDestruction => isDestruction;
 
         /// <summary>
         /// 释放
@@ -85,7 +85,7 @@ namespace AirFramework
         }
         ~Unit()
         {
-            isDestruction= true;
+            isDestruction = true;
             IDs.Release(_id);
             if (!Disposed) Dispose();
             childs?.Dispose();

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class IntSyntaxAnalyser : ISyntaxAnalyser
+﻿public class IntSyntaxAnalyser : ISyntaxAnalyser
 {
     public Type TrueType => typeof(int);
     public object StringToValue(string str)

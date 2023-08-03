@@ -8,6 +8,8 @@ namespace AirFramework
         [DebuggerHidden]
         public static ref TTo As<TFrom, TTo>(ref TFrom source)
         {
+
+            return ref System.Runtime.CompilerServices.Unsafe.As<TFrom, TTo>(ref source);
 #if UNITY_2020_1_OR_NEWER
             return ref Unity.Collections.LowLevel.Unsafe.UnsafeUtility.As<TFrom, TTo>(ref source);
 #elif NETCOREAPP

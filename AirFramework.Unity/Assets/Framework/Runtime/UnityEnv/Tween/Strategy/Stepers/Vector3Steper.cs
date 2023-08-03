@@ -1,5 +1,4 @@
-﻿using AirFramework.Utility;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace AirFramework
 {

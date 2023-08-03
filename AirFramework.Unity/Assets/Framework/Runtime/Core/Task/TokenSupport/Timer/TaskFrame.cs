@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace AirFramework
+﻿namespace AirFramework
 {
-    public class TaskFrame :PoolableObject, ITaskTokenHolder,IUpdate,IRecycle
+    public class TaskFrame : PoolableObject, ITaskTokenHolder, IUpdate, IRecycle
     {
 
         public AirTaskBase BindTask { get; set; } = null;
@@ -16,15 +11,15 @@ namespace AirFramework
 
         public override void OnAllocate()
         {
-           
+
         }
 
         public override void OnRecycle()
         {
-            Enable = false;  
+            Enable = false;
             FrameCount = 1;
         }
-    
+
         void ITaskCancel.OnTaskCancel()
         {
             BindTask.Finish(ETaskStatus.Failed);
@@ -33,20 +28,20 @@ namespace AirFramework
 
         void ITaskContinue.OnTaskContinue()
         {
-            Enable= true;
+            Enable = true;
         }
 
         void ITaskPause.OnTaskPause()
         {
-            Enable= false;
+            Enable = false;
         }
 
         void IUpdate.Update(float deltaTime)
         {
             if (!Enable) return;
-            if(--FrameCount==0)
+            if (--FrameCount == 0)
             {
-                Enable= false;
+                Enable = false;
                 BindTask.Finish(ETaskStatus.Succeed);
                 Dispose();
             }

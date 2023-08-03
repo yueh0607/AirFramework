@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace AirFramework
+﻿namespace AirFramework
 {
     public class ViewModule : AbstractModule
     {
@@ -24,14 +20,14 @@ namespace AirFramework
         }
 
 
- 
+
 
         /// <summary>
         /// 提前加载并访问这个View
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public async AirTask<T> LoadView<T>() where T:View
+        public async AirTask<T> LoadView<T>() where T : View
         {
             //抽象检查
             var type = typeof(T);
@@ -69,7 +65,7 @@ namespace AirFramework
 
             var _view = view ?? Framework.Pool.Allocate<T>();
 
-       
+
             //非托管加载检查
             if (!_view.IsLoaded && !_view.IsLoading)
             {
@@ -113,7 +109,7 @@ namespace AirFramework
             {
                 if (view is IViewHide)
                 {
-                    
+
                     await view.Operator<IViewHide>().TrySendAsync();
                 }
             }
@@ -121,6 +117,6 @@ namespace AirFramework
             Framework.Pool.Recycle(view);
         }
 
-      
+
     }
 }

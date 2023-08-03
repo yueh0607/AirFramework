@@ -1,11 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public interface ITable
+﻿public interface ITable
 {
-    public int RowCount { get;  }
-    public int ColumnCount { get; } 
+    public int RowCount { get; }
+    public int ColumnCount { get; }
 }
 
 

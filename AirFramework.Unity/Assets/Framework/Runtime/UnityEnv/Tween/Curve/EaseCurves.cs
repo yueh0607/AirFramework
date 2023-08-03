@@ -1,5 +1,4 @@
-﻿using AirFramework;
-using System;
+﻿using System;
 
 namespace AirFramework.Internal.EaseCurve
 {

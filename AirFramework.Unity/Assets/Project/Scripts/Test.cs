@@ -1,12 +1,9 @@
 ﻿using AirFramework;
-using AirFramework.Internal;
-using System.Collections.Generic;
 using UnityEngine;
-using YooAsset;
 
 class Test2 : PoolableObject, IUpdate
 {
- 
+
 
     public override void OnAllocate()
     {
@@ -27,7 +24,7 @@ public interface ITestAsyncEvent : ICallEvent<AirTask>
 
 
 [FrameworkInitialize]
-public class Test :IFrameworkInitialize,ITestAsyncEvent
+public class Test : IFrameworkInitialize, ITestAsyncEvent
 {
 
 
@@ -36,7 +33,7 @@ public class Test :IFrameworkInitialize,ITestAsyncEvent
     {
         this.Operator<ITestAsyncEvent>().Subscribe(Dooo);
         DoSom().Forget();
-        
+
     }
     async AirTask Dooo()
     {
@@ -46,11 +43,11 @@ public class Test :IFrameworkInitialize,ITestAsyncEvent
 
     async AirTask DoSom()
     {
-        await this.Operator<ITestAsyncEvent>().TrySendAsync() ;
+        await this.Operator<ITestAsyncEvent>().TrySendAsync();
         Debug.Log("Do");
         var x = await Framework.GetModule<ViewModule>().Show<CounterPanelView>();
         Debug.Log("Do");
         await x.Operator<IViewShow>().TrySendAsync();
-       
+
     }
 }

@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace AirFramework
+﻿namespace AirFramework
 {
     public class TaskTokenCatch : PoolableObject, ITaskTokenHolder, IRecycle
     {
@@ -20,28 +16,28 @@ namespace AirFramework
             }
         }
 
-        
+
         private void Refresh()
         {
             if (enable && completed)
-            BindTask.Finish(ETaskStatus.Succeed);
+                BindTask.Finish(ETaskStatus.Succeed);
         }
         public void CatchNow()
         {
-            completed= true;
+            completed = true;
 
             Refresh();
-            
+
         }
 
 
         public override void OnAllocate()
         {
-          
+
         }
         public override void OnRecycle()
         {
-            enable= false;
+            enable = false;
         }
 
         void ITaskCancel.OnTaskCancel()
@@ -53,12 +49,12 @@ namespace AirFramework
 
         void ITaskContinue.OnTaskContinue()
         {
-            Enable =true;
+            Enable = true;
         }
 
         void ITaskPause.OnTaskPause()
         {
-            Enable= false;
+            Enable = false;
         }
     }
 }

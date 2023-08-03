@@ -20,16 +20,16 @@ namespace AirFramework
 
 
         internal readonly PurePool<MessageDispatcherBox<IMessage>> dispatcherPool = new PurePool<MessageDispatcherBox<IMessage>>(
-            ()=>new(), null, (x) =>
+            () => new(), null, (x) =>
             {
                 x.Value.Clear();
-            },null);
+            }, null);
 
         internal readonly PurePool<MessageOperatorBox<IMessage>> operatorPool = new PurePool<MessageOperatorBox<IMessage>>(
             () => new(), null, (x) =>
             {
                 x.Value.Clear();
-                
+
             }, null);
 
         public override void OnCreate()

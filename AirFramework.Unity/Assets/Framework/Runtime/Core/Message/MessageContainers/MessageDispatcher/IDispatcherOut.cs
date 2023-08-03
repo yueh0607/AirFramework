@@ -14,7 +14,7 @@ namespace AirFramework
     }
 
 #pragma warning disable S2326 // Unused type parameters should be removed
-    public interface IDispatcherOut<out T> :IDispatcherOutBase, IUnsafeOut where T : IMessage
+    public interface IDispatcherOut<out T> : IDispatcherOutBase, IUnsafeOut where T : IMessage
 #pragma warning restore S2326 // Unused type parameters should be removed
     {
         /****************************************************************************

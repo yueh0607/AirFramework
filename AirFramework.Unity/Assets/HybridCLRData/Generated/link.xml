@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<linker>
+  <assembly fullname="AirFramework">
+    <type fullname="AirFramework.AirTask" preserve="all" />
+    <type fullname="AirFramework.AirTaskBuilder" preserve="all" />
+    <type fullname="AirFramework.AirTask_Ex" preserve="all" />
+    <type fullname="AirFramework.AirTask`1" preserve="all" />
+    <type fullname="AirFramework.Framework" preserve="all" />
+    <type fullname="AirFramework.FrameworkInitializeAttribute" preserve="all" />
+    <type fullname="AirFramework.ICallEventBase" preserve="all" />
+    <type fullname="AirFramework.ICallEvent`1" preserve="all" />
+    <type fullname="AirFramework.IFrameworkInitialize" preserve="all" />
+    <type fullname="AirFramework.IGenericEvent" preserve="all" />
+    <type fullname="AirFramework.IGenericEvent`1" preserve="all" />
+    <type fullname="AirFramework.IMessageBase" preserve="all" />
+    <type fullname="AirFramework.IMessageReceiver" preserve="all" />
+    <type fullname="AirFramework.IOperatorOut`1" preserve="all" />
+    <type fullname="AirFramework.ISendEvent" preserve="all" />
+    <type fullname="AirFramework.ISendEventBase" preserve="all" />
+    <type fullname="AirFramework.ISendEvent`1" preserve="all" />
+    <type fullname="AirFramework.ITask" preserve="all" />
+    <type fullname="AirFramework.IUpdate" preserve="all" />
+    <type fullname="AirFramework.IViewHide" preserve="all" />
+    <type fullname="AirFramework.IViewInitialize" preserve="all" />
+    <type fullname="AirFramework.IViewShow" preserve="all" />
+    <type fullname="AirFramework.Internal.IMessage" preserve="all" />
+    <type fullname="AirFramework.MV.RefBuild.BindableProperty`1" preserve="all" />
+    <type fullname="AirFramework.MessageExtensions" preserve="all" />
+    <type fullname="AirFramework.MessageOperatorBox`1" preserve="all" />
+    <type fullname="AirFramework.OperatorEx2" preserve="all" />
+    <type fullname="AirFramework.PoolableObject" preserve="all" />
+    <type fullname="AirFramework.Unit" preserve="all" />
+    <type fullname="AirFramework.ViewModule" preserve="all" />
+    <type fullname="AirFramework.View`1" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.CoreModule">
+    <type fullname="UnityEngine.Component" preserve="all" />
+    <type fullname="UnityEngine.Debug" preserve="all" />
+    <type fullname="UnityEngine.MonoBehaviour" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.UIModule">
+    <type fullname="UnityEngine.CanvasGroup" preserve="all" />
+  </assembly>
+  <assembly fullname="mscorlib">
+    <type fullname="System.Action`1" preserve="all" />
+    <type fullname="System.Diagnostics.DebuggableAttribute" preserve="all" />
+    <type fullname="System.Diagnostics.DebuggableAttribute/DebuggingModes" preserve="all" />
+    <type fullname="System.Diagnostics.DebuggerHiddenAttribute" preserve="all" />
+    <type fullname="System.Exception" preserve="all" />
+    <type fullname="System.Func`1" preserve="all" />
+    <type fullname="System.Int64" preserve="all" />
+    <type fullname="System.Object" preserve="all" />
+    <type fullname="System.Runtime.CompilerServices.AsyncStateMachineAttribute" preserve="all" />
+    <type fullname="System.Runtime.CompilerServices.CompilationRelaxationsAttribute" preserve="all" />
+    <type fullname="System.Runtime.CompilerServices.CompilerGeneratedAttribute" preserve="all" />
+    <type fullname="System.Runtime.CompilerServices.IAsyncStateMachine" preserve="all" />
+    <type fullname="System.Runtime.CompilerServices.RuntimeCompatibilityAttribute" preserve="all" />
+    <type fullname="System.String" preserve="all" />
+    <type fullname="System.Type" preserve="all" />
+    <type fullname="System.ValueType" preserve="all" />
+  </assembly>
+</linker>

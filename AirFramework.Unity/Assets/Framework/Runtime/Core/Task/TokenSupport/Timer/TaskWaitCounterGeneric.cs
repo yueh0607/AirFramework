@@ -1,25 +1,22 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 namespace AirFramework
 {
 
-    public class TaskWaitCounter<T>  :PoolableObject, ITaskTokenHolder,IRecycle
+    public class TaskWaitCounter<T> : PoolableObject, ITaskTokenHolder, IRecycle
     {
 
         public AirTask<T[]> BindTask { get; set; } = null;
         public int Current { get; private set; } = 0;
 
         private bool enable = false;
-        public bool Enable 
+        public bool Enable
         {
             get => enable;
             set
             {
                 enable = value;
-                if(enable)
+                if (enable)
                 {
                     Refresh(true);
                 }
@@ -32,29 +29,29 @@ namespace AirFramework
 
         public T[] Results { get; private set; } = null;
 
-    
+
         public int AllTaskCount
         {
-            get 
+            get
             {
-                return Results == null ? 0:Results.Length;
+                return Results == null ? 0 : Results.Length;
             }
 
             set
             {
-                if(value<0) value= 0;
+                if (value < 0) value = 0;
                 Results = new T[value];
             }
-        
-        }
-            
-         
 
-        public void Add(int index,T value)
+        }
+
+
+
+        public void Add(int index, T value)
         {
-            if(index< 0 || index >= Results.Length) throw new IndexOutOfRangeException("index must in range[0,AllTaskCount-1]");
-       
-            if(Enable)
+            if (index < 0 || index >= Results.Length) throw new IndexOutOfRangeException("index must in range[0,AllTaskCount-1]");
+
+            if (Enable)
             {
                 ++Current;
             }
@@ -70,16 +67,16 @@ namespace AirFramework
 
         void Refresh(bool clearSave = false)
         {
-            if(clearSave) 
+            if (clearSave)
             {
-                Current+=saveCount;
+                Current += saveCount;
                 saveCount = 0;
             }
             if (Current >= TriggerCount)
             {
                 BindTask.Result = Results;
                 BindTask.Finish(ETaskStatus.Succeed);
-                Enable= false;
+                Enable = false;
             }
         }
 
@@ -89,8 +86,8 @@ namespace AirFramework
         {
             Enable = false;
             TriggerCount = 1;
-            Current= 0;
-            saveCount= 0;
+            Current = 0;
+            saveCount = 0;
             BindTask = null;
         }
 
@@ -102,14 +99,14 @@ namespace AirFramework
 
         void ITaskContinue.OnTaskContinue()
         {
-            Enable= true;
+            Enable = true;
         }
 
         void ITaskPause.OnTaskPause()
         {
-            Enable= false;
+            Enable = false;
         }
 
-    
+
     }
 }

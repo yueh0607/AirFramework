@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Reflection;
-using UnityEngine;
 
 namespace AirFramework
 {
     public class DynamicList<T>
     {
 
-        List<T> list ;
+        List<T> list;
 
         public DynamicList()
         {
@@ -69,6 +66,6 @@ namespace AirFramework
             MaxIndex = -1;
         }
 
-        public void Clear()=>list.Clear();
+        public void Clear() => list.Clear();
     }
 }

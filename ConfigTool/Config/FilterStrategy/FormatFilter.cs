@@ -1,26 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text.RegularExpressions;
-using UnityEngine;
+﻿using System.Text.RegularExpressions;
 
 public class FormatFilter : SyntaxFilter<string>
 {
 
- 
+
     public override ConfigTable<string> GetNextTable(ConfigTable<string> table)
     {
-        if (table.ColumnCount==0 || table.RowCount<=3) throw new System.FormatException("Please define  at least the header row");
-        for(int i =0; i<table.ColumnCount;i++)
+        if (table.ColumnCount == 0 || table.RowCount <= 3) throw new System.FormatException("Please define  at least the header row");
+        for (int i = 0; i < table.ColumnCount; i++)
         {
             if (!SyntaxStrategy.HasConverter(table[0, i])) throw new System.FormatException($"invalid type :{table[0, i]}");
             if (!IsValidVariableName(table[1, i]))
-                throw new System.FormatException($"Illegal variable name:{table[1,i]}," +
+                throw new System.FormatException($"Illegal variable name:{table[1, i]}," +
                     $"Variable names can only start with a letter or underscore and are not allowed to duplicate predefined keywords, " +
                     $"which include: https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/");
-            if (!CorrectPlatform(table[2,i])) throw new System.FormatException($"invalid target platform :{table[2, i]}");
+            if (!CorrectPlatform(table[2, i])) throw new System.FormatException($"invalid target platform :{table[2, i]}");
         }
-        
+
         return table;
     }
 
@@ -31,9 +27,9 @@ public class FormatFilter : SyntaxFilter<string>
     };
     public static bool CorrectPlatform(string input)
     {
-        foreach(char c in input)
+        foreach (char c in input)
         {
-            if(!targetPlatform.Contains(c.ToString()))
+            if (!targetPlatform.Contains(c.ToString()))
             {
                 return false;
             }

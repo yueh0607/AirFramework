@@ -1,13 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace AirFramework
+﻿namespace AirFramework
 {
-    public interface ITaskTokenHolder : ITaskCancel,ITaskContinue,ITaskPause
+    public interface ITaskTokenHolder : ITaskCancel, ITaskContinue, ITaskPause
     {
-      
+
     }
 
-  
+
 }

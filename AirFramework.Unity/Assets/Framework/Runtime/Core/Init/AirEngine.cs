@@ -21,7 +21,7 @@ namespace AirFramework.Internal
             Framework.CreateModule<TaskModule>();
             //部署全局程序反射初始化步骤
             ReflectInitialize();
-            
+
 
         }
 
@@ -119,9 +119,9 @@ namespace AirFramework.Internal
             if (_modules.ContainsKey(type)) return;
             _modules.Enqueue(type, (AbstractModule)Activator.CreateInstance(type));
             _modules[type].OnCreate();
-//#if DEBUG
-//            UnityEngine.Debug.Log($"{type.Name} Initialized");
-//#endif
+            //#if DEBUG
+            //            UnityEngine.Debug.Log($"{type.Name} Initialized");
+            //#endif
         }
 
         /// <summary>

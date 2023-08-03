@@ -1,7 +1,5 @@
 ﻿using AirFramework;
 using AirFramework.MV.RefBuild.Cache;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CounterPanelView : View<CounterPanel>, IViewShow, IViewHide, IViewInitialize
@@ -10,7 +8,7 @@ public class CounterPanelView : View<CounterPanel>, IViewShow, IViewHide, IViewI
     {
         Debug.Log("CounterPanel Hide");
         await AirTask.Delay(3);
-       
+
     }
 
     async AirTask IViewInitialize.OnViewInitialize()
@@ -24,7 +22,7 @@ public class CounterPanelView : View<CounterPanel>, IViewShow, IViewHide, IViewI
     {
         Debug.Log("CounterPanel Show");
         await AirTask.Delay(3);
-        
+
     }
 
 }

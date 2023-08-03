@@ -74,13 +74,13 @@ namespace AirFramework
         /// <param name="messageType"></param>
         internal bool TryRemoveTypeFromGlobal(Type messageType)
         {
-            if(dispatchersContainer.ContainsKey(messageType))
+            if (dispatchersContainer.ContainsKey(messageType))
             {
                 dispatcherPool.Recycle(dispatchersContainer[messageType]);
                 dispatchersContainer.Remove(messageType);
                 return true;
             }
- 
+
             return false;
         }
         /// <summary>
@@ -88,7 +88,7 @@ namespace AirFramework
         /// </summary>
         internal void RemoveAllFromGlobal()
         {
-            foreach(var dispatcher in dispatchersContainer)
+            foreach (var dispatcher in dispatchersContainer)
             {
                 dispatcherPool.Recycle(dispatcher.Value);
             }

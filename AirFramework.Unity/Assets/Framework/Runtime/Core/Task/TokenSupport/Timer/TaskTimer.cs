@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
-using UnityEngine;
-
-namespace AirFramework
+﻿namespace AirFramework
 {
-    public class TaskTimer :PoolableObject, IUpdate,ITaskTokenHolder,IRecycle
+    public class TaskTimer : PoolableObject, IUpdate, ITaskTokenHolder, IRecycle
     {
         public AirTaskBase BindTask { get; set; } = null;
 
@@ -14,17 +8,17 @@ namespace AirFramework
         public float Max { get; set; } = 1;
 
         public bool Enable { get; set; } = false;
-  
+
         public override void OnAllocate()
         {
-   
+
         }
         public override void OnRecycle()
         {
             Enable = false;
             Current = 0;
             Max = 1;
-            BindTask= null;
+            BindTask = null;
         }
 
         void ITaskCancel.OnTaskCancel()
@@ -40,19 +34,19 @@ namespace AirFramework
 
         void ITaskPause.OnTaskPause()
         {
-            Enable= false;
+            Enable = false;
         }
 
         void IUpdate.Update(float deltaTime)
         {
             if (!Enable) return;
             Current += deltaTime;
-            UnityEngine. Debug.Log("CurrentTime :{Current}");
-            if(Current >= Max)
+            UnityEngine.Debug.Log("CurrentTime :{Current}");
+            if (Current >= Max)
             {
                 //UnityEngine.Debug.Log($"尝试完成任务:{BindTask.ID}");
                 //保证在执行Completed的时候值是等于Max的
-                Enable= false;
+                Enable = false;
                 BindTask.Finish(ETaskStatus.Succeed);
                 Dispose();
             }

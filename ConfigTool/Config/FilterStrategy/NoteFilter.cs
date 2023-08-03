@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class NoteFilter : SyntaxFilter<string>
+﻿public class NoteFilter : SyntaxFilter<string>
 {
     readonly HashSet<int> filterRow = new HashSet<int>();
     readonly HashSet<int> filterColumn = new HashSet<int>();
@@ -35,7 +31,7 @@ public class NoteFilter : SyntaxFilter<string>
             for (int j = 0; j < table.ColumnCount; ++j)
             {
                 if (filterColumn.Contains(j)) continue;
-                temp[row,column] = table[i,j];
+                temp[row, column] = table[i, j];
                 column++;
             }
             column = 0;

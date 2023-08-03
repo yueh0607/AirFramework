@@ -154,7 +154,7 @@ namespace AirFramework
         public AirTask<T> GetAwaiter()
         {
             return this;
-         
+
         }
 
         protected Action<AirTask<T>> _callback = null;
@@ -249,7 +249,7 @@ namespace AirFramework
 
 
 
-    public class AirTaskTokenCatch : AirTaskBase,IAirTask<IAsyncTokenProperty>
+    public class AirTaskTokenCatch : AirTaskBase, IAirTask<IAsyncTokenProperty>
     {
         public bool IsCompleted => base.IsDone;
 
@@ -267,7 +267,7 @@ namespace AirFramework
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public IAsyncTokenProperty GetResult()
         {
-            var node =  Token.Root;
+            var node = Token.Root;
             if (node == null) return this;
             return node;
         }

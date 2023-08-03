@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 namespace AirFramework
 {
@@ -16,12 +13,12 @@ namespace AirFramework
         public bool Enable
         {
             get => enable;
-            set=>enable= value;
+            set => enable = value;
         }
 
         public override void OnAllocate()
         {
-           
+
         }
         public override void OnRecycle()
         {

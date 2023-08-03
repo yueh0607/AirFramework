@@ -1,25 +1,20 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace AirFramework
+﻿namespace AirFramework
 {
 
-    public class TaskWaitCounter  :PoolableObject, ITaskTokenHolder,IRecycle
+    public class TaskWaitCounter : PoolableObject, ITaskTokenHolder, IRecycle
     {
 
         public AirTaskBase BindTask { get; set; } = null;
         public int Current { get; private set; } = 0;
 
         private bool enable = false;
-        public bool Enable 
+        public bool Enable
         {
             get => enable;
             set
             {
                 enable = value;
-                if(enable)
+                if (enable)
                 {
                     Refresh(true);
                 }
@@ -31,7 +26,7 @@ namespace AirFramework
         private int saveCount = 0;
         public void Add()
         {
-            if(Enable)
+            if (Enable)
             {
                 ++Current;
             }
@@ -39,33 +34,33 @@ namespace AirFramework
             {
                 saveCount++;
             }
-           
+
             Refresh(false);
         }
 
         void Refresh(bool clearSave = false)
         {
-            if(clearSave) 
+            if (clearSave)
             {
-                Current+=saveCount;
+                Current += saveCount;
                 saveCount = 0;
             }
             if (Current >= TriggerCount)
             {
                 BindTask.Finish(ETaskStatus.Succeed);
-                Enable= false;
+                Enable = false;
             }
         }
         public override void OnAllocate()
         {
-        
+
         }
         public override void OnRecycle()
         {
             Enable = false;
             TriggerCount = 1;
-            Current= 0;
-            saveCount= 0;
+            Current = 0;
+            saveCount = 0;
             BindTask = null;
         }
 
@@ -77,14 +72,14 @@ namespace AirFramework
 
         void ITaskContinue.OnTaskContinue()
         {
-            Enable= true;
+            Enable = true;
         }
 
         void ITaskPause.OnTaskPause()
         {
-            Enable= false;
+            Enable = false;
         }
 
-    
+
     }
 }

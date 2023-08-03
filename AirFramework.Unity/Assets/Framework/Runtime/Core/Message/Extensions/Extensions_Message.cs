@@ -93,12 +93,12 @@ namespace AirFramework
             if (autoCreate)
             {
                 x = manager.dispatchersContainer.
-                GetValueOrAddDefault(typeof(MessageType),
+                GetValueOrAddDefault(typeof(T),
                 MessageManager.CreateDispatcherBox);
             }
             else
             {
-                x = manager.dispatchersContainer.GetValueOrDefault(typeof(MessageType));
+                x = manager.dispatchersContainer.GetValueOrDefault(typeof(T));
             }
             if (x == null) return null;
             return x;
@@ -219,12 +219,12 @@ namespace AirFramework
             if (autoCreate)
             {
                 x = manager.dispatchersContainer.
-                GetValueOrAddDefault(typeof(MessageType),
+                GetValueOrAddDefault(typeof(T),
                 MessageManager.CreateDispatcherBox);
             }
             else
             {
-                x = manager.dispatchersContainer.GetValueOrDefault(typeof(MessageType));
+                x = manager.dispatchersContainer.GetValueOrDefault(typeof(T));
             }
             if (x == null) return null;
             return x;

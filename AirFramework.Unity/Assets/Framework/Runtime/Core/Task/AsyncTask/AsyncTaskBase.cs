@@ -143,7 +143,7 @@ namespace AirFramework
             token.Authorization = true;
             token.IsCanceld = false;
         }
-        
+
 
 
         /// <summary>
@@ -154,7 +154,7 @@ namespace AirFramework
         public override void OnRecycle()
         {
             //UnityEngine.Debug.Log($"Task:{ID}-Recycle");
-            Status = ETaskStatus.None; 
+            Status = ETaskStatus.None;
             var token = ((IAsyncTokenProperty)this).Token;
             token.Authorization = false;
         }

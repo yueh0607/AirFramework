@@ -1,11 +1,6 @@
-﻿
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace AirFramework
+﻿namespace AirFramework
 {
-    public class FrameworkInitializeHandler :LifeCycleHandler<IFrameworkInitialize> 
+    public class FrameworkInitializeHandler : LifeCycleHandler<IFrameworkInitialize>
     {
         public override void OnLifeCycleRegister(IFrameworkInitialize item)
         {

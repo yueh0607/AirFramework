@@ -6,7 +6,6 @@
  */
 
 using System;
-using UnityEngine;
 
 namespace AirFramework
 {
@@ -20,7 +19,7 @@ namespace AirFramework
         {
             var item = base.OnItemCreate();
 
-             //Debug .Log($"生成事件：{item.GetType().FullName}");
+            //Debug .Log($"生成事件：{item.GetType().FullName}");
             Framework.Message.LifeCycle.AnalyseAddAll(item);
 
             return item;

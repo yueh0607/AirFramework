@@ -29,7 +29,7 @@ namespace AirFramework.Internal
         /// </summary>
         public IAsyncTokenProperty Root;
 
-        public ITaskTokenHolder TokenHolder { get; set; }= null;
+        public ITaskTokenHolder TokenHolder { get; set; } = null;
 
         [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public AsyncTreeTokenNode(IAsyncTokenProperty Root, IAsyncTokenProperty Current)

@@ -12,7 +12,7 @@ namespace AirFramework
     {
 
         //这里使用静态创建方法来简化下面获取Dispatcher的代码，同时避免GC
-        internal readonly static Func<MessageOperatorBox<IMessage>> CreateOperator = () =>Framework.Message.operatorPool.Allocate();
+        internal readonly static Func<MessageOperatorBox<IMessage>> CreateOperator = () => Framework.Message.operatorPool.Allocate();
 
         /// <summary>
         /// 访问或添加：获取指定接收者的委托组
@@ -74,7 +74,7 @@ namespace AirFramework
         /// <param name="dele"></param>
         public bool TryRemoveAllFromReceiver(IMessageReceiver receiver)
         {
-            if(EventsContainer.ContainsKey(receiver))
+            if (EventsContainer.ContainsKey(receiver))
             {
                 Framework.Message.operatorPool.Recycle(EventsContainer[receiver]);
                 EventsContainer.Remove(receiver);

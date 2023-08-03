@@ -1,5 +1,4 @@
 ﻿using AirFramework.Internal;
-using Codice.Client.BaseCommands;
 using System;
 namespace AirFramework
 {
@@ -83,7 +82,7 @@ namespace AirFramework
             result = default;
             if (container is null) return false;
             var events = ((MessageOperatorBox<IMessage>)container)?.Value;
-       
+
             if (events == null || events.Count == 0) return false;
             if (!events.Enable) return false;
             while (events.GetNext(out var dele))

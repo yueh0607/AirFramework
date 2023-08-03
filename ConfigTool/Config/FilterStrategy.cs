@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public static class FilterStrategy 
+﻿public static class FilterStrategy
 {
     /// <summary>
     /// 策略表:在这里进行逐过程数据过滤和检查
@@ -17,7 +13,7 @@ public static class FilterStrategy
     public static ConfigTable<string> GetTable(ConfigTable<string> table)
     {
         var temp = table;
-        foreach(var filter in filters)
+        foreach (var filter in filters)
         {
             temp = filter.GetNextTable(temp);
         }
