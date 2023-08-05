@@ -4,5 +4,7 @@
     Pending,
     Succeed,
     Failed,
-
+    Completed
 }
+
+

@@ -17,7 +17,7 @@ namespace AirFramework
         /// <param name="method"></param>
         /// <returns></returns>
         /// <exception cref="ArgumentNullException"></exception>
-        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static IEnumerator ToCoroutine(Func<AirTask> method)
         {
             if (method == null) throw new ArgumentNullException("task null ");
@@ -32,7 +32,7 @@ namespace AirFramework
         /// <param name="method"></param>
         /// <returns></returns>
         /// <exception cref="ArgumentNullException"></exception>
-        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static IEnumerator<T> ToCoroutine<T>(Func<AirTask<T>> method)
         {
             if (method == null) throw new ArgumentNullException("task null");
@@ -47,7 +47,7 @@ namespace AirFramework
         /// <param name="task"></param>
         /// <returns></returns>
         /// <exception cref="ArgumentNullException"></exception>
-        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static IEnumerator ToCoroutine(AirTask task)
         {
             if (task == null) throw new ArgumentNullException("task null");
@@ -62,7 +62,7 @@ namespace AirFramework
         /// <param name="task"></param>
         /// <returns></returns>
         /// <exception cref="ArgumentNullException"></exception>
-        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static IEnumerator<T> ToCoroutine<T>(AirTask<T> task)
         {
             if (task == null) throw new ArgumentNullException("task null");
@@ -75,7 +75,7 @@ namespace AirFramework
 
     public static class AirTask2Coroutine
     {
-        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static AirTask GetAwaiter(this IEnumerator enumerator)
         {
             static IEnumerator RunEnumerator(IEnumerator _enumerator, AirTask task)
@@ -102,14 +102,16 @@ namespace AirFramework
                     yield return _enumerator.Current;
 
                 }
-                if(!task.IsDone)
-                task.Finish(ETaskStatus.Succeed);
+                //if(!task.IsDone)
+                task.Finish(ETaskStatus.Completed);
+
             }
             AirTask task = Framework.Pool.Allocate<AirTask>();
+            //UnityEngine.Debug.Log(task.ID);
             AirEngine.StartCoroutine(RunEnumerator(enumerator, task));
             return task;
         }
-        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static AirTask GetAwaiter<T>(this T instruction) where T : YieldInstruction
         {
             static IEnumerator GetEnumerator(T instruction)

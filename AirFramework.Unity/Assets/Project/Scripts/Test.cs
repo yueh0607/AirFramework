@@ -29,11 +29,7 @@ public class Test : IFrameworkInitialize, ITestAsyncEvent
 {
     void IFrameworkInitialize.OnFrameworkInitialize()
     {
-
-        
-
-        //this.Operator<ITestAsyncEvent>().Subscribe(Dooo);
-        //DoSom().Forget();
+       
     }
     async AirTask Dooo()
     {

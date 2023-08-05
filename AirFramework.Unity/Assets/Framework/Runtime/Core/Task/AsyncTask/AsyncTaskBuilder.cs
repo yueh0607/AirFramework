@@ -10,11 +10,11 @@ namespace AirFramework
     {
 
         // 1. Static GetFromPool method
-        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static AirTaskBuilder Create() => new AirTaskBuilder(Framework.Pool.Allocate<AirTask>());
 
 
-        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public AirTaskBuilder(AirTask task) => this.task = task;
 
 
@@ -28,30 +28,30 @@ namespace AirFramework
 
 
         // 3. Start 构造之后开启状态机
-        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Start<TStateMachine>(ref TStateMachine stateMachine) where TStateMachine : IAsyncStateMachine
         {
             stateMachine.MoveNext();
         }
 
         // 4. SetException 
-        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void SetException(Exception exception)
         {
             task.PostException(ExceptionDispatchInfo.Capture(exception));
             task.Finish(ETaskStatus.Failed);
-       
+          
         }
 
         // 5. SetResult 
-        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void SetResult()
         {
-            task.Finish(ETaskStatus.Succeed);
+            task.Finish(ETaskStatus.Completed);
         }
 
         // 6. AwaitOnCompleted  
-        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void AwaitOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine)
             where TAwaiter : INotifyCompletion where TStateMachine : IAsyncStateMachine
         {
@@ -60,7 +60,7 @@ namespace AirFramework
         }
 
         // 7. AwaitUnsafeOnCompleted 
-        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void AwaitUnsafeOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine)
             where TAwaiter : ICriticalNotifyCompletion where TStateMachine : IAsyncStateMachine
         {
@@ -69,7 +69,7 @@ namespace AirFramework
         }
 
         // 9. SetStateMachine 
-        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void SetStateMachine(IAsyncStateMachine stateMachine)
         {
 
@@ -80,9 +80,9 @@ namespace AirFramework
     {
 
         // 1. Static GetFromPool method
-        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static AirTaskBuilder<T> Create() => new AirTaskBuilder<T>(Framework.Pool.Allocate<AirTask<T>>());
-        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public AirTaskBuilder(AirTask<T> task) => this.task = task;
 
         private readonly AirTask<T> task;
@@ -92,14 +92,14 @@ namespace AirFramework
 
 
         // 3. Start 构造之后开启状态机
-        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Start<TStateMachine>(ref TStateMachine stateMachine) where TStateMachine : IAsyncStateMachine
         {
             stateMachine.MoveNext();
         }
 
         // 4. SetException 
-        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void SetException(Exception exception)
         {
             // ExceptionDispatchInfo dispatcher = ExceptionDispatchInfo.Capture(exception);
@@ -110,15 +110,15 @@ namespace AirFramework
         }
 
         // 5. SetResult 
-        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void SetResult(T result)
         {
             task.Result = result;
-            task.Finish(ETaskStatus.Succeed);
+            task.Finish(ETaskStatus.Completed);
         }
 
         // 6. AwaitOnCompleted  
-        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void AwaitOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine)
             where TAwaiter : INotifyCompletion where TStateMachine : IAsyncStateMachine
         {
@@ -127,7 +127,7 @@ namespace AirFramework
         }
 
         // 7. AwaitUnsafeOnCompleted 
-        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void AwaitUnsafeOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine)
             where TAwaiter : ICriticalNotifyCompletion where TStateMachine : IAsyncStateMachine
         {
@@ -137,7 +137,7 @@ namespace AirFramework
         }
 
         // 9. SetStateMachine 
-        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void SetStateMachine(IAsyncStateMachine stateMachine)
         {
 
