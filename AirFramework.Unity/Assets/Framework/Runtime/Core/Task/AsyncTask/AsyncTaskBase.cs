@@ -58,7 +58,7 @@ namespace AirFramework
         //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Finish(ETaskStatus status)
         {
-            UnityEngine.Debug.Log($"完成任务{ID},Status:{Status}");
+            UnityEngine.Debug.Log($"完成任务{ID},Status:{status}");
             if (IsDone)
             {
                 throw new InvalidOperationException($"Completed tasks （ID：{ID}） cannot be completed repeatedly");
@@ -90,7 +90,7 @@ namespace AirFramework
         //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void PostException(ExceptionDispatchInfo ex)
         {
-            ex.Throw();
+            Framework.Log.Error(ex.SourceException.ToString());
         }
 
 

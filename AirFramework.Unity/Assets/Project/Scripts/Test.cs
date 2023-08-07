@@ -29,7 +29,10 @@ public class Test : IFrameworkInitialize, ITestAsyncEvent
 {
     void IFrameworkInitialize.OnFrameworkInitialize()
     {
-       
+        //Debug.Log("tEXT");
+        //var test = Framework.Pool.Allocate<AirTask>();
+        //test.StartLife();
+        //test.Operator<IAllocate>().Publish();
     }
     async AirTask Dooo()
     {

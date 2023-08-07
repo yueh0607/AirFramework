@@ -18,7 +18,7 @@ namespace AirFramework
         public AirTaskBuilder(AirTask task) => this.task = task;
 
 
-        private readonly AirTask task;
+        private  AirTask task;
 
 
 
@@ -40,14 +40,17 @@ namespace AirFramework
         {
             task.PostException(ExceptionDispatchInfo.Capture(exception));
             task.Finish(ETaskStatus.Failed);
-          
+            //task = null;
         }
+
 
         // 5. SetResult 
         //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void SetResult()
         {
+            UnityEngine.Debug.Log($"ID:{task.ID}" + this.GetHashCode());
             task.Finish(ETaskStatus.Completed);
+           // task = null;
         }
 
         // 6. AwaitOnCompleted  
@@ -85,7 +88,7 @@ namespace AirFramework
         //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public AirTaskBuilder(AirTask<T> task) => this.task = task;
 
-        private readonly AirTask<T> task;
+        private AirTask<T> task;
         // 2. TaskLike Current
         [DebuggerHidden]
         public AirTask<T> Task => task;
@@ -106,6 +109,7 @@ namespace AirFramework
             //UnityEngine.Debug.LogError(exception.ToString());
             task.Finish(ETaskStatus.Failed);
             task.PostException(ExceptionDispatchInfo.Capture(exception));
+            task = null;
             //dispatcher.Throw();
         }
 
@@ -115,6 +119,7 @@ namespace AirFramework
         {
             task.Result = result;
             task.Finish(ETaskStatus.Completed);
+            task = null;
         }
 
         // 6. AwaitOnCompleted  

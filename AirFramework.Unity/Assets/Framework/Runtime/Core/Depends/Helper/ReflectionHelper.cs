@@ -198,7 +198,7 @@ namespace AirFramework.Utility
         }
 
 
-        public static List<Type> GetTypesFromAllAssemblies(Func<Type, bool> condition = null)
+        public static List<Type> GetTypesFromAllAssemblies(Func<Assembly, Type, bool> condition = null)
         {
             List<Type> result = new List<Type>();
             Assembly[] ass = AppDomain.CurrentDomain.GetAssemblies();
@@ -207,13 +207,28 @@ namespace AirFramework.Utility
                 var assType = ass[i].GetTypes();
                 foreach (var type in assType)
                 {
-                    if (condition == null || condition(type))
+                    if (condition == null || condition(ass[i], type))
                     {
                         result.Add(type);
                     }
                 }
             }
             return result;
+        }
+
+        public static List<Type> GetTypesFromAssembliies(List<Assembly> assemblies, Func<Assembly, Type, bool> condition=null)
+        {
+            List<Type> types = new List<Type>();
+            foreach (Assembly assembly in assemblies)
+            {
+                var type = assembly.GetTypes();
+                foreach (var type2 in type)
+                {
+                    if (condition==null||condition(assembly, type2))
+                        types.Add(type2);
+                }
+            }
+            return types;
         }
     }
 }

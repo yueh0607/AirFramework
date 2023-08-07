@@ -2,13 +2,20 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace AirFramework.Internal
 {
     public static class AirEngine
     {
-        public static void Initialize(Action<IEnumerator> CoroutineRunner)
+
+        public static ILogger Logger { get; private set; }
+
+
+
+        public static void Initialize(Action<IEnumerator> CoroutineRunner, ILogger logger)
         {
+            Logger = logger;
             //协程执行器
             coroutineRunner = CoroutineRunner;
             //池管理器
@@ -20,7 +27,7 @@ namespace AirFramework.Internal
             //异步任务
             Framework.CreateModule<TaskModule>();
             //部署全局程序反射初始化步骤
-            //ReflectInitialize();
+            AirEngine.AOTReflectionInitialize(new List<Assembly>() { Assembly.GetExecutingAssembly()});
 
 
         }
@@ -72,36 +79,67 @@ namespace AirFramework.Internal
         /// <summary>
         /// 初始反射操作
         /// </summary>
-        public static event Action<Type> InitialReflection
+        public static event Action<Type> InitialReflectionHotUpdate
         {
             add
             {
-                InitialReflectionBehaviourList.Add(value);
+                InitialReflectionBehaviourListHotUpdate.Add(value);
             }
             remove
             {
-                InitialReflectionBehaviourList.Remove(value);
+                InitialReflectionBehaviourListHotUpdate.Remove(value);
             }
         }
-        private static List<Type> AllTypes = null;
-        private static List<Action<Type>> InitialReflectionBehaviourList = new List<Action<Type>>();
-        public static void ReflectInitialize()
+        /// <summary>
+        /// 初始反射操作
+        /// </summary>
+        public static event Action<Type> InitialReflectionAOT
         {
-            ReflectionProcess.RegisterProcess();
-            if (InitialReflectionBehaviourList.Count == 0) return;
-            AllTypes = ReflectionHelper.GetTypesFromAllAssemblies();
-            for (int j = 0; j < InitialReflectionBehaviourList.Count; j++)
+            add
             {
-                for (int i = 0; i < AllTypes.Count; i++)
-                {
-                    InitialReflectionBehaviourList[j](AllTypes[i]);
-                }
+                InitialReflectionBehaviourListAOT.Add(value);
             }
-            AllTypes.Clear();
-            InitialReflectionBehaviourList.Clear();
-            AllTypes = null;
-            InitialReflectionBehaviourList = null;
+            remove
+            {
+                InitialReflectionBehaviourListAOT.Remove(value);
+            }
         }
+
+        private static List<Action<Type>> InitialReflectionBehaviourListHotUpdate = new List<Action<Type>>();
+        private static List<Action<Type>> InitialReflectionBehaviourListAOT = new List<Action<Type>>();
+
+
+        public static void AOTReflectionInitialize(List<Assembly> assemblies)
+        {
+            InitializeReflection();
+            List<Type> types = ReflectionHelper.GetTypesFromAssembliies(assemblies);
+            foreach (var initAction in InitialReflectionBehaviourListAOT)
+                foreach (Type type in types)
+                {
+                    initAction(type);
+                }
+        }
+
+        public static void HotUpdateReflectInitliaze(List<Assembly> assemblies)
+        {
+            InitializeReflection();
+            List<Type> types = ReflectionHelper.GetTypesFromAssembliies(assemblies);
+            foreach (var initAction in InitialReflectionBehaviourListHotUpdate)
+                foreach (Type type in types)
+                {
+                    initAction(type);
+                }
+        }
+        private static bool loadedReflection = false;
+        private static void InitializeReflection()
+        {
+            if (loadedReflection) return;
+            loadedReflection = true;
+            ReflectionProcess.RegisterProcess();
+        }
+
+
+
 
         #endregion
 

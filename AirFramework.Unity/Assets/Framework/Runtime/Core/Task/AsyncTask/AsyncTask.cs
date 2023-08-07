@@ -22,8 +22,6 @@ namespace AirFramework
         [DebuggerHidden]
         public bool IsCompleted => base.IsDone;
 
-
-
         /// <summary>
         /// 编编译器调用警告：本方法由编译器生成到用户调用以返回异步结果
         /// </summary>

@@ -48,6 +48,7 @@ namespace AirFramework
             {
                 if (Condition())
                 {
+                    Enable = false;
                     BindTask.Finish(ETaskStatus.Succeed);
                 }
             }

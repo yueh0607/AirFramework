@@ -6,10 +6,17 @@ namespace AirFramework
     {
         public static void RegisterProcess()
         {
-            AirEngine.InitialReflection += LifeCycleAdder.AddAllLifeCycle;
-            AirEngine.InitialReflection += FrameworkInitializer.CreateByReflection;
+            AirEngine.InitialReflectionAOT += LifeCycleAdder.AddAllLifeCycle;
+            AirEngine.InitialReflectionAOT += FrameworkInitializer.CreateByReflection;
+
+
+
+            AirEngine.InitialReflectionHotUpdate += LifeCycleAdder.AddAllLifeCycle;
+            AirEngine.InitialReflectionHotUpdate += FrameworkInitializer.CreateByReflection;
 
         }
+
+
 
 
     }

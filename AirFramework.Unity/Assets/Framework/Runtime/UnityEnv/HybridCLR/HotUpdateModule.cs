@@ -1,4 +1,5 @@
-﻿using HybridCLR;
+﻿using AirFramework.Internal;
+using HybridCLR;
 using Sirenix.Utilities;
 using System.Collections;
 using System.Collections.Generic;
@@ -32,6 +33,7 @@ namespace AirFramework
             await LoadAndSupplementaryMetaData(metaDataAssetInfos);
             await LoadHotUpdateAssembly(hotUpdateAssetInfos);
 
+
             Debug.Log("HCLR初始化完成");
         }
 
@@ -56,15 +58,16 @@ namespace AirFramework
 
         private async AirTask LoadHotUpdateAssembly(AssetInfo[] infos)
         {
+            List<Assembly> assemblies = new List<Assembly>();
             foreach (var aotDll in infos)
             {
                 var handle = YooAssets.LoadRawFileAsync(aotDll);
                 await handle;
                 var data = handle.GetRawFileData();
-                Assembly.Load(data);
+                assemblies.Add(Assembly.Load(data));
                 handle.Dispose();
-                //await AirTask.NextFrame;
             }
+            AirEngine.HotUpdateReflectInitliaze(assemblies);
         }
     }
 }

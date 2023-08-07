@@ -28,11 +28,7 @@ namespace AirFramework
             remove => AirEngine.Update -= value;
         }
 
-        public static event Action<Type> InitialReflection
-        {
-            add => AirEngine.InitialReflection += value;
-            remove => AirEngine.InitialReflection -= value;
-        }
+        
         #endregion
 
 

@@ -24,33 +24,44 @@ namespace AirFramework
 
         private async void Awake()
         {
+            
             gameObject.name = $"[{nameof(AirFramework)}.{nameof(UnityEngine)}]";
+            //初始协程执行器
             Action<IEnumerator> coroutineRunner = (x) =>
             {
                 this.StartCoroutine(x);
             };
 
-            AirEngine.Initialize(coroutineRunner);
+            //初始化核心部分
+            AirEngine.Initialize(coroutineRunner, new UnitySupportLogger());
 
-
+            //创建资源模块
             Framework.CreateModule<ResModule>();
+            //初始化资源模块，更新资源
             var module = Framework.GetModule<ResModule>();
             module.Initialize();
             await module.InitializePackage(EPlayMode.EditorSimulateMode);
 
+            //创建模型模块
             Framework.CreateModule<ModelModule>();
-
+            //创建视图模块
             Framework.CreateModule<ViewModule>();
-
+            //创建热更模块
             Framework.CreateModule<HotUpdateModule>();
-           await Framework.GetModule<HotUpdateModule>().Initialize();
-            
-            AirEngine.ReflectInitialize();
+            //补充元数据并加载热更程序集
+            await Framework.GetModule<HotUpdateModule>().Initialize();
+     
+            //发布框架初始化事件
             Framework.Message.Dispatcher<IFrameworkInitialize>().Publish();
         }
 
+
+        #region LifeCycles
+
+        //int i = 0;
         private void Update()
         {
+            //Debug.Log(i++);
             Framework.GetModule<MessageManager>().Dispatcher<IUpdate>().Publish(Time.deltaTime);
         }
 
@@ -68,6 +79,7 @@ namespace AirFramework
         {
             Framework.GetModule<MessageManager>().Operator<IUpdate>().UnSubscribe(AirEngine.DriveUpdate);
         }
+        #endregion
     }
 }
 

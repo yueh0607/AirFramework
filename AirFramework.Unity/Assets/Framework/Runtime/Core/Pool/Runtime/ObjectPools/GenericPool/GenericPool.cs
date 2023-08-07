@@ -43,7 +43,6 @@ namespace AirFramework
         protected virtual void OnItemRecycle(T item)
         {
             OnRecycle?.Invoke(item);
-            //(item as IMessageReceiver)?.Operator<IRecycle>().Publish();
         }
 
         protected virtual void OnItemDestroy(T item)
