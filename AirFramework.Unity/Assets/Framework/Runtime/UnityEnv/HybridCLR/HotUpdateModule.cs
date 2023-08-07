@@ -1,8 +1,11 @@
 ﻿using AirFramework.Internal;
 using HybridCLR;
 using Sirenix.Utilities;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Reflection;
 using UnityEngine;
 using YooAsset;
@@ -25,16 +28,27 @@ namespace AirFramework
         {
 
         }
-        public async AirTask Initialize()
+        public async AirTask Initialize(RuntimeMode mode)
         {
             AssetInfo[] metaDataAssetInfos = YooAssets.GetAssetInfos("MetaDataAssembly");
             AssetInfo[] hotUpdateAssetInfos = YooAssets.GetAssetInfos("HotUpdateAssembly");
-
             await LoadAndSupplementaryMetaData(metaDataAssetInfos);
+            if (mode == RuntimeMode.Simulated)
+            {
+                await AirTask.CompletedTask;
+                List<Assembly> assemblies = new List<Assembly>();
+                foreach (var name in hotUpdateAssetInfos)
+                {
+                    string str = Path.GetFileNameWithoutExtension(name.Address);
+                    str = str.Substring("HotUpdateAssemblies_".Length, str.Length - "HotUpdateAssemblies_".Length);
+                    assemblies.Add(Assembly.Load(str));
+                }
+                AirEngine.HotUpdateReflectInitliaze(assemblies);
+                return;
+            }
+
+
             await LoadHotUpdateAssembly(hotUpdateAssetInfos);
-
-
-            Debug.Log("HCLR初始化完成");
         }
 
         /// <summary>

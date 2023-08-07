@@ -25,21 +25,21 @@ namespace AirFramework
         /// <summary>
         /// 编编译器调用警告：本方法由编译器生成到用户调用以返回异步结果
         /// </summary>
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void GetResult() { }
 
 
         /// <summary>
         /// 编编译器调用警告：本方法由编译器调用以支持await关键字
         /// </summary>
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public AirTask GetAwaiter()
         {
             return this;
         }
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         void INotifyCompletion.OnCompleted(Action continuation) => ((ICriticalNotifyCompletion)this).UnsafeOnCompleted(continuation);
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         void ICriticalNotifyCompletion.UnsafeOnCompleted(Action continuation)
         {
             this.continuation = continuation;
@@ -71,14 +71,14 @@ namespace AirFramework
         }
 
 
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected override void OnFinish()
         {
             _callback?.Invoke(this);
             continuation?.Invoke();
         }
 
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override void OnRecycle()
         {
             _callback = null;
@@ -137,7 +137,7 @@ namespace AirFramework
             base.OnRecycle();
         }
 
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public T GetResult() => Result;
 
 
@@ -148,7 +148,7 @@ namespace AirFramework
 
 
 
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public AirTask<T> GetAwaiter()
         {
             return this;
@@ -182,7 +182,7 @@ namespace AirFramework
             }
         }
 
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected override void OnFinish()
         {
             _callback?.Invoke(this);
@@ -191,9 +191,9 @@ namespace AirFramework
 
 
 
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         void INotifyCompletion.OnCompleted(Action continuation) => ((ICriticalNotifyCompletion)this).UnsafeOnCompleted(continuation);
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         void ICriticalNotifyCompletion.UnsafeOnCompleted(Action continuation)
         {
             this.continuation = continuation;
@@ -222,14 +222,14 @@ namespace AirFramework
     {
         [DebuggerHidden]
         public bool IsCompleted => true;
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void GetResult() { }
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void SetException(Exception exception) { }
 
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public AirTaskCompleted GetAwaiter() => this;
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void OnCompleted(Action continuation) { }
 
         public event Action Completed
@@ -262,7 +262,7 @@ namespace AirFramework
             base.OnRecycle();
         }
 
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public IAsyncTokenProperty GetResult()
         {
             var node = Token.Root;
@@ -273,7 +273,7 @@ namespace AirFramework
         /// 在任务await时被调用
         /// </summary>
 
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public AirTaskTokenCatch GetAwaiter()
         {
             Finish(ETaskStatus.Succeed);
@@ -281,14 +281,14 @@ namespace AirFramework
         }
         private Action continuation = null;
 
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected override void OnFinish()
         {
             continuation?.Invoke();
         }
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         void INotifyCompletion.OnCompleted(Action continuation) => ((ICriticalNotifyCompletion)this).UnsafeOnCompleted(continuation);
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         void ICriticalNotifyCompletion.UnsafeOnCompleted(Action continuation)
         {
             this.continuation = continuation;

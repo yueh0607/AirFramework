@@ -18,7 +18,7 @@ namespace AirFramework
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T DefaultNewCreate<T>() where T : new()
         {
             return new T();
@@ -28,7 +28,7 @@ namespace AirFramework
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T DefaltActivatorCreate<T>()
         {
             return Activator.CreateInstance<T>();
@@ -39,7 +39,7 @@ namespace AirFramework
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static object DefaltActivatorCreate(Type type)
         {
             return Activator.CreateInstance(type);

@@ -17,13 +17,10 @@ public class AOTGenericReferences : UnityEngine.MonoBehaviour
 	// {{ AOT generic types
 	// AirFramework.AirTask<object>
 	// AirFramework.ICallEvent<object>
-	// AirFramework.IGenericEvent<float>
 	// AirFramework.IGenericEvent<object>
-	// AirFramework.ISendEvent<float>
 	// AirFramework.MV.RefBuild.BindableProperty<float>
 	// AirFramework.View<object>
 	// System.Action<float>
-	// System.Collections.Generic.List<object>
 	// System.Func<float>
 	// }}
 

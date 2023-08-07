@@ -20581,6 +20581,38 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AssetInfo_get_IsInvalid_mE49DFEE2F21AF80
 		return (bool)((((RuntimeObject*)(PackageAsset_t1A8378733AF6E05264E4FC8D3EA1C24668313C91*)L_0) == ((RuntimeObject*)(RuntimeObject*)NULL))? 1 : 0);
 	}
 }
+// System.String YooAsset.AssetInfo::get_Address()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AssetInfo_get_Address_m32244A4F8AAFD3F3B308EC40953A2BBE49C1E015 (AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&String_t_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		// if (_packageAsset == null)
+		PackageAsset_t1A8378733AF6E05264E4FC8D3EA1C24668313C91* L_0 = __this->____packageAsset_0;
+		if (L_0)
+		{
+			goto IL_000e;
+		}
+	}
+	{
+		// return string.Empty;
+		String_t* L_1 = ((String_t_StaticFields*)il2cpp_codegen_static_fields_for(String_t_il2cpp_TypeInfo_var))->___Empty_6;
+		return L_1;
+	}
+
+IL_000e:
+	{
+		// return _packageAsset.Address;
+		PackageAsset_t1A8378733AF6E05264E4FC8D3EA1C24668313C91* L_2 = __this->____packageAsset_0;
+		NullCheck(L_2);
+		String_t* L_3 = L_2->___Address_0;
+		return L_3;
+	}
+}
 // System.String YooAsset.AssetInfo::get_AssetPath()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AssetInfo_get_AssetPath_mBF0509BDAB9E0ED197999E10C7B5DEFECE7DAD45 (AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456* __this, const RuntimeMethod* method) 
 {

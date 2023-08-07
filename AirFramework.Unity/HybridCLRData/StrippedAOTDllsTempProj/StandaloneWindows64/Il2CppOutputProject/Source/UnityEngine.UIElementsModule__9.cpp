@@ -6582,10 +6582,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UIRVEShaderInfoAllocator_SetClipRectValu
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UIRVEShaderInfoAllocator_SetOpacityValue_m8A9A4001B79EDBCEA1355176EE039380E5511559 (UIRVEShaderInfoAllocator_t7A9BCF1924EA027462B8DBBAC7B15BCBCB5CC3BF* __this, BMPAlloc_t29DA9D09157B8BAD2D5643711A53A5F11D216D30 ___0_alloc, float ___1_opacity, const RuntimeMethod* method) ;
 // UnityEngine.Color UnityEngine.Color::op_Implicit(UnityEngine.Vector4)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F Color_op_Implicit_mA8CF4745D766F4F610E1BE0A1ED2F4E5FE5D734C_inline (Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ___0_v, const RuntimeMethod* method) ;
-// System.Void UnityEngine.UIElements.UIR.UIRVEShaderInfoAllocator::SetColorValue(UnityEngine.UIElements.UIR.BMPAlloc,UnityEngine.Color)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UIRVEShaderInfoAllocator_SetColorValue_m8246EA58FA06A05B865A19D650A39C49C06D2449 (UIRVEShaderInfoAllocator_t7A9BCF1924EA027462B8DBBAC7B15BCBCB5CC3BF* __this, BMPAlloc_t29DA9D09157B8BAD2D5643711A53A5F11D216D30 ___0_alloc, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___1_color, const RuntimeMethod* method) ;
-// System.Void UnityEngine.UIElements.UIR.UIRVEShaderInfoAllocator::SetTextCoreSettingValue(UnityEngine.UIElements.UIR.BMPAlloc,UnityEngine.UIElements.UIR.TextCoreSettings)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UIRVEShaderInfoAllocator_SetTextCoreSettingValue_m7D602BCB22DA80579F639208C0401FBD4502435D (UIRVEShaderInfoAllocator_t7A9BCF1924EA027462B8DBBAC7B15BCBCB5CC3BF* __this, BMPAlloc_t29DA9D09157B8BAD2D5643711A53A5F11D216D30 ___0_alloc, TextCoreSettings_t3D724CD0811298B5AB1EA2041CE799CC25CDD115 ___1_settings, const RuntimeMethod* method) ;
+// System.Void UnityEngine.UIElements.UIR.UIRVEShaderInfoAllocator::SetColorValue(UnityEngine.UIElements.UIR.BMPAlloc,UnityEngine.Color,System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UIRVEShaderInfoAllocator_SetColorValue_m122B7E5E630D84A3D5EF024BD510C537B16CEA61 (UIRVEShaderInfoAllocator_t7A9BCF1924EA027462B8DBBAC7B15BCBCB5CC3BF* __this, BMPAlloc_t29DA9D09157B8BAD2D5643711A53A5F11D216D30 ___0_alloc, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___1_color, bool ___2_isEditorContext, const RuntimeMethod* method) ;
+// System.Void UnityEngine.UIElements.UIR.UIRVEShaderInfoAllocator::SetTextCoreSettingValue(UnityEngine.UIElements.UIR.BMPAlloc,UnityEngine.UIElements.UIR.TextCoreSettings,System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UIRVEShaderInfoAllocator_SetTextCoreSettingValue_mDD8FC8D76A78F3C066497DD40172C72535AC7E84 (UIRVEShaderInfoAllocator_t7A9BCF1924EA027462B8DBBAC7B15BCBCB5CC3BF* __this, BMPAlloc_t29DA9D09157B8BAD2D5643711A53A5F11D216D30 ___0_alloc, TextCoreSettings_t3D724CD0811298B5AB1EA2041CE799CC25CDD115 ___1_settings, bool ___2_isEditorContext, const RuntimeMethod* method) ;
 // System.Void UnityEngine.UIElements.UIR.UIRVEShaderInfoAllocator::ReallyCreateStorage()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UIRVEShaderInfoAllocator_ReallyCreateStorage_m91EECE7E075C8A876C629AFA030492B106854FEB (UIRVEShaderInfoAllocator_t7A9BCF1924EA027462B8DBBAC7B15BCBCB5CC3BF* __this, const RuntimeMethod* method) ;
 // System.Void UnityEngine.UIElements.UIR.BaseShaderInfoStorage::Dispose()
@@ -6628,6 +6628,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector2Int_t69B2886EBAB732D9B880565E18E7568F3
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 Matrix4x4_GetRow_m59C6981300C6F6927BEA17C5D095B2AD29629E9F (Matrix4x4_tDB70CF134A14BA38190C59AA700BCE10E2AED3E6* __this, int32_t ___0_index, const RuntimeMethod* method) ;
 // System.Void UnityEngine.Color::.ctor(System.Single,System.Single,System.Single,System.Single)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline (Color_tD001788D726C3A7F1379BEED0260B9591F440C1F* __this, float ___0_r, float ___1_g, float ___2_b, float ___3_a, const RuntimeMethod* method) ;
+// UnityEngine.ColorSpace UnityEngine.QualitySettings::get_activeColorSpace()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t QualitySettings_get_activeColorSpace_m4F47784E7B0FE0A5497C8BAB9CA86BD576FB92F9 (const RuntimeMethod* method) ;
+// UnityEngine.Color UnityEngine.Color::get_linear()
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F Color_get_linear_m76EB88E15DA4E00D615DF33D1CEE51092683117C_inline (Color_tD001788D726C3A7F1379BEED0260B9591F440C1F* __this, const RuntimeMethod* method) ;
 // System.Void UnityEngine.UIElements.UIR.UIRVEShaderInfoAllocator::FreeTransform(UnityEngine.UIElements.UIR.BMPAlloc)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UIRVEShaderInfoAllocator_FreeTransform_m9DF0C6DFD4D440A9552C10C0A15CC2064740DB15 (UIRVEShaderInfoAllocator_t7A9BCF1924EA027462B8DBBAC7B15BCBCB5CC3BF* __this, BMPAlloc_t29DA9D09157B8BAD2D5643711A53A5F11D216D30 ___0_alloc, const RuntimeMethod* method) ;
 // System.Void UnityEngine.UIElements.UIR.UIRVEShaderInfoAllocator::FreeClipRect(UnityEngine.UIElements.UIR.BMPAlloc)
@@ -6664,6 +6668,8 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector4_t58B63D32F48C0DBF50DE2C60
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Vector4_op_Equality_mCEA0E5F229F4AE8C55152F7A8F84345F24F52DC6_inline (Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ___0_lhs, Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 ___1_rhs, const RuntimeMethod* method) ;
 // System.Int32 UnityEngine.Vector4::GetHashCode()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Vector4_GetHashCode_m53F6FCA56A0051C9D1AB41AA3EAA2C86CDAA8B92_inline (Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3* __this, const RuntimeMethod* method) ;
+// System.Single UnityEngine.Mathf::GammaToLinearSpace(System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Mathf_GammaToLinearSpace_mEF9E26BAD322E55448B286ABDCDF4A2CC236547F (float ___0_value, const RuntimeMethod* method) ;
 // System.Void System.Array::Clear(System.Array,System.Int32,System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_Clear_m50BAA3751899858B097D3FF2ED31F284703FE5CB (RuntimeArray* ___0_array, int32_t ___1_index, int32_t ___2_length, const RuntimeMethod* method) ;
 // System.Single UnityEngine.Vector3::Magnitude(UnityEngine.Vector3)
@@ -23588,10 +23594,10 @@ IL_020d:
 		Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 L_83 = ((UIRVEShaderInfoAllocator_t7A9BCF1924EA027462B8DBBAC7B15BCBCB5CC3BF_StaticFields*)il2cpp_codegen_static_fields_for(UIRVEShaderInfoAllocator_t7A9BCF1924EA027462B8DBBAC7B15BCBCB5CC3BF_il2cpp_TypeInfo_var))->___clearColorValue_21;
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_84;
 		L_84 = Color_op_Implicit_mA8CF4745D766F4F610E1BE0A1ED2F4E5FE5D734C_inline(L_83, NULL);
-		UIRVEShaderInfoAllocator_SetColorValue_m8246EA58FA06A05B865A19D650A39C49C06D2449(__this, L_82, L_84, NULL);
+		UIRVEShaderInfoAllocator_SetColorValue_m122B7E5E630D84A3D5EF024BD510C537B16CEA61(__this, L_82, L_84, (bool)0, NULL);
 		BMPAlloc_t29DA9D09157B8BAD2D5643711A53A5F11D216D30 L_85 = ((UIRVEShaderInfoAllocator_t7A9BCF1924EA027462B8DBBAC7B15BCBCB5CC3BF_StaticFields*)il2cpp_codegen_static_fields_for(UIRVEShaderInfoAllocator_t7A9BCF1924EA027462B8DBBAC7B15BCBCB5CC3BF_il2cpp_TypeInfo_var))->___defaultTextCoreSettings_27;
 		TextCoreSettings_t3D724CD0811298B5AB1EA2041CE799CC25CDD115 L_86 = ((UIRVEShaderInfoAllocator_t7A9BCF1924EA027462B8DBBAC7B15BCBCB5CC3BF_StaticFields*)il2cpp_codegen_static_fields_for(UIRVEShaderInfoAllocator_t7A9BCF1924EA027462B8DBBAC7B15BCBCB5CC3BF_il2cpp_TypeInfo_var))->___defaultTextCoreSettingsValue_22;
-		UIRVEShaderInfoAllocator_SetTextCoreSettingValue_m7D602BCB22DA80579F639208C0401FBD4502435D(__this, L_85, L_86, NULL);
+		UIRVEShaderInfoAllocator_SetTextCoreSettingValue_mDD8FC8D76A78F3C066497DD40172C72535AC7E84(__this, L_85, L_86, (bool)0, NULL);
 		__this->___m_StorageReallyCreated_6 = (bool)1;
 		return;
 	}
@@ -24270,8 +24276,8 @@ IL2CPP_EXTERN_C  void UIRVEShaderInfoAllocator_SetOpacityValue_m8A9A4001B79EDBCE
 	_thisAdjusted = reinterpret_cast<UIRVEShaderInfoAllocator_t7A9BCF1924EA027462B8DBBAC7B15BCBCB5CC3BF*>(__this + _offset);
 	UIRVEShaderInfoAllocator_SetOpacityValue_m8A9A4001B79EDBCEA1355176EE039380E5511559(_thisAdjusted, ___0_alloc, ___1_opacity, method);
 }
-// System.Void UnityEngine.UIElements.UIR.UIRVEShaderInfoAllocator::SetColorValue(UnityEngine.UIElements.UIR.BMPAlloc,UnityEngine.Color)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UIRVEShaderInfoAllocator_SetColorValue_m8246EA58FA06A05B865A19D650A39C49C06D2449 (UIRVEShaderInfoAllocator_t7A9BCF1924EA027462B8DBBAC7B15BCBCB5CC3BF* __this, BMPAlloc_t29DA9D09157B8BAD2D5643711A53A5F11D216D30 ___0_alloc, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___1_color, const RuntimeMethod* method) 
+// System.Void UnityEngine.UIElements.UIR.UIRVEShaderInfoAllocator::SetColorValue(UnityEngine.UIElements.UIR.BMPAlloc,UnityEngine.Color,System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UIRVEShaderInfoAllocator_SetColorValue_m122B7E5E630D84A3D5EF024BD510C537B16CEA61 (UIRVEShaderInfoAllocator_t7A9BCF1924EA027462B8DBBAC7B15BCBCB5CC3BF* __this, BMPAlloc_t29DA9D09157B8BAD2D5643711A53A5F11D216D30 ___0_alloc, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___1_color, bool ___2_isEditorContext, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -24282,6 +24288,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UIRVEShaderInfoAllocator_SetColorValue_m
 	}
 	Vector2Int_t69B2886EBAB732D9B880565E18E7568F3DE0CE6A V_0;
 	memset((&V_0), 0, sizeof(V_0));
+	bool V_1 = false;
+	int32_t G_B3_0 = 0;
 	{
 		bool L_0;
 		L_0 = BMPAlloc_IsValid_m648020D59EAA7E536876AD2E5774E91417A65BB2((&___0_alloc), NULL);
@@ -24293,26 +24301,72 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UIRVEShaderInfoAllocator_SetColorValue_m
 		Vector2Int_t69B2886EBAB732D9B880565E18E7568F3DE0CE6A L_3;
 		L_3 = UIRVEShaderInfoAllocator_AllocToTexelCoord_m25279EB3888A28B392297749442FF63DE25FE5CD(L_1, L_2, NULL);
 		V_0 = L_3;
-		BaseShaderInfoStorage_tA4E5F167749C2492F7933E0B660BF9CF8F6716A2* L_4 = __this->___m_Storage_0;
-		int32_t L_5;
-		L_5 = Vector2Int_get_x_mA2CACB1B6E6B5AD0CCC32B2CD2EDCE3ECEB50576_inline((&V_0), NULL);
-		int32_t L_6;
-		L_6 = Vector2Int_get_y_m48454163ECF0B463FB5A16A0C4FC4B14DB0768B3_inline((&V_0), NULL);
-		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_7 = ___1_color;
-		NullCheck(L_4);
-		VirtualActionInvoker3< int32_t, int32_t, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(7 /* System.Void UnityEngine.UIElements.UIR.BaseShaderInfoStorage::SetTexel(System.Int32,System.Int32,UnityEngine.Color) */, L_4, L_5, L_6, L_7);
+		int32_t L_4;
+		L_4 = QualitySettings_get_activeColorSpace_m4F47784E7B0FE0A5497C8BAB9CA86BD576FB92F9(NULL);
+		if ((!(((uint32_t)L_4) == ((uint32_t)1))))
+		{
+			goto IL_0029;
+		}
+	}
+	{
+		bool L_5 = ___2_isEditorContext;
+		G_B3_0 = ((((int32_t)L_5) == ((int32_t)0))? 1 : 0);
+		goto IL_002a;
+	}
+
+IL_0029:
+	{
+		G_B3_0 = 0;
+	}
+
+IL_002a:
+	{
+		V_1 = (bool)G_B3_0;
+		bool L_6 = V_1;
+		if (!L_6)
+		{
+			goto IL_0051;
+		}
+	}
+	{
+		BaseShaderInfoStorage_tA4E5F167749C2492F7933E0B660BF9CF8F6716A2* L_7 = __this->___m_Storage_0;
+		int32_t L_8;
+		L_8 = Vector2Int_get_x_mA2CACB1B6E6B5AD0CCC32B2CD2EDCE3ECEB50576_inline((&V_0), NULL);
+		int32_t L_9;
+		L_9 = Vector2Int_get_y_m48454163ECF0B463FB5A16A0C4FC4B14DB0768B3_inline((&V_0), NULL);
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_10;
+		L_10 = Color_get_linear_m76EB88E15DA4E00D615DF33D1CEE51092683117C_inline((&___1_color), NULL);
+		NullCheck(L_7);
+		VirtualActionInvoker3< int32_t, int32_t, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(7 /* System.Void UnityEngine.UIElements.UIR.BaseShaderInfoStorage::SetTexel(System.Int32,System.Int32,UnityEngine.Color) */, L_7, L_8, L_9, L_10);
+		goto IL_006c;
+	}
+
+IL_0051:
+	{
+		BaseShaderInfoStorage_tA4E5F167749C2492F7933E0B660BF9CF8F6716A2* L_11 = __this->___m_Storage_0;
+		int32_t L_12;
+		L_12 = Vector2Int_get_x_mA2CACB1B6E6B5AD0CCC32B2CD2EDCE3ECEB50576_inline((&V_0), NULL);
+		int32_t L_13;
+		L_13 = Vector2Int_get_y_m48454163ECF0B463FB5A16A0C4FC4B14DB0768B3_inline((&V_0), NULL);
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_14 = ___1_color;
+		NullCheck(L_11);
+		VirtualActionInvoker3< int32_t, int32_t, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(7 /* System.Void UnityEngine.UIElements.UIR.BaseShaderInfoStorage::SetTexel(System.Int32,System.Int32,UnityEngine.Color) */, L_11, L_12, L_13, L_14);
+	}
+
+IL_006c:
+	{
 		return;
 	}
 }
-IL2CPP_EXTERN_C  void UIRVEShaderInfoAllocator_SetColorValue_m8246EA58FA06A05B865A19D650A39C49C06D2449_AdjustorThunk (RuntimeObject* __this, BMPAlloc_t29DA9D09157B8BAD2D5643711A53A5F11D216D30 ___0_alloc, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___1_color, const RuntimeMethod* method)
+IL2CPP_EXTERN_C  void UIRVEShaderInfoAllocator_SetColorValue_m122B7E5E630D84A3D5EF024BD510C537B16CEA61_AdjustorThunk (RuntimeObject* __this, BMPAlloc_t29DA9D09157B8BAD2D5643711A53A5F11D216D30 ___0_alloc, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___1_color, bool ___2_isEditorContext, const RuntimeMethod* method)
 {
 	UIRVEShaderInfoAllocator_t7A9BCF1924EA027462B8DBBAC7B15BCBCB5CC3BF* _thisAdjusted;
 	int32_t _offset = 1;
 	_thisAdjusted = reinterpret_cast<UIRVEShaderInfoAllocator_t7A9BCF1924EA027462B8DBBAC7B15BCBCB5CC3BF*>(__this + _offset);
-	UIRVEShaderInfoAllocator_SetColorValue_m8246EA58FA06A05B865A19D650A39C49C06D2449(_thisAdjusted, ___0_alloc, ___1_color, method);
+	UIRVEShaderInfoAllocator_SetColorValue_m122B7E5E630D84A3D5EF024BD510C537B16CEA61(_thisAdjusted, ___0_alloc, ___1_color, ___2_isEditorContext, method);
 }
-// System.Void UnityEngine.UIElements.UIR.UIRVEShaderInfoAllocator::SetTextCoreSettingValue(UnityEngine.UIElements.UIR.BMPAlloc,UnityEngine.UIElements.UIR.TextCoreSettings)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UIRVEShaderInfoAllocator_SetTextCoreSettingValue_m7D602BCB22DA80579F639208C0401FBD4502435D (UIRVEShaderInfoAllocator_t7A9BCF1924EA027462B8DBBAC7B15BCBCB5CC3BF* __this, BMPAlloc_t29DA9D09157B8BAD2D5643711A53A5F11D216D30 ___0_alloc, TextCoreSettings_t3D724CD0811298B5AB1EA2041CE799CC25CDD115 ___1_settings, const RuntimeMethod* method) 
+// System.Void UnityEngine.UIElements.UIR.UIRVEShaderInfoAllocator::SetTextCoreSettingValue(UnityEngine.UIElements.UIR.BMPAlloc,UnityEngine.UIElements.UIR.TextCoreSettings,System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UIRVEShaderInfoAllocator_SetTextCoreSettingValue_mDD8FC8D76A78F3C066497DD40172C72535AC7E84 (UIRVEShaderInfoAllocator_t7A9BCF1924EA027462B8DBBAC7B15BCBCB5CC3BF* __this, BMPAlloc_t29DA9D09157B8BAD2D5643711A53A5F11D216D30 ___0_alloc, TextCoreSettings_t3D724CD0811298B5AB1EA2041CE799CC25CDD115 ___1_settings, bool ___2_isEditorContext, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -24325,6 +24379,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UIRVEShaderInfoAllocator_SetTextCoreSett
 	memset((&V_0), 0, sizeof(V_0));
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F V_1;
 	memset((&V_1), 0, sizeof(V_1));
+	bool V_2 = false;
+	int32_t G_B3_0 = 0;
 	{
 		bool L_0;
 		L_0 = BMPAlloc_IsValid_m648020D59EAA7E536876AD2E5774E91417A65BB2((&___0_alloc), NULL);
@@ -24347,50 +24403,117 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UIRVEShaderInfoAllocator_SetTextCoreSett
 		TextCoreSettings_t3D724CD0811298B5AB1EA2041CE799CC25CDD115 L_12 = ___1_settings;
 		float L_13 = L_12.___outlineWidth_2;
 		Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline((&V_1), ((-L_6)), L_9, L_11, L_13, NULL);
-		BaseShaderInfoStorage_tA4E5F167749C2492F7933E0B660BF9CF8F6716A2* L_14 = __this->___m_Storage_0;
-		int32_t L_15;
-		L_15 = Vector2Int_get_x_mA2CACB1B6E6B5AD0CCC32B2CD2EDCE3ECEB50576_inline((&V_0), NULL);
-		int32_t L_16;
-		L_16 = Vector2Int_get_y_m48454163ECF0B463FB5A16A0C4FC4B14DB0768B3_inline((&V_0), NULL);
-		TextCoreSettings_t3D724CD0811298B5AB1EA2041CE799CC25CDD115 L_17 = ___1_settings;
-		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_18 = L_17.___faceColor_0;
-		NullCheck(L_14);
-		VirtualActionInvoker3< int32_t, int32_t, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(7 /* System.Void UnityEngine.UIElements.UIR.BaseShaderInfoStorage::SetTexel(System.Int32,System.Int32,UnityEngine.Color) */, L_14, L_15, L_16, L_18);
-		BaseShaderInfoStorage_tA4E5F167749C2492F7933E0B660BF9CF8F6716A2* L_19 = __this->___m_Storage_0;
-		int32_t L_20;
-		L_20 = Vector2Int_get_x_mA2CACB1B6E6B5AD0CCC32B2CD2EDCE3ECEB50576_inline((&V_0), NULL);
-		int32_t L_21;
-		L_21 = Vector2Int_get_y_m48454163ECF0B463FB5A16A0C4FC4B14DB0768B3_inline((&V_0), NULL);
-		TextCoreSettings_t3D724CD0811298B5AB1EA2041CE799CC25CDD115 L_22 = ___1_settings;
-		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_23 = L_22.___outlineColor_1;
-		NullCheck(L_19);
-		VirtualActionInvoker3< int32_t, int32_t, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(7 /* System.Void UnityEngine.UIElements.UIR.BaseShaderInfoStorage::SetTexel(System.Int32,System.Int32,UnityEngine.Color) */, L_19, L_20, ((int32_t)il2cpp_codegen_add(L_21, 1)), L_23);
-		BaseShaderInfoStorage_tA4E5F167749C2492F7933E0B660BF9CF8F6716A2* L_24 = __this->___m_Storage_0;
-		int32_t L_25;
-		L_25 = Vector2Int_get_x_mA2CACB1B6E6B5AD0CCC32B2CD2EDCE3ECEB50576_inline((&V_0), NULL);
-		int32_t L_26;
-		L_26 = Vector2Int_get_y_m48454163ECF0B463FB5A16A0C4FC4B14DB0768B3_inline((&V_0), NULL);
-		TextCoreSettings_t3D724CD0811298B5AB1EA2041CE799CC25CDD115 L_27 = ___1_settings;
-		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_28 = L_27.___underlayColor_3;
-		NullCheck(L_24);
-		VirtualActionInvoker3< int32_t, int32_t, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(7 /* System.Void UnityEngine.UIElements.UIR.BaseShaderInfoStorage::SetTexel(System.Int32,System.Int32,UnityEngine.Color) */, L_24, L_25, ((int32_t)il2cpp_codegen_add(L_26, 2)), L_28);
-		BaseShaderInfoStorage_tA4E5F167749C2492F7933E0B660BF9CF8F6716A2* L_29 = __this->___m_Storage_0;
-		int32_t L_30;
-		L_30 = Vector2Int_get_x_mA2CACB1B6E6B5AD0CCC32B2CD2EDCE3ECEB50576_inline((&V_0), NULL);
-		int32_t L_31;
-		L_31 = Vector2Int_get_y_m48454163ECF0B463FB5A16A0C4FC4B14DB0768B3_inline((&V_0), NULL);
-		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_32 = V_1;
-		NullCheck(L_29);
-		VirtualActionInvoker3< int32_t, int32_t, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(7 /* System.Void UnityEngine.UIElements.UIR.BaseShaderInfoStorage::SetTexel(System.Int32,System.Int32,UnityEngine.Color) */, L_29, L_30, ((int32_t)il2cpp_codegen_add(L_31, 3)), L_32);
+		int32_t L_14;
+		L_14 = QualitySettings_get_activeColorSpace_m4F47784E7B0FE0A5497C8BAB9CA86BD576FB92F9(NULL);
+		if ((!(((uint32_t)L_14) == ((uint32_t)1))))
+		{
+			goto IL_0053;
+		}
+	}
+	{
+		bool L_15 = ___2_isEditorContext;
+		G_B3_0 = ((((int32_t)L_15) == ((int32_t)0))? 1 : 0);
+		goto IL_0054;
+	}
+
+IL_0053:
+	{
+		G_B3_0 = 0;
+	}
+
+IL_0054:
+	{
+		V_2 = (bool)G_B3_0;
+		bool L_16 = V_2;
+		if (!L_16)
+		{
+			goto IL_00d2;
+		}
+	}
+	{
+		BaseShaderInfoStorage_tA4E5F167749C2492F7933E0B660BF9CF8F6716A2* L_17 = __this->___m_Storage_0;
+		int32_t L_18;
+		L_18 = Vector2Int_get_x_mA2CACB1B6E6B5AD0CCC32B2CD2EDCE3ECEB50576_inline((&V_0), NULL);
+		int32_t L_19;
+		L_19 = Vector2Int_get_y_m48454163ECF0B463FB5A16A0C4FC4B14DB0768B3_inline((&V_0), NULL);
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F* L_20 = (Color_tD001788D726C3A7F1379BEED0260B9591F440C1F*)(&(&___1_settings)->___faceColor_0);
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_21;
+		L_21 = Color_get_linear_m76EB88E15DA4E00D615DF33D1CEE51092683117C_inline(L_20, NULL);
+		NullCheck(L_17);
+		VirtualActionInvoker3< int32_t, int32_t, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(7 /* System.Void UnityEngine.UIElements.UIR.BaseShaderInfoStorage::SetTexel(System.Int32,System.Int32,UnityEngine.Color) */, L_17, L_18, L_19, L_21);
+		BaseShaderInfoStorage_tA4E5F167749C2492F7933E0B660BF9CF8F6716A2* L_22 = __this->___m_Storage_0;
+		int32_t L_23;
+		L_23 = Vector2Int_get_x_mA2CACB1B6E6B5AD0CCC32B2CD2EDCE3ECEB50576_inline((&V_0), NULL);
+		int32_t L_24;
+		L_24 = Vector2Int_get_y_m48454163ECF0B463FB5A16A0C4FC4B14DB0768B3_inline((&V_0), NULL);
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F* L_25 = (Color_tD001788D726C3A7F1379BEED0260B9591F440C1F*)(&(&___1_settings)->___outlineColor_1);
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_26;
+		L_26 = Color_get_linear_m76EB88E15DA4E00D615DF33D1CEE51092683117C_inline(L_25, NULL);
+		NullCheck(L_22);
+		VirtualActionInvoker3< int32_t, int32_t, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(7 /* System.Void UnityEngine.UIElements.UIR.BaseShaderInfoStorage::SetTexel(System.Int32,System.Int32,UnityEngine.Color) */, L_22, L_23, ((int32_t)il2cpp_codegen_add(L_24, 1)), L_26);
+		BaseShaderInfoStorage_tA4E5F167749C2492F7933E0B660BF9CF8F6716A2* L_27 = __this->___m_Storage_0;
+		int32_t L_28;
+		L_28 = Vector2Int_get_x_mA2CACB1B6E6B5AD0CCC32B2CD2EDCE3ECEB50576_inline((&V_0), NULL);
+		int32_t L_29;
+		L_29 = Vector2Int_get_y_m48454163ECF0B463FB5A16A0C4FC4B14DB0768B3_inline((&V_0), NULL);
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F* L_30 = (Color_tD001788D726C3A7F1379BEED0260B9591F440C1F*)(&(&___1_settings)->___underlayColor_3);
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_31;
+		L_31 = Color_get_linear_m76EB88E15DA4E00D615DF33D1CEE51092683117C_inline(L_30, NULL);
+		NullCheck(L_27);
+		VirtualActionInvoker3< int32_t, int32_t, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(7 /* System.Void UnityEngine.UIElements.UIR.BaseShaderInfoStorage::SetTexel(System.Int32,System.Int32,UnityEngine.Color) */, L_27, L_28, ((int32_t)il2cpp_codegen_add(L_29, 2)), L_31);
+		goto IL_0138;
+	}
+
+IL_00d2:
+	{
+		BaseShaderInfoStorage_tA4E5F167749C2492F7933E0B660BF9CF8F6716A2* L_32 = __this->___m_Storage_0;
+		int32_t L_33;
+		L_33 = Vector2Int_get_x_mA2CACB1B6E6B5AD0CCC32B2CD2EDCE3ECEB50576_inline((&V_0), NULL);
+		int32_t L_34;
+		L_34 = Vector2Int_get_y_m48454163ECF0B463FB5A16A0C4FC4B14DB0768B3_inline((&V_0), NULL);
+		TextCoreSettings_t3D724CD0811298B5AB1EA2041CE799CC25CDD115 L_35 = ___1_settings;
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_36 = L_35.___faceColor_0;
+		NullCheck(L_32);
+		VirtualActionInvoker3< int32_t, int32_t, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(7 /* System.Void UnityEngine.UIElements.UIR.BaseShaderInfoStorage::SetTexel(System.Int32,System.Int32,UnityEngine.Color) */, L_32, L_33, L_34, L_36);
+		BaseShaderInfoStorage_tA4E5F167749C2492F7933E0B660BF9CF8F6716A2* L_37 = __this->___m_Storage_0;
+		int32_t L_38;
+		L_38 = Vector2Int_get_x_mA2CACB1B6E6B5AD0CCC32B2CD2EDCE3ECEB50576_inline((&V_0), NULL);
+		int32_t L_39;
+		L_39 = Vector2Int_get_y_m48454163ECF0B463FB5A16A0C4FC4B14DB0768B3_inline((&V_0), NULL);
+		TextCoreSettings_t3D724CD0811298B5AB1EA2041CE799CC25CDD115 L_40 = ___1_settings;
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_41 = L_40.___outlineColor_1;
+		NullCheck(L_37);
+		VirtualActionInvoker3< int32_t, int32_t, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(7 /* System.Void UnityEngine.UIElements.UIR.BaseShaderInfoStorage::SetTexel(System.Int32,System.Int32,UnityEngine.Color) */, L_37, L_38, ((int32_t)il2cpp_codegen_add(L_39, 1)), L_41);
+		BaseShaderInfoStorage_tA4E5F167749C2492F7933E0B660BF9CF8F6716A2* L_42 = __this->___m_Storage_0;
+		int32_t L_43;
+		L_43 = Vector2Int_get_x_mA2CACB1B6E6B5AD0CCC32B2CD2EDCE3ECEB50576_inline((&V_0), NULL);
+		int32_t L_44;
+		L_44 = Vector2Int_get_y_m48454163ECF0B463FB5A16A0C4FC4B14DB0768B3_inline((&V_0), NULL);
+		TextCoreSettings_t3D724CD0811298B5AB1EA2041CE799CC25CDD115 L_45 = ___1_settings;
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_46 = L_45.___underlayColor_3;
+		NullCheck(L_42);
+		VirtualActionInvoker3< int32_t, int32_t, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(7 /* System.Void UnityEngine.UIElements.UIR.BaseShaderInfoStorage::SetTexel(System.Int32,System.Int32,UnityEngine.Color) */, L_42, L_43, ((int32_t)il2cpp_codegen_add(L_44, 2)), L_46);
+	}
+
+IL_0138:
+	{
+		BaseShaderInfoStorage_tA4E5F167749C2492F7933E0B660BF9CF8F6716A2* L_47 = __this->___m_Storage_0;
+		int32_t L_48;
+		L_48 = Vector2Int_get_x_mA2CACB1B6E6B5AD0CCC32B2CD2EDCE3ECEB50576_inline((&V_0), NULL);
+		int32_t L_49;
+		L_49 = Vector2Int_get_y_m48454163ECF0B463FB5A16A0C4FC4B14DB0768B3_inline((&V_0), NULL);
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_50 = V_1;
+		NullCheck(L_47);
+		VirtualActionInvoker3< int32_t, int32_t, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(7 /* System.Void UnityEngine.UIElements.UIR.BaseShaderInfoStorage::SetTexel(System.Int32,System.Int32,UnityEngine.Color) */, L_47, L_48, ((int32_t)il2cpp_codegen_add(L_49, 3)), L_50);
 		return;
 	}
 }
-IL2CPP_EXTERN_C  void UIRVEShaderInfoAllocator_SetTextCoreSettingValue_m7D602BCB22DA80579F639208C0401FBD4502435D_AdjustorThunk (RuntimeObject* __this, BMPAlloc_t29DA9D09157B8BAD2D5643711A53A5F11D216D30 ___0_alloc, TextCoreSettings_t3D724CD0811298B5AB1EA2041CE799CC25CDD115 ___1_settings, const RuntimeMethod* method)
+IL2CPP_EXTERN_C  void UIRVEShaderInfoAllocator_SetTextCoreSettingValue_mDD8FC8D76A78F3C066497DD40172C72535AC7E84_AdjustorThunk (RuntimeObject* __this, BMPAlloc_t29DA9D09157B8BAD2D5643711A53A5F11D216D30 ___0_alloc, TextCoreSettings_t3D724CD0811298B5AB1EA2041CE799CC25CDD115 ___1_settings, bool ___2_isEditorContext, const RuntimeMethod* method)
 {
 	UIRVEShaderInfoAllocator_t7A9BCF1924EA027462B8DBBAC7B15BCBCB5CC3BF* _thisAdjusted;
 	int32_t _offset = 1;
 	_thisAdjusted = reinterpret_cast<UIRVEShaderInfoAllocator_t7A9BCF1924EA027462B8DBBAC7B15BCBCB5CC3BF*>(__this + _offset);
-	UIRVEShaderInfoAllocator_SetTextCoreSettingValue_m7D602BCB22DA80579F639208C0401FBD4502435D(_thisAdjusted, ___0_alloc, ___1_settings, method);
+	UIRVEShaderInfoAllocator_SetTextCoreSettingValue_mDD8FC8D76A78F3C066497DD40172C72535AC7E84(_thisAdjusted, ___0_alloc, ___1_settings, ___2_isEditorContext, method);
 }
 // System.Void UnityEngine.UIElements.UIR.UIRVEShaderInfoAllocator::FreeTransform(UnityEngine.UIElements.UIR.BMPAlloc)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UIRVEShaderInfoAllocator_FreeTransform_m9DF0C6DFD4D440A9552C10C0A15CC2064740DB15 (UIRVEShaderInfoAllocator_t7A9BCF1924EA027462B8DBBAC7B15BCBCB5CC3BF* __this, BMPAlloc_t29DA9D09157B8BAD2D5643711A53A5F11D216D30 ___0_alloc, const RuntimeMethod* method) 
@@ -26308,6 +26431,34 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Color__ctor_m3786F0D6E510D9C
 		float L_3 = ___3_a;
 		__this->___a_3 = L_3;
 		return;
+	}
+}
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F Color_get_linear_m76EB88E15DA4E00D615DF33D1CEE51092683117C_inline (Color_tD001788D726C3A7F1379BEED0260B9591F440C1F* __this, const RuntimeMethod* method) 
+{
+	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F V_0;
+	memset((&V_0), 0, sizeof(V_0));
+	{
+		float L_0 = __this->___r_0;
+		float L_1;
+		L_1 = Mathf_GammaToLinearSpace_mEF9E26BAD322E55448B286ABDCDF4A2CC236547F(L_0, NULL);
+		float L_2 = __this->___g_1;
+		float L_3;
+		L_3 = Mathf_GammaToLinearSpace_mEF9E26BAD322E55448B286ABDCDF4A2CC236547F(L_2, NULL);
+		float L_4 = __this->___b_2;
+		float L_5;
+		L_5 = Mathf_GammaToLinearSpace_mEF9E26BAD322E55448B286ABDCDF4A2CC236547F(L_4, NULL);
+		float L_6 = __this->___a_3;
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_7;
+		memset((&L_7), 0, sizeof(L_7));
+		Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline((&L_7), L_1, L_3, L_5, L_6, /*hidden argument*/NULL);
+		V_0 = L_7;
+		goto IL_0030;
+	}
+
+IL_0030:
+	{
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_8 = V_0;
+		return L_8;
 	}
 }
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F Color_get_white_m068F5AF879B0FCA584E3693F762EA41BB65532C6_inline (const RuntimeMethod* method) 

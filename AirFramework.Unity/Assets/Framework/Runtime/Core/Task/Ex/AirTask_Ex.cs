@@ -17,7 +17,7 @@ namespace AirFramework
         /// </summary>
         /// <param name="task"></param>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0060:删除未使用的参数", Justification = "<挂起>")]
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void Forget(this ITask task)
         {
             // empty 
@@ -28,7 +28,7 @@ namespace AirFramework
         /// </summary>
         /// <param name="task"></param>
         /// <returns></returns>
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static async AirTask Invoke(this AirTask task)
         {
             await task;
@@ -39,7 +39,7 @@ namespace AirFramework
         /// <typeparam name="T"></typeparam>
         /// <param name="task"></param>
         /// <returns></returns>
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static async AirTask<T> Invoke<T>(this AirTask<T> task)
         {
             return await task;
@@ -49,7 +49,7 @@ namespace AirFramework
         ///// 阻塞主线程到完成
         ///// </summary>
         ///// <param name="task"></param>
-        ////[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         //public static void Wait(this AirTask task)
         //{
         //    TaskCompletionSource<ETaskStatus> source = new TaskCompletionSource<ETaskStatus>();
@@ -62,7 +62,7 @@ namespace AirFramework
         ///// <typeparam name="T"></typeparam>
         ///// <param name="task"></param>
         ///// <returns></returns>
-        ////[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         //public static T Wait<T>(this AirTask<T> task)
         //{
         //    TaskCompletionSource<ETaskStatus> source = new TaskCompletionSource<ETaskStatus>();
@@ -77,7 +77,7 @@ namespace AirFramework
         /// <param name="task"></param>
         /// <param name="token"></param>
         /// <returns></returns>
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T WithToken<T>(this T task, out AsyncToken token) where T : IAsyncTokenProperty
         {
             var tok = Framework.Pool.Allocate<AsyncToken>();
@@ -96,7 +96,7 @@ namespace AirFramework
         /// </summary>
         /// <param name="task"></param>
         /// <returns></returns>
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Task AsTask(this AirTask task)
         {
             TaskCompletionSource<ETaskStatus> source = new TaskCompletionSource<ETaskStatus>();
@@ -109,7 +109,7 @@ namespace AirFramework
         /// </summary>
         /// <param name="task"></param>
         /// <returns></returns>
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Task<T> AsTask<T>(this AirTask<T> task)
         {
             TaskCompletionSource<T> source = new TaskCompletionSource<T>();
@@ -124,7 +124,7 @@ namespace AirFramework
         /// </summary>
         /// <param name="task"></param>
         /// <returns></returns>
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static AirTask AsAirTask(this Task task)
         {
             SynchronizationContext context = SynchronizationContext.Current;
@@ -165,7 +165,7 @@ namespace AirFramework
         /// </summary>
         /// <param name="task"></param>
         /// <returns></returns>
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static AirTask<T> AsAirTask<T>(this Task<T> task)
         {
             SynchronizationContext context = SynchronizationContext.Current;

@@ -2,22 +2,16 @@
 using DG.Tweening;
 using UnityEngine;
 
-class Test2 : PoolableObject, IUpdate
+class Test2 : IAllocate
 {
 
 
-    public override void OnAllocate()
+    public void OnAllocate()
     {
         Debug.Log("2Allocate");
     }
-    public void Update(float x)
-    {
-        Debug.Log($"Update:{ID}");
-    }
-    public override void OnRecycle()
-    {
 
-    }
+  
 }
 
 public interface ITestAsyncEvent : ICallEvent<AirTask>
@@ -29,10 +23,7 @@ public class Test : IFrameworkInitialize, ITestAsyncEvent
 {
     void IFrameworkInitialize.OnFrameworkInitialize()
     {
-        //Debug.Log("tEXT");
-        //var test = Framework.Pool.Allocate<AirTask>();
-        //test.StartLife();
-        //test.Operator<IAllocate>().Publish();
+        Debug.Log("热更新代码2");
     }
     async AirTask Dooo()
     {

@@ -10363,7 +10363,7 @@ IL_0026:
 		RuntimeObject* L_22 = V_1;
 		NullCheck(L_22);
 		float L_23;
-		L_23 = InterfaceFuncInvoker0< float >::Invoke(40 /* System.Single UnityEngine.UIElements.IResolvedStyle::get_unityTextOutlineWidth() */, IResolvedStyle_t6A3530BA6147B091C278593F21F86B09CD42BE89_il2cpp_TypeInfo_var, L_22);
+		L_23 = InterfaceFuncInvoker0< float >::Invoke(41 /* System.Single UnityEngine.UIElements.IResolvedStyle::get_unityTextOutlineWidth() */, IResolvedStyle_t6A3530BA6147B091C278593F21F86B09CD42BE89_il2cpp_TypeInfo_var, L_22);
 		float L_24 = V_5;
 		float L_25;
 		L_25 = Mathf_Max_mF5379E63D2BBAC76D090748695D833934F8AD051_inline((0.0f), ((float)il2cpp_codegen_multiply(L_23, L_24)), NULL);
@@ -10390,7 +10390,7 @@ IL_0026:
 		RuntimeObject* L_36 = V_1;
 		NullCheck(L_36);
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_37;
-		L_37 = InterfaceFuncInvoker0< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(39 /* UnityEngine.Color UnityEngine.UIElements.IResolvedStyle::get_unityTextOutlineColor() */, IResolvedStyle_t6A3530BA6147B091C278593F21F86B09CD42BE89_il2cpp_TypeInfo_var, L_36);
+		L_37 = InterfaceFuncInvoker0< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(40 /* UnityEngine.Color UnityEngine.UIElements.IResolvedStyle::get_unityTextOutlineColor() */, IResolvedStyle_t6A3530BA6147B091C278593F21F86B09CD42BE89_il2cpp_TypeInfo_var, L_36);
 		V_10 = L_37;
 		float L_38 = V_6;
 		V_16 = (bool)((((float)L_38) < ((float)(1.0E-30f)))? 1 : 0);

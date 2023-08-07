@@ -19,7 +19,7 @@ namespace AirFramework
         /// 检查路径是否存在，不存在则创建
         /// </summary>
         /// <param name="path"></param>
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static FileStream CreateOrOverrideFile(string path)
         {
             string directoryName = Path.GetDirectoryName(path);

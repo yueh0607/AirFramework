@@ -3751,18 +3751,6 @@ struct UpdateAsyncReadbackManager_t438EC08527D0B0543D920C30750BCD94A690126A
 	};
 };
 
-// UnityEngine.PlayerLoop.EarlyUpdate/UpdateAutoStreamer
-struct UpdateAutoStreamer_tF54D0EA40D59019210E2FAD3711A57D5981D1F23 
-{
-	union
-	{
-		struct
-		{
-		};
-		uint8_t UpdateAutoStreamer_tF54D0EA40D59019210E2FAD3711A57D5981D1F23__padding[1];
-	};
-};
-
 // UnityEngine.PlayerLoop.EarlyUpdate/UpdateCanvasRectTransform
 struct UpdateCanvasRectTransform_t41CECA98EFF313B8463EEFF63BFB15DF0513A428 
 {
@@ -4300,6 +4288,18 @@ struct PlayerEmitCanvasGeometry_t5C1E32B15900188F564F4E318B352EEDF3910375
 	};
 };
 
+// UnityEngine.PlayerLoop.PostLateUpdate/PlayerRenderUIEBatchModeOffscreen
+struct PlayerRenderUIEBatchModeOffscreen_tA55931C855CA050A910C981ABF7E182FB8AADCED 
+{
+	union
+	{
+		struct
+		{
+		};
+		uint8_t PlayerRenderUIEBatchModeOffscreen_tA55931C855CA050A910C981ABF7E182FB8AADCED__padding[1];
+	};
+};
+
 // UnityEngine.PlayerLoop.PostLateUpdate/PlayerSendFrameComplete
 struct PlayerSendFrameComplete_tBACAC212A197B5446CB6F593799C7695BB24EC05 
 {
@@ -4465,30 +4465,6 @@ struct TriggerEndOfFrameCallbacks_tBA66DD23D1D0C1E192F89C2F300BAD5F92C93F1B
 		{
 		};
 		uint8_t TriggerEndOfFrameCallbacks_tBA66DD23D1D0C1E192F89C2F300BAD5F92C93F1B__padding[1];
-	};
-};
-
-// UnityEngine.PlayerLoop.PostLateUpdate/UIWidgetsVSync
-struct UIWidgetsVSync_t3F645D596761370F23E2A2B67858AA75DBAEFF09 
-{
-	union
-	{
-		struct
-		{
-		};
-		uint8_t UIWidgetsVSync_t3F645D596761370F23E2A2B67858AA75DBAEFF09__padding[1];
-	};
-};
-
-// UnityEngine.PlayerLoop.PostLateUpdate/UIWidgetsWait
-struct UIWidgetsWait_t359277E8AA58B79343A24FE8175DF57BA8B5C160 
-{
-	union
-	{
-		struct
-		{
-		};
-		uint8_t UIWidgetsWait_t359277E8AA58B79343A24FE8175DF57BA8B5C160__padding[1];
 	};
 };
 
@@ -5049,18 +5025,6 @@ struct ScriptRunDelayedTasks_t836195796CF358BFA2A1A24B90C69DB7F95EEC80
 		{
 		};
 		uint8_t ScriptRunDelayedTasks_t836195796CF358BFA2A1A24B90C69DB7F95EEC80__padding[1];
-	};
-};
-
-// UnityEngine.PlayerLoop.Update/UIWidgetsUpdate
-struct UIWidgetsUpdate_t969E91508F4683F3602DAD39C39514BDAE64F30C 
-{
-	union
-	{
-		struct
-		{
-		};
-		uint8_t UIWidgetsUpdate_t969E91508F4683F3602DAD39C39514BDAE64F30C__padding[1];
 	};
 };
 
@@ -8072,10 +8036,6 @@ struct Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3_StaticFields
 
 // UnityEngine.PlayerLoop.EarlyUpdate/UpdateAsyncReadbackManager
 
-// UnityEngine.PlayerLoop.EarlyUpdate/UpdateAutoStreamer
-
-// UnityEngine.PlayerLoop.EarlyUpdate/UpdateAutoStreamer
-
 // UnityEngine.PlayerLoop.EarlyUpdate/UpdateCanvasRectTransform
 
 // UnityEngine.PlayerLoop.EarlyUpdate/UpdateCanvasRectTransform
@@ -8256,6 +8216,10 @@ struct Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3_StaticFields
 
 // UnityEngine.PlayerLoop.PostLateUpdate/PlayerEmitCanvasGeometry
 
+// UnityEngine.PlayerLoop.PostLateUpdate/PlayerRenderUIEBatchModeOffscreen
+
+// UnityEngine.PlayerLoop.PostLateUpdate/PlayerRenderUIEBatchModeOffscreen
+
 // UnityEngine.PlayerLoop.PostLateUpdate/PlayerSendFrameComplete
 
 // UnityEngine.PlayerLoop.PostLateUpdate/PlayerSendFrameComplete
@@ -8311,14 +8275,6 @@ struct Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3_StaticFields
 // UnityEngine.PlayerLoop.PostLateUpdate/TriggerEndOfFrameCallbacks
 
 // UnityEngine.PlayerLoop.PostLateUpdate/TriggerEndOfFrameCallbacks
-
-// UnityEngine.PlayerLoop.PostLateUpdate/UIWidgetsVSync
-
-// UnityEngine.PlayerLoop.PostLateUpdate/UIWidgetsVSync
-
-// UnityEngine.PlayerLoop.PostLateUpdate/UIWidgetsWait
-
-// UnityEngine.PlayerLoop.PostLateUpdate/UIWidgetsWait
 
 // UnityEngine.PlayerLoop.PostLateUpdate/UpdateAllRenderers
 
@@ -8503,10 +8459,6 @@ struct Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3_StaticFields
 // UnityEngine.PlayerLoop.Update/ScriptRunDelayedTasks
 
 // UnityEngine.PlayerLoop.Update/ScriptRunDelayedTasks
-
-// UnityEngine.PlayerLoop.Update/UIWidgetsUpdate
-
-// UnityEngine.PlayerLoop.Update/UIWidgetsUpdate
 
 // UnityEngine.Windows.WebCam.VideoCapture/VideoCaptureResult
 
@@ -24405,16 +24357,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D
 		return L_0;
 	}
 }
-// System.Boolean UnityEngine.Sprite::get_isUsingPlaceholder()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Sprite_get_isUsingPlaceholder_m83E42D142B29888F1B6DC3F2C307EF2CCC67274B (Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* __this, const RuntimeMethod* method) 
-{
-	typedef bool (*Sprite_get_isUsingPlaceholder_m83E42D142B29888F1B6DC3F2C307EF2CCC67274B_ftn) (Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99*);
-	static Sprite_get_isUsingPlaceholder_m83E42D142B29888F1B6DC3F2C307EF2CCC67274B_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (Sprite_get_isUsingPlaceholder_m83E42D142B29888F1B6DC3F2C307EF2CCC67274B_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Sprite::get_isUsingPlaceholder()");
-	bool icallRetVal = _il2cpp_icall_func(__this);
-	return icallRetVal;
-}
 // System.Boolean UnityEngine.Sprite::get_packed()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Sprite_get_packed_m6B6B98A3891B350711499532C07F8D393AAB868E (Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* __this, const RuntimeMethod* method) 
 {
@@ -25426,16 +25368,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool SpriteAtlas_CanBindTo_mB4326EC04E7C2CC9D
 	if (!_il2cpp_icall_func)
 	_il2cpp_icall_func = (SpriteAtlas_CanBindTo_mB4326EC04E7C2CC9D43AE04AEE9B91171F3BFA01_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.U2D.SpriteAtlas::CanBindTo(UnityEngine.Sprite)");
 	bool icallRetVal = _il2cpp_icall_func(__this, ___0_sprite);
-	return icallRetVal;
-}
-// System.Boolean UnityEngine.U2D.SpriteAtlas::IsPlaceholder()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool SpriteAtlas_IsPlaceholder_mCEE38D5EC3F8E50F54CCCAD1387403C7BA2143EF (SpriteAtlas_t7B9620FBFBE1CCB781F2ED24A3B2DD37734F66A8* __this, const RuntimeMethod* method) 
-{
-	typedef bool (*SpriteAtlas_IsPlaceholder_mCEE38D5EC3F8E50F54CCCAD1387403C7BA2143EF_ftn) (SpriteAtlas_t7B9620FBFBE1CCB781F2ED24A3B2DD37734F66A8*);
-	static SpriteAtlas_IsPlaceholder_mCEE38D5EC3F8E50F54CCCAD1387403C7BA2143EF_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (SpriteAtlas_IsPlaceholder_mCEE38D5EC3F8E50F54CCCAD1387403C7BA2143EF_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.U2D.SpriteAtlas::IsPlaceholder()");
-	bool icallRetVal = _il2cpp_icall_func(__this);
 	return icallRetVal;
 }
 #ifdef __clang__
@@ -32620,30 +32552,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UpdateFunction_Invoke_m9BCEE4E5BEE924EB8
 	typedef void (*FunctionPointerType) (RuntimeObject*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl_1)((Il2CppObject*)__this->___method_code_6, reinterpret_cast<RuntimeMethod*>(__this->___method_3));
 }
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif

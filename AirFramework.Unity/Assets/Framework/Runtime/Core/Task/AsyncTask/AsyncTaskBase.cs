@@ -25,7 +25,7 @@ namespace AirFramework
         public bool IsDone
         {
 
-            //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+            [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 if (Status == ETaskStatus.Succeed || Status == ETaskStatus.Failed||Status==ETaskStatus.Completed) return true;
@@ -55,10 +55,10 @@ namespace AirFramework
         /// </summary>
         /// <param name="status"></param>
 
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Finish(ETaskStatus status)
         {
-            UnityEngine.Debug.Log($"完成任务{ID},Status:{status}");
+            //UnityEngine.Debug.Log($"完成任务{ID},Status:{status}");
             if (IsDone)
             {
                 throw new InvalidOperationException($"Completed tasks （ID：{ID}） cannot be completed repeatedly");
@@ -74,7 +74,7 @@ namespace AirFramework
         /// 在任务完成时调用以推动状态机
         /// </summary>
 
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected abstract void OnFinish();
         /// <summary>
         /// 在任务结束后调用以回收或释放任务
@@ -87,7 +87,7 @@ namespace AirFramework
         /// </summary>
         /// <param name="ex"></param>
 
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void PostException(ExceptionDispatchInfo ex)
         {
             Framework.Log.Error(ex.SourceException.ToString());
@@ -110,7 +110,7 @@ namespace AirFramework
             }
         }
 
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public AirTaskBase()
         {
             Token = new AsyncTreeTokenNode(this, this);
@@ -132,10 +132,10 @@ namespace AirFramework
         #region Pool
 
 
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override void OnAllocate()
         {
-            UnityEngine.Debug.Log($"Task:{ID}-Allocate");
+            //UnityEngine.Debug.Log($"Task:{ID}-Allocate");
             Status = ETaskStatus.None;
             var token = ((IAsyncTokenProperty)this).Token;
             token.Current = this;
@@ -150,10 +150,10 @@ namespace AirFramework
         /// 对TaskBase的终结或回收
         /// </summary>
 
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override void OnRecycle()
         {
-            UnityEngine.Debug.Log($"Task:{ID}-Recycle");
+            //UnityEngine.Debug.Log($"Task:{ID}-Recycle");
             Status = ETaskStatus.None;
             var token = ((IAsyncTokenProperty)this).Token;
             token.Authorization = false;

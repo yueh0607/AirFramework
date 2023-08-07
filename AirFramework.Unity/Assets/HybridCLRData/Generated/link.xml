@@ -6,6 +6,7 @@
     <type fullname="AirFramework.AirTask`1" preserve="all" />
     <type fullname="AirFramework.Framework" preserve="all" />
     <type fullname="AirFramework.FrameworkInitializeAttribute" preserve="all" />
+    <type fullname="AirFramework.IAllocate" preserve="all" />
     <type fullname="AirFramework.ICallEventBase" preserve="all" />
     <type fullname="AirFramework.ICallEvent`1" preserve="all" />
     <type fullname="AirFramework.IFrameworkInitialize" preserve="all" />
@@ -16,8 +17,6 @@
     <type fullname="AirFramework.IOperatorOut`1" preserve="all" />
     <type fullname="AirFramework.ISendEvent" preserve="all" />
     <type fullname="AirFramework.ISendEventBase" preserve="all" />
-    <type fullname="AirFramework.ISendEvent`1" preserve="all" />
-    <type fullname="AirFramework.IUpdate" preserve="all" />
     <type fullname="AirFramework.IViewHide" preserve="all" />
     <type fullname="AirFramework.IViewInitialize" preserve="all" />
     <type fullname="AirFramework.IViewShow" preserve="all" />
@@ -26,8 +25,6 @@
     <type fullname="AirFramework.MessageExtensions" preserve="all" />
     <type fullname="AirFramework.MessageOperatorBox`1" preserve="all" />
     <type fullname="AirFramework.OperatorEx2" preserve="all" />
-    <type fullname="AirFramework.PoolableObject" preserve="all" />
-    <type fullname="AirFramework.Unit" preserve="all" />
     <type fullname="AirFramework.ViewModule" preserve="all" />
     <type fullname="AirFramework.View`1" preserve="all" />
   </assembly>
@@ -41,21 +38,17 @@
   </assembly>
   <assembly fullname="mscorlib">
     <type fullname="System.Action`1" preserve="all" />
-    <type fullname="System.Collections.Generic.IReadOnlyList`1" preserve="all" />
-    <type fullname="System.Collections.Generic.List`1" preserve="all" />
     <type fullname="System.Diagnostics.DebuggableAttribute" preserve="all" />
     <type fullname="System.Diagnostics.DebuggableAttribute/DebuggingModes" preserve="all" />
     <type fullname="System.Diagnostics.DebuggerHiddenAttribute" preserve="all" />
     <type fullname="System.Exception" preserve="all" />
     <type fullname="System.Func`1" preserve="all" />
-    <type fullname="System.Int64" preserve="all" />
     <type fullname="System.Object" preserve="all" />
     <type fullname="System.Runtime.CompilerServices.AsyncStateMachineAttribute" preserve="all" />
     <type fullname="System.Runtime.CompilerServices.CompilationRelaxationsAttribute" preserve="all" />
     <type fullname="System.Runtime.CompilerServices.CompilerGeneratedAttribute" preserve="all" />
     <type fullname="System.Runtime.CompilerServices.IAsyncStateMachine" preserve="all" />
     <type fullname="System.Runtime.CompilerServices.RuntimeCompatibilityAttribute" preserve="all" />
-    <type fullname="System.String" preserve="all" />
     <type fullname="System.Type" preserve="all" />
     <type fullname="System.ValueType" preserve="all" />
   </assembly>

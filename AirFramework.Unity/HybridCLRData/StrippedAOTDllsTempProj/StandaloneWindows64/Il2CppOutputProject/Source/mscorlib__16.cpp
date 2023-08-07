@@ -19439,7 +19439,7 @@ IL_001f:
 		String_t* L_7 = V_0;
 		NullCheck(L_6);
 		int32_t L_8;
-		L_8 = VirtualFuncInvoker2< int32_t, String_t*, int32_t >::Invoke(16 /* System.Int32 System.Globalization.CompareInfo::GetHashCode(System.String,System.Globalization.CompareOptions) */, L_6, L_7, 1);
+		L_8 = VirtualFuncInvoker2< int32_t, String_t*, int32_t >::Invoke(14 /* System.Int32 System.Globalization.CompareInfo::GetHashCode(System.String,System.Globalization.CompareOptions) */, L_6, L_7, 1);
 		return L_8;
 	}
 }

@@ -9,6 +9,7 @@
 using AirFramework.Internal;
 using System;
 using System.Collections;
+using System.IO;
 using UnityEngine;
 using YooAsset;
 
@@ -40,7 +41,25 @@ namespace AirFramework
             //初始化资源模块，更新资源
             var module = Framework.GetModule<ResModule>();
             module.Initialize();
-            await module.InitializePackage(EPlayMode.EditorSimulateMode);
+
+          
+            RuntimeConfigData config = RuntimeConfigData.Read();
+            RuntimeMode mode = config.initializeType;
+
+            static EPlayMode ToYooAssetPlayMode(RuntimeMode mode)
+            {
+                switch (mode)
+                {
+                    case RuntimeMode.Simulated: return EPlayMode.EditorSimulateMode;
+                    case RuntimeMode.Offline: return EPlayMode.OfflinePlayMode;
+                    case RuntimeMode.Host: return EPlayMode.HostPlayMode;
+                }
+                throw new NotImplementedException($"NotImplemented PlayMode:{mode}");
+            }
+            await module.InitializePackage(ToYooAssetPlayMode(mode));
+
+           
+
 
             //创建模型模块
             Framework.CreateModule<ModelModule>();
@@ -49,7 +68,7 @@ namespace AirFramework
             //创建热更模块
             Framework.CreateModule<HotUpdateModule>();
             //补充元数据并加载热更程序集
-            await Framework.GetModule<HotUpdateModule>().Initialize();
+            await Framework.GetModule<HotUpdateModule>().Initialize(mode);
      
             //发布框架初始化事件
             Framework.Message.Dispatcher<IFrameworkInitialize>().Publish();

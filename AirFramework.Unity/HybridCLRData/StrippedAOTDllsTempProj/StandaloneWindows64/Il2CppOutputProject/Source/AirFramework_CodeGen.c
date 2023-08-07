@@ -169,2657 +169,2705 @@ extern void Framework_set_TimeScale_m77668B19FAB78D059984DF4D9DC8127E2B6211CD (v
 extern void Framework_add_Update_mA2B3C89BE7C6277AFE061EFBEE2A910738DCBB49 (void);
 // 0x00000081 System.Void AirFramework.Framework::remove_Update(System.Action`1<System.Single>)
 extern void Framework_remove_Update_m15AB0AF2F0C703228CFCA8A8197769A82CC705E3 (void);
-// 0x00000082 System.Void AirFramework.Framework::add_InitialReflection(System.Action`1<System.Type>)
-extern void Framework_add_InitialReflection_mC772094C9C76D9A90B1E50513FC77DCD5FB3A2B4 (void);
-// 0x00000083 System.Void AirFramework.Framework::remove_InitialReflection(System.Action`1<System.Type>)
-extern void Framework_remove_InitialReflection_m01B654A6FDA5C0FB71686D68786B7875CFBE2706 (void);
-// 0x00000084 System.Void AirFramework.Framework::CreateModule(System.Type)
+// 0x00000082 System.Void AirFramework.Framework::CreateModule(System.Type)
 extern void Framework_CreateModule_m818A35D5E3BB87AADD5743B5413D8C7DF45E2AD8 (void);
-// 0x00000085 AirFramework.AbstractModule AirFramework.Framework::GetModule(System.Type)
+// 0x00000083 AirFramework.AbstractModule AirFramework.Framework::GetModule(System.Type)
 extern void Framework_GetModule_mCA5E7DF84B8B49E70C968419E0E7D12F8A287E42 (void);
-// 0x00000086 System.Void AirFramework.Framework::DestroyModule(System.Type,System.Boolean)
+// 0x00000084 System.Void AirFramework.Framework::DestroyModule(System.Type,System.Boolean)
 extern void Framework_DestroyModule_m1D072DAC146CC249AF4DE898BF421A43E42E0A58 (void);
-// 0x00000087 System.Void AirFramework.Framework::CreateModule()
-// 0x00000088 T AirFramework.Framework::GetModule()
-// 0x00000089 System.Boolean AirFramework.Framework::HasModule()
-// 0x0000008A System.Boolean AirFramework.Framework::HasModule(System.Type)
+// 0x00000085 System.Void AirFramework.Framework::CreateModule()
+// 0x00000086 T AirFramework.Framework::GetModule()
+// 0x00000087 System.Boolean AirFramework.Framework::HasModule()
+// 0x00000088 System.Boolean AirFramework.Framework::HasModule(System.Type)
 extern void Framework_HasModule_m6BCCD49A8B4A339EB6F3E37571EB3BC369FF656E (void);
-// 0x0000008B T AirFramework.Framework::GetOrCreateModule()
-// 0x0000008C System.Void AirFramework.Framework::DestroyModule(System.Boolean)
-// 0x0000008D AirFramework.MessageManager AirFramework.Framework::get_Message()
+// 0x00000089 T AirFramework.Framework::GetOrCreateModule()
+// 0x0000008A System.Void AirFramework.Framework::DestroyModule(System.Boolean)
+// 0x0000008B AirFramework.ILogger AirFramework.Framework::get_Log()
+extern void Framework_get_Log_m05A504EE8C13B423C7FEB2657376C0DF7E20B836 (void);
+// 0x0000008C AirFramework.MessageManager AirFramework.Framework::get_Message()
 extern void Framework_get_Message_m1327508183A5D73D1DD9378DA446FF41768C0AAE (void);
-// 0x0000008E AirFramework.PoolManager AirFramework.Framework::get_Pool()
+// 0x0000008D AirFramework.PoolManager AirFramework.Framework::get_Pool()
 extern void Framework_get_Pool_m51764312966AB27B1B4B7728BB1D7E5D7A61B8AC (void);
-// 0x0000008F T AirFramework.Framework::AnyGet()
-// 0x00000090 System.Void AirFramework.Framework::AnySet(System.Object)
+// 0x0000008E T AirFramework.Framework::AnyGet()
+// 0x0000008F System.Void AirFramework.Framework::AnySet(System.Object)
 extern void Framework_AnySet_m0BDFE2DEE2C4A57F803B9EB97E1AED346BBDD792 (void);
-// 0x00000091 AirFramework.ResModule AirFramework.Framework::get_Res()
+// 0x00000090 AirFramework.ResModule AirFramework.Framework::get_Res()
 extern void Framework_get_Res_m3A556D3A10A8C42E728A87CD3BC5AA62FE9816FA (void);
-// 0x00000092 AirFramework.StateMachine AirFramework.AbstractState::get_Machine()
+// 0x00000091 AirFramework.StateMachine AirFramework.AbstractState::get_Machine()
 extern void AbstractState_get_Machine_m5FC9BABABC29C5A28947A08DE016220C9177B093 (void);
-// 0x00000093 System.Void AirFramework.AbstractState::set_Machine(AirFramework.StateMachine)
+// 0x00000092 System.Void AirFramework.AbstractState::set_Machine(AirFramework.StateMachine)
 extern void AbstractState_set_Machine_mB43251B66C23CC77382D3AECB86527FD16CA4E1B (void);
-// 0x00000094 System.Void AirFramework.AbstractState::OnEnterState()
-// 0x00000095 System.Void AirFramework.AbstractState::OnExitState()
-// 0x00000096 System.Void AirFramework.AbstractState::OnStayState(System.Single)
-// 0x00000097 System.Void AirFramework.AbstractState::OnAllocate()
+// 0x00000093 System.Void AirFramework.AbstractState::OnEnterState()
+// 0x00000094 System.Void AirFramework.AbstractState::OnExitState()
+// 0x00000095 System.Void AirFramework.AbstractState::OnStayState(System.Single)
+// 0x00000096 System.Void AirFramework.AbstractState::OnAllocate()
 extern void AbstractState_OnAllocate_m12F6B345FDE0C1A3BD82CC6861F76741ABE20DC3 (void);
-// 0x00000098 System.Void AirFramework.AbstractState::OnRecycle()
+// 0x00000097 System.Void AirFramework.AbstractState::OnRecycle()
 extern void AbstractState_OnRecycle_m45B88811C529F9E4478BC0ED3E9DDDFB5E77D212 (void);
-// 0x00000099 System.Void AirFramework.AbstractState::AirFramework.IUpdate.Update(System.Single)
+// 0x00000098 System.Void AirFramework.AbstractState::AirFramework.IUpdate.Update(System.Single)
 extern void AbstractState_AirFramework_IUpdate_Update_m1731634930100DC5F2AF381F51C893929F448782 (void);
-// 0x0000009A System.Void AirFramework.AbstractState::.ctor()
+// 0x00000099 System.Void AirFramework.AbstractState::.ctor()
 extern void AbstractState__ctor_m15954A764CF2B657A8FE55F90602AC5AE2F8D545 (void);
-// 0x0000009B System.Object AirFramework.StateMachine::get_Current()
+// 0x0000009A System.Object AirFramework.StateMachine::get_Current()
 extern void StateMachine_get_Current_m581D093F16F50874D731D6680F946FF5E7243153 (void);
-// 0x0000009C System.Void AirFramework.StateMachine::set_Current(System.Object)
+// 0x0000009B System.Void AirFramework.StateMachine::set_Current(System.Object)
 extern void StateMachine_set_Current_m096B3C54FFBF25C6E038FAF9FE7228B87B83C5F9 (void);
-// 0x0000009D System.Void AirFramework.StateMachine::Move()
-// 0x0000009E System.Void AirFramework.StateMachine::MoveState()
-// 0x0000009F System.Void AirFramework.StateMachine::OnAllocate()
+// 0x0000009C System.Void AirFramework.StateMachine::Move()
+// 0x0000009D System.Void AirFramework.StateMachine::MoveState()
+// 0x0000009E System.Void AirFramework.StateMachine::OnAllocate()
 extern void StateMachine_OnAllocate_m61809C749FD6E82671254F255832D466AB85CC57 (void);
-// 0x000000A0 System.Void AirFramework.StateMachine::OnRecycle()
+// 0x0000009F System.Void AirFramework.StateMachine::OnRecycle()
 extern void StateMachine_OnRecycle_mF3FE536BE563B28F3BE0282B9FEEA427ED5943C0 (void);
-// 0x000000A1 System.Void AirFramework.StateMachine::.ctor()
+// 0x000000A0 System.Void AirFramework.StateMachine::.ctor()
 extern void StateMachine__ctor_m641A5ACC994A84D6020664F494E5AD040562C1AC (void);
-// 0x000000A2 System.Void AirFramework.FrameworkInitializeAttribute::.ctor()
+// 0x000000A1 System.Void AirFramework.FrameworkInitializeAttribute::.ctor()
 extern void FrameworkInitializeAttribute__ctor_m0742B3E263F7450C081E82957509AC7AB23071AF (void);
-// 0x000000A3 System.Void AirFramework.FrameworkInitializer::CreateByReflection(System.Type)
+// 0x000000A2 System.Void AirFramework.FrameworkInitializer::CreateByReflection(System.Type)
 extern void FrameworkInitializer_CreateByReflection_m834EDDBB534D4E35D945DB2DC4A8DE8435116E97 (void);
-// 0x000000A4 System.Boolean AirFramework.FrameworkInitializer::Exist(System.Type)
+// 0x000000A3 System.Boolean AirFramework.FrameworkInitializer::Exist(System.Type)
 extern void FrameworkInitializer_Exist_mF7E83B5E502ECD68EF1F207E3A4D0511D915839C (void);
-// 0x000000A5 System.Boolean AirFramework.FrameworkInitializer::Exist()
-// 0x000000A6 System.Void AirFramework.FrameworkInitializer::Unload(System.Type)
+// 0x000000A4 System.Boolean AirFramework.FrameworkInitializer::Exist()
+// 0x000000A5 System.Void AirFramework.FrameworkInitializer::Unload(System.Type)
 extern void FrameworkInitializer_Unload_m2FC1B29D730F7D14F8AE086705881773E9C24417 (void);
-// 0x000000A7 System.Void AirFramework.FrameworkInitializer::Unload()
-// 0x000000A8 System.Void AirFramework.FrameworkInitializer::UnloadAll()
+// 0x000000A6 System.Void AirFramework.FrameworkInitializer::Unload()
+// 0x000000A7 System.Void AirFramework.FrameworkInitializer::UnloadAll()
 extern void FrameworkInitializer_UnloadAll_m479FDDE3C9A7E43D996EC78245A9E4B787B76921 (void);
-// 0x000000A9 System.Object AirFramework.FrameworkInitializer::GetToObject(System.Type)
+// 0x000000A8 System.Object AirFramework.FrameworkInitializer::GetToObject(System.Type)
 extern void FrameworkInitializer_GetToObject_mA951AB81B4334592845857C308508ACD212A01A7 (void);
-// 0x000000AA System.Object AirFramework.FrameworkInitializer::GetToObject()
-// 0x000000AB T AirFramework.FrameworkInitializer::GetToGeneric()
-// 0x000000AC System.Void AirFramework.FrameworkInitializer::.ctor()
+// 0x000000A9 System.Object AirFramework.FrameworkInitializer::GetToObject()
+// 0x000000AA T AirFramework.FrameworkInitializer::GetToGeneric()
+// 0x000000AB System.Void AirFramework.FrameworkInitializer::.ctor()
 extern void FrameworkInitializer__ctor_mDED2B50B0B97D8F19750B8C14119D7D146CC7C82 (void);
-// 0x000000AD System.Void AirFramework.FrameworkInitializer::.cctor()
+// 0x000000AC System.Void AirFramework.FrameworkInitializer::.cctor()
 extern void FrameworkInitializer__cctor_m1A8F51E745CCAE5E6B1F14A62684A9B76A7E0111 (void);
-// 0x000000AE System.Void AirFramework.LifeCycleAdder::AddAllLifeCycle(System.Type)
+// 0x000000AD System.Void AirFramework.LifeCycleAdder::AddAllLifeCycle(System.Type)
 extern void LifeCycleAdder_AddAllLifeCycle_mDC7D03CE8F66F8AF48AAFEA1192BB3ADEC94DF7A (void);
-// 0x000000AF T AirFramework.PoolRepeater::Allocate()
-// 0x000000B0 System.Void AirFramework.PoolRepeater::Recycle(T)
-// 0x000000B1 System.Void AirFramework.PoolRepeater::.ctor()
+// 0x000000AE T AirFramework.PoolRepeater::Allocate()
+// 0x000000AF System.Void AirFramework.PoolRepeater::Recycle(T)
+// 0x000000B0 System.Void AirFramework.PoolRepeater::.ctor()
 extern void PoolRepeater__ctor_m6AE347181D0ABEF690D65CC443A358D11772F6EE (void);
-// 0x000000B2 System.Void AirFramework.ReflectionProcess::RegisterProcess()
+// 0x000000B1 System.Void AirFramework.ReflectionProcess::RegisterProcess()
 extern void ReflectionProcess_RegisterProcess_m6D60904B1A25F99E15861A20040BC84DE28A4AEE (void);
-// 0x000000B3 AirFramework.IDispatcherOut`1<MessageType> AirFramework.Extensions_Dispatcher1::Dispatcher(AirFramework.MessageManager,System.Boolean)
-// 0x000000B4 AirFramework.IDispatcherOut`1<MessageType> AirFramework.Extensions_Dispatcher2::Dispatcher(AirFramework.MessageManager,System.Boolean)
-// 0x000000B5 System.Void AirFramework.Extensions_EnableAll::SetActive(AirFramework.IDispatcherOutBase,System.Boolean)
+// 0x000000B2 System.Void AirFramework.ILogger::Log(System.Object)
+// 0x000000B3 System.Void AirFramework.ILogger::Warn(System.Object)
+// 0x000000B4 System.Void AirFramework.ILogger::Error(System.Object)
+// 0x000000B5 System.Void AirFramework.ILogger::Exception(System.Exception)
+// 0x000000B6 AirFramework.IDispatcherOut`1<MessageType> AirFramework.Extensions_Dispatcher1::Dispatcher(AirFramework.MessageManager,System.Boolean)
+// 0x000000B7 AirFramework.IDispatcherOut`1<MessageType> AirFramework.Extensions_Dispatcher2::Dispatcher(AirFramework.MessageManager,System.Boolean)
+// 0x000000B8 System.Void AirFramework.Extensions_EnableAll::SetActive(AirFramework.IDispatcherOutBase,System.Boolean)
 extern void Extensions_EnableAll_SetActive_mADE9D33FFEC40C8CB96930815E4BA51B2494EE5E (void);
-// 0x000000B6 System.Void AirFramework.Extensions_EnableAll::SetActive(AirFramework.IMessageReceiver,System.Boolean)
+// 0x000000B9 System.Void AirFramework.Extensions_EnableAll::SetActive(AirFramework.IMessageReceiver,System.Boolean)
 extern void Extensions_EnableAll_SetActive_mC90343972B1387694997B8E3504350FD6BA7B629 (void);
-// 0x000000B7 System.Void AirFramework.MessageGenericExtensions::Clear(AirFramework.MessageOperatorBox`1<AirFramework.Internal.IMessage>)
+// 0x000000BA System.Void AirFramework.MessageGenericExtensions::Clear(AirFramework.MessageOperatorBox`1<AirFramework.Internal.IMessage>)
 extern void MessageGenericExtensions_Clear_m1D7A904D99C16C5538420C8CB6212FD949E51EB4 (void);
-// 0x000000B8 System.Void AirFramework.MessageGenericExtensions::RemoveAllMessage(AirFramework.IMessageReceiver)
+// 0x000000BB System.Void AirFramework.MessageGenericExtensions::RemoveAllMessage(AirFramework.IMessageReceiver)
 extern void MessageGenericExtensions_RemoveAllMessage_mA87F69D3775DB4886CADC76C3917785A3B334B8A (void);
-// 0x000000B9 AirFramework.MessageOperatorBox`1<AirFramework.Internal.IMessage> AirFramework.MessageGenericExtensions::GetMessageBoxDefault(AirFramework.IMessageReceiver,System.Boolean)
-// 0x000000BA AirFramework.IOperatorOut`1<AirFramework.ISendEvent> AirFramework.MessageGenericExtensions::GenericOperator(AirFramework.IMessageReceiver,System.Boolean)
-// 0x000000BB AirFramework.IOperatorOut`1<AirFramework.ISendEvent`1<T1>> AirFramework.MessageGenericExtensions::GenericOperator(AirFramework.IMessageReceiver,System.Boolean)
-// 0x000000BC AirFramework.IOperatorOut`1<AirFramework.ISendEvent`2<T1,T2>> AirFramework.MessageGenericExtensions::GenericOperator(AirFramework.IMessageReceiver,System.Boolean)
-// 0x000000BD AirFramework.IOperatorOut`1<AirFramework.ISendEvent`3<T1,T2,T3>> AirFramework.MessageGenericExtensions::GenericOperator(AirFramework.IMessageReceiver,System.Boolean)
-// 0x000000BE AirFramework.IOperatorOut`1<AirFramework.ISendEvent`4<T1,T2,T3,T4>> AirFramework.MessageGenericExtensions::GenericOperator(AirFramework.IMessageReceiver,System.Boolean)
-// 0x000000BF AirFramework.IOperatorOut`1<AirFramework.ISendEvent`5<T1,T2,T3,T4,T5>> AirFramework.MessageGenericExtensions::GenericOperator(AirFramework.IMessageReceiver,System.Boolean)
-// 0x000000C0 AirFramework.IOperatorOut`1<AirFramework.ISendEvent`6<T1,T2,T3,T4,T5,T6>> AirFramework.MessageGenericExtensions::GenericOperator(AirFramework.IMessageReceiver,System.Boolean)
-// 0x000000C1 AirFramework.MessageDispatcherBox`1<AirFramework.Internal.IMessage> AirFramework.MessageGenericExtensions::GetDispatcherBoxDefault(AirFramework.MessageManager,System.Boolean)
-// 0x000000C2 AirFramework.IDispatcherOut`1<AirFramework.ISendEvent> AirFramework.MessageGenericExtensions::GenericDispatcher(AirFramework.MessageManager,AirFramework.IMessageReceiver,System.Boolean)
-// 0x000000C3 AirFramework.IDispatcherOut`1<AirFramework.ISendEvent`1<T1>> AirFramework.MessageGenericExtensions::GenericDispatcher(AirFramework.MessageManager,AirFramework.IMessageReceiver,System.Boolean)
-// 0x000000C4 AirFramework.IDispatcherOut`1<AirFramework.ISendEvent`2<T1,T2>> AirFramework.MessageGenericExtensions::GenericDispatcher(AirFramework.MessageManager,AirFramework.IMessageReceiver,System.Boolean)
-// 0x000000C5 AirFramework.IDispatcherOut`1<AirFramework.ISendEvent`3<T1,T2,T3>> AirFramework.MessageGenericExtensions::GenericDispatcher(AirFramework.MessageManager,AirFramework.IMessageReceiver,System.Boolean)
-// 0x000000C6 AirFramework.IDispatcherOut`1<AirFramework.ISendEvent`4<T1,T2,T3,T4>> AirFramework.MessageGenericExtensions::GenericDispatcher(AirFramework.MessageManager,AirFramework.IMessageReceiver,System.Boolean)
-// 0x000000C7 AirFramework.IDispatcherOut`1<AirFramework.ISendEvent`5<T1,T2,T3,T4,T5>> AirFramework.MessageGenericExtensions::GenericDispatcher(AirFramework.MessageManager,AirFramework.IMessageReceiver,System.Boolean)
-// 0x000000C8 AirFramework.IDispatcherOut`1<AirFramework.ISendEvent`6<T1,T2,T3,T4,T5,T6>> AirFramework.MessageGenericExtensions::GenericDispatcher(AirFramework.MessageManager,AirFramework.IMessageReceiver,System.Boolean)
-// 0x000000C9 AirFramework.MessageOperatorBox`1<AirFramework.Internal.IMessage> AirFramework.MessageExDispathcer::GetMessageBoxDefault(AirFramework.IMessageReceiver,System.Boolean)
-// 0x000000CA AirFramework.IOperatorOut`1<AirFramework.ICallEvent> AirFramework.MessageExDispathcer::GenericOperator(AirFramework.IMessageReceiver,System.Boolean)
-// 0x000000CB AirFramework.IOperatorOut`1<AirFramework.ICallEvent`1<T1>> AirFramework.MessageExDispathcer::GenericOperator(AirFramework.IMessageReceiver,System.Boolean)
-// 0x000000CC AirFramework.IOperatorOut`1<AirFramework.ICallEvent`2<T1,T2>> AirFramework.MessageExDispathcer::GenericOperator(AirFramework.IMessageReceiver,System.Boolean)
-// 0x000000CD AirFramework.IOperatorOut`1<AirFramework.ICallEvent`3<T1,T2,T3>> AirFramework.MessageExDispathcer::GenericOperator(AirFramework.IMessageReceiver,System.Boolean)
-// 0x000000CE AirFramework.IOperatorOut`1<AirFramework.ICallEvent`4<T1,T2,T3,T4>> AirFramework.MessageExDispathcer::GenericOperator(AirFramework.IMessageReceiver,System.Boolean)
-// 0x000000CF AirFramework.IOperatorOut`1<AirFramework.ICallEvent`5<T1,T2,T3,T4,T5>> AirFramework.MessageExDispathcer::GenericOperator(AirFramework.IMessageReceiver,System.Boolean)
-// 0x000000D0 AirFramework.IOperatorOut`1<AirFramework.ICallEvent`6<T1,T2,T3,T4,T5,T6>> AirFramework.MessageExDispathcer::GenericOperator(AirFramework.IMessageReceiver,System.Boolean)
-// 0x000000D1 AirFramework.MessageDispatcherBox`1<AirFramework.Internal.IMessage> AirFramework.MessageExDispathcer::GetDispatcherBoxDefault(AirFramework.MessageManager,System.Boolean)
-// 0x000000D2 AirFramework.IDispatcherOut`1<AirFramework.ICallEvent> AirFramework.MessageExDispathcer::GenericDispatcher(AirFramework.MessageManager,AirFramework.IMessageReceiver,System.Boolean)
-// 0x000000D3 AirFramework.IDispatcherOut`1<AirFramework.ICallEvent`1<T1>> AirFramework.MessageExDispathcer::GenericDispatcher(AirFramework.MessageManager,AirFramework.IMessageReceiver,System.Boolean)
-// 0x000000D4 AirFramework.IDispatcherOut`1<AirFramework.ICallEvent`2<T1,T2>> AirFramework.MessageExDispathcer::GenericDispatcher(AirFramework.MessageManager,AirFramework.IMessageReceiver,System.Boolean)
-// 0x000000D5 AirFramework.IDispatcherOut`1<AirFramework.ICallEvent`3<T1,T2,T3>> AirFramework.MessageExDispathcer::GenericDispatcher(AirFramework.MessageManager,AirFramework.IMessageReceiver,System.Boolean)
-// 0x000000D6 AirFramework.IDispatcherOut`1<AirFramework.ICallEvent`4<T1,T2,T3,T4>> AirFramework.MessageExDispathcer::GenericDispatcher(AirFramework.MessageManager,AirFramework.IMessageReceiver,System.Boolean)
-// 0x000000D7 AirFramework.IDispatcherOut`1<AirFramework.ICallEvent`5<T1,T2,T3,T4,T5>> AirFramework.MessageExDispathcer::GenericDispatcher(AirFramework.MessageManager,AirFramework.IMessageReceiver,System.Boolean)
-// 0x000000D8 AirFramework.IDispatcherOut`1<AirFramework.ICallEvent`6<T1,T2,T3,T4,T5,T6>> AirFramework.MessageExDispathcer::GenericDispatcher(AirFramework.MessageManager,AirFramework.IMessageReceiver,System.Boolean)
-// 0x000000D9 AirFramework.MessageOperatorBox`1<MessageType> AirFramework.OperatorEx1::Operator(AirFramework.IMessageReceiver,System.Boolean)
-// 0x000000DA AirFramework.MessageOperatorBox`1<MessageType> AirFramework.OperatorEx2::Operator(AirFramework.IMessageReceiver,System.Boolean)
-// 0x000000DB System.Void AirFramework.CallNullEventException::.ctor()
+// 0x000000BC AirFramework.MessageOperatorBox`1<AirFramework.Internal.IMessage> AirFramework.MessageGenericExtensions::GetMessageBoxDefault(AirFramework.IMessageReceiver,System.Boolean)
+// 0x000000BD AirFramework.IOperatorOut`1<AirFramework.ISendEvent> AirFramework.MessageGenericExtensions::GenericOperator(AirFramework.IMessageReceiver,System.Boolean)
+// 0x000000BE AirFramework.IOperatorOut`1<AirFramework.ISendEvent`1<T1>> AirFramework.MessageGenericExtensions::GenericOperator(AirFramework.IMessageReceiver,System.Boolean)
+// 0x000000BF AirFramework.IOperatorOut`1<AirFramework.ISendEvent`2<T1,T2>> AirFramework.MessageGenericExtensions::GenericOperator(AirFramework.IMessageReceiver,System.Boolean)
+// 0x000000C0 AirFramework.IOperatorOut`1<AirFramework.ISendEvent`3<T1,T2,T3>> AirFramework.MessageGenericExtensions::GenericOperator(AirFramework.IMessageReceiver,System.Boolean)
+// 0x000000C1 AirFramework.IOperatorOut`1<AirFramework.ISendEvent`4<T1,T2,T3,T4>> AirFramework.MessageGenericExtensions::GenericOperator(AirFramework.IMessageReceiver,System.Boolean)
+// 0x000000C2 AirFramework.IOperatorOut`1<AirFramework.ISendEvent`5<T1,T2,T3,T4,T5>> AirFramework.MessageGenericExtensions::GenericOperator(AirFramework.IMessageReceiver,System.Boolean)
+// 0x000000C3 AirFramework.IOperatorOut`1<AirFramework.ISendEvent`6<T1,T2,T3,T4,T5,T6>> AirFramework.MessageGenericExtensions::GenericOperator(AirFramework.IMessageReceiver,System.Boolean)
+// 0x000000C4 AirFramework.MessageDispatcherBox`1<AirFramework.Internal.IMessage> AirFramework.MessageGenericExtensions::GetDispatcherBoxDefault(AirFramework.MessageManager,System.Boolean)
+// 0x000000C5 AirFramework.IDispatcherOut`1<AirFramework.ISendEvent> AirFramework.MessageGenericExtensions::GenericDispatcher(AirFramework.MessageManager,AirFramework.IMessageReceiver,System.Boolean)
+// 0x000000C6 AirFramework.IDispatcherOut`1<AirFramework.ISendEvent`1<T1>> AirFramework.MessageGenericExtensions::GenericDispatcher(AirFramework.MessageManager,AirFramework.IMessageReceiver,System.Boolean)
+// 0x000000C7 AirFramework.IDispatcherOut`1<AirFramework.ISendEvent`2<T1,T2>> AirFramework.MessageGenericExtensions::GenericDispatcher(AirFramework.MessageManager,AirFramework.IMessageReceiver,System.Boolean)
+// 0x000000C8 AirFramework.IDispatcherOut`1<AirFramework.ISendEvent`3<T1,T2,T3>> AirFramework.MessageGenericExtensions::GenericDispatcher(AirFramework.MessageManager,AirFramework.IMessageReceiver,System.Boolean)
+// 0x000000C9 AirFramework.IDispatcherOut`1<AirFramework.ISendEvent`4<T1,T2,T3,T4>> AirFramework.MessageGenericExtensions::GenericDispatcher(AirFramework.MessageManager,AirFramework.IMessageReceiver,System.Boolean)
+// 0x000000CA AirFramework.IDispatcherOut`1<AirFramework.ISendEvent`5<T1,T2,T3,T4,T5>> AirFramework.MessageGenericExtensions::GenericDispatcher(AirFramework.MessageManager,AirFramework.IMessageReceiver,System.Boolean)
+// 0x000000CB AirFramework.IDispatcherOut`1<AirFramework.ISendEvent`6<T1,T2,T3,T4,T5,T6>> AirFramework.MessageGenericExtensions::GenericDispatcher(AirFramework.MessageManager,AirFramework.IMessageReceiver,System.Boolean)
+// 0x000000CC AirFramework.MessageOperatorBox`1<AirFramework.Internal.IMessage> AirFramework.MessageExDispathcer::GetMessageBoxDefault(AirFramework.IMessageReceiver,System.Boolean)
+// 0x000000CD AirFramework.IOperatorOut`1<AirFramework.ICallEvent> AirFramework.MessageExDispathcer::GenericOperator(AirFramework.IMessageReceiver,System.Boolean)
+// 0x000000CE AirFramework.IOperatorOut`1<AirFramework.ICallEvent`1<T1>> AirFramework.MessageExDispathcer::GenericOperator(AirFramework.IMessageReceiver,System.Boolean)
+// 0x000000CF AirFramework.IOperatorOut`1<AirFramework.ICallEvent`2<T1,T2>> AirFramework.MessageExDispathcer::GenericOperator(AirFramework.IMessageReceiver,System.Boolean)
+// 0x000000D0 AirFramework.IOperatorOut`1<AirFramework.ICallEvent`3<T1,T2,T3>> AirFramework.MessageExDispathcer::GenericOperator(AirFramework.IMessageReceiver,System.Boolean)
+// 0x000000D1 AirFramework.IOperatorOut`1<AirFramework.ICallEvent`4<T1,T2,T3,T4>> AirFramework.MessageExDispathcer::GenericOperator(AirFramework.IMessageReceiver,System.Boolean)
+// 0x000000D2 AirFramework.IOperatorOut`1<AirFramework.ICallEvent`5<T1,T2,T3,T4,T5>> AirFramework.MessageExDispathcer::GenericOperator(AirFramework.IMessageReceiver,System.Boolean)
+// 0x000000D3 AirFramework.IOperatorOut`1<AirFramework.ICallEvent`6<T1,T2,T3,T4,T5,T6>> AirFramework.MessageExDispathcer::GenericOperator(AirFramework.IMessageReceiver,System.Boolean)
+// 0x000000D4 AirFramework.MessageDispatcherBox`1<AirFramework.Internal.IMessage> AirFramework.MessageExDispathcer::GetDispatcherBoxDefault(AirFramework.MessageManager,System.Boolean)
+// 0x000000D5 AirFramework.IDispatcherOut`1<AirFramework.ICallEvent> AirFramework.MessageExDispathcer::GenericDispatcher(AirFramework.MessageManager,AirFramework.IMessageReceiver,System.Boolean)
+// 0x000000D6 AirFramework.IDispatcherOut`1<AirFramework.ICallEvent`1<T1>> AirFramework.MessageExDispathcer::GenericDispatcher(AirFramework.MessageManager,AirFramework.IMessageReceiver,System.Boolean)
+// 0x000000D7 AirFramework.IDispatcherOut`1<AirFramework.ICallEvent`2<T1,T2>> AirFramework.MessageExDispathcer::GenericDispatcher(AirFramework.MessageManager,AirFramework.IMessageReceiver,System.Boolean)
+// 0x000000D8 AirFramework.IDispatcherOut`1<AirFramework.ICallEvent`3<T1,T2,T3>> AirFramework.MessageExDispathcer::GenericDispatcher(AirFramework.MessageManager,AirFramework.IMessageReceiver,System.Boolean)
+// 0x000000D9 AirFramework.IDispatcherOut`1<AirFramework.ICallEvent`4<T1,T2,T3,T4>> AirFramework.MessageExDispathcer::GenericDispatcher(AirFramework.MessageManager,AirFramework.IMessageReceiver,System.Boolean)
+// 0x000000DA AirFramework.IDispatcherOut`1<AirFramework.ICallEvent`5<T1,T2,T3,T4,T5>> AirFramework.MessageExDispathcer::GenericDispatcher(AirFramework.MessageManager,AirFramework.IMessageReceiver,System.Boolean)
+// 0x000000DB AirFramework.IDispatcherOut`1<AirFramework.ICallEvent`6<T1,T2,T3,T4,T5,T6>> AirFramework.MessageExDispathcer::GenericDispatcher(AirFramework.MessageManager,AirFramework.IMessageReceiver,System.Boolean)
+// 0x000000DC AirFramework.MessageOperatorBox`1<MessageType> AirFramework.OperatorEx1::Operator(AirFramework.IMessageReceiver,System.Boolean)
+// 0x000000DD AirFramework.MessageOperatorBox`1<MessageType> AirFramework.OperatorEx2::Operator(AirFramework.IMessageReceiver,System.Boolean)
+// 0x000000DE System.Void AirFramework.CallNullEventException::.ctor()
 extern void CallNullEventException__ctor_m739717A5554B1AA0D828AFC719A28E3D82377DBF (void);
-// 0x000000DC T1 AirFramework.MessageExtensions::Call(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`1<T1>>)
-// 0x000000DD T2 AirFramework.MessageExtensions::Call(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`2<T1,T2>>,T1)
-// 0x000000DE T3 AirFramework.MessageExtensions::Call(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`3<T1,T2,T3>>,T1,T2)
-// 0x000000DF T4 AirFramework.MessageExtensions::Call(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`4<T1,T2,T3,T4>>,T1,T2,T3)
-// 0x000000E0 T5 AirFramework.MessageExtensions::Call(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`5<T1,T2,T3,T4,T5>>,T1,T2,T3,T4)
-// 0x000000E1 T6 AirFramework.MessageExtensions::Call(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`6<T1,T2,T3,T4,T5,T6>>,T1,T2,T3,T4,T5)
-// 0x000000E2 AirFramework.UnitList`1<T1> AirFramework.MessageExtensions::CallAll(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`1<T1>>)
-// 0x000000E3 AirFramework.UnitList`1<T2> AirFramework.MessageExtensions::CallAll(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`2<T1,T2>>,T1)
-// 0x000000E4 AirFramework.UnitList`1<T3> AirFramework.MessageExtensions::CallAll(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`3<T1,T2,T3>>,T1,T2)
-// 0x000000E5 AirFramework.UnitList`1<T4> AirFramework.MessageExtensions::CallAll(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`4<T1,T2,T3,T4>>,T1,T2,T3)
-// 0x000000E6 AirFramework.UnitList`1<T5> AirFramework.MessageExtensions::CallAll(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`5<T1,T2,T3,T4,T5>>,T1,T2,T3,T4)
-// 0x000000E7 AirFramework.UnitList`1<T6> AirFramework.MessageExtensions::CallAll(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`6<T1,T2,T3,T4,T5,T6>>,T1,T2,T3,T4,T5)
-// 0x000000E8 AirFramework.AirTask`1<T1> AirFramework.MessageExtensions::CallAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`1<AirFramework.AirTask`1<T1>>>)
-// 0x000000E9 AirFramework.AirTask`1<T2> AirFramework.MessageExtensions::CallAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`2<T1,AirFramework.AirTask`1<T2>>>,T1)
-// 0x000000EA AirFramework.AirTask`1<T3> AirFramework.MessageExtensions::CallAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`3<T1,T2,AirFramework.AirTask`1<T3>>>,T1,T2)
-// 0x000000EB AirFramework.AirTask`1<T4> AirFramework.MessageExtensions::CallAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`4<T1,T2,T3,AirFramework.AirTask`1<T4>>>,T1,T2,T3)
-// 0x000000EC AirFramework.AirTask`1<T5> AirFramework.MessageExtensions::CallAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`5<T1,T2,T3,T4,AirFramework.AirTask`1<T5>>>,T1,T2,T3,T4)
-// 0x000000ED AirFramework.AirTask`1<T6> AirFramework.MessageExtensions::CallAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`6<T1,T2,T3,T4,T5,AirFramework.AirTask`1<T6>>>,T1,T2,T3,T4,T5)
-// 0x000000EE AirFramework.UnitList`1<T1> AirFramework.MessageExtensions::Call(AirFramework.IDispatcherOut`1<AirFramework.ICallEvent`1<T1>>)
-// 0x000000EF AirFramework.UnitList`1<T2> AirFramework.MessageExtensions::Call(AirFramework.IDispatcherOut`1<AirFramework.ICallEvent`2<T1,T2>>,T1)
-// 0x000000F0 AirFramework.UnitList`1<T3> AirFramework.MessageExtensions::Call(AirFramework.IDispatcherOut`1<AirFramework.ICallEvent`3<T1,T2,T3>>,T1,T2)
-// 0x000000F1 AirFramework.UnitList`1<T4> AirFramework.MessageExtensions::Call(AirFramework.IDispatcherOut`1<AirFramework.ICallEvent`4<T1,T2,T3,T4>>,T1,T2,T3)
-// 0x000000F2 AirFramework.UnitList`1<T5> AirFramework.MessageExtensions::Call(AirFramework.IDispatcherOut`1<AirFramework.ICallEvent`5<T1,T2,T3,T4,T5>>,T1,T2,T3,T4)
-// 0x000000F3 AirFramework.UnitList`1<T6> AirFramework.MessageExtensions::Call(AirFramework.IDispatcherOut`1<AirFramework.ICallEvent`6<T1,T2,T3,T4,T5,T6>>,T1,T2,T3,T4,T5)
-// 0x000000F4 System.Void AirFramework.MessageExtensions::Publish(AirFramework.IOperatorOut`1<AirFramework.ISendEvent>)
+// 0x000000DF T1 AirFramework.MessageExtensions::Call(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`1<T1>>)
+// 0x000000E0 T2 AirFramework.MessageExtensions::Call(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`2<T1,T2>>,T1)
+// 0x000000E1 T3 AirFramework.MessageExtensions::Call(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`3<T1,T2,T3>>,T1,T2)
+// 0x000000E2 T4 AirFramework.MessageExtensions::Call(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`4<T1,T2,T3,T4>>,T1,T2,T3)
+// 0x000000E3 T5 AirFramework.MessageExtensions::Call(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`5<T1,T2,T3,T4,T5>>,T1,T2,T3,T4)
+// 0x000000E4 T6 AirFramework.MessageExtensions::Call(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`6<T1,T2,T3,T4,T5,T6>>,T1,T2,T3,T4,T5)
+// 0x000000E5 AirFramework.UnitList`1<T1> AirFramework.MessageExtensions::CallAll(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`1<T1>>)
+// 0x000000E6 AirFramework.UnitList`1<T2> AirFramework.MessageExtensions::CallAll(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`2<T1,T2>>,T1)
+// 0x000000E7 AirFramework.UnitList`1<T3> AirFramework.MessageExtensions::CallAll(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`3<T1,T2,T3>>,T1,T2)
+// 0x000000E8 AirFramework.UnitList`1<T4> AirFramework.MessageExtensions::CallAll(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`4<T1,T2,T3,T4>>,T1,T2,T3)
+// 0x000000E9 AirFramework.UnitList`1<T5> AirFramework.MessageExtensions::CallAll(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`5<T1,T2,T3,T4,T5>>,T1,T2,T3,T4)
+// 0x000000EA AirFramework.UnitList`1<T6> AirFramework.MessageExtensions::CallAll(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`6<T1,T2,T3,T4,T5,T6>>,T1,T2,T3,T4,T5)
+// 0x000000EB AirFramework.AirTask`1<T1> AirFramework.MessageExtensions::CallAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`1<AirFramework.AirTask`1<T1>>>)
+// 0x000000EC AirFramework.AirTask`1<T2> AirFramework.MessageExtensions::CallAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`2<T1,AirFramework.AirTask`1<T2>>>,T1)
+// 0x000000ED AirFramework.AirTask`1<T3> AirFramework.MessageExtensions::CallAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`3<T1,T2,AirFramework.AirTask`1<T3>>>,T1,T2)
+// 0x000000EE AirFramework.AirTask`1<T4> AirFramework.MessageExtensions::CallAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`4<T1,T2,T3,AirFramework.AirTask`1<T4>>>,T1,T2,T3)
+// 0x000000EF AirFramework.AirTask`1<T5> AirFramework.MessageExtensions::CallAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`5<T1,T2,T3,T4,AirFramework.AirTask`1<T5>>>,T1,T2,T3,T4)
+// 0x000000F0 AirFramework.AirTask`1<T6> AirFramework.MessageExtensions::CallAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`6<T1,T2,T3,T4,T5,AirFramework.AirTask`1<T6>>>,T1,T2,T3,T4,T5)
+// 0x000000F1 AirFramework.UnitList`1<T1> AirFramework.MessageExtensions::Call(AirFramework.IDispatcherOut`1<AirFramework.ICallEvent`1<T1>>)
+// 0x000000F2 AirFramework.UnitList`1<T2> AirFramework.MessageExtensions::Call(AirFramework.IDispatcherOut`1<AirFramework.ICallEvent`2<T1,T2>>,T1)
+// 0x000000F3 AirFramework.UnitList`1<T3> AirFramework.MessageExtensions::Call(AirFramework.IDispatcherOut`1<AirFramework.ICallEvent`3<T1,T2,T3>>,T1,T2)
+// 0x000000F4 AirFramework.UnitList`1<T4> AirFramework.MessageExtensions::Call(AirFramework.IDispatcherOut`1<AirFramework.ICallEvent`4<T1,T2,T3,T4>>,T1,T2,T3)
+// 0x000000F5 AirFramework.UnitList`1<T5> AirFramework.MessageExtensions::Call(AirFramework.IDispatcherOut`1<AirFramework.ICallEvent`5<T1,T2,T3,T4,T5>>,T1,T2,T3,T4)
+// 0x000000F6 AirFramework.UnitList`1<T6> AirFramework.MessageExtensions::Call(AirFramework.IDispatcherOut`1<AirFramework.ICallEvent`6<T1,T2,T3,T4,T5,T6>>,T1,T2,T3,T4,T5)
+// 0x000000F7 System.Void AirFramework.MessageExtensions::Publish(AirFramework.IOperatorOut`1<AirFramework.ISendEvent>)
 extern void MessageExtensions_Publish_m25BF53E34E2907D63BE3A2E92F4F9BEBDF3B8612 (void);
-// 0x000000F5 System.Void AirFramework.MessageExtensions::Publish(AirFramework.IOperatorOut`1<AirFramework.ISendEvent`1<T1>>,T1)
-// 0x000000F6 System.Void AirFramework.MessageExtensions::Publish(AirFramework.IOperatorOut`1<AirFramework.ISendEvent`2<T1,T2>>,T1,T2)
-// 0x000000F7 System.Void AirFramework.MessageExtensions::Publish(AirFramework.IOperatorOut`1<AirFramework.ISendEvent`3<T1,T2,T3>>,T1,T2,T3)
-// 0x000000F8 System.Void AirFramework.MessageExtensions::Publish(AirFramework.IOperatorOut`1<AirFramework.ISendEvent`4<T1,T2,T3,T4>>,T1,T2,T3,T4)
-// 0x000000F9 System.Void AirFramework.MessageExtensions::Publish(AirFramework.IOperatorOut`1<AirFramework.ISendEvent`5<T1,T2,T3,T4,T5>>,T1,T2,T3,T4,T5)
-// 0x000000FA System.Void AirFramework.MessageExtensions::Publish(AirFramework.IDispatcherOut`1<AirFramework.ISendEvent>)
+// 0x000000F8 System.Void AirFramework.MessageExtensions::Publish(AirFramework.IOperatorOut`1<AirFramework.ISendEvent`1<T1>>,T1)
+// 0x000000F9 System.Void AirFramework.MessageExtensions::Publish(AirFramework.IOperatorOut`1<AirFramework.ISendEvent`2<T1,T2>>,T1,T2)
+// 0x000000FA System.Void AirFramework.MessageExtensions::Publish(AirFramework.IOperatorOut`1<AirFramework.ISendEvent`3<T1,T2,T3>>,T1,T2,T3)
+// 0x000000FB System.Void AirFramework.MessageExtensions::Publish(AirFramework.IOperatorOut`1<AirFramework.ISendEvent`4<T1,T2,T3,T4>>,T1,T2,T3,T4)
+// 0x000000FC System.Void AirFramework.MessageExtensions::Publish(AirFramework.IOperatorOut`1<AirFramework.ISendEvent`5<T1,T2,T3,T4,T5>>,T1,T2,T3,T4,T5)
+// 0x000000FD System.Void AirFramework.MessageExtensions::Publish(AirFramework.IDispatcherOut`1<AirFramework.ISendEvent>)
 extern void MessageExtensions_Publish_m650A636AA62BB60F77579A53E48E8F6EE2795DF1 (void);
-// 0x000000FB System.Void AirFramework.MessageExtensions::Publish(AirFramework.IDispatcherOut`1<AirFramework.ISendEvent`1<T1>>,T1)
-// 0x000000FC System.Void AirFramework.MessageExtensions::Publish(AirFramework.IDispatcherOut`1<AirFramework.ISendEvent`2<T1,T2>>,T1,T2)
-// 0x000000FD System.Void AirFramework.MessageExtensions::Publish(AirFramework.IDispatcherOut`1<AirFramework.ISendEvent`3<T1,T2,T3>>,T1,T2,T3)
-// 0x000000FE System.Void AirFramework.MessageExtensions::Publish(AirFramework.IDispatcherOut`1<AirFramework.ISendEvent`4<T1,T2,T3,T4>>,T1,T2,T3,T4)
-// 0x000000FF System.Void AirFramework.MessageExtensions::Publish(AirFramework.IDispatcherOut`1<AirFramework.ISendEvent`5<T1,T2,T3,T4,T5>>,T1,T2,T3,T4,T5)
-// 0x00000100 AirFramework.AirTask AirFramework.MessageExtensions::SendAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`1<AirFramework.AirTask>>)
+// 0x000000FE System.Void AirFramework.MessageExtensions::Publish(AirFramework.IDispatcherOut`1<AirFramework.ISendEvent`1<T1>>,T1)
+// 0x000000FF System.Void AirFramework.MessageExtensions::Publish(AirFramework.IDispatcherOut`1<AirFramework.ISendEvent`2<T1,T2>>,T1,T2)
+// 0x00000100 System.Void AirFramework.MessageExtensions::Publish(AirFramework.IDispatcherOut`1<AirFramework.ISendEvent`3<T1,T2,T3>>,T1,T2,T3)
+// 0x00000101 System.Void AirFramework.MessageExtensions::Publish(AirFramework.IDispatcherOut`1<AirFramework.ISendEvent`4<T1,T2,T3,T4>>,T1,T2,T3,T4)
+// 0x00000102 System.Void AirFramework.MessageExtensions::Publish(AirFramework.IDispatcherOut`1<AirFramework.ISendEvent`5<T1,T2,T3,T4,T5>>,T1,T2,T3,T4,T5)
+// 0x00000103 AirFramework.AirTask AirFramework.MessageExtensions::SendAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`1<AirFramework.AirTask>>)
 extern void MessageExtensions_SendAsync_m3D8E88F222B32BA0DD833B125139A4F04D91AA25 (void);
-// 0x00000101 AirFramework.AirTask AirFramework.MessageExtensions::SendAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`2<T1,AirFramework.AirTask>>,T1)
-// 0x00000102 AirFramework.AirTask AirFramework.MessageExtensions::SendAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`3<T1,T2,AirFramework.AirTask>>,T1,T2)
-// 0x00000103 AirFramework.AirTask AirFramework.MessageExtensions::SendAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`4<T1,T2,T3,AirFramework.AirTask>>,T1,T2,T3)
-// 0x00000104 AirFramework.AirTask AirFramework.MessageExtensions::SendAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`5<T1,T2,T3,T4,AirFramework.AirTask>>,T1,T2,T3,T4)
-// 0x00000105 AirFramework.AirTask AirFramework.MessageExtensions::SendAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`6<T1,T2,T3,T4,T5,AirFramework.AirTask>>,T1,T2,T3,T4,T5)
-// 0x00000106 System.Void AirFramework.MessageExtensions::Subscribe(AirFramework.IOperatorOut`1<AirFramework.ISendEvent>,System.Action)
+// 0x00000104 AirFramework.AirTask AirFramework.MessageExtensions::SendAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`2<T1,AirFramework.AirTask>>,T1)
+// 0x00000105 AirFramework.AirTask AirFramework.MessageExtensions::SendAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`3<T1,T2,AirFramework.AirTask>>,T1,T2)
+// 0x00000106 AirFramework.AirTask AirFramework.MessageExtensions::SendAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`4<T1,T2,T3,AirFramework.AirTask>>,T1,T2,T3)
+// 0x00000107 AirFramework.AirTask AirFramework.MessageExtensions::SendAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`5<T1,T2,T3,T4,AirFramework.AirTask>>,T1,T2,T3,T4)
+// 0x00000108 AirFramework.AirTask AirFramework.MessageExtensions::SendAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`6<T1,T2,T3,T4,T5,AirFramework.AirTask>>,T1,T2,T3,T4,T5)
+// 0x00000109 System.Void AirFramework.MessageExtensions::Subscribe(AirFramework.IOperatorOut`1<AirFramework.ISendEvent>,System.Action)
 extern void MessageExtensions_Subscribe_m5C3769A91D3FFBABC90CDDA2027463DE5EBF95E1 (void);
-// 0x00000107 System.Void AirFramework.MessageExtensions::Subscribe(AirFramework.IOperatorOut`1<AirFramework.ISendEvent`1<T1>>,System.Action`1<T1>)
-// 0x00000108 System.Void AirFramework.MessageExtensions::Subscribe(AirFramework.IOperatorOut`1<AirFramework.ISendEvent`2<T1,T2>>,System.Action`2<T1,T2>)
-// 0x00000109 System.Void AirFramework.MessageExtensions::Subscribe(AirFramework.IOperatorOut`1<AirFramework.ISendEvent`3<T1,T2,T3>>,System.Action`3<T1,T2,T3>)
-// 0x0000010A System.Void AirFramework.MessageExtensions::Subscribe(AirFramework.IOperatorOut`1<AirFramework.ISendEvent`4<T1,T2,T3,T4>>,System.Action`4<T1,T2,T3,T4>)
-// 0x0000010B System.Void AirFramework.MessageExtensions::Subscribe(AirFramework.IOperatorOut`1<AirFramework.ISendEvent`5<T1,T2,T3,T4,T5>>,System.Action`5<T1,T2,T3,T4,T5>)
-// 0x0000010C System.Void AirFramework.MessageExtensions::Subscribe(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`1<T1>>,System.Func`1<T1>)
-// 0x0000010D System.Void AirFramework.MessageExtensions::Subscribe(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`2<T1,T2>>,System.Func`2<T1,T2>)
-// 0x0000010E System.Void AirFramework.MessageExtensions::Subscribe(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`3<T1,T2,T3>>,System.Func`3<T1,T2,T3>)
-// 0x0000010F System.Void AirFramework.MessageExtensions::Subscribe(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`4<T1,T2,T3,T4>>,System.Func`4<T1,T2,T3,T4>)
-// 0x00000110 System.Void AirFramework.MessageExtensions::Subscribe(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`5<T1,T2,T3,T4,T5>>,System.Func`5<T1,T2,T3,T4,T5>)
-// 0x00000111 System.Void AirFramework.MessageExtensions::Subscribe(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`6<T1,T2,T3,T4,T5,T6>>,System.Func`6<T1,T2,T3,T4,T5,T6>)
-// 0x00000112 System.Boolean AirFramework.MessageExtensions::TryCall(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`1<T1>>,T1&)
-// 0x00000113 System.Boolean AirFramework.MessageExtensions::TryCall(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`2<T1,T2>>,T1,T2&)
-// 0x00000114 System.Boolean AirFramework.MessageExtensions::TryCall(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`3<T1,T2,T3>>,T1,T2,T3&)
-// 0x00000115 System.Boolean AirFramework.MessageExtensions::TryCall(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`4<T1,T2,T3,T4>>,T1,T2,T3,T4&)
-// 0x00000116 System.Boolean AirFramework.MessageExtensions::TryCall(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`5<T1,T2,T3,T4,T5>>,T1,T2,T3,T4,T5&)
-// 0x00000117 System.Boolean AirFramework.MessageExtensions::TryCall(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`6<T1,T2,T3,T4,T5,T6>>,T1,T2,T3,T4,T5,T6&)
-// 0x00000118 System.Boolean AirFramework.MessageExtensions::TryCallAll(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`1<T1>>,AirFramework.UnitList`1<T1>&)
-// 0x00000119 System.Boolean AirFramework.MessageExtensions::TryCallAll(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`2<T1,T2>>,T1,AirFramework.UnitList`1<T2>&)
-// 0x0000011A System.Boolean AirFramework.MessageExtensions::TryCallAll(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`3<T1,T2,T3>>,T1,T2,AirFramework.UnitList`1<T3>&)
-// 0x0000011B System.Boolean AirFramework.MessageExtensions::TryCallAll(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`4<T1,T2,T3,T4>>,T1,T2,T3,AirFramework.UnitList`1<T4>&)
-// 0x0000011C System.Boolean AirFramework.MessageExtensions::TryCallAll(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`5<T1,T2,T3,T4,T5>>,T1,T2,T3,T4,AirFramework.UnitList`1<T5>&)
-// 0x0000011D System.Boolean AirFramework.MessageExtensions::TryCallAll(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`6<T1,T2,T3,T4,T5,T6>>,T1,T2,T3,T4,T5,AirFramework.UnitList`1<T6>&)
-// 0x0000011E AirFramework.AirTask`1<AirFramework.UnitList`1<T1>> AirFramework.MessageExtensions::TryCallAllAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`1<AirFramework.AirTask`1<T1>>>)
-// 0x0000011F AirFramework.AirTask`1<AirFramework.UnitList`1<T2>> AirFramework.MessageExtensions::TryCallAllAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`2<T1,AirFramework.AirTask`1<T2>>>,T1)
-// 0x00000120 AirFramework.AirTask`1<AirFramework.UnitList`1<T3>> AirFramework.MessageExtensions::TryCallAllAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`3<T1,T2,AirFramework.AirTask`1<T3>>>,T1,T2)
-// 0x00000121 AirFramework.AirTask`1<AirFramework.UnitList`1<T4>> AirFramework.MessageExtensions::TryCallAllAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`4<T1,T2,T3,AirFramework.AirTask`1<T4>>>,T1,T2,T3)
-// 0x00000122 AirFramework.AirTask`1<AirFramework.UnitList`1<T5>> AirFramework.MessageExtensions::TryCallAllAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`5<T1,T2,T3,T4,AirFramework.AirTask`1<T5>>>,T1,T2,T3,T4)
-// 0x00000123 AirFramework.AirTask`1<AirFramework.UnitList`1<T6>> AirFramework.MessageExtensions::TryCallAllAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`6<T1,T2,T3,T4,T5,AirFramework.AirTask`1<T6>>>,T1,T2,T3,T4,T5)
-// 0x00000124 AirFramework.AirTask`1<T1> AirFramework.MessageExtensions::TryCallAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`1<AirFramework.AirTask`1<T1>>>)
-// 0x00000125 AirFramework.AirTask`1<T2> AirFramework.MessageExtensions::TryCallAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`2<T1,AirFramework.AirTask`1<T2>>>,T1)
-// 0x00000126 AirFramework.AirTask`1<T3> AirFramework.MessageExtensions::TryCallAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`3<T1,T2,AirFramework.AirTask`1<T3>>>,T1,T2)
-// 0x00000127 AirFramework.AirTask`1<T4> AirFramework.MessageExtensions::TryCallAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`4<T1,T2,T3,AirFramework.AirTask`1<T4>>>,T1,T2,T3)
-// 0x00000128 AirFramework.AirTask`1<T5> AirFramework.MessageExtensions::TryCallAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`5<T1,T2,T3,T4,AirFramework.AirTask`1<T5>>>,T1,T2,T3,T4)
-// 0x00000129 AirFramework.AirTask`1<T6> AirFramework.MessageExtensions::TryCallAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`6<T1,T2,T3,T4,T5,AirFramework.AirTask`1<T6>>>,T1,T2,T3,T4,T5)
-// 0x0000012A AirFramework.AirTask AirFramework.MessageExtensions::TrySendAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`1<AirFramework.AirTask>>)
+// 0x0000010A System.Void AirFramework.MessageExtensions::Subscribe(AirFramework.IOperatorOut`1<AirFramework.ISendEvent`1<T1>>,System.Action`1<T1>)
+// 0x0000010B System.Void AirFramework.MessageExtensions::Subscribe(AirFramework.IOperatorOut`1<AirFramework.ISendEvent`2<T1,T2>>,System.Action`2<T1,T2>)
+// 0x0000010C System.Void AirFramework.MessageExtensions::Subscribe(AirFramework.IOperatorOut`1<AirFramework.ISendEvent`3<T1,T2,T3>>,System.Action`3<T1,T2,T3>)
+// 0x0000010D System.Void AirFramework.MessageExtensions::Subscribe(AirFramework.IOperatorOut`1<AirFramework.ISendEvent`4<T1,T2,T3,T4>>,System.Action`4<T1,T2,T3,T4>)
+// 0x0000010E System.Void AirFramework.MessageExtensions::Subscribe(AirFramework.IOperatorOut`1<AirFramework.ISendEvent`5<T1,T2,T3,T4,T5>>,System.Action`5<T1,T2,T3,T4,T5>)
+// 0x0000010F System.Void AirFramework.MessageExtensions::Subscribe(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`1<T1>>,System.Func`1<T1>)
+// 0x00000110 System.Void AirFramework.MessageExtensions::Subscribe(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`2<T1,T2>>,System.Func`2<T1,T2>)
+// 0x00000111 System.Void AirFramework.MessageExtensions::Subscribe(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`3<T1,T2,T3>>,System.Func`3<T1,T2,T3>)
+// 0x00000112 System.Void AirFramework.MessageExtensions::Subscribe(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`4<T1,T2,T3,T4>>,System.Func`4<T1,T2,T3,T4>)
+// 0x00000113 System.Void AirFramework.MessageExtensions::Subscribe(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`5<T1,T2,T3,T4,T5>>,System.Func`5<T1,T2,T3,T4,T5>)
+// 0x00000114 System.Void AirFramework.MessageExtensions::Subscribe(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`6<T1,T2,T3,T4,T5,T6>>,System.Func`6<T1,T2,T3,T4,T5,T6>)
+// 0x00000115 System.Boolean AirFramework.MessageExtensions::TryCall(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`1<T1>>,T1&)
+// 0x00000116 System.Boolean AirFramework.MessageExtensions::TryCall(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`2<T1,T2>>,T1,T2&)
+// 0x00000117 System.Boolean AirFramework.MessageExtensions::TryCall(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`3<T1,T2,T3>>,T1,T2,T3&)
+// 0x00000118 System.Boolean AirFramework.MessageExtensions::TryCall(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`4<T1,T2,T3,T4>>,T1,T2,T3,T4&)
+// 0x00000119 System.Boolean AirFramework.MessageExtensions::TryCall(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`5<T1,T2,T3,T4,T5>>,T1,T2,T3,T4,T5&)
+// 0x0000011A System.Boolean AirFramework.MessageExtensions::TryCall(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`6<T1,T2,T3,T4,T5,T6>>,T1,T2,T3,T4,T5,T6&)
+// 0x0000011B System.Boolean AirFramework.MessageExtensions::TryCallAll(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`1<T1>>,AirFramework.UnitList`1<T1>&)
+// 0x0000011C System.Boolean AirFramework.MessageExtensions::TryCallAll(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`2<T1,T2>>,T1,AirFramework.UnitList`1<T2>&)
+// 0x0000011D System.Boolean AirFramework.MessageExtensions::TryCallAll(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`3<T1,T2,T3>>,T1,T2,AirFramework.UnitList`1<T3>&)
+// 0x0000011E System.Boolean AirFramework.MessageExtensions::TryCallAll(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`4<T1,T2,T3,T4>>,T1,T2,T3,AirFramework.UnitList`1<T4>&)
+// 0x0000011F System.Boolean AirFramework.MessageExtensions::TryCallAll(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`5<T1,T2,T3,T4,T5>>,T1,T2,T3,T4,AirFramework.UnitList`1<T5>&)
+// 0x00000120 System.Boolean AirFramework.MessageExtensions::TryCallAll(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`6<T1,T2,T3,T4,T5,T6>>,T1,T2,T3,T4,T5,AirFramework.UnitList`1<T6>&)
+// 0x00000121 AirFramework.AirTask`1<AirFramework.UnitList`1<T1>> AirFramework.MessageExtensions::TryCallAllAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`1<AirFramework.AirTask`1<T1>>>)
+// 0x00000122 AirFramework.AirTask`1<AirFramework.UnitList`1<T2>> AirFramework.MessageExtensions::TryCallAllAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`2<T1,AirFramework.AirTask`1<T2>>>,T1)
+// 0x00000123 AirFramework.AirTask`1<AirFramework.UnitList`1<T3>> AirFramework.MessageExtensions::TryCallAllAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`3<T1,T2,AirFramework.AirTask`1<T3>>>,T1,T2)
+// 0x00000124 AirFramework.AirTask`1<AirFramework.UnitList`1<T4>> AirFramework.MessageExtensions::TryCallAllAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`4<T1,T2,T3,AirFramework.AirTask`1<T4>>>,T1,T2,T3)
+// 0x00000125 AirFramework.AirTask`1<AirFramework.UnitList`1<T5>> AirFramework.MessageExtensions::TryCallAllAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`5<T1,T2,T3,T4,AirFramework.AirTask`1<T5>>>,T1,T2,T3,T4)
+// 0x00000126 AirFramework.AirTask`1<AirFramework.UnitList`1<T6>> AirFramework.MessageExtensions::TryCallAllAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`6<T1,T2,T3,T4,T5,AirFramework.AirTask`1<T6>>>,T1,T2,T3,T4,T5)
+// 0x00000127 AirFramework.AirTask`1<T1> AirFramework.MessageExtensions::TryCallAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`1<AirFramework.AirTask`1<T1>>>)
+// 0x00000128 AirFramework.AirTask`1<T2> AirFramework.MessageExtensions::TryCallAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`2<T1,AirFramework.AirTask`1<T2>>>,T1)
+// 0x00000129 AirFramework.AirTask`1<T3> AirFramework.MessageExtensions::TryCallAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`3<T1,T2,AirFramework.AirTask`1<T3>>>,T1,T2)
+// 0x0000012A AirFramework.AirTask`1<T4> AirFramework.MessageExtensions::TryCallAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`4<T1,T2,T3,AirFramework.AirTask`1<T4>>>,T1,T2,T3)
+// 0x0000012B AirFramework.AirTask`1<T5> AirFramework.MessageExtensions::TryCallAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`5<T1,T2,T3,T4,AirFramework.AirTask`1<T5>>>,T1,T2,T3,T4)
+// 0x0000012C AirFramework.AirTask`1<T6> AirFramework.MessageExtensions::TryCallAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`6<T1,T2,T3,T4,T5,AirFramework.AirTask`1<T6>>>,T1,T2,T3,T4,T5)
+// 0x0000012D AirFramework.AirTask AirFramework.MessageExtensions::TrySendAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`1<AirFramework.AirTask>>)
 extern void MessageExtensions_TrySendAsync_m4E0FC32426A0AF41B921A33FC2CE4A4365B90DC1 (void);
-// 0x0000012B AirFramework.AirTask AirFramework.MessageExtensions::TrySendAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`2<T1,AirFramework.AirTask>>,T1)
-// 0x0000012C AirFramework.AirTask AirFramework.MessageExtensions::TrySendAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`3<T1,T2,AirFramework.AirTask>>,T1,T2)
-// 0x0000012D AirFramework.AirTask AirFramework.MessageExtensions::TrySendAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`4<T1,T2,T3,AirFramework.AirTask>>,T1,T2,T3)
-// 0x0000012E AirFramework.AirTask AirFramework.MessageExtensions::TrySendAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`5<T1,T2,T3,T4,AirFramework.AirTask>>,T1,T2,T3,T4)
-// 0x0000012F AirFramework.AirTask AirFramework.MessageExtensions::TrySendAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`6<T1,T2,T3,T4,T5,AirFramework.AirTask>>,T1,T2,T3,T4,T5)
-// 0x00000130 System.Void AirFramework.MessageExtensions::UnSubscribe(AirFramework.IOperatorOut`1<AirFramework.ISendEvent>,System.Action)
+// 0x0000012E AirFramework.AirTask AirFramework.MessageExtensions::TrySendAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`2<T1,AirFramework.AirTask>>,T1)
+// 0x0000012F AirFramework.AirTask AirFramework.MessageExtensions::TrySendAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`3<T1,T2,AirFramework.AirTask>>,T1,T2)
+// 0x00000130 AirFramework.AirTask AirFramework.MessageExtensions::TrySendAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`4<T1,T2,T3,AirFramework.AirTask>>,T1,T2,T3)
+// 0x00000131 AirFramework.AirTask AirFramework.MessageExtensions::TrySendAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`5<T1,T2,T3,T4,AirFramework.AirTask>>,T1,T2,T3,T4)
+// 0x00000132 AirFramework.AirTask AirFramework.MessageExtensions::TrySendAsync(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`6<T1,T2,T3,T4,T5,AirFramework.AirTask>>,T1,T2,T3,T4,T5)
+// 0x00000133 System.Void AirFramework.MessageExtensions::UnSubscribe(AirFramework.IOperatorOut`1<AirFramework.ISendEvent>,System.Action)
 extern void MessageExtensions_UnSubscribe_m8C92B0EE733A84110BA261702BC8EBE910C558F8 (void);
-// 0x00000131 System.Void AirFramework.MessageExtensions::UnSubscribe(AirFramework.IOperatorOut`1<AirFramework.ISendEvent`1<T1>>,System.Action`1<T1>)
-// 0x00000132 System.Void AirFramework.MessageExtensions::UnSubscribe(AirFramework.IOperatorOut`1<AirFramework.ISendEvent`2<T1,T2>>,System.Action`2<T1,T2>)
-// 0x00000133 System.Void AirFramework.MessageExtensions::UnSubscribe(AirFramework.IOperatorOut`1<AirFramework.ISendEvent`3<T1,T2,T3>>,System.Action`3<T1,T2,T3>)
-// 0x00000134 System.Void AirFramework.MessageExtensions::UnSubscribe(AirFramework.IOperatorOut`1<AirFramework.ISendEvent`4<T1,T2,T3,T4>>,System.Action`4<T1,T2,T3,T4>)
-// 0x00000135 System.Void AirFramework.MessageExtensions::UnSubscribe(AirFramework.IOperatorOut`1<AirFramework.ISendEvent`5<T1,T2,T3,T4,T5>>,System.Action`5<T1,T2,T3,T4,T5>)
-// 0x00000136 System.Void AirFramework.MessageExtensions::UnSubscribe(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`1<T1>>,System.Func`1<T1>)
-// 0x00000137 System.Void AirFramework.MessageExtensions::UnSubscribe(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`2<T1,T2>>,System.Func`2<T1,T2>)
-// 0x00000138 System.Void AirFramework.MessageExtensions::UnSubscribe(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`3<T1,T2,T3>>,System.Func`3<T1,T2,T3>)
-// 0x00000139 System.Void AirFramework.MessageExtensions::UnSubscribe(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`4<T1,T2,T3,T4>>,System.Func`4<T1,T2,T3,T4>)
-// 0x0000013A System.Void AirFramework.MessageExtensions::UnSubscribe(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`5<T1,T2,T3,T4,T5>>,System.Func`5<T1,T2,T3,T4,T5>)
-// 0x0000013B System.Void AirFramework.MessageExtensions::UnSubscribe(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`6<T1,T2,T3,T4,T5,T6>>,System.Func`6<T1,T2,T3,T4,T5,T6>)
-// 0x0000013C System.Void AirFramework.MessageExtensions/<CallAsync>d__12`1::MoveNext()
-// 0x0000013D System.Void AirFramework.MessageExtensions/<CallAsync>d__12`1::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-// 0x0000013E System.Void AirFramework.MessageExtensions/<CallAsync>d__13`2::MoveNext()
-// 0x0000013F System.Void AirFramework.MessageExtensions/<CallAsync>d__13`2::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-// 0x00000140 System.Void AirFramework.MessageExtensions/<CallAsync>d__14`3::MoveNext()
-// 0x00000141 System.Void AirFramework.MessageExtensions/<CallAsync>d__14`3::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-// 0x00000142 System.Void AirFramework.MessageExtensions/<CallAsync>d__15`4::MoveNext()
-// 0x00000143 System.Void AirFramework.MessageExtensions/<CallAsync>d__15`4::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-// 0x00000144 System.Void AirFramework.MessageExtensions/<CallAsync>d__16`5::MoveNext()
-// 0x00000145 System.Void AirFramework.MessageExtensions/<CallAsync>d__16`5::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-// 0x00000146 System.Void AirFramework.MessageExtensions/<CallAsync>d__17`6::MoveNext()
-// 0x00000147 System.Void AirFramework.MessageExtensions/<CallAsync>d__17`6::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-// 0x00000148 System.Void AirFramework.MessageExtensions/<SendAsync>d__36::MoveNext()
+// 0x00000134 System.Void AirFramework.MessageExtensions::UnSubscribe(AirFramework.IOperatorOut`1<AirFramework.ISendEvent`1<T1>>,System.Action`1<T1>)
+// 0x00000135 System.Void AirFramework.MessageExtensions::UnSubscribe(AirFramework.IOperatorOut`1<AirFramework.ISendEvent`2<T1,T2>>,System.Action`2<T1,T2>)
+// 0x00000136 System.Void AirFramework.MessageExtensions::UnSubscribe(AirFramework.IOperatorOut`1<AirFramework.ISendEvent`3<T1,T2,T3>>,System.Action`3<T1,T2,T3>)
+// 0x00000137 System.Void AirFramework.MessageExtensions::UnSubscribe(AirFramework.IOperatorOut`1<AirFramework.ISendEvent`4<T1,T2,T3,T4>>,System.Action`4<T1,T2,T3,T4>)
+// 0x00000138 System.Void AirFramework.MessageExtensions::UnSubscribe(AirFramework.IOperatorOut`1<AirFramework.ISendEvent`5<T1,T2,T3,T4,T5>>,System.Action`5<T1,T2,T3,T4,T5>)
+// 0x00000139 System.Void AirFramework.MessageExtensions::UnSubscribe(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`1<T1>>,System.Func`1<T1>)
+// 0x0000013A System.Void AirFramework.MessageExtensions::UnSubscribe(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`2<T1,T2>>,System.Func`2<T1,T2>)
+// 0x0000013B System.Void AirFramework.MessageExtensions::UnSubscribe(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`3<T1,T2,T3>>,System.Func`3<T1,T2,T3>)
+// 0x0000013C System.Void AirFramework.MessageExtensions::UnSubscribe(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`4<T1,T2,T3,T4>>,System.Func`4<T1,T2,T3,T4>)
+// 0x0000013D System.Void AirFramework.MessageExtensions::UnSubscribe(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`5<T1,T2,T3,T4,T5>>,System.Func`5<T1,T2,T3,T4,T5>)
+// 0x0000013E System.Void AirFramework.MessageExtensions::UnSubscribe(AirFramework.IOperatorOut`1<AirFramework.ICallEvent`6<T1,T2,T3,T4,T5,T6>>,System.Func`6<T1,T2,T3,T4,T5,T6>)
+// 0x0000013F System.Void AirFramework.MessageExtensions/<CallAsync>d__12`1::MoveNext()
+// 0x00000140 System.Void AirFramework.MessageExtensions/<CallAsync>d__12`1::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000141 System.Void AirFramework.MessageExtensions/<CallAsync>d__13`2::MoveNext()
+// 0x00000142 System.Void AirFramework.MessageExtensions/<CallAsync>d__13`2::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000143 System.Void AirFramework.MessageExtensions/<CallAsync>d__14`3::MoveNext()
+// 0x00000144 System.Void AirFramework.MessageExtensions/<CallAsync>d__14`3::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000145 System.Void AirFramework.MessageExtensions/<CallAsync>d__15`4::MoveNext()
+// 0x00000146 System.Void AirFramework.MessageExtensions/<CallAsync>d__15`4::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000147 System.Void AirFramework.MessageExtensions/<CallAsync>d__16`5::MoveNext()
+// 0x00000148 System.Void AirFramework.MessageExtensions/<CallAsync>d__16`5::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000149 System.Void AirFramework.MessageExtensions/<CallAsync>d__17`6::MoveNext()
+// 0x0000014A System.Void AirFramework.MessageExtensions/<CallAsync>d__17`6::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x0000014B System.Void AirFramework.MessageExtensions/<SendAsync>d__36::MoveNext()
 extern void U3CSendAsyncU3Ed__36_MoveNext_m7203B52B19BB1538C68217027DA388A40B196D03 (void);
-// 0x00000149 System.Void AirFramework.MessageExtensions/<SendAsync>d__36::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x0000014C System.Void AirFramework.MessageExtensions/<SendAsync>d__36::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CSendAsyncU3Ed__36_SetStateMachine_m062922F44434877E1662FCE0C2D34FBC439BF329 (void);
-// 0x0000014A System.Void AirFramework.MessageExtensions/<SendAsync>d__37`1::MoveNext()
-// 0x0000014B System.Void AirFramework.MessageExtensions/<SendAsync>d__37`1::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-// 0x0000014C System.Void AirFramework.MessageExtensions/<SendAsync>d__38`2::MoveNext()
-// 0x0000014D System.Void AirFramework.MessageExtensions/<SendAsync>d__38`2::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-// 0x0000014E System.Void AirFramework.MessageExtensions/<SendAsync>d__39`3::MoveNext()
-// 0x0000014F System.Void AirFramework.MessageExtensions/<SendAsync>d__39`3::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-// 0x00000150 System.Void AirFramework.MessageExtensions/<SendAsync>d__40`4::MoveNext()
-// 0x00000151 System.Void AirFramework.MessageExtensions/<SendAsync>d__40`4::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-// 0x00000152 System.Void AirFramework.MessageExtensions/<SendAsync>d__41`5::MoveNext()
-// 0x00000153 System.Void AirFramework.MessageExtensions/<SendAsync>d__41`5::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-// 0x00000154 System.Void AirFramework.MessageExtensions/<TryCallAllAsync>d__66`1::MoveNext()
-// 0x00000155 System.Void AirFramework.MessageExtensions/<TryCallAllAsync>d__66`1::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-// 0x00000156 System.Void AirFramework.MessageExtensions/<TryCallAllAsync>d__67`2::MoveNext()
-// 0x00000157 System.Void AirFramework.MessageExtensions/<TryCallAllAsync>d__67`2::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-// 0x00000158 System.Void AirFramework.MessageExtensions/<TryCallAllAsync>d__68`3::MoveNext()
-// 0x00000159 System.Void AirFramework.MessageExtensions/<TryCallAllAsync>d__68`3::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-// 0x0000015A System.Void AirFramework.MessageExtensions/<TryCallAllAsync>d__69`4::MoveNext()
-// 0x0000015B System.Void AirFramework.MessageExtensions/<TryCallAllAsync>d__69`4::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-// 0x0000015C System.Void AirFramework.MessageExtensions/<TryCallAllAsync>d__70`5::MoveNext()
-// 0x0000015D System.Void AirFramework.MessageExtensions/<TryCallAllAsync>d__70`5::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-// 0x0000015E System.Void AirFramework.MessageExtensions/<TryCallAllAsync>d__71`6::MoveNext()
-// 0x0000015F System.Void AirFramework.MessageExtensions/<TryCallAllAsync>d__71`6::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-// 0x00000160 System.Void AirFramework.MessageExtensions/<TryCallAsync>d__72`1::MoveNext()
-// 0x00000161 System.Void AirFramework.MessageExtensions/<TryCallAsync>d__72`1::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-// 0x00000162 System.Void AirFramework.MessageExtensions/<TryCallAsync>d__73`2::MoveNext()
-// 0x00000163 System.Void AirFramework.MessageExtensions/<TryCallAsync>d__73`2::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-// 0x00000164 System.Void AirFramework.MessageExtensions/<TryCallAsync>d__74`3::MoveNext()
-// 0x00000165 System.Void AirFramework.MessageExtensions/<TryCallAsync>d__74`3::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-// 0x00000166 System.Void AirFramework.MessageExtensions/<TryCallAsync>d__75`4::MoveNext()
-// 0x00000167 System.Void AirFramework.MessageExtensions/<TryCallAsync>d__75`4::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-// 0x00000168 System.Void AirFramework.MessageExtensions/<TryCallAsync>d__76`5::MoveNext()
-// 0x00000169 System.Void AirFramework.MessageExtensions/<TryCallAsync>d__76`5::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-// 0x0000016A System.Void AirFramework.MessageExtensions/<TryCallAsync>d__77`6::MoveNext()
-// 0x0000016B System.Void AirFramework.MessageExtensions/<TryCallAsync>d__77`6::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-// 0x0000016C System.Void AirFramework.MessageExtensions/<TrySendAsync>d__78::MoveNext()
+// 0x0000014D System.Void AirFramework.MessageExtensions/<SendAsync>d__37`1::MoveNext()
+// 0x0000014E System.Void AirFramework.MessageExtensions/<SendAsync>d__37`1::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x0000014F System.Void AirFramework.MessageExtensions/<SendAsync>d__38`2::MoveNext()
+// 0x00000150 System.Void AirFramework.MessageExtensions/<SendAsync>d__38`2::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000151 System.Void AirFramework.MessageExtensions/<SendAsync>d__39`3::MoveNext()
+// 0x00000152 System.Void AirFramework.MessageExtensions/<SendAsync>d__39`3::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000153 System.Void AirFramework.MessageExtensions/<SendAsync>d__40`4::MoveNext()
+// 0x00000154 System.Void AirFramework.MessageExtensions/<SendAsync>d__40`4::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000155 System.Void AirFramework.MessageExtensions/<SendAsync>d__41`5::MoveNext()
+// 0x00000156 System.Void AirFramework.MessageExtensions/<SendAsync>d__41`5::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000157 System.Void AirFramework.MessageExtensions/<TryCallAllAsync>d__66`1::MoveNext()
+// 0x00000158 System.Void AirFramework.MessageExtensions/<TryCallAllAsync>d__66`1::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000159 System.Void AirFramework.MessageExtensions/<TryCallAllAsync>d__67`2::MoveNext()
+// 0x0000015A System.Void AirFramework.MessageExtensions/<TryCallAllAsync>d__67`2::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x0000015B System.Void AirFramework.MessageExtensions/<TryCallAllAsync>d__68`3::MoveNext()
+// 0x0000015C System.Void AirFramework.MessageExtensions/<TryCallAllAsync>d__68`3::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x0000015D System.Void AirFramework.MessageExtensions/<TryCallAllAsync>d__69`4::MoveNext()
+// 0x0000015E System.Void AirFramework.MessageExtensions/<TryCallAllAsync>d__69`4::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x0000015F System.Void AirFramework.MessageExtensions/<TryCallAllAsync>d__70`5::MoveNext()
+// 0x00000160 System.Void AirFramework.MessageExtensions/<TryCallAllAsync>d__70`5::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000161 System.Void AirFramework.MessageExtensions/<TryCallAllAsync>d__71`6::MoveNext()
+// 0x00000162 System.Void AirFramework.MessageExtensions/<TryCallAllAsync>d__71`6::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000163 System.Void AirFramework.MessageExtensions/<TryCallAsync>d__72`1::MoveNext()
+// 0x00000164 System.Void AirFramework.MessageExtensions/<TryCallAsync>d__72`1::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000165 System.Void AirFramework.MessageExtensions/<TryCallAsync>d__73`2::MoveNext()
+// 0x00000166 System.Void AirFramework.MessageExtensions/<TryCallAsync>d__73`2::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000167 System.Void AirFramework.MessageExtensions/<TryCallAsync>d__74`3::MoveNext()
+// 0x00000168 System.Void AirFramework.MessageExtensions/<TryCallAsync>d__74`3::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000169 System.Void AirFramework.MessageExtensions/<TryCallAsync>d__75`4::MoveNext()
+// 0x0000016A System.Void AirFramework.MessageExtensions/<TryCallAsync>d__75`4::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x0000016B System.Void AirFramework.MessageExtensions/<TryCallAsync>d__76`5::MoveNext()
+// 0x0000016C System.Void AirFramework.MessageExtensions/<TryCallAsync>d__76`5::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x0000016D System.Void AirFramework.MessageExtensions/<TryCallAsync>d__77`6::MoveNext()
+// 0x0000016E System.Void AirFramework.MessageExtensions/<TryCallAsync>d__77`6::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x0000016F System.Void AirFramework.MessageExtensions/<TrySendAsync>d__78::MoveNext()
 extern void U3CTrySendAsyncU3Ed__78_MoveNext_m8290F558F85B33B18C488E36FBE42013E579D57F (void);
-// 0x0000016D System.Void AirFramework.MessageExtensions/<TrySendAsync>d__78::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000170 System.Void AirFramework.MessageExtensions/<TrySendAsync>d__78::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CTrySendAsyncU3Ed__78_SetStateMachine_m48835206BFE2029A732E6052582BDBCD5B008FDE (void);
-// 0x0000016E System.Void AirFramework.MessageExtensions/<TrySendAsync>d__79`1::MoveNext()
-// 0x0000016F System.Void AirFramework.MessageExtensions/<TrySendAsync>d__79`1::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-// 0x00000170 System.Void AirFramework.MessageExtensions/<TrySendAsync>d__80`2::MoveNext()
-// 0x00000171 System.Void AirFramework.MessageExtensions/<TrySendAsync>d__80`2::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-// 0x00000172 System.Void AirFramework.MessageExtensions/<TrySendAsync>d__81`3::MoveNext()
-// 0x00000173 System.Void AirFramework.MessageExtensions/<TrySendAsync>d__81`3::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-// 0x00000174 System.Void AirFramework.MessageExtensions/<TrySendAsync>d__82`4::MoveNext()
-// 0x00000175 System.Void AirFramework.MessageExtensions/<TrySendAsync>d__82`4::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-// 0x00000176 System.Void AirFramework.MessageExtensions/<TrySendAsync>d__83`5::MoveNext()
-// 0x00000177 System.Void AirFramework.MessageExtensions/<TrySendAsync>d__83`5::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-// 0x00000178 System.Void AirFramework.CallAllNullEventException::.ctor()
+// 0x00000171 System.Void AirFramework.MessageExtensions/<TrySendAsync>d__79`1::MoveNext()
+// 0x00000172 System.Void AirFramework.MessageExtensions/<TrySendAsync>d__79`1::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000173 System.Void AirFramework.MessageExtensions/<TrySendAsync>d__80`2::MoveNext()
+// 0x00000174 System.Void AirFramework.MessageExtensions/<TrySendAsync>d__80`2::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000175 System.Void AirFramework.MessageExtensions/<TrySendAsync>d__81`3::MoveNext()
+// 0x00000176 System.Void AirFramework.MessageExtensions/<TrySendAsync>d__81`3::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000177 System.Void AirFramework.MessageExtensions/<TrySendAsync>d__82`4::MoveNext()
+// 0x00000178 System.Void AirFramework.MessageExtensions/<TrySendAsync>d__82`4::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000179 System.Void AirFramework.MessageExtensions/<TrySendAsync>d__83`5::MoveNext()
+// 0x0000017A System.Void AirFramework.MessageExtensions/<TrySendAsync>d__83`5::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x0000017B System.Void AirFramework.CallAllNullEventException::.ctor()
 extern void CallAllNullEventException__ctor_m4AC07717E3BA1631562CD5E803EB8795C955CCFA (void);
-// 0x00000179 System.Void AirFramework.AllocateHandler::OnLifeCycleRegister(AirFramework.IAllocate)
+// 0x0000017C System.Void AirFramework.AllocateHandler::OnLifeCycleRegister(AirFramework.IAllocate)
 extern void AllocateHandler_OnLifeCycleRegister_m8B142014039C39D29162EC9C794C99BE87543575 (void);
-// 0x0000017A System.Void AirFramework.AllocateHandler::OnLifeCycleUnRegister(AirFramework.IAllocate)
+// 0x0000017D System.Void AirFramework.AllocateHandler::OnLifeCycleUnRegister(AirFramework.IAllocate)
 extern void AllocateHandler_OnLifeCycleUnRegister_m887E465E3E789624495E247E9B91DAF6CAC8FF24 (void);
-// 0x0000017B System.Void AirFramework.AllocateHandler::.ctor()
+// 0x0000017E System.Void AirFramework.AllocateHandler::.ctor()
 extern void AllocateHandler__ctor_m9E229D04D3166C821909A54F26E5CE7CB3C712D0 (void);
-// 0x0000017C System.Void AirFramework.FrameworkInitializeHandler::OnLifeCycleRegister(AirFramework.IFrameworkInitialize)
+// 0x0000017F System.Void AirFramework.FrameworkInitializeHandler::OnLifeCycleRegister(AirFramework.IFrameworkInitialize)
 extern void FrameworkInitializeHandler_OnLifeCycleRegister_m88DFAF687606A4046C391672AE468DEFBC772BF2 (void);
-// 0x0000017D System.Void AirFramework.FrameworkInitializeHandler::OnLifeCycleUnRegister(AirFramework.IFrameworkInitialize)
+// 0x00000180 System.Void AirFramework.FrameworkInitializeHandler::OnLifeCycleUnRegister(AirFramework.IFrameworkInitialize)
 extern void FrameworkInitializeHandler_OnLifeCycleUnRegister_m01ED2EC2C47B06D7AAF9EFDCD560A1F63D7290FE (void);
-// 0x0000017E System.Void AirFramework.FrameworkInitializeHandler::.ctor()
+// 0x00000181 System.Void AirFramework.FrameworkInitializeHandler::.ctor()
 extern void FrameworkInitializeHandler__ctor_m5BFA7A251F9A70DF1BF03E253E96C6D527AA8E30 (void);
-// 0x0000017F System.Void AirFramework.RecycleHandler::OnLifeCycleRegister(AirFramework.IRecycle)
+// 0x00000182 System.Void AirFramework.RecycleHandler::OnLifeCycleRegister(AirFramework.IRecycle)
 extern void RecycleHandler_OnLifeCycleRegister_mA2DC10BF0611634FA356019CC92536740C1C8FDF (void);
-// 0x00000180 System.Void AirFramework.RecycleHandler::OnLifeCycleUnRegister(AirFramework.IRecycle)
+// 0x00000183 System.Void AirFramework.RecycleHandler::OnLifeCycleUnRegister(AirFramework.IRecycle)
 extern void RecycleHandler_OnLifeCycleUnRegister_m208AA4468D89623D308E004DAFF089DE24731940 (void);
-// 0x00000181 System.Void AirFramework.RecycleHandler::.ctor()
+// 0x00000184 System.Void AirFramework.RecycleHandler::.ctor()
 extern void RecycleHandler__ctor_m10FEA51DBB5FF78B0EBBF462CB2023317EF7A1B5 (void);
-// 0x00000182 System.Void AirFramework.UpdateHandler::OnLifeCycleRegister(AirFramework.IUpdate)
+// 0x00000185 System.Void AirFramework.UpdateHandler::OnLifeCycleRegister(AirFramework.IUpdate)
 extern void UpdateHandler_OnLifeCycleRegister_mCE1AB62B250C9E0912AF2D12E9DF5ED589B9F859 (void);
-// 0x00000183 System.Void AirFramework.UpdateHandler::OnLifeCycleUnRegister(AirFramework.IUpdate)
+// 0x00000186 System.Void AirFramework.UpdateHandler::OnLifeCycleUnRegister(AirFramework.IUpdate)
 extern void UpdateHandler_OnLifeCycleUnRegister_mD7357DCF280CA421F9A3B0941AFF2B2E80BBE103 (void);
-// 0x00000184 System.Void AirFramework.UpdateHandler::.ctor()
+// 0x00000187 System.Void AirFramework.UpdateHandler::.ctor()
 extern void UpdateHandler__ctor_m4B8286F104EF15F1C591AB6C86EC5880810F5915 (void);
-// 0x00000185 System.Void AirFramework.IAllocate::OnAllocate()
-// 0x00000186 System.Void AirFramework.IFrameworkInitialize::OnFrameworkInitialize()
-// 0x00000187 System.Void AirFramework.IRecycle::OnRecycle()
-// 0x00000188 System.Void AirFramework.IUpdate::Update(System.Single)
-// 0x00000189 System.Void AirFramework.LifeCycleExtensions::StartObjLife(System.Object)
+// 0x00000188 System.Void AirFramework.IAllocate::OnAllocate()
+// 0x00000189 System.Void AirFramework.IFrameworkInitialize::OnFrameworkInitialize()
+// 0x0000018A System.Void AirFramework.IRecycle::OnRecycle()
+// 0x0000018B System.Void AirFramework.IUpdate::Update(System.Single)
+// 0x0000018C System.Void AirFramework.LifeCycleExtensions::StartObjLife(System.Object)
 extern void LifeCycleExtensions_StartObjLife_m3FC3F591C07101F25B76D5B2CE32B949AEB06EA8 (void);
-// 0x0000018A T AirFramework.LifeCycleExtensions::StartLife(T)
-// 0x0000018B T AirFramework.LifeCycleExtensions::CloseLife(T)
-// 0x0000018C System.Void AirFramework.LifeCycleExtensions::CloseObjLife(System.Object)
+// 0x0000018D T AirFramework.LifeCycleExtensions::StartLife(T)
+// 0x0000018E T AirFramework.LifeCycleExtensions::CloseLife(T)
+// 0x0000018F System.Void AirFramework.LifeCycleExtensions::CloseObjLife(System.Object)
 extern void LifeCycleExtensions_CloseObjLife_m5FB5D93EF50D7AC04E05E43409BCE400ADE33CFB (void);
-// 0x0000018D System.Void AirFramework.LifeCycleManager::AnalyseAddAll(System.Object)
+// 0x00000190 System.Void AirFramework.LifeCycleManager::AnalyseAddAll(System.Object)
 extern void LifeCycleManager_AnalyseAddAll_mA98E51168497742C5F1248DEE1FF3851D76D0750 (void);
-// 0x0000018E System.Void AirFramework.LifeCycleManager::AnalyseRemoveAll(System.Object)
+// 0x00000191 System.Void AirFramework.LifeCycleManager::AnalyseRemoveAll(System.Object)
 extern void LifeCycleManager_AnalyseRemoveAll_mC6E57403E1D5DA99A2447F87BDAD3E9D3CAA45B3 (void);
-// 0x0000018F System.Void AirFramework.LifeCycleManager::AddLifeCycle()
-// 0x00000190 System.Void AirFramework.LifeCycleManager::AddLifeCycle(System.Type,System.Type)
+// 0x00000192 System.Void AirFramework.LifeCycleManager::AddLifeCycle()
+// 0x00000193 System.Void AirFramework.LifeCycleManager::AddLifeCycle(System.Type,System.Type)
 extern void LifeCycleManager_AddLifeCycle_m80FD6E7577080479488C229103EE612AF9BF4A81 (void);
-// 0x00000191 System.Void AirFramework.LifeCycleManager::.ctor()
+// 0x00000194 System.Void AirFramework.LifeCycleManager::.ctor()
 extern void LifeCycleManager__ctor_m5AF3A68CF6BB8CAEB31FA9E031105D226A9CAAE2 (void);
-// 0x00000192 System.Void AirFramework.LifeCycleManager/<>c__DisplayClass4_0`2::.ctor()
-// 0x00000193 System.Void AirFramework.LifeCycleManager/<>c__DisplayClass4_0`2::<AddLifeCycle>b__0(System.Object)
-// 0x00000194 System.Void AirFramework.LifeCycleManager/<>c__DisplayClass4_0`2::<AddLifeCycle>b__1(System.Object)
-// 0x00000195 System.Void AirFramework.LifeCycleManager/<>c__DisplayClass5_0::.ctor()
+// 0x00000195 System.Void AirFramework.LifeCycleManager/<>c__DisplayClass4_0`2::.ctor()
+// 0x00000196 System.Void AirFramework.LifeCycleManager/<>c__DisplayClass4_0`2::<AddLifeCycle>b__0(System.Object)
+// 0x00000197 System.Void AirFramework.LifeCycleManager/<>c__DisplayClass4_0`2::<AddLifeCycle>b__1(System.Object)
+// 0x00000198 System.Void AirFramework.LifeCycleManager/<>c__DisplayClass5_0::.ctor()
 extern void U3CU3Ec__DisplayClass5_0__ctor_mD10807D893E5322BEADE0078010C5DA5478A3B7D (void);
-// 0x00000196 System.Void AirFramework.LifeCycleManager/<>c__DisplayClass5_0::<AddLifeCycle>b__0(System.Object)
+// 0x00000199 System.Void AirFramework.LifeCycleManager/<>c__DisplayClass5_0::<AddLifeCycle>b__0(System.Object)
 extern void U3CU3Ec__DisplayClass5_0_U3CAddLifeCycleU3Eb__0_m8D3A0B8280D11E594596AF7896A7C9F2793BA5B6 (void);
-// 0x00000197 System.Void AirFramework.LifeCycleManager/<>c__DisplayClass5_0::<AddLifeCycle>b__1(System.Object)
+// 0x0000019A System.Void AirFramework.LifeCycleManager/<>c__DisplayClass5_0::<AddLifeCycle>b__1(System.Object)
 extern void U3CU3Ec__DisplayClass5_0_U3CAddLifeCycleU3Eb__1_m404F1967DB015CA7FE4C3835AE2CFA6BA7FB3314 (void);
-// 0x00000198 System.Void AirFramework.LifeCycleHandler::OnLifeCycleRegister(System.Object)
-// 0x00000199 System.Void AirFramework.LifeCycleHandler::OnLifeCycleUnRegister(System.Object)
-// 0x0000019A System.Void AirFramework.LifeCycleHandler::.ctor()
+// 0x0000019B System.Void AirFramework.LifeCycleHandler::OnLifeCycleRegister(System.Object)
+// 0x0000019C System.Void AirFramework.LifeCycleHandler::OnLifeCycleUnRegister(System.Object)
+// 0x0000019D System.Void AirFramework.LifeCycleHandler::.ctor()
 extern void LifeCycleHandler__ctor_m0C6AA3928D54E50AAED004278AF2A1730A0A69E9 (void);
-// 0x0000019B System.Void AirFramework.LifeCycleHandler`1::OnLifeCycleRegister(System.Object)
-// 0x0000019C System.Void AirFramework.LifeCycleHandler`1::OnLifeCycleUnRegister(System.Object)
-// 0x0000019D System.Void AirFramework.LifeCycleHandler`1::OnLifeCycleRegister(T)
-// 0x0000019E System.Void AirFramework.LifeCycleHandler`1::OnLifeCycleUnRegister(T)
-// 0x0000019F System.Void AirFramework.LifeCycleHandler`1::.ctor()
-// 0x000001A0 System.Int32 AirFramework.MessageDispatcher::get_Count()
+// 0x0000019E System.Void AirFramework.LifeCycleHandler`1::OnLifeCycleRegister(System.Object)
+// 0x0000019F System.Void AirFramework.LifeCycleHandler`1::OnLifeCycleUnRegister(System.Object)
+// 0x000001A0 System.Void AirFramework.LifeCycleHandler`1::OnLifeCycleRegister(T)
+// 0x000001A1 System.Void AirFramework.LifeCycleHandler`1::OnLifeCycleUnRegister(T)
+// 0x000001A2 System.Void AirFramework.LifeCycleHandler`1::.ctor()
+// 0x000001A3 System.Int32 AirFramework.MessageDispatcher::get_Count()
 extern void MessageDispatcher_get_Count_mABBD6A8EA11E0789B4FDBB0EB81E8809FBC61B4F (void);
-// 0x000001A1 AirFramework.DynamicDictionary`2<AirFramework.IMessageReceiver,AirFramework.MessageOperatorBox`1<AirFramework.Internal.IMessage>> AirFramework.MessageDispatcher::get_EventsContainer()
+// 0x000001A4 AirFramework.DynamicDictionary`2<AirFramework.IMessageReceiver,AirFramework.MessageOperatorBox`1<AirFramework.Internal.IMessage>> AirFramework.MessageDispatcher::get_EventsContainer()
 extern void MessageDispatcher_get_EventsContainer_m1867EED7F5C51F386142B52A4075428E7E286F63 (void);
-// 0x000001A2 System.Void AirFramework.MessageDispatcher::set_EventsContainer(AirFramework.DynamicDictionary`2<AirFramework.IMessageReceiver,AirFramework.MessageOperatorBox`1<AirFramework.Internal.IMessage>>)
+// 0x000001A5 System.Void AirFramework.MessageDispatcher::set_EventsContainer(AirFramework.DynamicDictionary`2<AirFramework.IMessageReceiver,AirFramework.MessageOperatorBox`1<AirFramework.Internal.IMessage>>)
 extern void MessageDispatcher_set_EventsContainer_mFD7894CF7239CC8BD019D89F9DD5FD371C6D5D9F (void);
-// 0x000001A3 System.Void AirFramework.MessageDispatcher::Clear()
+// 0x000001A6 System.Void AirFramework.MessageDispatcher::Clear()
 extern void MessageDispatcher_Clear_mD0463AEEFCFA4D7F79AB424E591DB262B421C5D2 (void);
-// 0x000001A4 System.Void AirFramework.MessageDispatcher::OnDispose()
+// 0x000001A7 System.Void AirFramework.MessageDispatcher::OnDispose()
 extern void MessageDispatcher_OnDispose_mFF0EFA66445B8651FD958B4AA3DCBFCA1E0CEFBC (void);
-// 0x000001A5 AirFramework.MessageOperatorBox`1<AirFramework.Internal.IMessage> AirFramework.MessageDispatcher::GetOrAddOperator(AirFramework.IMessageReceiver)
+// 0x000001A8 AirFramework.MessageOperatorBox`1<AirFramework.Internal.IMessage> AirFramework.MessageDispatcher::GetOrAddOperator(AirFramework.IMessageReceiver)
 extern void MessageDispatcher_GetOrAddOperator_m2F7E0D47AF60E6DCBC3592CC5BF86996C44A14DC (void);
-// 0x000001A6 AirFramework.MessageOperatorBox`1<AirFramework.Internal.IMessage> AirFramework.MessageDispatcher::GetOperatorOrDefault(AirFramework.IMessageReceiver)
+// 0x000001A9 AirFramework.MessageOperatorBox`1<AirFramework.Internal.IMessage> AirFramework.MessageDispatcher::GetOperatorOrDefault(AirFramework.IMessageReceiver)
 extern void MessageDispatcher_GetOperatorOrDefault_m62CC032356F719ACB14E2B0096A52532F60F0D49 (void);
-// 0x000001A7 System.Void AirFramework.MessageDispatcher::AddToReceiver(AirFramework.IMessageReceiver,System.Delegate)
+// 0x000001AA System.Void AirFramework.MessageDispatcher::AddToReceiver(AirFramework.IMessageReceiver,System.Delegate)
 extern void MessageDispatcher_AddToReceiver_mBFAB9E07235DD3D51A71A804596DFA3649442A1B (void);
-// 0x000001A8 System.Boolean AirFramework.MessageDispatcher::TryRemoveFromReceiver(AirFramework.IMessageReceiver,System.Delegate)
+// 0x000001AB System.Boolean AirFramework.MessageDispatcher::TryRemoveFromReceiver(AirFramework.IMessageReceiver,System.Delegate)
 extern void MessageDispatcher_TryRemoveFromReceiver_m1F06CCE815BB079C7D475FB00AFC9FE4DEEF2FC4 (void);
-// 0x000001A9 System.Boolean AirFramework.MessageDispatcher::TryRemoveAllFromReceiver(AirFramework.IMessageReceiver)
+// 0x000001AC System.Boolean AirFramework.MessageDispatcher::TryRemoveAllFromReceiver(AirFramework.IMessageReceiver)
 extern void MessageDispatcher_TryRemoveAllFromReceiver_m8C7D303E731BB72F651649BB6B61C32C85074858 (void);
-// 0x000001AA System.Void AirFramework.MessageDispatcher::.ctor()
+// 0x000001AD System.Void AirFramework.MessageDispatcher::.ctor()
 extern void MessageDispatcher__ctor_m6B35F37BA20D5C1D843D0F6442A9450C317C2E31 (void);
-// 0x000001AB System.Void AirFramework.MessageDispatcher::.cctor()
+// 0x000001AE System.Void AirFramework.MessageDispatcher::.cctor()
 extern void MessageDispatcher__cctor_m3698534AF78AC6DD871C895DD4DD915BB076E16D (void);
-// 0x000001AC System.Void AirFramework.MessageDispatcher/<>c::.cctor()
+// 0x000001AF System.Void AirFramework.MessageDispatcher/<>c::.cctor()
 extern void U3CU3Ec__cctor_mCF85981B33CC7B2B37F42C875F3954C54F57A898 (void);
-// 0x000001AD System.Void AirFramework.MessageDispatcher/<>c::.ctor()
+// 0x000001B0 System.Void AirFramework.MessageDispatcher/<>c::.ctor()
 extern void U3CU3Ec__ctor_m0BB654DE0CDA640A75310928E2D9B6610C36E343 (void);
-// 0x000001AE AirFramework.MessageOperatorBox`1<AirFramework.Internal.IMessage> AirFramework.MessageDispatcher/<>c::<.cctor>b__15_0()
+// 0x000001B1 AirFramework.MessageOperatorBox`1<AirFramework.Internal.IMessage> AirFramework.MessageDispatcher/<>c::<.cctor>b__15_0()
 extern void U3CU3Ec_U3C_cctorU3Eb__15_0_m50AE41761B9E95099B24E690C1FF26AC9369514A (void);
-// 0x000001AF AirFramework.MessageDispatcher AirFramework.MessageDispatcherBox`1::get_Value()
-// 0x000001B0 System.Void AirFramework.MessageDispatcherBox`1::.ctor()
-// 0x000001B1 System.Void AirFramework.MessageDispatcherBox`1::Finalize()
-// 0x000001B2 System.Void AirFramework.MessageManager::OnCreate()
+// 0x000001B2 AirFramework.MessageDispatcher AirFramework.MessageDispatcherBox`1::get_Value()
+// 0x000001B3 System.Void AirFramework.MessageDispatcherBox`1::.ctor()
+// 0x000001B4 System.Void AirFramework.MessageDispatcherBox`1::Finalize()
+// 0x000001B5 System.Void AirFramework.MessageManager::OnCreate()
 extern void MessageManager_OnCreate_m6B1DEE8BE4EBBBD1688156B8D98A7DEF07E31388 (void);
-// 0x000001B3 System.Void AirFramework.MessageManager::Update(System.Single)
+// 0x000001B6 System.Void AirFramework.MessageManager::Update(System.Single)
 extern void MessageManager_Update_mBCC6684816937CF466C9F56ED7B682D5DCBC5BE2 (void);
-// 0x000001B4 System.Void AirFramework.MessageManager::OnDispose()
+// 0x000001B7 System.Void AirFramework.MessageManager::OnDispose()
 extern void MessageManager_OnDispose_m0F38C1C9A02094D53C78FE9CB800B2D4B195AFB0 (void);
-// 0x000001B5 System.Void AirFramework.MessageManager::AddOperationToReceiver(System.Type,AirFramework.IMessageReceiver,System.Delegate)
+// 0x000001B8 System.Void AirFramework.MessageManager::AddOperationToReceiver(System.Type,AirFramework.IMessageReceiver,System.Delegate)
 extern void MessageManager_AddOperationToReceiver_m4EB405E53D79396716092F9A60F4581B0475336F (void);
-// 0x000001B6 System.Boolean AirFramework.MessageManager::TryRemoveFromOperator(System.Type,AirFramework.IMessageReceiver,System.Delegate)
+// 0x000001B9 System.Boolean AirFramework.MessageManager::TryRemoveFromOperator(System.Type,AirFramework.IMessageReceiver,System.Delegate)
 extern void MessageManager_TryRemoveFromOperator_mCBB45F2F0FABB6655D501EABC7EDF1D503B496CD (void);
-// 0x000001B7 System.Boolean AirFramework.MessageManager::TryRemoveTypeFromReceiver(System.Type,AirFramework.IMessageReceiver)
+// 0x000001BA System.Boolean AirFramework.MessageManager::TryRemoveTypeFromReceiver(System.Type,AirFramework.IMessageReceiver)
 extern void MessageManager_TryRemoveTypeFromReceiver_m1A84896C658E049AD0F1AAF496924EF50ABE8276 (void);
-// 0x000001B8 System.Boolean AirFramework.MessageManager::TryRemoveTypeFromGlobal(System.Type)
+// 0x000001BB System.Boolean AirFramework.MessageManager::TryRemoveTypeFromGlobal(System.Type)
 extern void MessageManager_TryRemoveTypeFromGlobal_mB32214D8CDD24EFEC38CC2E0FF30C5691D3C75F4 (void);
-// 0x000001B9 System.Void AirFramework.MessageManager::RemoveAllFromGlobal()
+// 0x000001BC System.Void AirFramework.MessageManager::RemoveAllFromGlobal()
 extern void MessageManager_RemoveAllFromGlobal_m83E2AF12166E42E2B2AFB0C5FB75B3CD9FE514B3 (void);
-// 0x000001BA System.Boolean AirFramework.MessageManager::TryRemoveAllFromReceiver(AirFramework.IMessageReceiver)
+// 0x000001BD System.Boolean AirFramework.MessageManager::TryRemoveAllFromReceiver(AirFramework.IMessageReceiver)
 extern void MessageManager_TryRemoveAllFromReceiver_mBD795E0C1B36F1A498F3DBF6909EF91124ABF066 (void);
-// 0x000001BB System.Boolean AirFramework.MessageManager::TryRemoveTypeFromGlobal()
-// 0x000001BC System.Boolean AirFramework.MessageManager::TryRemoveTypeFromReceiver(AirFramework.IMessageReceiver)
-// 0x000001BD AirFramework.LifeCycleManager AirFramework.MessageManager::get_LifeCycle()
+// 0x000001BE System.Boolean AirFramework.MessageManager::TryRemoveTypeFromGlobal()
+// 0x000001BF System.Boolean AirFramework.MessageManager::TryRemoveTypeFromReceiver(AirFramework.IMessageReceiver)
+// 0x000001C0 AirFramework.LifeCycleManager AirFramework.MessageManager::get_LifeCycle()
 extern void MessageManager_get_LifeCycle_m690D83923D0F6A4112333D356D616E4769C6B6D4 (void);
-// 0x000001BE System.Void AirFramework.MessageManager::.ctor()
+// 0x000001C1 System.Void AirFramework.MessageManager::.ctor()
 extern void MessageManager__ctor_mFA39AC2EB04684FB6CB08982265419D40E69C2AD (void);
-// 0x000001BF System.Void AirFramework.MessageManager::.cctor()
+// 0x000001C2 System.Void AirFramework.MessageManager::.cctor()
 extern void MessageManager__cctor_m75481F36AF2FB0967EFA111FA4FA306FF0407E41 (void);
-// 0x000001C0 System.Void AirFramework.MessageManager/<>c::.cctor()
+// 0x000001C3 System.Void AirFramework.MessageManager/<>c::.cctor()
 extern void U3CU3Ec__cctor_m2F730C6DCE6883CED8CB8E7E59D9F4DCB9629CD1 (void);
-// 0x000001C1 System.Void AirFramework.MessageManager/<>c::.ctor()
+// 0x000001C4 System.Void AirFramework.MessageManager/<>c::.ctor()
 extern void U3CU3Ec__ctor_m7030E396CDEEAE1FC612D57AA3E487AFC4B9150B (void);
-// 0x000001C2 AirFramework.MessageDispatcherBox`1<AirFramework.Internal.IMessage> AirFramework.MessageManager/<>c::<.ctor>b__18_0()
+// 0x000001C5 AirFramework.MessageDispatcherBox`1<AirFramework.Internal.IMessage> AirFramework.MessageManager/<>c::<.ctor>b__18_0()
 extern void U3CU3Ec_U3C_ctorU3Eb__18_0_mF1D090B042275A3CA3B3070C05511B92532D0732 (void);
-// 0x000001C3 System.Void AirFramework.MessageManager/<>c::<.ctor>b__18_1(AirFramework.MessageDispatcherBox`1<AirFramework.Internal.IMessage>)
+// 0x000001C6 System.Void AirFramework.MessageManager/<>c::<.ctor>b__18_1(AirFramework.MessageDispatcherBox`1<AirFramework.Internal.IMessage>)
 extern void U3CU3Ec_U3C_ctorU3Eb__18_1_m7661024A0B5E01EE1FC388E402BB409F3521F8A0 (void);
-// 0x000001C4 AirFramework.MessageOperatorBox`1<AirFramework.Internal.IMessage> AirFramework.MessageManager/<>c::<.ctor>b__18_2()
+// 0x000001C7 AirFramework.MessageOperatorBox`1<AirFramework.Internal.IMessage> AirFramework.MessageManager/<>c::<.ctor>b__18_2()
 extern void U3CU3Ec_U3C_ctorU3Eb__18_2_mE035D0AD2738AFA1830444B3D107FA1F5B2129AA (void);
-// 0x000001C5 System.Void AirFramework.MessageManager/<>c::<.ctor>b__18_3(AirFramework.MessageOperatorBox`1<AirFramework.Internal.IMessage>)
+// 0x000001C8 System.Void AirFramework.MessageManager/<>c::<.ctor>b__18_3(AirFramework.MessageOperatorBox`1<AirFramework.Internal.IMessage>)
 extern void U3CU3Ec_U3C_ctorU3Eb__18_3_m85469C9D7A8E46BA5B5D398D38EA624A52B39FFC (void);
-// 0x000001C6 AirFramework.MessageDispatcherBox`1<AirFramework.Internal.IMessage> AirFramework.MessageManager/<>c::<.cctor>b__19_0()
+// 0x000001C9 AirFramework.MessageDispatcherBox`1<AirFramework.Internal.IMessage> AirFramework.MessageManager/<>c::<.cctor>b__19_0()
 extern void U3CU3Ec_U3C_cctorU3Eb__19_0_mDC74508C19168EF473509E57D5372507BF35374D (void);
-// 0x000001C7 AirFramework.UnitList`1<System.Delegate> AirFramework.MessageOperator::get_EventsContainer()
+// 0x000001CA AirFramework.UnitList`1<System.Delegate> AirFramework.MessageOperator::get_EventsContainer()
 extern void MessageOperator_get_EventsContainer_m35A23C07DF6B45A0D249D6DAAD95DA9821EA4201 (void);
-// 0x000001C8 System.Void AirFramework.MessageOperator::set_EventsContainer(AirFramework.UnitList`1<System.Delegate>)
+// 0x000001CB System.Void AirFramework.MessageOperator::set_EventsContainer(AirFramework.UnitList`1<System.Delegate>)
 extern void MessageOperator_set_EventsContainer_mB930D13DB9F724ADBD3428FF923000E6BA49F00C (void);
-// 0x000001C9 System.Boolean AirFramework.MessageOperator::get_Enable()
+// 0x000001CC System.Boolean AirFramework.MessageOperator::get_Enable()
 extern void MessageOperator_get_Enable_m3E493C025444C468F68FC614426A5A54D24D903B (void);
-// 0x000001CA System.Void AirFramework.MessageOperator::set_Enable(System.Boolean)
+// 0x000001CD System.Void AirFramework.MessageOperator::set_Enable(System.Boolean)
 extern void MessageOperator_set_Enable_m9106E758F69A68F4B19DDA76F2BE19EC91CCF43E (void);
-// 0x000001CB System.Int32 AirFramework.MessageOperator::get_Count()
+// 0x000001CE System.Int32 AirFramework.MessageOperator::get_Count()
 extern void MessageOperator_get_Count_mEEC9519B903FC3756A039580C8E67CEFF2881BE2 (void);
-// 0x000001CC System.Int32 AirFramework.MessageOperator::get_IntervalIndex()
+// 0x000001CF System.Int32 AirFramework.MessageOperator::get_IntervalIndex()
 extern void MessageOperator_get_IntervalIndex_mD09CF4DD0E11BE86497608116BC5548F831E843A (void);
-// 0x000001CD System.Void AirFramework.MessageOperator::set_IntervalIndex(System.Int32)
+// 0x000001D0 System.Void AirFramework.MessageOperator::set_IntervalIndex(System.Int32)
 extern void MessageOperator_set_IntervalIndex_m794632FB05872EF01CDD2AABB22AE807E8D532FD (void);
-// 0x000001CE System.Void AirFramework.MessageOperator::OnDispose()
+// 0x000001D1 System.Void AirFramework.MessageOperator::OnDispose()
 extern void MessageOperator_OnDispose_m0F83B383AF74715C5EEF034B8B8DD6E4BE76848D (void);
-// 0x000001CF System.Void AirFramework.MessageOperator::Clear()
+// 0x000001D2 System.Void AirFramework.MessageOperator::Clear()
 extern void MessageOperator_Clear_mF443D828C562FFBDE874771AE30AAECB5350DB82 (void);
-// 0x000001D0 System.Void AirFramework.MessageOperator::Add(System.Delegate)
+// 0x000001D3 System.Void AirFramework.MessageOperator::Add(System.Delegate)
 extern void MessageOperator_Add_m9349C37EF494B8FF082DEF48FB7C69AE33E14E65 (void);
-// 0x000001D1 System.Boolean AirFramework.MessageOperator::Remove(System.Delegate)
+// 0x000001D4 System.Boolean AirFramework.MessageOperator::Remove(System.Delegate)
 extern void MessageOperator_Remove_m13FBD54ACE31CF0633C49265CB8B04B19CF5D4D8 (void);
-// 0x000001D2 System.Boolean AirFramework.MessageOperator::GetNext(System.Delegate&)
+// 0x000001D5 System.Boolean AirFramework.MessageOperator::GetNext(System.Delegate&)
 extern void MessageOperator_GetNext_m6C61381F690EB7CBAE75EA9CA3708148F71A6026 (void);
-// 0x000001D3 System.Void AirFramework.MessageOperator::Reset()
+// 0x000001D6 System.Void AirFramework.MessageOperator::Reset()
 extern void MessageOperator_Reset_m2D565307384C92B0AC116CA61BC7183C99F77D62 (void);
-// 0x000001D4 System.Void AirFramework.MessageOperator::.ctor()
+// 0x000001D7 System.Void AirFramework.MessageOperator::.ctor()
 extern void MessageOperator__ctor_m4738480DF9DCF8AC6CC437E988D797F053FB31BA (void);
-// 0x000001D5 AirFramework.MessageOperator AirFramework.MessageOperatorBox`1::get_Value()
-// 0x000001D6 System.Void AirFramework.MessageOperatorBox`1::.ctor()
-// 0x000001D7 System.Void AirFramework.MessageOperatorBox`1::Finalize()
-// 0x000001D8 AirFramework.IModel AirFramework.ModelModule::GetModel(System.Type)
+// 0x000001D8 AirFramework.MessageOperator AirFramework.MessageOperatorBox`1::get_Value()
+// 0x000001D9 System.Void AirFramework.MessageOperatorBox`1::.ctor()
+// 0x000001DA System.Void AirFramework.MessageOperatorBox`1::Finalize()
+// 0x000001DB AirFramework.IModel AirFramework.ModelModule::GetModel(System.Type)
 extern void ModelModule_GetModel_mFAABD5F7A5C514345905886B47315B048C09FCF3 (void);
-// 0x000001D9 T AirFramework.ModelModule::GetModel()
-// 0x000001DA System.Void AirFramework.ModelModule::Save()
-// 0x000001DB System.Void AirFramework.ModelModule::Load()
-// 0x000001DC System.Void AirFramework.ModelModule::SaveAll()
+// 0x000001DC T AirFramework.ModelModule::GetModel()
+// 0x000001DD System.Void AirFramework.ModelModule::Save()
+// 0x000001DE System.Void AirFramework.ModelModule::Load()
+// 0x000001DF System.Void AirFramework.ModelModule::SaveAll()
 extern void ModelModule_SaveAll_mC699CB113D72CD091B7D971FE163B7CBF340F8F2 (void);
-// 0x000001DD System.Void AirFramework.ModelModule::LoadAll()
+// 0x000001E0 System.Void AirFramework.ModelModule::LoadAll()
 extern void ModelModule_LoadAll_mA81ACBD37A1C7C8CBC610CCC682CD500C3AAD5FA (void);
-// 0x000001DE System.Void AirFramework.ModelModule::OnCreate()
+// 0x000001E1 System.Void AirFramework.ModelModule::OnCreate()
 extern void ModelModule_OnCreate_m32CCFCDAD81F2E65350B4EDF10EEE0870246EE30 (void);
-// 0x000001DF System.Void AirFramework.ModelModule::Update(System.Single)
+// 0x000001E2 System.Void AirFramework.ModelModule::Update(System.Single)
 extern void ModelModule_Update_m816CB3E57E27C5DEEE25C1CBFA3CDE6672454C31 (void);
-// 0x000001E0 System.Void AirFramework.ModelModule::OnDispose()
+// 0x000001E3 System.Void AirFramework.ModelModule::OnDispose()
 extern void ModelModule_OnDispose_m06B212A752709099D68BB69B455941275659C11C (void);
-// 0x000001E1 System.Void AirFramework.ModelModule::.ctor()
+// 0x000001E4 System.Void AirFramework.ModelModule::.ctor()
 extern void ModelModule__ctor_mFE828D310EAD91C9913E8944135A8FE2A1D4C83B (void);
-// 0x000001E2 System.Boolean AirFramework.PoolSettings::get_UsePool()
+// 0x000001E5 System.Boolean AirFramework.PoolSettings::get_UsePool()
 extern void PoolSettings_get_UsePool_m9C11A2C06B343F3D1CBC60B5F82697DADF2D8008 (void);
-// 0x000001E3 System.Void AirFramework.PoolSettings::set_UsePool(System.Boolean)
+// 0x000001E6 System.Void AirFramework.PoolSettings::set_UsePool(System.Boolean)
 extern void PoolSettings_set_UsePool_m98CECDC77E38879993671540F3C39A9A42BBDE2D (void);
-// 0x000001E4 System.Single AirFramework.PoolSettings::get_RecycleInterval()
+// 0x000001E7 System.Single AirFramework.PoolSettings::get_RecycleInterval()
 extern void PoolSettings_get_RecycleInterval_m080E7B656EAD7D8E9FD96C58CDF903B6FB3C5D7E (void);
-// 0x000001E5 System.Void AirFramework.PoolSettings::set_RecycleInterval(System.Single)
+// 0x000001E8 System.Void AirFramework.PoolSettings::set_RecycleInterval(System.Single)
 extern void PoolSettings_set_RecycleInterval_mF23F7B3D7FAFC84D82C37C5F0147A5735C0D0229 (void);
-// 0x000001E6 System.Single AirFramework.PoolSettings::get_RecycleRatio()
+// 0x000001E9 System.Single AirFramework.PoolSettings::get_RecycleRatio()
 extern void PoolSettings_get_RecycleRatio_m2662C768D07AD7FDF9A402A38BEF8FDBC5DA6548 (void);
-// 0x000001E7 System.Void AirFramework.PoolSettings::set_RecycleRatio(System.Single)
+// 0x000001EA System.Void AirFramework.PoolSettings::set_RecycleRatio(System.Single)
 extern void PoolSettings_set_RecycleRatio_mF973F6298976EBB01E7BFC1A04F1D14FDA4D1EA3 (void);
-// 0x000001E8 System.Void AirFramework.PoolSettings::.ctor(System.Boolean)
+// 0x000001EB System.Void AirFramework.PoolSettings::.ctor(System.Boolean)
 extern void PoolSettings__ctor_m9FD987D3C543C4936BF2F8B48110F519591255AB (void);
-// 0x000001E9 System.Void AirFramework.PoolSettings::.ctor(System.Single,System.Single)
+// 0x000001EC System.Void AirFramework.PoolSettings::.ctor(System.Single,System.Single)
 extern void PoolSettings__ctor_m26CE482DA8868D57CDAD1066690A679369D2531A (void);
-// 0x000001EA System.Void AirFramework.PoolIgnore::.ctor()
+// 0x000001ED System.Void AirFramework.PoolIgnore::.ctor()
 extern void PoolIgnore__ctor_mCC00C7AE9BADD4D17B34DC07F7C2E80EC61649E3 (void);
-// 0x000001EB System.Void AirFramework.PoolRecycle::.ctor(System.Single,System.Single)
+// 0x000001EE System.Void AirFramework.PoolRecycle::.ctor(System.Single,System.Single)
 extern void PoolRecycle__ctor_mFBB4787B7BE2F7A911E5CE565FF7DB0A6CD4E667 (void);
-// 0x000001EC System.Void AirFramework.UnitCollection`2::OnAllocate()
-// 0x000001ED System.Void AirFramework.UnitCollection`2::OnRecycle()
-// 0x000001EE System.Void AirFramework.UnitCollection`2::.ctor()
-// 0x000001EF System.Void AirFramework.UnitDictionary`2::OnAllocate()
-// 0x000001F0 System.Void AirFramework.UnitDictionary`2::OnRecycle()
-// 0x000001F1 System.Void AirFramework.UnitDictionary`2::.ctor()
-// 0x000001F2 System.Void AirFramework.UnitHashSet`1::OnAllocate()
-// 0x000001F3 System.Void AirFramework.UnitHashSet`1::OnRecycle()
-// 0x000001F4 System.Void AirFramework.UnitHashSet`1::.ctor()
-// 0x000001F5 System.Void AirFramework.UnitLinkedList`1::OnAllocate()
-// 0x000001F6 System.Void AirFramework.UnitLinkedList`1::OnRecycle()
-// 0x000001F7 System.Void AirFramework.UnitLinkedList`1::.ctor()
-// 0x000001F8 System.Void AirFramework.UnitList`1::OnAllocate()
-// 0x000001F9 System.Void AirFramework.UnitList`1::OnRecycle()
-// 0x000001FA System.Void AirFramework.UnitList`1::.ctor()
-// 0x000001FB System.Void AirFramework.UnitQueue`1::OnAllocate()
-// 0x000001FC System.Void AirFramework.UnitQueue`1::OnRecycle()
-// 0x000001FD System.Void AirFramework.UnitQueue`1::.ctor()
-// 0x000001FE System.Void AirFramework.UnitSortedList`2::OnAllocate()
-// 0x000001FF System.Void AirFramework.UnitSortedList`2::OnRecycle()
-// 0x00000200 System.Void AirFramework.UnitSortedList`2::.ctor()
-// 0x00000201 System.Void AirFramework.UnitSortedSet`1::OnAllocate()
-// 0x00000202 System.Void AirFramework.UnitSortedSet`1::OnRecycle()
-// 0x00000203 System.Void AirFramework.UnitSortedSet`1::.ctor()
-// 0x00000204 System.Void AirFramework.UnitStack`1::OnAllocate()
-// 0x00000205 System.Void AirFramework.UnitStack`1::OnRecycle()
-// 0x00000206 System.Void AirFramework.UnitStack`1::.ctor()
-// 0x00000207 System.Void AirFramework.UnitArrayList::OnAllocate()
+// 0x000001EF System.Void AirFramework.UnitCollection`2::OnAllocate()
+// 0x000001F0 System.Void AirFramework.UnitCollection`2::OnRecycle()
+// 0x000001F1 System.Void AirFramework.UnitCollection`2::.ctor()
+// 0x000001F2 System.Void AirFramework.UnitDictionary`2::OnAllocate()
+// 0x000001F3 System.Void AirFramework.UnitDictionary`2::OnRecycle()
+// 0x000001F4 System.Void AirFramework.UnitDictionary`2::.ctor()
+// 0x000001F5 System.Void AirFramework.UnitHashSet`1::OnAllocate()
+// 0x000001F6 System.Void AirFramework.UnitHashSet`1::OnRecycle()
+// 0x000001F7 System.Void AirFramework.UnitHashSet`1::.ctor()
+// 0x000001F8 System.Void AirFramework.UnitLinkedList`1::OnAllocate()
+// 0x000001F9 System.Void AirFramework.UnitLinkedList`1::OnRecycle()
+// 0x000001FA System.Void AirFramework.UnitLinkedList`1::.ctor()
+// 0x000001FB System.Void AirFramework.UnitList`1::OnAllocate()
+// 0x000001FC System.Void AirFramework.UnitList`1::OnRecycle()
+// 0x000001FD System.Void AirFramework.UnitList`1::.ctor()
+// 0x000001FE System.Void AirFramework.UnitQueue`1::OnAllocate()
+// 0x000001FF System.Void AirFramework.UnitQueue`1::OnRecycle()
+// 0x00000200 System.Void AirFramework.UnitQueue`1::.ctor()
+// 0x00000201 System.Void AirFramework.UnitSortedList`2::OnAllocate()
+// 0x00000202 System.Void AirFramework.UnitSortedList`2::OnRecycle()
+// 0x00000203 System.Void AirFramework.UnitSortedList`2::.ctor()
+// 0x00000204 System.Void AirFramework.UnitSortedSet`1::OnAllocate()
+// 0x00000205 System.Void AirFramework.UnitSortedSet`1::OnRecycle()
+// 0x00000206 System.Void AirFramework.UnitSortedSet`1::.ctor()
+// 0x00000207 System.Void AirFramework.UnitStack`1::OnAllocate()
+// 0x00000208 System.Void AirFramework.UnitStack`1::OnRecycle()
+// 0x00000209 System.Void AirFramework.UnitStack`1::.ctor()
+// 0x0000020A System.Void AirFramework.UnitArrayList::OnAllocate()
 extern void UnitArrayList_OnAllocate_m47A52AD157B701C155E2CE1A87B66D458B334EA0 (void);
-// 0x00000208 System.Void AirFramework.UnitArrayList::OnRecycle()
+// 0x0000020B System.Void AirFramework.UnitArrayList::OnRecycle()
 extern void UnitArrayList_OnRecycle_mA0F0FC68ED11AD47A1490B7899048C3F19BD2197 (void);
-// 0x00000209 System.Void AirFramework.UnitArrayList::.ctor()
+// 0x0000020C System.Void AirFramework.UnitArrayList::.ctor()
 extern void UnitArrayList__ctor_mB20B90F054C12113F5220764BB5C7CC2EB9A711B (void);
-// 0x0000020A System.Void AirFramework.UnitHashtable::OnAllocate()
+// 0x0000020D System.Void AirFramework.UnitHashtable::OnAllocate()
 extern void UnitHashtable_OnAllocate_mDB966B4A26D2B7FD7EC2855BA7E373137F607DB1 (void);
-// 0x0000020B System.Void AirFramework.UnitHashtable::OnRecycle()
+// 0x0000020E System.Void AirFramework.UnitHashtable::OnRecycle()
 extern void UnitHashtable_OnRecycle_m1AAD8DB188B1335B8D315FBAE7C14FAC6D47D805 (void);
-// 0x0000020C System.Void AirFramework.UnitHashtable::.ctor()
+// 0x0000020F System.Void AirFramework.UnitHashtable::.ctor()
 extern void UnitHashtable__ctor_mFD2E5FDAFF39E97421B693B7882BF3D2C6D97381 (void);
-// 0x0000020D System.Void AirFramework.UnitSortedList::OnAllocate()
+// 0x00000210 System.Void AirFramework.UnitSortedList::OnAllocate()
 extern void UnitSortedList_OnAllocate_m156F6BBFC52BE8FA6C55F6900AC1724151ED5B6C (void);
-// 0x0000020E System.Void AirFramework.UnitSortedList::OnRecycle()
+// 0x00000211 System.Void AirFramework.UnitSortedList::OnRecycle()
 extern void UnitSortedList_OnRecycle_mA107571940870FD142B687529D83640B5401E4DF (void);
-// 0x0000020F System.Void AirFramework.UnitSortedList::.ctor()
+// 0x00000212 System.Void AirFramework.UnitSortedList::.ctor()
 extern void UnitSortedList__ctor_m1EEC5320AC42F77797EEEDF7FC774ECA0C486033 (void);
-// 0x00000210 System.Void AirFramework.UnitStringBuilder::OnAllocate()
+// 0x00000213 System.Void AirFramework.UnitStringBuilder::OnAllocate()
 extern void UnitStringBuilder_OnAllocate_mE25E100284884B826C482015DBCCEF275C2AAD5A (void);
-// 0x00000211 System.Void AirFramework.UnitStringBuilder::OnRecycle()
+// 0x00000214 System.Void AirFramework.UnitStringBuilder::OnRecycle()
 extern void UnitStringBuilder_OnRecycle_m4B860DDF166B982AF70C0819ADB94B035C486DE1 (void);
-// 0x00000212 System.Void AirFramework.UnitStringBuilder::.ctor()
+// 0x00000215 System.Void AirFramework.UnitStringBuilder::.ctor()
 extern void UnitStringBuilder__ctor_m4ED81D49ECF1BFCE80B3845099ACD8F2A278A591 (void);
-// 0x00000213 System.Boolean AirFramework.IDepositablePool::get_IsDeposit()
-// 0x00000214 System.Void AirFramework.IDepositablePool::set_IsDeposit(System.Boolean)
-// 0x00000215 System.Type AirFramework.IObjectPool::get_ObjectType()
-// 0x00000216 System.Int32 AirFramework.IObjectPool::get_MaxCapacity()
-// 0x00000217 System.Object AirFramework.IObjectPool::AllocateObj()
-// 0x00000218 System.Void AirFramework.IObjectPool::RecycleObj(System.Object)
-// 0x00000219 System.Void AirFramework.IObjectPool::Preload(System.Int32)
-// 0x0000021A System.Void AirFramework.IObjectPool::Unload(System.Int32)
-// 0x0000021B System.Int32 AirFramework.IPool::get_Count()
-// 0x0000021C System.Void AirFramework.IPool::Clear()
-// 0x0000021D T AirFramework.IPool`1::Allocate()
-// 0x0000021E System.Void AirFramework.IPool`1::Recycle(T)
-// 0x0000021F System.Single AirFramework.ITimeManagedPool::get_RecycleTime()
-// 0x00000220 System.Void AirFramework.ITimeManagedPool::set_RecycleTime(System.Single)
-// 0x00000221 System.Single AirFramework.ITimeManagedPool::get_RecoveryRatio()
-// 0x00000222 System.Void AirFramework.ITimeManagedPool::set_RecoveryRatio(System.Single)
-// 0x00000223 T AirFramework.IValueContainer`1::get_Value()
-// 0x00000224 System.Boolean AirFramework.ObjectPoolBase::get_IsDeposit()
+// 0x00000216 System.Boolean AirFramework.IDepositablePool::get_IsDeposit()
+// 0x00000217 System.Void AirFramework.IDepositablePool::set_IsDeposit(System.Boolean)
+// 0x00000218 System.Type AirFramework.IObjectPool::get_ObjectType()
+// 0x00000219 System.Int32 AirFramework.IObjectPool::get_MaxCapacity()
+// 0x0000021A System.Object AirFramework.IObjectPool::AllocateObj()
+// 0x0000021B System.Void AirFramework.IObjectPool::RecycleObj(System.Object)
+// 0x0000021C System.Void AirFramework.IObjectPool::Preload(System.Int32)
+// 0x0000021D System.Void AirFramework.IObjectPool::Unload(System.Int32)
+// 0x0000021E System.Int32 AirFramework.IPool::get_Count()
+// 0x0000021F System.Void AirFramework.IPool::Clear()
+// 0x00000220 T AirFramework.IPool`1::Allocate()
+// 0x00000221 System.Void AirFramework.IPool`1::Recycle(T)
+// 0x00000222 System.Single AirFramework.ITimeManagedPool::get_RecycleTime()
+// 0x00000223 System.Void AirFramework.ITimeManagedPool::set_RecycleTime(System.Single)
+// 0x00000224 System.Single AirFramework.ITimeManagedPool::get_RecoveryRatio()
+// 0x00000225 System.Void AirFramework.ITimeManagedPool::set_RecoveryRatio(System.Single)
+// 0x00000226 T AirFramework.IValueContainer`1::get_Value()
+// 0x00000227 System.Boolean AirFramework.ObjectPoolBase::get_IsDeposit()
 extern void ObjectPoolBase_get_IsDeposit_m9894208D2E7111A0F83AAF9A02B9B436E5A9CE8D (void);
-// 0x00000225 System.Void AirFramework.ObjectPoolBase::set_IsDeposit(System.Boolean)
+// 0x00000228 System.Void AirFramework.ObjectPoolBase::set_IsDeposit(System.Boolean)
 extern void ObjectPoolBase_set_IsDeposit_m1B763CC9247435660143FF5B4E36867DE907BEC0 (void);
-// 0x00000226 System.Boolean AirFramework.ObjectPoolBase::AirFramework.IDepositablePool.get_IsDeposit()
+// 0x00000229 System.Boolean AirFramework.ObjectPoolBase::AirFramework.IDepositablePool.get_IsDeposit()
 extern void ObjectPoolBase_AirFramework_IDepositablePool_get_IsDeposit_m9C6138CAA3C8256CB77B3AFE53AA0EE8090997DF (void);
-// 0x00000227 System.Void AirFramework.ObjectPoolBase::AirFramework.IDepositablePool.set_IsDeposit(System.Boolean)
+// 0x0000022A System.Void AirFramework.ObjectPoolBase::AirFramework.IDepositablePool.set_IsDeposit(System.Boolean)
 extern void ObjectPoolBase_AirFramework_IDepositablePool_set_IsDeposit_mB95DD3C640BD4117BB0682883C382F36822DF70E (void);
-// 0x00000228 System.Int32 AirFramework.ObjectPoolBase::get_Count()
-// 0x00000229 System.Type AirFramework.ObjectPoolBase::get_ObjectType()
-// 0x0000022A System.Int32 AirFramework.ObjectPoolBase::get_MaxCapacity()
-// 0x0000022B System.Void AirFramework.ObjectPoolBase::set_MaxCapacity(System.Int32)
-// 0x0000022C System.Void AirFramework.ObjectPoolBase::Clear()
-// 0x0000022D System.Object AirFramework.ObjectPoolBase::AllocateObj()
-// 0x0000022E System.Void AirFramework.ObjectPoolBase::RecycleObj(System.Object)
-// 0x0000022F System.Void AirFramework.ObjectPoolBase::Preload(System.Int32)
-// 0x00000230 System.Void AirFramework.ObjectPoolBase::Unload(System.Int32)
-// 0x00000231 System.Void AirFramework.ObjectPoolBase::.ctor()
+// 0x0000022B System.Int32 AirFramework.ObjectPoolBase::get_Count()
+// 0x0000022C System.Type AirFramework.ObjectPoolBase::get_ObjectType()
+// 0x0000022D System.Int32 AirFramework.ObjectPoolBase::get_MaxCapacity()
+// 0x0000022E System.Void AirFramework.ObjectPoolBase::set_MaxCapacity(System.Int32)
+// 0x0000022F System.Void AirFramework.ObjectPoolBase::Clear()
+// 0x00000230 System.Object AirFramework.ObjectPoolBase::AllocateObj()
+// 0x00000231 System.Void AirFramework.ObjectPoolBase::RecycleObj(System.Object)
+// 0x00000232 System.Void AirFramework.ObjectPoolBase::Preload(System.Int32)
+// 0x00000233 System.Void AirFramework.ObjectPoolBase::Unload(System.Int32)
+// 0x00000234 System.Void AirFramework.ObjectPoolBase::.ctor()
 extern void ObjectPoolBase__ctor_mA014463A898D7FED7F02E7BDDEE57B87BD0D8533 (void);
-// 0x00000232 System.Void AirFramework.PoolableObject::OnAllocate()
-// 0x00000233 System.Void AirFramework.PoolableObject::OnRecycle()
-// 0x00000234 System.Void AirFramework.PoolableObject::.ctor()
+// 0x00000235 System.Void AirFramework.PoolableObject::OnAllocate()
+// 0x00000236 System.Void AirFramework.PoolableObject::OnRecycle()
+// 0x00000237 System.Void AirFramework.PoolableObject::.ctor()
 extern void PoolableObject__ctor_m7A22AFADF53E639650EF28C2BC8787EDA28E0882 (void);
-// 0x00000235 System.Void AirFramework.PoolableObject::Finalize()
+// 0x00000238 System.Void AirFramework.PoolableObject::Finalize()
 extern void PoolableObject_Finalize_m82FFC5D93D59CBFCA877055805FD6DD9A2CEF08C (void);
-// 0x00000236 System.Void AirFramework.PoolableObject::OnDestroy()
+// 0x00000239 System.Void AirFramework.PoolableObject::OnDestroy()
 extern void PoolableObject_OnDestroy_m4B846B068A12E15F28BBF7715BD5E4A74267F7BC (void);
-// 0x00000237 System.Void AirFramework.PoolableObject::OnCreate()
+// 0x0000023A System.Void AirFramework.PoolableObject::OnCreate()
 extern void PoolableObject_OnCreate_mF4A71D86898B7DD4622C684D55B58D4BF45EC0D5 (void);
-// 0x00000238 System.Void AirFramework.PoolableObject::OnDispose()
+// 0x0000023B System.Void AirFramework.PoolableObject::OnDispose()
 extern void PoolableObject_OnDispose_m078515802BDAFFDBAF0B87B96D5C6E9FC965A02D (void);
-// 0x00000239 T AirFramework.PoolableValueObject`1::get_Value()
-// 0x0000023A System.Void AirFramework.PoolableValueObject`1::set_Value(T)
-// 0x0000023B System.Void AirFramework.PoolableValueObject`1::.ctor()
-// 0x0000023C T AirFramework.Pool::DefaultNewCreate()
-// 0x0000023D T AirFramework.Pool::DefaltActivatorCreate()
-// 0x0000023E System.Object AirFramework.Pool::DefaltActivatorCreate(System.Type)
+// 0x0000023C T AirFramework.PoolableValueObject`1::get_Value()
+// 0x0000023D System.Void AirFramework.PoolableValueObject`1::set_Value(T)
+// 0x0000023E System.Void AirFramework.PoolableValueObject`1::.ctor()
+// 0x0000023F T AirFramework.Pool::DefaultNewCreate()
+// 0x00000240 T AirFramework.Pool::DefaltActivatorCreate()
+// 0x00000241 System.Object AirFramework.Pool::DefaltActivatorCreate(System.Type)
 extern void Pool_DefaltActivatorCreate_mF08B806AE683CB512E4207AB4C7DF6267F60BE37 (void);
-// 0x0000023F System.Void AirFramework.Pool::RecycleSelf(AirFramework.IMessageReceiver)
+// 0x00000242 System.Void AirFramework.Pool::RecycleSelf(AirFramework.IMessageReceiver)
 extern void Pool_RecycleSelf_m83B10617B6C3C7E2F19394BE84465F9966B66F0B (void);
-// 0x00000240 T AirFramework.Pool::PoolGet(AirFramework.Unit)
-// 0x00000241 AirFramework.IGenericPool`1<T> AirFramework.PoolManager::GetOrCreatePool()
-// 0x00000242 AirFramework.IObjectPool AirFramework.PoolManager::GetOrCreatePool(System.Type)
+// 0x00000243 T AirFramework.Pool::PoolGet(AirFramework.Unit)
+// 0x00000244 AirFramework.IGenericPool`1<T> AirFramework.PoolManager::GetOrCreatePool()
+// 0x00000245 AirFramework.IObjectPool AirFramework.PoolManager::GetOrCreatePool(System.Type)
 extern void PoolManager_GetOrCreatePool_mA4198BC7A11F404054E148C983B77B0FB5FE389D (void);
-// 0x00000243 System.Void AirFramework.PoolManager::ReleasePool(System.Type)
+// 0x00000246 System.Void AirFramework.PoolManager::ReleasePool(System.Type)
 extern void PoolManager_ReleasePool_mDEC7F05F9EDED563D8FD1FCC0AFD9F7B06E550CA (void);
-// 0x00000244 System.Void AirFramework.PoolManager::ReleasePool()
-// 0x00000245 System.Void AirFramework.PoolManager::UnsafeReleasePool()
-// 0x00000246 T AirFramework.PoolManager::Allocate()
-// 0x00000247 System.Void AirFramework.PoolManager::Recycle(System.Object)
+// 0x00000247 System.Void AirFramework.PoolManager::ReleasePool()
+// 0x00000248 System.Void AirFramework.PoolManager::UnsafeReleasePool()
+// 0x00000249 T AirFramework.PoolManager::Allocate()
+// 0x0000024A System.Void AirFramework.PoolManager::Recycle(System.Object)
 extern void PoolManager_Recycle_m61EC195C8816D2240404190C16FCECD2B4A5BA99 (void);
-// 0x00000248 System.Void AirFramework.PoolManager::ForeachPools(System.Action`1<AirFramework.ITimeManagedPool>)
+// 0x0000024B System.Void AirFramework.PoolManager::ForeachPools(System.Action`1<AirFramework.ITimeManagedPool>)
 extern void PoolManager_ForeachPools_m373BC307AE1780CD0029BFED116BE527E782D197 (void);
-// 0x00000249 System.Void AirFramework.PoolManager::OnCreate()
+// 0x0000024C System.Void AirFramework.PoolManager::OnCreate()
 extern void PoolManager_OnCreate_m8A8B3B59601FE4A9755E2D39052B647C9CFD48DE (void);
-// 0x0000024A System.Void AirFramework.PoolManager::Update(System.Single)
+// 0x0000024D System.Void AirFramework.PoolManager::Update(System.Single)
 extern void PoolManager_Update_m8F89FF57A2382AC419AD4B691AAEBEAA3A0B50C3 (void);
-// 0x0000024B System.Void AirFramework.PoolManager::OnDispose()
+// 0x0000024E System.Void AirFramework.PoolManager::OnDispose()
 extern void PoolManager_OnDispose_m42B4F6B239EAFEA7A828DB931D1F9D0A099CA6C5 (void);
-// 0x0000024C AirFramework.GenericPool`1<T> AirFramework.PoolManager::CreateGenericPool(System.Func`1<T>,System.Action`1<T>,System.Action`1<T>,System.Action`1<T>)
-// 0x0000024D AirFramework.PurePool`1<T> AirFramework.PoolManager::CreatePurePool(System.Func`1<T>,System.Action`1<T>,System.Action`1<T>,System.Action`1<T>)
-// 0x0000024E AirFramework.LifeCyclePool`1<T> AirFramework.PoolManager::CreateLifeCyclePool(System.Func`1<T>,System.Action`1<T>)
-// 0x0000024F AirFramework.UIDPool AirFramework.PoolManager::CreateGUIDPool(System.Int32)
+// 0x0000024F AirFramework.GenericPool`1<T> AirFramework.PoolManager::CreateGenericPool(System.Func`1<T>,System.Action`1<T>,System.Action`1<T>,System.Action`1<T>)
+// 0x00000250 AirFramework.PurePool`1<T> AirFramework.PoolManager::CreatePurePool(System.Func`1<T>,System.Action`1<T>,System.Action`1<T>,System.Action`1<T>)
+// 0x00000251 AirFramework.LifeCyclePool`1<T> AirFramework.PoolManager::CreateLifeCyclePool(System.Func`1<T>,System.Action`1<T>)
+// 0x00000252 AirFramework.UIDPool AirFramework.PoolManager::CreateGUIDPool(System.Int32)
 extern void PoolManager_CreateGUIDPool_m3B74243D32074BCDF848D7F02F3131B1129F3E21 (void);
-// 0x00000250 System.Void AirFramework.PoolManager::.ctor()
+// 0x00000253 System.Void AirFramework.PoolManager::.ctor()
 extern void PoolManager__ctor_mB9E4B67DBAEB8B05AE42D293AC98181177927260 (void);
-// 0x00000251 System.Func`1<T> AirFramework.GenericPool`1::get_OnCreate()
-// 0x00000252 System.Void AirFramework.GenericPool`1::set_OnCreate(System.Func`1<T>)
-// 0x00000253 System.Action`1<T> AirFramework.GenericPool`1::get_OnAllocate()
-// 0x00000254 System.Void AirFramework.GenericPool`1::set_OnAllocate(System.Action`1<T>)
-// 0x00000255 System.Action`1<T> AirFramework.GenericPool`1::get_OnRecycle()
-// 0x00000256 System.Void AirFramework.GenericPool`1::set_OnRecycle(System.Action`1<T>)
-// 0x00000257 System.Action`1<T> AirFramework.GenericPool`1::get_OnDestroy()
-// 0x00000258 System.Void AirFramework.GenericPool`1::set_OnDestroy(System.Action`1<T>)
-// 0x00000259 T AirFramework.GenericPool`1::OnItemCreate()
-// 0x0000025A System.Void AirFramework.GenericPool`1::OnItemAllocate(T)
-// 0x0000025B System.Void AirFramework.GenericPool`1::OnItemRecycle(T)
-// 0x0000025C System.Void AirFramework.GenericPool`1::OnItemDestroy(T)
-// 0x0000025D System.Int32 AirFramework.GenericPool`1::get_Count()
-// 0x0000025E System.Type AirFramework.GenericPool`1::get_ObjectType()
-// 0x0000025F System.Int32 AirFramework.GenericPool`1::get_MaxCapacity()
-// 0x00000260 System.Void AirFramework.GenericPool`1::set_MaxCapacity(System.Int32)
-// 0x00000261 System.Void AirFramework.GenericPool`1::.ctor()
-// 0x00000262 System.Void AirFramework.GenericPool`1::.ctor(System.Func`1<T>,System.Action`1<T>,System.Action`1<T>,System.Action`1<T>)
-// 0x00000263 System.Void AirFramework.GenericPool`1::OnDispose()
-// 0x00000264 System.Object AirFramework.GenericPool`1::AllocateObj()
-// 0x00000265 System.Void AirFramework.GenericPool`1::RecycleObj(System.Object)
-// 0x00000266 System.Void AirFramework.GenericPool`1::Clear()
-// 0x00000267 System.Void AirFramework.GenericPool`1::Preload(System.Int32)
-// 0x00000268 System.Void AirFramework.GenericPool`1::Unload(System.Int32)
-// 0x00000269 T AirFramework.GenericPool`1::GetOne()
-// 0x0000026A T AirFramework.GenericPool`1::Allocate()
-// 0x0000026B System.Void AirFramework.GenericPool`1::Recycle(T)
-// 0x0000026C System.Void AirFramework.GenericPool_`1::.ctor()
-// 0x0000026D T AirFramework.LifeCyclePool`1::OnItemCreate()
-// 0x0000026E System.Void AirFramework.LifeCyclePool`1::OnItemAllocate(T)
-// 0x0000026F System.Void AirFramework.LifeCyclePool`1::OnItemRecycle(T)
-// 0x00000270 System.Void AirFramework.LifeCyclePool`1::.ctor(System.Func`1<T>,System.Action`1<T>,System.Action`1<T>,System.Action`1<T>)
-// 0x00000271 System.Int32 AirFramework.TimeManagedPool`1::get_AllocateCountPerCycle()
-// 0x00000272 System.Void AirFramework.TimeManagedPool`1::set_AllocateCountPerCycle(System.Int32)
-// 0x00000273 System.Void AirFramework.TimeManagedPool`1::OnItemAllocate(T)
-// 0x00000274 System.Void AirFramework.TimeManagedPool`1::.ctor(System.Func`1<T>,System.Action`1<T>,System.Action`1<T>,System.Action`1<T>)
-// 0x00000275 System.Single AirFramework.TimeManagedPool`1::get_RecycleTime()
-// 0x00000276 System.Void AirFramework.TimeManagedPool`1::set_RecycleTime(System.Single)
-// 0x00000277 System.Single AirFramework.TimeManagedPool`1::get_RecoveryRatio()
-// 0x00000278 System.Void AirFramework.TimeManagedPool`1::set_RecoveryRatio(System.Single)
-// 0x00000279 System.Void AirFramework.TimeManagedPool`1::OnCycleRecycle()
-// 0x0000027A System.Void AirFramework.TimeManagedPool`1::<set_RecycleTime>b__10_0()
-// 0x0000027B System.Void AirFramework.UnitTestPool`1::OnItemAllocate(T)
-// 0x0000027C System.Void AirFramework.UnitTestPool`1::OnItemRecycle(T)
-// 0x0000027D System.Void AirFramework.UnitTestPool`1::.ctor(System.Func`1<T>,System.Action`1<T>,System.Action`1<T>,System.Action`1<T>)
-// 0x0000027E T AirFramework.AbstractPool`1::OnCreateItem()
-// 0x0000027F System.Void AirFramework.AbstractPool`1::OnAllocateItem(T)
-// 0x00000280 System.Void AirFramework.AbstractPool`1::OnDestroyItem(T)
-// 0x00000281 System.Void AirFramework.AbstractPool`1::OnRecycleItem(T)
-// 0x00000282 System.Void AirFramework.AbstractPool`1::.ctor()
-// 0x00000283 System.Void AirFramework.AbstractTimeRecycePool`1::.ctor()
-// 0x00000284 T AirFramework.AbstractTimeRecycePool`1::OnCreateItem()
-// 0x00000285 System.Void AirFramework.AbstractTimeRecycePool`1::OnAllocateItem(T)
-// 0x00000286 System.Void AirFramework.AbstractTimeRecycePool`1::OnRecycleItem(T)
-// 0x00000287 System.Void AirFramework.AbstractTimeRecycePool`1::OnDestroyItem(T)
-// 0x00000288 System.Int32 AirFramework.PurePool`1::get_Count()
-// 0x00000289 T AirFramework.PurePool`1::Allocate()
-// 0x0000028A System.Void AirFramework.PurePool`1::Recycle(T)
-// 0x0000028B System.Void AirFramework.PurePool`1::Clear()
-// 0x0000028C System.Void AirFramework.PurePool`1::OnDispose()
-// 0x0000028D System.Void AirFramework.PurePool`1::.ctor(System.Func`1<T>,System.Action`1<T>,System.Action`1<T>,System.Action`1<T>)
-// 0x0000028E System.Boolean AirFramework.TimerCall::get_OnceRecycle()
+// 0x00000254 System.Func`1<T> AirFramework.GenericPool`1::get_OnCreate()
+// 0x00000255 System.Void AirFramework.GenericPool`1::set_OnCreate(System.Func`1<T>)
+// 0x00000256 System.Action`1<T> AirFramework.GenericPool`1::get_OnAllocate()
+// 0x00000257 System.Void AirFramework.GenericPool`1::set_OnAllocate(System.Action`1<T>)
+// 0x00000258 System.Action`1<T> AirFramework.GenericPool`1::get_OnRecycle()
+// 0x00000259 System.Void AirFramework.GenericPool`1::set_OnRecycle(System.Action`1<T>)
+// 0x0000025A System.Action`1<T> AirFramework.GenericPool`1::get_OnDestroy()
+// 0x0000025B System.Void AirFramework.GenericPool`1::set_OnDestroy(System.Action`1<T>)
+// 0x0000025C T AirFramework.GenericPool`1::OnItemCreate()
+// 0x0000025D System.Void AirFramework.GenericPool`1::OnItemAllocate(T)
+// 0x0000025E System.Void AirFramework.GenericPool`1::OnItemRecycle(T)
+// 0x0000025F System.Void AirFramework.GenericPool`1::OnItemDestroy(T)
+// 0x00000260 System.Int32 AirFramework.GenericPool`1::get_Count()
+// 0x00000261 System.Type AirFramework.GenericPool`1::get_ObjectType()
+// 0x00000262 System.Int32 AirFramework.GenericPool`1::get_MaxCapacity()
+// 0x00000263 System.Void AirFramework.GenericPool`1::set_MaxCapacity(System.Int32)
+// 0x00000264 System.Void AirFramework.GenericPool`1::.ctor()
+// 0x00000265 System.Void AirFramework.GenericPool`1::.ctor(System.Func`1<T>,System.Action`1<T>,System.Action`1<T>,System.Action`1<T>)
+// 0x00000266 System.Void AirFramework.GenericPool`1::OnDispose()
+// 0x00000267 System.Object AirFramework.GenericPool`1::AllocateObj()
+// 0x00000268 System.Void AirFramework.GenericPool`1::RecycleObj(System.Object)
+// 0x00000269 System.Void AirFramework.GenericPool`1::Clear()
+// 0x0000026A System.Void AirFramework.GenericPool`1::Preload(System.Int32)
+// 0x0000026B System.Void AirFramework.GenericPool`1::Unload(System.Int32)
+// 0x0000026C T AirFramework.GenericPool`1::GetOne()
+// 0x0000026D T AirFramework.GenericPool`1::Allocate()
+// 0x0000026E System.Void AirFramework.GenericPool`1::Recycle(T)
+// 0x0000026F System.Void AirFramework.GenericPool_`1::.ctor()
+// 0x00000270 T AirFramework.LifeCyclePool`1::OnItemCreate()
+// 0x00000271 System.Void AirFramework.LifeCyclePool`1::OnItemAllocate(T)
+// 0x00000272 System.Void AirFramework.LifeCyclePool`1::OnItemRecycle(T)
+// 0x00000273 System.Void AirFramework.LifeCyclePool`1::.ctor(System.Func`1<T>,System.Action`1<T>,System.Action`1<T>,System.Action`1<T>)
+// 0x00000274 System.Int32 AirFramework.TimeManagedPool`1::get_AllocateCountPerCycle()
+// 0x00000275 System.Void AirFramework.TimeManagedPool`1::set_AllocateCountPerCycle(System.Int32)
+// 0x00000276 System.Void AirFramework.TimeManagedPool`1::OnItemAllocate(T)
+// 0x00000277 System.Void AirFramework.TimeManagedPool`1::.ctor(System.Func`1<T>,System.Action`1<T>,System.Action`1<T>,System.Action`1<T>)
+// 0x00000278 System.Single AirFramework.TimeManagedPool`1::get_RecycleTime()
+// 0x00000279 System.Void AirFramework.TimeManagedPool`1::set_RecycleTime(System.Single)
+// 0x0000027A System.Single AirFramework.TimeManagedPool`1::get_RecoveryRatio()
+// 0x0000027B System.Void AirFramework.TimeManagedPool`1::set_RecoveryRatio(System.Single)
+// 0x0000027C System.Void AirFramework.TimeManagedPool`1::OnCycleRecycle()
+// 0x0000027D System.Void AirFramework.TimeManagedPool`1::<set_RecycleTime>b__10_0()
+// 0x0000027E System.Void AirFramework.UnitTestPool`1::OnItemAllocate(T)
+// 0x0000027F System.Void AirFramework.UnitTestPool`1::OnItemRecycle(T)
+// 0x00000280 System.Void AirFramework.UnitTestPool`1::.ctor(System.Func`1<T>,System.Action`1<T>,System.Action`1<T>,System.Action`1<T>)
+// 0x00000281 T AirFramework.AbstractPool`1::OnCreateItem()
+// 0x00000282 System.Void AirFramework.AbstractPool`1::OnAllocateItem(T)
+// 0x00000283 System.Void AirFramework.AbstractPool`1::OnDestroyItem(T)
+// 0x00000284 System.Void AirFramework.AbstractPool`1::OnRecycleItem(T)
+// 0x00000285 System.Void AirFramework.AbstractPool`1::.ctor()
+// 0x00000286 System.Void AirFramework.AbstractTimeRecycePool`1::.ctor()
+// 0x00000287 T AirFramework.AbstractTimeRecycePool`1::OnCreateItem()
+// 0x00000288 System.Void AirFramework.AbstractTimeRecycePool`1::OnAllocateItem(T)
+// 0x00000289 System.Void AirFramework.AbstractTimeRecycePool`1::OnRecycleItem(T)
+// 0x0000028A System.Void AirFramework.AbstractTimeRecycePool`1::OnDestroyItem(T)
+// 0x0000028B System.Int32 AirFramework.PurePool`1::get_Count()
+// 0x0000028C T AirFramework.PurePool`1::Allocate()
+// 0x0000028D System.Void AirFramework.PurePool`1::Recycle(T)
+// 0x0000028E System.Void AirFramework.PurePool`1::Clear()
+// 0x0000028F System.Void AirFramework.PurePool`1::OnDispose()
+// 0x00000290 System.Void AirFramework.PurePool`1::.ctor(System.Func`1<T>,System.Action`1<T>,System.Action`1<T>,System.Action`1<T>)
+// 0x00000291 System.Boolean AirFramework.TimerCall::get_OnceRecycle()
 extern void TimerCall_get_OnceRecycle_m0ED12AE9E2D16FC75D010FF14C3C3C0CE81F4D90 (void);
-// 0x0000028F System.Void AirFramework.TimerCall::set_OnceRecycle(System.Boolean)
+// 0x00000292 System.Void AirFramework.TimerCall::set_OnceRecycle(System.Boolean)
 extern void TimerCall_set_OnceRecycle_m776BC4AC96B23BCDAFAD7A65D101519605009B1E (void);
-// 0x00000290 AirFramework.TimerState AirFramework.TimerCall::get_State()
+// 0x00000293 AirFramework.TimerState AirFramework.TimerCall::get_State()
 extern void TimerCall_get_State_m31A54B00CEC46514AE39D6C849312B369605CA71 (void);
-// 0x00000291 System.Void AirFramework.TimerCall::set_State(AirFramework.TimerState)
+// 0x00000294 System.Void AirFramework.TimerCall::set_State(AirFramework.TimerState)
 extern void TimerCall_set_State_mDE7A5CAAC6758650E30DC4E4DAD64BF5D66AFA87 (void);
-// 0x00000292 System.Single AirFramework.TimerCall::get_Time()
+// 0x00000295 System.Single AirFramework.TimerCall::get_Time()
 extern void TimerCall_get_Time_mC305E867B678F58EEA7F987795EF03596E740911 (void);
-// 0x00000293 System.Void AirFramework.TimerCall::set_Time(System.Single)
+// 0x00000296 System.Void AirFramework.TimerCall::set_Time(System.Single)
 extern void TimerCall_set_Time_mB760D7B91EA3CA4BBD22C11CFF28778F1AE0BF4D (void);
-// 0x00000294 System.Void AirFramework.TimerCall::add_OnCompleted(System.Action)
+// 0x00000297 System.Void AirFramework.TimerCall::add_OnCompleted(System.Action)
 extern void TimerCall_add_OnCompleted_m0DE3DB8C33F8B1CD883D67C138069266A419C03F (void);
-// 0x00000295 System.Void AirFramework.TimerCall::remove_OnCompleted(System.Action)
+// 0x00000298 System.Void AirFramework.TimerCall::remove_OnCompleted(System.Action)
 extern void TimerCall_remove_OnCompleted_mF551341214BB7EE0F80F1B736273F01455057016 (void);
-// 0x00000296 System.Single AirFramework.TimerCall::get_Interval()
+// 0x00000299 System.Single AirFramework.TimerCall::get_Interval()
 extern void TimerCall_get_Interval_mC9B3992787D9C84DFD5DFF0C6B5F3698D2B1C5D1 (void);
-// 0x00000297 System.Void AirFramework.TimerCall::set_Interval(System.Single)
+// 0x0000029A System.Void AirFramework.TimerCall::set_Interval(System.Single)
 extern void TimerCall_set_Interval_m6D2B10DE721A24F055C68B3558FA420174BFFFD1 (void);
-// 0x00000298 System.Void AirFramework.TimerCall::add_CallPerFrame(System.Action)
+// 0x0000029B System.Void AirFramework.TimerCall::add_CallPerFrame(System.Action)
 extern void TimerCall_add_CallPerFrame_m579794D394EBF7914BABEC7145669FDD488C65C0 (void);
-// 0x00000299 System.Void AirFramework.TimerCall::remove_CallPerFrame(System.Action)
+// 0x0000029C System.Void AirFramework.TimerCall::remove_CallPerFrame(System.Action)
 extern void TimerCall_remove_CallPerFrame_m97E9BE014A9E959D2B59BBA1CB0FF796A6A0BFED (void);
-// 0x0000029A System.Void AirFramework.TimerCall::Reset()
+// 0x0000029D System.Void AirFramework.TimerCall::Reset()
 extern void TimerCall_Reset_m0D1597082EA6C9CD0B4A415E6F1B6E5C7113C886 (void);
-// 0x0000029B System.Void AirFramework.TimerCall::Pause()
+// 0x0000029E System.Void AirFramework.TimerCall::Pause()
 extern void TimerCall_Pause_mE116837AB3EF5DE71BBD9184B5A82EA846475D47 (void);
-// 0x0000029C System.Void AirFramework.TimerCall::Start(System.Boolean)
+// 0x0000029F System.Void AirFramework.TimerCall::Start(System.Boolean)
 extern void TimerCall_Start_m049D7BF2AFAD97DED31E874603C760F1B254BFC4 (void);
-// 0x0000029D System.Void AirFramework.TimerCall::AirFramework.IUpdate.Update(System.Single)
+// 0x000002A0 System.Void AirFramework.TimerCall::AirFramework.IUpdate.Update(System.Single)
 extern void TimerCall_AirFramework_IUpdate_Update_m9CB50371799EF7C3AF072721CED42D169EEF0C62 (void);
-// 0x0000029E System.Void AirFramework.TimerCall::OnAllocate()
+// 0x000002A1 System.Void AirFramework.TimerCall::OnAllocate()
 extern void TimerCall_OnAllocate_m1CC02F2F84CCB50D8082A2CB43CB45E33133B1D7 (void);
-// 0x0000029F System.Void AirFramework.TimerCall::OnRecycle()
+// 0x000002A2 System.Void AirFramework.TimerCall::OnRecycle()
 extern void TimerCall_OnRecycle_m1B633B0524D2DA9FEE359AE3FB018C8FA2593412 (void);
-// 0x000002A0 System.Void AirFramework.TimerCall::AirFramework.ITaskCancelatable.OnCancel()
+// 0x000002A3 System.Void AirFramework.TimerCall::AirFramework.ITaskCancelatable.OnCancel()
 extern void TimerCall_AirFramework_ITaskCancelatable_OnCancel_mB5B51D2630ACAACD727D3D8A59FBECB54308E6FC (void);
-// 0x000002A1 System.Void AirFramework.TimerCall::AirFramework.ITaskCancelatable.OnPause()
+// 0x000002A4 System.Void AirFramework.TimerCall::AirFramework.ITaskCancelatable.OnPause()
 extern void TimerCall_AirFramework_ITaskCancelatable_OnPause_m02B0DC4E46187A5400FC4E819C27DB2699BB510F (void);
-// 0x000002A2 System.Void AirFramework.TimerCall::AirFramework.ITaskCancelatable.OnResume()
+// 0x000002A5 System.Void AirFramework.TimerCall::AirFramework.ITaskCancelatable.OnResume()
 extern void TimerCall_AirFramework_ITaskCancelatable_OnResume_mB8795677AFC35A8567E6987725D7945E91EAC70C (void);
-// 0x000002A3 System.Void AirFramework.TimerCall::.ctor()
+// 0x000002A6 System.Void AirFramework.TimerCall::.ctor()
 extern void TimerCall__ctor_mC3C8F7C9DB08DCC4EDFF6A934552D2C4079BAD4F (void);
-// 0x000002A4 System.Int32 AirFramework.UIDPool::get_Count()
+// 0x000002A7 System.Int32 AirFramework.UIDPool::get_Count()
 extern void UIDPool_get_Count_m30941EA2E207BAD30D29749323F3F434D4EFEF6C (void);
-// 0x000002A5 System.Boolean AirFramework.UIDPool::get_IsDeposit()
+// 0x000002A8 System.Boolean AirFramework.UIDPool::get_IsDeposit()
 extern void UIDPool_get_IsDeposit_mA37985A622043F83ADDB43EF5388985374B1170A (void);
-// 0x000002A6 System.Boolean AirFramework.UIDPool::AirFramework.IDepositablePool.get_IsDeposit()
+// 0x000002A9 System.Boolean AirFramework.UIDPool::AirFramework.IDepositablePool.get_IsDeposit()
 extern void UIDPool_AirFramework_IDepositablePool_get_IsDeposit_mAB05DC348A5C37C95C6B840CA691243FA641FFCC (void);
-// 0x000002A7 System.Void AirFramework.UIDPool::AirFramework.IDepositablePool.set_IsDeposit(System.Boolean)
+// 0x000002AA System.Void AirFramework.UIDPool::AirFramework.IDepositablePool.set_IsDeposit(System.Boolean)
 extern void UIDPool_AirFramework_IDepositablePool_set_IsDeposit_m07335E7DE213CD7F2CF067583020C490F5A34B68 (void);
-// 0x000002A8 System.Int64 AirFramework.UIDPool::Allocate()
+// 0x000002AB System.Int64 AirFramework.UIDPool::Allocate()
 extern void UIDPool_Allocate_m302136CF1792949FEC6C51E95B329A2D41EE84DC (void);
-// 0x000002A9 System.Void AirFramework.UIDPool::Recycle(System.Int64)
+// 0x000002AC System.Void AirFramework.UIDPool::Recycle(System.Int64)
 extern void UIDPool_Recycle_m2B56A92DF618C25B795C8ABC12B17D6E3444D980 (void);
-// 0x000002AA System.Void AirFramework.UIDPool::Clear()
+// 0x000002AD System.Void AirFramework.UIDPool::Clear()
 extern void UIDPool_Clear_m539839C97528D6A90DF0228DAB8CAC0E66EDD94A (void);
-// 0x000002AB System.Void AirFramework.UIDPool::OnDispose()
+// 0x000002AE System.Void AirFramework.UIDPool::OnDispose()
 extern void UIDPool_OnDispose_m21FC272871477489962942D8CE965DAD66176612 (void);
-// 0x000002AC System.Void AirFramework.UIDPool::.ctor(System.Int32)
+// 0x000002AF System.Void AirFramework.UIDPool::.ctor(System.Int32)
 extern void UIDPool__ctor_mD08C386BC34DA707001DB008EE8F8A9A580AC1CE (void);
-// 0x000002AD System.Void AirFramework.AbstractBitConverter::.ctor()
+// 0x000002B0 System.Void AirFramework.AbstractBitConverter::.ctor()
 extern void AbstractBitConverter__ctor_m76148E398DFFD3945B3D862A67ECC1333778B658 (void);
-// 0x000002AE System.Void AirFramework.AsyncMonitor::Enter(System.Object)
+// 0x000002B1 System.Void AirFramework.AsyncMonitor::Enter(System.Object)
 extern void AsyncMonitor_Enter_m3FCBE0790EBCFE3D8913283914D0EA3185345D54 (void);
-// 0x000002AF System.Boolean AirFramework.AsyncMonitor::TryEnter(System.Object)
+// 0x000002B2 System.Boolean AirFramework.AsyncMonitor::TryEnter(System.Object)
 extern void AsyncMonitor_TryEnter_mDC52777CDE2F7AF953E8D7C70C7FF5FCF497C217 (void);
-// 0x000002B0 System.Void AirFramework.AsyncMonitor::Exit(System.Object)
+// 0x000002B3 System.Void AirFramework.AsyncMonitor::Exit(System.Object)
 extern void AsyncMonitor_Exit_mF3A77BB5DC086B9D467DECE81F95B505947B6A8B (void);
-// 0x000002B1 System.Boolean AirFramework.AsyncMonitor::TryExit(System.Object)
+// 0x000002B4 System.Boolean AirFramework.AsyncMonitor::TryExit(System.Object)
 extern void AsyncMonitor_TryExit_mBBE0E5745B73C92E0F012577B64D5AFB24F03FE0 (void);
-// 0x000002B2 System.Boolean AirFramework.AsyncMonitor::IsLocked(System.Object)
+// 0x000002B5 System.Boolean AirFramework.AsyncMonitor::IsLocked(System.Object)
 extern void AsyncMonitor_IsLocked_mB16B95E3989CE90D80152BBF0D6C2151F01862D1 (void);
-// 0x000002B3 AirFramework.AirTask AirFramework.AsyncMonitor::WaitUnlocked(System.Object)
+// 0x000002B6 AirFramework.AirTask AirFramework.AsyncMonitor::WaitUnlocked(System.Object)
 extern void AsyncMonitor_WaitUnlocked_m67EA4EEC54027E87324729B615C18046C1A8E226 (void);
-// 0x000002B4 AirFramework.AirTask`1<AirFramework.AsyncMonitor/LockHandle> AirFramework.AsyncMonitor::Lock(System.Object)
+// 0x000002B7 AirFramework.AirTask`1<AirFramework.AsyncMonitor/LockHandle> AirFramework.AsyncMonitor::Lock(System.Object)
 extern void AsyncMonitor_Lock_mA8743F271EACDC0E0A4A4E4F9E151B5562D3E9A2 (void);
-// 0x000002B5 System.Void AirFramework.AsyncMonitor::.cctor()
+// 0x000002B8 System.Void AirFramework.AsyncMonitor::.cctor()
 extern void AsyncMonitor__cctor_m62B79C81C4CBD91BBC510DC90C4F170DE6CFAC54 (void);
-// 0x000002B6 System.Boolean AirFramework.AsyncMonitor/AsyncLockComparer::Equals(System.Object,System.Object)
+// 0x000002B9 System.Boolean AirFramework.AsyncMonitor/AsyncLockComparer::Equals(System.Object,System.Object)
 extern void AsyncLockComparer_Equals_mF6D9F08D535603DB83C1955370D6516A909D48A7 (void);
-// 0x000002B7 System.Int32 AirFramework.AsyncMonitor/AsyncLockComparer::GetHashCode(System.Object)
+// 0x000002BA System.Int32 AirFramework.AsyncMonitor/AsyncLockComparer::GetHashCode(System.Object)
 extern void AsyncLockComparer_GetHashCode_mECE454D8D68ECBEAA5A70BCC76A23A3D69608CF1 (void);
-// 0x000002B8 System.Void AirFramework.AsyncMonitor/AsyncLockComparer::.ctor()
+// 0x000002BB System.Void AirFramework.AsyncMonitor/AsyncLockComparer::.ctor()
 extern void AsyncLockComparer__ctor_mFB0E88E446925A306E0901B4BCABCF681D7B895D (void);
-// 0x000002B9 AirFramework.AirTask AirFramework.AsyncMonitor/LockHandle::Lock(System.Object)
+// 0x000002BC AirFramework.AirTask AirFramework.AsyncMonitor/LockHandle::Lock(System.Object)
 extern void LockHandle_Lock_m1AE10E7FEF614B77AC044F61E69B6F0F77DF2CC5 (void);
-// 0x000002BA System.Void AirFramework.AsyncMonitor/LockHandle::OnAllocate()
+// 0x000002BD System.Void AirFramework.AsyncMonitor/LockHandle::OnAllocate()
 extern void LockHandle_OnAllocate_m37689A82EDEDC98619D136A95EBE67C651AA698F (void);
-// 0x000002BB System.Void AirFramework.AsyncMonitor/LockHandle::OnRecycle()
+// 0x000002BE System.Void AirFramework.AsyncMonitor/LockHandle::OnRecycle()
 extern void LockHandle_OnRecycle_mFF4BA47AD383640EE51CDDA116F9260070D7E3BC (void);
-// 0x000002BC System.Void AirFramework.AsyncMonitor/LockHandle::Unlock()
+// 0x000002BF System.Void AirFramework.AsyncMonitor/LockHandle::Unlock()
 extern void LockHandle_Unlock_m076E219750243E43095A8AD7124ADC8AD001B69D (void);
-// 0x000002BD System.Void AirFramework.AsyncMonitor/LockHandle::.ctor()
+// 0x000002C0 System.Void AirFramework.AsyncMonitor/LockHandle::.ctor()
 extern void LockHandle__ctor_m3779437824356899E467A10188FCE56F016E4627 (void);
-// 0x000002BE System.Void AirFramework.AsyncMonitor/LockHandle/<Lock>d__1::MoveNext()
+// 0x000002C1 System.Void AirFramework.AsyncMonitor/LockHandle/<Lock>d__1::MoveNext()
 extern void U3CLockU3Ed__1_MoveNext_m4802835567C0146311CB0AE677ED7CB71C151F46 (void);
-// 0x000002BF System.Void AirFramework.AsyncMonitor/LockHandle/<Lock>d__1::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x000002C2 System.Void AirFramework.AsyncMonitor/LockHandle/<Lock>d__1::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CLockU3Ed__1_SetStateMachine_mA056FB57EED92D00C3FEC8750B558161258DB8AD (void);
-// 0x000002C0 System.Void AirFramework.AsyncMonitor/<>c__DisplayClass7_0::.ctor()
+// 0x000002C3 System.Void AirFramework.AsyncMonitor/<>c__DisplayClass7_0::.ctor()
 extern void U3CU3Ec__DisplayClass7_0__ctor_m688D89FF5D1AECEE13F7E3C5A6A1CD87DED963B0 (void);
-// 0x000002C1 System.Boolean AirFramework.AsyncMonitor/<>c__DisplayClass7_0::<WaitUnlocked>b__0()
+// 0x000002C4 System.Boolean AirFramework.AsyncMonitor/<>c__DisplayClass7_0::<WaitUnlocked>b__0()
 extern void U3CU3Ec__DisplayClass7_0_U3CWaitUnlockedU3Eb__0_m83F8EF326E6780FFF666BA892CA4E2AEABBA15F9 (void);
-// 0x000002C2 System.Void AirFramework.AsyncMonitor/<Lock>d__8::MoveNext()
+// 0x000002C5 System.Void AirFramework.AsyncMonitor/<Lock>d__8::MoveNext()
 extern void U3CLockU3Ed__8_MoveNext_m13856FCF702B11E60CC596D2DED133F4AE70B319 (void);
-// 0x000002C3 System.Void AirFramework.AsyncMonitor/<Lock>d__8::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x000002C6 System.Void AirFramework.AsyncMonitor/<Lock>d__8::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CLockU3Ed__8_SetStateMachine_m2261309ED085815C1FC4CCCF117976082D55F027 (void);
-// 0x000002C4 System.Boolean AirFramework.AirTask::get_IsCompleted()
+// 0x000002C7 System.Boolean AirFramework.AirTask::get_IsCompleted()
 extern void AirTask_get_IsCompleted_m94F33A8D4992A0B7924E2E9D6E9EB48A75E93F9D (void);
-// 0x000002C5 System.Void AirFramework.AirTask::GetResult()
+// 0x000002C8 System.Void AirFramework.AirTask::GetResult()
 extern void AirTask_GetResult_m7E806F0EBD51C366319675AC769C8937D7AA9314 (void);
-// 0x000002C6 AirFramework.AirTask AirFramework.AirTask::GetAwaiter()
+// 0x000002C9 AirFramework.AirTask AirFramework.AirTask::GetAwaiter()
 extern void AirTask_GetAwaiter_mAE703FC4E6E92983BE6C7E5B0E1EB6BAED80FBC3 (void);
-// 0x000002C7 System.Void AirFramework.AirTask::System.Runtime.CompilerServices.INotifyCompletion.OnCompleted(System.Action)
+// 0x000002CA System.Void AirFramework.AirTask::System.Runtime.CompilerServices.INotifyCompletion.OnCompleted(System.Action)
 extern void AirTask_System_Runtime_CompilerServices_INotifyCompletion_OnCompleted_mCA53CB51967868BF8163FBFE9140248E2C24C151 (void);
-// 0x000002C8 System.Void AirFramework.AirTask::System.Runtime.CompilerServices.ICriticalNotifyCompletion.UnsafeOnCompleted(System.Action)
+// 0x000002CB System.Void AirFramework.AirTask::System.Runtime.CompilerServices.ICriticalNotifyCompletion.UnsafeOnCompleted(System.Action)
 extern void AirTask_System_Runtime_CompilerServices_ICriticalNotifyCompletion_UnsafeOnCompleted_m769D25F26F3037DEE343D497B8CFD0DE0913FC8A (void);
-// 0x000002C9 System.Void AirFramework.AirTask::add_Completed(System.Action`1<AirFramework.AirTask>)
+// 0x000002CC System.Void AirFramework.AirTask::add_Completed(System.Action`1<AirFramework.AirTask>)
 extern void AirTask_add_Completed_mFB326FB32D184B189959F173A2504EABD57919CF (void);
-// 0x000002CA System.Void AirFramework.AirTask::remove_Completed(System.Action`1<AirFramework.AirTask>)
+// 0x000002CD System.Void AirFramework.AirTask::remove_Completed(System.Action`1<AirFramework.AirTask>)
 extern void AirTask_remove_Completed_m78177D844C2D1326A135EA534E834D7E33F31E4D (void);
-// 0x000002CB System.Void AirFramework.AirTask::OnFinish()
+// 0x000002CE System.Void AirFramework.AirTask::OnFinish()
 extern void AirTask_OnFinish_m8C46619584577C74A8D90B90603120AC08F9429E (void);
-// 0x000002CC System.Void AirFramework.AirTask::OnRecycle()
+// 0x000002CF System.Void AirFramework.AirTask::OnRecycle()
 extern void AirTask_OnRecycle_m901AA86305669EDF52437A45581DA5DD40A50049 (void);
-// 0x000002CD System.Void AirFramework.AirTask::OnAllocate()
+// 0x000002D0 System.Void AirFramework.AirTask::OnAllocate()
 extern void AirTask_OnAllocate_m92847EE152D14BC3F6EA207A9C9A6A714CAA61E5 (void);
-// 0x000002CE AirFramework.AirTask AirFramework.AirTask::Delay(System.Single)
+// 0x000002D1 AirFramework.AirTask AirFramework.AirTask::Delay(System.Single)
 extern void AirTask_Delay_m0227410666AE51B50F54468DC4488C43A125B8EF (void);
-// 0x000002CF AirFramework.AirTask AirFramework.AirTask::Delay(System.TimeSpan)
+// 0x000002D2 AirFramework.AirTask AirFramework.AirTask::Delay(System.TimeSpan)
 extern void AirTask_Delay_m65190CB9BBCE1589E82D47051B4F008FF22C4162 (void);
-// 0x000002D0 AirFramework.AirTask AirFramework.AirTask::WaitFrame(System.Int32)
+// 0x000002D3 AirFramework.AirTask AirFramework.AirTask::WaitFrame(System.Int32)
 extern void AirTask_WaitFrame_m701CC1C51CE9CF22510DA950F2C5D13551FE77A5 (void);
-// 0x000002D1 AirFramework.AirTask AirFramework.AirTask::get_NextFrame()
+// 0x000002D4 AirFramework.AirTask AirFramework.AirTask::get_NextFrame()
 extern void AirTask_get_NextFrame_mB77BA1DCDBE1EE3B4443D5033D6A62A8EF4434F0 (void);
-// 0x000002D2 AirFramework.AirTaskCompleted& AirFramework.AirTask::get_CompletedTask()
+// 0x000002D5 AirFramework.AirTaskCompleted& AirFramework.AirTask::get_CompletedTask()
 extern void AirTask_get_CompletedTask_m6DE4D8B601080A65EA96C26712CA6CFD0B4F66F3 (void);
-// 0x000002D3 AirFramework.AirTask AirFramework.AirTask::WaitAny(AirFramework.AirTask[])
+// 0x000002D6 AirFramework.AirTask AirFramework.AirTask::WaitAny(AirFramework.AirTask[])
 extern void AirTask_WaitAny_m4B8B04090C956639BD3C22D20D6BEBD490F8A492 (void);
-// 0x000002D4 AirFramework.AirTask`1<T[]> AirFramework.AirTask::WaitAny(AirFramework.AirTask`1<T>[])
-// 0x000002D5 AirFramework.AirTask AirFramework.AirTask::WaitAll(AirFramework.AirTask[])
+// 0x000002D7 AirFramework.AirTask`1<T[]> AirFramework.AirTask::WaitAny(AirFramework.AirTask`1<T>[])
+// 0x000002D8 AirFramework.AirTask AirFramework.AirTask::WaitAll(AirFramework.AirTask[])
 extern void AirTask_WaitAll_m32404F7B829B627EA5FC296A17D9651FC191C3C9 (void);
-// 0x000002D6 AirFramework.AirTask`1<T[]> AirFramework.AirTask::WaitAll(System.Boolean,AirFramework.AirTask`1<T>[])
-// 0x000002D7 AirFramework.AirTask AirFramework.AirTask::WaitUntil(System.Func`1<System.Boolean>)
+// 0x000002D9 AirFramework.AirTask`1<T[]> AirFramework.AirTask::WaitAll(System.Boolean,AirFramework.AirTask`1<T>[])
+// 0x000002DA AirFramework.AirTask AirFramework.AirTask::WaitUntil(System.Func`1<System.Boolean>)
 extern void AirTask_WaitUntil_mE60D5DEFD6EF7EA71B1A28E1A966244950C06E68 (void);
-// 0x000002D8 AirFramework.AirTask`1<AirFramework.AsyncToken> AirFramework.AirTask::CatchToken()
+// 0x000002DB AirFramework.AirTask`1<AirFramework.AsyncToken> AirFramework.AirTask::CatchToken()
 extern void AirTask_CatchToken_m90B274B9D48E0185BC2E8A876AEE16195CD9B9C3 (void);
-// 0x000002D9 System.Collections.IEnumerator AirFramework.AirTask::ToCoroutine(System.Func`1<AirFramework.AirTask>)
+// 0x000002DC System.Collections.IEnumerator AirFramework.AirTask::ToCoroutine(System.Func`1<AirFramework.AirTask>)
 extern void AirTask_ToCoroutine_mD52A3BF4982C46FBADC25A4E15A6AC8779A5DE27 (void);
-// 0x000002DA System.Collections.Generic.IEnumerator`1<T> AirFramework.AirTask::ToCoroutine(System.Func`1<AirFramework.AirTask`1<T>>)
-// 0x000002DB System.Collections.IEnumerator AirFramework.AirTask::ToCoroutine(AirFramework.AirTask)
+// 0x000002DD System.Collections.Generic.IEnumerator`1<T> AirFramework.AirTask::ToCoroutine(System.Func`1<AirFramework.AirTask`1<T>>)
+// 0x000002DE System.Collections.IEnumerator AirFramework.AirTask::ToCoroutine(AirFramework.AirTask)
 extern void AirTask_ToCoroutine_m0D86AEFCB6E9A41A3FCEC084712A712592DE1A0C (void);
-// 0x000002DC System.Collections.Generic.IEnumerator`1<T> AirFramework.AirTask::ToCoroutine(AirFramework.AirTask`1<T>)
-// 0x000002DD System.Void AirFramework.AirTask::.ctor()
+// 0x000002DF System.Collections.Generic.IEnumerator`1<T> AirFramework.AirTask::ToCoroutine(AirFramework.AirTask`1<T>)
+// 0x000002E0 System.Void AirFramework.AirTask::.ctor()
 extern void AirTask__ctor_m40B778CC8FFE89DC4E33720701DE2ECEEE280F70 (void);
-// 0x000002DE System.Void AirFramework.AirTask::.cctor()
+// 0x000002E1 System.Void AirFramework.AirTask::.cctor()
 extern void AirTask__cctor_m5B749EE9D3D6BD659D3A7894EDD1A255FDE2BBA0 (void);
-// 0x000002DF System.Void AirFramework.AirTask/<>c__DisplayClass22_0::.ctor()
+// 0x000002E2 System.Void AirFramework.AirTask/<>c__DisplayClass22_0::.ctor()
 extern void U3CU3Ec__DisplayClass22_0__ctor_m53EBB6C10170075105989F1B00856B429379BA73 (void);
-// 0x000002E0 System.Void AirFramework.AirTask/<>c__DisplayClass22_0::<WaitAny>b__0(AirFramework.AirTask)
+// 0x000002E3 System.Void AirFramework.AirTask/<>c__DisplayClass22_0::<WaitAny>b__0(AirFramework.AirTask)
 extern void U3CU3Ec__DisplayClass22_0_U3CWaitAnyU3Eb__0_m20E399A2BBFC12301EDB64A36A18F8EBD3BB52A3 (void);
-// 0x000002E1 System.Void AirFramework.AirTask/<>c__DisplayClass23_0`1::.ctor()
-// 0x000002E2 System.Void AirFramework.AirTask/<>c__DisplayClass23_0`1::<WaitAny>b__0(AirFramework.AirTask`1<T>)
-// 0x000002E3 System.Void AirFramework.AirTask/<>c__DisplayClass24_0::.ctor()
+// 0x000002E4 System.Void AirFramework.AirTask/<>c__DisplayClass23_0`1::.ctor()
+// 0x000002E5 System.Void AirFramework.AirTask/<>c__DisplayClass23_0`1::<WaitAny>b__0(AirFramework.AirTask`1<T>)
+// 0x000002E6 System.Void AirFramework.AirTask/<>c__DisplayClass24_0::.ctor()
 extern void U3CU3Ec__DisplayClass24_0__ctor_m8A888018AFF6EFB996193BE97C40409E9ACEAC53 (void);
-// 0x000002E4 System.Void AirFramework.AirTask/<>c__DisplayClass24_0::<WaitAll>b__0(AirFramework.AirTask)
+// 0x000002E7 System.Void AirFramework.AirTask/<>c__DisplayClass24_0::<WaitAll>b__0(AirFramework.AirTask)
 extern void U3CU3Ec__DisplayClass24_0_U3CWaitAllU3Eb__0_m693674C04072A27B6EC0849E2C50475A78BC3ECA (void);
-// 0x000002E5 System.Void AirFramework.AirTask/<>c__DisplayClass25_0`1::.ctor()
-// 0x000002E6 System.Void AirFramework.AirTask/<>c__DisplayClass25_0`1::<WaitAll>b__0(AirFramework.AirTask`1<T>)
-// 0x000002E7 System.Void AirFramework.AirTask/<CatchToken>d__27::MoveNext()
+// 0x000002E8 System.Void AirFramework.AirTask/<>c__DisplayClass25_0`1::.ctor()
+// 0x000002E9 System.Void AirFramework.AirTask/<>c__DisplayClass25_0`1::<WaitAll>b__0(AirFramework.AirTask`1<T>)
+// 0x000002EA System.Void AirFramework.AirTask/<CatchToken>d__27::MoveNext()
 extern void U3CCatchTokenU3Ed__27_MoveNext_m121B75680C6394C42DC44E90972F8DE65351564C (void);
-// 0x000002E8 System.Void AirFramework.AirTask/<CatchToken>d__27::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x000002EB System.Void AirFramework.AirTask/<CatchToken>d__27::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CCatchTokenU3Ed__27_SetStateMachine_m8B6F2F3CC511E30557997CC712D3BCC3B9D3B2F3 (void);
-// 0x000002E9 System.Void AirFramework.AirTask/<ToCoroutine>d__28::.ctor(System.Int32)
+// 0x000002EC System.Void AirFramework.AirTask/<ToCoroutine>d__28::.ctor(System.Int32)
 extern void U3CToCoroutineU3Ed__28__ctor_mD1730FDC442AB566D49C01285A047D306DF75D24 (void);
-// 0x000002EA System.Void AirFramework.AirTask/<ToCoroutine>d__28::System.IDisposable.Dispose()
+// 0x000002ED System.Void AirFramework.AirTask/<ToCoroutine>d__28::System.IDisposable.Dispose()
 extern void U3CToCoroutineU3Ed__28_System_IDisposable_Dispose_m24DBD0B7F4A5AFD18D26E7DFE7871E8E36E17BB9 (void);
-// 0x000002EB System.Boolean AirFramework.AirTask/<ToCoroutine>d__28::MoveNext()
+// 0x000002EE System.Boolean AirFramework.AirTask/<ToCoroutine>d__28::MoveNext()
 extern void U3CToCoroutineU3Ed__28_MoveNext_m37BD78CDAFFCE663B5557E13A1B2D2223A29AF22 (void);
-// 0x000002EC System.Object AirFramework.AirTask/<ToCoroutine>d__28::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x000002EF System.Object AirFramework.AirTask/<ToCoroutine>d__28::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CToCoroutineU3Ed__28_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mF75714A0737FCFD1996765C937FAF46179EC9509 (void);
-// 0x000002ED System.Void AirFramework.AirTask/<ToCoroutine>d__28::System.Collections.IEnumerator.Reset()
+// 0x000002F0 System.Void AirFramework.AirTask/<ToCoroutine>d__28::System.Collections.IEnumerator.Reset()
 extern void U3CToCoroutineU3Ed__28_System_Collections_IEnumerator_Reset_m41112532CF489104B9C5F339EE7E9AF199CA8C7E (void);
-// 0x000002EE System.Object AirFramework.AirTask/<ToCoroutine>d__28::System.Collections.IEnumerator.get_Current()
+// 0x000002F1 System.Object AirFramework.AirTask/<ToCoroutine>d__28::System.Collections.IEnumerator.get_Current()
 extern void U3CToCoroutineU3Ed__28_System_Collections_IEnumerator_get_Current_m63432690670DDAAFAE548DF9BBC1B148B590D26E (void);
-// 0x000002EF System.Void AirFramework.AirTask/<ToCoroutine>d__29`1::.ctor(System.Int32)
-// 0x000002F0 System.Void AirFramework.AirTask/<ToCoroutine>d__29`1::System.IDisposable.Dispose()
-// 0x000002F1 System.Boolean AirFramework.AirTask/<ToCoroutine>d__29`1::MoveNext()
-// 0x000002F2 T AirFramework.AirTask/<ToCoroutine>d__29`1::System.Collections.Generic.IEnumerator<T>.get_Current()
-// 0x000002F3 System.Void AirFramework.AirTask/<ToCoroutine>d__29`1::System.Collections.IEnumerator.Reset()
-// 0x000002F4 System.Object AirFramework.AirTask/<ToCoroutine>d__29`1::System.Collections.IEnumerator.get_Current()
-// 0x000002F5 System.Void AirFramework.AirTask/<ToCoroutine>d__30::.ctor(System.Int32)
+// 0x000002F2 System.Void AirFramework.AirTask/<ToCoroutine>d__29`1::.ctor(System.Int32)
+// 0x000002F3 System.Void AirFramework.AirTask/<ToCoroutine>d__29`1::System.IDisposable.Dispose()
+// 0x000002F4 System.Boolean AirFramework.AirTask/<ToCoroutine>d__29`1::MoveNext()
+// 0x000002F5 T AirFramework.AirTask/<ToCoroutine>d__29`1::System.Collections.Generic.IEnumerator<T>.get_Current()
+// 0x000002F6 System.Void AirFramework.AirTask/<ToCoroutine>d__29`1::System.Collections.IEnumerator.Reset()
+// 0x000002F7 System.Object AirFramework.AirTask/<ToCoroutine>d__29`1::System.Collections.IEnumerator.get_Current()
+// 0x000002F8 System.Void AirFramework.AirTask/<ToCoroutine>d__30::.ctor(System.Int32)
 extern void U3CToCoroutineU3Ed__30__ctor_m89A91C0E44BCC04B05364F0E9032FCCE9D47099B (void);
-// 0x000002F6 System.Void AirFramework.AirTask/<ToCoroutine>d__30::System.IDisposable.Dispose()
+// 0x000002F9 System.Void AirFramework.AirTask/<ToCoroutine>d__30::System.IDisposable.Dispose()
 extern void U3CToCoroutineU3Ed__30_System_IDisposable_Dispose_m3E8438A413F536FF0ABDA956453C47C4970E9140 (void);
-// 0x000002F7 System.Boolean AirFramework.AirTask/<ToCoroutine>d__30::MoveNext()
+// 0x000002FA System.Boolean AirFramework.AirTask/<ToCoroutine>d__30::MoveNext()
 extern void U3CToCoroutineU3Ed__30_MoveNext_m4C5868ED25DEB101E52CF37C2978321E4564C1FC (void);
-// 0x000002F8 System.Object AirFramework.AirTask/<ToCoroutine>d__30::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x000002FB System.Object AirFramework.AirTask/<ToCoroutine>d__30::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CToCoroutineU3Ed__30_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mFF69ABC928BDD6986DAD5BB57A0CEAEADD79B646 (void);
-// 0x000002F9 System.Void AirFramework.AirTask/<ToCoroutine>d__30::System.Collections.IEnumerator.Reset()
+// 0x000002FC System.Void AirFramework.AirTask/<ToCoroutine>d__30::System.Collections.IEnumerator.Reset()
 extern void U3CToCoroutineU3Ed__30_System_Collections_IEnumerator_Reset_m5AE6890C2A47459503EB794D0195996CAAF2A24E (void);
-// 0x000002FA System.Object AirFramework.AirTask/<ToCoroutine>d__30::System.Collections.IEnumerator.get_Current()
+// 0x000002FD System.Object AirFramework.AirTask/<ToCoroutine>d__30::System.Collections.IEnumerator.get_Current()
 extern void U3CToCoroutineU3Ed__30_System_Collections_IEnumerator_get_Current_m9D9DF79296A579E33104FFC73A0E3909BD98A6A7 (void);
-// 0x000002FB System.Void AirFramework.AirTask/<ToCoroutine>d__31`1::.ctor(System.Int32)
-// 0x000002FC System.Void AirFramework.AirTask/<ToCoroutine>d__31`1::System.IDisposable.Dispose()
-// 0x000002FD System.Boolean AirFramework.AirTask/<ToCoroutine>d__31`1::MoveNext()
-// 0x000002FE T AirFramework.AirTask/<ToCoroutine>d__31`1::System.Collections.Generic.IEnumerator<T>.get_Current()
-// 0x000002FF System.Void AirFramework.AirTask/<ToCoroutine>d__31`1::System.Collections.IEnumerator.Reset()
-// 0x00000300 System.Object AirFramework.AirTask/<ToCoroutine>d__31`1::System.Collections.IEnumerator.get_Current()
-// 0x00000301 T AirFramework.AirTask`1::get_Result()
-// 0x00000302 System.Void AirFramework.AirTask`1::set_Result(T)
-// 0x00000303 System.Action`1<T> AirFramework.AirTask`1::get_FinishSucceedWithResult()
-// 0x00000304 System.Boolean AirFramework.AirTask`1::get_IsCompleted()
-// 0x00000305 System.Void AirFramework.AirTask`1::OnAllocate()
-// 0x00000306 System.Void AirFramework.AirTask`1::OnRecycle()
-// 0x00000307 T AirFramework.AirTask`1::GetResult()
-// 0x00000308 AirFramework.AirTask`1<T> AirFramework.AirTask`1::GetAwaiter()
-// 0x00000309 System.Void AirFramework.AirTask`1::add_Completed(System.Action`1<AirFramework.AirTask`1<T>>)
-// 0x0000030A System.Void AirFramework.AirTask`1::remove_Completed(System.Action`1<AirFramework.AirTask`1<T>>)
-// 0x0000030B System.Void AirFramework.AirTask`1::OnFinish()
-// 0x0000030C System.Void AirFramework.AirTask`1::System.Runtime.CompilerServices.INotifyCompletion.OnCompleted(System.Action)
-// 0x0000030D System.Void AirFramework.AirTask`1::System.Runtime.CompilerServices.ICriticalNotifyCompletion.UnsafeOnCompleted(System.Action)
-// 0x0000030E AirFramework.AirTask AirFramework.AirTask`1::op_Explicit(AirFramework.AirTask`1<T>)
-// 0x0000030F System.Void AirFramework.AirTask`1::.ctor()
-// 0x00000310 System.Void AirFramework.AirTask`1::<get_FinishSucceedWithResult>b__6_0(T)
-// 0x00000311 System.Void AirFramework.AirTask`1/<>c__DisplayClass21_0::.ctor()
-// 0x00000312 System.Void AirFramework.AirTask`1/<>c__DisplayClass21_0::<op_Explicit>b__0(AirFramework.AirTask`1<T>)
-// 0x00000313 System.Boolean AirFramework.AirTaskCompleted::get_IsCompleted()
+// 0x000002FE System.Void AirFramework.AirTask/<ToCoroutine>d__31`1::.ctor(System.Int32)
+// 0x000002FF System.Void AirFramework.AirTask/<ToCoroutine>d__31`1::System.IDisposable.Dispose()
+// 0x00000300 System.Boolean AirFramework.AirTask/<ToCoroutine>d__31`1::MoveNext()
+// 0x00000301 T AirFramework.AirTask/<ToCoroutine>d__31`1::System.Collections.Generic.IEnumerator<T>.get_Current()
+// 0x00000302 System.Void AirFramework.AirTask/<ToCoroutine>d__31`1::System.Collections.IEnumerator.Reset()
+// 0x00000303 System.Object AirFramework.AirTask/<ToCoroutine>d__31`1::System.Collections.IEnumerator.get_Current()
+// 0x00000304 T AirFramework.AirTask`1::get_Result()
+// 0x00000305 System.Void AirFramework.AirTask`1::set_Result(T)
+// 0x00000306 System.Action`1<T> AirFramework.AirTask`1::get_FinishSucceedWithResult()
+// 0x00000307 System.Boolean AirFramework.AirTask`1::get_IsCompleted()
+// 0x00000308 System.Void AirFramework.AirTask`1::OnAllocate()
+// 0x00000309 System.Void AirFramework.AirTask`1::OnRecycle()
+// 0x0000030A T AirFramework.AirTask`1::GetResult()
+// 0x0000030B AirFramework.AirTask`1<T> AirFramework.AirTask`1::GetAwaiter()
+// 0x0000030C System.Void AirFramework.AirTask`1::add_Completed(System.Action`1<AirFramework.AirTask`1<T>>)
+// 0x0000030D System.Void AirFramework.AirTask`1::remove_Completed(System.Action`1<AirFramework.AirTask`1<T>>)
+// 0x0000030E System.Void AirFramework.AirTask`1::OnFinish()
+// 0x0000030F System.Void AirFramework.AirTask`1::System.Runtime.CompilerServices.INotifyCompletion.OnCompleted(System.Action)
+// 0x00000310 System.Void AirFramework.AirTask`1::System.Runtime.CompilerServices.ICriticalNotifyCompletion.UnsafeOnCompleted(System.Action)
+// 0x00000311 AirFramework.AirTask AirFramework.AirTask`1::op_Explicit(AirFramework.AirTask`1<T>)
+// 0x00000312 System.Void AirFramework.AirTask`1::.ctor()
+// 0x00000313 System.Void AirFramework.AirTask`1::<get_FinishSucceedWithResult>b__6_0(T)
+// 0x00000314 System.Void AirFramework.AirTask`1/<>c__DisplayClass21_0::.ctor()
+// 0x00000315 System.Void AirFramework.AirTask`1/<>c__DisplayClass21_0::<op_Explicit>b__0(AirFramework.AirTask`1<T>)
+// 0x00000316 System.Boolean AirFramework.AirTaskCompleted::get_IsCompleted()
 extern void AirTaskCompleted_get_IsCompleted_mFD51611A20DC0CDE303210DE4D8BA66C52C6557A (void);
-// 0x00000314 System.Void AirFramework.AirTaskCompleted::GetResult()
+// 0x00000317 System.Void AirFramework.AirTaskCompleted::GetResult()
 extern void AirTaskCompleted_GetResult_mDE93826FBD1C5602BDE306323C9146124F2FEFEC (void);
-// 0x00000315 System.Void AirFramework.AirTaskCompleted::SetException(System.Exception)
+// 0x00000318 System.Void AirFramework.AirTaskCompleted::SetException(System.Exception)
 extern void AirTaskCompleted_SetException_m3EEE4ADB025740048ACB03E1B703B254F0969EB0 (void);
-// 0x00000316 AirFramework.AirTaskCompleted AirFramework.AirTaskCompleted::GetAwaiter()
+// 0x00000319 AirFramework.AirTaskCompleted AirFramework.AirTaskCompleted::GetAwaiter()
 extern void AirTaskCompleted_GetAwaiter_m113AB8C31346904170927B8F4C3A2F7F4057CF91 (void);
-// 0x00000317 System.Void AirFramework.AirTaskCompleted::OnCompleted(System.Action)
+// 0x0000031A System.Void AirFramework.AirTaskCompleted::OnCompleted(System.Action)
 extern void AirTaskCompleted_OnCompleted_m096BC9D60E16B385CD60B8C761BA5D4DC135A69F (void);
-// 0x00000318 System.Void AirFramework.AirTaskCompleted::add_Completed(System.Action)
+// 0x0000031B System.Void AirFramework.AirTaskCompleted::add_Completed(System.Action)
 extern void AirTaskCompleted_add_Completed_m2E0915BB6EA3A58FD31EEE898E64A6D71F7DD266 (void);
-// 0x00000319 System.Void AirFramework.AirTaskCompleted::remove_Completed(System.Action)
+// 0x0000031C System.Void AirFramework.AirTaskCompleted::remove_Completed(System.Action)
 extern void AirTaskCompleted_remove_Completed_m541F610F2011A7B630A2B86ACBB76FE9BE5D4251 (void);
-// 0x0000031A System.Boolean AirFramework.AirTaskTokenCatch::get_IsCompleted()
+// 0x0000031D System.Boolean AirFramework.AirTaskTokenCatch::get_IsCompleted()
 extern void AirTaskTokenCatch_get_IsCompleted_mFC4D6CB541AA3CB4C98C3BEBE39DBC956A312E34 (void);
-// 0x0000031B System.Void AirFramework.AirTaskTokenCatch::OnAllocate()
+// 0x0000031E System.Void AirFramework.AirTaskTokenCatch::OnAllocate()
 extern void AirTaskTokenCatch_OnAllocate_m2C4AC8EA85BE53E0AD96759F1838D3687AFE2767 (void);
-// 0x0000031C System.Void AirFramework.AirTaskTokenCatch::OnRecycle()
+// 0x0000031F System.Void AirFramework.AirTaskTokenCatch::OnRecycle()
 extern void AirTaskTokenCatch_OnRecycle_m714B278A9A770475C4B71943822AF11EC764592F (void);
-// 0x0000031D AirFramework.Internal.IAsyncTokenProperty AirFramework.AirTaskTokenCatch::GetResult()
+// 0x00000320 AirFramework.Internal.IAsyncTokenProperty AirFramework.AirTaskTokenCatch::GetResult()
 extern void AirTaskTokenCatch_GetResult_mD5F311B8659511510C24A405E000817806B7C36C (void);
-// 0x0000031E AirFramework.AirTaskTokenCatch AirFramework.AirTaskTokenCatch::GetAwaiter()
+// 0x00000321 AirFramework.AirTaskTokenCatch AirFramework.AirTaskTokenCatch::GetAwaiter()
 extern void AirTaskTokenCatch_GetAwaiter_m652F444D51B16007F3EBEF098C5E2A00E76B6EF7 (void);
-// 0x0000031F System.Void AirFramework.AirTaskTokenCatch::OnFinish()
+// 0x00000322 System.Void AirFramework.AirTaskTokenCatch::OnFinish()
 extern void AirTaskTokenCatch_OnFinish_m1B7B10E733C19FB9FBF47228718F6A91F945256D (void);
-// 0x00000320 System.Void AirFramework.AirTaskTokenCatch::System.Runtime.CompilerServices.INotifyCompletion.OnCompleted(System.Action)
+// 0x00000323 System.Void AirFramework.AirTaskTokenCatch::System.Runtime.CompilerServices.INotifyCompletion.OnCompleted(System.Action)
 extern void AirTaskTokenCatch_System_Runtime_CompilerServices_INotifyCompletion_OnCompleted_m6C3256053C083ACFE5426685C57CC0C447EB59BE (void);
-// 0x00000321 System.Void AirFramework.AirTaskTokenCatch::System.Runtime.CompilerServices.ICriticalNotifyCompletion.UnsafeOnCompleted(System.Action)
+// 0x00000324 System.Void AirFramework.AirTaskTokenCatch::System.Runtime.CompilerServices.ICriticalNotifyCompletion.UnsafeOnCompleted(System.Action)
 extern void AirTaskTokenCatch_System_Runtime_CompilerServices_ICriticalNotifyCompletion_UnsafeOnCompleted_m78977631F4F058AFB85828429A121DD70318E7EC (void);
-// 0x00000322 System.Void AirFramework.AirTaskTokenCatch::.ctor()
+// 0x00000325 System.Void AirFramework.AirTaskTokenCatch::.ctor()
 extern void AirTaskTokenCatch__ctor_m2804BB45191F2E090B176F252DCA7C35D6EA2B74 (void);
-// 0x00000323 ETaskStatus AirFramework.AirTaskBase::get_Status()
+// 0x00000326 ETaskStatus AirFramework.AirTaskBase::get_Status()
 extern void AirTaskBase_get_Status_m4F90D5CB533A306319053F15A3CCE47CF2CC58F1 (void);
-// 0x00000324 System.Void AirFramework.AirTaskBase::set_Status(ETaskStatus)
+// 0x00000327 System.Void AirFramework.AirTaskBase::set_Status(ETaskStatus)
 extern void AirTaskBase_set_Status_m1F6A2ACD38DD4B6350A2DF5079A2506C6D8EE288 (void);
-// 0x00000325 System.Boolean AirFramework.AirTaskBase::get_IsDone()
+// 0x00000328 System.Boolean AirFramework.AirTaskBase::get_IsDone()
 extern void AirTaskBase_get_IsDone_mEDE800FEDFB55A18A7CBC2486BBADBFDBA862EF4 (void);
-// 0x00000326 System.Action AirFramework.AirTaskBase::get_FinishSucceed()
+// 0x00000329 System.Action AirFramework.AirTaskBase::get_FinishSucceed()
 extern void AirTaskBase_get_FinishSucceed_m1954BCA2A70C9598781408BF83F83600DD0BE9FC (void);
-// 0x00000327 System.Void AirFramework.AirTaskBase::Finish(ETaskStatus)
+// 0x0000032A System.Void AirFramework.AirTaskBase::Finish(ETaskStatus)
 extern void AirTaskBase_Finish_m630387E2AB00569617832FB17555EA3DE145E1D6 (void);
-// 0x00000328 System.Void AirFramework.AirTaskBase::OnFinish()
-// 0x00000329 System.Void AirFramework.AirTaskBase::PostException(System.Runtime.ExceptionServices.ExceptionDispatchInfo)
+// 0x0000032B System.Void AirFramework.AirTaskBase::OnFinish()
+// 0x0000032C System.Void AirFramework.AirTaskBase::PostException(System.Runtime.ExceptionServices.ExceptionDispatchInfo)
 extern void AirTaskBase_PostException_m324406A5CA13964D92AF468CB24DA15EEA389AD3 (void);
-// 0x0000032A System.Action`1<AirFramework.AirTaskBase> AirFramework.AirTaskBase::get_FinishWith()
+// 0x0000032D System.Action`1<AirFramework.AirTaskBase> AirFramework.AirTaskBase::get_FinishWith()
 extern void AirTaskBase_get_FinishWith_m82F2DC2ACBA7D967E3DD58DF3ABC687688152778 (void);
-// 0x0000032B System.Void AirFramework.AirTaskBase::.ctor()
+// 0x0000032E System.Void AirFramework.AirTaskBase::.ctor()
 extern void AirTaskBase__ctor_m93D353D300B5C2C721CC81687E27D205E2D95DBD (void);
-// 0x0000032C AirFramework.Internal.AsyncTreeTokenNode AirFramework.AirTaskBase::get_Token()
+// 0x0000032F AirFramework.Internal.AsyncTreeTokenNode AirFramework.AirTaskBase::get_Token()
 extern void AirTaskBase_get_Token_mB8CEBBC6B6B6CEF397C12271EA852500DFC3E3AC (void);
-// 0x0000032D System.Void AirFramework.AirTaskBase::set_Token(AirFramework.Internal.AsyncTreeTokenNode)
+// 0x00000330 System.Void AirFramework.AirTaskBase::set_Token(AirFramework.Internal.AsyncTreeTokenNode)
 extern void AirTaskBase_set_Token_m82722FE60DE2DD837F720C7C54FE34F5B160D6A2 (void);
-// 0x0000032E System.Void AirFramework.AirTaskBase::OnAllocate()
+// 0x00000331 System.Void AirFramework.AirTaskBase::OnAllocate()
 extern void AirTaskBase_OnAllocate_m0FA11377878E85623EC20D4CAB5D9EE322AACCE3 (void);
-// 0x0000032F System.Void AirFramework.AirTaskBase::OnRecycle()
+// 0x00000332 System.Void AirFramework.AirTaskBase::OnRecycle()
 extern void AirTaskBase_OnRecycle_mE65244C6C44FF804ADC4431DF493009EDBAB43DC (void);
-// 0x00000330 System.Void AirFramework.AirTaskBase::<get_FinishSucceed>b__8_0()
+// 0x00000333 System.Void AirFramework.AirTaskBase::<get_FinishSucceed>b__8_0()
 extern void AirTaskBase_U3Cget_FinishSucceedU3Eb__8_0_m4DC9DDC46D282BBA47D36C655B8232F62ABB599D (void);
-// 0x00000331 System.Void AirFramework.AirTaskBase::<get_FinishWith>b__14_0(AirFramework.AirTaskBase)
+// 0x00000334 System.Void AirFramework.AirTaskBase::<get_FinishWith>b__14_0(AirFramework.AirTaskBase)
 extern void AirTaskBase_U3Cget_FinishWithU3Eb__14_0_m30726876D317C6966C18D328A20F70D73AAB0484 (void);
-// 0x00000332 AirFramework.AirTaskBuilder AirFramework.AirTaskBuilder::Create()
+// 0x00000335 AirFramework.AirTaskBuilder AirFramework.AirTaskBuilder::Create()
 extern void AirTaskBuilder_Create_m1BF3443860D8D1F23E5D5ED9DD7751C15B72418F (void);
-// 0x00000333 System.Void AirFramework.AirTaskBuilder::.ctor(AirFramework.AirTask)
+// 0x00000336 System.Void AirFramework.AirTaskBuilder::.ctor(AirFramework.AirTask)
 extern void AirTaskBuilder__ctor_m5ABAC4F308CC870A501280A6DA1CF07322F033AB (void);
-// 0x00000334 AirFramework.AirTask AirFramework.AirTaskBuilder::get_Task()
+// 0x00000337 AirFramework.AirTask AirFramework.AirTaskBuilder::get_Task()
 extern void AirTaskBuilder_get_Task_m1034753330CC186D831CFC05D7A62D5491BE5FC3 (void);
-// 0x00000335 System.Void AirFramework.AirTaskBuilder::Start(TStateMachine&)
-// 0x00000336 System.Void AirFramework.AirTaskBuilder::SetException(System.Exception)
+// 0x00000338 System.Void AirFramework.AirTaskBuilder::Start(TStateMachine&)
+// 0x00000339 System.Void AirFramework.AirTaskBuilder::SetException(System.Exception)
 extern void AirTaskBuilder_SetException_m1DC25889C8265E827EA7AE68D4512F54DF868914 (void);
-// 0x00000337 System.Void AirFramework.AirTaskBuilder::SetResult()
+// 0x0000033A System.Void AirFramework.AirTaskBuilder::SetResult()
 extern void AirTaskBuilder_SetResult_mC4573B3D50CEBCF8D9EB5C9B60916269BEE7FFBE (void);
-// 0x00000338 System.Void AirFramework.AirTaskBuilder::AwaitOnCompleted(TAwaiter&,TStateMachine&)
-// 0x00000339 System.Void AirFramework.AirTaskBuilder::AwaitUnsafeOnCompleted(TAwaiter&,TStateMachine&)
-// 0x0000033A System.Void AirFramework.AirTaskBuilder::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x0000033B System.Void AirFramework.AirTaskBuilder::AwaitOnCompleted(TAwaiter&,TStateMachine&)
+// 0x0000033C System.Void AirFramework.AirTaskBuilder::AwaitUnsafeOnCompleted(TAwaiter&,TStateMachine&)
+// 0x0000033D System.Void AirFramework.AirTaskBuilder::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void AirTaskBuilder_SetStateMachine_m7DB4CB2AC8C8E30BA1BBA894973EBFDE6C5DD91D (void);
-// 0x0000033B AirFramework.AirTaskBuilder`1<T> AirFramework.AirTaskBuilder`1::Create()
-// 0x0000033C System.Void AirFramework.AirTaskBuilder`1::.ctor(AirFramework.AirTask`1<T>)
-// 0x0000033D AirFramework.AirTask`1<T> AirFramework.AirTaskBuilder`1::get_Task()
-// 0x0000033E System.Void AirFramework.AirTaskBuilder`1::Start(TStateMachine&)
-// 0x0000033F System.Void AirFramework.AirTaskBuilder`1::SetException(System.Exception)
-// 0x00000340 System.Void AirFramework.AirTaskBuilder`1::SetResult(T)
-// 0x00000341 System.Void AirFramework.AirTaskBuilder`1::AwaitOnCompleted(TAwaiter&,TStateMachine&)
-// 0x00000342 System.Void AirFramework.AirTaskBuilder`1::AwaitUnsafeOnCompleted(TAwaiter&,TStateMachine&)
-// 0x00000343 System.Void AirFramework.AirTaskBuilder`1::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-// 0x00000344 System.Void AirFramework.ICancelCallback::OnCancel()
-// 0x00000345 System.Void AirFramework.AsyncToken::add_OnCanceled(System.Action)
+// 0x0000033E AirFramework.AirTaskBuilder`1<T> AirFramework.AirTaskBuilder`1::Create()
+// 0x0000033F System.Void AirFramework.AirTaskBuilder`1::.ctor(AirFramework.AirTask`1<T>)
+// 0x00000340 AirFramework.AirTask`1<T> AirFramework.AirTaskBuilder`1::get_Task()
+// 0x00000341 System.Void AirFramework.AirTaskBuilder`1::Start(TStateMachine&)
+// 0x00000342 System.Void AirFramework.AirTaskBuilder`1::SetException(System.Exception)
+// 0x00000343 System.Void AirFramework.AirTaskBuilder`1::SetResult(T)
+// 0x00000344 System.Void AirFramework.AirTaskBuilder`1::AwaitOnCompleted(TAwaiter&,TStateMachine&)
+// 0x00000345 System.Void AirFramework.AirTaskBuilder`1::AwaitUnsafeOnCompleted(TAwaiter&,TStateMachine&)
+// 0x00000346 System.Void AirFramework.AirTaskBuilder`1::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000347 System.Void AirFramework.ICancelCallback::OnCancel()
+// 0x00000348 System.Void AirFramework.AsyncToken::add_OnCanceled(System.Action)
 extern void AsyncToken_add_OnCanceled_m7BB35DF70C0F98CA4FCDB317CE0EA1E5F733B9C6 (void);
-// 0x00000346 System.Void AirFramework.AsyncToken::remove_OnCanceled(System.Action)
+// 0x00000349 System.Void AirFramework.AsyncToken::remove_OnCanceled(System.Action)
 extern void AsyncToken_remove_OnCanceled_m324DAACED5D2E55CE55E54C06417A518B4563460 (void);
-// 0x00000347 System.Void AirFramework.AsyncToken::AddCancelCallback(AirFramework.ICancelCallback)
+// 0x0000034A System.Void AirFramework.AsyncToken::AddCancelCallback(AirFramework.ICancelCallback)
 extern void AsyncToken_AddCancelCallback_mBB784C4A957EEEBB3860DADE878226CAA58BB907 (void);
-// 0x00000348 System.Void AirFramework.AsyncToken::OnAllocate()
+// 0x0000034B System.Void AirFramework.AsyncToken::OnAllocate()
 extern void AsyncToken_OnAllocate_m77083F2B1D02C32EA3220A6E215140D2F8FE0263 (void);
-// 0x00000349 System.Void AirFramework.AsyncToken::OnRecycle()
+// 0x0000034C System.Void AirFramework.AsyncToken::OnRecycle()
 extern void AsyncToken_OnRecycle_m4D156A7435E6B0C5FE2A8F2AAF5F68B10BC28A0C (void);
-// 0x0000034A AirFramework.AsyncStatus AirFramework.AsyncToken::get_Status()
+// 0x0000034D AirFramework.AsyncStatus AirFramework.AsyncToken::get_Status()
 extern void AsyncToken_get_Status_m08FEAF26D760E1DB27076756001701AF41741859 (void);
-// 0x0000034B System.Void AirFramework.AsyncToken::set_Status(AirFramework.AsyncStatus)
+// 0x0000034E System.Void AirFramework.AsyncToken::set_Status(AirFramework.AsyncStatus)
 extern void AsyncToken_set_Status_mE7D23EB2B4AA6DBA57DC846D922BED380C61AEBB (void);
-// 0x0000034C System.Void AirFramework.AsyncToken::Yield()
+// 0x0000034F System.Void AirFramework.AsyncToken::Yield()
 extern void AsyncToken_Yield_m6FD56661EC5CD80EDBFA142B82E664CA023D483E (void);
-// 0x0000034D System.Void AirFramework.AsyncToken::Continue()
+// 0x00000350 System.Void AirFramework.AsyncToken::Continue()
 extern void AsyncToken_Continue_m496786EE90220CBC536D52A79B51107501192C01 (void);
-// 0x0000034E System.Void AirFramework.AsyncToken::Cancel()
+// 0x00000351 System.Void AirFramework.AsyncToken::Cancel()
 extern void AsyncToken_Cancel_m1702DD4F87E38F6780369FC1BB5BC0571381F2F6 (void);
-// 0x0000034F System.Void AirFramework.AsyncToken::.ctor()
+// 0x00000352 System.Void AirFramework.AsyncToken::.ctor()
 extern void AsyncToken__ctor_mE85F65064E9F865271519CC415142E0B474CF6DD (void);
-// 0x00000350 AirFramework.AirTask AirFramework.AirTask2Coroutine::GetAwaiter(System.Collections.IEnumerator)
+// 0x00000353 AirFramework.AirTask AirFramework.AirTask2Coroutine::GetAwaiter(System.Collections.IEnumerator)
 extern void AirTask2Coroutine_GetAwaiter_m5D2046D2EB9F0549352A48740B447689D1E0C51A (void);
-// 0x00000351 AirFramework.AirTask AirFramework.AirTask2Coroutine::GetAwaiter(T)
-// 0x00000352 System.Collections.IEnumerator AirFramework.AirTask2Coroutine::<GetAwaiter>g__RunEnumerator|0_0(System.Collections.IEnumerator,AirFramework.AirTask)
+// 0x00000354 AirFramework.AirTask AirFramework.AirTask2Coroutine::GetAwaiter(T)
+// 0x00000355 System.Collections.IEnumerator AirFramework.AirTask2Coroutine::<GetAwaiter>g__RunEnumerator|0_0(System.Collections.IEnumerator,AirFramework.AirTask)
 extern void AirTask2Coroutine_U3CGetAwaiterU3Eg__RunEnumeratorU7C0_0_m69D55586D0B7CCAD3A8B3C34E3F5F9369CABD442 (void);
-// 0x00000353 System.Collections.IEnumerator AirFramework.AirTask2Coroutine::<GetAwaiter>g__GetEnumerator|1_0(T)
-// 0x00000354 System.Void AirFramework.AirTask2Coroutine/<<GetAwaiter>g__RunEnumerator|0_0>d::.ctor(System.Int32)
+// 0x00000356 System.Collections.IEnumerator AirFramework.AirTask2Coroutine::<GetAwaiter>g__GetEnumerator|1_0(T)
+// 0x00000357 System.Void AirFramework.AirTask2Coroutine/<<GetAwaiter>g__RunEnumerator|0_0>d::.ctor(System.Int32)
 extern void U3CU3CGetAwaiterU3Eg__RunEnumeratorU7C0_0U3Ed__ctor_m8ED5493DCAE1474114307C0291F025C19D699198 (void);
-// 0x00000355 System.Void AirFramework.AirTask2Coroutine/<<GetAwaiter>g__RunEnumerator|0_0>d::System.IDisposable.Dispose()
+// 0x00000358 System.Void AirFramework.AirTask2Coroutine/<<GetAwaiter>g__RunEnumerator|0_0>d::System.IDisposable.Dispose()
 extern void U3CU3CGetAwaiterU3Eg__RunEnumeratorU7C0_0U3Ed_System_IDisposable_Dispose_m92DE1D1510B8E173F6D62E1796B9683E5C0F4CB2 (void);
-// 0x00000356 System.Boolean AirFramework.AirTask2Coroutine/<<GetAwaiter>g__RunEnumerator|0_0>d::MoveNext()
+// 0x00000359 System.Boolean AirFramework.AirTask2Coroutine/<<GetAwaiter>g__RunEnumerator|0_0>d::MoveNext()
 extern void U3CU3CGetAwaiterU3Eg__RunEnumeratorU7C0_0U3Ed_MoveNext_mA341903DBA58242AEFD3CDC044CE95EC7830A6D6 (void);
-// 0x00000357 System.Object AirFramework.AirTask2Coroutine/<<GetAwaiter>g__RunEnumerator|0_0>d::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x0000035A System.Object AirFramework.AirTask2Coroutine/<<GetAwaiter>g__RunEnumerator|0_0>d::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CU3CGetAwaiterU3Eg__RunEnumeratorU7C0_0U3Ed_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m146BBFC8F0866540D0D99C1B3C905E7E63DE8870 (void);
-// 0x00000358 System.Void AirFramework.AirTask2Coroutine/<<GetAwaiter>g__RunEnumerator|0_0>d::System.Collections.IEnumerator.Reset()
+// 0x0000035B System.Void AirFramework.AirTask2Coroutine/<<GetAwaiter>g__RunEnumerator|0_0>d::System.Collections.IEnumerator.Reset()
 extern void U3CU3CGetAwaiterU3Eg__RunEnumeratorU7C0_0U3Ed_System_Collections_IEnumerator_Reset_m659F22433C18C298C862CFD39D364DEE816BC8FD (void);
-// 0x00000359 System.Object AirFramework.AirTask2Coroutine/<<GetAwaiter>g__RunEnumerator|0_0>d::System.Collections.IEnumerator.get_Current()
+// 0x0000035C System.Object AirFramework.AirTask2Coroutine/<<GetAwaiter>g__RunEnumerator|0_0>d::System.Collections.IEnumerator.get_Current()
 extern void U3CU3CGetAwaiterU3Eg__RunEnumeratorU7C0_0U3Ed_System_Collections_IEnumerator_get_Current_m418B6821819D656F31BEF36F81050B97CEFD2E65 (void);
-// 0x0000035A System.Void AirFramework.AirTask2Coroutine/<<GetAwaiter>g__GetEnumerator|1_0>d`1::.ctor(System.Int32)
-// 0x0000035B System.Void AirFramework.AirTask2Coroutine/<<GetAwaiter>g__GetEnumerator|1_0>d`1::System.IDisposable.Dispose()
-// 0x0000035C System.Boolean AirFramework.AirTask2Coroutine/<<GetAwaiter>g__GetEnumerator|1_0>d`1::MoveNext()
-// 0x0000035D System.Object AirFramework.AirTask2Coroutine/<<GetAwaiter>g__GetEnumerator|1_0>d`1::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
-// 0x0000035E System.Void AirFramework.AirTask2Coroutine/<<GetAwaiter>g__GetEnumerator|1_0>d`1::System.Collections.IEnumerator.Reset()
-// 0x0000035F System.Object AirFramework.AirTask2Coroutine/<<GetAwaiter>g__GetEnumerator|1_0>d`1::System.Collections.IEnumerator.get_Current()
-// 0x00000360 System.Void AirFramework.AirTask_Ex::Forget(AirFramework.ITask)
+// 0x0000035D System.Void AirFramework.AirTask2Coroutine/<<GetAwaiter>g__GetEnumerator|1_0>d`1::.ctor(System.Int32)
+// 0x0000035E System.Void AirFramework.AirTask2Coroutine/<<GetAwaiter>g__GetEnumerator|1_0>d`1::System.IDisposable.Dispose()
+// 0x0000035F System.Boolean AirFramework.AirTask2Coroutine/<<GetAwaiter>g__GetEnumerator|1_0>d`1::MoveNext()
+// 0x00000360 System.Object AirFramework.AirTask2Coroutine/<<GetAwaiter>g__GetEnumerator|1_0>d`1::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x00000361 System.Void AirFramework.AirTask2Coroutine/<<GetAwaiter>g__GetEnumerator|1_0>d`1::System.Collections.IEnumerator.Reset()
+// 0x00000362 System.Object AirFramework.AirTask2Coroutine/<<GetAwaiter>g__GetEnumerator|1_0>d`1::System.Collections.IEnumerator.get_Current()
+// 0x00000363 System.Void AirFramework.AirTask_Ex::Forget(AirFramework.ITask)
 extern void AirTask_Ex_Forget_mAE86B1E2DBC295A9782450858A1EC11EBF3FC07B (void);
-// 0x00000361 AirFramework.AirTask AirFramework.AirTask_Ex::Invoke(AirFramework.AirTask)
+// 0x00000364 AirFramework.AirTask AirFramework.AirTask_Ex::Invoke(AirFramework.AirTask)
 extern void AirTask_Ex_Invoke_m778B3D8E2C5441FEFA5BAD45ACD8DED01479835A (void);
-// 0x00000362 AirFramework.AirTask`1<T> AirFramework.AirTask_Ex::Invoke(AirFramework.AirTask`1<T>)
-// 0x00000363 T AirFramework.AirTask_Ex::WithToken(T,AirFramework.AsyncToken&)
-// 0x00000364 System.Threading.Tasks.Task AirFramework.AirTask_Ex::AsTask(AirFramework.AirTask)
+// 0x00000365 AirFramework.AirTask`1<T> AirFramework.AirTask_Ex::Invoke(AirFramework.AirTask`1<T>)
+// 0x00000366 T AirFramework.AirTask_Ex::WithToken(T,AirFramework.AsyncToken&)
+// 0x00000367 System.Threading.Tasks.Task AirFramework.AirTask_Ex::AsTask(AirFramework.AirTask)
 extern void AirTask_Ex_AsTask_m21CAFD9F72F0D2778873B3F5C052E80A58CF4285 (void);
-// 0x00000365 System.Threading.Tasks.Task`1<T> AirFramework.AirTask_Ex::AsTask(AirFramework.AirTask`1<T>)
-// 0x00000366 AirFramework.AirTask AirFramework.AirTask_Ex::AsAirTask(System.Threading.Tasks.Task)
+// 0x00000368 System.Threading.Tasks.Task`1<T> AirFramework.AirTask_Ex::AsTask(AirFramework.AirTask`1<T>)
+// 0x00000369 AirFramework.AirTask AirFramework.AirTask_Ex::AsAirTask(System.Threading.Tasks.Task)
 extern void AirTask_Ex_AsAirTask_m2767D288CEE8530C4FE1A42AB323EA78C2BD3020 (void);
-// 0x00000367 AirFramework.AirTask`1<T> AirFramework.AirTask_Ex::AsAirTask(System.Threading.Tasks.Task`1<T>)
-// 0x00000368 System.Void AirFramework.AirTask_Ex/<Invoke>d__1::MoveNext()
+// 0x0000036A AirFramework.AirTask`1<T> AirFramework.AirTask_Ex::AsAirTask(System.Threading.Tasks.Task`1<T>)
+// 0x0000036B System.Void AirFramework.AirTask_Ex/<Invoke>d__1::MoveNext()
 extern void U3CInvokeU3Ed__1_MoveNext_mF3C34C1CF826E16C0F7B1AC0DD508360500DFE76 (void);
-// 0x00000369 System.Void AirFramework.AirTask_Ex/<Invoke>d__1::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x0000036C System.Void AirFramework.AirTask_Ex/<Invoke>d__1::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CInvokeU3Ed__1_SetStateMachine_m783716B85570AAE76475B89AB6B8FACC657A50BB (void);
-// 0x0000036A System.Void AirFramework.AirTask_Ex/<Invoke>d__2`1::MoveNext()
-// 0x0000036B System.Void AirFramework.AirTask_Ex/<Invoke>d__2`1::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-// 0x0000036C System.Void AirFramework.AirTask_Ex/<>c__DisplayClass4_0::.ctor()
+// 0x0000036D System.Void AirFramework.AirTask_Ex/<Invoke>d__2`1::MoveNext()
+// 0x0000036E System.Void AirFramework.AirTask_Ex/<Invoke>d__2`1::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x0000036F System.Void AirFramework.AirTask_Ex/<>c__DisplayClass4_0::.ctor()
 extern void U3CU3Ec__DisplayClass4_0__ctor_mFB5BBD5B3228AFCD9365F316373310272D76FE68 (void);
-// 0x0000036D System.Void AirFramework.AirTask_Ex/<>c__DisplayClass4_0::<AsTask>b__0(AirFramework.AirTask)
+// 0x00000370 System.Void AirFramework.AirTask_Ex/<>c__DisplayClass4_0::<AsTask>b__0(AirFramework.AirTask)
 extern void U3CU3Ec__DisplayClass4_0_U3CAsTaskU3Eb__0_mBEC52B75C734001F85C41A2119D61342BEB64D33 (void);
-// 0x0000036E System.Void AirFramework.AirTask_Ex/<>c__DisplayClass5_0`1::.ctor()
-// 0x0000036F System.Void AirFramework.AirTask_Ex/<>c__DisplayClass5_0`1::<AsTask>b__0(AirFramework.AirTask`1<T>)
-// 0x00000370 System.Void AirFramework.AirTask_Ex/<>c__DisplayClass6_0::.ctor()
+// 0x00000371 System.Void AirFramework.AirTask_Ex/<>c__DisplayClass5_0`1::.ctor()
+// 0x00000372 System.Void AirFramework.AirTask_Ex/<>c__DisplayClass5_0`1::<AsTask>b__0(AirFramework.AirTask`1<T>)
+// 0x00000373 System.Void AirFramework.AirTask_Ex/<>c__DisplayClass6_0::.ctor()
 extern void U3CU3Ec__DisplayClass6_0__ctor_m5A9ABB6B64E1EF810AF84DB343F6EDAE6DBCDA0A (void);
-// 0x00000371 System.Void AirFramework.AirTask_Ex/<>c__DisplayClass6_0::<AsAirTask>b__0(System.Object)
+// 0x00000374 System.Void AirFramework.AirTask_Ex/<>c__DisplayClass6_0::<AsAirTask>b__0(System.Object)
 extern void U3CU3Ec__DisplayClass6_0_U3CAsAirTaskU3Eb__0_m055B6E6FE19F094814F8C099C1D1ACED0FA09EE2 (void);
-// 0x00000372 System.Void AirFramework.AirTask_Ex/<>c__DisplayClass6_0::<AsAirTask>b__1(System.Object)
+// 0x00000375 System.Void AirFramework.AirTask_Ex/<>c__DisplayClass6_0::<AsAirTask>b__1(System.Object)
 extern void U3CU3Ec__DisplayClass6_0_U3CAsAirTaskU3Eb__1_m8CE6D591FDE5B32DCE9501280A64A100AB5B8C99 (void);
-// 0x00000373 System.Void AirFramework.AirTask_Ex/<>c__DisplayClass6_0::<AsAirTask>b__2(System.Object)
+// 0x00000376 System.Void AirFramework.AirTask_Ex/<>c__DisplayClass6_0::<AsAirTask>b__2(System.Object)
 extern void U3CU3Ec__DisplayClass6_0_U3CAsAirTaskU3Eb__2_mF8CDC942DD6F88ABD1E6B7FE800289BFB158F842 (void);
-// 0x00000374 System.Void AirFramework.AirTask_Ex/<>c__DisplayClass6_0/<<AsAirTask>b__0>d::MoveNext()
+// 0x00000377 System.Void AirFramework.AirTask_Ex/<>c__DisplayClass6_0/<<AsAirTask>b__0>d::MoveNext()
 extern void U3CU3CAsAirTaskU3Eb__0U3Ed_MoveNext_m2A9B2C8B0127B37777CED88C1AE628119E2E723A (void);
-// 0x00000375 System.Void AirFramework.AirTask_Ex/<>c__DisplayClass6_0/<<AsAirTask>b__0>d::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000378 System.Void AirFramework.AirTask_Ex/<>c__DisplayClass6_0/<<AsAirTask>b__0>d::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CU3CAsAirTaskU3Eb__0U3Ed_SetStateMachine_m51F54176E014989AC7BDDF992F54C1CBB182DD29 (void);
-// 0x00000376 System.Void AirFramework.AirTask_Ex/<>c__DisplayClass7_0`1::.ctor()
-// 0x00000377 System.Void AirFramework.AirTask_Ex/<>c__DisplayClass7_0`1::<AsAirTask>b__0(System.Object)
-// 0x00000378 System.Void AirFramework.AirTask_Ex/<>c__DisplayClass7_0`1::<AsAirTask>b__2(System.Object)
-// 0x00000379 System.Void AirFramework.AirTask_Ex/<>c__DisplayClass7_0`1/<<AsAirTask>b__0>d::MoveNext()
-// 0x0000037A System.Void AirFramework.AirTask_Ex/<>c__DisplayClass7_0`1/<<AsAirTask>b__0>d::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-// 0x0000037B System.Void AirFramework.AirTask_Ex/<>c__DisplayClass7_1`1::.ctor()
-// 0x0000037C System.Void AirFramework.AirTask_Ex/<>c__DisplayClass7_1`1::<AsAirTask>b__1(System.Object)
-// 0x0000037D System.Void AirFramework.TaskModule::OnCreate()
+// 0x00000379 System.Void AirFramework.AirTask_Ex/<>c__DisplayClass7_0`1::.ctor()
+// 0x0000037A System.Void AirFramework.AirTask_Ex/<>c__DisplayClass7_0`1::<AsAirTask>b__0(System.Object)
+// 0x0000037B System.Void AirFramework.AirTask_Ex/<>c__DisplayClass7_0`1::<AsAirTask>b__2(System.Object)
+// 0x0000037C System.Void AirFramework.AirTask_Ex/<>c__DisplayClass7_0`1/<<AsAirTask>b__0>d::MoveNext()
+// 0x0000037D System.Void AirFramework.AirTask_Ex/<>c__DisplayClass7_0`1/<<AsAirTask>b__0>d::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x0000037E System.Void AirFramework.AirTask_Ex/<>c__DisplayClass7_1`1::.ctor()
+// 0x0000037F System.Void AirFramework.AirTask_Ex/<>c__DisplayClass7_1`1::<AsAirTask>b__1(System.Object)
+// 0x00000380 System.Void AirFramework.TaskModule::OnCreate()
 extern void TaskModule_OnCreate_m77EBFE40C386E2072A9B48DE51FBE023E099B987 (void);
-// 0x0000037E System.Void AirFramework.TaskModule::Update(System.Single)
+// 0x00000381 System.Void AirFramework.TaskModule::Update(System.Single)
 extern void TaskModule_Update_m0E09F8728AD39DF041C62947C1C33BD892AA88A9 (void);
-// 0x0000037F System.Void AirFramework.TaskModule::OnDispose()
+// 0x00000382 System.Void AirFramework.TaskModule::OnDispose()
 extern void TaskModule_OnDispose_m36DCAFB25DD720CA2ED249F12057EA347390AA8E (void);
-// 0x00000380 System.Void AirFramework.TaskModule::.ctor()
+// 0x00000383 System.Void AirFramework.TaskModule::.ctor()
 extern void TaskModule__ctor_m4D197A674BA5C63ED38BA7045912B99EC66E82A9 (void);
-// 0x00000381 AirFramework.AirTaskBase AirFramework.TaskFrame::get_BindTask()
+// 0x00000384 AirFramework.AirTaskBase AirFramework.TaskFrame::get_BindTask()
 extern void TaskFrame_get_BindTask_m5BF4D1265FDE190EDBF7A3AC816614FB6FD09085 (void);
-// 0x00000382 System.Void AirFramework.TaskFrame::set_BindTask(AirFramework.AirTaskBase)
+// 0x00000385 System.Void AirFramework.TaskFrame::set_BindTask(AirFramework.AirTaskBase)
 extern void TaskFrame_set_BindTask_m3CFD5BE9CC45644359E82C993D2FAA90EE168773 (void);
-// 0x00000383 System.Int32 AirFramework.TaskFrame::get_FrameCount()
+// 0x00000386 System.Int32 AirFramework.TaskFrame::get_FrameCount()
 extern void TaskFrame_get_FrameCount_m6FD9E378E8757DC05E85B707FE100569CE2A2C59 (void);
-// 0x00000384 System.Void AirFramework.TaskFrame::set_FrameCount(System.Int32)
+// 0x00000387 System.Void AirFramework.TaskFrame::set_FrameCount(System.Int32)
 extern void TaskFrame_set_FrameCount_mBBAF0866822016B193B3EEFBACD95EDC9AF5A673 (void);
-// 0x00000385 System.Boolean AirFramework.TaskFrame::get_Enable()
+// 0x00000388 System.Boolean AirFramework.TaskFrame::get_Enable()
 extern void TaskFrame_get_Enable_m8B01B5B4583888AD8C7E2A894C215EBAEE7DC641 (void);
-// 0x00000386 System.Void AirFramework.TaskFrame::set_Enable(System.Boolean)
+// 0x00000389 System.Void AirFramework.TaskFrame::set_Enable(System.Boolean)
 extern void TaskFrame_set_Enable_m29A1CA11810788661AC4E13653AF5777E308F6F1 (void);
-// 0x00000387 System.Void AirFramework.TaskFrame::OnAllocate()
+// 0x0000038A System.Void AirFramework.TaskFrame::OnAllocate()
 extern void TaskFrame_OnAllocate_mAB29BAD6E2420FA99C5C019FC38C8E693A68FAB5 (void);
-// 0x00000388 System.Void AirFramework.TaskFrame::OnRecycle()
+// 0x0000038B System.Void AirFramework.TaskFrame::OnRecycle()
 extern void TaskFrame_OnRecycle_m876E183AAF784A65613D9A5F9A95E7284346D5E4 (void);
-// 0x00000389 System.Void AirFramework.TaskFrame::AirFramework.ITaskCancel.OnTaskCancel()
+// 0x0000038C System.Void AirFramework.TaskFrame::AirFramework.ITaskCancel.OnTaskCancel()
 extern void TaskFrame_AirFramework_ITaskCancel_OnTaskCancel_mFEA6F901A02C6BE3EBBDEB590BD9397051C58597 (void);
-// 0x0000038A System.Void AirFramework.TaskFrame::AirFramework.ITaskContinue.OnTaskContinue()
+// 0x0000038D System.Void AirFramework.TaskFrame::AirFramework.ITaskContinue.OnTaskContinue()
 extern void TaskFrame_AirFramework_ITaskContinue_OnTaskContinue_m2449D22D2B3BDCC58F1E5D7A4E2B4B27527CD445 (void);
-// 0x0000038B System.Void AirFramework.TaskFrame::AirFramework.ITaskPause.OnTaskPause()
+// 0x0000038E System.Void AirFramework.TaskFrame::AirFramework.ITaskPause.OnTaskPause()
 extern void TaskFrame_AirFramework_ITaskPause_OnTaskPause_mB8651D44C83C450A295C2BD170701DF9751640DE (void);
-// 0x0000038C System.Void AirFramework.TaskFrame::AirFramework.IUpdate.Update(System.Single)
+// 0x0000038F System.Void AirFramework.TaskFrame::AirFramework.IUpdate.Update(System.Single)
 extern void TaskFrame_AirFramework_IUpdate_Update_m5BC48BB161C496F67A422F65063C9A6839D3EFCC (void);
-// 0x0000038D System.Void AirFramework.TaskFrame::.ctor()
+// 0x00000390 System.Void AirFramework.TaskFrame::.ctor()
 extern void TaskFrame__ctor_m0F36223196BFF0050EB81047555B3B090492A2A5 (void);
-// 0x0000038E AirFramework.AirTaskBase AirFramework.TaskTimer::get_BindTask()
+// 0x00000391 AirFramework.AirTaskBase AirFramework.TaskTimer::get_BindTask()
 extern void TaskTimer_get_BindTask_m8FE0C846AB015CA27414B6032A29EB6361BDFF82 (void);
-// 0x0000038F System.Void AirFramework.TaskTimer::set_BindTask(AirFramework.AirTaskBase)
+// 0x00000392 System.Void AirFramework.TaskTimer::set_BindTask(AirFramework.AirTaskBase)
 extern void TaskTimer_set_BindTask_mC8AE5FEE7EF47C4DD234CE3CD0B0BF085B1BC6DB (void);
-// 0x00000390 System.Single AirFramework.TaskTimer::get_Current()
+// 0x00000393 System.Single AirFramework.TaskTimer::get_Current()
 extern void TaskTimer_get_Current_m7739BEC6FDDCC16BF6CB970901F0F1C2457CF57F (void);
-// 0x00000391 System.Void AirFramework.TaskTimer::set_Current(System.Single)
+// 0x00000394 System.Void AirFramework.TaskTimer::set_Current(System.Single)
 extern void TaskTimer_set_Current_mBE0A52459A5A0640BEF2B5FD97B14CF8C19D1D72 (void);
-// 0x00000392 System.Single AirFramework.TaskTimer::get_Max()
+// 0x00000395 System.Single AirFramework.TaskTimer::get_Max()
 extern void TaskTimer_get_Max_m49975C92AB930831FB09EE2CE014579C347B8C04 (void);
-// 0x00000393 System.Void AirFramework.TaskTimer::set_Max(System.Single)
+// 0x00000396 System.Void AirFramework.TaskTimer::set_Max(System.Single)
 extern void TaskTimer_set_Max_mFF7A6B22E59E900E680425D96CF244999E400724 (void);
-// 0x00000394 System.Boolean AirFramework.TaskTimer::get_Enable()
+// 0x00000397 System.Boolean AirFramework.TaskTimer::get_Enable()
 extern void TaskTimer_get_Enable_m06D52ACFDE177768011A1C19A2C2363B8824649B (void);
-// 0x00000395 System.Void AirFramework.TaskTimer::set_Enable(System.Boolean)
+// 0x00000398 System.Void AirFramework.TaskTimer::set_Enable(System.Boolean)
 extern void TaskTimer_set_Enable_m01D42410B1F9BD9A5AF3486A10FE59BC3C0615C7 (void);
-// 0x00000396 System.Void AirFramework.TaskTimer::OnAllocate()
+// 0x00000399 System.Void AirFramework.TaskTimer::OnAllocate()
 extern void TaskTimer_OnAllocate_m71A5712AE23FED99C47D8056C3A2515F9F327B8A (void);
-// 0x00000397 System.Void AirFramework.TaskTimer::OnRecycle()
+// 0x0000039A System.Void AirFramework.TaskTimer::OnRecycle()
 extern void TaskTimer_OnRecycle_m675A52AC07E15642B99AD06313CE3F34A8C1B306 (void);
-// 0x00000398 System.Void AirFramework.TaskTimer::AirFramework.ITaskCancel.OnTaskCancel()
+// 0x0000039B System.Void AirFramework.TaskTimer::AirFramework.ITaskCancel.OnTaskCancel()
 extern void TaskTimer_AirFramework_ITaskCancel_OnTaskCancel_m5EDF92F76535E25696D76FBDD6B83E0FA8F5FB6E (void);
-// 0x00000399 System.Void AirFramework.TaskTimer::AirFramework.ITaskContinue.OnTaskContinue()
+// 0x0000039C System.Void AirFramework.TaskTimer::AirFramework.ITaskContinue.OnTaskContinue()
 extern void TaskTimer_AirFramework_ITaskContinue_OnTaskContinue_mF141F621EB175DBC02823D91B5DF1015ED93E2CF (void);
-// 0x0000039A System.Void AirFramework.TaskTimer::AirFramework.ITaskPause.OnTaskPause()
+// 0x0000039D System.Void AirFramework.TaskTimer::AirFramework.ITaskPause.OnTaskPause()
 extern void TaskTimer_AirFramework_ITaskPause_OnTaskPause_mC525D670BCC1AFDD2DB9A670A4A7AB8B07E33B2D (void);
-// 0x0000039B System.Void AirFramework.TaskTimer::AirFramework.IUpdate.Update(System.Single)
+// 0x0000039E System.Void AirFramework.TaskTimer::AirFramework.IUpdate.Update(System.Single)
 extern void TaskTimer_AirFramework_IUpdate_Update_mBAC06D25D744DC9E523625AFB5BB14DD82BB653F (void);
-// 0x0000039C System.Void AirFramework.TaskTimer::.ctor()
+// 0x0000039F System.Void AirFramework.TaskTimer::.ctor()
 extern void TaskTimer__ctor_m2625B8AE1976197E7BB28CFC050CF723791393EC (void);
-// 0x0000039D AirFramework.AirTaskBase AirFramework.TaskTokenCatch::get_BindTask()
+// 0x000003A0 AirFramework.AirTaskBase AirFramework.TaskTokenCatch::get_BindTask()
 extern void TaskTokenCatch_get_BindTask_m57943118EBC361A8CA4021B466BCE6D0AA7926A7 (void);
-// 0x0000039E System.Void AirFramework.TaskTokenCatch::set_BindTask(AirFramework.AirTaskBase)
+// 0x000003A1 System.Void AirFramework.TaskTokenCatch::set_BindTask(AirFramework.AirTaskBase)
 extern void TaskTokenCatch_set_BindTask_m2BCDAC7E5DA3A49C3CA9754A5126A02D26849481 (void);
-// 0x0000039F System.Boolean AirFramework.TaskTokenCatch::get_Enable()
+// 0x000003A2 System.Boolean AirFramework.TaskTokenCatch::get_Enable()
 extern void TaskTokenCatch_get_Enable_mDDF92AC35EEA4F1460E9CCDCE06C7D351004BCD4 (void);
-// 0x000003A0 System.Void AirFramework.TaskTokenCatch::set_Enable(System.Boolean)
+// 0x000003A3 System.Void AirFramework.TaskTokenCatch::set_Enable(System.Boolean)
 extern void TaskTokenCatch_set_Enable_m4B50E93CC2F9A33F6C2F5CED0D9F69D2248FE84C (void);
-// 0x000003A1 System.Void AirFramework.TaskTokenCatch::Refresh()
+// 0x000003A4 System.Void AirFramework.TaskTokenCatch::Refresh()
 extern void TaskTokenCatch_Refresh_m61E0D6303E7C4C58BBDEEB16A0CA1365D33E2B98 (void);
-// 0x000003A2 System.Void AirFramework.TaskTokenCatch::CatchNow()
+// 0x000003A5 System.Void AirFramework.TaskTokenCatch::CatchNow()
 extern void TaskTokenCatch_CatchNow_mD3C8CDFB8B3CF7AE001A06629E4BED8EA8FCDD4C (void);
-// 0x000003A3 System.Void AirFramework.TaskTokenCatch::OnAllocate()
+// 0x000003A6 System.Void AirFramework.TaskTokenCatch::OnAllocate()
 extern void TaskTokenCatch_OnAllocate_m92537F8447DD9E55FC097624A64085D2CDE9ECEE (void);
-// 0x000003A4 System.Void AirFramework.TaskTokenCatch::OnRecycle()
+// 0x000003A7 System.Void AirFramework.TaskTokenCatch::OnRecycle()
 extern void TaskTokenCatch_OnRecycle_m00B32479FFD2F7230024C4D1022C65994884740C (void);
-// 0x000003A5 System.Void AirFramework.TaskTokenCatch::AirFramework.ITaskCancel.OnTaskCancel()
+// 0x000003A8 System.Void AirFramework.TaskTokenCatch::AirFramework.ITaskCancel.OnTaskCancel()
 extern void TaskTokenCatch_AirFramework_ITaskCancel_OnTaskCancel_mFB149240E3DED0A931797C9642914B6D20D1FB58 (void);
-// 0x000003A6 System.Void AirFramework.TaskTokenCatch::AirFramework.ITaskContinue.OnTaskContinue()
+// 0x000003A9 System.Void AirFramework.TaskTokenCatch::AirFramework.ITaskContinue.OnTaskContinue()
 extern void TaskTokenCatch_AirFramework_ITaskContinue_OnTaskContinue_m2843E6EF97B9CD1E6EC267E61CB2330EAAF121D8 (void);
-// 0x000003A7 System.Void AirFramework.TaskTokenCatch::AirFramework.ITaskPause.OnTaskPause()
+// 0x000003AA System.Void AirFramework.TaskTokenCatch::AirFramework.ITaskPause.OnTaskPause()
 extern void TaskTokenCatch_AirFramework_ITaskPause_OnTaskPause_m8462B7A0AABD386A2F0CE15AD83D91B516D6350B (void);
-// 0x000003A8 System.Void AirFramework.TaskTokenCatch::.ctor()
+// 0x000003AB System.Void AirFramework.TaskTokenCatch::.ctor()
 extern void TaskTokenCatch__ctor_m3C2C522B136286EAE4CFB35EB71B2D5C0996F8C7 (void);
-// 0x000003A9 AirFramework.AirTaskBase AirFramework.TaskUntil::get_BindTask()
+// 0x000003AC AirFramework.AirTaskBase AirFramework.TaskUntil::get_BindTask()
 extern void TaskUntil_get_BindTask_m26507665942EE1ADAB7A67597D328C230B8F2789 (void);
-// 0x000003AA System.Void AirFramework.TaskUntil::set_BindTask(AirFramework.AirTaskBase)
+// 0x000003AD System.Void AirFramework.TaskUntil::set_BindTask(AirFramework.AirTaskBase)
 extern void TaskUntil_set_BindTask_m5C16E33EF2956323D0475804AE53E0269840959C (void);
-// 0x000003AB System.Boolean AirFramework.TaskUntil::get_Enable()
+// 0x000003AE System.Boolean AirFramework.TaskUntil::get_Enable()
 extern void TaskUntil_get_Enable_m49337E88A371986CC977686DA47499AC93F2BEDE (void);
-// 0x000003AC System.Void AirFramework.TaskUntil::set_Enable(System.Boolean)
+// 0x000003AF System.Void AirFramework.TaskUntil::set_Enable(System.Boolean)
 extern void TaskUntil_set_Enable_mD375373E50F4E7A62C5A4CD064938A55A918699C (void);
-// 0x000003AD System.Void AirFramework.TaskUntil::OnAllocate()
+// 0x000003B0 System.Void AirFramework.TaskUntil::OnAllocate()
 extern void TaskUntil_OnAllocate_m638C52613D1A4EF1AEDAD48E0114E8D16839E2DB (void);
-// 0x000003AE System.Void AirFramework.TaskUntil::OnRecycle()
+// 0x000003B1 System.Void AirFramework.TaskUntil::OnRecycle()
 extern void TaskUntil_OnRecycle_mD37117457033691C745A4A5C906ABB8828BBC68E (void);
-// 0x000003AF System.Void AirFramework.TaskUntil::AirFramework.ITaskCancel.OnTaskCancel()
+// 0x000003B2 System.Void AirFramework.TaskUntil::AirFramework.ITaskCancel.OnTaskCancel()
 extern void TaskUntil_AirFramework_ITaskCancel_OnTaskCancel_mFF967532B44B56CC488D37E7DA77888EBC4E1040 (void);
-// 0x000003B0 System.Void AirFramework.TaskUntil::AirFramework.ITaskContinue.OnTaskContinue()
+// 0x000003B3 System.Void AirFramework.TaskUntil::AirFramework.ITaskContinue.OnTaskContinue()
 extern void TaskUntil_AirFramework_ITaskContinue_OnTaskContinue_m2AC1360CB7D558FAA0383A0FF170BB780D1719B3 (void);
-// 0x000003B1 System.Void AirFramework.TaskUntil::AirFramework.ITaskPause.OnTaskPause()
+// 0x000003B4 System.Void AirFramework.TaskUntil::AirFramework.ITaskPause.OnTaskPause()
 extern void TaskUntil_AirFramework_ITaskPause_OnTaskPause_m5CBAF87C13DAF2FDAFE60D6366941FAC535621A0 (void);
-// 0x000003B2 System.Void AirFramework.TaskUntil::Update(System.Single)
+// 0x000003B5 System.Void AirFramework.TaskUntil::Update(System.Single)
 extern void TaskUntil_Update_m719D0AC6632C9D779FFFAF7ADE98B43110925973 (void);
-// 0x000003B3 System.Void AirFramework.TaskUntil::.ctor()
+// 0x000003B6 System.Void AirFramework.TaskUntil::.ctor()
 extern void TaskUntil__ctor_mE1B84FBA460464C774143BF93F97F95A85E6973C (void);
-// 0x000003B4 AirFramework.AirTaskBase AirFramework.TaskWaitCounter::get_BindTask()
+// 0x000003B7 AirFramework.AirTaskBase AirFramework.TaskWaitCounter::get_BindTask()
 extern void TaskWaitCounter_get_BindTask_m4E0E7137D9BBFCF567F71FC924C3E867990BDD74 (void);
-// 0x000003B5 System.Void AirFramework.TaskWaitCounter::set_BindTask(AirFramework.AirTaskBase)
+// 0x000003B8 System.Void AirFramework.TaskWaitCounter::set_BindTask(AirFramework.AirTaskBase)
 extern void TaskWaitCounter_set_BindTask_m64EBF8B4CA2DAFA868244CFFF203B23C0E5458C1 (void);
-// 0x000003B6 System.Int32 AirFramework.TaskWaitCounter::get_Current()
+// 0x000003B9 System.Int32 AirFramework.TaskWaitCounter::get_Current()
 extern void TaskWaitCounter_get_Current_m4C1899CAF42732A20AE7A213D063F9D29313D5CA (void);
-// 0x000003B7 System.Void AirFramework.TaskWaitCounter::set_Current(System.Int32)
+// 0x000003BA System.Void AirFramework.TaskWaitCounter::set_Current(System.Int32)
 extern void TaskWaitCounter_set_Current_m4A65A99B72F5D517AA45384880B645BCBD600E56 (void);
-// 0x000003B8 System.Boolean AirFramework.TaskWaitCounter::get_Enable()
+// 0x000003BB System.Boolean AirFramework.TaskWaitCounter::get_Enable()
 extern void TaskWaitCounter_get_Enable_mBD473A5B323A863F5A427B09A9A5B6940489E3A5 (void);
-// 0x000003B9 System.Void AirFramework.TaskWaitCounter::set_Enable(System.Boolean)
+// 0x000003BC System.Void AirFramework.TaskWaitCounter::set_Enable(System.Boolean)
 extern void TaskWaitCounter_set_Enable_m7E3BDCFE90BFDD25FD907B065A543F8622E0DB46 (void);
-// 0x000003BA System.Int32 AirFramework.TaskWaitCounter::get_TriggerCount()
+// 0x000003BD System.Int32 AirFramework.TaskWaitCounter::get_TriggerCount()
 extern void TaskWaitCounter_get_TriggerCount_m47EFF03C8AA923CB95CC09944C31394195AE9EF6 (void);
-// 0x000003BB System.Void AirFramework.TaskWaitCounter::set_TriggerCount(System.Int32)
+// 0x000003BE System.Void AirFramework.TaskWaitCounter::set_TriggerCount(System.Int32)
 extern void TaskWaitCounter_set_TriggerCount_mE4016FE7E38342DE0AB4D0B975EC696B898DBDB2 (void);
-// 0x000003BC System.Void AirFramework.TaskWaitCounter::Add()
+// 0x000003BF System.Void AirFramework.TaskWaitCounter::Add()
 extern void TaskWaitCounter_Add_m112AF148E62D0C85E5B73DCCAF57A1BFD744DE88 (void);
-// 0x000003BD System.Void AirFramework.TaskWaitCounter::Refresh(System.Boolean)
+// 0x000003C0 System.Void AirFramework.TaskWaitCounter::Refresh(System.Boolean)
 extern void TaskWaitCounter_Refresh_m27F2EEC317CB6A04F05A7F9B619FF8FD1F916D90 (void);
-// 0x000003BE System.Void AirFramework.TaskWaitCounter::OnAllocate()
+// 0x000003C1 System.Void AirFramework.TaskWaitCounter::OnAllocate()
 extern void TaskWaitCounter_OnAllocate_m3FB2078A06568436F0B13BDD69D46D7615F8E7DB (void);
-// 0x000003BF System.Void AirFramework.TaskWaitCounter::OnRecycle()
+// 0x000003C2 System.Void AirFramework.TaskWaitCounter::OnRecycle()
 extern void TaskWaitCounter_OnRecycle_m4ACC38BAB8A90995435E5758BEEA089EDA43604C (void);
-// 0x000003C0 System.Void AirFramework.TaskWaitCounter::AirFramework.ITaskCancel.OnTaskCancel()
+// 0x000003C3 System.Void AirFramework.TaskWaitCounter::AirFramework.ITaskCancel.OnTaskCancel()
 extern void TaskWaitCounter_AirFramework_ITaskCancel_OnTaskCancel_m93844C6A4395A0B71E47D0C48806EE447728CC21 (void);
-// 0x000003C1 System.Void AirFramework.TaskWaitCounter::AirFramework.ITaskContinue.OnTaskContinue()
+// 0x000003C4 System.Void AirFramework.TaskWaitCounter::AirFramework.ITaskContinue.OnTaskContinue()
 extern void TaskWaitCounter_AirFramework_ITaskContinue_OnTaskContinue_m4B0D660CAF1CB0E463CE78DA20688F44C9151D6D (void);
-// 0x000003C2 System.Void AirFramework.TaskWaitCounter::AirFramework.ITaskPause.OnTaskPause()
+// 0x000003C5 System.Void AirFramework.TaskWaitCounter::AirFramework.ITaskPause.OnTaskPause()
 extern void TaskWaitCounter_AirFramework_ITaskPause_OnTaskPause_m67CD957849EFB35A6F0674813423A00D704DBF07 (void);
-// 0x000003C3 System.Void AirFramework.TaskWaitCounter::.ctor()
+// 0x000003C6 System.Void AirFramework.TaskWaitCounter::.ctor()
 extern void TaskWaitCounter__ctor_mF0C2BA28F89B8C6BB6096DE3D70069A37609FEA9 (void);
-// 0x000003C4 AirFramework.AirTask`1<T[]> AirFramework.TaskWaitCounter`1::get_BindTask()
-// 0x000003C5 System.Void AirFramework.TaskWaitCounter`1::set_BindTask(AirFramework.AirTask`1<T[]>)
-// 0x000003C6 System.Int32 AirFramework.TaskWaitCounter`1::get_Current()
-// 0x000003C7 System.Void AirFramework.TaskWaitCounter`1::set_Current(System.Int32)
-// 0x000003C8 System.Boolean AirFramework.TaskWaitCounter`1::get_Enable()
-// 0x000003C9 System.Void AirFramework.TaskWaitCounter`1::set_Enable(System.Boolean)
-// 0x000003CA System.Int32 AirFramework.TaskWaitCounter`1::get_TriggerCount()
-// 0x000003CB System.Void AirFramework.TaskWaitCounter`1::set_TriggerCount(System.Int32)
-// 0x000003CC T[] AirFramework.TaskWaitCounter`1::get_Results()
-// 0x000003CD System.Void AirFramework.TaskWaitCounter`1::set_Results(T[])
-// 0x000003CE System.Int32 AirFramework.TaskWaitCounter`1::get_AllTaskCount()
-// 0x000003CF System.Void AirFramework.TaskWaitCounter`1::set_AllTaskCount(System.Int32)
-// 0x000003D0 System.Void AirFramework.TaskWaitCounter`1::Add(System.Int32,T)
-// 0x000003D1 System.Void AirFramework.TaskWaitCounter`1::Refresh(System.Boolean)
-// 0x000003D2 System.Void AirFramework.TaskWaitCounter`1::OnAllocate()
-// 0x000003D3 System.Void AirFramework.TaskWaitCounter`1::OnRecycle()
-// 0x000003D4 System.Void AirFramework.TaskWaitCounter`1::AirFramework.ITaskCancel.OnTaskCancel()
-// 0x000003D5 System.Void AirFramework.TaskWaitCounter`1::AirFramework.ITaskContinue.OnTaskContinue()
-// 0x000003D6 System.Void AirFramework.TaskWaitCounter`1::AirFramework.ITaskPause.OnTaskPause()
-// 0x000003D7 System.Void AirFramework.TaskWaitCounter`1::.ctor()
-// 0x000003D8 System.Boolean AirFramework.IAuthorization::get_Authorization()
-// 0x000003D9 AirFramework.IAwaiter AirFramework.IAwaitable::GetAwaiter()
-// 0x000003DA AirFramework.IAwaiter`1<T> AirFramework.IAwaitable`1::GetAwaiter()
-// 0x000003DB System.Boolean AirFramework.IAwaiter::get_IsCompleted()
-// 0x000003DC System.Void AirFramework.IAwaiter::GetResult()
-// 0x000003DD System.Boolean AirFramework.IAwaiter`1::get_IsCompleted()
-// 0x000003DE T AirFramework.IAwaiter`1::GetResult()
-// 0x000003DF System.Void AirFramework.ITaskCancel::OnTaskCancel()
-// 0x000003E0 System.Void AirFramework.TaskCancelHandler::OnLifeCycleRegister(AirFramework.ITaskCancel)
+// 0x000003C7 AirFramework.AirTask`1<T[]> AirFramework.TaskWaitCounter`1::get_BindTask()
+// 0x000003C8 System.Void AirFramework.TaskWaitCounter`1::set_BindTask(AirFramework.AirTask`1<T[]>)
+// 0x000003C9 System.Int32 AirFramework.TaskWaitCounter`1::get_Current()
+// 0x000003CA System.Void AirFramework.TaskWaitCounter`1::set_Current(System.Int32)
+// 0x000003CB System.Boolean AirFramework.TaskWaitCounter`1::get_Enable()
+// 0x000003CC System.Void AirFramework.TaskWaitCounter`1::set_Enable(System.Boolean)
+// 0x000003CD System.Int32 AirFramework.TaskWaitCounter`1::get_TriggerCount()
+// 0x000003CE System.Void AirFramework.TaskWaitCounter`1::set_TriggerCount(System.Int32)
+// 0x000003CF T[] AirFramework.TaskWaitCounter`1::get_Results()
+// 0x000003D0 System.Void AirFramework.TaskWaitCounter`1::set_Results(T[])
+// 0x000003D1 System.Int32 AirFramework.TaskWaitCounter`1::get_AllTaskCount()
+// 0x000003D2 System.Void AirFramework.TaskWaitCounter`1::set_AllTaskCount(System.Int32)
+// 0x000003D3 System.Void AirFramework.TaskWaitCounter`1::Add(System.Int32,T)
+// 0x000003D4 System.Void AirFramework.TaskWaitCounter`1::Refresh(System.Boolean)
+// 0x000003D5 System.Void AirFramework.TaskWaitCounter`1::OnAllocate()
+// 0x000003D6 System.Void AirFramework.TaskWaitCounter`1::OnRecycle()
+// 0x000003D7 System.Void AirFramework.TaskWaitCounter`1::AirFramework.ITaskCancel.OnTaskCancel()
+// 0x000003D8 System.Void AirFramework.TaskWaitCounter`1::AirFramework.ITaskContinue.OnTaskContinue()
+// 0x000003D9 System.Void AirFramework.TaskWaitCounter`1::AirFramework.ITaskPause.OnTaskPause()
+// 0x000003DA System.Void AirFramework.TaskWaitCounter`1::.ctor()
+// 0x000003DB System.Boolean AirFramework.IAuthorization::get_Authorization()
+// 0x000003DC AirFramework.IAwaiter AirFramework.IAwaitable::GetAwaiter()
+// 0x000003DD AirFramework.IAwaiter`1<T> AirFramework.IAwaitable`1::GetAwaiter()
+// 0x000003DE System.Boolean AirFramework.IAwaiter::get_IsCompleted()
+// 0x000003DF System.Void AirFramework.IAwaiter::GetResult()
+// 0x000003E0 System.Boolean AirFramework.IAwaiter`1::get_IsCompleted()
+// 0x000003E1 T AirFramework.IAwaiter`1::GetResult()
+// 0x000003E2 System.Void AirFramework.ITaskCancel::OnTaskCancel()
+// 0x000003E3 System.Void AirFramework.TaskCancelHandler::OnLifeCycleRegister(AirFramework.ITaskCancel)
 extern void TaskCancelHandler_OnLifeCycleRegister_mF6FCF3BBF501C55DEA5CD0628E309FE5250A020A (void);
-// 0x000003E1 System.Void AirFramework.TaskCancelHandler::OnLifeCycleUnRegister(AirFramework.ITaskCancel)
+// 0x000003E4 System.Void AirFramework.TaskCancelHandler::OnLifeCycleUnRegister(AirFramework.ITaskCancel)
 extern void TaskCancelHandler_OnLifeCycleUnRegister_m70007484752BA40F9CDFFE25D4A76FD0894D4C5E (void);
-// 0x000003E2 System.Void AirFramework.TaskCancelHandler::.ctor()
+// 0x000003E5 System.Void AirFramework.TaskCancelHandler::.ctor()
 extern void TaskCancelHandler__ctor_mEFADE79275D1ADD7FBFD1613214474135DFC90C5 (void);
-// 0x000003E3 System.Void AirFramework.ITaskContinue::OnTaskContinue()
-// 0x000003E4 System.Void AirFramework.TaskContinueHandler::OnLifeCycleRegister(AirFramework.ITaskContinue)
+// 0x000003E6 System.Void AirFramework.ITaskContinue::OnTaskContinue()
+// 0x000003E7 System.Void AirFramework.TaskContinueHandler::OnLifeCycleRegister(AirFramework.ITaskContinue)
 extern void TaskContinueHandler_OnLifeCycleRegister_m1A892028196DB1185FC8F3C552B695D13D49A35D (void);
-// 0x000003E5 System.Void AirFramework.TaskContinueHandler::OnLifeCycleUnRegister(AirFramework.ITaskContinue)
+// 0x000003E8 System.Void AirFramework.TaskContinueHandler::OnLifeCycleUnRegister(AirFramework.ITaskContinue)
 extern void TaskContinueHandler_OnLifeCycleUnRegister_m8677BD0E0A1CB94036EC6B10A0800EF35D671FC9 (void);
-// 0x000003E6 System.Void AirFramework.TaskContinueHandler::.ctor()
+// 0x000003E9 System.Void AirFramework.TaskContinueHandler::.ctor()
 extern void TaskContinueHandler__ctor_m11D838AF0A8685FA983BD8370D34442208F67FC4 (void);
-// 0x000003E7 System.Void AirFramework.ITaskPause::OnTaskPause()
-// 0x000003E8 System.Void AirFramework.TaskPauseHandler::OnLifeCycleRegister(AirFramework.ITaskPause)
+// 0x000003EA System.Void AirFramework.ITaskPause::OnTaskPause()
+// 0x000003EB System.Void AirFramework.TaskPauseHandler::OnLifeCycleRegister(AirFramework.ITaskPause)
 extern void TaskPauseHandler_OnLifeCycleRegister_m7B460BC24D57498B690922D00824B93F1E38C54F (void);
-// 0x000003E9 System.Void AirFramework.TaskPauseHandler::OnLifeCycleUnRegister(AirFramework.ITaskPause)
+// 0x000003EC System.Void AirFramework.TaskPauseHandler::OnLifeCycleUnRegister(AirFramework.ITaskPause)
 extern void TaskPauseHandler_OnLifeCycleUnRegister_m46047DE22F86AE56B72DB42B727F47D1ADCB5FC4 (void);
-// 0x000003EA System.Void AirFramework.TaskPauseHandler::.ctor()
+// 0x000003ED System.Void AirFramework.TaskPauseHandler::.ctor()
 extern void TaskPauseHandler__ctor_m637D840A29341EE615047C99621ED148CF63FBF5 (void);
-// 0x000003EB System.Void AirFramework.AbstractModule::OnCreate()
-// 0x000003EC System.Void AirFramework.AbstractModule::Update(System.Single)
-// 0x000003ED System.Void AirFramework.AbstractModule::.ctor()
+// 0x000003EE System.Void AirFramework.AbstractModule::OnCreate()
+// 0x000003EF System.Void AirFramework.AbstractModule::Update(System.Single)
+// 0x000003F0 System.Void AirFramework.AbstractModule::.ctor()
 extern void AbstractModule__ctor_m708A01F63FF6126BC3C174F1C218B6B9C199EB25 (void);
-// 0x000003EE System.Boolean AirFramework.IDisposedUnit::get_Disposed()
-// 0x000003EF System.Void AirFramework.IDisposedUnit::set_Disposed(System.Boolean)
-// 0x000003F0 System.Int64 AirFramework.IUniqueID::get_ID()
-// 0x000003F1 System.Void AirFramework.SimpleUnit::OnDispose()
+// 0x000003F1 System.Boolean AirFramework.IDisposedUnit::get_Disposed()
+// 0x000003F2 System.Void AirFramework.IDisposedUnit::set_Disposed(System.Boolean)
+// 0x000003F3 System.Int64 AirFramework.IUniqueID::get_ID()
+// 0x000003F4 System.Void AirFramework.SimpleUnit::OnDispose()
 extern void SimpleUnit_OnDispose_mA019F423A4218E2041E17516AC05615B10A15525 (void);
-// 0x000003F2 System.Void AirFramework.SimpleUnit::.ctor()
+// 0x000003F5 System.Void AirFramework.SimpleUnit::.ctor()
 extern void SimpleUnit__ctor_m8B56A2653560046CF5A3FD33B5E4AD46E2894D62 (void);
-// 0x000003F3 System.Boolean AirFramework.Unit::get_Disposed()
+// 0x000003F6 System.Boolean AirFramework.Unit::get_Disposed()
 extern void Unit_get_Disposed_m4D5BC36CF3A340AD54C30B18ADABA8BF952A31B6 (void);
-// 0x000003F4 System.Void AirFramework.Unit::set_Disposed(System.Boolean)
+// 0x000003F7 System.Void AirFramework.Unit::set_Disposed(System.Boolean)
 extern void Unit_set_Disposed_m0D2A5F522C901EED6E60ED799AFB8FBF0ED9D66E (void);
-// 0x000003F5 System.Boolean AirFramework.Unit::get_IsDestruction()
+// 0x000003F8 System.Boolean AirFramework.Unit::get_IsDestruction()
 extern void Unit_get_IsDestruction_m4F20058E7DEB1964BC5561A44425E63724D5331D (void);
-// 0x000003F6 System.Void AirFramework.Unit::Dispose()
+// 0x000003F9 System.Void AirFramework.Unit::Dispose()
 extern void Unit_Dispose_m09C33CA4EA29A21EB05B74965506D2CA2F715C59 (void);
-// 0x000003F7 System.Void AirFramework.Unit::OnDispose()
-// 0x000003F8 AirFramework.UIDGenerator AirFramework.Unit::get_IDs()
+// 0x000003FA System.Void AirFramework.Unit::OnDispose()
+// 0x000003FB AirFramework.UIDGenerator AirFramework.Unit::get_IDs()
 extern void Unit_get_IDs_m5BC12646996486BA95EA2D9E5F54575DBB461643 (void);
-// 0x000003F9 System.Void AirFramework.Unit::set_IDs(AirFramework.UIDGenerator)
+// 0x000003FC System.Void AirFramework.Unit::set_IDs(AirFramework.UIDGenerator)
 extern void Unit_set_IDs_mFCCD4CF6E2E6CAA40B9085FD9244D66B43DE3C08 (void);
-// 0x000003FA System.Int64 AirFramework.Unit::get_ID()
+// 0x000003FD System.Int64 AirFramework.Unit::get_ID()
 extern void Unit_get_ID_m37439248C2ABC205384A1CBB3AD66586D218B12D (void);
-// 0x000003FB System.Void AirFramework.Unit::set_ID(System.Int64)
+// 0x000003FE System.Void AirFramework.Unit::set_ID(System.Int64)
 extern void Unit_set_ID_m044F78A8C3CD44A33AABC6049776D31D3507EA59 (void);
-// 0x000003FC System.Void AirFramework.Unit::.ctor()
+// 0x000003FF System.Void AirFramework.Unit::.ctor()
 extern void Unit__ctor_mDCA1C0A9BF6065BA43C15E4A2A4175D53D5377FD (void);
-// 0x000003FD System.Void AirFramework.Unit::Finalize()
+// 0x00000400 System.Void AirFramework.Unit::Finalize()
 extern void Unit_Finalize_m1BAC4B6F3A126A88C18DB39168BF565CBD20922F (void);
-// 0x000003FE System.Boolean AirFramework.Unit::Equals(AirFramework.Unit)
+// 0x00000401 System.Boolean AirFramework.Unit::Equals(AirFramework.Unit)
 extern void Unit_Equals_mD2D2D1C27157DB564D97CE5925A3B9E99F692133 (void);
-// 0x000003FF System.Boolean AirFramework.Unit::Equals(System.Object)
+// 0x00000402 System.Boolean AirFramework.Unit::Equals(System.Object)
 extern void Unit_Equals_m36E71D7DFF9588DA7903E26F961D415B5D180160 (void);
-// 0x00000400 System.Int32 AirFramework.Unit::GetHashCode()
+// 0x00000403 System.Int32 AirFramework.Unit::GetHashCode()
 extern void Unit_GetHashCode_mA02CCF2BF5A9955F210CA76955B6FECDBC856D4E (void);
-// 0x00000401 System.String AirFramework.Unit::ToString()
+// 0x00000404 System.String AirFramework.Unit::ToString()
 extern void Unit_ToString_m10B037A529F8CC7BFE57A7273307D9F07C8F8C4B (void);
-// 0x00000402 System.Boolean AirFramework.Unit::op_Equality(AirFramework.Unit,AirFramework.Unit)
+// 0x00000405 System.Boolean AirFramework.Unit::op_Equality(AirFramework.Unit,AirFramework.Unit)
 extern void Unit_op_Equality_m75231C06F4505E9C46630D3A636AA231DC1F10B7 (void);
-// 0x00000403 System.Boolean AirFramework.Unit::op_Inequality(AirFramework.Unit,AirFramework.Unit)
+// 0x00000406 System.Boolean AirFramework.Unit::op_Inequality(AirFramework.Unit,AirFramework.Unit)
 extern void Unit_op_Inequality_mE6E49F0B0497A8565EC4BAED52A2FA9E11CE3884 (void);
-// 0x00000404 AirFramework.UnitKeyDynamicDictionary`2<System.Int64,AirFramework.Unit> AirFramework.Unit::get_Childs()
+// 0x00000407 AirFramework.UnitKeyDynamicDictionary`2<System.Int64,AirFramework.Unit> AirFramework.Unit::get_Childs()
 extern void Unit_get_Childs_mBCC86050D39C3C9FB87FB8CACE33C0D17958436B (void);
-// 0x00000405 AirFramework.UnitKeyDynamicDictionary`2<System.Type,AirFramework.Unit> AirFramework.Unit::get_Components()
+// 0x00000408 AirFramework.UnitKeyDynamicDictionary`2<System.Type,AirFramework.Unit> AirFramework.Unit::get_Components()
 extern void Unit_get_Components_m51C9D9F38E21627CD1D1D416641B596785005572 (void);
-// 0x00000406 System.Boolean AirFramework.Unit::get_IsComponent()
+// 0x00000409 System.Boolean AirFramework.Unit::get_IsComponent()
 extern void Unit_get_IsComponent_m2528795CB637F17BC417C97766BA7B8CC8FF0333 (void);
-// 0x00000407 System.Void AirFramework.Unit::set_IsComponent(System.Boolean)
+// 0x0000040A System.Void AirFramework.Unit::set_IsComponent(System.Boolean)
 extern void Unit_set_IsComponent_m07E4DA0D5B7EF5DCE56B22E4927F1062FF03DC0C (void);
-// 0x00000408 AirFramework.Unit AirFramework.Unit::get_Parent()
+// 0x0000040B AirFramework.Unit AirFramework.Unit::get_Parent()
 extern void Unit_get_Parent_m8D209373962FCA134800C0795A6543EE2F498C1F (void);
-// 0x00000409 System.Void AirFramework.Unit::set_Parent(AirFramework.Unit)
+// 0x0000040C System.Void AirFramework.Unit::set_Parent(AirFramework.Unit)
 extern void Unit_set_Parent_m97A7EA16FC4507B1B158C5D6CCD4AD10125D361D (void);
-// 0x0000040A System.Void AirFramework.Unit::AddChild(AirFramework.Unit,System.Boolean)
+// 0x0000040D System.Void AirFramework.Unit::AddChild(AirFramework.Unit,System.Boolean)
 extern void Unit_AddChild_mEAC082988C4DB84CADD48918779746FD89A9ECA4 (void);
-// 0x0000040B System.Void AirFramework.Unit::RemoveChild(AirFramework.Unit,System.Boolean)
+// 0x0000040E System.Void AirFramework.Unit::RemoveChild(AirFramework.Unit,System.Boolean)
 extern void Unit_RemoveChild_m2A746BF692FE8343B0FF5425F561E8A862474053 (void);
-// 0x0000040C AirFramework.Unit AirFramework.Unit::GetChild(System.Int64)
+// 0x0000040F AirFramework.Unit AirFramework.Unit::GetChild(System.Int64)
 extern void Unit_GetChild_m8598EEE8B00CA06F53D5ADC7655B1642F29194FF (void);
-// 0x0000040D AirFramework.Unit AirFramework.Unit::GetComponent(System.Type)
+// 0x00000410 AirFramework.Unit AirFramework.Unit::GetComponent(System.Type)
 extern void Unit_GetComponent_mC3968ECE82132C27A4AC78989E89C9641DCF5D1E (void);
-// 0x0000040E T AirFramework.Unit::GetComponent()
-// 0x0000040F AirFramework.UnitList`1<T> AirFramework.Unit::GetComponents()
-// 0x00000410 System.Void AirFramework.Unit::.cctor()
+// 0x00000411 T AirFramework.Unit::GetComponent()
+// 0x00000412 AirFramework.UnitList`1<T> AirFramework.Unit::GetComponents()
+// 0x00000413 System.Void AirFramework.Unit::.cctor()
 extern void Unit__cctor_m86F0392A8B1B6E7981BE7184A8FECC3E9F9DA9F3 (void);
-// 0x00000411 System.Void AirFramework.AudioModule::OnCreate()
+// 0x00000414 System.Void AirFramework.AudioModule::OnCreate()
 extern void AudioModule_OnCreate_mF82B71B4963EEF6D1383142F7215DAED5B6F4D8F (void);
-// 0x00000412 System.Void AirFramework.AudioModule::Update(System.Single)
+// 0x00000415 System.Void AirFramework.AudioModule::Update(System.Single)
 extern void AudioModule_Update_m9F33693FA92643C83F5634ED2363382A7EF5043E (void);
-// 0x00000413 System.Void AirFramework.AudioModule::OnDispose()
+// 0x00000416 System.Void AirFramework.AudioModule::OnDispose()
 extern void AudioModule_OnDispose_mD3EE516914902D799337E0A74F6E824EED6BCB77 (void);
-// 0x00000414 System.Void AirFramework.AudioModule::.ctor()
+// 0x00000417 System.Void AirFramework.AudioModule::.ctor()
 extern void AudioModule__ctor_m023806E6F5CA174BDA7B03D68CAAB2ABEFBDA38B (void);
-// 0x00000415 System.Void AirFramework.IFixedUpdate::FixedUpdate(System.Single)
-// 0x00000416 System.Void AirFramework.FixedUpdateHandler::OnLifeCycleRegister(AirFramework.IFixedUpdate)
+// 0x00000418 System.Void AirFramework.IFixedUpdate::FixedUpdate(System.Single)
+// 0x00000419 System.Void AirFramework.FixedUpdateHandler::OnLifeCycleRegister(AirFramework.IFixedUpdate)
 extern void FixedUpdateHandler_OnLifeCycleRegister_mA2F3F978046C49C32364EC41589F0F17507E1601 (void);
-// 0x00000417 System.Void AirFramework.FixedUpdateHandler::OnLifeCycleUnRegister(AirFramework.IFixedUpdate)
+// 0x0000041A System.Void AirFramework.FixedUpdateHandler::OnLifeCycleUnRegister(AirFramework.IFixedUpdate)
 extern void FixedUpdateHandler_OnLifeCycleUnRegister_m15750F0EB813B9AD62C341332432569EF5EE4202 (void);
-// 0x00000418 System.Void AirFramework.FixedUpdateHandler::.ctor()
+// 0x0000041B System.Void AirFramework.FixedUpdateHandler::.ctor()
 extern void FixedUpdateHandler__ctor_mC92D182E93CA05AF5414BF932A05E30F6EEB92B8 (void);
-// 0x00000419 System.Void AirFramework.ILateUpdate::LateUpdate()
-// 0x0000041A System.Void AirFramework.LateUpdateHandler::OnLifeCycleRegister(AirFramework.ILateUpdate)
+// 0x0000041C System.Void AirFramework.ILateUpdate::LateUpdate()
+// 0x0000041D System.Void AirFramework.LateUpdateHandler::OnLifeCycleRegister(AirFramework.ILateUpdate)
 extern void LateUpdateHandler_OnLifeCycleRegister_m591EEC10A7EBCCF8656829F60FE2427C6F4FFBA9 (void);
-// 0x0000041B System.Void AirFramework.LateUpdateHandler::OnLifeCycleUnRegister(AirFramework.ILateUpdate)
+// 0x0000041E System.Void AirFramework.LateUpdateHandler::OnLifeCycleUnRegister(AirFramework.ILateUpdate)
 extern void LateUpdateHandler_OnLifeCycleUnRegister_mDC273827332D92061C601A5F0A5627E7E32F48F6 (void);
-// 0x0000041C System.Void AirFramework.LateUpdateHandler::.ctor()
+// 0x0000041F System.Void AirFramework.LateUpdateHandler::.ctor()
 extern void LateUpdateHandler__ctor_m0D5511DC84AD533BAA8A65F321104A96BFE66CD1 (void);
-// 0x0000041D UnityEngine.Vector2 AirFramework.UnityLerpHelper::Lerp(UnityEngine.Vector2,UnityEngine.Vector2,System.Single)
+// 0x00000420 UnityEngine.Vector2 AirFramework.UnityLerpHelper::Lerp(UnityEngine.Vector2,UnityEngine.Vector2,System.Single)
 extern void UnityLerpHelper_Lerp_mD6F549AF17188305F599E54C8A9CFD63F30B9EF8 (void);
-// 0x0000041E UnityEngine.Vector3 AirFramework.UnityLerpHelper::Lerp(UnityEngine.Vector3,UnityEngine.Vector3,System.Single)
+// 0x00000421 UnityEngine.Vector3 AirFramework.UnityLerpHelper::Lerp(UnityEngine.Vector3,UnityEngine.Vector3,System.Single)
 extern void UnityLerpHelper_Lerp_mFC8EC0439D82A32A0D9D581E7158EDE659EF1E01 (void);
-// 0x0000041F UnityEngine.Color AirFramework.UnityLerpHelper::Lerp(UnityEngine.Color,UnityEngine.Color,System.Single)
+// 0x00000422 UnityEngine.Color AirFramework.UnityLerpHelper::Lerp(UnityEngine.Color,UnityEngine.Color,System.Single)
 extern void UnityLerpHelper_Lerp_m923E98056E1BB28756C2AB39BEDC002A752C5C94 (void);
-// 0x00000420 System.Void AirFramework.HotUpdateModule::OnCreate()
+// 0x00000423 System.Void AirFramework.HotUpdateModule::OnCreate()
 extern void HotUpdateModule_OnCreate_m6F3AE8E2503717591D19CBDB2D101AF85ACE84AD (void);
-// 0x00000421 System.Void AirFramework.HotUpdateModule::Update(System.Single)
+// 0x00000424 System.Void AirFramework.HotUpdateModule::Update(System.Single)
 extern void HotUpdateModule_Update_mFEFD9F7A0C520054CC1CD36053FD00F2A8F190AC (void);
-// 0x00000422 System.Void AirFramework.HotUpdateModule::OnDispose()
+// 0x00000425 System.Void AirFramework.HotUpdateModule::OnDispose()
 extern void HotUpdateModule_OnDispose_m1F9650EA53284CD8F6E734FE2FA6A87D247187F9 (void);
-// 0x00000423 AirFramework.AirTask AirFramework.HotUpdateModule::Initialize()
-extern void HotUpdateModule_Initialize_mEF50138B681140EBDA00D0C247CBB1BEAE5FD23B (void);
-// 0x00000424 AirFramework.AirTask AirFramework.HotUpdateModule::LoadAndSupplementaryMetaData(YooAsset.AssetInfo[])
+// 0x00000426 AirFramework.AirTask AirFramework.HotUpdateModule::Initialize(AirFramework.RuntimeMode)
+extern void HotUpdateModule_Initialize_m17560F7BA3E99FCB61372A80F1218D995CE7140E (void);
+// 0x00000427 AirFramework.AirTask AirFramework.HotUpdateModule::LoadAndSupplementaryMetaData(YooAsset.AssetInfo[])
 extern void HotUpdateModule_LoadAndSupplementaryMetaData_m8E0B2037902758344C66CF68F6A50C09BE055348 (void);
-// 0x00000425 AirFramework.AirTask AirFramework.HotUpdateModule::LoadHotUpdateAssembly(YooAsset.AssetInfo[])
+// 0x00000428 AirFramework.AirTask AirFramework.HotUpdateModule::LoadHotUpdateAssembly(YooAsset.AssetInfo[])
 extern void HotUpdateModule_LoadHotUpdateAssembly_mD02FC5AC66F393895C83518B4219996BE09ACBCA (void);
-// 0x00000426 System.Void AirFramework.HotUpdateModule::.ctor()
+// 0x00000429 System.Void AirFramework.HotUpdateModule::.ctor()
 extern void HotUpdateModule__ctor_m376C3E53EA36D9467649E9F25FA6CD6A024A2F95 (void);
-// 0x00000427 System.Void AirFramework.HotUpdateModule/<Initialize>d__3::MoveNext()
+// 0x0000042A System.Void AirFramework.HotUpdateModule/<Initialize>d__3::MoveNext()
 extern void U3CInitializeU3Ed__3_MoveNext_mD3AB87EA0847B963607A254594ADC5EA93602858 (void);
-// 0x00000428 System.Void AirFramework.HotUpdateModule/<Initialize>d__3::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x0000042B System.Void AirFramework.HotUpdateModule/<Initialize>d__3::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CInitializeU3Ed__3_SetStateMachine_m30BC6BA3E396A0A25E31E70C67CC7FE54049E2BE (void);
-// 0x00000429 System.Void AirFramework.HotUpdateModule/<LoadAndSupplementaryMetaData>d__4::MoveNext()
+// 0x0000042C System.Void AirFramework.HotUpdateModule/<LoadAndSupplementaryMetaData>d__4::MoveNext()
 extern void U3CLoadAndSupplementaryMetaDataU3Ed__4_MoveNext_m20C56679A36C0326B074BAD90F33676BC7DA2027 (void);
-// 0x0000042A System.Void AirFramework.HotUpdateModule/<LoadAndSupplementaryMetaData>d__4::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x0000042D System.Void AirFramework.HotUpdateModule/<LoadAndSupplementaryMetaData>d__4::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CLoadAndSupplementaryMetaDataU3Ed__4_SetStateMachine_mD5C4765B66DDB15AD06FEC35AA6591D770241077 (void);
-// 0x0000042B System.Void AirFramework.HotUpdateModule/<LoadHotUpdateAssembly>d__5::MoveNext()
+// 0x0000042E System.Void AirFramework.HotUpdateModule/<LoadHotUpdateAssembly>d__5::MoveNext()
 extern void U3CLoadHotUpdateAssemblyU3Ed__5_MoveNext_mCAC087E480AF095E87FD98FB026F6096D0CCFBC0 (void);
-// 0x0000042C System.Void AirFramework.HotUpdateModule/<LoadHotUpdateAssembly>d__5::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x0000042F System.Void AirFramework.HotUpdateModule/<LoadHotUpdateAssembly>d__5::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CLoadHotUpdateAssemblyU3Ed__5_SetStateMachine_m717E2DCAE18B09FB22261060CA98322FA635C907 (void);
-// 0x0000042D System.Boolean AirFramework.IView::get_IsLoaded()
-// 0x0000042E System.Boolean AirFramework.IView::get_IsLoading()
-// 0x0000042F AirFramework.AirTask AirFramework.IView::LoadAsync()
-// 0x00000430 System.Boolean AirFramework.IView::get_IsShowing()
-// 0x00000431 T AirFramework.IView`1::get_Refs()
-// 0x00000432 System.Void AirFramework.IView`1::set_Refs(T)
-// 0x00000433 AirFramework.AirTask AirFramework.IViewShow::OnViewShow()
-// 0x00000434 AirFramework.AirTask AirFramework.IViewHide::OnViewHide()
-// 0x00000435 System.Void AirFramework.ViewShowHandler::OnLifeCycleRegister(AirFramework.IViewShow)
+// 0x00000430 System.Void AirFramework.UnitySupportLogger::AirFramework.ILogger.Error(System.Object)
+extern void UnitySupportLogger_AirFramework_ILogger_Error_m9E8766D82CE65F1C779906CB50B8FB978DF85D43 (void);
+// 0x00000431 System.Void AirFramework.UnitySupportLogger::AirFramework.ILogger.Exception(System.Exception)
+extern void UnitySupportLogger_AirFramework_ILogger_Exception_m1DC5849D05F29428702B3FAAC30EB8BBEA78E6DD (void);
+// 0x00000432 System.Void AirFramework.UnitySupportLogger::AirFramework.ILogger.Log(System.Object)
+extern void UnitySupportLogger_AirFramework_ILogger_Log_mE48E6230ED118ADBBBBD045F5E5A2ADAC9146E8A (void);
+// 0x00000433 System.Void AirFramework.UnitySupportLogger::AirFramework.ILogger.Warn(System.Object)
+extern void UnitySupportLogger_AirFramework_ILogger_Warn_m55C3B9C76111C3732058A6DCB5D7821C16952E8A (void);
+// 0x00000434 System.Void AirFramework.UnitySupportLogger::.ctor()
+extern void UnitySupportLogger__ctor_m4C0A60A1D0A29A5AFABD535EC4236C6AE1968DA0 (void);
+// 0x00000435 System.Boolean AirFramework.IView::get_IsLoaded()
+// 0x00000436 System.Boolean AirFramework.IView::get_IsLoading()
+// 0x00000437 AirFramework.AirTask AirFramework.IView::LoadAsync()
+// 0x00000438 System.Boolean AirFramework.IView::get_IsShowing()
+// 0x00000439 T AirFramework.IView`1::get_Refs()
+// 0x0000043A System.Void AirFramework.IView`1::set_Refs(T)
+// 0x0000043B AirFramework.AirTask AirFramework.IViewShow::OnViewShow()
+// 0x0000043C AirFramework.AirTask AirFramework.IViewHide::OnViewHide()
+// 0x0000043D System.Void AirFramework.ViewShowHandler::OnLifeCycleRegister(AirFramework.IViewShow)
 extern void ViewShowHandler_OnLifeCycleRegister_mCDB2EB6BABFA1CF9C0EE6E0A694E9250F8E5F8A8 (void);
-// 0x00000436 System.Void AirFramework.ViewShowHandler::OnLifeCycleUnRegister(AirFramework.IViewShow)
+// 0x0000043E System.Void AirFramework.ViewShowHandler::OnLifeCycleUnRegister(AirFramework.IViewShow)
 extern void ViewShowHandler_OnLifeCycleUnRegister_m8DF08E5166BB8CA0CA53EC95A5881E840A8C3B90 (void);
-// 0x00000437 System.Void AirFramework.ViewShowHandler::.ctor()
+// 0x0000043F System.Void AirFramework.ViewShowHandler::.ctor()
 extern void ViewShowHandler__ctor_m3F609A6A7DC05DD0873FD0C9CC2232B269A540BE (void);
-// 0x00000438 System.Void AirFramework.ViewHideHandler::OnLifeCycleRegister(AirFramework.IViewHide)
+// 0x00000440 System.Void AirFramework.ViewHideHandler::OnLifeCycleRegister(AirFramework.IViewHide)
 extern void ViewHideHandler_OnLifeCycleRegister_mDC5371AE98047590718C877C8C787BC38FD176B7 (void);
-// 0x00000439 System.Void AirFramework.ViewHideHandler::OnLifeCycleUnRegister(AirFramework.IViewHide)
+// 0x00000441 System.Void AirFramework.ViewHideHandler::OnLifeCycleUnRegister(AirFramework.IViewHide)
 extern void ViewHideHandler_OnLifeCycleUnRegister_m32CBE1C7AAF941A497E58615212E048B76E1C5AC (void);
-// 0x0000043A System.Void AirFramework.ViewHideHandler::.ctor()
+// 0x00000442 System.Void AirFramework.ViewHideHandler::.ctor()
 extern void ViewHideHandler__ctor_mEF2CDD27C523E123B97440CDB355EC8F0A420CC0 (void);
-// 0x0000043B AirFramework.AirTask AirFramework.IViewInitialize::OnViewInitialize()
-// 0x0000043C System.Void AirFramework.ViewInitializeHandler::OnLifeCycleRegister(AirFramework.IViewInitialize)
+// 0x00000443 AirFramework.AirTask AirFramework.IViewInitialize::OnViewInitialize()
+// 0x00000444 System.Void AirFramework.ViewInitializeHandler::OnLifeCycleRegister(AirFramework.IViewInitialize)
 extern void ViewInitializeHandler_OnLifeCycleRegister_mD576198EFF5652B7040536A5EA0D413EDAB4FBD3 (void);
-// 0x0000043D System.Void AirFramework.ViewInitializeHandler::OnLifeCycleUnRegister(AirFramework.IViewInitialize)
+// 0x00000445 System.Void AirFramework.ViewInitializeHandler::OnLifeCycleUnRegister(AirFramework.IViewInitialize)
 extern void ViewInitializeHandler_OnLifeCycleUnRegister_m7038D928CCA145141B3459ECF018F6D060104B5C (void);
-// 0x0000043E System.Void AirFramework.ViewInitializeHandler::.ctor()
+// 0x00000446 System.Void AirFramework.ViewInitializeHandler::.ctor()
 extern void ViewInitializeHandler__ctor_m80F7FD3ACA3BB2548C707C5F959D9B70E5826490 (void);
-// 0x0000043F System.Void AirFramework.OnAnimatorIKListener::add_OnTrigger(System.Action`1<System.Int32>)
+// 0x00000447 System.Void AirFramework.OnAnimatorIKListener::add_OnTrigger(System.Action`1<System.Int32>)
 extern void OnAnimatorIKListener_add_OnTrigger_m194567BD03E4F4F544E0304016F20796183E49E9 (void);
-// 0x00000440 System.Void AirFramework.OnAnimatorIKListener::remove_OnTrigger(System.Action`1<System.Int32>)
+// 0x00000448 System.Void AirFramework.OnAnimatorIKListener::remove_OnTrigger(System.Action`1<System.Int32>)
 extern void OnAnimatorIKListener_remove_OnTrigger_m62A1BC93658D046F61DDA08D8BEC77C703C25688 (void);
-// 0x00000441 System.Void AirFramework.OnAnimatorIKListener::OnAnimatorIK(System.Int32)
+// 0x00000449 System.Void AirFramework.OnAnimatorIKListener::OnAnimatorIK(System.Int32)
 extern void OnAnimatorIKListener_OnAnimatorIK_m481BA12E9370A287A80AB64920FDDF203E071B9D (void);
-// 0x00000442 System.Void AirFramework.OnAnimatorIKListener::.ctor()
+// 0x0000044A System.Void AirFramework.OnAnimatorIKListener::.ctor()
 extern void OnAnimatorIKListener__ctor_m1200C7AAA845314FDF06E4F3DC8507B0C96BD82A (void);
-// 0x00000443 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnAnimatorIKListener,System.Action`1<System.Int32>)
+// 0x0000044B System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnAnimatorIKListener,System.Action`1<System.Int32>)
 extern void Listener_Ex_Bind_m5DF6DC161CEC32657B3E41C1CE272741D507A9FC (void);
-// 0x00000444 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnAnimatorMoveListener,System.Action)
+// 0x0000044C System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnAnimatorMoveListener,System.Action)
 extern void Listener_Ex_Bind_m5A516A40A93B4BF1EB02828EF44C4E50239C1C2A (void);
-// 0x00000445 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnApplicationFocusListener,System.Action`1<System.Boolean>)
+// 0x0000044D System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnApplicationFocusListener,System.Action`1<System.Boolean>)
 extern void Listener_Ex_Bind_m51D61D22CBBD531EBE3306D2FFF1C9086C831C7B (void);
-// 0x00000446 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnApplicationPauseListener,System.Action`1<System.Boolean>)
+// 0x0000044E System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnApplicationPauseListener,System.Action`1<System.Boolean>)
 extern void Listener_Ex_Bind_m15ED592FF717012A00BE41B1838944240444F37D (void);
-// 0x00000447 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnApplicationQuitListener,System.Action)
+// 0x0000044F System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnApplicationQuitListener,System.Action)
 extern void Listener_Ex_Bind_m953C24454112852343531A6792AE28185297BDBE (void);
-// 0x00000448 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnAudioFilterReadListener,System.Action`2<System.Single[],System.Int32>)
+// 0x00000450 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnAudioFilterReadListener,System.Action`2<System.Single[],System.Int32>)
 extern void Listener_Ex_Bind_mDAD18353198D175E50C5168A56E1A07E98349699 (void);
-// 0x00000449 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnBecameInvisibleListener,System.Action)
+// 0x00000451 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnBecameInvisibleListener,System.Action)
 extern void Listener_Ex_Bind_m8289DEC4626062FACFF9EE37B23D8F33E4821635 (void);
-// 0x0000044A System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnBecameVisibleListener,System.Action)
+// 0x00000452 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnBecameVisibleListener,System.Action)
 extern void Listener_Ex_Bind_m6EEC638CB9EE362835D661DBA6F1AFE41BFDECF0 (void);
-// 0x0000044B System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnCanvasGroupChangedListener,System.Action)
+// 0x00000453 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnCanvasGroupChangedListener,System.Action)
 extern void Listener_Ex_Bind_m2FFDDB0ABCC290345E72BA25C8BBE3BA39A5CE1A (void);
-// 0x0000044C System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnControllerColliderHitListener,System.Action`1<UnityEngine.Collider>)
+// 0x00000454 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnControllerColliderHitListener,System.Action`1<UnityEngine.Collider>)
 extern void Listener_Ex_Bind_mDF010DF3A321B33BFBCEA1CA9F0D01F23A116D6D (void);
-// 0x0000044D System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnTriggerEnter2DListener,System.Action`1<UnityEngine.Collider2D>)
+// 0x00000455 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnTriggerEnter2DListener,System.Action`1<UnityEngine.Collider2D>)
 extern void Listener_Ex_Bind_m52F89F3FA84AFA8BE68BDD1C8725AFE3FAD67F3A (void);
-// 0x0000044E System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnTriggerEnterListener,System.Action`1<UnityEngine.Collider>)
+// 0x00000456 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnTriggerEnterListener,System.Action`1<UnityEngine.Collider>)
 extern void Listener_Ex_Bind_mA87812EF1E5D49C4CE65A94647E47FC8C2EF866F (void);
-// 0x0000044F System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnTriggerExit2DListener,System.Action`1<UnityEngine.Collider2D>)
+// 0x00000457 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnTriggerExit2DListener,System.Action`1<UnityEngine.Collider2D>)
 extern void Listener_Ex_Bind_mF6B1E6195E61E97C8765891A666680736980574E (void);
-// 0x00000450 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnTriggerExitListener,System.Action`1<UnityEngine.Collider>)
+// 0x00000458 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnTriggerExitListener,System.Action`1<UnityEngine.Collider>)
 extern void Listener_Ex_Bind_mBC8CA40724960BC984FC9ED01234308018EA8601 (void);
-// 0x00000451 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnTriggerStay2DListener,System.Action`1<UnityEngine.Collider2D>)
+// 0x00000459 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnTriggerStay2DListener,System.Action`1<UnityEngine.Collider2D>)
 extern void Listener_Ex_Bind_mB7B2B290699C86F91064EBA3003870578986C0E7 (void);
-// 0x00000452 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnTriggerStayListener,System.Action`1<UnityEngine.Collider>)
+// 0x0000045A System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnTriggerStayListener,System.Action`1<UnityEngine.Collider>)
 extern void Listener_Ex_Bind_mC0F32574330053485C435FE474A4CF86FF388A6B (void);
-// 0x00000453 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnCollisionEnter2DListener,System.Action`1<UnityEngine.Collision2D>)
+// 0x0000045B System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnCollisionEnter2DListener,System.Action`1<UnityEngine.Collision2D>)
 extern void Listener_Ex_Bind_mE2AB93F9F77133543C07FC1D5D84746CBEB2B04D (void);
-// 0x00000454 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnCollisionEnterListener,System.Action`1<UnityEngine.Collision>)
+// 0x0000045C System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnCollisionEnterListener,System.Action`1<UnityEngine.Collision>)
 extern void Listener_Ex_Bind_m7BBFE05DDCEA22850F218B7CE93FC66566BE4F1D (void);
-// 0x00000455 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnCollisionExit2DListener,System.Action`1<UnityEngine.Collision2D>)
+// 0x0000045D System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnCollisionExit2DListener,System.Action`1<UnityEngine.Collision2D>)
 extern void Listener_Ex_Bind_mF01ADBEE4260981CA40CCC5C2C1214CD03FBC343 (void);
-// 0x00000456 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnCollisionExitListener,System.Action`1<UnityEngine.Collision>)
+// 0x0000045E System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnCollisionExitListener,System.Action`1<UnityEngine.Collision>)
 extern void Listener_Ex_Bind_mADB5C87D94A48757467CA4FA0942FDDA68B7C3FC (void);
-// 0x00000457 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnCollisionStayListener,System.Action`1<UnityEngine.Collision>)
+// 0x0000045F System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnCollisionStayListener,System.Action`1<UnityEngine.Collision>)
 extern void Listener_Ex_Bind_m592F3E09B7F84FA85E513EC86228DE619CDB80BB (void);
-// 0x00000458 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnConnectedToServerListener,System.Action)
+// 0x00000460 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnConnectedToServerListener,System.Action)
 extern void Listener_Ex_Bind_mFD61719ACDAB041D53B223EAFBCE05E89F4DA17D (void);
-// 0x00000459 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnDrawGizmosListener,System.Action)
+// 0x00000461 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnDrawGizmosListener,System.Action)
 extern void Listener_Ex_Bind_m052D76CBAE68DCB3C0B6F6AB8BA4DEF7A7FF8229 (void);
-// 0x0000045A System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnDrawGizmosSelectedListener,System.Action)
+// 0x00000462 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnDrawGizmosSelectedListener,System.Action)
 extern void Listener_Ex_Bind_mCA2F9D2BB04A961F6A7C65031BC0C50515D883DA (void);
-// 0x0000045B System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnGUIListener,System.Action)
+// 0x00000463 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnGUIListener,System.Action)
 extern void Listener_Ex_Bind_mA7728E993F1A787D4A7D14912ED44E89187B0946 (void);
-// 0x0000045C System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnJointBreak2DListener,System.Action`1<UnityEngine.Joint2D>)
+// 0x00000464 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnJointBreak2DListener,System.Action`1<UnityEngine.Joint2D>)
 extern void Listener_Ex_Bind_mCA64DC295DA7CB66B9E8364EEB499CA0472235AB (void);
-// 0x0000045D System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnJointBreakListener,System.Action`1<System.Single>)
+// 0x00000465 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnJointBreakListener,System.Action`1<System.Single>)
 extern void Listener_Ex_Bind_mA2E32D6B308A244B4CFD9A07E4D23E0EFD437B43 (void);
-// 0x0000045E System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnLevelWasLoadedListener,System.Action`1<System.Int32>)
+// 0x00000466 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnLevelWasLoadedListener,System.Action`1<System.Int32>)
 extern void Listener_Ex_Bind_m01C9C389A07B10EC4023CC7FD21218B0728E2750 (void);
-// 0x0000045F System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnMouseDownListener,System.Action)
+// 0x00000467 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnMouseDownListener,System.Action)
 extern void Listener_Ex_Bind_mE92A68D931C1E939C424D9385F5E8C5ED653917E (void);
-// 0x00000460 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnMouseDragListener,System.Action)
+// 0x00000468 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnMouseDragListener,System.Action)
 extern void Listener_Ex_Bind_m34BA158B650964EE20DABBDC9444DF186362505E (void);
-// 0x00000461 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnMouseEnterListener,System.Action)
+// 0x00000469 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnMouseEnterListener,System.Action)
 extern void Listener_Ex_Bind_mEA26F51F04312711FE4BDA23D6C85DB65CE65883 (void);
-// 0x00000462 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnMouseExitListener,System.Action)
+// 0x0000046A System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnMouseExitListener,System.Action)
 extern void Listener_Ex_Bind_m388483D38FCB5057C0FFEBDB7B8B216E7DFA4C32 (void);
-// 0x00000463 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnMouseOverListener,System.Action)
+// 0x0000046B System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnMouseOverListener,System.Action)
 extern void Listener_Ex_Bind_m66FBCF09DC4EF739B8CD943A8A3E299346E1058B (void);
-// 0x00000464 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnMouseUpAsButtonListener,System.Action)
+// 0x0000046C System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnMouseUpAsButtonListener,System.Action)
 extern void Listener_Ex_Bind_mAB6F88DC369BCBEA9B066CF0319C55F4B386EBFB (void);
-// 0x00000465 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnMouseUpListener,System.Action)
+// 0x0000046D System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnMouseUpListener,System.Action)
 extern void Listener_Ex_Bind_m5015C642C24B423999FE8718FB7BD1D107403FA0 (void);
-// 0x00000466 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnDestroyListener,System.Action)
+// 0x0000046E System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnDestroyListener,System.Action)
 extern void Listener_Ex_Bind_m6449E40080E09702DCD0A484B28A32F53E5F3672 (void);
-// 0x00000467 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnDisableListener,System.Action)
+// 0x0000046F System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnDisableListener,System.Action)
 extern void Listener_Ex_Bind_m5C0D6FD172184EC6800CDF3B2DBEC63D3A6D0B54 (void);
-// 0x00000468 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnEnableListener,System.Action)
+// 0x00000470 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnEnableListener,System.Action)
 extern void Listener_Ex_Bind_m290A710A6E92016836F5FDCD882C47D33B80C05E (void);
-// 0x00000469 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnParticleCollisionListener,System.Action`1<UnityEngine.GameObject>)
+// 0x00000471 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnParticleCollisionListener,System.Action`1<UnityEngine.GameObject>)
 extern void Listener_Ex_Bind_mB294237F4F1190478E44374D752DC8CCA68A6766 (void);
-// 0x0000046A System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnParticleSystemStoppedListener,System.Action)
+// 0x00000472 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnParticleSystemStoppedListener,System.Action)
 extern void Listener_Ex_Bind_mB0AE63B1F303B2284E31B11B022D76E6F8897F5E (void);
-// 0x0000046B System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnParticleTriggerListener,System.Action)
+// 0x00000473 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnParticleTriggerListener,System.Action)
 extern void Listener_Ex_Bind_m0B762502FFB64D4ED9070FD410200DD48DF09773 (void);
-// 0x0000046C System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnParticleUpdateJobScheduledListener,System.Action)
+// 0x00000474 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnParticleUpdateJobScheduledListener,System.Action)
 extern void Listener_Ex_Bind_mD75F499E4439F699C0302417E0CCB3BD5434D8CF (void);
-// 0x0000046D System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnPreCullListener,System.Action)
+// 0x00000475 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnPreCullListener,System.Action)
 extern void Listener_Ex_Bind_m74B33C591A442A0AD52F16C786A4C5794AA0BBF7 (void);
-// 0x0000046E System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnPreRenderListener,System.Action)
+// 0x00000476 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnPreRenderListener,System.Action)
 extern void Listener_Ex_Bind_m21B9389107957A8A6D473563AB785F1B1E78F1AB (void);
-// 0x0000046F System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnPostRenderListener,System.Action)
+// 0x00000477 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnPostRenderListener,System.Action)
 extern void Listener_Ex_Bind_m5F4AC1BC633CC9B4666446807AA742712ADB2CBD (void);
-// 0x00000470 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnRenderImageListener,System.Action`2<UnityEngine.RenderTexture,UnityEngine.RenderTexture>)
+// 0x00000478 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnRenderImageListener,System.Action`2<UnityEngine.RenderTexture,UnityEngine.RenderTexture>)
 extern void Listener_Ex_Bind_m142F2B9A94A272262ACD808615E7621BEFE1FCB6 (void);
-// 0x00000471 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnRenderObjectListener,System.Action)
+// 0x00000479 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnRenderObjectListener,System.Action)
 extern void Listener_Ex_Bind_mB931207BCE03090342887896539B942911C38AA8 (void);
-// 0x00000472 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnWillRenderObjectListener,System.Action)
+// 0x0000047A System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnWillRenderObjectListener,System.Action)
 extern void Listener_Ex_Bind_m8B65EC7D735E91D197FDCBEBB6E3FA975AE4730F (void);
-// 0x00000473 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnServerInitializedListener,System.Action)
+// 0x0000047B System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnServerInitializedListener,System.Action)
 extern void Listener_Ex_Bind_m04E9A50B35A63F0CE713A955EE3A887CBF287A1B (void);
-// 0x00000474 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnBeforeTransformParentChangedListener,System.Action)
+// 0x0000047C System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnBeforeTransformParentChangedListener,System.Action)
 extern void Listener_Ex_Bind_m9D670CC6AA0A64C8D29C1EB48F6D5F7D7FE504E4 (void);
-// 0x00000475 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnRectTransformDimensionsChangeListener,System.Action)
+// 0x0000047D System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnRectTransformDimensionsChangeListener,System.Action)
 extern void Listener_Ex_Bind_mAC69909BF2A760F882336069092645B50AA56891 (void);
-// 0x00000476 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnRectTransformRemovedListener,System.Action)
+// 0x0000047E System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnRectTransformRemovedListener,System.Action)
 extern void Listener_Ex_Bind_m5188A8E5866A6349112DF4E761E01E9A40956860 (void);
-// 0x00000477 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnTransformChildrenChangedListener,System.Action)
+// 0x0000047F System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnTransformChildrenChangedListener,System.Action)
 extern void Listener_Ex_Bind_mDA7F2B65F44BB5EDF7AB3A378A16713CEDEE86E4 (void);
-// 0x00000478 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnTransformParentChangedListener,System.Action)
+// 0x00000480 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnTransformParentChangedListener,System.Action)
 extern void Listener_Ex_Bind_mF364300FB64FDD0EF53E9821CEF0240BC9EEDFE3 (void);
-// 0x00000479 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnValidateListener,System.Action)
+// 0x00000481 System.Void AirFramework.Listener_Ex::Bind(AirFramework.OnValidateListener,System.Action)
 extern void Listener_Ex_Bind_m0765E9B772469EC071BCC5FC9BDFFCAE1F57CAFD (void);
-// 0x0000047A System.Void AirFramework.OnAnimatorMoveListener::add_OnTrigger(System.Action)
+// 0x00000482 System.Void AirFramework.OnAnimatorMoveListener::add_OnTrigger(System.Action)
 extern void OnAnimatorMoveListener_add_OnTrigger_m4AB7B3914470D476AB3D39DC6C0154AF59331BDD (void);
-// 0x0000047B System.Void AirFramework.OnAnimatorMoveListener::remove_OnTrigger(System.Action)
+// 0x00000483 System.Void AirFramework.OnAnimatorMoveListener::remove_OnTrigger(System.Action)
 extern void OnAnimatorMoveListener_remove_OnTrigger_m6AC6DCE4FC997651F56AF57C1BA9A0ECAE9CCB12 (void);
-// 0x0000047C System.Void AirFramework.OnAnimatorMoveListener::OnAnimatorMove()
+// 0x00000484 System.Void AirFramework.OnAnimatorMoveListener::OnAnimatorMove()
 extern void OnAnimatorMoveListener_OnAnimatorMove_m4152ED262186B9D9CD167F38BDD3AF192DAAC843 (void);
-// 0x0000047D System.Void AirFramework.OnAnimatorMoveListener::.ctor()
+// 0x00000485 System.Void AirFramework.OnAnimatorMoveListener::.ctor()
 extern void OnAnimatorMoveListener__ctor_m77E6AB2494C079691FAB16165C9564652DF3B00F (void);
-// 0x0000047E System.Void AirFramework.OnApplicationFocusListener::add_OnTrigger(System.Action`1<System.Boolean>)
+// 0x00000486 System.Void AirFramework.OnApplicationFocusListener::add_OnTrigger(System.Action`1<System.Boolean>)
 extern void OnApplicationFocusListener_add_OnTrigger_m590FD01B43DC4983AF51630BBA4C64F269A9FAF1 (void);
-// 0x0000047F System.Void AirFramework.OnApplicationFocusListener::remove_OnTrigger(System.Action`1<System.Boolean>)
+// 0x00000487 System.Void AirFramework.OnApplicationFocusListener::remove_OnTrigger(System.Action`1<System.Boolean>)
 extern void OnApplicationFocusListener_remove_OnTrigger_m36F682519DD54E6CAD4B2E10FF45BBB188BF15C1 (void);
-// 0x00000480 System.Void AirFramework.OnApplicationFocusListener::OnApplicationFocus(System.Boolean)
+// 0x00000488 System.Void AirFramework.OnApplicationFocusListener::OnApplicationFocus(System.Boolean)
 extern void OnApplicationFocusListener_OnApplicationFocus_m9FDB3D477EB01B98F81FBF829D4329D0A94D30B7 (void);
-// 0x00000481 System.Void AirFramework.OnApplicationFocusListener::.ctor()
+// 0x00000489 System.Void AirFramework.OnApplicationFocusListener::.ctor()
 extern void OnApplicationFocusListener__ctor_mF7AE152121E8A74F3C2C2237B099F44D3C432109 (void);
-// 0x00000482 System.Void AirFramework.OnApplicationPauseListener::add_OnTrigger(System.Action`1<System.Boolean>)
+// 0x0000048A System.Void AirFramework.OnApplicationPauseListener::add_OnTrigger(System.Action`1<System.Boolean>)
 extern void OnApplicationPauseListener_add_OnTrigger_mBD60ED25593D1741DA2F0D0A2694B74AD82C5F16 (void);
-// 0x00000483 System.Void AirFramework.OnApplicationPauseListener::remove_OnTrigger(System.Action`1<System.Boolean>)
+// 0x0000048B System.Void AirFramework.OnApplicationPauseListener::remove_OnTrigger(System.Action`1<System.Boolean>)
 extern void OnApplicationPauseListener_remove_OnTrigger_m6CFDAE487B46AF23CAFAB8907214D2B652215DC5 (void);
-// 0x00000484 System.Void AirFramework.OnApplicationPauseListener::OnApplicationPause(System.Boolean)
+// 0x0000048C System.Void AirFramework.OnApplicationPauseListener::OnApplicationPause(System.Boolean)
 extern void OnApplicationPauseListener_OnApplicationPause_mBD02055D866AC215E97BC33BEB6A90E2D205E366 (void);
-// 0x00000485 System.Void AirFramework.OnApplicationPauseListener::.ctor()
+// 0x0000048D System.Void AirFramework.OnApplicationPauseListener::.ctor()
 extern void OnApplicationPauseListener__ctor_m1E9283EF168B326C0F40550FFB52FC79A5D69709 (void);
-// 0x00000486 System.Void AirFramework.OnApplicationQuitListener::add_OnTrigger(System.Action)
+// 0x0000048E System.Void AirFramework.OnApplicationQuitListener::add_OnTrigger(System.Action)
 extern void OnApplicationQuitListener_add_OnTrigger_mD3EBC801FB026AFA87F2B1CE33D2764FF8576CBD (void);
-// 0x00000487 System.Void AirFramework.OnApplicationQuitListener::remove_OnTrigger(System.Action)
+// 0x0000048F System.Void AirFramework.OnApplicationQuitListener::remove_OnTrigger(System.Action)
 extern void OnApplicationQuitListener_remove_OnTrigger_mBE6D2A9219ED3A05BCFBF89A48288028FD527FBA (void);
-// 0x00000488 System.Void AirFramework.OnApplicationQuitListener::OnApplicationQuit()
+// 0x00000490 System.Void AirFramework.OnApplicationQuitListener::OnApplicationQuit()
 extern void OnApplicationQuitListener_OnApplicationQuit_mABA8ABA45746ED6F3139C5EB1F4740EFAB3B568A (void);
-// 0x00000489 System.Void AirFramework.OnApplicationQuitListener::.ctor()
+// 0x00000491 System.Void AirFramework.OnApplicationQuitListener::.ctor()
 extern void OnApplicationQuitListener__ctor_m75C6DD153CD544ED6E899B86BE038CE2D0A4706F (void);
-// 0x0000048A System.Void AirFramework.OnAudioFilterReadListener::add_OnTrigger(System.Action`2<System.Single[],System.Int32>)
+// 0x00000492 System.Void AirFramework.OnAudioFilterReadListener::add_OnTrigger(System.Action`2<System.Single[],System.Int32>)
 extern void OnAudioFilterReadListener_add_OnTrigger_m8B7124750811C0C00F800BAF820C6DBD11E77690 (void);
-// 0x0000048B System.Void AirFramework.OnAudioFilterReadListener::remove_OnTrigger(System.Action`2<System.Single[],System.Int32>)
+// 0x00000493 System.Void AirFramework.OnAudioFilterReadListener::remove_OnTrigger(System.Action`2<System.Single[],System.Int32>)
 extern void OnAudioFilterReadListener_remove_OnTrigger_m7B0EB6773AF15754DEE696E49D1AA97821F76A5C (void);
-// 0x0000048C System.Void AirFramework.OnAudioFilterReadListener::OnAudioFilterRead(System.Single[],System.Int32)
+// 0x00000494 System.Void AirFramework.OnAudioFilterReadListener::OnAudioFilterRead(System.Single[],System.Int32)
 extern void OnAudioFilterReadListener_OnAudioFilterRead_m7911661D49E9C8717568653213C03D58A1AB8392 (void);
-// 0x0000048D System.Void AirFramework.OnAudioFilterReadListener::.ctor()
+// 0x00000495 System.Void AirFramework.OnAudioFilterReadListener::.ctor()
 extern void OnAudioFilterReadListener__ctor_m101C7FEC2A97BE05325B11F24307E0AEA0F21BEC (void);
-// 0x0000048E System.Void AirFramework.OnBecameInvisibleListener::add_OnTrigger(System.Action)
+// 0x00000496 System.Void AirFramework.OnBecameInvisibleListener::add_OnTrigger(System.Action)
 extern void OnBecameInvisibleListener_add_OnTrigger_mD5BFC4A77C58208CA6BBD88D7AB1CFBB1DFD38E1 (void);
-// 0x0000048F System.Void AirFramework.OnBecameInvisibleListener::remove_OnTrigger(System.Action)
+// 0x00000497 System.Void AirFramework.OnBecameInvisibleListener::remove_OnTrigger(System.Action)
 extern void OnBecameInvisibleListener_remove_OnTrigger_m7636D59C2C9B744970B3472128479C3CBDC79982 (void);
-// 0x00000490 System.Void AirFramework.OnBecameInvisibleListener::OnBecameInvisible()
+// 0x00000498 System.Void AirFramework.OnBecameInvisibleListener::OnBecameInvisible()
 extern void OnBecameInvisibleListener_OnBecameInvisible_m5CD8D2317F0BEC50441393B761BED094172AE252 (void);
-// 0x00000491 System.Void AirFramework.OnBecameInvisibleListener::.ctor()
+// 0x00000499 System.Void AirFramework.OnBecameInvisibleListener::.ctor()
 extern void OnBecameInvisibleListener__ctor_m53405AFC3BA806D429610FDF51186F8D9A2115F2 (void);
-// 0x00000492 System.Void AirFramework.OnBecameVisibleListener::add_OnTrigger(System.Action)
+// 0x0000049A System.Void AirFramework.OnBecameVisibleListener::add_OnTrigger(System.Action)
 extern void OnBecameVisibleListener_add_OnTrigger_m7C98CDE1281804D1254FFE9D2FDC2666ED87FFBD (void);
-// 0x00000493 System.Void AirFramework.OnBecameVisibleListener::remove_OnTrigger(System.Action)
+// 0x0000049B System.Void AirFramework.OnBecameVisibleListener::remove_OnTrigger(System.Action)
 extern void OnBecameVisibleListener_remove_OnTrigger_m9704872A24A004E9D27AD32202EBC09AA9FA38DD (void);
-// 0x00000494 System.Void AirFramework.OnBecameVisibleListener::OnBecameVisible()
+// 0x0000049C System.Void AirFramework.OnBecameVisibleListener::OnBecameVisible()
 extern void OnBecameVisibleListener_OnBecameVisible_mE29A121C67FEF273B84FB72355BFB6596F0F79E6 (void);
-// 0x00000495 System.Void AirFramework.OnBecameVisibleListener::.ctor()
+// 0x0000049D System.Void AirFramework.OnBecameVisibleListener::.ctor()
 extern void OnBecameVisibleListener__ctor_mD1E8BB8385DDAC63617E1FA359A6372BEBFA3AEB (void);
-// 0x00000496 System.Void AirFramework.OnCanvasGroupChangedListener::add_OnTrigger(System.Action)
+// 0x0000049E System.Void AirFramework.OnCanvasGroupChangedListener::add_OnTrigger(System.Action)
 extern void OnCanvasGroupChangedListener_add_OnTrigger_m57023AAAC106A80FAF5DF1F2AA4E4F482040B810 (void);
-// 0x00000497 System.Void AirFramework.OnCanvasGroupChangedListener::remove_OnTrigger(System.Action)
+// 0x0000049F System.Void AirFramework.OnCanvasGroupChangedListener::remove_OnTrigger(System.Action)
 extern void OnCanvasGroupChangedListener_remove_OnTrigger_m2AF5E4F0745C9D1B98A5F331E11D4A9AE5043348 (void);
-// 0x00000498 System.Void AirFramework.OnCanvasGroupChangedListener::OnCanvasGroupChanged()
+// 0x000004A0 System.Void AirFramework.OnCanvasGroupChangedListener::OnCanvasGroupChanged()
 extern void OnCanvasGroupChangedListener_OnCanvasGroupChanged_mF85B2CB723FF936622BC61DF3514D7314A19B222 (void);
-// 0x00000499 System.Void AirFramework.OnCanvasGroupChangedListener::.ctor()
+// 0x000004A1 System.Void AirFramework.OnCanvasGroupChangedListener::.ctor()
 extern void OnCanvasGroupChangedListener__ctor_mC5F05EE88CDEAAC3F674D48A396BD738666DF6FE (void);
-// 0x0000049A System.Void AirFramework.OnControllerColliderHitListener::add_OnTrigger(System.Action`1<UnityEngine.Collider>)
+// 0x000004A2 System.Void AirFramework.OnControllerColliderHitListener::add_OnTrigger(System.Action`1<UnityEngine.Collider>)
 extern void OnControllerColliderHitListener_add_OnTrigger_mA3E71A8DD5428DDE346E519868982FB47D15AA69 (void);
-// 0x0000049B System.Void AirFramework.OnControllerColliderHitListener::remove_OnTrigger(System.Action`1<UnityEngine.Collider>)
+// 0x000004A3 System.Void AirFramework.OnControllerColliderHitListener::remove_OnTrigger(System.Action`1<UnityEngine.Collider>)
 extern void OnControllerColliderHitListener_remove_OnTrigger_m1906134F143F89A0CC10D1CABD6CD642EDF4413A (void);
-// 0x0000049C System.Void AirFramework.OnControllerColliderHitListener::OnControllerColliderHit(UnityEngine.Collider)
+// 0x000004A4 System.Void AirFramework.OnControllerColliderHitListener::OnControllerColliderHit(UnityEngine.Collider)
 extern void OnControllerColliderHitListener_OnControllerColliderHit_mA68EE11A7EB14DBD8149B764C21D586C39D0EE91 (void);
-// 0x0000049D System.Void AirFramework.OnControllerColliderHitListener::.ctor()
+// 0x000004A5 System.Void AirFramework.OnControllerColliderHitListener::.ctor()
 extern void OnControllerColliderHitListener__ctor_m547091D544D4556D6DDECA870CBBC0F0C4F5CEB5 (void);
-// 0x0000049E System.Void AirFramework.OnTriggerEnter2DListener::add_OnTrigger(System.Action`1<UnityEngine.Collider2D>)
+// 0x000004A6 System.Void AirFramework.OnTriggerEnter2DListener::add_OnTrigger(System.Action`1<UnityEngine.Collider2D>)
 extern void OnTriggerEnter2DListener_add_OnTrigger_m0C614736F4D6778E6B4CEEB1D15D31A6A9A5217A (void);
-// 0x0000049F System.Void AirFramework.OnTriggerEnter2DListener::remove_OnTrigger(System.Action`1<UnityEngine.Collider2D>)
+// 0x000004A7 System.Void AirFramework.OnTriggerEnter2DListener::remove_OnTrigger(System.Action`1<UnityEngine.Collider2D>)
 extern void OnTriggerEnter2DListener_remove_OnTrigger_m7E3754A979AC511CB96E8F40496212073CCEBD50 (void);
-// 0x000004A0 System.Void AirFramework.OnTriggerEnter2DListener::OnTriggerEnter2D(UnityEngine.Collider2D)
+// 0x000004A8 System.Void AirFramework.OnTriggerEnter2DListener::OnTriggerEnter2D(UnityEngine.Collider2D)
 extern void OnTriggerEnter2DListener_OnTriggerEnter2D_m2E5CA35FF280D67535DDD891767676065C9CC515 (void);
-// 0x000004A1 System.Void AirFramework.OnTriggerEnter2DListener::.ctor()
+// 0x000004A9 System.Void AirFramework.OnTriggerEnter2DListener::.ctor()
 extern void OnTriggerEnter2DListener__ctor_m8C9B6F94B9B7B028A6C30489806144D6B766D141 (void);
-// 0x000004A2 System.Void AirFramework.OnTriggerEnterListener::add_OnTrigger(System.Action`1<UnityEngine.Collider>)
+// 0x000004AA System.Void AirFramework.OnTriggerEnterListener::add_OnTrigger(System.Action`1<UnityEngine.Collider>)
 extern void OnTriggerEnterListener_add_OnTrigger_mE846A63D4E6F6651ED214B9B93F145916545F182 (void);
-// 0x000004A3 System.Void AirFramework.OnTriggerEnterListener::remove_OnTrigger(System.Action`1<UnityEngine.Collider>)
+// 0x000004AB System.Void AirFramework.OnTriggerEnterListener::remove_OnTrigger(System.Action`1<UnityEngine.Collider>)
 extern void OnTriggerEnterListener_remove_OnTrigger_m6731831B06AE3D654D85D23E427C71FD195B56F6 (void);
-// 0x000004A4 System.Void AirFramework.OnTriggerEnterListener::OnTriggerEnter(UnityEngine.Collider)
+// 0x000004AC System.Void AirFramework.OnTriggerEnterListener::OnTriggerEnter(UnityEngine.Collider)
 extern void OnTriggerEnterListener_OnTriggerEnter_m8D5504231EC1D8646A297BA73791ED068F9CE3AE (void);
-// 0x000004A5 System.Void AirFramework.OnTriggerEnterListener::.ctor()
+// 0x000004AD System.Void AirFramework.OnTriggerEnterListener::.ctor()
 extern void OnTriggerEnterListener__ctor_mFAD79F562E08C19F0307A97BAF1F00F1D44603A5 (void);
-// 0x000004A6 System.Void AirFramework.OnTriggerExit2DListener::add_OnTrigger(System.Action`1<UnityEngine.Collider2D>)
+// 0x000004AE System.Void AirFramework.OnTriggerExit2DListener::add_OnTrigger(System.Action`1<UnityEngine.Collider2D>)
 extern void OnTriggerExit2DListener_add_OnTrigger_m637B567605331C6F67D41BA54E621E0C876EC2DE (void);
-// 0x000004A7 System.Void AirFramework.OnTriggerExit2DListener::remove_OnTrigger(System.Action`1<UnityEngine.Collider2D>)
+// 0x000004AF System.Void AirFramework.OnTriggerExit2DListener::remove_OnTrigger(System.Action`1<UnityEngine.Collider2D>)
 extern void OnTriggerExit2DListener_remove_OnTrigger_mCC130A895489A551E2DCEF79CB510460F3642BA1 (void);
-// 0x000004A8 System.Void AirFramework.OnTriggerExit2DListener::OnTriggerExit2D(UnityEngine.Collider2D)
+// 0x000004B0 System.Void AirFramework.OnTriggerExit2DListener::OnTriggerExit2D(UnityEngine.Collider2D)
 extern void OnTriggerExit2DListener_OnTriggerExit2D_m234450BE9F12A5CCC926C76BA3EE7CDF87FD56BF (void);
-// 0x000004A9 System.Void AirFramework.OnTriggerExit2DListener::.ctor()
+// 0x000004B1 System.Void AirFramework.OnTriggerExit2DListener::.ctor()
 extern void OnTriggerExit2DListener__ctor_mFB0A583C41191564F42DC53A3675BBEDD2B901A4 (void);
-// 0x000004AA System.Void AirFramework.OnTriggerExitListener::add_OnTrigger(System.Action`1<UnityEngine.Collider>)
+// 0x000004B2 System.Void AirFramework.OnTriggerExitListener::add_OnTrigger(System.Action`1<UnityEngine.Collider>)
 extern void OnTriggerExitListener_add_OnTrigger_m03647CF195CBD9EB85485591E18BAFC215A29DF8 (void);
-// 0x000004AB System.Void AirFramework.OnTriggerExitListener::remove_OnTrigger(System.Action`1<UnityEngine.Collider>)
+// 0x000004B3 System.Void AirFramework.OnTriggerExitListener::remove_OnTrigger(System.Action`1<UnityEngine.Collider>)
 extern void OnTriggerExitListener_remove_OnTrigger_m7878A88D78F80F7E2D3F51A543703D913E7BEC2A (void);
-// 0x000004AC System.Void AirFramework.OnTriggerExitListener::OnTriggerExit(UnityEngine.Collider)
+// 0x000004B4 System.Void AirFramework.OnTriggerExitListener::OnTriggerExit(UnityEngine.Collider)
 extern void OnTriggerExitListener_OnTriggerExit_m76FA8932ED0A601842165340D4CC20D02700577B (void);
-// 0x000004AD System.Void AirFramework.OnTriggerExitListener::.ctor()
+// 0x000004B5 System.Void AirFramework.OnTriggerExitListener::.ctor()
 extern void OnTriggerExitListener__ctor_mABA83630FDA73632FFB60288FAA28F5937FFE3EF (void);
-// 0x000004AE System.Void AirFramework.OnTriggerStay2DListener::add_OnTrigger(System.Action`1<UnityEngine.Collider2D>)
+// 0x000004B6 System.Void AirFramework.OnTriggerStay2DListener::add_OnTrigger(System.Action`1<UnityEngine.Collider2D>)
 extern void OnTriggerStay2DListener_add_OnTrigger_mEEB8B66A700953BB216880391690E6D37A7AD4B2 (void);
-// 0x000004AF System.Void AirFramework.OnTriggerStay2DListener::remove_OnTrigger(System.Action`1<UnityEngine.Collider2D>)
+// 0x000004B7 System.Void AirFramework.OnTriggerStay2DListener::remove_OnTrigger(System.Action`1<UnityEngine.Collider2D>)
 extern void OnTriggerStay2DListener_remove_OnTrigger_mDE8FA0706DA190170D2C9C5D7A4DEDF2FC942270 (void);
-// 0x000004B0 System.Void AirFramework.OnTriggerStay2DListener::OnTriggerStay2D(UnityEngine.Collider2D)
+// 0x000004B8 System.Void AirFramework.OnTriggerStay2DListener::OnTriggerStay2D(UnityEngine.Collider2D)
 extern void OnTriggerStay2DListener_OnTriggerStay2D_m17DBCF12D94C02BB2D05CDA8E76E51B910269987 (void);
-// 0x000004B1 System.Void AirFramework.OnTriggerStay2DListener::.ctor()
+// 0x000004B9 System.Void AirFramework.OnTriggerStay2DListener::.ctor()
 extern void OnTriggerStay2DListener__ctor_m42F330C912DA4E9CB608FF89827DBE05828EE830 (void);
-// 0x000004B2 System.Void AirFramework.OnTriggerStayListener::add_OnTrigger(System.Action`1<UnityEngine.Collider>)
+// 0x000004BA System.Void AirFramework.OnTriggerStayListener::add_OnTrigger(System.Action`1<UnityEngine.Collider>)
 extern void OnTriggerStayListener_add_OnTrigger_mE64BD66D80FBD03698FAC6C1CD8E69151D54D90B (void);
-// 0x000004B3 System.Void AirFramework.OnTriggerStayListener::remove_OnTrigger(System.Action`1<UnityEngine.Collider>)
+// 0x000004BB System.Void AirFramework.OnTriggerStayListener::remove_OnTrigger(System.Action`1<UnityEngine.Collider>)
 extern void OnTriggerStayListener_remove_OnTrigger_m9CB08DA0CCB6608185E6CD2B2F21527392159367 (void);
-// 0x000004B4 System.Void AirFramework.OnTriggerStayListener::OnTriggerStay(UnityEngine.Collider)
+// 0x000004BC System.Void AirFramework.OnTriggerStayListener::OnTriggerStay(UnityEngine.Collider)
 extern void OnTriggerStayListener_OnTriggerStay_m55C48771C0F14932449727583F33CCE3AFDCAAAC (void);
-// 0x000004B5 System.Void AirFramework.OnTriggerStayListener::.ctor()
+// 0x000004BD System.Void AirFramework.OnTriggerStayListener::.ctor()
 extern void OnTriggerStayListener__ctor_m8D4CC2DD525405E57EEA208DD1C0C37BE0E8633D (void);
-// 0x000004B6 System.Void AirFramework.OnCollisionEnter2DListener::add_OnTrigger(System.Action`1<UnityEngine.Collision2D>)
+// 0x000004BE System.Void AirFramework.OnCollisionEnter2DListener::add_OnTrigger(System.Action`1<UnityEngine.Collision2D>)
 extern void OnCollisionEnter2DListener_add_OnTrigger_mE714F517DF468B779565BC54659C8288A4CA700A (void);
-// 0x000004B7 System.Void AirFramework.OnCollisionEnter2DListener::remove_OnTrigger(System.Action`1<UnityEngine.Collision2D>)
+// 0x000004BF System.Void AirFramework.OnCollisionEnter2DListener::remove_OnTrigger(System.Action`1<UnityEngine.Collision2D>)
 extern void OnCollisionEnter2DListener_remove_OnTrigger_mD9FE41EAEF810C25BBFF796C2FEF99BD61660B3A (void);
-// 0x000004B8 System.Void AirFramework.OnCollisionEnter2DListener::OnCollisionEnter2D(UnityEngine.Collision2D)
+// 0x000004C0 System.Void AirFramework.OnCollisionEnter2DListener::OnCollisionEnter2D(UnityEngine.Collision2D)
 extern void OnCollisionEnter2DListener_OnCollisionEnter2D_m5FBDE3DCA57087772FE2F52A503A26BC9706890E (void);
-// 0x000004B9 System.Void AirFramework.OnCollisionEnter2DListener::.ctor()
+// 0x000004C1 System.Void AirFramework.OnCollisionEnter2DListener::.ctor()
 extern void OnCollisionEnter2DListener__ctor_m53167669AF7E837C30A6A342B936BFEC8460EBAB (void);
-// 0x000004BA System.Void AirFramework.OnCollisionEnterListener::add_OnTrigger(System.Action`1<UnityEngine.Collision>)
+// 0x000004C2 System.Void AirFramework.OnCollisionEnterListener::add_OnTrigger(System.Action`1<UnityEngine.Collision>)
 extern void OnCollisionEnterListener_add_OnTrigger_mFDA38B44E7F21221D93367CE4536AB166D9FA5A3 (void);
-// 0x000004BB System.Void AirFramework.OnCollisionEnterListener::remove_OnTrigger(System.Action`1<UnityEngine.Collision>)
+// 0x000004C3 System.Void AirFramework.OnCollisionEnterListener::remove_OnTrigger(System.Action`1<UnityEngine.Collision>)
 extern void OnCollisionEnterListener_remove_OnTrigger_m5FC46344A04CC055378559E46FAB594F908BE486 (void);
-// 0x000004BC System.Void AirFramework.OnCollisionEnterListener::OnCollisionEnter(UnityEngine.Collision)
+// 0x000004C4 System.Void AirFramework.OnCollisionEnterListener::OnCollisionEnter(UnityEngine.Collision)
 extern void OnCollisionEnterListener_OnCollisionEnter_m7A0F11E5779F3C62D015379D7A0D32E8895DBB59 (void);
-// 0x000004BD System.Void AirFramework.OnCollisionEnterListener::.ctor()
+// 0x000004C5 System.Void AirFramework.OnCollisionEnterListener::.ctor()
 extern void OnCollisionEnterListener__ctor_mFD1FCF4F199DF71221444431727A1F7B7F18E1EF (void);
-// 0x000004BE System.Void AirFramework.OnCollisionExit2DListener::add_OnTrigger(System.Action`1<UnityEngine.Collision2D>)
+// 0x000004C6 System.Void AirFramework.OnCollisionExit2DListener::add_OnTrigger(System.Action`1<UnityEngine.Collision2D>)
 extern void OnCollisionExit2DListener_add_OnTrigger_mFD1A92C36B65ABA951F36D15109BF44ADEBF8853 (void);
-// 0x000004BF System.Void AirFramework.OnCollisionExit2DListener::remove_OnTrigger(System.Action`1<UnityEngine.Collision2D>)
+// 0x000004C7 System.Void AirFramework.OnCollisionExit2DListener::remove_OnTrigger(System.Action`1<UnityEngine.Collision2D>)
 extern void OnCollisionExit2DListener_remove_OnTrigger_mF6D27A99D35992FAED88ED2F99174F798C6A8A7E (void);
-// 0x000004C0 System.Void AirFramework.OnCollisionExit2DListener::OnCollisionExit2D(UnityEngine.Collision2D)
+// 0x000004C8 System.Void AirFramework.OnCollisionExit2DListener::OnCollisionExit2D(UnityEngine.Collision2D)
 extern void OnCollisionExit2DListener_OnCollisionExit2D_m1314D32F092E8B3773175FCE813F6E1B80E7DA5F (void);
-// 0x000004C1 System.Void AirFramework.OnCollisionExit2DListener::.ctor()
+// 0x000004C9 System.Void AirFramework.OnCollisionExit2DListener::.ctor()
 extern void OnCollisionExit2DListener__ctor_m8E623F6A37B2B92F019ED6171FE098AEFD2F0F3C (void);
-// 0x000004C2 System.Void AirFramework.OnCollisionExitListener::add_OnTrigger(System.Action`1<UnityEngine.Collision>)
+// 0x000004CA System.Void AirFramework.OnCollisionExitListener::add_OnTrigger(System.Action`1<UnityEngine.Collision>)
 extern void OnCollisionExitListener_add_OnTrigger_m0AE5C6C765A26E9AB4CD4B98BC99102FED07A386 (void);
-// 0x000004C3 System.Void AirFramework.OnCollisionExitListener::remove_OnTrigger(System.Action`1<UnityEngine.Collision>)
+// 0x000004CB System.Void AirFramework.OnCollisionExitListener::remove_OnTrigger(System.Action`1<UnityEngine.Collision>)
 extern void OnCollisionExitListener_remove_OnTrigger_m08FB4BABA34F8ADAADC44E0170A94FDA732322D9 (void);
-// 0x000004C4 System.Void AirFramework.OnCollisionExitListener::OnCollisionExit(UnityEngine.Collision)
+// 0x000004CC System.Void AirFramework.OnCollisionExitListener::OnCollisionExit(UnityEngine.Collision)
 extern void OnCollisionExitListener_OnCollisionExit_mF1DF54657DE6ECFFC8A67E5CD19819B329864DCF (void);
-// 0x000004C5 System.Void AirFramework.OnCollisionExitListener::.ctor()
+// 0x000004CD System.Void AirFramework.OnCollisionExitListener::.ctor()
 extern void OnCollisionExitListener__ctor_mF6381813D524173E785D5864C98F1A42C54B1BC6 (void);
-// 0x000004C6 System.Void AirFramework.OnCollisionStay2DListener::add_OnTrigger(System.Action`1<UnityEngine.Collision2D>)
+// 0x000004CE System.Void AirFramework.OnCollisionStay2DListener::add_OnTrigger(System.Action`1<UnityEngine.Collision2D>)
 extern void OnCollisionStay2DListener_add_OnTrigger_m4F3FA2D9B9639971474C997DF7EEC692C5B39004 (void);
-// 0x000004C7 System.Void AirFramework.OnCollisionStay2DListener::remove_OnTrigger(System.Action`1<UnityEngine.Collision2D>)
+// 0x000004CF System.Void AirFramework.OnCollisionStay2DListener::remove_OnTrigger(System.Action`1<UnityEngine.Collision2D>)
 extern void OnCollisionStay2DListener_remove_OnTrigger_m746AA04CB48C5BB368174122DCBA33269A5C3A89 (void);
-// 0x000004C8 System.Void AirFramework.OnCollisionStay2DListener::OnCollisionStay2D(UnityEngine.Collision2D)
+// 0x000004D0 System.Void AirFramework.OnCollisionStay2DListener::OnCollisionStay2D(UnityEngine.Collision2D)
 extern void OnCollisionStay2DListener_OnCollisionStay2D_m256712B473B72832846FA5AEF29A588FCFE81C5F (void);
-// 0x000004C9 System.Void AirFramework.OnCollisionStay2DListener::.ctor()
+// 0x000004D1 System.Void AirFramework.OnCollisionStay2DListener::.ctor()
 extern void OnCollisionStay2DListener__ctor_m2145A6E399AC3502B9CE753E4CFA5672A2F4E412 (void);
-// 0x000004CA System.Void AirFramework.ComponentEx_::Bind(AirFramework.OnCollisionStay2DListener,System.Action`1<UnityEngine.Collision2D>)
+// 0x000004D2 System.Void AirFramework.ComponentEx_::Bind(AirFramework.OnCollisionStay2DListener,System.Action`1<UnityEngine.Collision2D>)
 extern void ComponentEx__Bind_mE60E1AA1332092D79A04CCD44399C80EE482F437 (void);
-// 0x000004CB System.Void AirFramework.OnCollisionStayListener::add_OnTrigger(System.Action`1<UnityEngine.Collision>)
+// 0x000004D3 System.Void AirFramework.OnCollisionStayListener::add_OnTrigger(System.Action`1<UnityEngine.Collision>)
 extern void OnCollisionStayListener_add_OnTrigger_m121D6F50D0BF268EBA13A2970F01153D2A87460E (void);
-// 0x000004CC System.Void AirFramework.OnCollisionStayListener::remove_OnTrigger(System.Action`1<UnityEngine.Collision>)
+// 0x000004D4 System.Void AirFramework.OnCollisionStayListener::remove_OnTrigger(System.Action`1<UnityEngine.Collision>)
 extern void OnCollisionStayListener_remove_OnTrigger_m2D8FEF97C5665DB8F5E369511F0E10C8DA76E420 (void);
-// 0x000004CD System.Void AirFramework.OnCollisionStayListener::OnCollisionStay(UnityEngine.Collision)
+// 0x000004D5 System.Void AirFramework.OnCollisionStayListener::OnCollisionStay(UnityEngine.Collision)
 extern void OnCollisionStayListener_OnCollisionStay_mCB7C01AC15758534A63EC138D8735B666456C9B8 (void);
-// 0x000004CE System.Void AirFramework.OnCollisionStayListener::.ctor()
+// 0x000004D6 System.Void AirFramework.OnCollisionStayListener::.ctor()
 extern void OnCollisionStayListener__ctor_mC8E5ECB5EA8C258BC4E4F7A8529620C79B093BD6 (void);
-// 0x000004CF System.Void AirFramework.OnConnectedToServerListener::add_OnTrigger(System.Action)
+// 0x000004D7 System.Void AirFramework.OnConnectedToServerListener::add_OnTrigger(System.Action)
 extern void OnConnectedToServerListener_add_OnTrigger_mAB41F1500F548C204A0525E8C604207843DCA3F6 (void);
-// 0x000004D0 System.Void AirFramework.OnConnectedToServerListener::remove_OnTrigger(System.Action)
+// 0x000004D8 System.Void AirFramework.OnConnectedToServerListener::remove_OnTrigger(System.Action)
 extern void OnConnectedToServerListener_remove_OnTrigger_m648C6F90237274C959155F32E508FDB9B4DB7801 (void);
-// 0x000004D1 System.Void AirFramework.OnConnectedToServerListener::OnConnectedToServer()
+// 0x000004D9 System.Void AirFramework.OnConnectedToServerListener::OnConnectedToServer()
 extern void OnConnectedToServerListener_OnConnectedToServer_m3ECEB7D7F13D06A38A2D60AC89F41D273F98107A (void);
-// 0x000004D2 System.Void AirFramework.OnConnectedToServerListener::.ctor()
+// 0x000004DA System.Void AirFramework.OnConnectedToServerListener::.ctor()
 extern void OnConnectedToServerListener__ctor_mA3CB9DDAAE24BE28C1AE7C762750A42358F97C36 (void);
-// 0x000004D3 System.Void AirFramework.OnDrawGizmosListener::add_OnTrigger(System.Action)
+// 0x000004DB System.Void AirFramework.OnDrawGizmosListener::add_OnTrigger(System.Action)
 extern void OnDrawGizmosListener_add_OnTrigger_mDD637B459EAC105BADCB2C9696524F02DBB23D67 (void);
-// 0x000004D4 System.Void AirFramework.OnDrawGizmosListener::remove_OnTrigger(System.Action)
+// 0x000004DC System.Void AirFramework.OnDrawGizmosListener::remove_OnTrigger(System.Action)
 extern void OnDrawGizmosListener_remove_OnTrigger_mD13CE0ED97765327B6C093CF82893EECFAD810AC (void);
-// 0x000004D5 System.Void AirFramework.OnDrawGizmosListener::OnDrawGizmos()
+// 0x000004DD System.Void AirFramework.OnDrawGizmosListener::OnDrawGizmos()
 extern void OnDrawGizmosListener_OnDrawGizmos_mC9BD4D75E18E9249E3314C3983198F891428C553 (void);
-// 0x000004D6 System.Void AirFramework.OnDrawGizmosListener::.ctor()
+// 0x000004DE System.Void AirFramework.OnDrawGizmosListener::.ctor()
 extern void OnDrawGizmosListener__ctor_m701A44A3B5FB21E5A1B65F21925CDA41FE12EB51 (void);
-// 0x000004D7 System.Void AirFramework.OnDrawGizmosSelectedListener::add_OnTrigger(System.Action)
+// 0x000004DF System.Void AirFramework.OnDrawGizmosSelectedListener::add_OnTrigger(System.Action)
 extern void OnDrawGizmosSelectedListener_add_OnTrigger_m15F1D5650860D97E46910FEEBB8FFDE9ECAD270B (void);
-// 0x000004D8 System.Void AirFramework.OnDrawGizmosSelectedListener::remove_OnTrigger(System.Action)
+// 0x000004E0 System.Void AirFramework.OnDrawGizmosSelectedListener::remove_OnTrigger(System.Action)
 extern void OnDrawGizmosSelectedListener_remove_OnTrigger_m11B188D3A370CCDA6146DF2D115F0CD626BCCBBB (void);
-// 0x000004D9 System.Void AirFramework.OnDrawGizmosSelectedListener::OnDrawGizmosSelected()
+// 0x000004E1 System.Void AirFramework.OnDrawGizmosSelectedListener::OnDrawGizmosSelected()
 extern void OnDrawGizmosSelectedListener_OnDrawGizmosSelected_mC7F58E0CE9F6CB905E68E65A95E8082835A78371 (void);
-// 0x000004DA System.Void AirFramework.OnDrawGizmosSelectedListener::.ctor()
+// 0x000004E2 System.Void AirFramework.OnDrawGizmosSelectedListener::.ctor()
 extern void OnDrawGizmosSelectedListener__ctor_m060FACA7B4C1022EFC36C5312085EE04E349CC22 (void);
-// 0x000004DB System.Void AirFramework.OnGUIListener::add_OnTrigger(System.Action)
+// 0x000004E3 System.Void AirFramework.OnGUIListener::add_OnTrigger(System.Action)
 extern void OnGUIListener_add_OnTrigger_m493BA50A6C08CF7337B0BC0AB4FC4B7AF5C85EBB (void);
-// 0x000004DC System.Void AirFramework.OnGUIListener::remove_OnTrigger(System.Action)
+// 0x000004E4 System.Void AirFramework.OnGUIListener::remove_OnTrigger(System.Action)
 extern void OnGUIListener_remove_OnTrigger_mBBA77169B99B51D60BD1F0B84FEB00A0D73E5249 (void);
-// 0x000004DD System.Void AirFramework.OnGUIListener::OnGUI()
+// 0x000004E5 System.Void AirFramework.OnGUIListener::OnGUI()
 extern void OnGUIListener_OnGUI_mD819A388FB8BDB89956843E1DE425C4A1F1C7768 (void);
-// 0x000004DE System.Void AirFramework.OnGUIListener::.ctor()
+// 0x000004E6 System.Void AirFramework.OnGUIListener::.ctor()
 extern void OnGUIListener__ctor_m89B92AE627A3DDF32FD1E3A93359F069031D9A96 (void);
-// 0x000004DF System.Void AirFramework.OnJointBreak2DListener::add_OnTrigger(System.Action`1<UnityEngine.Joint2D>)
+// 0x000004E7 System.Void AirFramework.OnJointBreak2DListener::add_OnTrigger(System.Action`1<UnityEngine.Joint2D>)
 extern void OnJointBreak2DListener_add_OnTrigger_mF3A05FA7E54B0A882FFE76C42A4DF11FF94F7B58 (void);
-// 0x000004E0 System.Void AirFramework.OnJointBreak2DListener::remove_OnTrigger(System.Action`1<UnityEngine.Joint2D>)
+// 0x000004E8 System.Void AirFramework.OnJointBreak2DListener::remove_OnTrigger(System.Action`1<UnityEngine.Joint2D>)
 extern void OnJointBreak2DListener_remove_OnTrigger_m57CE4D33F992A8F199FCE6710CC6E3DCD1AA3D70 (void);
-// 0x000004E1 System.Void AirFramework.OnJointBreak2DListener::OnJointBreak2D(UnityEngine.Joint2D)
+// 0x000004E9 System.Void AirFramework.OnJointBreak2DListener::OnJointBreak2D(UnityEngine.Joint2D)
 extern void OnJointBreak2DListener_OnJointBreak2D_m61D73792AC7F68E917903D3DBCCDA2B8B462CEA5 (void);
-// 0x000004E2 System.Void AirFramework.OnJointBreak2DListener::.ctor()
+// 0x000004EA System.Void AirFramework.OnJointBreak2DListener::.ctor()
 extern void OnJointBreak2DListener__ctor_m417D839BCCAF481383324D729ABEAA6E50595E99 (void);
-// 0x000004E3 System.Void AirFramework.OnJointBreakListener::add_OnTrigger(System.Action`1<System.Single>)
+// 0x000004EB System.Void AirFramework.OnJointBreakListener::add_OnTrigger(System.Action`1<System.Single>)
 extern void OnJointBreakListener_add_OnTrigger_m1F608EE0E4A184888D1EBF32CBD6705CD642C0B6 (void);
-// 0x000004E4 System.Void AirFramework.OnJointBreakListener::remove_OnTrigger(System.Action`1<System.Single>)
+// 0x000004EC System.Void AirFramework.OnJointBreakListener::remove_OnTrigger(System.Action`1<System.Single>)
 extern void OnJointBreakListener_remove_OnTrigger_m28ED7D050D21D2346943439A5B196BEE0591E080 (void);
-// 0x000004E5 System.Void AirFramework.OnJointBreakListener::OnJointBreak(System.Single)
+// 0x000004ED System.Void AirFramework.OnJointBreakListener::OnJointBreak(System.Single)
 extern void OnJointBreakListener_OnJointBreak_m2A3E9E0B76D2C1253DC58E23551010C802FCB39B (void);
-// 0x000004E6 System.Void AirFramework.OnJointBreakListener::.ctor()
+// 0x000004EE System.Void AirFramework.OnJointBreakListener::.ctor()
 extern void OnJointBreakListener__ctor_mD6CAD2EE8F1125F04D559A343C6CC25BD90A3367 (void);
-// 0x000004E7 System.Void AirFramework.OnLevelWasLoadedListener::add_OnTrigger(System.Action`1<System.Int32>)
+// 0x000004EF System.Void AirFramework.OnLevelWasLoadedListener::add_OnTrigger(System.Action`1<System.Int32>)
 extern void OnLevelWasLoadedListener_add_OnTrigger_mE6200DC99BFAD336B8D405F286DF916A2C722612 (void);
-// 0x000004E8 System.Void AirFramework.OnLevelWasLoadedListener::remove_OnTrigger(System.Action`1<System.Int32>)
+// 0x000004F0 System.Void AirFramework.OnLevelWasLoadedListener::remove_OnTrigger(System.Action`1<System.Int32>)
 extern void OnLevelWasLoadedListener_remove_OnTrigger_m0080C5A8F6E345205D676DB97B0019283C94917A (void);
-// 0x000004E9 System.Void AirFramework.OnLevelWasLoadedListener::OnLevelWasLoaded(System.Int32)
+// 0x000004F1 System.Void AirFramework.OnLevelWasLoadedListener::OnLevelWasLoaded(System.Int32)
 extern void OnLevelWasLoadedListener_OnLevelWasLoaded_m5BF9A3637F5A40853C6EC66723BB35A662C37F8D (void);
-// 0x000004EA System.Void AirFramework.OnLevelWasLoadedListener::.ctor()
+// 0x000004F2 System.Void AirFramework.OnLevelWasLoadedListener::.ctor()
 extern void OnLevelWasLoadedListener__ctor_m0EC8610091822B78500E72D68DBA9F330A1018F9 (void);
-// 0x000004EB System.Void AirFramework.OnMouseDownListener::add_OnTrigger(System.Action)
+// 0x000004F3 System.Void AirFramework.OnMouseDownListener::add_OnTrigger(System.Action)
 extern void OnMouseDownListener_add_OnTrigger_m9C6A7DF0301918584A6E0630D28BC8C7492EBD3C (void);
-// 0x000004EC System.Void AirFramework.OnMouseDownListener::remove_OnTrigger(System.Action)
+// 0x000004F4 System.Void AirFramework.OnMouseDownListener::remove_OnTrigger(System.Action)
 extern void OnMouseDownListener_remove_OnTrigger_m592CAD0C258B21B10091FB37B24899A326733392 (void);
-// 0x000004ED System.Void AirFramework.OnMouseDownListener::OnMouseDown()
+// 0x000004F5 System.Void AirFramework.OnMouseDownListener::OnMouseDown()
 extern void OnMouseDownListener_OnMouseDown_m14F92C52FFD4C76A8052BDA6B4F4DB3370EF2E8C (void);
-// 0x000004EE System.Void AirFramework.OnMouseDownListener::.ctor()
+// 0x000004F6 System.Void AirFramework.OnMouseDownListener::.ctor()
 extern void OnMouseDownListener__ctor_m1B730A015FDFFA37B09217AA4A43ABB493AFB0C0 (void);
-// 0x000004EF System.Void AirFramework.OnMouseDragListener::add_OnTrigger(System.Action)
+// 0x000004F7 System.Void AirFramework.OnMouseDragListener::add_OnTrigger(System.Action)
 extern void OnMouseDragListener_add_OnTrigger_m04F5F1F25B17D1F5CC088A24A007E6A98654F0A8 (void);
-// 0x000004F0 System.Void AirFramework.OnMouseDragListener::remove_OnTrigger(System.Action)
+// 0x000004F8 System.Void AirFramework.OnMouseDragListener::remove_OnTrigger(System.Action)
 extern void OnMouseDragListener_remove_OnTrigger_mA203441D30CC9F77085955F4A0268DF3D8BD1514 (void);
-// 0x000004F1 System.Void AirFramework.OnMouseDragListener::OnMouseDrag()
+// 0x000004F9 System.Void AirFramework.OnMouseDragListener::OnMouseDrag()
 extern void OnMouseDragListener_OnMouseDrag_m359A9BB81F1B7A8DDE258912E632FD2F559BCADE (void);
-// 0x000004F2 System.Void AirFramework.OnMouseDragListener::.ctor()
+// 0x000004FA System.Void AirFramework.OnMouseDragListener::.ctor()
 extern void OnMouseDragListener__ctor_m529CB8B4178B77C9A795306A7F501F4B7CCD7C2C (void);
-// 0x000004F3 System.Void AirFramework.OnMouseEnterListener::add_OnTrigger(System.Action)
+// 0x000004FB System.Void AirFramework.OnMouseEnterListener::add_OnTrigger(System.Action)
 extern void OnMouseEnterListener_add_OnTrigger_m1439E1F2BAC215A621B40A3DB1772C5B9AD0793C (void);
-// 0x000004F4 System.Void AirFramework.OnMouseEnterListener::remove_OnTrigger(System.Action)
+// 0x000004FC System.Void AirFramework.OnMouseEnterListener::remove_OnTrigger(System.Action)
 extern void OnMouseEnterListener_remove_OnTrigger_m4ACAC346604490E9D44DFE08E27C5BB47AC70D3D (void);
-// 0x000004F5 System.Void AirFramework.OnMouseEnterListener::OnMouseEnter()
+// 0x000004FD System.Void AirFramework.OnMouseEnterListener::OnMouseEnter()
 extern void OnMouseEnterListener_OnMouseEnter_m09890C9E21173BED90B53377097EDECC24EEFFC2 (void);
-// 0x000004F6 System.Void AirFramework.OnMouseEnterListener::.ctor()
+// 0x000004FE System.Void AirFramework.OnMouseEnterListener::.ctor()
 extern void OnMouseEnterListener__ctor_m574E1ABF437DF57576AE1B852870603F2006D6A1 (void);
-// 0x000004F7 System.Void AirFramework.OnMouseExitListener::add_OnTrigger(System.Action)
+// 0x000004FF System.Void AirFramework.OnMouseExitListener::add_OnTrigger(System.Action)
 extern void OnMouseExitListener_add_OnTrigger_m42476D23B0787121E864A22238F9237F879D2FDE (void);
-// 0x000004F8 System.Void AirFramework.OnMouseExitListener::remove_OnTrigger(System.Action)
+// 0x00000500 System.Void AirFramework.OnMouseExitListener::remove_OnTrigger(System.Action)
 extern void OnMouseExitListener_remove_OnTrigger_m3B6217383A40628D6F70D7A2519CD7D5B54E9676 (void);
-// 0x000004F9 System.Void AirFramework.OnMouseExitListener::OnMouseExit()
+// 0x00000501 System.Void AirFramework.OnMouseExitListener::OnMouseExit()
 extern void OnMouseExitListener_OnMouseExit_mF20E0CDAD9308088AFF86AC5D34C28C1C2EF4470 (void);
-// 0x000004FA System.Void AirFramework.OnMouseExitListener::.ctor()
+// 0x00000502 System.Void AirFramework.OnMouseExitListener::.ctor()
 extern void OnMouseExitListener__ctor_m953DDE11E702D2235B66A2631EB072D560E69236 (void);
-// 0x000004FB System.Void AirFramework.OnMouseOverListener::add_OnTrigger(System.Action)
+// 0x00000503 System.Void AirFramework.OnMouseOverListener::add_OnTrigger(System.Action)
 extern void OnMouseOverListener_add_OnTrigger_mE66C6E8D212E189DF9E3FE6ADA5761714AED0B08 (void);
-// 0x000004FC System.Void AirFramework.OnMouseOverListener::remove_OnTrigger(System.Action)
+// 0x00000504 System.Void AirFramework.OnMouseOverListener::remove_OnTrigger(System.Action)
 extern void OnMouseOverListener_remove_OnTrigger_m87A626BAC2391D4B25035D8625DED0D43D9C0F25 (void);
-// 0x000004FD System.Void AirFramework.OnMouseOverListener::OnMouseOver()
+// 0x00000505 System.Void AirFramework.OnMouseOverListener::OnMouseOver()
 extern void OnMouseOverListener_OnMouseOver_m4FE52F5EF29A5F0255D385C48CECC5204ABA2ED1 (void);
-// 0x000004FE System.Void AirFramework.OnMouseOverListener::.ctor()
+// 0x00000506 System.Void AirFramework.OnMouseOverListener::.ctor()
 extern void OnMouseOverListener__ctor_m0A4CF50389EF286BB0AD21CB9F52B8EA063C1D27 (void);
-// 0x000004FF System.Void AirFramework.OnMouseUpAsButtonListener::add_OnTrigger(System.Action)
+// 0x00000507 System.Void AirFramework.OnMouseUpAsButtonListener::add_OnTrigger(System.Action)
 extern void OnMouseUpAsButtonListener_add_OnTrigger_mF1A83ACDF440345C5256787EDEB7DCDEA5C97E0B (void);
-// 0x00000500 System.Void AirFramework.OnMouseUpAsButtonListener::remove_OnTrigger(System.Action)
+// 0x00000508 System.Void AirFramework.OnMouseUpAsButtonListener::remove_OnTrigger(System.Action)
 extern void OnMouseUpAsButtonListener_remove_OnTrigger_mDCB6F436F13A70A84CD75197812B27DA155B96E0 (void);
-// 0x00000501 System.Void AirFramework.OnMouseUpAsButtonListener::OnMouseUpAsButton()
+// 0x00000509 System.Void AirFramework.OnMouseUpAsButtonListener::OnMouseUpAsButton()
 extern void OnMouseUpAsButtonListener_OnMouseUpAsButton_m2116DD82A786F8E61FD24A0D5A46617CA849554A (void);
-// 0x00000502 System.Void AirFramework.OnMouseUpAsButtonListener::.ctor()
+// 0x0000050A System.Void AirFramework.OnMouseUpAsButtonListener::.ctor()
 extern void OnMouseUpAsButtonListener__ctor_mED18A2C332F716CDAC1D4311AC19D906B01872CA (void);
-// 0x00000503 System.Void AirFramework.OnMouseUpListener::add_OnTrigger(System.Action)
+// 0x0000050B System.Void AirFramework.OnMouseUpListener::add_OnTrigger(System.Action)
 extern void OnMouseUpListener_add_OnTrigger_mB56AAD0835BFB5F6EA323747D3B6801E17CF4200 (void);
-// 0x00000504 System.Void AirFramework.OnMouseUpListener::remove_OnTrigger(System.Action)
+// 0x0000050C System.Void AirFramework.OnMouseUpListener::remove_OnTrigger(System.Action)
 extern void OnMouseUpListener_remove_OnTrigger_mCC056FB5CBCB8AA3C231D0BA54F143392513F4EA (void);
-// 0x00000505 System.Void AirFramework.OnMouseUpListener::OnMouseUp()
+// 0x0000050D System.Void AirFramework.OnMouseUpListener::OnMouseUp()
 extern void OnMouseUpListener_OnMouseUp_m28350DABBB73015F25A53A8B8073C8F0CF58B928 (void);
-// 0x00000506 System.Void AirFramework.OnMouseUpListener::.ctor()
+// 0x0000050E System.Void AirFramework.OnMouseUpListener::.ctor()
 extern void OnMouseUpListener__ctor_mBCACAA559115615DF47D4B7B64BCBE2A74B44FFC (void);
-// 0x00000507 System.Void AirFramework.OnDestroyListener::add_OnTrigger(System.Action)
+// 0x0000050F System.Void AirFramework.OnDestroyListener::add_OnTrigger(System.Action)
 extern void OnDestroyListener_add_OnTrigger_m7E0888044DECE389525505AC5EE0E8AB55D8A0AF (void);
-// 0x00000508 System.Void AirFramework.OnDestroyListener::remove_OnTrigger(System.Action)
+// 0x00000510 System.Void AirFramework.OnDestroyListener::remove_OnTrigger(System.Action)
 extern void OnDestroyListener_remove_OnTrigger_m4F0DD5A202C10CA900281C59F5945B5E85F1ED4B (void);
-// 0x00000509 System.Void AirFramework.OnDestroyListener::OnDestroy()
+// 0x00000511 System.Void AirFramework.OnDestroyListener::OnDestroy()
 extern void OnDestroyListener_OnDestroy_mD49FA9A4A6EBBF7C39373084261FB9B47C23FCDC (void);
-// 0x0000050A System.Void AirFramework.OnDestroyListener::.ctor()
+// 0x00000512 System.Void AirFramework.OnDestroyListener::.ctor()
 extern void OnDestroyListener__ctor_m6043CAA6445192E4C6D3F2F97AAE42E83DFCE540 (void);
-// 0x0000050B System.Void AirFramework.OnDisableListener::add_OnTrigger(System.Action)
+// 0x00000513 System.Void AirFramework.OnDisableListener::add_OnTrigger(System.Action)
 extern void OnDisableListener_add_OnTrigger_mD3F9F11C87398503BCB8C1BD461ABF8AD2A3713F (void);
-// 0x0000050C System.Void AirFramework.OnDisableListener::remove_OnTrigger(System.Action)
+// 0x00000514 System.Void AirFramework.OnDisableListener::remove_OnTrigger(System.Action)
 extern void OnDisableListener_remove_OnTrigger_m7213947D36B358C4752A4DD819A41474E328AB32 (void);
-// 0x0000050D System.Void AirFramework.OnDisableListener::OnDisable()
+// 0x00000515 System.Void AirFramework.OnDisableListener::OnDisable()
 extern void OnDisableListener_OnDisable_mEDD16FA90DA303E998DC390A4CB403E33B6F5DB4 (void);
-// 0x0000050E System.Void AirFramework.OnDisableListener::.ctor()
+// 0x00000516 System.Void AirFramework.OnDisableListener::.ctor()
 extern void OnDisableListener__ctor_m815C1A9278CF76651361ED0009BA3DA1260CEA47 (void);
-// 0x0000050F System.Void AirFramework.OnEnableListener::add_OnTrigger(System.Action)
+// 0x00000517 System.Void AirFramework.OnEnableListener::add_OnTrigger(System.Action)
 extern void OnEnableListener_add_OnTrigger_mF338ADBAE330B02B75BEBB12A4BB5E13C0797275 (void);
-// 0x00000510 System.Void AirFramework.OnEnableListener::remove_OnTrigger(System.Action)
+// 0x00000518 System.Void AirFramework.OnEnableListener::remove_OnTrigger(System.Action)
 extern void OnEnableListener_remove_OnTrigger_mE14CC6942A8B1819AB37EAD700134BC50ABC1DBC (void);
-// 0x00000511 System.Void AirFramework.OnEnableListener::OnEnable()
+// 0x00000519 System.Void AirFramework.OnEnableListener::OnEnable()
 extern void OnEnableListener_OnEnable_m08B56BA38A7BABA2CFBCE3E02FFD8EDDEE16946A (void);
-// 0x00000512 System.Void AirFramework.OnEnableListener::.ctor()
+// 0x0000051A System.Void AirFramework.OnEnableListener::.ctor()
 extern void OnEnableListener__ctor_mC3DA1E1CDB6D7B6822CEFB8575FBF8E2F98104A7 (void);
-// 0x00000513 System.Void AirFramework.OnParticleCollisionListener::add_OnTrigger(System.Action`1<UnityEngine.GameObject>)
+// 0x0000051B System.Void AirFramework.OnParticleCollisionListener::add_OnTrigger(System.Action`1<UnityEngine.GameObject>)
 extern void OnParticleCollisionListener_add_OnTrigger_m2D184B93779BA4E7FE622FD429EA3FFB81228212 (void);
-// 0x00000514 System.Void AirFramework.OnParticleCollisionListener::remove_OnTrigger(System.Action`1<UnityEngine.GameObject>)
+// 0x0000051C System.Void AirFramework.OnParticleCollisionListener::remove_OnTrigger(System.Action`1<UnityEngine.GameObject>)
 extern void OnParticleCollisionListener_remove_OnTrigger_m013B2C4FF7A8A1EEB71C5DA28C46A2836C69EE65 (void);
-// 0x00000515 System.Void AirFramework.OnParticleCollisionListener::OnParticleCollision(UnityEngine.GameObject)
+// 0x0000051D System.Void AirFramework.OnParticleCollisionListener::OnParticleCollision(UnityEngine.GameObject)
 extern void OnParticleCollisionListener_OnParticleCollision_m43E464893A959827BFBF841D10573483ACD1B479 (void);
-// 0x00000516 System.Void AirFramework.OnParticleCollisionListener::.ctor()
+// 0x0000051E System.Void AirFramework.OnParticleCollisionListener::.ctor()
 extern void OnParticleCollisionListener__ctor_mD9EA7CD826DD8DBC4557488AF78E04592CC22B6E (void);
-// 0x00000517 System.Void AirFramework.OnParticleSystemStoppedListener::add_OnTrigger(System.Action)
+// 0x0000051F System.Void AirFramework.OnParticleSystemStoppedListener::add_OnTrigger(System.Action)
 extern void OnParticleSystemStoppedListener_add_OnTrigger_mB834FC2E636D7A7F2430F228899E6B5700046877 (void);
-// 0x00000518 System.Void AirFramework.OnParticleSystemStoppedListener::remove_OnTrigger(System.Action)
+// 0x00000520 System.Void AirFramework.OnParticleSystemStoppedListener::remove_OnTrigger(System.Action)
 extern void OnParticleSystemStoppedListener_remove_OnTrigger_m65341CE4C888B1EA9BC9EF119907A245491F2C06 (void);
-// 0x00000519 System.Void AirFramework.OnParticleSystemStoppedListener::OnParticleSystemStopped()
+// 0x00000521 System.Void AirFramework.OnParticleSystemStoppedListener::OnParticleSystemStopped()
 extern void OnParticleSystemStoppedListener_OnParticleSystemStopped_m0F72D038E1B0B95F805B1E8108D1463491C94698 (void);
-// 0x0000051A System.Void AirFramework.OnParticleSystemStoppedListener::.ctor()
+// 0x00000522 System.Void AirFramework.OnParticleSystemStoppedListener::.ctor()
 extern void OnParticleSystemStoppedListener__ctor_m547DF0710E6937FA2F376FD5434744A257EF581D (void);
-// 0x0000051B System.Void AirFramework.OnParticleTriggerListener::add_OnTrigger(System.Action)
+// 0x00000523 System.Void AirFramework.OnParticleTriggerListener::add_OnTrigger(System.Action)
 extern void OnParticleTriggerListener_add_OnTrigger_m8A577EC4BD23BAADE8F1CDB144DE7BA52E0121E9 (void);
-// 0x0000051C System.Void AirFramework.OnParticleTriggerListener::remove_OnTrigger(System.Action)
+// 0x00000524 System.Void AirFramework.OnParticleTriggerListener::remove_OnTrigger(System.Action)
 extern void OnParticleTriggerListener_remove_OnTrigger_m2AD924F4BE050FA48E8716D7504EAC235251FE5A (void);
-// 0x0000051D System.Void AirFramework.OnParticleTriggerListener::OnParticleTrigger()
+// 0x00000525 System.Void AirFramework.OnParticleTriggerListener::OnParticleTrigger()
 extern void OnParticleTriggerListener_OnParticleTrigger_m122F6346E8535F9C8A665815D826BFAA905805D4 (void);
-// 0x0000051E System.Void AirFramework.OnParticleTriggerListener::.ctor()
+// 0x00000526 System.Void AirFramework.OnParticleTriggerListener::.ctor()
 extern void OnParticleTriggerListener__ctor_m980EFF974C681ED92DE4D265C0170C7ABF5735A7 (void);
-// 0x0000051F System.Void AirFramework.OnParticleUpdateJobScheduledListener::add_OnTrigger(System.Action)
+// 0x00000527 System.Void AirFramework.OnParticleUpdateJobScheduledListener::add_OnTrigger(System.Action)
 extern void OnParticleUpdateJobScheduledListener_add_OnTrigger_m9875DB023AD58F2D051056D708D0B245718D5F3B (void);
-// 0x00000520 System.Void AirFramework.OnParticleUpdateJobScheduledListener::remove_OnTrigger(System.Action)
+// 0x00000528 System.Void AirFramework.OnParticleUpdateJobScheduledListener::remove_OnTrigger(System.Action)
 extern void OnParticleUpdateJobScheduledListener_remove_OnTrigger_mDC23443214CD808F4441AB309764706081651391 (void);
-// 0x00000521 System.Void AirFramework.OnParticleUpdateJobScheduledListener::OnParticleUpdateJobScheduled()
+// 0x00000529 System.Void AirFramework.OnParticleUpdateJobScheduledListener::OnParticleUpdateJobScheduled()
 extern void OnParticleUpdateJobScheduledListener_OnParticleUpdateJobScheduled_m2EBF0CC3BF878D62D33803C0712832EC059D6C01 (void);
-// 0x00000522 System.Void AirFramework.OnParticleUpdateJobScheduledListener::.ctor()
+// 0x0000052A System.Void AirFramework.OnParticleUpdateJobScheduledListener::.ctor()
 extern void OnParticleUpdateJobScheduledListener__ctor_m09FCD49B76E925E347697CE86CD9E2F51540E3F7 (void);
-// 0x00000523 System.Void AirFramework.OnPreCullListener::add_OnTrigger(System.Action)
+// 0x0000052B System.Void AirFramework.OnPreCullListener::add_OnTrigger(System.Action)
 extern void OnPreCullListener_add_OnTrigger_m316359F1FD79DF65564D48BF112A89F9838C35C4 (void);
-// 0x00000524 System.Void AirFramework.OnPreCullListener::remove_OnTrigger(System.Action)
+// 0x0000052C System.Void AirFramework.OnPreCullListener::remove_OnTrigger(System.Action)
 extern void OnPreCullListener_remove_OnTrigger_m321EECF9C021BB3C42C6E72A12343E8EA335853B (void);
-// 0x00000525 System.Void AirFramework.OnPreCullListener::OnPreCull()
+// 0x0000052D System.Void AirFramework.OnPreCullListener::OnPreCull()
 extern void OnPreCullListener_OnPreCull_m4341966F3C92C07DB79D0471680FE3F2DAB7C425 (void);
-// 0x00000526 System.Void AirFramework.OnPreCullListener::.ctor()
+// 0x0000052E System.Void AirFramework.OnPreCullListener::.ctor()
 extern void OnPreCullListener__ctor_mA2E1902A477BD7AD0633B5346AFEDFC54086C007 (void);
-// 0x00000527 System.Void AirFramework.OnPreRenderListener::add_OnTrigger(System.Action)
+// 0x0000052F System.Void AirFramework.OnPreRenderListener::add_OnTrigger(System.Action)
 extern void OnPreRenderListener_add_OnTrigger_m476B32E8E328F81415D6C443E96459D77DE9A127 (void);
-// 0x00000528 System.Void AirFramework.OnPreRenderListener::remove_OnTrigger(System.Action)
+// 0x00000530 System.Void AirFramework.OnPreRenderListener::remove_OnTrigger(System.Action)
 extern void OnPreRenderListener_remove_OnTrigger_mFA30B79C0C85A885E62BEF3078C33BD53256855B (void);
-// 0x00000529 System.Void AirFramework.OnPreRenderListener::OnPreRender()
+// 0x00000531 System.Void AirFramework.OnPreRenderListener::OnPreRender()
 extern void OnPreRenderListener_OnPreRender_m5858F314B4D09C0C1F80E1DAB91F44FD8FFD21A5 (void);
-// 0x0000052A System.Void AirFramework.OnPreRenderListener::.ctor()
+// 0x00000532 System.Void AirFramework.OnPreRenderListener::.ctor()
 extern void OnPreRenderListener__ctor_m186E737FE4D6FCEBC9EC67A5128579BA001B495F (void);
-// 0x0000052B System.Void AirFramework.OnPostRenderListener::add_OnTrigger(System.Action)
+// 0x00000533 System.Void AirFramework.OnPostRenderListener::add_OnTrigger(System.Action)
 extern void OnPostRenderListener_add_OnTrigger_m797636D1512915416F0E66BEAFC22CF58420B4B0 (void);
-// 0x0000052C System.Void AirFramework.OnPostRenderListener::remove_OnTrigger(System.Action)
+// 0x00000534 System.Void AirFramework.OnPostRenderListener::remove_OnTrigger(System.Action)
 extern void OnPostRenderListener_remove_OnTrigger_m1A401F86115D3E75DAEBC14E87D161F16558F62A (void);
-// 0x0000052D System.Void AirFramework.OnPostRenderListener::OnPostRender()
+// 0x00000535 System.Void AirFramework.OnPostRenderListener::OnPostRender()
 extern void OnPostRenderListener_OnPostRender_m1E66445B996FB8E3CFACECA6BED5D1FCD4E46B66 (void);
-// 0x0000052E System.Void AirFramework.OnPostRenderListener::.ctor()
+// 0x00000536 System.Void AirFramework.OnPostRenderListener::.ctor()
 extern void OnPostRenderListener__ctor_m84624BF493FD5B545F9E368B5B25C7BD1B7E9984 (void);
-// 0x0000052F System.Void AirFramework.OnRenderImageListener::add_OnTrigger(System.Action`2<UnityEngine.RenderTexture,UnityEngine.RenderTexture>)
+// 0x00000537 System.Void AirFramework.OnRenderImageListener::add_OnTrigger(System.Action`2<UnityEngine.RenderTexture,UnityEngine.RenderTexture>)
 extern void OnRenderImageListener_add_OnTrigger_m44FCDE618FF0970541B7394CE3929DB03E2F4961 (void);
-// 0x00000530 System.Void AirFramework.OnRenderImageListener::remove_OnTrigger(System.Action`2<UnityEngine.RenderTexture,UnityEngine.RenderTexture>)
+// 0x00000538 System.Void AirFramework.OnRenderImageListener::remove_OnTrigger(System.Action`2<UnityEngine.RenderTexture,UnityEngine.RenderTexture>)
 extern void OnRenderImageListener_remove_OnTrigger_m7BB3B3D1644429DA5957ED0B4A35AB293B52606C (void);
-// 0x00000531 System.Void AirFramework.OnRenderImageListener::OnRenderImage(UnityEngine.RenderTexture,UnityEngine.RenderTexture)
+// 0x00000539 System.Void AirFramework.OnRenderImageListener::OnRenderImage(UnityEngine.RenderTexture,UnityEngine.RenderTexture)
 extern void OnRenderImageListener_OnRenderImage_m01BAF666649FE32284CA46FE629ADEAA2E57FDA1 (void);
-// 0x00000532 System.Void AirFramework.OnRenderImageListener::.ctor()
+// 0x0000053A System.Void AirFramework.OnRenderImageListener::.ctor()
 extern void OnRenderImageListener__ctor_mC4E44D723D3CE166AB47EC63CA46ADF33C965DA8 (void);
-// 0x00000533 System.Void AirFramework.OnRenderObjectListener::add_OnTrigger(System.Action)
+// 0x0000053B System.Void AirFramework.OnRenderObjectListener::add_OnTrigger(System.Action)
 extern void OnRenderObjectListener_add_OnTrigger_mB93F8427E9EC786C0BA4B8F4CD09A451E23392C9 (void);
-// 0x00000534 System.Void AirFramework.OnRenderObjectListener::remove_OnTrigger(System.Action)
+// 0x0000053C System.Void AirFramework.OnRenderObjectListener::remove_OnTrigger(System.Action)
 extern void OnRenderObjectListener_remove_OnTrigger_m4014535CD040A3F3B402B96741FC0BD9F0FDB77A (void);
-// 0x00000535 System.Void AirFramework.OnRenderObjectListener::OnRenderObject()
+// 0x0000053D System.Void AirFramework.OnRenderObjectListener::OnRenderObject()
 extern void OnRenderObjectListener_OnRenderObject_m439FF28F09BC9FE653B31AB422EA7304244A66A0 (void);
-// 0x00000536 System.Void AirFramework.OnRenderObjectListener::.ctor()
+// 0x0000053E System.Void AirFramework.OnRenderObjectListener::.ctor()
 extern void OnRenderObjectListener__ctor_mFD20E2410B14F6273281E3108EC4984EB9A934F1 (void);
-// 0x00000537 System.Void AirFramework.OnWillRenderObjectListener::add_OnTrigger(System.Action)
+// 0x0000053F System.Void AirFramework.OnWillRenderObjectListener::add_OnTrigger(System.Action)
 extern void OnWillRenderObjectListener_add_OnTrigger_m5B6860C5870453AC93A2D3D1B726A515843BACA6 (void);
-// 0x00000538 System.Void AirFramework.OnWillRenderObjectListener::remove_OnTrigger(System.Action)
+// 0x00000540 System.Void AirFramework.OnWillRenderObjectListener::remove_OnTrigger(System.Action)
 extern void OnWillRenderObjectListener_remove_OnTrigger_mF3AF2A3ADA33A13A719F748C2A62904C4D1B03EC (void);
-// 0x00000539 System.Void AirFramework.OnWillRenderObjectListener::OnWillRenderObject()
+// 0x00000541 System.Void AirFramework.OnWillRenderObjectListener::OnWillRenderObject()
 extern void OnWillRenderObjectListener_OnWillRenderObject_m226EBE955195654218B6FE07E29F3D08E82FFA7A (void);
-// 0x0000053A System.Void AirFramework.OnWillRenderObjectListener::.ctor()
+// 0x00000542 System.Void AirFramework.OnWillRenderObjectListener::.ctor()
 extern void OnWillRenderObjectListener__ctor_m27AB3D633603B433B70CC662FB1A2DCF60CE4F6B (void);
-// 0x0000053B System.Void AirFramework.OnServerInitializedListener::add_OnTrigger(System.Action)
+// 0x00000543 System.Void AirFramework.OnServerInitializedListener::add_OnTrigger(System.Action)
 extern void OnServerInitializedListener_add_OnTrigger_m34DDBAA8A7813F6E0D6748CB18187F7531FC066D (void);
-// 0x0000053C System.Void AirFramework.OnServerInitializedListener::remove_OnTrigger(System.Action)
+// 0x00000544 System.Void AirFramework.OnServerInitializedListener::remove_OnTrigger(System.Action)
 extern void OnServerInitializedListener_remove_OnTrigger_mEB3A81B98AB8989FA567EE3C4300CEEBE9BE2254 (void);
-// 0x0000053D System.Void AirFramework.OnServerInitializedListener::OnServerInitialized()
+// 0x00000545 System.Void AirFramework.OnServerInitializedListener::OnServerInitialized()
 extern void OnServerInitializedListener_OnServerInitialized_m5AB76C112C7A3738358FF59C69E91F2929BA78C9 (void);
-// 0x0000053E System.Void AirFramework.OnServerInitializedListener::.ctor()
+// 0x00000546 System.Void AirFramework.OnServerInitializedListener::.ctor()
 extern void OnServerInitializedListener__ctor_mDADC4C4C8963605588183E00A8B5355E265E4C20 (void);
-// 0x0000053F System.Void AirFramework.OnBeforeTransformParentChangedListener::add_OnTrigger(System.Action)
+// 0x00000547 System.Void AirFramework.OnBeforeTransformParentChangedListener::add_OnTrigger(System.Action)
 extern void OnBeforeTransformParentChangedListener_add_OnTrigger_mC4457D85C0454F385DEC329F4FD84F2E90AB806B (void);
-// 0x00000540 System.Void AirFramework.OnBeforeTransformParentChangedListener::remove_OnTrigger(System.Action)
+// 0x00000548 System.Void AirFramework.OnBeforeTransformParentChangedListener::remove_OnTrigger(System.Action)
 extern void OnBeforeTransformParentChangedListener_remove_OnTrigger_m6A17EF337F9D0CEF53CD135E441413C3380172CF (void);
-// 0x00000541 System.Void AirFramework.OnBeforeTransformParentChangedListener::OnBeforeTransformParentChanged()
+// 0x00000549 System.Void AirFramework.OnBeforeTransformParentChangedListener::OnBeforeTransformParentChanged()
 extern void OnBeforeTransformParentChangedListener_OnBeforeTransformParentChanged_m3A52EE5C80355924A087831920251BC3A0BC3FD6 (void);
-// 0x00000542 System.Void AirFramework.OnBeforeTransformParentChangedListener::.ctor()
+// 0x0000054A System.Void AirFramework.OnBeforeTransformParentChangedListener::.ctor()
 extern void OnBeforeTransformParentChangedListener__ctor_mA25C15890638A1DB3387F09BF4B0A4C6D4C37A58 (void);
-// 0x00000543 System.Void AirFramework.OnRectTransformDimensionsChangeListener::add_OnTrigger(System.Action)
+// 0x0000054B System.Void AirFramework.OnRectTransformDimensionsChangeListener::add_OnTrigger(System.Action)
 extern void OnRectTransformDimensionsChangeListener_add_OnTrigger_m06B3EEC7A1ABC9AF9F484B5B2F58A2266E5EAF9D (void);
-// 0x00000544 System.Void AirFramework.OnRectTransformDimensionsChangeListener::remove_OnTrigger(System.Action)
+// 0x0000054C System.Void AirFramework.OnRectTransformDimensionsChangeListener::remove_OnTrigger(System.Action)
 extern void OnRectTransformDimensionsChangeListener_remove_OnTrigger_mBD4BD2C3ED16F84A4C7F937AE590332ECA895989 (void);
-// 0x00000545 System.Void AirFramework.OnRectTransformDimensionsChangeListener::OnRectTransformDimensionsChange()
+// 0x0000054D System.Void AirFramework.OnRectTransformDimensionsChangeListener::OnRectTransformDimensionsChange()
 extern void OnRectTransformDimensionsChangeListener_OnRectTransformDimensionsChange_m753984C47DA05CDD19872212B20DA0983976C91C (void);
-// 0x00000546 System.Void AirFramework.OnRectTransformDimensionsChangeListener::.ctor()
+// 0x0000054E System.Void AirFramework.OnRectTransformDimensionsChangeListener::.ctor()
 extern void OnRectTransformDimensionsChangeListener__ctor_m5EADAD40C3F59386AB39CEA47D839B57E5FFCDA2 (void);
-// 0x00000547 System.Void AirFramework.OnRectTransformRemovedListener::add_OnTrigger(System.Action)
+// 0x0000054F System.Void AirFramework.OnRectTransformRemovedListener::add_OnTrigger(System.Action)
 extern void OnRectTransformRemovedListener_add_OnTrigger_mBCFC4DA714E4B463FCAF1F963469339A98477B74 (void);
-// 0x00000548 System.Void AirFramework.OnRectTransformRemovedListener::remove_OnTrigger(System.Action)
+// 0x00000550 System.Void AirFramework.OnRectTransformRemovedListener::remove_OnTrigger(System.Action)
 extern void OnRectTransformRemovedListener_remove_OnTrigger_mE4EE38F890141ADD9641F89D85745A89071E943E (void);
-// 0x00000549 System.Void AirFramework.OnRectTransformRemovedListener::OnRectTransformRemoved()
+// 0x00000551 System.Void AirFramework.OnRectTransformRemovedListener::OnRectTransformRemoved()
 extern void OnRectTransformRemovedListener_OnRectTransformRemoved_m11D7A6CC4B271557005A37F20DC0E9BF00850BDB (void);
-// 0x0000054A System.Void AirFramework.OnRectTransformRemovedListener::.ctor()
+// 0x00000552 System.Void AirFramework.OnRectTransformRemovedListener::.ctor()
 extern void OnRectTransformRemovedListener__ctor_mAB8BA2C2A2E39A81ACDF7F9F331C99C1929FF047 (void);
-// 0x0000054B System.Void AirFramework.OnTransformChildrenChangedListener::add_OnTrigger(System.Action)
+// 0x00000553 System.Void AirFramework.OnTransformChildrenChangedListener::add_OnTrigger(System.Action)
 extern void OnTransformChildrenChangedListener_add_OnTrigger_m5F1D8383F36F0779835940075353CE8D71B8D9A6 (void);
-// 0x0000054C System.Void AirFramework.OnTransformChildrenChangedListener::remove_OnTrigger(System.Action)
+// 0x00000554 System.Void AirFramework.OnTransformChildrenChangedListener::remove_OnTrigger(System.Action)
 extern void OnTransformChildrenChangedListener_remove_OnTrigger_m1135C841F2403EF206DAAF6EAFF3A7A174A873F1 (void);
-// 0x0000054D System.Void AirFramework.OnTransformChildrenChangedListener::OnTransformChildrenChanged()
+// 0x00000555 System.Void AirFramework.OnTransformChildrenChangedListener::OnTransformChildrenChanged()
 extern void OnTransformChildrenChangedListener_OnTransformChildrenChanged_m626853F4B948536D8C5E2066F3FA92E9CDEED7C4 (void);
-// 0x0000054E System.Void AirFramework.OnTransformChildrenChangedListener::.ctor()
+// 0x00000556 System.Void AirFramework.OnTransformChildrenChangedListener::.ctor()
 extern void OnTransformChildrenChangedListener__ctor_m5B81EB7D2B95CF2A192A612E26F2A896DF9DA69C (void);
-// 0x0000054F System.Void AirFramework.OnTransformParentChangedListener::add_OnTrigger(System.Action)
+// 0x00000557 System.Void AirFramework.OnTransformParentChangedListener::add_OnTrigger(System.Action)
 extern void OnTransformParentChangedListener_add_OnTrigger_m51922EEA6362F79EB1BF304388DD1C1B8EE4C207 (void);
-// 0x00000550 System.Void AirFramework.OnTransformParentChangedListener::remove_OnTrigger(System.Action)
+// 0x00000558 System.Void AirFramework.OnTransformParentChangedListener::remove_OnTrigger(System.Action)
 extern void OnTransformParentChangedListener_remove_OnTrigger_mEDB275F573374ABB4E0E20960723C2EC33D27C79 (void);
-// 0x00000551 System.Void AirFramework.OnTransformParentChangedListener::OnTransformParentChanged()
+// 0x00000559 System.Void AirFramework.OnTransformParentChangedListener::OnTransformParentChanged()
 extern void OnTransformParentChangedListener_OnTransformParentChanged_m8CB9B7C9A56B3EA77431CBC72876802A62974E23 (void);
-// 0x00000552 System.Void AirFramework.OnTransformParentChangedListener::.ctor()
+// 0x0000055A System.Void AirFramework.OnTransformParentChangedListener::.ctor()
 extern void OnTransformParentChangedListener__ctor_m03E34B31B95AF525240DF97E4263A2544E73D6B3 (void);
-// 0x00000553 System.Void AirFramework.OnValidateListener::add_OnTrigger(System.Action)
+// 0x0000055B System.Void AirFramework.OnValidateListener::add_OnTrigger(System.Action)
 extern void OnValidateListener_add_OnTrigger_m91799F4ED2BC9570964B0AB2687E7DC968EBC0D9 (void);
-// 0x00000554 System.Void AirFramework.OnValidateListener::remove_OnTrigger(System.Action)
+// 0x0000055C System.Void AirFramework.OnValidateListener::remove_OnTrigger(System.Action)
 extern void OnValidateListener_remove_OnTrigger_mB4D343DE653EA8D126AF9799DDC7A2AD63AD303A (void);
-// 0x00000555 System.Void AirFramework.OnValidateListener::OnValidate()
+// 0x0000055D System.Void AirFramework.OnValidateListener::OnValidate()
 extern void OnValidateListener_OnValidate_m0F8D57A710D9FA205A63712758E6EF5F801BA768 (void);
-// 0x00000556 System.Void AirFramework.OnValidateListener::.ctor()
+// 0x0000055E System.Void AirFramework.OnValidateListener::.ctor()
 extern void OnValidateListener__ctor_mD523B36321388BA163002FA1CC5E034598BFB527 (void);
-// 0x00000557 System.Void AirFramework.UIComponentBindExtensions::Bind(UnityEngine.UI.Button,UnityEngine.Events.UnityAction)
+// 0x0000055F System.Void AirFramework.UIComponentBindExtensions::Bind(UnityEngine.UI.Button,UnityEngine.Events.UnityAction)
 extern void UIComponentBindExtensions_Bind_m7794A777361378C8EB0486DAC17D3B68A5368794 (void);
-// 0x00000558 System.Void AirFramework.UIComponentBindExtensions::Bind(UnityEngine.UI.InputField,UnityEngine.Events.UnityAction`1<System.String>)
+// 0x00000560 System.Void AirFramework.UIComponentBindExtensions::Bind(UnityEngine.UI.InputField,UnityEngine.Events.UnityAction`1<System.String>)
 extern void UIComponentBindExtensions_Bind_m97BD93020AAA86A463506A36184603C0D51A770E (void);
-// 0x00000559 System.Void AirFramework.UIComponentBindExtensions::Bind(UnityEngine.UI.Toggle,UnityEngine.Events.UnityAction`1<System.Boolean>)
+// 0x00000561 System.Void AirFramework.UIComponentBindExtensions::Bind(UnityEngine.UI.Toggle,UnityEngine.Events.UnityAction`1<System.Boolean>)
 extern void UIComponentBindExtensions_Bind_m0E483D6944B27CA0DD88D345EBD2CC83705A37A6 (void);
-// 0x0000055A System.Void AirFramework.UIComponentBindExtensions::Bind(UnityEngine.UI.Slider,UnityEngine.Events.UnityAction`1<System.Single>)
+// 0x00000562 System.Void AirFramework.UIComponentBindExtensions::Bind(UnityEngine.UI.Slider,UnityEngine.Events.UnityAction`1<System.Single>)
 extern void UIComponentBindExtensions_Bind_m21F402B6C0B728793B457CA6FF0BFE698AE0A50F (void);
-// 0x0000055B System.Void AirFramework.UIComponentUnBindExtensions::UnBind(UnityEngine.UI.Button,UnityEngine.Events.UnityAction)
+// 0x00000563 System.Void AirFramework.UIComponentUnBindExtensions::UnBind(UnityEngine.UI.Button,UnityEngine.Events.UnityAction)
 extern void UIComponentUnBindExtensions_UnBind_m06932253EB35991A4733AF30FA7DE88FACC6E205 (void);
-// 0x0000055C System.Void AirFramework.UIComponentUnBindExtensions::UnBind(UnityEngine.UI.InputField,UnityEngine.Events.UnityAction`1<System.String>)
+// 0x00000564 System.Void AirFramework.UIComponentUnBindExtensions::UnBind(UnityEngine.UI.InputField,UnityEngine.Events.UnityAction`1<System.String>)
 extern void UIComponentUnBindExtensions_UnBind_m1801CA0D75290F93EF5F074C63DB078ABFBED663 (void);
-// 0x0000055D System.Void AirFramework.UIComponentUnBindExtensions::UnBind(UnityEngine.UI.Toggle,UnityEngine.Events.UnityAction`1<System.Boolean>)
+// 0x00000565 System.Void AirFramework.UIComponentUnBindExtensions::UnBind(UnityEngine.UI.Toggle,UnityEngine.Events.UnityAction`1<System.Boolean>)
 extern void UIComponentUnBindExtensions_UnBind_m354E49E0FBE421516DC78F5116B571D739002741 (void);
-// 0x0000055E System.Void AirFramework.UIComponentUnBindExtensions::UnBind(UnityEngine.UI.Slider,UnityEngine.Events.UnityAction`1<System.Single>)
+// 0x00000566 System.Void AirFramework.UIComponentUnBindExtensions::UnBind(UnityEngine.UI.Slider,UnityEngine.Events.UnityAction`1<System.Single>)
 extern void UIComponentUnBindExtensions_UnBind_mE3C6C2F68F02838C90D85F1E5510CF9EBB5B8D4C (void);
-// 0x0000055F System.Boolean AirFramework.View::get_IsLoaded()
+// 0x00000567 System.Boolean AirFramework.View::get_IsLoaded()
 extern void View_get_IsLoaded_mA0F887EF16C00AE58926D01E5818B3B0A4EA1BFE (void);
-// 0x00000560 System.Void AirFramework.View::set_IsLoaded(System.Boolean)
+// 0x00000568 System.Void AirFramework.View::set_IsLoaded(System.Boolean)
 extern void View_set_IsLoaded_mAAC2024DE1A012152BE2F3A18F0D040DBFF0C774 (void);
-// 0x00000561 System.Boolean AirFramework.View::get_IsLoading()
+// 0x00000569 System.Boolean AirFramework.View::get_IsLoading()
 extern void View_get_IsLoading_mED31D3FEA6BDF36B229D78156F692007162B12ED (void);
-// 0x00000562 System.Void AirFramework.View::set_IsLoading(System.Boolean)
+// 0x0000056A System.Void AirFramework.View::set_IsLoading(System.Boolean)
 extern void View_set_IsLoading_m30DAB9F389B3091E3E3496604C69BC45EBB25182 (void);
-// 0x00000563 AirFramework.AirTask AirFramework.View::LoadAsync()
-// 0x00000564 System.Boolean AirFramework.View::get_IsShowing()
+// 0x0000056B AirFramework.AirTask AirFramework.View::LoadAsync()
+// 0x0000056C System.Boolean AirFramework.View::get_IsShowing()
 extern void View_get_IsShowing_m6E91995B116BB61C326508496DA47E15AD4A4FAE (void);
-// 0x00000565 System.Void AirFramework.View::set_IsShowing(System.Boolean)
+// 0x0000056D System.Void AirFramework.View::set_IsShowing(System.Boolean)
 extern void View_set_IsShowing_mCA498626D4899DE14D575CEABC94DFDC7B094EF7 (void);
-// 0x00000566 System.Void AirFramework.View::.ctor()
+// 0x0000056E System.Void AirFramework.View::.ctor()
 extern void View__ctor_mF9DF524A40B3E01FDC5E98025BCFF8B73FA7C4A3 (void);
-// 0x00000567 T AirFramework.View`1::get_Refs()
-// 0x00000568 System.Void AirFramework.View`1::set_Refs(T)
-// 0x00000569 AirFramework.AirTask AirFramework.View`1::LoadAsync()
-// 0x0000056A System.Void AirFramework.View`1::OnAllocate()
-// 0x0000056B System.Void AirFramework.View`1::OnRecycle()
-// 0x0000056C System.Void AirFramework.View`1::OnDestroy()
-// 0x0000056D System.Void AirFramework.View`1::.ctor()
-// 0x0000056E System.Void AirFramework.View`1/<LoadAsync>d__4::MoveNext()
-// 0x0000056F System.Void AirFramework.View`1/<LoadAsync>d__4::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-// 0x00000570 System.Void AirFramework.ViewModule::OnCreate()
+// 0x0000056F T AirFramework.View`1::get_Refs()
+// 0x00000570 System.Void AirFramework.View`1::set_Refs(T)
+// 0x00000571 AirFramework.AirTask AirFramework.View`1::LoadAsync()
+// 0x00000572 System.Void AirFramework.View`1::OnAllocate()
+// 0x00000573 System.Void AirFramework.View`1::OnRecycle()
+// 0x00000574 System.Void AirFramework.View`1::OnDestroy()
+// 0x00000575 System.Void AirFramework.View`1::.ctor()
+// 0x00000576 System.Void AirFramework.View`1/<LoadAsync>d__4::MoveNext()
+// 0x00000577 System.Void AirFramework.View`1/<LoadAsync>d__4::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000578 System.Void AirFramework.ViewModule::OnCreate()
 extern void ViewModule_OnCreate_m635AFC769EF32A12D9F8DDEA1E9CB7AF8AF2430A (void);
-// 0x00000571 System.Void AirFramework.ViewModule::Update(System.Single)
+// 0x00000579 System.Void AirFramework.ViewModule::Update(System.Single)
 extern void ViewModule_Update_m0A46137C44AE245A65E9838C865F4D376599DB5A (void);
-// 0x00000572 System.Void AirFramework.ViewModule::OnDispose()
+// 0x0000057A System.Void AirFramework.ViewModule::OnDispose()
 extern void ViewModule_OnDispose_mCBCDB742DB7745F8EBEDD6554EA626EE88687171 (void);
-// 0x00000573 AirFramework.AirTask`1<T> AirFramework.ViewModule::LoadView()
-// 0x00000574 AirFramework.AirTask`1<T> AirFramework.ViewModule::Show(T)
-// 0x00000575 AirFramework.AirTask AirFramework.ViewModule::Hide(T)
-// 0x00000576 System.Void AirFramework.ViewModule::.ctor()
+// 0x0000057B AirFramework.AirTask`1<T> AirFramework.ViewModule::LoadView()
+// 0x0000057C AirFramework.AirTask`1<T> AirFramework.ViewModule::Show(T)
+// 0x0000057D AirFramework.AirTask AirFramework.ViewModule::Hide(T)
+// 0x0000057E System.Void AirFramework.ViewModule::.ctor()
 extern void ViewModule__ctor_m87C57C8BF8EFE152EF71D328A7EA31678D5BFC6C (void);
-// 0x00000577 System.Void AirFramework.ViewModule/<>c__DisplayClass3_0`1::.ctor()
-// 0x00000578 System.Boolean AirFramework.ViewModule/<>c__DisplayClass3_0`1::<LoadView>b__0()
-// 0x00000579 System.Void AirFramework.ViewModule/<LoadView>d__3`1::MoveNext()
-// 0x0000057A System.Void AirFramework.ViewModule/<LoadView>d__3`1::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-// 0x0000057B System.Void AirFramework.ViewModule/<>c__DisplayClass4_0`1::.ctor()
-// 0x0000057C System.Boolean AirFramework.ViewModule/<>c__DisplayClass4_0`1::<Show>b__0()
-// 0x0000057D System.Void AirFramework.ViewModule/<Show>d__4`1::MoveNext()
-// 0x0000057E System.Void AirFramework.ViewModule/<Show>d__4`1::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-// 0x0000057F System.Void AirFramework.ViewModule/<>c__DisplayClass5_0`1::.ctor()
-// 0x00000580 System.Boolean AirFramework.ViewModule/<>c__DisplayClass5_0`1::<Hide>b__0()
-// 0x00000581 System.Void AirFramework.ViewModule/<Hide>d__5`1::MoveNext()
-// 0x00000582 System.Void AirFramework.ViewModule/<Hide>d__5`1::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
-// 0x00000583 System.Boolean AirFramework.QueryStreamingAssetsFileServices::QueryStreamingAssets(System.String)
+// 0x0000057F System.Void AirFramework.ViewModule/<>c__DisplayClass3_0`1::.ctor()
+// 0x00000580 System.Boolean AirFramework.ViewModule/<>c__DisplayClass3_0`1::<LoadView>b__0()
+// 0x00000581 System.Void AirFramework.ViewModule/<LoadView>d__3`1::MoveNext()
+// 0x00000582 System.Void AirFramework.ViewModule/<LoadView>d__3`1::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000583 System.Void AirFramework.ViewModule/<>c__DisplayClass4_0`1::.ctor()
+// 0x00000584 System.Boolean AirFramework.ViewModule/<>c__DisplayClass4_0`1::<Show>b__0()
+// 0x00000585 System.Void AirFramework.ViewModule/<Show>d__4`1::MoveNext()
+// 0x00000586 System.Void AirFramework.ViewModule/<Show>d__4`1::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000587 System.Void AirFramework.ViewModule/<>c__DisplayClass5_0`1::.ctor()
+// 0x00000588 System.Boolean AirFramework.ViewModule/<>c__DisplayClass5_0`1::<Hide>b__0()
+// 0x00000589 System.Void AirFramework.ViewModule/<Hide>d__5`1::MoveNext()
+// 0x0000058A System.Void AirFramework.ViewModule/<Hide>d__5`1::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x0000058B System.Boolean AirFramework.QueryStreamingAssetsFileServices::QueryStreamingAssets(System.String)
 extern void QueryStreamingAssetsFileServices_QueryStreamingAssets_m6811054A126CDCD72C25E8E57EF9C982540BADF2 (void);
-// 0x00000584 System.Void AirFramework.QueryStreamingAssetsFileServices::.ctor()
+// 0x0000058C System.Void AirFramework.QueryStreamingAssetsFileServices::.ctor()
 extern void QueryStreamingAssetsFileServices__ctor_m8FA76692980FB1BDB469FABEEED0E309DEAF53D0 (void);
-// 0x00000585 YooAsset.ResourcePackage AirFramework.ResModule::get_DefaultPackage()
+// 0x0000058D YooAsset.ResourcePackage AirFramework.ResModule::get_DefaultPackage()
 extern void ResModule_get_DefaultPackage_m9C18B7E841A607B6C2BDE34A0054801FA4B9D0DB (void);
-// 0x00000586 System.Void AirFramework.ResModule::set_DefaultPackage(YooAsset.ResourcePackage)
+// 0x0000058E System.Void AirFramework.ResModule::set_DefaultPackage(YooAsset.ResourcePackage)
 extern void ResModule_set_DefaultPackage_m5D461868C2D7EB6BC156CF6C4F2DF0AAC9513DFA (void);
-// 0x00000587 AirFramework.ResModule/DownloadConfig AirFramework.ResModule::get_DefaultDownloadConfig()
+// 0x0000058F AirFramework.ResModule/DownloadConfig AirFramework.ResModule::get_DefaultDownloadConfig()
 extern void ResModule_get_DefaultDownloadConfig_mCBE3EA661C718338D42B159A89AB577B6B06E556 (void);
-// 0x00000588 System.Void AirFramework.ResModule::set_DefaultDownloadConfig(AirFramework.ResModule/DownloadConfig)
+// 0x00000590 System.Void AirFramework.ResModule::set_DefaultDownloadConfig(AirFramework.ResModule/DownloadConfig)
 extern void ResModule_set_DefaultDownloadConfig_m7923C3329085C0FCE5290A92F442DA4DF25D0EEA (void);
-// 0x00000589 YooAsset.AssetOperationHandle AirFramework.ResModule::LoadSync(System.String)
-// 0x0000058A YooAsset.AssetOperationHandle AirFramework.ResModule::LoadAsync(System.String)
-// 0x0000058B System.Void AirFramework.ResModule::Initialize(System.String)
+// 0x00000591 YooAsset.AssetOperationHandle AirFramework.ResModule::LoadSync(System.String)
+// 0x00000592 YooAsset.AssetOperationHandle AirFramework.ResModule::LoadAsync(System.String)
+// 0x00000593 System.Void AirFramework.ResModule::Initialize(System.String)
 extern void ResModule_Initialize_m6B23CC49DE19A498EEF57FF8A0F5346DA9D53F89 (void);
-// 0x0000058C AirFramework.AirTask AirFramework.ResModule::InitializePackage(YooAsset.EPlayMode,System.String,System.String)
+// 0x00000594 AirFramework.AirTask AirFramework.ResModule::InitializePackage(YooAsset.EPlayMode,System.String,System.String)
 extern void ResModule_InitializePackage_mE873873964CE51B074F05CC417BB7A8EC952133C (void);
-// 0x0000058D AirFramework.AirTask AirFramework.ResModule::InitializePackage(YooAsset.ResourcePackage,YooAsset.EPlayMode,System.String,System.String)
+// 0x00000595 AirFramework.AirTask AirFramework.ResModule::InitializePackage(YooAsset.ResourcePackage,YooAsset.EPlayMode,System.String,System.String)
 extern void ResModule_InitializePackage_m6CD33DE6C3EA0564547FC9E8A65EE99CFDDB4014 (void);
-// 0x0000058E AirFramework.AirTask AirFramework.ResModule::SimulateInitAsync(YooAsset.ResourcePackage)
+// 0x00000596 AirFramework.AirTask AirFramework.ResModule::SimulateInitAsync(YooAsset.ResourcePackage)
 extern void ResModule_SimulateInitAsync_mF47F4DB679BD8F4B4D54829BB30AA9A3EE48D743 (void);
-// 0x0000058F AirFramework.AirTask AirFramework.ResModule::SingleInitAsync(YooAsset.ResourcePackage)
+// 0x00000597 AirFramework.AirTask AirFramework.ResModule::SingleInitAsync(YooAsset.ResourcePackage)
 extern void ResModule_SingleInitAsync_m8E749BA5E50073A0EBF50235774717A580849916 (void);
-// 0x00000590 AirFramework.AirTask AirFramework.ResModule::NetInitAsync(YooAsset.ResourcePackage,System.String,System.String)
+// 0x00000598 AirFramework.AirTask AirFramework.ResModule::NetInitAsync(YooAsset.ResourcePackage,System.String,System.String)
 extern void ResModule_NetInitAsync_m081BD1139F190B15C23A3F22D5DBB282E67417E3 (void);
-// 0x00000591 AirFramework.AirTask`1<System.Boolean> AirFramework.ResModule::UpdateVersion()
+// 0x00000599 AirFramework.AirTask`1<System.Boolean> AirFramework.ResModule::UpdateVersion()
 extern void ResModule_UpdateVersion_mC1F96293B2B9E8553D8A2864158A426831B6C3F4 (void);
-// 0x00000592 AirFramework.AirTask`1<System.Boolean> AirFramework.ResModule::UpdateVersion(YooAsset.ResourcePackage)
+// 0x0000059A AirFramework.AirTask`1<System.Boolean> AirFramework.ResModule::UpdateVersion(YooAsset.ResourcePackage)
 extern void ResModule_UpdateVersion_mFBE46ADED65EDB8D3D98CC749671055070D93D68 (void);
-// 0x00000593 AirFramework.AirTask`1<System.Boolean> AirFramework.ResModule::UpdateMainfest()
+// 0x0000059B AirFramework.AirTask`1<System.Boolean> AirFramework.ResModule::UpdateMainfest()
 extern void ResModule_UpdateMainfest_m32B6441D4E3251E6198B40AF0565256AE045D49F (void);
-// 0x00000594 AirFramework.AirTask`1<System.Boolean> AirFramework.ResModule::UpdateManifest(YooAsset.ResourcePackage)
+// 0x0000059C AirFramework.AirTask`1<System.Boolean> AirFramework.ResModule::UpdateManifest(YooAsset.ResourcePackage)
 extern void ResModule_UpdateManifest_m5CF321FDDC747C7D9842293E829A95C72691568C (void);
-// 0x00000595 AirFramework.AirTask`1<System.Boolean> AirFramework.ResModule::Download()
+// 0x0000059D AirFramework.AirTask`1<System.Boolean> AirFramework.ResModule::Download()
 extern void ResModule_Download_m0DA0FFA2586D3918126C65584361CF4BB54E8B57 (void);
-// 0x00000596 AirFramework.AirTask`1<System.Boolean> AirFramework.ResModule::Download(AirFramework.ResModule/DownloadConfig)
+// 0x0000059E AirFramework.AirTask`1<System.Boolean> AirFramework.ResModule::Download(AirFramework.ResModule/DownloadConfig)
 extern void ResModule_Download_m51012D92CBE26BA27720183F5DB2F56B8D2DF63C (void);
-// 0x00000597 System.Void AirFramework.ResModule::OnCreate()
+// 0x0000059F System.Void AirFramework.ResModule::OnCreate()
 extern void ResModule_OnCreate_m9EFADE0834FEE08A337EE6BFF34BC6686B1C3A76 (void);
-// 0x00000598 System.Void AirFramework.ResModule::Update(System.Single)
+// 0x000005A0 System.Void AirFramework.ResModule::Update(System.Single)
 extern void ResModule_Update_m9C6B4411FEE4B7CE437121280AA223352F22F172 (void);
-// 0x00000599 System.Void AirFramework.ResModule::OnDispose()
+// 0x000005A1 System.Void AirFramework.ResModule::OnDispose()
 extern void ResModule_OnDispose_mEF40D5EB0FB5514AB11858C42352B591F583912C (void);
-// 0x0000059A System.Void AirFramework.ResModule::.ctor()
+// 0x000005A2 System.Void AirFramework.ResModule::.ctor()
 extern void ResModule__ctor_mDCD7718179F5B5836D54588B56E2CCFA8F8FFB85 (void);
-// 0x0000059B YooAsset.ResourcePackage AirFramework.ResModule/DownloadConfig::get_Package()
+// 0x000005A3 YooAsset.ResourcePackage AirFramework.ResModule/DownloadConfig::get_Package()
 extern void DownloadConfig_get_Package_m144C88296B4A307E4A004E4447AEF6407A3F857D (void);
-// 0x0000059C System.Void AirFramework.ResModule/DownloadConfig::set_Package(YooAsset.ResourcePackage)
+// 0x000005A4 System.Void AirFramework.ResModule/DownloadConfig::set_Package(YooAsset.ResourcePackage)
 extern void DownloadConfig_set_Package_m803E208C1FB6052FC0C2D924C0D2AE82B2B31720 (void);
-// 0x0000059D System.Int32 AirFramework.ResModule/DownloadConfig::get_DownloadMaxNum()
+// 0x000005A5 System.Int32 AirFramework.ResModule/DownloadConfig::get_DownloadMaxNum()
 extern void DownloadConfig_get_DownloadMaxNum_m6CA30C30C7B5BF80C451CBAAD961C863884A48C9 (void);
-// 0x0000059E System.Void AirFramework.ResModule/DownloadConfig::set_DownloadMaxNum(System.Int32)
+// 0x000005A6 System.Void AirFramework.ResModule/DownloadConfig::set_DownloadMaxNum(System.Int32)
 extern void DownloadConfig_set_DownloadMaxNum_mF60BDBCA1D6D9F697C3597D4A125B56A963A4B7C (void);
-// 0x0000059F System.Int32 AirFramework.ResModule/DownloadConfig::get_TimeOut()
+// 0x000005A7 System.Int32 AirFramework.ResModule/DownloadConfig::get_TimeOut()
 extern void DownloadConfig_get_TimeOut_m8276427D0C0BC545337BA24167850EADF08F4543 (void);
-// 0x000005A0 System.Void AirFramework.ResModule/DownloadConfig::set_TimeOut(System.Int32)
+// 0x000005A8 System.Void AirFramework.ResModule/DownloadConfig::set_TimeOut(System.Int32)
 extern void DownloadConfig_set_TimeOut_m6DC08682B5537522DF74D52CD2F3312A5EAB5CD2 (void);
-// 0x000005A1 System.Int32 AirFramework.ResModule/DownloadConfig::get_FailedTryAgain()
+// 0x000005A9 System.Int32 AirFramework.ResModule/DownloadConfig::get_FailedTryAgain()
 extern void DownloadConfig_get_FailedTryAgain_m2255AC9439DAE8EB01700B9A1BCEE480BBE7D715 (void);
-// 0x000005A2 System.Void AirFramework.ResModule/DownloadConfig::set_FailedTryAgain(System.Int32)
+// 0x000005AA System.Void AirFramework.ResModule/DownloadConfig::set_FailedTryAgain(System.Int32)
 extern void DownloadConfig_set_FailedTryAgain_mE275F3DE88E1D7B71980C21154BBD74DBFB05DA0 (void);
-// 0x000005A3 YooAsset.DownloaderOperation/OnDownloadError AirFramework.ResModule/DownloadConfig::get_ErrorCallback()
+// 0x000005AB YooAsset.DownloaderOperation/OnDownloadError AirFramework.ResModule/DownloadConfig::get_ErrorCallback()
 extern void DownloadConfig_get_ErrorCallback_m3AA05EA3CF7937C11B5BA08496C7931148D01E46 (void);
-// 0x000005A4 System.Void AirFramework.ResModule/DownloadConfig::set_ErrorCallback(YooAsset.DownloaderOperation/OnDownloadError)
+// 0x000005AC System.Void AirFramework.ResModule/DownloadConfig::set_ErrorCallback(YooAsset.DownloaderOperation/OnDownloadError)
 extern void DownloadConfig_set_ErrorCallback_mD2866DB9654DC77EA909AA16098216A611CA4832 (void);
-// 0x000005A5 YooAsset.DownloaderOperation/OnDownloadOver AirFramework.ResModule/DownloadConfig::get_OverCallback()
+// 0x000005AD YooAsset.DownloaderOperation/OnDownloadOver AirFramework.ResModule/DownloadConfig::get_OverCallback()
 extern void DownloadConfig_get_OverCallback_mA2DA0DF31BAB7993AED18F5A791E1F7B3174811E (void);
-// 0x000005A6 System.Void AirFramework.ResModule/DownloadConfig::set_OverCallback(YooAsset.DownloaderOperation/OnDownloadOver)
+// 0x000005AE System.Void AirFramework.ResModule/DownloadConfig::set_OverCallback(YooAsset.DownloaderOperation/OnDownloadOver)
 extern void DownloadConfig_set_OverCallback_m2DA256BFE1E7978A0225CD7C01F6E7A5C09B2941 (void);
-// 0x000005A7 YooAsset.DownloaderOperation/OnDownloadProgress AirFramework.ResModule/DownloadConfig::get_ProgressCallback()
+// 0x000005AF YooAsset.DownloaderOperation/OnDownloadProgress AirFramework.ResModule/DownloadConfig::get_ProgressCallback()
 extern void DownloadConfig_get_ProgressCallback_m7B031F83324EEEEF1D270DEE377E46E97E638482 (void);
-// 0x000005A8 System.Void AirFramework.ResModule/DownloadConfig::set_ProgressCallback(YooAsset.DownloaderOperation/OnDownloadProgress)
+// 0x000005B0 System.Void AirFramework.ResModule/DownloadConfig::set_ProgressCallback(YooAsset.DownloaderOperation/OnDownloadProgress)
 extern void DownloadConfig_set_ProgressCallback_m475BA964E5C3C1F54316EA2B2CE04FE3E064B5C9 (void);
-// 0x000005A9 YooAsset.DownloaderOperation/OnStartDownloadFile AirFramework.ResModule/DownloadConfig::get_StartDownloadFileCallback()
+// 0x000005B1 YooAsset.DownloaderOperation/OnStartDownloadFile AirFramework.ResModule/DownloadConfig::get_StartDownloadFileCallback()
 extern void DownloadConfig_get_StartDownloadFileCallback_mD492FEAE9E6AB779227F579F2C5B81959EC1E3A6 (void);
-// 0x000005AA System.Void AirFramework.ResModule/DownloadConfig::set_StartDownloadFileCallback(YooAsset.DownloaderOperation/OnStartDownloadFile)
+// 0x000005B2 System.Void AirFramework.ResModule/DownloadConfig::set_StartDownloadFileCallback(YooAsset.DownloaderOperation/OnStartDownloadFile)
 extern void DownloadConfig_set_StartDownloadFileCallback_mC929828A93E45B919CCEABDC8D0FBFBFFD6D629B (void);
-// 0x000005AB System.Void AirFramework.ResModule/DownloadConfig::.ctor()
+// 0x000005B3 System.Void AirFramework.ResModule/DownloadConfig::.ctor()
 extern void DownloadConfig__ctor_mA71CD2C73F708E7AE84656CCF1D1EF6AEEA6560D (void);
-// 0x000005AC System.Void AirFramework.ResModule/<InitializePackage>d__11::MoveNext()
+// 0x000005B4 System.Void AirFramework.ResModule/<InitializePackage>d__11::MoveNext()
 extern void U3CInitializePackageU3Ed__11_MoveNext_m179E105732E1FCB5884C84C9BDAA669BA6029CA8 (void);
-// 0x000005AD System.Void AirFramework.ResModule/<InitializePackage>d__11::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x000005B5 System.Void AirFramework.ResModule/<InitializePackage>d__11::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CInitializePackageU3Ed__11_SetStateMachine_m10CB65E437BEB716F4E8F6947DB6620AE9657973 (void);
-// 0x000005AE System.Void AirFramework.ResModule/<InitializePackage>d__12::MoveNext()
+// 0x000005B6 System.Void AirFramework.ResModule/<InitializePackage>d__12::MoveNext()
 extern void U3CInitializePackageU3Ed__12_MoveNext_mDBA740769A5D6B5FA8CE4C915038DF77F9173D3B (void);
-// 0x000005AF System.Void AirFramework.ResModule/<InitializePackage>d__12::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x000005B7 System.Void AirFramework.ResModule/<InitializePackage>d__12::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CInitializePackageU3Ed__12_SetStateMachine_mD6C11DFD10773B8B5F4246902892420684E9B387 (void);
-// 0x000005B0 System.Void AirFramework.ResModule/<SimulateInitAsync>d__13::MoveNext()
+// 0x000005B8 System.Void AirFramework.ResModule/<SimulateInitAsync>d__13::MoveNext()
 extern void U3CSimulateInitAsyncU3Ed__13_MoveNext_mD87D3C407E0D7DD4C6C4ABE04CA7C7A638F08710 (void);
-// 0x000005B1 System.Void AirFramework.ResModule/<SimulateInitAsync>d__13::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x000005B9 System.Void AirFramework.ResModule/<SimulateInitAsync>d__13::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CSimulateInitAsyncU3Ed__13_SetStateMachine_m21424FBC9C728FC64C653C3D2D5DE55E63BEDE62 (void);
-// 0x000005B2 System.Void AirFramework.ResModule/<SingleInitAsync>d__14::MoveNext()
+// 0x000005BA System.Void AirFramework.ResModule/<SingleInitAsync>d__14::MoveNext()
 extern void U3CSingleInitAsyncU3Ed__14_MoveNext_mD9A3231D2177F69694C598EF7E3473EC869F62E3 (void);
-// 0x000005B3 System.Void AirFramework.ResModule/<SingleInitAsync>d__14::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x000005BB System.Void AirFramework.ResModule/<SingleInitAsync>d__14::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CSingleInitAsyncU3Ed__14_SetStateMachine_m74AB78DA0E7E69CC3C7D967F1AC64996FD5A99FF (void);
-// 0x000005B4 System.Void AirFramework.ResModule/<NetInitAsync>d__15::MoveNext()
+// 0x000005BC System.Void AirFramework.ResModule/<NetInitAsync>d__15::MoveNext()
 extern void U3CNetInitAsyncU3Ed__15_MoveNext_mA803AA176512554BBE60C8AF903AAB63F271D85B (void);
-// 0x000005B5 System.Void AirFramework.ResModule/<NetInitAsync>d__15::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x000005BD System.Void AirFramework.ResModule/<NetInitAsync>d__15::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CNetInitAsyncU3Ed__15_SetStateMachine_mDE6A8C2BB78A7C9CAC85D63686BA0090C9E6301F (void);
-// 0x000005B6 System.Void AirFramework.ResModule/<UpdateVersion>d__16::MoveNext()
+// 0x000005BE System.Void AirFramework.ResModule/<UpdateVersion>d__16::MoveNext()
 extern void U3CUpdateVersionU3Ed__16_MoveNext_m29BDD219A8759A10F0B8D3BF8B8D5A5BBF26A115 (void);
-// 0x000005B7 System.Void AirFramework.ResModule/<UpdateVersion>d__16::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x000005BF System.Void AirFramework.ResModule/<UpdateVersion>d__16::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CUpdateVersionU3Ed__16_SetStateMachine_mAF79C2ED7962EDFD6CB6D254A2E34C228C7262C9 (void);
-// 0x000005B8 System.Void AirFramework.ResModule/<UpdateVersion>d__17::MoveNext()
+// 0x000005C0 System.Void AirFramework.ResModule/<UpdateVersion>d__17::MoveNext()
 extern void U3CUpdateVersionU3Ed__17_MoveNext_mD9627E834957498E03044F427C64A45130FC1178 (void);
-// 0x000005B9 System.Void AirFramework.ResModule/<UpdateVersion>d__17::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x000005C1 System.Void AirFramework.ResModule/<UpdateVersion>d__17::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CUpdateVersionU3Ed__17_SetStateMachine_m19BF74A6112CBDCC955B725CA5146F80630BD56E (void);
-// 0x000005BA System.Void AirFramework.ResModule/<UpdateMainfest>d__18::MoveNext()
+// 0x000005C2 System.Void AirFramework.ResModule/<UpdateMainfest>d__18::MoveNext()
 extern void U3CUpdateMainfestU3Ed__18_MoveNext_m27FA2CA2E7EAC8E005579E7EAA35D6D351C1BC07 (void);
-// 0x000005BB System.Void AirFramework.ResModule/<UpdateMainfest>d__18::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x000005C3 System.Void AirFramework.ResModule/<UpdateMainfest>d__18::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CUpdateMainfestU3Ed__18_SetStateMachine_mBF210422D5F9AA2BB5A7E195C45D877646A1379A (void);
-// 0x000005BC System.Void AirFramework.ResModule/<UpdateManifest>d__19::MoveNext()
+// 0x000005C4 System.Void AirFramework.ResModule/<UpdateManifest>d__19::MoveNext()
 extern void U3CUpdateManifestU3Ed__19_MoveNext_m6AAAAE0DDCE022223479A1B0CD4D55597CB5819C (void);
-// 0x000005BD System.Void AirFramework.ResModule/<UpdateManifest>d__19::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x000005C5 System.Void AirFramework.ResModule/<UpdateManifest>d__19::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CUpdateManifestU3Ed__19_SetStateMachine_m202E495DC3AD89DEE14D03DB765956959016F04F (void);
-// 0x000005BE System.Void AirFramework.ResModule/<Download>d__21::MoveNext()
+// 0x000005C6 System.Void AirFramework.ResModule/<Download>d__21::MoveNext()
 extern void U3CDownloadU3Ed__21_MoveNext_m349D9B3FBCA6B3D79C6FECCD573BB91FBEC8DF95 (void);
-// 0x000005BF System.Void AirFramework.ResModule/<Download>d__21::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x000005C7 System.Void AirFramework.ResModule/<Download>d__21::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CDownloadU3Ed__21_SetStateMachine_m1F814E5FB43CA104730AED333033D98E612FFEAB (void);
-// 0x000005C0 System.Void AirFramework.ResModule/<Download>d__22::MoveNext()
+// 0x000005C8 System.Void AirFramework.ResModule/<Download>d__22::MoveNext()
 extern void U3CDownloadU3Ed__22_MoveNext_m35BB7C4E642FA75EBC8927751B03CB6C44864575 (void);
-// 0x000005C1 System.Void AirFramework.ResModule/<Download>d__22::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x000005C9 System.Void AirFramework.ResModule/<Download>d__22::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CDownloadU3Ed__22_SetStateMachine_m40ABD563E08A5935B5E1AD2F9E0005505846B59F (void);
-// 0x000005C2 System.Void AirFramework.MonoSingleton`1::.ctor()
-// 0x000005C3 T AirFramework.MonoSingleton`1::get_Instance()
-// 0x000005C4 System.Void AirFramework.MonoSingleton`1::SingletonInitializeAfterSceneLoad()
-// 0x000005C5 System.Void AirFramework.MonoSingleton`1::Unload()
-// 0x000005C6 System.Void AirFramework.MonoSingleton`1::Reload()
-// 0x000005C7 T AirFramework.MonoSingletonProperty`1::get_Instance()
-// 0x000005C8 System.Void AirFramework.MonoSingletonProperty`1::InitializeAfterSceneLoad()
-// 0x000005C9 System.Void AirFramework.MonoSingletonProperty`1::Unload()
-// 0x000005CA System.Void AirFramework.MonoSingletonProperty`1::Reload()
-// 0x000005CB System.Single AirFramework.ICurve::Evaluate(System.Single)
-// 0x000005CC System.Single AirFramework.Curve::Evaluate(System.Single)
-// 0x000005CD System.Void AirFramework.Curve::.ctor()
+// 0x000005CA AirFramework.RuntimeConfigData AirFramework.RuntimeConfigData::Read()
+extern void RuntimeConfigData_Read_m695B1D94D56524AB1419D36B55C69D2C8D752A70 (void);
+// 0x000005CB System.Void AirFramework.RuntimeConfigData::Write(AirFramework.RuntimeConfigData)
+extern void RuntimeConfigData_Write_m10761511FA5FA8522D8A7E600A3C3CDACF9B2BEA (void);
+// 0x000005CC System.Void AirFramework.RuntimeConfigData::Write()
+extern void RuntimeConfigData_Write_m6D6137A028810711331779069D66089F0ED65B2A (void);
+// 0x000005CD System.Void AirFramework.RuntimeConfigData::.ctor()
+extern void RuntimeConfigData__ctor_m016D4E0E803A1BC68B00FF634B6143E353F92EB2 (void);
+// 0x000005CE System.Void AirFramework.MonoSingleton`1::.ctor()
+// 0x000005CF T AirFramework.MonoSingleton`1::get_Instance()
+// 0x000005D0 System.Void AirFramework.MonoSingleton`1::SingletonInitializeAfterSceneLoad()
+// 0x000005D1 System.Void AirFramework.MonoSingleton`1::Unload()
+// 0x000005D2 System.Void AirFramework.MonoSingleton`1::Reload()
+// 0x000005D3 T AirFramework.MonoSingletonProperty`1::get_Instance()
+// 0x000005D4 System.Void AirFramework.MonoSingletonProperty`1::InitializeAfterSceneLoad()
+// 0x000005D5 System.Void AirFramework.MonoSingletonProperty`1::Unload()
+// 0x000005D6 System.Void AirFramework.MonoSingletonProperty`1::Reload()
+// 0x000005D7 AirFramework.AirTask AirFramework.AssetEx::GetAwaiter(YooAsset.OperationHandleBase)
+extern void AssetEx_GetAwaiter_m475916C8A73141D34C6C3745227F188FD0BB1C6D (void);
+// 0x000005D8 AirFramework.AirTask AirFramework.AssetEx::GetAwaiter(YooAsset.AsyncOperationBase)
+extern void AssetEx_GetAwaiter_mD4E6D092C7BB46B3B716ECBE19330B20E9B105C6 (void);
+// 0x000005D9 System.Void AirFramework.AssetEx/<>c__DisplayClass0_0::.ctor()
+extern void U3CU3Ec__DisplayClass0_0__ctor_m1994F74516A4154F665F77EE144BCF6C84C1100E (void);
+// 0x000005DA System.Boolean AirFramework.AssetEx/<>c__DisplayClass0_0::<GetAwaiter>b__0()
+extern void U3CU3Ec__DisplayClass0_0_U3CGetAwaiterU3Eb__0_mFD5B78E1B42B08097DF19F7A31AF441D71B0F54A (void);
+// 0x000005DB System.Void AirFramework.AssetEx/<>c__DisplayClass1_0::.ctor()
+extern void U3CU3Ec__DisplayClass1_0__ctor_mB74EB7B4D6E564C1D239EC74DF8F41CF662807E4 (void);
+// 0x000005DC System.Boolean AirFramework.AssetEx/<>c__DisplayClass1_0::<GetAwaiter>b__0()
+extern void U3CU3Ec__DisplayClass1_0_U3CGetAwaiterU3Eb__0_m5447230965DB028508F4C1E8BDF682C4C34C0AE1 (void);
+// 0x000005DD System.Single AirFramework.ICurve::Evaluate(System.Single)
+// 0x000005DE System.Single AirFramework.Curve::Evaluate(System.Single)
+// 0x000005DF System.Void AirFramework.Curve::.ctor()
 extern void Curve__ctor_m7B5EC2CE0A19755DD305F58EC09A1763C98CC8D1 (void);
-// 0x000005CE System.Single AirFramework.AnimCurve::Evaluate(System.Single)
+// 0x000005E0 System.Single AirFramework.AnimCurve::Evaluate(System.Single)
 extern void AnimCurve_Evaluate_mF6163FF75435BDDD0A0878E5CF4A0A0B6109C1DD (void);
-// 0x000005CF System.Void AirFramework.AnimCurve::.ctor(UnityEngine.AnimationCurve)
+// 0x000005E1 System.Void AirFramework.AnimCurve::.ctor(UnityEngine.AnimationCurve)
 extern void AnimCurve__ctor_mA0F8747E6BEE39FCE25213212BC0CF3D508D5A97 (void);
-// 0x000005D0 System.Single AirFramework.FuncCurve::Evaluate(System.Single)
+// 0x000005E2 System.Single AirFramework.FuncCurve::Evaluate(System.Single)
 extern void FuncCurve_Evaluate_mBD05FC18CB095E14151DF7849F91EA44530465DC (void);
-// 0x000005D1 System.Void AirFramework.FuncCurve::.ctor(System.Func`2<System.Single,System.Single>)
+// 0x000005E3 System.Void AirFramework.FuncCurve::.ctor(System.Func`2<System.Single,System.Single>)
 extern void FuncCurve__ctor_m84891E1B790E7F7C0E978FB650C9CE9B42F94707 (void);
-// 0x000005D2 AirFramework.Tween AirFramework.Tween_Ex::SetLoop(AirFramework.Tween,AirFramework.LoopType)
+// 0x000005E4 AirFramework.Tween AirFramework.Tween_Ex::SetLoop(AirFramework.Tween,AirFramework.LoopType)
 extern void Tween_Ex_SetLoop_m2290436EB592562182153B0439335B4BF91E7B09 (void);
-// 0x000005D3 AirFramework.Tween AirFramework.Tween_Ex::SetCurve(AirFramework.Tween,AirFramework.ICurve)
+// 0x000005E5 AirFramework.Tween AirFramework.Tween_Ex::SetCurve(AirFramework.Tween,AirFramework.ICurve)
 extern void Tween_Ex_SetCurve_mDB6B7A233D5DC8A86C4DBFCBC49E33CEAF55155B (void);
-// 0x000005D4 AirFramework.Tween AirFramework.Tween_Ex::SetCurve(AirFramework.Tween,AirFramework.Internal.EaseCurve.EaseCurve)
+// 0x000005E6 AirFramework.Tween AirFramework.Tween_Ex::SetCurve(AirFramework.Tween,AirFramework.Internal.EaseCurve.EaseCurve)
 extern void Tween_Ex_SetCurve_mF7135BD654B3BE2A6BDCA4482CDB275FDB2D5754 (void);
-// 0x000005D5 AirFramework.Tween AirFramework.Tween_Ex::SetCurve(AirFramework.Tween,System.Func`2<System.Single,System.Single>)
+// 0x000005E7 AirFramework.Tween AirFramework.Tween_Ex::SetCurve(AirFramework.Tween,System.Func`2<System.Single,System.Single>)
 extern void Tween_Ex_SetCurve_m7BAAA8AB4EC51313883D709C014EA0DAAE37CD6B (void);
-// 0x000005D6 AirFramework.Tween AirFramework.Tween_Ex::SetCurve(AirFramework.Tween,UnityEngine.AnimationCurve)
+// 0x000005E8 AirFramework.Tween AirFramework.Tween_Ex::SetCurve(AirFramework.Tween,UnityEngine.AnimationCurve)
 extern void Tween_Ex_SetCurve_m746A53A091B27603DB53CF05D5091F4F4C643661 (void);
-// 0x000005D7 AirFramework.Tween AirFramework.Tween_Ex::SetDuration(AirFramework.Tween,System.Single)
+// 0x000005E9 AirFramework.Tween AirFramework.Tween_Ex::SetDuration(AirFramework.Tween,System.Single)
 extern void Tween_Ex_SetDuration_m92A79151A6BDD16473C5B2BFA1EB95FB25C9D592 (void);
-// 0x000005D8 AirFramework.Tween AirFramework.Tween_Ex::SetSpeed(AirFramework.Tween,System.Single)
+// 0x000005EA AirFramework.Tween AirFramework.Tween_Ex::SetSpeed(AirFramework.Tween,System.Single)
 extern void Tween_Ex_SetSpeed_m24C4A83AB4DE749D4D8B8AC944F509067AF48AC2 (void);
-// 0x000005D9 AirFramework.Tween AirFramework.Tween_Ex::SetDirection(AirFramework.Tween,AirFramework.PlayDirection)
+// 0x000005EB AirFramework.Tween AirFramework.Tween_Ex::SetDirection(AirFramework.Tween,AirFramework.PlayDirection)
 extern void Tween_Ex_SetDirection_mC70539AAFC083DCD0F5DE3D9CAC0493B01F8D98A (void);
-// 0x000005DA AirFramework.Tween AirFramework.Tween_Ex::Restsrt(AirFramework.Tween)
+// 0x000005EC AirFramework.Tween AirFramework.Tween_Ex::Restsrt(AirFramework.Tween)
 extern void Tween_Ex_Restsrt_m103E26301216E665C4276D96209FD58CD79E0280 (void);
-// 0x000005DB AirFramework.AirTask AirFramework.Tween_Ex::PlayAsync(AirFramework.Tween)
+// 0x000005ED AirFramework.AirTask AirFramework.Tween_Ex::PlayAsync(AirFramework.Tween)
 extern void Tween_Ex_PlayAsync_mDA97F505F01912A1784EA5CC378EB0873C5C8297 (void);
-// 0x000005DC System.Collections.IEnumerator AirFramework.Tween_Ex::AsyncTween(AirFramework.Tween,AirFramework.AirTask)
+// 0x000005EE System.Collections.IEnumerator AirFramework.Tween_Ex::AsyncTween(AirFramework.Tween,AirFramework.AirTask)
 extern void Tween_Ex_AsyncTween_m753E7321EC6F3938840C3C10C4AA56E3CE7812B0 (void);
-// 0x000005DD System.Void AirFramework.Tween_Ex/<>c__DisplayClass10_0::.ctor()
+// 0x000005EF System.Void AirFramework.Tween_Ex/<>c__DisplayClass10_0::.ctor()
 extern void U3CU3Ec__DisplayClass10_0__ctor_m9BF199A120C9681135E70F624518D9A5901CAE08 (void);
-// 0x000005DE System.Void AirFramework.Tween_Ex/<>c__DisplayClass10_0::<AsyncTween>b__0()
+// 0x000005F0 System.Void AirFramework.Tween_Ex/<>c__DisplayClass10_0::<AsyncTween>b__0()
 extern void U3CU3Ec__DisplayClass10_0_U3CAsyncTweenU3Eb__0_mB1824F8ABF8362CBE96D8AE74E5D3F4EC93AEBD5 (void);
-// 0x000005DF System.Void AirFramework.Tween_Ex/<AsyncTween>d__10::.ctor(System.Int32)
+// 0x000005F1 System.Void AirFramework.Tween_Ex/<AsyncTween>d__10::.ctor(System.Int32)
 extern void U3CAsyncTweenU3Ed__10__ctor_m143EF10ED036B7E26056D4E7883D5D9EF3521963 (void);
-// 0x000005E0 System.Void AirFramework.Tween_Ex/<AsyncTween>d__10::System.IDisposable.Dispose()
+// 0x000005F2 System.Void AirFramework.Tween_Ex/<AsyncTween>d__10::System.IDisposable.Dispose()
 extern void U3CAsyncTweenU3Ed__10_System_IDisposable_Dispose_m18AD431CD301C7E49E06623CE710F0208B397D26 (void);
-// 0x000005E1 System.Boolean AirFramework.Tween_Ex/<AsyncTween>d__10::MoveNext()
+// 0x000005F3 System.Boolean AirFramework.Tween_Ex/<AsyncTween>d__10::MoveNext()
 extern void U3CAsyncTweenU3Ed__10_MoveNext_mD793F31F6401A9251B894436978323081647120F (void);
-// 0x000005E2 System.Object AirFramework.Tween_Ex/<AsyncTween>d__10::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x000005F4 System.Object AirFramework.Tween_Ex/<AsyncTween>d__10::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CAsyncTweenU3Ed__10_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mF01E09D7101DEAB3691E0C3F171D670832036B87 (void);
-// 0x000005E3 System.Void AirFramework.Tween_Ex/<AsyncTween>d__10::System.Collections.IEnumerator.Reset()
+// 0x000005F5 System.Void AirFramework.Tween_Ex/<AsyncTween>d__10::System.Collections.IEnumerator.Reset()
 extern void U3CAsyncTweenU3Ed__10_System_Collections_IEnumerator_Reset_m5B708C1541ED7E545B2387C7A629E2F58390EDD8 (void);
-// 0x000005E4 System.Object AirFramework.Tween_Ex/<AsyncTween>d__10::System.Collections.IEnumerator.get_Current()
+// 0x000005F6 System.Object AirFramework.Tween_Ex/<AsyncTween>d__10::System.Collections.IEnumerator.get_Current()
 extern void U3CAsyncTweenU3Ed__10_System_Collections_IEnumerator_get_Current_mC7F576F076AAC66636CAECBD78474A37D3B9D7F0 (void);
-// 0x000005E5 AirFramework.Tween AirFramework.Tween_ToEx::To(AirFramework.MV.RefBuild.BindableProperty`1<T>,T)
-// 0x000005E6 AirFramework.Tween AirFramework.Tween_ToEx::FromTo(AirFramework.MV.RefBuild.BindableProperty`1<T>,T,T)
-// 0x000005E7 AirFramework.Tween AirFramework.Tween_ToEx::To(T,T,AirFramework.MV.RefBuild.BindableProperty`1<T>)
-// 0x000005E8 AirFramework.Tween AirFramework.Tween_Unity::MoveTo(UnityEngine.Transform,UnityEngine.Vector3,System.Single)
+// 0x000005F7 AirFramework.Tween AirFramework.Tween_ToEx::To(AirFramework.MV.RefBuild.BindableProperty`1<T>,T)
+// 0x000005F8 AirFramework.Tween AirFramework.Tween_ToEx::FromTo(AirFramework.MV.RefBuild.BindableProperty`1<T>,T,T)
+// 0x000005F9 AirFramework.Tween AirFramework.Tween_ToEx::To(T,T,AirFramework.MV.RefBuild.BindableProperty`1<T>)
+// 0x000005FA AirFramework.Tween AirFramework.Tween_Unity::MoveTo(UnityEngine.Transform,UnityEngine.Vector3,System.Single)
 extern void Tween_Unity_MoveTo_m98135E81D49DF1B5888F075AD2E37DD8BEA16CE0 (void);
-// 0x000005E9 System.Void AirFramework.Tween_Unity/<>c__DisplayClass0_0::.ctor()
+// 0x000005FB System.Void AirFramework.Tween_Unity/<>c__DisplayClass0_0::.ctor()
 extern void U3CU3Ec__DisplayClass0_0__ctor_m408BC3BC3D596DA7B1D99BB8433E625D0B293F5C (void);
-// 0x000005EA UnityEngine.Vector3 AirFramework.Tween_Unity/<>c__DisplayClass0_0::<MoveTo>b__0()
+// 0x000005FC UnityEngine.Vector3 AirFramework.Tween_Unity/<>c__DisplayClass0_0::<MoveTo>b__0()
 extern void U3CU3Ec__DisplayClass0_0_U3CMoveToU3Eb__0_mA3B576F63CF16502AEBF188CB20E93EEC11C0E6F (void);
-// 0x000005EB System.Void AirFramework.Tween_Unity/<>c__DisplayClass0_0::<MoveTo>b__1(UnityEngine.Vector3)
+// 0x000005FD System.Void AirFramework.Tween_Unity/<>c__DisplayClass0_0::<MoveTo>b__1(UnityEngine.Vector3)
 extern void U3CU3Ec__DisplayClass0_0_U3CMoveToU3Eb__1_mDB8CFE01748A62463BA73C9D81295FB904C815E3 (void);
-// 0x000005EC System.Void AirFramework.ColorSteper::MoveNext(System.Single)
+// 0x000005FE System.Void AirFramework.ColorSteper::MoveNext(System.Single)
 extern void ColorSteper_MoveNext_mDEEBF701EB636F025D334D585CD75D26AD4E12AD (void);
-// 0x000005ED System.Void AirFramework.ColorSteper::.ctor()
+// 0x000005FF System.Void AirFramework.ColorSteper::.ctor()
 extern void ColorSteper__ctor_m9310AAA51B0849D3375CFE60ADE9542C32D7B5B3 (void);
-// 0x000005EE System.Void AirFramework.DoubleSteper::MoveNext(System.Single)
+// 0x00000600 System.Void AirFramework.DoubleSteper::MoveNext(System.Single)
 extern void DoubleSteper_MoveNext_m090D8A86E81970B907653EC0303E51D15160E71D (void);
-// 0x000005EF System.Void AirFramework.DoubleSteper::.ctor()
+// 0x00000601 System.Void AirFramework.DoubleSteper::.ctor()
 extern void DoubleSteper__ctor_m15976CBAA37D84A9FA69BF275AAF908FDD396EAE (void);
-// 0x000005F0 System.Void AirFramework.FloatSteper::MoveNext(System.Single)
+// 0x00000602 System.Void AirFramework.FloatSteper::MoveNext(System.Single)
 extern void FloatSteper_MoveNext_mFA16F58B28CD16F3C4F9A857CF4B312363DBF38F (void);
-// 0x000005F1 System.Void AirFramework.FloatSteper::.ctor()
+// 0x00000603 System.Void AirFramework.FloatSteper::.ctor()
 extern void FloatSteper__ctor_m56F89DA75091EF0D33BA71742216DF2C2B9B4E40 (void);
-// 0x000005F2 System.Void AirFramework.IntSteper::MoveNext(System.Single)
+// 0x00000604 System.Void AirFramework.IntSteper::MoveNext(System.Single)
 extern void IntSteper_MoveNext_mCCE2E6B2115DDF49DEEC427085F47E6F3822552D (void);
-// 0x000005F3 System.Void AirFramework.IntSteper::.ctor()
+// 0x00000605 System.Void AirFramework.IntSteper::.ctor()
 extern void IntSteper__ctor_m3FC9D473A3DD4BA2B11CFEE638D2E5AC6DF6AC57 (void);
-// 0x000005F4 System.String AirFramework.StringSteper::get_LongString()
+// 0x00000606 System.String AirFramework.StringSteper::get_LongString()
 extern void StringSteper_get_LongString_m338C68831674C728C30509BC2296AF900360D7E5 (void);
-// 0x000005F5 System.String AirFramework.StringSteper::get_ShortString()
+// 0x00000607 System.String AirFramework.StringSteper::get_ShortString()
 extern void StringSteper_get_ShortString_mBCDE2402309E9AAC708CD5F4B149855C415257BC (void);
-// 0x000005F6 System.Void AirFramework.StringSteper::MoveNext(System.Single)
+// 0x00000608 System.Void AirFramework.StringSteper::MoveNext(System.Single)
 extern void StringSteper_MoveNext_m838B2666C21328D3E0CA273B25D7B5E38687EB4A (void);
-// 0x000005F7 System.Void AirFramework.StringSteper::.ctor()
+// 0x00000609 System.Void AirFramework.StringSteper::.ctor()
 extern void StringSteper__ctor_m1C490AED8A8EA9CD83B131E0C1B1C7CA866F7A10 (void);
-// 0x000005F8 System.Void AirFramework.Vector2Steper::MoveNext(System.Single)
+// 0x0000060A System.Void AirFramework.Vector2Steper::MoveNext(System.Single)
 extern void Vector2Steper_MoveNext_m133573CB48A629863D796845ED361E846EA4F515 (void);
-// 0x000005F9 System.Void AirFramework.Vector2Steper::.ctor()
+// 0x0000060B System.Void AirFramework.Vector2Steper::.ctor()
 extern void Vector2Steper__ctor_m1E57241DA5EC20355CBE365E1CFC5F1EB49FA5BA (void);
-// 0x000005FA System.Void AirFramework.Vector3Steper::MoveNext(System.Single)
+// 0x0000060C System.Void AirFramework.Vector3Steper::MoveNext(System.Single)
 extern void Vector3Steper_MoveNext_m328C5FD135813EACEFAB9A10BAE94BB41CBB1C36 (void);
-// 0x000005FB System.Void AirFramework.Vector3Steper::.ctor()
+// 0x0000060D System.Void AirFramework.Vector3Steper::.ctor()
 extern void Vector3Steper__ctor_m878A276FEE66EBDDDD552913504D1BEE03A6A485 (void);
-// 0x000005FC AirFramework.ISteper AirFramework.StrategyEx::GetSteper()
-// 0x000005FD AirFramework.ISteper AirFramework.StrategyEx::GetSteperWithParm(T,T,AirFramework.MV.RefBuild.BindableProperty`1<T>)
-// 0x000005FE System.Single AirFramework.TimeMachine::get_TimeStart()
+// 0x0000060E AirFramework.ISteper AirFramework.StrategyEx::GetSteper()
+// 0x0000060F AirFramework.ISteper AirFramework.StrategyEx::GetSteperWithParm(T,T,AirFramework.MV.RefBuild.BindableProperty`1<T>)
+// 0x00000610 System.Single AirFramework.TimeMachine::get_TimeStart()
 extern void TimeMachine_get_TimeStart_mF45EE8AD5DC5838A5C37128D39104F3E3447E843 (void);
-// 0x000005FF System.Void AirFramework.TimeMachine::set_TimeStart(System.Single)
+// 0x00000611 System.Void AirFramework.TimeMachine::set_TimeStart(System.Single)
 extern void TimeMachine_set_TimeStart_m650F32463D63BB8AA3C160FA8B98EF33A21616CF (void);
-// 0x00000600 System.Single AirFramework.TimeMachine::get_TimeEnd()
+// 0x00000612 System.Single AirFramework.TimeMachine::get_TimeEnd()
 extern void TimeMachine_get_TimeEnd_mAEDAAC2063DBC9EF2E0A541085E021B3DFBD9208 (void);
-// 0x00000601 System.Void AirFramework.TimeMachine::set_TimeEnd(System.Single)
+// 0x00000613 System.Void AirFramework.TimeMachine::set_TimeEnd(System.Single)
 extern void TimeMachine_set_TimeEnd_m7FE7D01B9B5BD86F579434719BD5BD9EAFA48ED4 (void);
-// 0x00000602 System.Single AirFramework.TimeMachine::get_TimeCurrent()
+// 0x00000614 System.Single AirFramework.TimeMachine::get_TimeCurrent()
 extern void TimeMachine_get_TimeCurrent_m3E1F67F549323F06713E2724C94AA538DF096BF4 (void);
-// 0x00000603 System.Void AirFramework.TimeMachine::set_TimeCurrent(System.Single)
+// 0x00000615 System.Void AirFramework.TimeMachine::set_TimeCurrent(System.Single)
 extern void TimeMachine_set_TimeCurrent_m411E1F46AB371D767BEE652151A320A589F39122 (void);
-// 0x00000604 System.Single AirFramework.TimeMachine::get_TotalTime()
+// 0x00000616 System.Single AirFramework.TimeMachine::get_TotalTime()
 extern void TimeMachine_get_TotalTime_m510BDEDB57847C39CB8B54D3C349335431557F28 (void);
-// 0x00000605 System.Single AirFramework.TimeMachine::get_Percent()
+// 0x00000617 System.Single AirFramework.TimeMachine::get_Percent()
 extern void TimeMachine_get_Percent_m347ED4EF390C97C98F1941808238CC833A851DBA (void);
-// 0x00000606 System.Single AirFramework.TimeMachine::get_Speed()
+// 0x00000618 System.Single AirFramework.TimeMachine::get_Speed()
 extern void TimeMachine_get_Speed_m7650BCEAF47863DB418373BFAF32BBEA86BA08FE (void);
-// 0x00000607 System.Void AirFramework.TimeMachine::set_Speed(System.Single)
+// 0x00000619 System.Void AirFramework.TimeMachine::set_Speed(System.Single)
 extern void TimeMachine_set_Speed_m8444D7BB46FE01AD23863B41E64852CA56744A6F (void);
-// 0x00000608 AirFramework.ISteper AirFramework.TimeMachine::get_Steper()
+// 0x0000061A AirFramework.ISteper AirFramework.TimeMachine::get_Steper()
 extern void TimeMachine_get_Steper_m59652B47FA2B054EABA080698ABA9D3377EAE290 (void);
-// 0x00000609 System.Void AirFramework.TimeMachine::set_Steper(AirFramework.ISteper)
+// 0x0000061B System.Void AirFramework.TimeMachine::set_Steper(AirFramework.ISteper)
 extern void TimeMachine_set_Steper_m024DA785F567EF5DF4208D939B3D32570602BC59 (void);
-// 0x0000060A AirFramework.ICurve AirFramework.TimeMachine::get_Curve()
+// 0x0000061C AirFramework.ICurve AirFramework.TimeMachine::get_Curve()
 extern void TimeMachine_get_Curve_m6783F8EA78FACD601F05D79C9D7CA158C52C155F (void);
-// 0x0000060B System.Void AirFramework.TimeMachine::set_Curve(AirFramework.ICurve)
+// 0x0000061D System.Void AirFramework.TimeMachine::set_Curve(AirFramework.ICurve)
 extern void TimeMachine_set_Curve_mDE6FF7838263CA1081987060B440073A40772E0F (void);
-// 0x0000060C AirFramework.LoopType AirFramework.TimeMachine::get_Loop()
+// 0x0000061E AirFramework.LoopType AirFramework.TimeMachine::get_Loop()
 extern void TimeMachine_get_Loop_mE50200EEB25718C037A56647CE357FBFE0493912 (void);
-// 0x0000060D System.Void AirFramework.TimeMachine::set_Loop(AirFramework.LoopType)
+// 0x0000061F System.Void AirFramework.TimeMachine::set_Loop(AirFramework.LoopType)
 extern void TimeMachine_set_Loop_mD0567308BBEE9B39DA5351482D0A8AC688545880 (void);
-// 0x0000060E System.Void AirFramework.TimeMachine::add_OnCompleted(System.Action)
+// 0x00000620 System.Void AirFramework.TimeMachine::add_OnCompleted(System.Action)
 extern void TimeMachine_add_OnCompleted_mE451E724E890DF0D10544B8DD2D2EBA848A6A0DF (void);
-// 0x0000060F System.Void AirFramework.TimeMachine::remove_OnCompleted(System.Action)
+// 0x00000621 System.Void AirFramework.TimeMachine::remove_OnCompleted(System.Action)
 extern void TimeMachine_remove_OnCompleted_mB5F13F2D628D0C3541E13929C3915E6A6C33C96E (void);
-// 0x00000610 System.Boolean AirFramework.TimeMachine::get_Enable()
+// 0x00000622 System.Boolean AirFramework.TimeMachine::get_Enable()
 extern void TimeMachine_get_Enable_mE645EC2C495B3A4FDE06F1B92EA41581A55317B7 (void);
-// 0x00000611 System.Void AirFramework.TimeMachine::set_Enable(System.Boolean)
+// 0x00000623 System.Void AirFramework.TimeMachine::set_Enable(System.Boolean)
 extern void TimeMachine_set_Enable_m511FF53432A0F92D5F9E78B61C9349022537A2B2 (void);
-// 0x00000612 System.Void AirFramework.TimeMachine::MoveNext()
+// 0x00000624 System.Void AirFramework.TimeMachine::MoveNext()
 extern void TimeMachine_MoveNext_m6713AC25514BF54BAADDBD9B380957323836ED89 (void);
-// 0x00000613 System.Void AirFramework.TimeMachine::Complete(System.Boolean)
+// 0x00000625 System.Void AirFramework.TimeMachine::Complete(System.Boolean)
 extern void TimeMachine_Complete_mB4BDAC845D85A4D4805A9F4FE8A0C2D2530C6403 (void);
-// 0x00000614 System.Void AirFramework.TimeMachine::Finalize()
+// 0x00000626 System.Void AirFramework.TimeMachine::Finalize()
 extern void TimeMachine_Finalize_mAA0992206EA6AFB983EE23A58CB6EB48E56D5171 (void);
-// 0x00000615 System.Void AirFramework.TimeMachine::Update(System.Single)
+// 0x00000627 System.Void AirFramework.TimeMachine::Update(System.Single)
 extern void TimeMachine_Update_m22F948B0443983384D8C38658B3BECC52620FB53 (void);
-// 0x00000616 System.Void AirFramework.TimeMachine::Reset()
+// 0x00000628 System.Void AirFramework.TimeMachine::Reset()
 extern void TimeMachine_Reset_m5EA7610D54AA13B1320AADA010831AA126360F7A (void);
-// 0x00000617 System.Void AirFramework.TimeMachine::.ctor()
+// 0x00000629 System.Void AirFramework.TimeMachine::.ctor()
 extern void TimeMachine__ctor_mF9A0F9E4E0C29FA6A2BB89680AC58CA8278B5753 (void);
-// 0x00000618 AirFramework.TimeMachine AirFramework.Tween::get_Machine()
+// 0x0000062A AirFramework.TimeMachine AirFramework.Tween::get_Machine()
 extern void Tween_get_Machine_mE8C4E61F78136F94E1A852DE5667E5E447BAD7FF (void);
-// 0x00000619 System.Void AirFramework.Tween::set_Machine(AirFramework.TimeMachine)
+// 0x0000062B System.Void AirFramework.Tween::set_Machine(AirFramework.TimeMachine)
 extern void Tween_set_Machine_m901F7CF9B8FF749D9D7B1F8D98D76C576B26BAB2 (void);
-// 0x0000061A System.Void AirFramework.Tween::Play()
+// 0x0000062C System.Void AirFramework.Tween::Play()
 extern void Tween_Play_mE01E28748C789131FDED6AAD3CB566AB39E91D07 (void);
-// 0x0000061B System.Void AirFramework.Tween::Rewind(AirFramework.PlayDirection)
+// 0x0000062D System.Void AirFramework.Tween::Rewind(AirFramework.PlayDirection)
 extern void Tween_Rewind_m83DB5993AEA200588961F8B1D91DE4D6A06BEE67 (void);
-// 0x0000061C System.Void AirFramework.Tween::Complete(System.Boolean)
+// 0x0000062E System.Void AirFramework.Tween::Complete(System.Boolean)
 extern void Tween_Complete_m85C8DAC46065246EF39F34A89B6478D05666F943 (void);
-// 0x0000061D System.Void AirFramework.Tween::Pause()
+// 0x0000062F System.Void AirFramework.Tween::Pause()
 extern void Tween_Pause_m4C9B16C0155E5A56C5EA9F4B86FC1A2F92D50373 (void);
-// 0x0000061E AirFramework.Tween AirFramework.Tween::CreateFromPool(T,T,AirFramework.MV.RefBuild.BindableProperty`1<T>)
-// 0x0000061F System.Void AirFramework.Tween::RecycleSelf()
+// 0x00000630 AirFramework.Tween AirFramework.Tween::CreateFromPool(T,T,AirFramework.MV.RefBuild.BindableProperty`1<T>)
+// 0x00000631 System.Void AirFramework.Tween::RecycleSelf()
 extern void Tween_RecycleSelf_m050FA3CEC2147454AA1B5B87643E98B589818421 (void);
-// 0x00000620 System.Void AirFramework.Tween::OnDispose()
+// 0x00000632 System.Void AirFramework.Tween::OnDispose()
 extern void Tween_OnDispose_m09F007BEEA84C5BFEE0FF9F6E63CDF4039CEA748 (void);
-// 0x00000621 System.Void AirFramework.Tween::Finalize()
+// 0x00000633 System.Void AirFramework.Tween::Finalize()
 extern void Tween_Finalize_m7A4C013EABB608ED97B1F036CEE20CBE07FFCBDA (void);
-// 0x00000622 System.Void AirFramework.Tween::.ctor()
+// 0x00000634 System.Void AirFramework.Tween::.ctor()
 extern void Tween__ctor_m1B66C734B14EE92E972B32A29E8790098C93E077 (void);
-// 0x00000623 System.Void AirFramework.TweenModule::OnCreate()
+// 0x00000635 System.Void AirFramework.TweenModule::OnCreate()
 extern void TweenModule_OnCreate_mCF8B434C5927BE47C5B8B7DF3133E70C0EE52116 (void);
-// 0x00000624 System.Void AirFramework.TweenModule::Update(System.Single)
+// 0x00000636 System.Void AirFramework.TweenModule::Update(System.Single)
 extern void TweenModule_Update_mF1CE18CA572589482D1E15AFF8CB7785CA05E663 (void);
-// 0x00000625 System.Void AirFramework.TweenModule::OnDispose()
+// 0x00000637 System.Void AirFramework.TweenModule::OnDispose()
 extern void TweenModule_OnDispose_mB59B172531E9FE0A60B02EF16251B0BDEDCAEC50 (void);
-// 0x00000626 System.Void AirFramework.TweenModule::.ctor()
+// 0x00000638 System.Void AirFramework.TweenModule::.ctor()
 extern void TweenModule__ctor_m30F75D7F71065717E06A685F8E3C009F67FA293A (void);
-// 0x00000627 AirFramework.Tween AirFramework.TweenPlayer::GetTween(AirFramework.MV.RefBuild.BindableProperty`1<T>,T,T)
-// 0x00000628 System.Void AirFramework.TweenPlayer::.ctor()
+// 0x00000639 AirFramework.Tween AirFramework.TweenPlayer::GetTween(AirFramework.MV.RefBuild.BindableProperty`1<T>,T,T)
+// 0x0000063A System.Void AirFramework.TweenPlayer::.ctor()
 extern void TweenPlayer__ctor_mD25B432C0B0B735E582297AB7A4889A6BF681168 (void);
-// 0x00000629 System.Void AirFramework.ISteper::MoveNext(System.Single)
-// 0x0000062A T AirFramework.TweenSteper`1::get_ValueStart()
-// 0x0000062B System.Void AirFramework.TweenSteper`1::set_ValueStart(T)
-// 0x0000062C T AirFramework.TweenSteper`1::get_ValueEnd()
-// 0x0000062D System.Void AirFramework.TweenSteper`1::set_ValueEnd(T)
-// 0x0000062E AirFramework.MV.RefBuild.BindableProperty`1<T> AirFramework.TweenSteper`1::get_Current()
-// 0x0000062F System.Void AirFramework.TweenSteper`1::set_Current(AirFramework.MV.RefBuild.BindableProperty`1<T>)
-// 0x00000630 System.Void AirFramework.TweenSteper`1::MoveNext(System.Single)
-// 0x00000631 System.Void AirFramework.TweenSteper`1::.ctor()
-// 0x00000632 System.Void AirFramework.UIModule::OnCreate()
+// 0x0000063B System.Void AirFramework.ISteper::MoveNext(System.Single)
+// 0x0000063C T AirFramework.TweenSteper`1::get_ValueStart()
+// 0x0000063D System.Void AirFramework.TweenSteper`1::set_ValueStart(T)
+// 0x0000063E T AirFramework.TweenSteper`1::get_ValueEnd()
+// 0x0000063F System.Void AirFramework.TweenSteper`1::set_ValueEnd(T)
+// 0x00000640 AirFramework.MV.RefBuild.BindableProperty`1<T> AirFramework.TweenSteper`1::get_Current()
+// 0x00000641 System.Void AirFramework.TweenSteper`1::set_Current(AirFramework.MV.RefBuild.BindableProperty`1<T>)
+// 0x00000642 System.Void AirFramework.TweenSteper`1::MoveNext(System.Single)
+// 0x00000643 System.Void AirFramework.TweenSteper`1::.ctor()
+// 0x00000644 System.Void AirFramework.UIModule::OnCreate()
 extern void UIModule_OnCreate_mAF66DD666FED0CC4B8D0C4AF426EA0EA8823D423 (void);
-// 0x00000633 System.Void AirFramework.UIModule::Update(System.Single)
+// 0x00000645 System.Void AirFramework.UIModule::Update(System.Single)
 extern void UIModule_Update_m30E6AED7EC7C1579281FA39D0538200F69CD803A (void);
-// 0x00000634 System.Void AirFramework.UIModule::OnDispose()
+// 0x00000646 System.Void AirFramework.UIModule::OnDispose()
 extern void UIModule_OnDispose_m561E935BBCA01E2B0698A5799BBFD2C60E99B3EB (void);
-// 0x00000635 System.Void AirFramework.UIModule::.ctor()
+// 0x00000647 System.Void AirFramework.UIModule::.ctor()
 extern void UIModule__ctor_mFF65F28EED23B7016A743E9EF5E23D28E31D3501 (void);
-// 0x00000636 System.Void AirFramework.UnityAirStarter::Initialize()
+// 0x00000648 System.Void AirFramework.UnityAirStarter::Initialize()
 extern void UnityAirStarter_Initialize_mAFD59B60EADC451E31A6A9E04A8E293E324E89FB (void);
-// 0x00000637 System.Void AirFramework.UnityAirStarter::Awake()
+// 0x00000649 System.Void AirFramework.UnityAirStarter::Awake()
 extern void UnityAirStarter_Awake_m2BB3EACD4BEB1C3641014651674CE5AFD02854CA (void);
-// 0x00000638 System.Void AirFramework.UnityAirStarter::Update()
+// 0x0000064A System.Void AirFramework.UnityAirStarter::Update()
 extern void UnityAirStarter_Update_m9890ABAE3605C9705E25C8D6388D728860F3F334 (void);
-// 0x00000639 System.Void AirFramework.UnityAirStarter::FixedUpdate()
+// 0x0000064B System.Void AirFramework.UnityAirStarter::FixedUpdate()
 extern void UnityAirStarter_FixedUpdate_mA39B1491CA9540F6AAC181CBB5073C80425494D0 (void);
-// 0x0000063A System.Void AirFramework.UnityAirStarter::LateUpdate()
+// 0x0000064C System.Void AirFramework.UnityAirStarter::LateUpdate()
 extern void UnityAirStarter_LateUpdate_m95B353C87AC90BEF6433357149BCA328EB15CE61 (void);
-// 0x0000063B System.Void AirFramework.UnityAirStarter::OnDestroy()
+// 0x0000064D System.Void AirFramework.UnityAirStarter::OnDestroy()
 extern void UnityAirStarter_OnDestroy_m5605DE81E48D06D0250C559CB860A52AF8C70FD1 (void);
-// 0x0000063C System.Void AirFramework.UnityAirStarter::.ctor()
+// 0x0000064E System.Void AirFramework.UnityAirStarter::.ctor()
 extern void UnityAirStarter__ctor_mDC6C8EDDF134E446BE33FF610C71848CE1F43492 (void);
-// 0x0000063D System.Void AirFramework.UnityAirStarter::<Awake>b__1_0(System.Collections.IEnumerator)
+// 0x0000064F System.Void AirFramework.UnityAirStarter::<Awake>b__1_0(System.Collections.IEnumerator)
 extern void UnityAirStarter_U3CAwakeU3Eb__1_0_mAEC5B6581DB20F6DFEAA9EC0B36D011C2A6ED4E6 (void);
-// 0x0000063E System.Void AirFramework.UnityAirStarter/<Awake>d__1::MoveNext()
+// 0x00000650 YooAsset.EPlayMode AirFramework.UnityAirStarter::<Awake>g__ToYooAssetPlayMode|1_1(AirFramework.RuntimeMode)
+extern void UnityAirStarter_U3CAwakeU3Eg__ToYooAssetPlayModeU7C1_1_mD2A70710FC0DD00B2381CCEFD61E9A22967FC5A1 (void);
+// 0x00000651 System.Void AirFramework.UnityAirStarter/<Awake>d__1::MoveNext()
 extern void U3CAwakeU3Ed__1_MoveNext_mA183FFF52D0765911D127C68C7AEAC09F1065D97 (void);
-// 0x0000063F System.Void AirFramework.UnityAirStarter/<Awake>d__1::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
+// 0x00000652 System.Void AirFramework.UnityAirStarter/<Awake>d__1::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 extern void U3CAwakeU3Ed__1_SetStateMachine_m8B7B0C513AACBE7D4C114BE4CCBB1B99D709B025 (void);
-// 0x00000640 System.Void AirFramework.Internal.AirEngine::Initialize(System.Action`1<System.Collections.IEnumerator>)
-extern void AirEngine_Initialize_m2D247F6DCAF8F7E3B2EDFAFCA3C9C838DD3C9153 (void);
-// 0x00000641 System.Single AirFramework.Internal.AirEngine::get_DeltaTime()
+// 0x00000653 AirFramework.ILogger AirFramework.Internal.AirEngine::get_Logger()
+extern void AirEngine_get_Logger_m1497922130A57987E2745B1E7052942CE36E3B83 (void);
+// 0x00000654 System.Void AirFramework.Internal.AirEngine::set_Logger(AirFramework.ILogger)
+extern void AirEngine_set_Logger_m92A056A73F9B80BFE64FD5839381E4747BB49E3C (void);
+// 0x00000655 System.Void AirFramework.Internal.AirEngine::Initialize(System.Action`1<System.Collections.IEnumerator>,AirFramework.ILogger)
+extern void AirEngine_Initialize_m4C8BB0C80B3FFBA25D36D9E6E9FC498CEEDACEF1 (void);
+// 0x00000656 System.Single AirFramework.Internal.AirEngine::get_DeltaTime()
 extern void AirEngine_get_DeltaTime_mD541779D447B1FE0BCDB4742B9E72E316F68EB3C (void);
-// 0x00000642 System.Void AirFramework.Internal.AirEngine::set_DeltaTime(System.Single)
+// 0x00000657 System.Void AirFramework.Internal.AirEngine::set_DeltaTime(System.Single)
 extern void AirEngine_set_DeltaTime_m17CFC0DA151C5E39F1E92740BAE7919CA8C43FBB (void);
-// 0x00000643 System.Void AirFramework.Internal.AirEngine::add_Update(System.Action`1<System.Single>)
+// 0x00000658 System.Void AirFramework.Internal.AirEngine::add_Update(System.Action`1<System.Single>)
 extern void AirEngine_add_Update_m8B54013B0ADF49164E0091B4EDBF4DCB17E3A33F (void);
-// 0x00000644 System.Void AirFramework.Internal.AirEngine::remove_Update(System.Action`1<System.Single>)
+// 0x00000659 System.Void AirFramework.Internal.AirEngine::remove_Update(System.Action`1<System.Single>)
 extern void AirEngine_remove_Update_m48EEBE33C03358195C307D8435AA9A82C637BF53 (void);
-// 0x00000645 System.Void AirFramework.Internal.AirEngine::DriveUpdate(System.Single)
+// 0x0000065A System.Void AirFramework.Internal.AirEngine::DriveUpdate(System.Single)
 extern void AirEngine_DriveUpdate_mB187845E1F7B1D3443446FB7566AE6F50260C88D (void);
-// 0x00000646 System.Void AirFramework.Internal.AirEngine::StartCoroutine(System.Collections.IEnumerator)
+// 0x0000065B System.Void AirFramework.Internal.AirEngine::StartCoroutine(System.Collections.IEnumerator)
 extern void AirEngine_StartCoroutine_m316FBB11DF34AF4D179AA6525FAFE53CC451A07E (void);
-// 0x00000647 System.Void AirFramework.Internal.AirEngine::add_InitialReflection(System.Action`1<System.Type>)
-extern void AirEngine_add_InitialReflection_m636C80FB0C6CEF7DD656E21FB32F04020391E30C (void);
-// 0x00000648 System.Void AirFramework.Internal.AirEngine::remove_InitialReflection(System.Action`1<System.Type>)
-extern void AirEngine_remove_InitialReflection_m22066E677943422DC3720BD4512E91BD0285CB83 (void);
-// 0x00000649 System.Void AirFramework.Internal.AirEngine::ReflectInitialize()
-extern void AirEngine_ReflectInitialize_m7AE1802E8B23AA22646E38D34098AA4089F78395 (void);
-// 0x0000064A System.Void AirFramework.Internal.AirEngine::CreateModule(System.Type)
+// 0x0000065C System.Void AirFramework.Internal.AirEngine::add_InitialReflectionHotUpdate(System.Action`1<System.Type>)
+extern void AirEngine_add_InitialReflectionHotUpdate_mDAF2BED7D40B31D74D472B2B0B7BA3EE18A101A7 (void);
+// 0x0000065D System.Void AirFramework.Internal.AirEngine::remove_InitialReflectionHotUpdate(System.Action`1<System.Type>)
+extern void AirEngine_remove_InitialReflectionHotUpdate_m54BEEF8D6174498F646FC58FD9A011B59CDA135B (void);
+// 0x0000065E System.Void AirFramework.Internal.AirEngine::add_InitialReflectionAOT(System.Action`1<System.Type>)
+extern void AirEngine_add_InitialReflectionAOT_m64F29B5CE7949F2A15019F560410F9F3D66AEFFA (void);
+// 0x0000065F System.Void AirFramework.Internal.AirEngine::remove_InitialReflectionAOT(System.Action`1<System.Type>)
+extern void AirEngine_remove_InitialReflectionAOT_m29E675FD0B41031B5615DCB0372E78CADC432C67 (void);
+// 0x00000660 System.Void AirFramework.Internal.AirEngine::AOTReflectionInitialize(System.Collections.Generic.List`1<System.Reflection.Assembly>)
+extern void AirEngine_AOTReflectionInitialize_m5640BF3C63B00113C911A64A1A2A669162C7C442 (void);
+// 0x00000661 System.Void AirFramework.Internal.AirEngine::HotUpdateReflectInitliaze(System.Collections.Generic.List`1<System.Reflection.Assembly>)
+extern void AirEngine_HotUpdateReflectInitliaze_m43B12DFE0BC707495ED81ACF86A1F03753EF4AD4 (void);
+// 0x00000662 System.Void AirFramework.Internal.AirEngine::InitializeReflection()
+extern void AirEngine_InitializeReflection_mE5145FDE0E1639A87C498A21992529F342FBACD3 (void);
+// 0x00000663 System.Void AirFramework.Internal.AirEngine::CreateModule(System.Type)
 extern void AirEngine_CreateModule_mCD538AAEDD6FE71FF03402FE6701E79E14077AC8 (void);
-// 0x0000064B AirFramework.AbstractModule AirFramework.Internal.AirEngine::GetModule(System.Type)
+// 0x00000664 AirFramework.AbstractModule AirFramework.Internal.AirEngine::GetModule(System.Type)
 extern void AirEngine_GetModule_m9B639B6CEB79C6184310CA828CDACFEF34DD9EDB (void);
-// 0x0000064C System.Void AirFramework.Internal.AirEngine::DestroyModule(System.Type,System.Boolean)
+// 0x00000665 System.Void AirFramework.Internal.AirEngine::DestroyModule(System.Type,System.Boolean)
 extern void AirEngine_DestroyModule_m5A003A767DA400979E0F2978729C84DF7C7FA073 (void);
-// 0x0000064D System.Void AirFramework.Internal.AirEngine::CreateModule()
-// 0x0000064E T AirFramework.Internal.AirEngine::GetModule()
-// 0x0000064F System.Boolean AirFramework.Internal.AirEngine::HasModule()
-// 0x00000650 System.Boolean AirFramework.Internal.AirEngine::HasModule(System.Type)
+// 0x00000666 System.Void AirFramework.Internal.AirEngine::CreateModule()
+// 0x00000667 T AirFramework.Internal.AirEngine::GetModule()
+// 0x00000668 System.Boolean AirFramework.Internal.AirEngine::HasModule()
+// 0x00000669 System.Boolean AirFramework.Internal.AirEngine::HasModule(System.Type)
 extern void AirEngine_HasModule_m1B12842D5F93258E5989631C3696C65154C1B3E4 (void);
-// 0x00000651 T AirFramework.Internal.AirEngine::GetOrCreateModule()
-// 0x00000652 System.Void AirFramework.Internal.AirEngine::DestroyModule(System.Boolean)
-// 0x00000653 System.Void AirFramework.Internal.AirEngine::.cctor()
+// 0x0000066A T AirFramework.Internal.AirEngine::GetOrCreateModule()
+// 0x0000066B System.Void AirFramework.Internal.AirEngine::DestroyModule(System.Boolean)
+// 0x0000066C System.Void AirFramework.Internal.AirEngine::.cctor()
 extern void AirEngine__cctor_m8435A707B0D57037411E947D7E606C771FF4BE98 (void);
-// 0x00000654 System.Boolean AirFramework.Internal.AsyncTreeTokenNode::get_Authorization()
+// 0x0000066D System.Boolean AirFramework.Internal.AsyncTreeTokenNode::get_Authorization()
 extern void AsyncTreeTokenNode_get_Authorization_mEAA648896EAB9EB42972756EC6786ED90A9FE2C1 (void);
-// 0x00000655 System.Void AirFramework.Internal.AsyncTreeTokenNode::set_Authorization(System.Boolean)
+// 0x0000066E System.Void AirFramework.Internal.AsyncTreeTokenNode::set_Authorization(System.Boolean)
 extern void AsyncTreeTokenNode_set_Authorization_m09A5939CF2A64DFF337A457F7DA267E9F198E47C (void);
-// 0x00000656 AirFramework.ITaskTokenHolder AirFramework.Internal.AsyncTreeTokenNode::get_TokenHolder()
+// 0x0000066F AirFramework.ITaskTokenHolder AirFramework.Internal.AsyncTreeTokenNode::get_TokenHolder()
 extern void AsyncTreeTokenNode_get_TokenHolder_m70BE6D272ADB2F65D3C5C9DDDF920FC2D130D718 (void);
-// 0x00000657 System.Void AirFramework.Internal.AsyncTreeTokenNode::set_TokenHolder(AirFramework.ITaskTokenHolder)
+// 0x00000670 System.Void AirFramework.Internal.AsyncTreeTokenNode::set_TokenHolder(AirFramework.ITaskTokenHolder)
 extern void AsyncTreeTokenNode_set_TokenHolder_m8F7D8D5282767083D75DE8802AB22733EB723867 (void);
-// 0x00000658 System.Void AirFramework.Internal.AsyncTreeTokenNode::.ctor(AirFramework.Internal.IAsyncTokenProperty,AirFramework.Internal.IAsyncTokenProperty)
+// 0x00000671 System.Void AirFramework.Internal.AsyncTreeTokenNode::.ctor(AirFramework.Internal.IAsyncTokenProperty,AirFramework.Internal.IAsyncTokenProperty)
 extern void AsyncTreeTokenNode__ctor_m9AB7717D8A12671BA54F0CD1639348399ECB5142 (void);
-// 0x00000659 System.Boolean AirFramework.Internal.AsyncTreeTokenNode::get_IsCanceld()
+// 0x00000672 System.Boolean AirFramework.Internal.AsyncTreeTokenNode::get_IsCanceld()
 extern void AsyncTreeTokenNode_get_IsCanceld_m986E5BC2656003BED5230C220293EBBD7D14EB35 (void);
-// 0x0000065A System.Void AirFramework.Internal.AsyncTreeTokenNode::set_IsCanceld(System.Boolean)
+// 0x00000673 System.Void AirFramework.Internal.AsyncTreeTokenNode::set_IsCanceld(System.Boolean)
 extern void AsyncTreeTokenNode_set_IsCanceld_mB3EB9A5BF36D046017E4C14EDFC2A45A1517CAEA (void);
-// 0x0000065B System.Void AirFramework.Internal.AsyncTreeTokenNode::Yield()
+// 0x00000674 System.Void AirFramework.Internal.AsyncTreeTokenNode::Yield()
 extern void AsyncTreeTokenNode_Yield_mD5B86F3FEF4D72886DE33DF24C617EFF5A577B4F (void);
-// 0x0000065C System.Void AirFramework.Internal.AsyncTreeTokenNode::Continue()
+// 0x00000675 System.Void AirFramework.Internal.AsyncTreeTokenNode::Continue()
 extern void AsyncTreeTokenNode_Continue_mD9ADB8D6C763E1DF445EB77A688AC92E73257E47 (void);
-// 0x0000065D System.Void AirFramework.Internal.AsyncTreeTokenNode::Cancel()
+// 0x00000676 System.Void AirFramework.Internal.AsyncTreeTokenNode::Cancel()
 extern void AsyncTreeTokenNode_Cancel_m6C60A6A3BE550C3E4A7DC6C20C55179BEB033096 (void);
-// 0x0000065E AirFramework.Internal.AsyncTreeTokenNode AirFramework.Internal.IAsyncTokenProperty::get_Token()
-// 0x0000065F System.Void AirFramework.Internal.IAsyncTokenProperty::set_Token(AirFramework.Internal.AsyncTreeTokenNode)
-// 0x00000660 System.Void AirFramework.Internal.IAsyncTokenProperty::Finish(ETaskStatus)
-// 0x00000661 AirFramework.ICurve AirFramework.Internal.EaseCurve.BuiltInCurve::GetCurve(AirFramework.Internal.EaseCurve.EaseCurve)
+// 0x00000677 AirFramework.Internal.AsyncTreeTokenNode AirFramework.Internal.IAsyncTokenProperty::get_Token()
+// 0x00000678 System.Void AirFramework.Internal.IAsyncTokenProperty::set_Token(AirFramework.Internal.AsyncTreeTokenNode)
+// 0x00000679 System.Void AirFramework.Internal.IAsyncTokenProperty::Finish(ETaskStatus)
+// 0x0000067A AirFramework.ICurve AirFramework.Internal.EaseCurve.BuiltInCurve::GetCurve(AirFramework.Internal.EaseCurve.EaseCurve)
 extern void BuiltInCurve_GetCurve_m81B6B268ADD94FE09F46E32E20AFE81336A0A3C8 (void);
-// 0x00000662 System.Void AirFramework.Internal.EaseCurve.BuiltInCurve::.ctor()
+// 0x0000067B System.Void AirFramework.Internal.EaseCurve.BuiltInCurve::.ctor()
 extern void BuiltInCurve__ctor_m717F65C5D315DF2BF8F0750A9DBA3AE1FC8E42D6 (void);
-// 0x00000663 System.Single AirFramework.Internal.EaseCurve.LinearCurve::Evaluate(System.Single)
+// 0x0000067C System.Single AirFramework.Internal.EaseCurve.LinearCurve::Evaluate(System.Single)
 extern void LinearCurve_Evaluate_m1934FFA7F4F00FB52C812054685CEBB312A692C3 (void);
-// 0x00000664 System.Void AirFramework.Internal.EaseCurve.LinearCurve::.ctor()
+// 0x0000067D System.Void AirFramework.Internal.EaseCurve.LinearCurve::.ctor()
 extern void LinearCurve__ctor_mFEC6F49A495831EB7EAF0E19A92001A156C8AA10 (void);
-// 0x00000665 System.Single AirFramework.Internal.EaseCurve.InSineCurve::Evaluate(System.Single)
+// 0x0000067E System.Single AirFramework.Internal.EaseCurve.InSineCurve::Evaluate(System.Single)
 extern void InSineCurve_Evaluate_mE5DF622AF0FE532351DFCBA53B2184AC931D3D01 (void);
-// 0x00000666 System.Void AirFramework.Internal.EaseCurve.InSineCurve::.ctor()
+// 0x0000067F System.Void AirFramework.Internal.EaseCurve.InSineCurve::.ctor()
 extern void InSineCurve__ctor_mFEC1FCB606F695944260FA02CEE98DD1996B9D02 (void);
-// 0x00000667 System.Single AirFramework.Internal.EaseCurve.OutSineCurve::Evaluate(System.Single)
+// 0x00000680 System.Single AirFramework.Internal.EaseCurve.OutSineCurve::Evaluate(System.Single)
 extern void OutSineCurve_Evaluate_m8BBF6429324F9DCE680BA47FD77C5E8ED41D14EE (void);
-// 0x00000668 System.Void AirFramework.Internal.EaseCurve.OutSineCurve::.ctor()
+// 0x00000681 System.Void AirFramework.Internal.EaseCurve.OutSineCurve::.ctor()
 extern void OutSineCurve__ctor_m47328E0BF286BFE1C2B42DD8AB641FBE45DE6F44 (void);
-// 0x00000669 System.Single AirFramework.Internal.EaseCurve.InOutSineCurve::Evaluate(System.Single)
+// 0x00000682 System.Single AirFramework.Internal.EaseCurve.InOutSineCurve::Evaluate(System.Single)
 extern void InOutSineCurve_Evaluate_m69F724205AE638C8C7D15877E4D99CC6D359057E (void);
-// 0x0000066A System.Void AirFramework.Internal.EaseCurve.InOutSineCurve::.ctor()
+// 0x00000683 System.Void AirFramework.Internal.EaseCurve.InOutSineCurve::.ctor()
 extern void InOutSineCurve__ctor_m3B2F4E9D2FB95BD07160CE1FA388E1DB28F9C320 (void);
-// 0x0000066B System.Single AirFramework.Internal.EaseCurve.InQuadCurve::Evaluate(System.Single)
+// 0x00000684 System.Single AirFramework.Internal.EaseCurve.InQuadCurve::Evaluate(System.Single)
 extern void InQuadCurve_Evaluate_m45D270EC0F4E1791A53AC88855528539E8C6BCE1 (void);
-// 0x0000066C System.Void AirFramework.Internal.EaseCurve.InQuadCurve::.ctor()
+// 0x00000685 System.Void AirFramework.Internal.EaseCurve.InQuadCurve::.ctor()
 extern void InQuadCurve__ctor_mAA44827E2192E95EDF43F73565D09CD31A63B9D5 (void);
-// 0x0000066D System.Single AirFramework.Internal.EaseCurve.OutQuadCurve::Evaluate(System.Single)
+// 0x00000686 System.Single AirFramework.Internal.EaseCurve.OutQuadCurve::Evaluate(System.Single)
 extern void OutQuadCurve_Evaluate_m1405CC79A12C9714D0627F8691357ABAD5613AC9 (void);
-// 0x0000066E System.Void AirFramework.Internal.EaseCurve.OutQuadCurve::.ctor()
+// 0x00000687 System.Void AirFramework.Internal.EaseCurve.OutQuadCurve::.ctor()
 extern void OutQuadCurve__ctor_m2581C8D87CD39D3C4076054BF796086ECA196976 (void);
-// 0x0000066F System.Single AirFramework.Internal.EaseCurve.InOutQuadCurve::Evaluate(System.Single)
+// 0x00000688 System.Single AirFramework.Internal.EaseCurve.InOutQuadCurve::Evaluate(System.Single)
 extern void InOutQuadCurve_Evaluate_m6D37B1158618AA977A4D2ED5E1E59EC8B108E346 (void);
-// 0x00000670 System.Void AirFramework.Internal.EaseCurve.InOutQuadCurve::.ctor()
+// 0x00000689 System.Void AirFramework.Internal.EaseCurve.InOutQuadCurve::.ctor()
 extern void InOutQuadCurve__ctor_m43099B4674BAE0FD0AC0FB619F9EDE1794D81BF1 (void);
-// 0x00000671 System.Single AirFramework.Internal.EaseCurve.InCubicCurve::Evaluate(System.Single)
+// 0x0000068A System.Single AirFramework.Internal.EaseCurve.InCubicCurve::Evaluate(System.Single)
 extern void InCubicCurve_Evaluate_m43DDD8E584A65DF9016BAC2AEAC0FB29470A4016 (void);
-// 0x00000672 System.Void AirFramework.Internal.EaseCurve.InCubicCurve::.ctor()
+// 0x0000068B System.Void AirFramework.Internal.EaseCurve.InCubicCurve::.ctor()
 extern void InCubicCurve__ctor_mAD01A221BBCED01F8742CFF782296B5A18F856AD (void);
-// 0x00000673 System.Single AirFramework.Internal.EaseCurve.OutCubicCurve::Evaluate(System.Single)
+// 0x0000068C System.Single AirFramework.Internal.EaseCurve.OutCubicCurve::Evaluate(System.Single)
 extern void OutCubicCurve_Evaluate_m807575231A687B0DF6A631C531CFD863B35E3712 (void);
-// 0x00000674 System.Void AirFramework.Internal.EaseCurve.OutCubicCurve::.ctor()
+// 0x0000068D System.Void AirFramework.Internal.EaseCurve.OutCubicCurve::.ctor()
 extern void OutCubicCurve__ctor_m82BC4E5C5ADA9A5DE877FDC5BC7A7D758DC7D248 (void);
-// 0x00000675 System.Single AirFramework.Internal.EaseCurve.InOutCubicCurve::Evaluate(System.Single)
+// 0x0000068E System.Single AirFramework.Internal.EaseCurve.InOutCubicCurve::Evaluate(System.Single)
 extern void InOutCubicCurve_Evaluate_m8627C0A13CD3CE484968913386AAFD5F8E91985E (void);
-// 0x00000676 System.Void AirFramework.Internal.EaseCurve.InOutCubicCurve::.ctor()
+// 0x0000068F System.Void AirFramework.Internal.EaseCurve.InOutCubicCurve::.ctor()
 extern void InOutCubicCurve__ctor_m45E7BFD3645B86AFD59B371FF5F77929CC65CD6D (void);
-// 0x00000677 System.Single AirFramework.Internal.EaseCurve.InQuartCurve::Evaluate(System.Single)
+// 0x00000690 System.Single AirFramework.Internal.EaseCurve.InQuartCurve::Evaluate(System.Single)
 extern void InQuartCurve_Evaluate_mB431F9B89D7AC8201AA3CB4243CA2C85CAE45389 (void);
-// 0x00000678 System.Void AirFramework.Internal.EaseCurve.InQuartCurve::.ctor()
+// 0x00000691 System.Void AirFramework.Internal.EaseCurve.InQuartCurve::.ctor()
 extern void InQuartCurve__ctor_m9FE6DBB4BD6E4D5B90D1DE4B8DADE45C01346457 (void);
-// 0x00000679 System.Single AirFramework.Internal.EaseCurve.OutQuartCurve::Evaluate(System.Single)
+// 0x00000692 System.Single AirFramework.Internal.EaseCurve.OutQuartCurve::Evaluate(System.Single)
 extern void OutQuartCurve_Evaluate_m12B72FBB3BFD13A2CE600D01E5F557B4A1852190 (void);
-// 0x0000067A System.Void AirFramework.Internal.EaseCurve.OutQuartCurve::.ctor()
+// 0x00000693 System.Void AirFramework.Internal.EaseCurve.OutQuartCurve::.ctor()
 extern void OutQuartCurve__ctor_m464A7EF646DBD9508D80CD3FC3D308B66F9EABF2 (void);
-// 0x0000067B System.Single AirFramework.Internal.EaseCurve.InOutQuartCurve::Evaluate(System.Single)
+// 0x00000694 System.Single AirFramework.Internal.EaseCurve.InOutQuartCurve::Evaluate(System.Single)
 extern void InOutQuartCurve_Evaluate_m2D948C06C5D6CA73C00F0C90FB9C42EC98E72ED9 (void);
-// 0x0000067C System.Void AirFramework.Internal.EaseCurve.InOutQuartCurve::.ctor()
+// 0x00000695 System.Void AirFramework.Internal.EaseCurve.InOutQuartCurve::.ctor()
 extern void InOutQuartCurve__ctor_m4E4FC428E5D48287989C1B7D741DA20A541EBC1B (void);
-// 0x0000067D System.Single AirFramework.Internal.EaseCurve.InQuintCurve::Evaluate(System.Single)
+// 0x00000696 System.Single AirFramework.Internal.EaseCurve.InQuintCurve::Evaluate(System.Single)
 extern void InQuintCurve_Evaluate_m17E1D5A4BDD1880B7AB4CFBE0E9777B69AFA30A5 (void);
-// 0x0000067E System.Void AirFramework.Internal.EaseCurve.InQuintCurve::.ctor()
+// 0x00000697 System.Void AirFramework.Internal.EaseCurve.InQuintCurve::.ctor()
 extern void InQuintCurve__ctor_mF6512762D4EF606FD77BF92FDD95A100F77CEBE6 (void);
-// 0x0000067F System.Single AirFramework.Internal.EaseCurve.OutQuintCurve::Evaluate(System.Single)
+// 0x00000698 System.Single AirFramework.Internal.EaseCurve.OutQuintCurve::Evaluate(System.Single)
 extern void OutQuintCurve_Evaluate_m250A10E320341D50EE0DF629200D43AE7B951890 (void);
-// 0x00000680 System.Void AirFramework.Internal.EaseCurve.OutQuintCurve::.ctor()
+// 0x00000699 System.Void AirFramework.Internal.EaseCurve.OutQuintCurve::.ctor()
 extern void OutQuintCurve__ctor_mDB27947D7EC1245518CF725E1511EC586D58A094 (void);
-// 0x00000681 System.Single AirFramework.Internal.EaseCurve.InOutQuintCurve::Evaluate(System.Single)
+// 0x0000069A System.Single AirFramework.Internal.EaseCurve.InOutQuintCurve::Evaluate(System.Single)
 extern void InOutQuintCurve_Evaluate_m547F349B3F1A8A7CBF4A29702EE146A0C6101696 (void);
-// 0x00000682 System.Void AirFramework.Internal.EaseCurve.InOutQuintCurve::.ctor()
+// 0x0000069B System.Void AirFramework.Internal.EaseCurve.InOutQuintCurve::.ctor()
 extern void InOutQuintCurve__ctor_mE6D35C0196988E659D7BB02218F8DA2BA1CF5473 (void);
-// 0x00000683 System.Single AirFramework.Internal.EaseCurve.InExpoCurve::Evaluate(System.Single)
+// 0x0000069C System.Single AirFramework.Internal.EaseCurve.InExpoCurve::Evaluate(System.Single)
 extern void InExpoCurve_Evaluate_mC13C7B0010C2849B28BD1808F52A2C5CFFB4B3FF (void);
-// 0x00000684 System.Void AirFramework.Internal.EaseCurve.InExpoCurve::.ctor()
+// 0x0000069D System.Void AirFramework.Internal.EaseCurve.InExpoCurve::.ctor()
 extern void InExpoCurve__ctor_m51A986687C7EE53E2BBB129301FE0901942182D7 (void);
-// 0x00000685 System.Single AirFramework.Internal.EaseCurve.OutExpoCurve::Evaluate(System.Single)
+// 0x0000069E System.Single AirFramework.Internal.EaseCurve.OutExpoCurve::Evaluate(System.Single)
 extern void OutExpoCurve_Evaluate_mB50E95E74A91EEEB0EBCA78AC1E5EEB701F48B23 (void);
-// 0x00000686 System.Void AirFramework.Internal.EaseCurve.OutExpoCurve::.ctor()
+// 0x0000069F System.Void AirFramework.Internal.EaseCurve.OutExpoCurve::.ctor()
 extern void OutExpoCurve__ctor_m726DEDC96F44D6112AACBBEE1770A088A711DB75 (void);
-// 0x00000687 System.Single AirFramework.Internal.EaseCurve.InOutExpoCurve::Evaluate(System.Single)
+// 0x000006A0 System.Single AirFramework.Internal.EaseCurve.InOutExpoCurve::Evaluate(System.Single)
 extern void InOutExpoCurve_Evaluate_m25FC95E2C5D5489A969417E6B42E422A5F6902CE (void);
-// 0x00000688 System.Void AirFramework.Internal.EaseCurve.InOutExpoCurve::.ctor()
+// 0x000006A1 System.Void AirFramework.Internal.EaseCurve.InOutExpoCurve::.ctor()
 extern void InOutExpoCurve__ctor_m1525066F656E41DF26F61EB1435464215BCD11A5 (void);
-// 0x00000689 System.Single AirFramework.Internal.EaseCurve.InCircCurve::Evaluate(System.Single)
+// 0x000006A2 System.Single AirFramework.Internal.EaseCurve.InCircCurve::Evaluate(System.Single)
 extern void InCircCurve_Evaluate_m7D6C554AA650A297F3C5D07F1BC59D63B39ECD42 (void);
-// 0x0000068A System.Void AirFramework.Internal.EaseCurve.InCircCurve::.ctor()
+// 0x000006A3 System.Void AirFramework.Internal.EaseCurve.InCircCurve::.ctor()
 extern void InCircCurve__ctor_m5DB765EAB958E8D647FCD5DB2CA0AC433D96B3E2 (void);
-// 0x0000068B System.Single AirFramework.Internal.EaseCurve.OutCircCurve::Evaluate(System.Single)
+// 0x000006A4 System.Single AirFramework.Internal.EaseCurve.OutCircCurve::Evaluate(System.Single)
 extern void OutCircCurve_Evaluate_m9C7F66CCDC5D60890ABB82748B4FF921D1AFBD24 (void);
-// 0x0000068C System.Void AirFramework.Internal.EaseCurve.OutCircCurve::.ctor()
+// 0x000006A5 System.Void AirFramework.Internal.EaseCurve.OutCircCurve::.ctor()
 extern void OutCircCurve__ctor_mF93E9402EF1F1C1E37AB8DEB9DB779536ABFE2D7 (void);
-// 0x0000068D System.Single AirFramework.Internal.EaseCurve.InOutCircCurve::Evaluate(System.Single)
+// 0x000006A6 System.Single AirFramework.Internal.EaseCurve.InOutCircCurve::Evaluate(System.Single)
 extern void InOutCircCurve_Evaluate_m0E8540279E012BC019A19B11766D251E009AA06D (void);
-// 0x0000068E System.Void AirFramework.Internal.EaseCurve.InOutCircCurve::.ctor()
+// 0x000006A7 System.Void AirFramework.Internal.EaseCurve.InOutCircCurve::.ctor()
 extern void InOutCircCurve__ctor_m176B0206C80A54EC66A2359762C248DCB5609FCD (void);
-// 0x0000068F System.Single AirFramework.Internal.EaseCurve.InBackCurve::Evaluate(System.Single)
+// 0x000006A8 System.Single AirFramework.Internal.EaseCurve.InBackCurve::Evaluate(System.Single)
 extern void InBackCurve_Evaluate_m2AE8D13F9A8E009D9B59D810C85D51D8418F9DCF (void);
-// 0x00000690 System.Void AirFramework.Internal.EaseCurve.InBackCurve::.ctor()
+// 0x000006A9 System.Void AirFramework.Internal.EaseCurve.InBackCurve::.ctor()
 extern void InBackCurve__ctor_m77618DE3C887164E0C8BFD644B9057B161897C49 (void);
-// 0x00000691 System.Single AirFramework.Internal.EaseCurve.OutBackCurve::Evaluate(System.Single)
+// 0x000006AA System.Single AirFramework.Internal.EaseCurve.OutBackCurve::Evaluate(System.Single)
 extern void OutBackCurve_Evaluate_m3B71E559DB5D75D62C5FE3D8A676DF702DAF7406 (void);
-// 0x00000692 System.Void AirFramework.Internal.EaseCurve.OutBackCurve::.ctor()
+// 0x000006AB System.Void AirFramework.Internal.EaseCurve.OutBackCurve::.ctor()
 extern void OutBackCurve__ctor_mDABF95E29FEDDD63FEBF2D3F6DA463F58D71D149 (void);
-// 0x00000693 System.Single AirFramework.Internal.EaseCurve.InOutBackCurve::Evaluate(System.Single)
+// 0x000006AC System.Single AirFramework.Internal.EaseCurve.InOutBackCurve::Evaluate(System.Single)
 extern void InOutBackCurve_Evaluate_mD7DD61EA82F0F4CCF219DBAF1553AA152272E30D (void);
-// 0x00000694 System.Void AirFramework.Internal.EaseCurve.InOutBackCurve::.ctor()
+// 0x000006AD System.Void AirFramework.Internal.EaseCurve.InOutBackCurve::.ctor()
 extern void InOutBackCurve__ctor_m4B6A42B076079843CAEFAC13EB604C01556C497C (void);
-// 0x00000695 System.Single AirFramework.Internal.EaseCurve.InElasticCurve::Evaluate(System.Single)
+// 0x000006AE System.Single AirFramework.Internal.EaseCurve.InElasticCurve::Evaluate(System.Single)
 extern void InElasticCurve_Evaluate_mC9F38E4286B6A9BC1A7A78F8DEF007E3AEA64AB2 (void);
-// 0x00000696 System.Void AirFramework.Internal.EaseCurve.InElasticCurve::.ctor()
+// 0x000006AF System.Void AirFramework.Internal.EaseCurve.InElasticCurve::.ctor()
 extern void InElasticCurve__ctor_m94F642E8C8D392B89B712775A22FD52ACE243866 (void);
-// 0x00000697 System.Single AirFramework.Internal.EaseCurve.OutElasticCurve::Evaluate(System.Single)
+// 0x000006B0 System.Single AirFramework.Internal.EaseCurve.OutElasticCurve::Evaluate(System.Single)
 extern void OutElasticCurve_Evaluate_m405FD0756D071F54C1407C1777D7302C6A521ACD (void);
-// 0x00000698 System.Void AirFramework.Internal.EaseCurve.OutElasticCurve::.ctor()
+// 0x000006B1 System.Void AirFramework.Internal.EaseCurve.OutElasticCurve::.ctor()
 extern void OutElasticCurve__ctor_m96B019F98588B6CCCA696C01E580E95EA9B8D189 (void);
-// 0x00000699 System.Single AirFramework.Internal.EaseCurve.InOutElasticCurve::Evaluate(System.Single)
+// 0x000006B2 System.Single AirFramework.Internal.EaseCurve.InOutElasticCurve::Evaluate(System.Single)
 extern void InOutElasticCurve_Evaluate_mE92E422BD3D731A904DEA11DBC0F64C65E835996 (void);
-// 0x0000069A System.Void AirFramework.Internal.EaseCurve.InOutElasticCurve::.ctor()
+// 0x000006B3 System.Void AirFramework.Internal.EaseCurve.InOutElasticCurve::.ctor()
 extern void InOutElasticCurve__ctor_m28515428A23D88194CE9D922604F8AA59A1569A7 (void);
-// 0x0000069B System.Single AirFramework.Internal.EaseCurve.InBounceCurve::Evaluate(System.Single)
+// 0x000006B4 System.Single AirFramework.Internal.EaseCurve.InBounceCurve::Evaluate(System.Single)
 extern void InBounceCurve_Evaluate_mB4BEEF570AB317B7224BD933F8E8ED37CAC8C77A (void);
-// 0x0000069C System.Void AirFramework.Internal.EaseCurve.InBounceCurve::.ctor()
+// 0x000006B5 System.Void AirFramework.Internal.EaseCurve.InBounceCurve::.ctor()
 extern void InBounceCurve__ctor_mD9BB4DF522E84281DCE663E3FEA1718D389C0250 (void);
-// 0x0000069D System.Single AirFramework.Internal.EaseCurve.OutBounceCurve::Evaluate(System.Single)
+// 0x000006B6 System.Single AirFramework.Internal.EaseCurve.OutBounceCurve::Evaluate(System.Single)
 extern void OutBounceCurve_Evaluate_mC89383690AE2567B6CF03E8876755DAF143F32D7 (void);
-// 0x0000069E System.Void AirFramework.Internal.EaseCurve.OutBounceCurve::.ctor()
+// 0x000006B7 System.Void AirFramework.Internal.EaseCurve.OutBounceCurve::.ctor()
 extern void OutBounceCurve__ctor_mF7736A4FA4DBCA71E3519850FCE88063A70A0D2C (void);
-// 0x0000069F System.Single AirFramework.Internal.EaseCurve.InOutBounceCurve::Evaluate(System.Single)
+// 0x000006B8 System.Single AirFramework.Internal.EaseCurve.InOutBounceCurve::Evaluate(System.Single)
 extern void InOutBounceCurve_Evaluate_mFC53515D7EEEFD2F379852C29C143AACD3D6BCEE (void);
-// 0x000006A0 System.Void AirFramework.Internal.EaseCurve.InOutBounceCurve::.ctor()
+// 0x000006B9 System.Void AirFramework.Internal.EaseCurve.InOutBounceCurve::.ctor()
 extern void InOutBounceCurve__ctor_m3553C1D7A5B12C9D74A394FE5FBF7C4D96E6C2F2 (void);
-// 0x000006A1 T AirFramework.MV.RefBuild.BindableProperty`1::get_Value()
-// 0x000006A2 System.Void AirFramework.MV.RefBuild.BindableProperty`1::set_Value(T)
-// 0x000006A3 System.Void AirFramework.MV.RefBuild.BindableProperty`1::add_OnPropertyChanged(System.Action`2<T,T>)
-// 0x000006A4 System.Void AirFramework.MV.RefBuild.BindableProperty`1::remove_OnPropertyChanged(System.Action`2<T,T>)
-// 0x000006A5 System.Void AirFramework.MV.RefBuild.BindableProperty`1::.ctor(System.Func`1<T>,System.Action`1<T>,System.Boolean)
-// 0x000006A6 System.Void AirFramework.MV.RefBuild.BindableProperty`1::.ctor(T)
-// 0x000006A7 System.Void AirFramework.MV.RefBuild.BindableProperty`1::Finalize()
-// 0x000006A8 System.Void AirFramework.MV.RefBuild.BindableProperty`1::ListenChanged(System.Single)
-// 0x000006A9 System.Void AirFramework.MV.RefBuild.ScriptMark::.ctor()
+// 0x000006BA T AirFramework.MV.RefBuild.BindableProperty`1::get_Value()
+// 0x000006BB System.Void AirFramework.MV.RefBuild.BindableProperty`1::set_Value(T)
+// 0x000006BC System.Void AirFramework.MV.RefBuild.BindableProperty`1::add_OnPropertyChanged(System.Action`2<T,T>)
+// 0x000006BD System.Void AirFramework.MV.RefBuild.BindableProperty`1::remove_OnPropertyChanged(System.Action`2<T,T>)
+// 0x000006BE System.Void AirFramework.MV.RefBuild.BindableProperty`1::.ctor(System.Func`1<T>,System.Action`1<T>,System.Boolean)
+// 0x000006BF System.Void AirFramework.MV.RefBuild.BindableProperty`1::.ctor(T)
+// 0x000006C0 System.Void AirFramework.MV.RefBuild.BindableProperty`1::Finalize()
+// 0x000006C1 System.Void AirFramework.MV.RefBuild.BindableProperty`1::ListenChanged(System.Single)
+// 0x000006C2 System.Void AirFramework.MV.RefBuild.ScriptMark::.ctor()
 extern void ScriptMark__ctor_m73C0D41A279AC3CF608E3AD69071CC0E1D1FAA8E (void);
-// 0x000006AA System.Single AirFramework.Utility.LerpHelper::Lerp(System.Single,System.Single,System.Single)
+// 0x000006C3 System.Single AirFramework.Utility.LerpHelper::Lerp(System.Single,System.Single,System.Single)
 extern void LerpHelper_Lerp_m374CDE3033D505CD609EB1EF5F145BF697D47157 (void);
-// 0x000006AB System.Double AirFramework.Utility.LerpHelper::Lerp(System.Double,System.Double,System.Single)
+// 0x000006C4 System.Double AirFramework.Utility.LerpHelper::Lerp(System.Double,System.Double,System.Single)
 extern void LerpHelper_Lerp_m90E938626168EF7D90690DB5C81CB901873F6255 (void);
-// 0x000006AC System.Int32 AirFramework.Utility.LerpHelper::Lerp(System.Int32,System.Int32,System.Single)
+// 0x000006C5 System.Int32 AirFramework.Utility.LerpHelper::Lerp(System.Int32,System.Int32,System.Single)
 extern void LerpHelper_Lerp_m1F43B79AC74206601C6504856738CE09A60BE380 (void);
-// 0x000006AD System.Collections.Generic.List`1<System.Int32> AirFramework.Utility.MaskHelper::GetIndexFromMask(System.Int32,System.Int32)
+// 0x000006C6 System.Collections.Generic.List`1<System.Int32> AirFramework.Utility.MaskHelper::GetIndexFromMask(System.Int32,System.Int32)
 extern void MaskHelper_GetIndexFromMask_mCFD122F81812D78B6555D551F896677B942D4749 (void);
-// 0x000006AE System.Int32 AirFramework.Utility.MaskHelper::GetMaskFromIndex(System.Collections.Generic.List`1<System.Int32>)
+// 0x000006C7 System.Int32 AirFramework.Utility.MaskHelper::GetMaskFromIndex(System.Collections.Generic.List`1<System.Int32>)
 extern void MaskHelper_GetMaskFromIndex_mCC2348C03F0C844A18A741316AC97BEC85FE587C (void);
-// 0x000006AF System.Collections.Generic.List`1<T> AirFramework.Utility.MaskHelper::GetStringFromIndex(System.Collections.Generic.List`1<T>,System.Collections.Generic.List`1<System.Int32>)
-// 0x000006B0 System.Collections.Generic.List`1<System.Int32> AirFramework.Utility.MaskHelper::GetIndexFromString(System.Collections.Generic.List`1<System.String>,System.Collections.Generic.List`1<System.String>)
+// 0x000006C8 System.Collections.Generic.List`1<T> AirFramework.Utility.MaskHelper::GetStringFromIndex(System.Collections.Generic.List`1<T>,System.Collections.Generic.List`1<System.Int32>)
+// 0x000006C9 System.Collections.Generic.List`1<System.Int32> AirFramework.Utility.MaskHelper::GetIndexFromString(System.Collections.Generic.List`1<System.String>,System.Collections.Generic.List`1<System.String>)
 extern void MaskHelper_GetIndexFromString_m8B2468E38D8F90329DC5DA7B6ABC844CE9E93159 (void);
-// 0x000006B1 System.String AirFramework.Utility.MaskHelper::MergeToMaskString(System.Collections.Generic.List`1<System.String>)
+// 0x000006CA System.String AirFramework.Utility.MaskHelper::MergeToMaskString(System.Collections.Generic.List`1<System.String>)
 extern void MaskHelper_MergeToMaskString_m52452C603722A5B6E0A591A7029FB03E736E6211 (void);
-// 0x000006B2 System.Collections.Generic.List`1<System.String> AirFramework.Utility.MaskHelper::SplitToMaskOptions(System.String)
+// 0x000006CB System.Collections.Generic.List`1<System.String> AirFramework.Utility.MaskHelper::SplitToMaskOptions(System.String)
 extern void MaskHelper_SplitToMaskOptions_m8D3880BD7787895178B8662F1302161C291F0468 (void);
-// 0x000006B3 System.Boolean AirFramework.Utility.MaskHelper::IsNothing(System.String)
+// 0x000006CC System.Boolean AirFramework.Utility.MaskHelper::IsNothing(System.String)
 extern void MaskHelper_IsNothing_m3CB6CCD7A25EAD40CFA0DAF44ADCE61C6AE60788 (void);
-// 0x000006B4 System.Boolean AirFramework.Utility.ReflectionHelper::HasInterface(System.Type,System.Type)
+// 0x000006CD System.Boolean AirFramework.Utility.ReflectionHelper::HasInterface(System.Type,System.Type)
 extern void ReflectionHelper_HasInterface_mBD939ED19BFADACDB6A3BA7A78EFB7AB85CB785F (void);
-// 0x000006B5 System.Boolean AirFramework.Utility.ReflectionHelper::IsSubclassOfRawGeneric(System.Type,System.Type)
+// 0x000006CE System.Boolean AirFramework.Utility.ReflectionHelper::IsSubclassOfRawGeneric(System.Type,System.Type)
 extern void ReflectionHelper_IsSubclassOfRawGeneric_mAE1BF2ED0324970C055535520BC8A544B48AF1BF (void);
-// 0x000006B6 System.Type AirFramework.Utility.ReflectionHelper::GetRawGeneric(System.Type,System.Type)
+// 0x000006CF System.Type AirFramework.Utility.ReflectionHelper::GetRawGeneric(System.Type,System.Type)
 extern void ReflectionHelper_GetRawGeneric_mC5AF4D7973D3D8CF83F321E24EF1E33FA4345F4B (void);
-// 0x000006B7 System.Collections.Generic.List`1<System.String> AirFramework.Utility.ReflectionHelper::GetMemberStringsByReflection(System.Object)
+// 0x000006D0 System.Collections.Generic.List`1<System.String> AirFramework.Utility.ReflectionHelper::GetMemberStringsByReflection(System.Object)
 extern void ReflectionHelper_GetMemberStringsByReflection_m3D1500CD8DB337149B416AB4CDA172112A9F26A3 (void);
-// 0x000006B8 System.Collections.Generic.List`1<System.String> AirFramework.Utility.ReflectionHelper::GetMemberString(System.Collections.Generic.List`1<System.Reflection.MemberInfo>)
+// 0x000006D1 System.Collections.Generic.List`1<System.String> AirFramework.Utility.ReflectionHelper::GetMemberString(System.Collections.Generic.List`1<System.Reflection.MemberInfo>)
 extern void ReflectionHelper_GetMemberString_m7BB623E372117CBAE7CACD65191A436F8F407C35 (void);
-// 0x000006B9 System.Collections.Generic.List`1<System.Reflection.MemberInfo> AirFramework.Utility.ReflectionHelper::MergeInfos(System.Collections.Generic.List`1<System.Reflection.FieldInfo>,System.Collections.Generic.List`1<System.Reflection.PropertyInfo>)
+// 0x000006D2 System.Collections.Generic.List`1<System.Reflection.MemberInfo> AirFramework.Utility.ReflectionHelper::MergeInfos(System.Collections.Generic.List`1<System.Reflection.FieldInfo>,System.Collections.Generic.List`1<System.Reflection.PropertyInfo>)
 extern void ReflectionHelper_MergeInfos_mD68BB364FFA8C35B0B49C02F786E4D689FE99B9F (void);
-// 0x000006BA System.Collections.Generic.List`1<System.Reflection.FieldInfo> AirFramework.Utility.ReflectionHelper::FindFields(System.Object)
+// 0x000006D3 System.Collections.Generic.List`1<System.Reflection.FieldInfo> AirFramework.Utility.ReflectionHelper::FindFields(System.Object)
 extern void ReflectionHelper_FindFields_mC19BBE544892283372993C0C9C815CDA76AEF2BD (void);
-// 0x000006BB System.Collections.Generic.List`1<System.Reflection.FieldInfo> AirFramework.Utility.ReflectionHelper::FindFields(System.Type)
+// 0x000006D4 System.Collections.Generic.List`1<System.Reflection.FieldInfo> AirFramework.Utility.ReflectionHelper::FindFields(System.Type)
 extern void ReflectionHelper_FindFields_mF0AC9DBFF159CBFACF1D1BBB6BEAD880AAA790F9 (void);
-// 0x000006BC System.Collections.Generic.List`1<System.Reflection.PropertyInfo> AirFramework.Utility.ReflectionHelper::FindProperty(System.Object)
+// 0x000006D5 System.Collections.Generic.List`1<System.Reflection.PropertyInfo> AirFramework.Utility.ReflectionHelper::FindProperty(System.Object)
 extern void ReflectionHelper_FindProperty_mE5D6FF0261E3F30662AB061CE79FC2E48F80081F (void);
-// 0x000006BD System.Collections.Generic.List`1<System.Reflection.PropertyInfo> AirFramework.Utility.ReflectionHelper::FindProperty(System.Type)
+// 0x000006D6 System.Collections.Generic.List`1<System.Reflection.PropertyInfo> AirFramework.Utility.ReflectionHelper::FindProperty(System.Type)
 extern void ReflectionHelper_FindProperty_m0E42F36470A57234B37634162986CC6FDC2DB8F3 (void);
-// 0x000006BE System.Type AirFramework.Utility.ReflectionHelper::GetFieldOrPropertyTypeByName(System.String,System.Object)
+// 0x000006D7 System.Type AirFramework.Utility.ReflectionHelper::GetFieldOrPropertyTypeByName(System.String,System.Object)
 extern void ReflectionHelper_GetFieldOrPropertyTypeByName_mF692EE975ED7DFFDAA7A9B81552ECA3948CB5017 (void);
-// 0x000006BF System.Type AirFramework.Utility.ReflectionHelper::GetFieldOrPropertyTypeByName(System.String,System.Type)
+// 0x000006D8 System.Type AirFramework.Utility.ReflectionHelper::GetFieldOrPropertyTypeByName(System.String,System.Type)
 extern void ReflectionHelper_GetFieldOrPropertyTypeByName_mE28AD71B91E7AE68F6C97B92744638EF3E3F1E27 (void);
-// 0x000006C0 System.Collections.Generic.List`1<UnityEngine.Component> AirFramework.Utility.ReflectionHelper::FindAllComponents(UnityEngine.GameObject)
+// 0x000006D9 System.Collections.Generic.List`1<UnityEngine.Component> AirFramework.Utility.ReflectionHelper::FindAllComponents(UnityEngine.GameObject)
 extern void ReflectionHelper_FindAllComponents_m5BAFBFA07C1D07D5E2463C281A823AD531DD5177 (void);
-// 0x000006C1 System.Collections.Generic.List`1<System.String> AirFramework.Utility.ReflectionHelper::ComponentsToString(System.Collections.Generic.List`1<T>)
-// 0x000006C2 System.Collections.Generic.List`1<System.Type> AirFramework.Utility.ReflectionHelper::GetTypesFromAllAssemblies(System.Func`2<System.Type,System.Boolean>)
-extern void ReflectionHelper_GetTypesFromAllAssemblies_m90DE76BB880423CCA8B19E7CA92DC2CB158863AD (void);
-static Il2CppMethodPointer s_methodPointers[1730] = 
+// 0x000006DA System.Collections.Generic.List`1<System.String> AirFramework.Utility.ReflectionHelper::ComponentsToString(System.Collections.Generic.List`1<T>)
+// 0x000006DB System.Collections.Generic.List`1<System.Type> AirFramework.Utility.ReflectionHelper::GetTypesFromAllAssemblies(System.Func`3<System.Reflection.Assembly,System.Type,System.Boolean>)
+extern void ReflectionHelper_GetTypesFromAllAssemblies_m6AFCA0C9F317B113947B9FCE58F2B9C442B37E6D (void);
+// 0x000006DC System.Collections.Generic.List`1<System.Type> AirFramework.Utility.ReflectionHelper::GetTypesFromAssembliies(System.Collections.Generic.List`1<System.Reflection.Assembly>,System.Func`3<System.Reflection.Assembly,System.Type,System.Boolean>)
+extern void ReflectionHelper_GetTypesFromAssembliies_m824BE89261BFBAC997B4E68C7B65E2FDC0B2F15F (void);
+static Il2CppMethodPointer s_methodPointers[1756] = 
 {
 	EmbeddedAttribute__ctor_mD61869EF0C632CB0E66C9040EFF486AEED10B055,
 	NullableAttribute__ctor_mE6FC5661DA8F31C2C5B756311168B5F47201C31C,
@@ -2950,8 +2998,6 @@ static Il2CppMethodPointer s_methodPointers[1730] =
 	Framework_set_TimeScale_m77668B19FAB78D059984DF4D9DC8127E2B6211CD,
 	Framework_add_Update_mA2B3C89BE7C6277AFE061EFBEE2A910738DCBB49,
 	Framework_remove_Update_m15AB0AF2F0C703228CFCA8A8197769A82CC705E3,
-	Framework_add_InitialReflection_mC772094C9C76D9A90B1E50513FC77DCD5FB3A2B4,
-	Framework_remove_InitialReflection_m01B654A6FDA5C0FB71686D68786B7875CFBE2706,
 	Framework_CreateModule_m818A35D5E3BB87AADD5743B5413D8C7DF45E2AD8,
 	Framework_GetModule_mCA5E7DF84B8B49E70C968419E0E7D12F8A287E42,
 	Framework_DestroyModule_m1D072DAC146CC249AF4DE898BF421A43E42E0A58,
@@ -2961,6 +3007,7 @@ static Il2CppMethodPointer s_methodPointers[1730] =
 	Framework_HasModule_m6BCCD49A8B4A339EB6F3E37571EB3BC369FF656E,
 	NULL,
 	NULL,
+	Framework_get_Log_m05A504EE8C13B423C7FEB2657376C0DF7E20B836,
 	Framework_get_Message_m1327508183A5D73D1DD9378DA446FF41768C0AAE,
 	Framework_get_Pool_m51764312966AB27B1B4B7728BB1D7E5D7A61B8AC,
 	NULL,
@@ -2999,6 +3046,10 @@ static Il2CppMethodPointer s_methodPointers[1730] =
 	NULL,
 	PoolRepeater__ctor_m6AE347181D0ABEF690D65CC443A358D11772F6EE,
 	ReflectionProcess_RegisterProcess_m6D60904B1A25F99E15861A20040BC84DE28A4AEE,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
 	NULL,
 	NULL,
 	Extensions_EnableAll_SetActive_mADE9D33FFEC40C8CB96930815E4BA51B2494EE5E,
@@ -3879,7 +3930,7 @@ static Il2CppMethodPointer s_methodPointers[1730] =
 	HotUpdateModule_OnCreate_m6F3AE8E2503717591D19CBDB2D101AF85ACE84AD,
 	HotUpdateModule_Update_mFEFD9F7A0C520054CC1CD36053FD00F2A8F190AC,
 	HotUpdateModule_OnDispose_m1F9650EA53284CD8F6E734FE2FA6A87D247187F9,
-	HotUpdateModule_Initialize_mEF50138B681140EBDA00D0C247CBB1BEAE5FD23B,
+	HotUpdateModule_Initialize_m17560F7BA3E99FCB61372A80F1218D995CE7140E,
 	HotUpdateModule_LoadAndSupplementaryMetaData_m8E0B2037902758344C66CF68F6A50C09BE055348,
 	HotUpdateModule_LoadHotUpdateAssembly_mD02FC5AC66F393895C83518B4219996BE09ACBCA,
 	HotUpdateModule__ctor_m376C3E53EA36D9467649E9F25FA6CD6A024A2F95,
@@ -3889,6 +3940,11 @@ static Il2CppMethodPointer s_methodPointers[1730] =
 	U3CLoadAndSupplementaryMetaDataU3Ed__4_SetStateMachine_mD5C4765B66DDB15AD06FEC35AA6591D770241077,
 	U3CLoadHotUpdateAssemblyU3Ed__5_MoveNext_mCAC087E480AF095E87FD98FB026F6096D0CCFBC0,
 	U3CLoadHotUpdateAssemblyU3Ed__5_SetStateMachine_m717E2DCAE18B09FB22261060CA98322FA635C907,
+	UnitySupportLogger_AirFramework_ILogger_Error_m9E8766D82CE65F1C779906CB50B8FB978DF85D43,
+	UnitySupportLogger_AirFramework_ILogger_Exception_m1DC5849D05F29428702B3FAAC30EB8BBEA78E6DD,
+	UnitySupportLogger_AirFramework_ILogger_Log_mE48E6230ED118ADBBBBD045F5E5A2ADAC9146E8A,
+	UnitySupportLogger_AirFramework_ILogger_Warn_m55C3B9C76111C3732058A6DCB5D7821C16952E8A,
+	UnitySupportLogger__ctor_m4C0A60A1D0A29A5AFABD535EC4236C6AE1968DA0,
 	NULL,
 	NULL,
 	NULL,
@@ -4294,6 +4350,10 @@ static Il2CppMethodPointer s_methodPointers[1730] =
 	U3CDownloadU3Ed__21_SetStateMachine_m1F814E5FB43CA104730AED333033D98E612FFEAB,
 	U3CDownloadU3Ed__22_MoveNext_m35BB7C4E642FA75EBC8927751B03CB6C44864575,
 	U3CDownloadU3Ed__22_SetStateMachine_m40ABD563E08A5935B5E1AD2F9E0005505846B59F,
+	RuntimeConfigData_Read_m695B1D94D56524AB1419D36B55C69D2C8D752A70,
+	RuntimeConfigData_Write_m10761511FA5FA8522D8A7E600A3C3CDACF9B2BEA,
+	RuntimeConfigData_Write_m6D6137A028810711331779069D66089F0ED65B2A,
+	RuntimeConfigData__ctor_m016D4E0E803A1BC68B00FF634B6143E353F92EB2,
 	NULL,
 	NULL,
 	NULL,
@@ -4303,6 +4363,12 @@ static Il2CppMethodPointer s_methodPointers[1730] =
 	NULL,
 	NULL,
 	NULL,
+	AssetEx_GetAwaiter_m475916C8A73141D34C6C3745227F188FD0BB1C6D,
+	AssetEx_GetAwaiter_mD4E6D092C7BB46B3B716ECBE19330B20E9B105C6,
+	U3CU3Ec__DisplayClass0_0__ctor_m1994F74516A4154F665F77EE144BCF6C84C1100E,
+	U3CU3Ec__DisplayClass0_0_U3CGetAwaiterU3Eb__0_mFD5B78E1B42B08097DF19F7A31AF441D71B0F54A,
+	U3CU3Ec__DisplayClass1_0__ctor_mB74EB7B4D6E564C1D239EC74DF8F41CF662807E4,
+	U3CU3Ec__DisplayClass1_0_U3CGetAwaiterU3Eb__0_m5447230965DB028508F4C1E8BDF682C4C34C0AE1,
 	NULL,
 	NULL,
 	Curve__ctor_m7B5EC2CE0A19755DD305F58EC09A1763C98CC8D1,
@@ -4418,18 +4484,25 @@ static Il2CppMethodPointer s_methodPointers[1730] =
 	UnityAirStarter_OnDestroy_m5605DE81E48D06D0250C559CB860A52AF8C70FD1,
 	UnityAirStarter__ctor_mDC6C8EDDF134E446BE33FF610C71848CE1F43492,
 	UnityAirStarter_U3CAwakeU3Eb__1_0_mAEC5B6581DB20F6DFEAA9EC0B36D011C2A6ED4E6,
+	UnityAirStarter_U3CAwakeU3Eg__ToYooAssetPlayModeU7C1_1_mD2A70710FC0DD00B2381CCEFD61E9A22967FC5A1,
 	U3CAwakeU3Ed__1_MoveNext_mA183FFF52D0765911D127C68C7AEAC09F1065D97,
 	U3CAwakeU3Ed__1_SetStateMachine_m8B7B0C513AACBE7D4C114BE4CCBB1B99D709B025,
-	AirEngine_Initialize_m2D247F6DCAF8F7E3B2EDFAFCA3C9C838DD3C9153,
+	AirEngine_get_Logger_m1497922130A57987E2745B1E7052942CE36E3B83,
+	AirEngine_set_Logger_m92A056A73F9B80BFE64FD5839381E4747BB49E3C,
+	AirEngine_Initialize_m4C8BB0C80B3FFBA25D36D9E6E9FC498CEEDACEF1,
 	AirEngine_get_DeltaTime_mD541779D447B1FE0BCDB4742B9E72E316F68EB3C,
 	AirEngine_set_DeltaTime_m17CFC0DA151C5E39F1E92740BAE7919CA8C43FBB,
 	AirEngine_add_Update_m8B54013B0ADF49164E0091B4EDBF4DCB17E3A33F,
 	AirEngine_remove_Update_m48EEBE33C03358195C307D8435AA9A82C637BF53,
 	AirEngine_DriveUpdate_mB187845E1F7B1D3443446FB7566AE6F50260C88D,
 	AirEngine_StartCoroutine_m316FBB11DF34AF4D179AA6525FAFE53CC451A07E,
-	AirEngine_add_InitialReflection_m636C80FB0C6CEF7DD656E21FB32F04020391E30C,
-	AirEngine_remove_InitialReflection_m22066E677943422DC3720BD4512E91BD0285CB83,
-	AirEngine_ReflectInitialize_m7AE1802E8B23AA22646E38D34098AA4089F78395,
+	AirEngine_add_InitialReflectionHotUpdate_mDAF2BED7D40B31D74D472B2B0B7BA3EE18A101A7,
+	AirEngine_remove_InitialReflectionHotUpdate_m54BEEF8D6174498F646FC58FD9A011B59CDA135B,
+	AirEngine_add_InitialReflectionAOT_m64F29B5CE7949F2A15019F560410F9F3D66AEFFA,
+	AirEngine_remove_InitialReflectionAOT_m29E675FD0B41031B5615DCB0372E78CADC432C67,
+	AirEngine_AOTReflectionInitialize_m5640BF3C63B00113C911A64A1A2A669162C7C442,
+	AirEngine_HotUpdateReflectInitliaze_m43B12DFE0BC707495ED81ACF86A1F03753EF4AD4,
+	AirEngine_InitializeReflection_mE5145FDE0E1639A87C498A21992529F342FBACD3,
 	AirEngine_CreateModule_mCD538AAEDD6FE71FF03402FE6701E79E14077AC8,
 	AirEngine_GetModule_m9B639B6CEB79C6184310CA828CDACFEF34DD9EDB,
 	AirEngine_DestroyModule_m5A003A767DA400979E0F2978729C84DF7C7FA073,
@@ -4550,7 +4623,8 @@ static Il2CppMethodPointer s_methodPointers[1730] =
 	ReflectionHelper_GetFieldOrPropertyTypeByName_mE28AD71B91E7AE68F6C97B92744638EF3E3F1E27,
 	ReflectionHelper_FindAllComponents_m5BAFBFA07C1D07D5E2463C281A823AD531DD5177,
 	NULL,
-	ReflectionHelper_GetTypesFromAllAssemblies_m90DE76BB880423CCA8B19E7CA92DC2CB158863AD,
+	ReflectionHelper_GetTypesFromAllAssemblies_m6AFCA0C9F317B113947B9FCE58F2B9C442B37E6D,
+	ReflectionHelper_GetTypesFromAssembliies_m824BE89261BFBAC997B4E68C7B65E2FDC0B2F15F,
 };
 extern void U3CSendAsyncU3Ed__36_MoveNext_m7203B52B19BB1538C68217027DA388A40B196D03_AdjustorThunk (void);
 extern void U3CSendAsyncU3Ed__36_SetStateMachine_m062922F44434877E1662FCE0C2D34FBC439BF329_AdjustorThunk (void);
@@ -4610,69 +4684,69 @@ extern void U3CAwakeU3Ed__1_MoveNext_mA183FFF52D0765911D127C68C7AEAC09F1065D97_A
 extern void U3CAwakeU3Ed__1_SetStateMachine_m8B7B0C513AACBE7D4C114BE4CCBB1B99D709B025_AdjustorThunk (void);
 static Il2CppTokenAdjustorThunkPair s_adjustorThunks[56] = 
 {
-	{ 0x06000148, U3CSendAsyncU3Ed__36_MoveNext_m7203B52B19BB1538C68217027DA388A40B196D03_AdjustorThunk },
-	{ 0x06000149, U3CSendAsyncU3Ed__36_SetStateMachine_m062922F44434877E1662FCE0C2D34FBC439BF329_AdjustorThunk },
-	{ 0x0600016C, U3CTrySendAsyncU3Ed__78_MoveNext_m8290F558F85B33B18C488E36FBE42013E579D57F_AdjustorThunk },
-	{ 0x0600016D, U3CTrySendAsyncU3Ed__78_SetStateMachine_m48835206BFE2029A732E6052582BDBCD5B008FDE_AdjustorThunk },
-	{ 0x060002BE, U3CLockU3Ed__1_MoveNext_m4802835567C0146311CB0AE677ED7CB71C151F46_AdjustorThunk },
-	{ 0x060002BF, U3CLockU3Ed__1_SetStateMachine_mA056FB57EED92D00C3FEC8750B558161258DB8AD_AdjustorThunk },
-	{ 0x060002C2, U3CLockU3Ed__8_MoveNext_m13856FCF702B11E60CC596D2DED133F4AE70B319_AdjustorThunk },
-	{ 0x060002C3, U3CLockU3Ed__8_SetStateMachine_m2261309ED085815C1FC4CCCF117976082D55F027_AdjustorThunk },
-	{ 0x060002E7, U3CCatchTokenU3Ed__27_MoveNext_m121B75680C6394C42DC44E90972F8DE65351564C_AdjustorThunk },
-	{ 0x060002E8, U3CCatchTokenU3Ed__27_SetStateMachine_m8B6F2F3CC511E30557997CC712D3BCC3B9D3B2F3_AdjustorThunk },
-	{ 0x06000313, AirTaskCompleted_get_IsCompleted_mFD51611A20DC0CDE303210DE4D8BA66C52C6557A_AdjustorThunk },
-	{ 0x06000314, AirTaskCompleted_GetResult_mDE93826FBD1C5602BDE306323C9146124F2FEFEC_AdjustorThunk },
-	{ 0x06000315, AirTaskCompleted_SetException_m3EEE4ADB025740048ACB03E1B703B254F0969EB0_AdjustorThunk },
-	{ 0x06000316, AirTaskCompleted_GetAwaiter_m113AB8C31346904170927B8F4C3A2F7F4057CF91_AdjustorThunk },
-	{ 0x06000317, AirTaskCompleted_OnCompleted_m096BC9D60E16B385CD60B8C761BA5D4DC135A69F_AdjustorThunk },
-	{ 0x06000318, AirTaskCompleted_add_Completed_m2E0915BB6EA3A58FD31EEE898E64A6D71F7DD266_AdjustorThunk },
-	{ 0x06000319, AirTaskCompleted_remove_Completed_m541F610F2011A7B630A2B86ACBB76FE9BE5D4251_AdjustorThunk },
-	{ 0x06000333, AirTaskBuilder__ctor_m5ABAC4F308CC870A501280A6DA1CF07322F033AB_AdjustorThunk },
-	{ 0x06000334, AirTaskBuilder_get_Task_m1034753330CC186D831CFC05D7A62D5491BE5FC3_AdjustorThunk },
-	{ 0x06000336, AirTaskBuilder_SetException_m1DC25889C8265E827EA7AE68D4512F54DF868914_AdjustorThunk },
-	{ 0x06000337, AirTaskBuilder_SetResult_mC4573B3D50CEBCF8D9EB5C9B60916269BEE7FFBE_AdjustorThunk },
-	{ 0x0600033A, AirTaskBuilder_SetStateMachine_m7DB4CB2AC8C8E30BA1BBA894973EBFDE6C5DD91D_AdjustorThunk },
-	{ 0x06000368, U3CInvokeU3Ed__1_MoveNext_mF3C34C1CF826E16C0F7B1AC0DD508360500DFE76_AdjustorThunk },
-	{ 0x06000369, U3CInvokeU3Ed__1_SetStateMachine_m783716B85570AAE76475B89AB6B8FACC657A50BB_AdjustorThunk },
-	{ 0x06000374, U3CU3CAsAirTaskU3Eb__0U3Ed_MoveNext_m2A9B2C8B0127B37777CED88C1AE628119E2E723A_AdjustorThunk },
-	{ 0x06000375, U3CU3CAsAirTaskU3Eb__0U3Ed_SetStateMachine_m51F54176E014989AC7BDDF992F54C1CBB182DD29_AdjustorThunk },
-	{ 0x06000427, U3CInitializeU3Ed__3_MoveNext_mD3AB87EA0847B963607A254594ADC5EA93602858_AdjustorThunk },
-	{ 0x06000428, U3CInitializeU3Ed__3_SetStateMachine_m30BC6BA3E396A0A25E31E70C67CC7FE54049E2BE_AdjustorThunk },
-	{ 0x06000429, U3CLoadAndSupplementaryMetaDataU3Ed__4_MoveNext_m20C56679A36C0326B074BAD90F33676BC7DA2027_AdjustorThunk },
-	{ 0x0600042A, U3CLoadAndSupplementaryMetaDataU3Ed__4_SetStateMachine_mD5C4765B66DDB15AD06FEC35AA6591D770241077_AdjustorThunk },
-	{ 0x0600042B, U3CLoadHotUpdateAssemblyU3Ed__5_MoveNext_mCAC087E480AF095E87FD98FB026F6096D0CCFBC0_AdjustorThunk },
-	{ 0x0600042C, U3CLoadHotUpdateAssemblyU3Ed__5_SetStateMachine_m717E2DCAE18B09FB22261060CA98322FA635C907_AdjustorThunk },
-	{ 0x060005AC, U3CInitializePackageU3Ed__11_MoveNext_m179E105732E1FCB5884C84C9BDAA669BA6029CA8_AdjustorThunk },
-	{ 0x060005AD, U3CInitializePackageU3Ed__11_SetStateMachine_m10CB65E437BEB716F4E8F6947DB6620AE9657973_AdjustorThunk },
-	{ 0x060005AE, U3CInitializePackageU3Ed__12_MoveNext_mDBA740769A5D6B5FA8CE4C915038DF77F9173D3B_AdjustorThunk },
-	{ 0x060005AF, U3CInitializePackageU3Ed__12_SetStateMachine_mD6C11DFD10773B8B5F4246902892420684E9B387_AdjustorThunk },
-	{ 0x060005B0, U3CSimulateInitAsyncU3Ed__13_MoveNext_mD87D3C407E0D7DD4C6C4ABE04CA7C7A638F08710_AdjustorThunk },
-	{ 0x060005B1, U3CSimulateInitAsyncU3Ed__13_SetStateMachine_m21424FBC9C728FC64C653C3D2D5DE55E63BEDE62_AdjustorThunk },
-	{ 0x060005B2, U3CSingleInitAsyncU3Ed__14_MoveNext_mD9A3231D2177F69694C598EF7E3473EC869F62E3_AdjustorThunk },
-	{ 0x060005B3, U3CSingleInitAsyncU3Ed__14_SetStateMachine_m74AB78DA0E7E69CC3C7D967F1AC64996FD5A99FF_AdjustorThunk },
-	{ 0x060005B4, U3CNetInitAsyncU3Ed__15_MoveNext_mA803AA176512554BBE60C8AF903AAB63F271D85B_AdjustorThunk },
-	{ 0x060005B5, U3CNetInitAsyncU3Ed__15_SetStateMachine_mDE6A8C2BB78A7C9CAC85D63686BA0090C9E6301F_AdjustorThunk },
-	{ 0x060005B6, U3CUpdateVersionU3Ed__16_MoveNext_m29BDD219A8759A10F0B8D3BF8B8D5A5BBF26A115_AdjustorThunk },
-	{ 0x060005B7, U3CUpdateVersionU3Ed__16_SetStateMachine_mAF79C2ED7962EDFD6CB6D254A2E34C228C7262C9_AdjustorThunk },
-	{ 0x060005B8, U3CUpdateVersionU3Ed__17_MoveNext_mD9627E834957498E03044F427C64A45130FC1178_AdjustorThunk },
-	{ 0x060005B9, U3CUpdateVersionU3Ed__17_SetStateMachine_m19BF74A6112CBDCC955B725CA5146F80630BD56E_AdjustorThunk },
-	{ 0x060005BA, U3CUpdateMainfestU3Ed__18_MoveNext_m27FA2CA2E7EAC8E005579E7EAA35D6D351C1BC07_AdjustorThunk },
-	{ 0x060005BB, U3CUpdateMainfestU3Ed__18_SetStateMachine_mBF210422D5F9AA2BB5A7E195C45D877646A1379A_AdjustorThunk },
-	{ 0x060005BC, U3CUpdateManifestU3Ed__19_MoveNext_m6AAAAE0DDCE022223479A1B0CD4D55597CB5819C_AdjustorThunk },
-	{ 0x060005BD, U3CUpdateManifestU3Ed__19_SetStateMachine_m202E495DC3AD89DEE14D03DB765956959016F04F_AdjustorThunk },
-	{ 0x060005BE, U3CDownloadU3Ed__21_MoveNext_m349D9B3FBCA6B3D79C6FECCD573BB91FBEC8DF95_AdjustorThunk },
-	{ 0x060005BF, U3CDownloadU3Ed__21_SetStateMachine_m1F814E5FB43CA104730AED333033D98E612FFEAB_AdjustorThunk },
-	{ 0x060005C0, U3CDownloadU3Ed__22_MoveNext_m35BB7C4E642FA75EBC8927751B03CB6C44864575_AdjustorThunk },
-	{ 0x060005C1, U3CDownloadU3Ed__22_SetStateMachine_m40ABD563E08A5935B5E1AD2F9E0005505846B59F_AdjustorThunk },
-	{ 0x0600063E, U3CAwakeU3Ed__1_MoveNext_mA183FFF52D0765911D127C68C7AEAC09F1065D97_AdjustorThunk },
-	{ 0x0600063F, U3CAwakeU3Ed__1_SetStateMachine_m8B7B0C513AACBE7D4C114BE4CCBB1B99D709B025_AdjustorThunk },
+	{ 0x0600014B, U3CSendAsyncU3Ed__36_MoveNext_m7203B52B19BB1538C68217027DA388A40B196D03_AdjustorThunk },
+	{ 0x0600014C, U3CSendAsyncU3Ed__36_SetStateMachine_m062922F44434877E1662FCE0C2D34FBC439BF329_AdjustorThunk },
+	{ 0x0600016F, U3CTrySendAsyncU3Ed__78_MoveNext_m8290F558F85B33B18C488E36FBE42013E579D57F_AdjustorThunk },
+	{ 0x06000170, U3CTrySendAsyncU3Ed__78_SetStateMachine_m48835206BFE2029A732E6052582BDBCD5B008FDE_AdjustorThunk },
+	{ 0x060002C1, U3CLockU3Ed__1_MoveNext_m4802835567C0146311CB0AE677ED7CB71C151F46_AdjustorThunk },
+	{ 0x060002C2, U3CLockU3Ed__1_SetStateMachine_mA056FB57EED92D00C3FEC8750B558161258DB8AD_AdjustorThunk },
+	{ 0x060002C5, U3CLockU3Ed__8_MoveNext_m13856FCF702B11E60CC596D2DED133F4AE70B319_AdjustorThunk },
+	{ 0x060002C6, U3CLockU3Ed__8_SetStateMachine_m2261309ED085815C1FC4CCCF117976082D55F027_AdjustorThunk },
+	{ 0x060002EA, U3CCatchTokenU3Ed__27_MoveNext_m121B75680C6394C42DC44E90972F8DE65351564C_AdjustorThunk },
+	{ 0x060002EB, U3CCatchTokenU3Ed__27_SetStateMachine_m8B6F2F3CC511E30557997CC712D3BCC3B9D3B2F3_AdjustorThunk },
+	{ 0x06000316, AirTaskCompleted_get_IsCompleted_mFD51611A20DC0CDE303210DE4D8BA66C52C6557A_AdjustorThunk },
+	{ 0x06000317, AirTaskCompleted_GetResult_mDE93826FBD1C5602BDE306323C9146124F2FEFEC_AdjustorThunk },
+	{ 0x06000318, AirTaskCompleted_SetException_m3EEE4ADB025740048ACB03E1B703B254F0969EB0_AdjustorThunk },
+	{ 0x06000319, AirTaskCompleted_GetAwaiter_m113AB8C31346904170927B8F4C3A2F7F4057CF91_AdjustorThunk },
+	{ 0x0600031A, AirTaskCompleted_OnCompleted_m096BC9D60E16B385CD60B8C761BA5D4DC135A69F_AdjustorThunk },
+	{ 0x0600031B, AirTaskCompleted_add_Completed_m2E0915BB6EA3A58FD31EEE898E64A6D71F7DD266_AdjustorThunk },
+	{ 0x0600031C, AirTaskCompleted_remove_Completed_m541F610F2011A7B630A2B86ACBB76FE9BE5D4251_AdjustorThunk },
+	{ 0x06000336, AirTaskBuilder__ctor_m5ABAC4F308CC870A501280A6DA1CF07322F033AB_AdjustorThunk },
+	{ 0x06000337, AirTaskBuilder_get_Task_m1034753330CC186D831CFC05D7A62D5491BE5FC3_AdjustorThunk },
+	{ 0x06000339, AirTaskBuilder_SetException_m1DC25889C8265E827EA7AE68D4512F54DF868914_AdjustorThunk },
+	{ 0x0600033A, AirTaskBuilder_SetResult_mC4573B3D50CEBCF8D9EB5C9B60916269BEE7FFBE_AdjustorThunk },
+	{ 0x0600033D, AirTaskBuilder_SetStateMachine_m7DB4CB2AC8C8E30BA1BBA894973EBFDE6C5DD91D_AdjustorThunk },
+	{ 0x0600036B, U3CInvokeU3Ed__1_MoveNext_mF3C34C1CF826E16C0F7B1AC0DD508360500DFE76_AdjustorThunk },
+	{ 0x0600036C, U3CInvokeU3Ed__1_SetStateMachine_m783716B85570AAE76475B89AB6B8FACC657A50BB_AdjustorThunk },
+	{ 0x06000377, U3CU3CAsAirTaskU3Eb__0U3Ed_MoveNext_m2A9B2C8B0127B37777CED88C1AE628119E2E723A_AdjustorThunk },
+	{ 0x06000378, U3CU3CAsAirTaskU3Eb__0U3Ed_SetStateMachine_m51F54176E014989AC7BDDF992F54C1CBB182DD29_AdjustorThunk },
+	{ 0x0600042A, U3CInitializeU3Ed__3_MoveNext_mD3AB87EA0847B963607A254594ADC5EA93602858_AdjustorThunk },
+	{ 0x0600042B, U3CInitializeU3Ed__3_SetStateMachine_m30BC6BA3E396A0A25E31E70C67CC7FE54049E2BE_AdjustorThunk },
+	{ 0x0600042C, U3CLoadAndSupplementaryMetaDataU3Ed__4_MoveNext_m20C56679A36C0326B074BAD90F33676BC7DA2027_AdjustorThunk },
+	{ 0x0600042D, U3CLoadAndSupplementaryMetaDataU3Ed__4_SetStateMachine_mD5C4765B66DDB15AD06FEC35AA6591D770241077_AdjustorThunk },
+	{ 0x0600042E, U3CLoadHotUpdateAssemblyU3Ed__5_MoveNext_mCAC087E480AF095E87FD98FB026F6096D0CCFBC0_AdjustorThunk },
+	{ 0x0600042F, U3CLoadHotUpdateAssemblyU3Ed__5_SetStateMachine_m717E2DCAE18B09FB22261060CA98322FA635C907_AdjustorThunk },
+	{ 0x060005B4, U3CInitializePackageU3Ed__11_MoveNext_m179E105732E1FCB5884C84C9BDAA669BA6029CA8_AdjustorThunk },
+	{ 0x060005B5, U3CInitializePackageU3Ed__11_SetStateMachine_m10CB65E437BEB716F4E8F6947DB6620AE9657973_AdjustorThunk },
+	{ 0x060005B6, U3CInitializePackageU3Ed__12_MoveNext_mDBA740769A5D6B5FA8CE4C915038DF77F9173D3B_AdjustorThunk },
+	{ 0x060005B7, U3CInitializePackageU3Ed__12_SetStateMachine_mD6C11DFD10773B8B5F4246902892420684E9B387_AdjustorThunk },
+	{ 0x060005B8, U3CSimulateInitAsyncU3Ed__13_MoveNext_mD87D3C407E0D7DD4C6C4ABE04CA7C7A638F08710_AdjustorThunk },
+	{ 0x060005B9, U3CSimulateInitAsyncU3Ed__13_SetStateMachine_m21424FBC9C728FC64C653C3D2D5DE55E63BEDE62_AdjustorThunk },
+	{ 0x060005BA, U3CSingleInitAsyncU3Ed__14_MoveNext_mD9A3231D2177F69694C598EF7E3473EC869F62E3_AdjustorThunk },
+	{ 0x060005BB, U3CSingleInitAsyncU3Ed__14_SetStateMachine_m74AB78DA0E7E69CC3C7D967F1AC64996FD5A99FF_AdjustorThunk },
+	{ 0x060005BC, U3CNetInitAsyncU3Ed__15_MoveNext_mA803AA176512554BBE60C8AF903AAB63F271D85B_AdjustorThunk },
+	{ 0x060005BD, U3CNetInitAsyncU3Ed__15_SetStateMachine_mDE6A8C2BB78A7C9CAC85D63686BA0090C9E6301F_AdjustorThunk },
+	{ 0x060005BE, U3CUpdateVersionU3Ed__16_MoveNext_m29BDD219A8759A10F0B8D3BF8B8D5A5BBF26A115_AdjustorThunk },
+	{ 0x060005BF, U3CUpdateVersionU3Ed__16_SetStateMachine_mAF79C2ED7962EDFD6CB6D254A2E34C228C7262C9_AdjustorThunk },
+	{ 0x060005C0, U3CUpdateVersionU3Ed__17_MoveNext_mD9627E834957498E03044F427C64A45130FC1178_AdjustorThunk },
+	{ 0x060005C1, U3CUpdateVersionU3Ed__17_SetStateMachine_m19BF74A6112CBDCC955B725CA5146F80630BD56E_AdjustorThunk },
+	{ 0x060005C2, U3CUpdateMainfestU3Ed__18_MoveNext_m27FA2CA2E7EAC8E005579E7EAA35D6D351C1BC07_AdjustorThunk },
+	{ 0x060005C3, U3CUpdateMainfestU3Ed__18_SetStateMachine_mBF210422D5F9AA2BB5A7E195C45D877646A1379A_AdjustorThunk },
+	{ 0x060005C4, U3CUpdateManifestU3Ed__19_MoveNext_m6AAAAE0DDCE022223479A1B0CD4D55597CB5819C_AdjustorThunk },
+	{ 0x060005C5, U3CUpdateManifestU3Ed__19_SetStateMachine_m202E495DC3AD89DEE14D03DB765956959016F04F_AdjustorThunk },
+	{ 0x060005C6, U3CDownloadU3Ed__21_MoveNext_m349D9B3FBCA6B3D79C6FECCD573BB91FBEC8DF95_AdjustorThunk },
+	{ 0x060005C7, U3CDownloadU3Ed__21_SetStateMachine_m1F814E5FB43CA104730AED333033D98E612FFEAB_AdjustorThunk },
+	{ 0x060005C8, U3CDownloadU3Ed__22_MoveNext_m35BB7C4E642FA75EBC8927751B03CB6C44864575_AdjustorThunk },
+	{ 0x060005C9, U3CDownloadU3Ed__22_SetStateMachine_m40ABD563E08A5935B5E1AD2F9E0005505846B59F_AdjustorThunk },
+	{ 0x06000651, U3CAwakeU3Ed__1_MoveNext_mA183FFF52D0765911D127C68C7AEAC09F1065D97_AdjustorThunk },
+	{ 0x06000652, U3CAwakeU3Ed__1_SetStateMachine_m8B7B0C513AACBE7D4C114BE4CCBB1B99D709B025_AdjustorThunk },
 };
-static const int32_t s_InvokerIndices[1730] = 
+static const int32_t s_InvokerIndices[1756] = 
 {
-	4315,
-	3468,
-	3539,
-	4315,
+	4179,
+	3325,
+	3396,
+	4179,
 	0,
 	0,
 	0,
@@ -4755,746 +4829,109 @@ static const int32_t s_InvokerIndices[1730] =
 	0,
 	0,
 	0,
-	5273,
-	5241,
-	6252,
-	6245,
+	5138,
+	5106,
+	6116,
+	6109,
 	0,
 	0,
-	6457,
-	6457,
-	5402,
-	5721,
-	0,
-	6314,
-	6314,
-	4315,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	3519,
-	4193,
-	4194,
-	3520,
-	4315,
-	3520,
-	4315,
-	0,
-	4315,
-	0,
-	0,
-	0,
-	6555,
-	6555,
-	6463,
-	6457,
-	6457,
-	6457,
-	6457,
-	6457,
-	6314,
-	6050,
-	0,
-	0,
-	0,
-	6174,
-	0,
-	0,
-	6541,
-	6541,
-	0,
-	6457,
-	6541,
-	4215,
-	3539,
-	0,
-	0,
-	0,
-	4315,
-	4315,
-	3574,
-	4315,
-	4215,
-	3539,
-	0,
-	0,
-	4315,
-	4315,
-	4315,
-	4315,
-	6457,
-	6174,
-	0,
-	6457,
-	0,
-	6569,
-	6314,
-	0,
-	0,
-	4315,
-	6569,
-	6457,
-	0,
-	0,
-	4315,
-	6569,
-	0,
-	0,
-	6050,
-	6050,
-	6457,
-	6457,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	4315,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	6457,
-	0,
-	0,
-	0,
-	0,
-	0,
-	6457,
-	0,
-	0,
-	0,
-	0,
-	0,
-	6314,
-	0,
-	0,
-	0,
-	0,
-	0,
-	6059,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	6314,
-	0,
-	0,
-	0,
-	0,
-	0,
-	6059,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	4315,
-	3539,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	4315,
-	3539,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	4315,
-	3539,
-	3539,
-	4315,
-	3539,
-	3539,
-	4315,
-	3539,
-	3539,
-	4315,
-	3539,
-	3539,
-	4315,
-	0,
-	0,
-	0,
-	0,
-	6457,
-	0,
-	0,
-	6457,
-	3539,
-	3539,
-	0,
-	2101,
-	4315,
-	0,
-	0,
-	0,
-	4315,
-	3539,
-	3539,
-	0,
-	0,
-	4315,
-	0,
-	0,
-	0,
-	0,
-	0,
-	4193,
-	4215,
-	3539,
-	4315,
-	4315,
-	3164,
-	3164,
-	2101,
-	1299,
-	2610,
-	4315,
-	6569,
-	6569,
-	4315,
-	4215,
-	0,
-	0,
-	0,
-	4315,
-	3574,
-	4315,
-	1177,
-	757,
-	1299,
-	2610,
-	4315,
-	2610,
-	0,
-	0,
-	4215,
-	4315,
-	6569,
-	6569,
-	4315,
-	4215,
-	3539,
-	4215,
-	3539,
-	4215,
-	4215,
-	3539,
-	4147,
-	3468,
-	4193,
-	4193,
-	3519,
-	4315,
-	4315,
-	3539,
-	2610,
-	2522,
-	4315,
-	4315,
-	0,
-	0,
-	0,
-	3164,
-	0,
-	0,
-	0,
-	4315,
-	4315,
-	4315,
-	3574,
-	4315,
-	4315,
-	4147,
-	3468,
-	4254,
-	3574,
-	4254,
-	3574,
-	3468,
-	2136,
-	4315,
-	2136,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	4315,
-	4315,
-	4315,
-	4315,
-	4315,
-	4315,
-	4315,
-	4315,
-	4315,
-	4315,
-	4315,
-	4315,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	4147,
-	3468,
-	4147,
-	3468,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	4315,
-	0,
-	0,
-	4315,
-	4315,
-	4315,
-	4315,
-	4315,
-	0,
-	0,
-	0,
-	0,
-	0,
-	6314,
-	6457,
-	0,
-	0,
-	3164,
-	3539,
-	0,
-	0,
-	0,
-	3539,
-	3539,
-	4315,
-	3574,
-	4315,
-	0,
-	0,
-	0,
-	3162,
-	4315,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	4147,
-	3468,
-	4193,
-	3519,
-	4254,
-	3574,
-	3539,
-	3539,
-	4254,
-	3574,
-	3539,
-	3539,
-	4315,
-	4315,
-	3468,
-	3574,
-	4315,
-	4315,
-	4315,
-	4315,
-	4315,
-	4315,
-	4193,
-	4147,
-	4147,
-	3468,
-	4194,
-	3520,
-	4315,
-	4315,
-	3519,
-	4315,
-	6457,
-	6174,
-	6457,
-	6174,
-	6174,
-	6314,
-	6314,
-	6569,
-	1299,
-	3015,
-	4315,
-	3164,
-	4315,
-	4315,
-	4315,
-	4315,
-	4315,
-	3539,
-	4315,
-	4147,
-	4315,
-	3539,
-	4147,
-	4315,
-	4215,
-	3539,
-	3539,
-	3539,
-	3539,
-	4315,
-	4315,
-	4315,
 	6321,
-	6322,
-	6311,
-	6541,
-	6514,
-	6314,
+	6321,
+	5267,
+	5586,
 	0,
-	6314,
+	6178,
+	6178,
+	4179,
 	0,
-	6314,
-	6541,
-	6314,
 	0,
-	6314,
 	0,
-	4315,
-	6569,
-	4315,
-	3539,
 	0,
 	0,
-	4315,
-	3539,
 	0,
 	0,
-	4315,
-	3539,
-	3519,
-	4315,
-	4147,
-	4215,
-	4315,
-	4215,
 	0,
 	0,
 	0,
 	0,
 	0,
+	3376,
+	4056,
+	4057,
+	3377,
+	4179,
+	3377,
+	4179,
 	0,
-	3519,
-	4315,
-	4147,
-	4215,
-	4315,
-	4215,
+	4179,
 	0,
 	0,
 	0,
+	6419,
+	6419,
+	6327,
+	6321,
+	6321,
+	6321,
+	6178,
+	5914,
 	0,
 	0,
 	0,
+	6038,
 	0,
 	0,
+	6405,
+	6405,
+	6405,
 	0,
+	6321,
+	6405,
+	4078,
+	3396,
 	0,
 	0,
 	0,
+	4179,
+	4179,
+	3432,
+	4179,
+	4078,
+	3396,
 	0,
 	0,
+	4179,
+	4179,
+	4179,
+	4179,
+	6321,
+	6038,
 	0,
+	6321,
 	0,
+	6433,
+	6178,
 	0,
 	0,
+	4179,
+	6433,
+	6321,
 	0,
 	0,
+	4179,
+	6433,
 	0,
 	0,
 	0,
 	0,
-	4147,
-	4315,
-	3539,
-	4141,
-	3539,
-	3539,
-	3539,
-	4147,
-	4315,
-	4315,
-	4215,
-	4215,
-	4315,
-	3539,
-	3539,
-	4315,
-	4193,
-	3519,
-	4147,
-	4215,
-	3519,
 	0,
-	3539,
-	4215,
-	4315,
-	4215,
-	3539,
-	4315,
-	4315,
-	4315,
-	3539,
-	6515,
-	3539,
-	4215,
 	0,
-	3539,
-	4315,
+	5914,
+	5914,
+	6321,
+	6321,
 	0,
 	0,
-	3539,
 	0,
 	0,
 	0,
@@ -5505,133 +4942,30 @@ static const int32_t s_InvokerIndices[1730] =
 	0,
 	0,
 	0,
-	3539,
-	3539,
-	3539,
-	4315,
-	4315,
-	4193,
-	3519,
-	4315,
-	4315,
-	4315,
-	4315,
-	6314,
 	0,
-	5895,
 	0,
-	3519,
-	4315,
-	4147,
-	4215,
-	4315,
-	4215,
 	0,
 	0,
 	0,
 	0,
 	0,
 	0,
-	6457,
-	6314,
 	0,
 	0,
-	6314,
 	0,
-	6314,
 	0,
-	4315,
-	3539,
 	0,
 	0,
-	4315,
-	3539,
 	0,
 	0,
-	4315,
-	3539,
-	3539,
-	3539,
-	4315,
-	3539,
 	0,
 	0,
 	0,
 	0,
 	0,
 	0,
+	4179,
 	0,
-	4315,
-	3574,
-	4315,
-	4315,
-	4215,
-	3539,
-	4193,
-	3519,
-	4147,
-	3468,
-	4315,
-	4315,
-	4315,
-	4315,
-	4315,
-	3574,
-	4315,
-	4215,
-	3539,
-	4254,
-	3574,
-	4254,
-	3574,
-	4147,
-	3468,
-	4315,
-	4315,
-	4315,
-	4315,
-	4315,
-	3574,
-	4315,
-	4215,
-	3539,
-	4147,
-	3468,
-	4315,
-	4315,
-	4315,
-	4315,
-	4315,
-	4315,
-	4315,
-	4315,
-	4215,
-	3539,
-	4147,
-	3468,
-	4315,
-	4315,
-	4315,
-	4315,
-	4315,
-	3574,
-	4315,
-	4215,
-	3539,
-	4193,
-	3519,
-	4147,
-	3468,
-	4193,
-	3519,
-	4315,
-	3468,
-	4315,
-	4315,
-	4315,
-	4315,
-	4315,
-	4315,
 	0,
 	0,
 	0,
@@ -5655,750 +4989,1516 @@ static const int32_t s_InvokerIndices[1730] =
 	0,
 	0,
 	0,
+	6321,
 	0,
 	0,
 	0,
 	0,
 	0,
-	3539,
-	3539,
-	4315,
+	6321,
 	0,
-	3539,
-	3539,
-	4315,
 	0,
-	3539,
-	3539,
-	4315,
 	0,
 	0,
-	4315,
 	0,
+	6178,
 	0,
 	0,
-	4315,
-	4315,
-	4147,
-	3468,
-	4147,
-	4315,
 	0,
-	6541,
-	6457,
-	4194,
-	3520,
-	4315,
-	4315,
-	2610,
-	2610,
-	4193,
-	4215,
-	5721,
-	5721,
-	4215,
-	4215,
-	4147,
-	3468,
-	4215,
-	3539,
-	2087,
-	2087,
-	3163,
-	3164,
 	0,
 	0,
-	6569,
-	4315,
-	3574,
-	4315,
-	4315,
+	5923,
 	0,
-	3539,
-	3539,
-	4315,
 	0,
-	3539,
-	3539,
-	4315,
-	5490,
-	5494,
-	5283,
-	4315,
-	3574,
-	4315,
-	4215,
-	3164,
-	3164,
-	4315,
-	4315,
-	3539,
-	4315,
-	3539,
-	4315,
-	3539,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	3539,
-	3539,
-	4315,
-	3539,
-	3539,
-	4315,
-	0,
-	3539,
-	3539,
-	4315,
-	3539,
-	3539,
-	3519,
-	4315,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	3539,
-	3539,
-	4315,
-	4315,
-	3539,
-	3539,
-	3468,
-	4315,
-	3539,
-	3539,
-	3468,
-	4315,
-	3539,
-	3539,
-	4315,
-	4315,
-	3539,
-	3539,
-	2097,
-	4315,
-	3539,
-	3539,
-	4315,
-	4315,
-	3539,
-	3539,
-	4315,
-	4315,
-	3539,
-	3539,
-	4315,
-	4315,
-	3539,
-	3539,
-	3539,
-	4315,
-	3539,
-	3539,
-	3539,
-	4315,
-	3539,
-	3539,
-	3539,
-	4315,
-	3539,
-	3539,
-	3539,
-	4315,
-	3539,
-	3539,
-	3539,
-	4315,
-	3539,
-	3539,
-	3539,
-	4315,
-	3539,
-	3539,
-	3539,
-	4315,
-	3539,
-	3539,
-	3539,
-	4315,
-	3539,
-	3539,
-	3539,
-	4315,
-	3539,
-	3539,
-	3539,
-	4315,
-	3539,
-	3539,
-	3539,
-	4315,
-	3539,
-	3539,
-	3539,
-	4315,
-	6059,
-	3539,
-	3539,
-	3539,
-	4315,
-	3539,
-	3539,
-	4315,
-	4315,
-	3539,
-	3539,
-	4315,
-	4315,
-	3539,
-	3539,
-	4315,
-	4315,
-	3539,
-	3539,
-	4315,
-	4315,
-	3539,
-	3539,
-	3539,
-	4315,
-	3539,
-	3539,
-	3574,
-	4315,
-	3539,
-	3539,
-	3519,
-	4315,
-	3539,
-	3539,
-	4315,
-	4315,
-	3539,
-	3539,
-	4315,
-	4315,
-	3539,
-	3539,
-	4315,
-	4315,
-	3539,
-	3539,
-	4315,
-	4315,
-	3539,
-	3539,
-	4315,
-	4315,
-	3539,
-	3539,
-	4315,
-	4315,
-	3539,
-	3539,
-	4315,
-	4315,
-	3539,
-	3539,
-	4315,
-	4315,
-	3539,
-	3539,
-	4315,
-	4315,
-	3539,
-	3539,
-	4315,
-	4315,
-	3539,
-	3539,
-	3539,
-	4315,
-	3539,
-	3539,
-	4315,
-	4315,
-	3539,
-	3539,
-	4315,
-	4315,
-	3539,
-	3539,
-	4315,
-	4315,
-	3539,
-	3539,
-	4315,
-	4315,
-	3539,
-	3539,
-	4315,
-	4315,
-	3539,
-	3539,
-	4315,
-	4315,
-	3539,
-	3539,
-	2101,
-	4315,
-	3539,
-	3539,
-	4315,
-	4315,
-	3539,
-	3539,
-	4315,
-	4315,
-	3539,
-	3539,
-	4315,
-	4315,
-	3539,
-	3539,
-	4315,
-	4315,
-	3539,
-	3539,
-	4315,
-	4315,
-	3539,
-	3539,
-	4315,
-	4315,
-	3539,
-	3539,
-	4315,
-	4315,
-	3539,
-	3539,
-	4315,
-	4315,
-	3539,
-	3539,
-	4315,
-	4315,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	6059,
-	4147,
-	3468,
-	4147,
-	3468,
-	0,
-	4147,
-	3468,
-	4315,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	4315,
-	3574,
-	4315,
-	0,
-	0,
-	0,
-	4315,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	2610,
-	4315,
-	4215,
-	3539,
-	4215,
-	3539,
-	0,
-	0,
-	3539,
-	900,
-	552,
-	3164,
-	3164,
-	924,
-	4215,
-	3164,
-	4215,
-	3164,
-	4215,
-	3164,
-	4315,
-	3574,
-	4315,
-	4315,
-	4215,
-	3539,
-	4193,
-	3519,
-	4193,
-	3519,
-	4193,
-	3519,
-	4215,
-	3539,
-	4215,
-	3539,
-	4215,
-	3539,
-	4215,
-	3539,
-	4315,
-	4315,
-	3539,
-	4315,
-	3539,
-	4315,
-	3539,
-	4315,
-	3539,
-	4315,
-	3539,
-	4315,
-	3539,
-	4315,
-	3539,
-	4315,
-	3539,
-	4315,
-	3539,
-	4315,
-	3539,
-	4315,
-	3539,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	4315,
-	3219,
-	3539,
-	3219,
-	3539,
-	5891,
-	5895,
-	5891,
-	5895,
-	5895,
-	5897,
-	5897,
-	5891,
-	6314,
-	6314,
-	5895,
-	4315,
-	4315,
-	3519,
-	4315,
-	4147,
-	4215,
-	4315,
-	4215,
-	0,
-	0,
-	0,
-	5430,
-	4315,
-	4306,
-	3620,
-	3574,
-	4315,
-	3574,
-	4315,
-	3574,
-	4315,
-	3574,
-	4315,
-	4215,
-	4215,
-	3574,
-	4315,
-	3574,
-	4315,
-	3574,
-	4315,
-	0,
-	0,
-	4254,
-	3574,
-	4254,
-	3574,
-	4254,
-	3574,
-	4254,
-	4254,
-	4254,
-	3574,
-	4215,
-	3539,
-	4215,
-	3539,
-	4193,
-	3519,
-	3539,
-	3539,
-	4147,
-	3468,
-	4315,
-	3468,
-	4315,
-	3574,
-	4315,
-	4315,
-	4215,
-	3539,
-	4315,
-	3519,
-	3468,
-	4315,
-	0,
-	4315,
-	4315,
-	4315,
-	4315,
-	4315,
-	3574,
-	4315,
-	4315,
-	0,
-	4315,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	4315,
-	3574,
-	4315,
-	4315,
-	6569,
-	4315,
-	4315,
-	4315,
-	4315,
-	4315,
-	4315,
-	3539,
-	4315,
-	3539,
-	6457,
-	6555,
-	6463,
-	6457,
-	6457,
-	6463,
-	6457,
-	6457,
-	6457,
-	6569,
-	6457,
-	6314,
-	6050,
-	0,
-	0,
-	0,
-	6174,
-	0,
-	0,
-	6569,
-	4147,
-	3468,
-	4215,
-	3539,
-	2101,
-	4147,
-	3468,
-	4315,
-	4315,
-	4315,
-	0,
-	0,
-	0,
-	6311,
-	4315,
-	3219,
-	4315,
-	3219,
-	4315,
-	3219,
-	4315,
-	3219,
-	4315,
-	3219,
-	4315,
-	3219,
-	4315,
-	3219,
-	4315,
-	3219,
-	4315,
-	3219,
-	4315,
-	3219,
-	4315,
-	3219,
-	4315,
-	3219,
-	4315,
-	3219,
-	4315,
-	3219,
-	4315,
-	3219,
-	4315,
-	3219,
-	4315,
-	3219,
-	4315,
-	3219,
-	4315,
-	3219,
-	4315,
-	3219,
-	4315,
-	3219,
-	4315,
-	3219,
-	4315,
-	3219,
-	4315,
-	3219,
-	4315,
-	3219,
-	4315,
-	3219,
-	4315,
-	3219,
-	4315,
-	3219,
-	4315,
-	3219,
-	4315,
-	3219,
-	4315,
-	3219,
-	4315,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	4315,
-	5465,
-	5296,
-	5323,
-	5882,
-	6251,
-	0,
-	5895,
-	6314,
-	6314,
-	6174,
-	5721,
-	5721,
-	5895,
-	6314,
-	6314,
-	5895,
-	6314,
-	6314,
-	6314,
-	6314,
-	5895,
-	5895,
-	6314,
-	0,
-	6314,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	6178,
+	0,
+	0,
+	0,
+	0,
+	0,
+	5923,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	4179,
+	3396,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	4179,
+	3396,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	4179,
+	3396,
+	3396,
+	4179,
+	3396,
+	3396,
+	4179,
+	3396,
+	3396,
+	4179,
+	3396,
+	3396,
+	4179,
+	0,
+	0,
+	0,
+	0,
+	6321,
+	0,
+	0,
+	6321,
+	3396,
+	3396,
+	0,
+	1947,
+	4179,
+	0,
+	0,
+	0,
+	4179,
+	3396,
+	3396,
+	0,
+	0,
+	4179,
+	0,
+	0,
+	0,
+	0,
+	0,
+	4056,
+	4078,
+	3396,
+	4179,
+	4179,
+	3018,
+	3018,
+	1947,
+	1196,
+	2460,
+	4179,
+	6433,
+	6433,
+	4179,
+	4078,
+	0,
+	0,
+	0,
+	4179,
+	3432,
+	4179,
+	1072,
+	757,
+	1196,
+	2460,
+	4179,
+	2460,
+	0,
+	0,
+	4078,
+	4179,
+	6433,
+	6433,
+	4179,
+	4078,
+	3396,
+	4078,
+	3396,
+	4078,
+	4078,
+	3396,
+	4010,
+	3325,
+	4056,
+	4056,
+	3376,
+	4179,
+	4179,
+	3396,
+	2460,
+	2372,
+	4179,
+	4179,
+	0,
+	0,
+	0,
+	3018,
+	0,
+	0,
+	0,
+	4179,
+	4179,
+	4179,
+	3432,
+	4179,
+	4179,
+	4010,
+	3325,
+	4118,
+	3432,
+	4118,
+	3432,
+	3325,
+	1982,
+	4179,
+	1982,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	4179,
+	4179,
+	4179,
+	4179,
+	4179,
+	4179,
+	4179,
+	4179,
+	4179,
+	4179,
+	4179,
+	4179,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	4010,
+	3325,
+	4010,
+	3325,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	4179,
+	0,
+	0,
+	4179,
+	4179,
+	4179,
+	4179,
+	4179,
+	0,
+	0,
+	0,
+	0,
+	0,
+	6178,
+	6321,
+	0,
+	0,
+	3018,
+	3396,
+	0,
+	0,
+	0,
+	3396,
+	3396,
+	4179,
+	3432,
+	4179,
+	0,
+	0,
+	0,
+	3016,
+	4179,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	4010,
+	3325,
+	4056,
+	3376,
+	4118,
+	3432,
+	3396,
+	3396,
+	4118,
+	3432,
+	3396,
+	3396,
+	4179,
+	4179,
+	3325,
+	3432,
+	4179,
+	4179,
+	4179,
+	4179,
+	4179,
+	4179,
+	4056,
+	4010,
+	4010,
+	3325,
+	4057,
+	3377,
+	4179,
+	4179,
+	3376,
+	4179,
+	6321,
+	6038,
+	6321,
+	6038,
+	6038,
+	6178,
+	6178,
+	6433,
+	1196,
+	2868,
+	4179,
+	3018,
+	4179,
+	4179,
+	4179,
+	4179,
+	4179,
+	3396,
+	4179,
+	4010,
+	4179,
+	3396,
+	4010,
+	4179,
+	4078,
+	3396,
+	3396,
+	3396,
+	3396,
+	4179,
+	4179,
+	4179,
+	6185,
+	6186,
+	6175,
+	6405,
+	6378,
+	6178,
+	0,
+	6178,
+	0,
+	6178,
+	6405,
+	6178,
+	0,
+	6178,
+	0,
+	4179,
+	6433,
+	4179,
+	3396,
+	0,
+	0,
+	4179,
+	3396,
+	0,
+	0,
+	4179,
+	3396,
+	3376,
+	4179,
+	4010,
+	4078,
+	4179,
+	4078,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	3376,
+	4179,
+	4010,
+	4078,
+	4179,
+	4078,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	4010,
+	4179,
+	3396,
+	4004,
+	3396,
+	3396,
+	3396,
+	4010,
+	4179,
+	4179,
+	4078,
+	4078,
+	4179,
+	3396,
+	3396,
+	4179,
+	4056,
+	3376,
+	4010,
+	4078,
+	3376,
+	0,
+	3396,
+	4078,
+	4179,
+	4078,
+	3396,
+	4179,
+	4179,
+	4179,
+	3396,
+	6379,
+	3396,
+	4078,
+	0,
+	3396,
+	4179,
+	0,
+	0,
+	3396,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	3396,
+	3396,
+	3396,
+	4179,
+	4179,
+	4056,
+	3376,
+	4179,
+	4179,
+	4179,
+	4179,
+	6178,
+	0,
+	5759,
+	0,
+	3376,
+	4179,
+	4010,
+	4078,
+	4179,
+	4078,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	6321,
+	6178,
+	0,
+	0,
+	6178,
+	0,
+	6178,
+	0,
+	4179,
+	3396,
+	0,
+	0,
+	4179,
+	3396,
+	0,
+	0,
+	4179,
+	3396,
+	3396,
+	3396,
+	4179,
+	3396,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	4179,
+	3432,
+	4179,
+	4179,
+	4078,
+	3396,
+	4056,
+	3376,
+	4010,
+	3325,
+	4179,
+	4179,
+	4179,
+	4179,
+	4179,
+	3432,
+	4179,
+	4078,
+	3396,
+	4118,
+	3432,
+	4118,
+	3432,
+	4010,
+	3325,
+	4179,
+	4179,
+	4179,
+	4179,
+	4179,
+	3432,
+	4179,
+	4078,
+	3396,
+	4010,
+	3325,
+	4179,
+	4179,
+	4179,
+	4179,
+	4179,
+	4179,
+	4179,
+	4179,
+	4078,
+	3396,
+	4010,
+	3325,
+	4179,
+	4179,
+	4179,
+	4179,
+	4179,
+	3432,
+	4179,
+	4078,
+	3396,
+	4056,
+	3376,
+	4010,
+	3325,
+	4056,
+	3376,
+	4179,
+	3325,
+	4179,
+	4179,
+	4179,
+	4179,
+	4179,
+	4179,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	3396,
+	3396,
+	4179,
+	0,
+	3396,
+	3396,
+	4179,
+	0,
+	3396,
+	3396,
+	4179,
+	0,
+	0,
+	4179,
+	0,
+	0,
+	0,
+	4179,
+	4179,
+	4010,
+	3325,
+	4010,
+	4179,
+	0,
+	6405,
+	6321,
+	4057,
+	3377,
+	4179,
+	4179,
+	2460,
+	2460,
+	4056,
+	4078,
+	5586,
+	5586,
+	4078,
+	4078,
+	4010,
+	3325,
+	4078,
+	3396,
+	1933,
+	1933,
+	3017,
+	3018,
+	0,
+	0,
+	6433,
+	4179,
+	3432,
+	4179,
+	4179,
+	0,
+	3396,
+	3396,
+	4179,
+	0,
+	3396,
+	3396,
+	4179,
+	5355,
+	5359,
+	5148,
+	4179,
+	3432,
+	4179,
+	3016,
+	3018,
+	3018,
+	4179,
+	4179,
+	3396,
+	4179,
+	3396,
+	4179,
+	3396,
+	3396,
+	3396,
+	3396,
+	3396,
+	4179,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	3396,
+	3396,
+	4179,
+	3396,
+	3396,
+	4179,
+	0,
+	3396,
+	3396,
+	4179,
+	3396,
+	3396,
+	3376,
+	4179,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	3396,
+	3396,
+	4179,
+	4179,
+	3396,
+	3396,
+	3325,
+	4179,
+	3396,
+	3396,
+	3325,
+	4179,
+	3396,
+	3396,
+	4179,
+	4179,
+	3396,
+	3396,
+	1943,
+	4179,
+	3396,
+	3396,
+	4179,
+	4179,
+	3396,
+	3396,
+	4179,
+	4179,
+	3396,
+	3396,
+	4179,
+	4179,
+	3396,
+	3396,
+	3396,
+	4179,
+	3396,
+	3396,
+	3396,
+	4179,
+	3396,
+	3396,
+	3396,
+	4179,
+	3396,
+	3396,
+	3396,
+	4179,
+	3396,
+	3396,
+	3396,
+	4179,
+	3396,
+	3396,
+	3396,
+	4179,
+	3396,
+	3396,
+	3396,
+	4179,
+	3396,
+	3396,
+	3396,
+	4179,
+	3396,
+	3396,
+	3396,
+	4179,
+	3396,
+	3396,
+	3396,
+	4179,
+	3396,
+	3396,
+	3396,
+	4179,
+	3396,
+	3396,
+	3396,
+	4179,
+	5923,
+	3396,
+	3396,
+	3396,
+	4179,
+	3396,
+	3396,
+	4179,
+	4179,
+	3396,
+	3396,
+	4179,
+	4179,
+	3396,
+	3396,
+	4179,
+	4179,
+	3396,
+	3396,
+	4179,
+	4179,
+	3396,
+	3396,
+	3396,
+	4179,
+	3396,
+	3396,
+	3432,
+	4179,
+	3396,
+	3396,
+	3376,
+	4179,
+	3396,
+	3396,
+	4179,
+	4179,
+	3396,
+	3396,
+	4179,
+	4179,
+	3396,
+	3396,
+	4179,
+	4179,
+	3396,
+	3396,
+	4179,
+	4179,
+	3396,
+	3396,
+	4179,
+	4179,
+	3396,
+	3396,
+	4179,
+	4179,
+	3396,
+	3396,
+	4179,
+	4179,
+	3396,
+	3396,
+	4179,
+	4179,
+	3396,
+	3396,
+	4179,
+	4179,
+	3396,
+	3396,
+	4179,
+	4179,
+	3396,
+	3396,
+	3396,
+	4179,
+	3396,
+	3396,
+	4179,
+	4179,
+	3396,
+	3396,
+	4179,
+	4179,
+	3396,
+	3396,
+	4179,
+	4179,
+	3396,
+	3396,
+	4179,
+	4179,
+	3396,
+	3396,
+	4179,
+	4179,
+	3396,
+	3396,
+	4179,
+	4179,
+	3396,
+	3396,
+	1947,
+	4179,
+	3396,
+	3396,
+	4179,
+	4179,
+	3396,
+	3396,
+	4179,
+	4179,
+	3396,
+	3396,
+	4179,
+	4179,
+	3396,
+	3396,
+	4179,
+	4179,
+	3396,
+	3396,
+	4179,
+	4179,
+	3396,
+	3396,
+	4179,
+	4179,
+	3396,
+	3396,
+	4179,
+	4179,
+	3396,
+	3396,
+	4179,
+	4179,
+	3396,
+	3396,
+	4179,
+	4179,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	5923,
+	4010,
+	3325,
+	4010,
+	3325,
+	0,
+	4010,
+	3325,
+	4179,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	4179,
+	3432,
+	4179,
+	0,
+	0,
+	0,
+	4179,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	2460,
+	4179,
+	4078,
+	3396,
+	4078,
+	3396,
+	0,
+	0,
+	3396,
+	836,
+	553,
+	3018,
+	3018,
+	859,
+	4078,
+	3018,
+	4078,
+	3018,
+	4078,
+	3018,
+	4179,
+	3432,
+	4179,
+	4179,
+	4078,
+	3396,
+	4056,
+	3376,
+	4056,
+	3376,
+	4056,
+	3376,
+	4078,
+	3396,
+	4078,
+	3396,
+	4078,
+	3396,
+	4078,
+	3396,
+	4179,
+	4179,
+	3396,
+	4179,
+	3396,
+	4179,
+	3396,
+	4179,
+	3396,
+	4179,
+	3396,
+	4179,
+	3396,
+	4179,
+	3396,
+	4179,
+	3396,
+	4179,
+	3396,
+	4179,
+	3396,
+	4179,
+	3396,
+	6405,
+	6321,
+	4179,
+	4179,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	6178,
+	6178,
+	4179,
+	4010,
+	4179,
+	4010,
+	0,
+	0,
+	4179,
+	3074,
+	3396,
+	3074,
+	3396,
+	5755,
+	5759,
+	5755,
+	5759,
+	5759,
+	5761,
+	5761,
+	5755,
+	6178,
+	6178,
+	5759,
+	4179,
+	4179,
+	3376,
+	4179,
+	4010,
+	4078,
+	4179,
+	4078,
+	0,
+	0,
+	0,
+	5295,
+	4179,
+	4170,
+	3478,
+	3432,
+	4179,
+	3432,
+	4179,
+	3432,
+	4179,
+	3432,
+	4179,
+	4078,
+	4078,
+	3432,
+	4179,
+	3432,
+	4179,
+	3432,
+	4179,
+	0,
+	0,
+	4118,
+	3432,
+	4118,
+	3432,
+	4118,
+	3432,
+	4118,
+	4118,
+	4118,
+	3432,
+	4078,
+	3396,
+	4078,
+	3396,
+	4056,
+	3376,
+	3396,
+	3396,
+	4010,
+	3325,
+	4179,
+	3325,
+	4179,
+	3432,
+	4179,
+	4179,
+	4078,
+	3396,
+	4179,
+	3376,
+	3325,
+	4179,
+	0,
+	4179,
+	4179,
+	4179,
+	4179,
+	4179,
+	3432,
+	4179,
+	4179,
+	0,
+	4179,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	4179,
+	3432,
+	4179,
+	4179,
+	6433,
+	4179,
+	4179,
+	4179,
+	4179,
+	4179,
+	4179,
+	3396,
+	6111,
+	4179,
+	3396,
+	6405,
+	6321,
+	5923,
+	6419,
+	6327,
+	6321,
+	6321,
+	6327,
+	6321,
+	6321,
+	6321,
+	6321,
+	6321,
+	6321,
+	6321,
+	6433,
+	6321,
+	6178,
+	5914,
+	0,
+	0,
+	0,
+	6038,
+	0,
+	0,
+	6433,
+	4010,
+	3325,
+	4078,
+	3396,
+	1947,
+	4010,
+	3325,
+	4179,
+	4179,
+	4179,
+	0,
+	0,
+	0,
+	6175,
+	4179,
+	3074,
+	4179,
+	3074,
+	4179,
+	3074,
+	4179,
+	3074,
+	4179,
+	3074,
+	4179,
+	3074,
+	4179,
+	3074,
+	4179,
+	3074,
+	4179,
+	3074,
+	4179,
+	3074,
+	4179,
+	3074,
+	4179,
+	3074,
+	4179,
+	3074,
+	4179,
+	3074,
+	4179,
+	3074,
+	4179,
+	3074,
+	4179,
+	3074,
+	4179,
+	3074,
+	4179,
+	3074,
+	4179,
+	3074,
+	4179,
+	3074,
+	4179,
+	3074,
+	4179,
+	3074,
+	4179,
+	3074,
+	4179,
+	3074,
+	4179,
+	3074,
+	4179,
+	3074,
+	4179,
+	3074,
+	4179,
+	3074,
+	4179,
+	3074,
+	4179,
+	3074,
+	4179,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	4179,
+	5330,
+	5161,
+	5188,
+	5746,
+	6115,
+	0,
+	5759,
+	6178,
+	6178,
+	6038,
+	5586,
+	5586,
+	5759,
+	6178,
+	6178,
+	5759,
+	6178,
+	6178,
+	6178,
+	6178,
+	5759,
+	5759,
+	6178,
+	0,
+	6178,
+	5759,
 };
 static const Il2CppTokenRangePair s_rgctxIndices[279] = 
 {
@@ -6413,80 +6513,80 @@ static const Il2CppTokenRangePair s_rgctxIndices[279] =
 	{ 0x02000017, { 205, 3 } },
 	{ 0x02000018, { 208, 4 } },
 	{ 0x02000019, { 212, 3 } },
-	{ 0x0200004A, { 511, 9 } },
-	{ 0x0200004B, { 520, 9 } },
-	{ 0x0200004C, { 529, 9 } },
-	{ 0x0200004D, { 538, 9 } },
-	{ 0x0200004E, { 547, 9 } },
-	{ 0x0200004F, { 556, 9 } },
-	{ 0x02000051, { 565, 2 } },
-	{ 0x02000052, { 567, 2 } },
-	{ 0x02000053, { 569, 2 } },
-	{ 0x02000054, { 571, 2 } },
-	{ 0x02000055, { 573, 2 } },
-	{ 0x02000056, { 575, 20 } },
-	{ 0x02000057, { 595, 20 } },
-	{ 0x02000058, { 615, 20 } },
-	{ 0x02000059, { 635, 20 } },
-	{ 0x0200005A, { 655, 20 } },
-	{ 0x0200005B, { 675, 20 } },
-	{ 0x0200005C, { 695, 10 } },
-	{ 0x0200005D, { 705, 10 } },
-	{ 0x0200005E, { 715, 10 } },
-	{ 0x0200005F, { 725, 10 } },
-	{ 0x02000060, { 735, 10 } },
-	{ 0x02000061, { 745, 10 } },
-	{ 0x02000063, { 755, 3 } },
-	{ 0x02000064, { 758, 3 } },
-	{ 0x02000065, { 761, 3 } },
-	{ 0x02000066, { 764, 3 } },
-	{ 0x02000067, { 767, 3 } },
-	{ 0x02000073, { 777, 5 } },
-	{ 0x02000077, { 782, 4 } },
-	{ 0x0200007C, { 786, 1 } },
-	{ 0x02000081, { 789, 1 } },
-	{ 0x02000087, { 792, 6 } },
-	{ 0x02000088, { 798, 5 } },
-	{ 0x02000089, { 803, 5 } },
-	{ 0x0200008A, { 808, 5 } },
-	{ 0x0200008B, { 813, 5 } },
-	{ 0x0200008C, { 818, 5 } },
-	{ 0x0200008D, { 823, 5 } },
-	{ 0x0200008E, { 828, 5 } },
-	{ 0x0200008F, { 833, 5 } },
-	{ 0x0200009E, { 838, 1 } },
-	{ 0x020000A1, { 871, 27 } },
-	{ 0x020000A2, { 898, 6 } },
-	{ 0x020000A3, { 904, 8 } },
-	{ 0x020000A4, { 912, 10 } },
-	{ 0x020000A5, { 922, 5 } },
-	{ 0x020000A6, { 927, 14 } },
-	{ 0x020000A7, { 941, 20 } },
-	{ 0x020000A8, { 961, 11 } },
-	{ 0x020000B5, { 1002, 4 } },
-	{ 0x020000B7, { 1006, 4 } },
-	{ 0x020000BA, { 1010, 3 } },
-	{ 0x020000BC, { 1013, 1 } },
-	{ 0x020000BD, { 1014, 11 } },
-	{ 0x020000C3, { 1033, 6 } },
-	{ 0x020000C9, { 1050, 1 } },
-	{ 0x020000CC, { 1071, 8 } },
-	{ 0x020000CE, { 1079, 4 } },
-	{ 0x020000D1, { 1083, 1 } },
-	{ 0x020000D2, { 1084, 9 } },
-	{ 0x020000D3, { 1093, 2 } },
-	{ 0x020000DA, { 1095, 14 } },
-	{ 0x02000142, { 1117, 3 } },
-	{ 0x02000143, { 1120, 5 } },
-	{ 0x02000145, { 1134, 1 } },
-	{ 0x02000146, { 1135, 10 } },
-	{ 0x02000147, { 1145, 1 } },
-	{ 0x02000148, { 1146, 11 } },
-	{ 0x02000149, { 1157, 1 } },
-	{ 0x0200014A, { 1158, 7 } },
-	{ 0x02000159, { 1167, 5 } },
-	{ 0x0200015A, { 1172, 6 } },
-	{ 0x0200019D, { 1199, 10 } },
+	{ 0x0200004B, { 511, 9 } },
+	{ 0x0200004C, { 520, 9 } },
+	{ 0x0200004D, { 529, 9 } },
+	{ 0x0200004E, { 538, 9 } },
+	{ 0x0200004F, { 547, 9 } },
+	{ 0x02000050, { 556, 9 } },
+	{ 0x02000052, { 565, 2 } },
+	{ 0x02000053, { 567, 2 } },
+	{ 0x02000054, { 569, 2 } },
+	{ 0x02000055, { 571, 2 } },
+	{ 0x02000056, { 573, 2 } },
+	{ 0x02000057, { 575, 20 } },
+	{ 0x02000058, { 595, 20 } },
+	{ 0x02000059, { 615, 20 } },
+	{ 0x0200005A, { 635, 20 } },
+	{ 0x0200005B, { 655, 20 } },
+	{ 0x0200005C, { 675, 20 } },
+	{ 0x0200005D, { 695, 10 } },
+	{ 0x0200005E, { 705, 10 } },
+	{ 0x0200005F, { 715, 10 } },
+	{ 0x02000060, { 725, 10 } },
+	{ 0x02000061, { 735, 10 } },
+	{ 0x02000062, { 745, 10 } },
+	{ 0x02000064, { 755, 3 } },
+	{ 0x02000065, { 758, 3 } },
+	{ 0x02000066, { 761, 3 } },
+	{ 0x02000067, { 764, 3 } },
+	{ 0x02000068, { 767, 3 } },
+	{ 0x02000074, { 777, 5 } },
+	{ 0x02000078, { 782, 4 } },
+	{ 0x0200007D, { 786, 1 } },
+	{ 0x02000082, { 789, 1 } },
+	{ 0x02000088, { 792, 6 } },
+	{ 0x02000089, { 798, 5 } },
+	{ 0x0200008A, { 803, 5 } },
+	{ 0x0200008B, { 808, 5 } },
+	{ 0x0200008C, { 813, 5 } },
+	{ 0x0200008D, { 818, 5 } },
+	{ 0x0200008E, { 823, 5 } },
+	{ 0x0200008F, { 828, 5 } },
+	{ 0x02000090, { 833, 5 } },
+	{ 0x0200009F, { 838, 1 } },
+	{ 0x020000A2, { 871, 27 } },
+	{ 0x020000A3, { 898, 6 } },
+	{ 0x020000A4, { 904, 8 } },
+	{ 0x020000A5, { 912, 10 } },
+	{ 0x020000A6, { 922, 5 } },
+	{ 0x020000A7, { 927, 14 } },
+	{ 0x020000A8, { 941, 20 } },
+	{ 0x020000A9, { 961, 11 } },
+	{ 0x020000B6, { 1002, 4 } },
+	{ 0x020000B8, { 1006, 4 } },
+	{ 0x020000BB, { 1010, 3 } },
+	{ 0x020000BD, { 1013, 1 } },
+	{ 0x020000BE, { 1014, 11 } },
+	{ 0x020000C4, { 1033, 6 } },
+	{ 0x020000CA, { 1050, 1 } },
+	{ 0x020000CD, { 1071, 8 } },
+	{ 0x020000CF, { 1079, 4 } },
+	{ 0x020000D2, { 1083, 1 } },
+	{ 0x020000D3, { 1084, 9 } },
+	{ 0x020000D4, { 1093, 2 } },
+	{ 0x020000DB, { 1095, 14 } },
+	{ 0x02000144, { 1117, 3 } },
+	{ 0x02000145, { 1120, 5 } },
+	{ 0x02000147, { 1134, 1 } },
+	{ 0x02000148, { 1135, 10 } },
+	{ 0x02000149, { 1145, 1 } },
+	{ 0x0200014A, { 1146, 11 } },
+	{ 0x0200014B, { 1157, 1 } },
+	{ 0x0200014C, { 1158, 7 } },
+	{ 0x0200015D, { 1167, 5 } },
+	{ 0x0200015E, { 1172, 6 } },
+	{ 0x020001A4, { 1199, 10 } },
 	{ 0x0600001A, { 38, 3 } },
 	{ 0x0600001B, { 41, 4 } },
 	{ 0x0600001C, { 45, 6 } },
@@ -6510,177 +6610,177 @@ static const Il2CppTokenRangePair s_rgctxIndices[279] =
 	{ 0x0600005B, { 197, 4 } },
 	{ 0x0600005C, { 201, 3 } },
 	{ 0x06000061, { 204, 1 } },
-	{ 0x06000087, { 215, 1 } },
-	{ 0x06000088, { 216, 1 } },
-	{ 0x06000089, { 217, 1 } },
-	{ 0x0600008B, { 218, 1 } },
-	{ 0x0600008C, { 219, 1 } },
-	{ 0x0600008F, { 220, 1 } },
-	{ 0x0600009D, { 221, 3 } },
-	{ 0x0600009E, { 224, 3 } },
-	{ 0x060000A5, { 227, 1 } },
-	{ 0x060000A7, { 228, 1 } },
-	{ 0x060000AA, { 229, 1 } },
-	{ 0x060000AB, { 230, 2 } },
-	{ 0x060000AF, { 232, 3 } },
-	{ 0x060000B0, { 235, 2 } },
-	{ 0x060000B3, { 237, 2 } },
-	{ 0x060000B4, { 239, 2 } },
-	{ 0x060000B9, { 241, 1 } },
-	{ 0x060000BA, { 242, 1 } },
-	{ 0x060000BB, { 243, 2 } },
-	{ 0x060000BC, { 245, 2 } },
-	{ 0x060000BD, { 247, 2 } },
-	{ 0x060000BE, { 249, 2 } },
-	{ 0x060000BF, { 251, 2 } },
-	{ 0x060000C0, { 253, 2 } },
-	{ 0x060000C1, { 255, 1 } },
-	{ 0x060000C2, { 256, 1 } },
-	{ 0x060000C3, { 257, 2 } },
-	{ 0x060000C4, { 259, 2 } },
-	{ 0x060000C5, { 261, 2 } },
-	{ 0x060000C6, { 263, 2 } },
-	{ 0x060000C7, { 265, 2 } },
-	{ 0x060000C8, { 267, 2 } },
-	{ 0x060000C9, { 269, 1 } },
-	{ 0x060000CA, { 270, 1 } },
-	{ 0x060000CB, { 271, 2 } },
-	{ 0x060000CC, { 273, 2 } },
-	{ 0x060000CD, { 275, 2 } },
-	{ 0x060000CE, { 277, 2 } },
-	{ 0x060000CF, { 279, 2 } },
-	{ 0x060000D0, { 281, 2 } },
-	{ 0x060000D1, { 283, 1 } },
-	{ 0x060000D2, { 284, 1 } },
-	{ 0x060000D3, { 285, 2 } },
-	{ 0x060000D4, { 287, 2 } },
-	{ 0x060000D5, { 289, 2 } },
-	{ 0x060000D6, { 291, 2 } },
-	{ 0x060000D7, { 293, 2 } },
-	{ 0x060000D8, { 295, 2 } },
-	{ 0x060000D9, { 297, 2 } },
-	{ 0x060000DA, { 299, 2 } },
-	{ 0x060000DC, { 301, 1 } },
-	{ 0x060000DD, { 302, 1 } },
-	{ 0x060000DE, { 303, 1 } },
-	{ 0x060000DF, { 304, 1 } },
-	{ 0x060000E0, { 305, 1 } },
-	{ 0x060000E1, { 306, 1 } },
-	{ 0x060000E2, { 307, 1 } },
-	{ 0x060000E3, { 308, 1 } },
-	{ 0x060000E4, { 309, 1 } },
-	{ 0x060000E5, { 310, 1 } },
-	{ 0x060000E6, { 311, 1 } },
-	{ 0x060000E7, { 312, 1 } },
-	{ 0x060000E8, { 313, 4 } },
-	{ 0x060000E9, { 317, 4 } },
-	{ 0x060000EA, { 321, 4 } },
-	{ 0x060000EB, { 325, 4 } },
-	{ 0x060000EC, { 329, 4 } },
-	{ 0x060000ED, { 333, 4 } },
-	{ 0x060000EE, { 337, 7 } },
-	{ 0x060000EF, { 344, 7 } },
-	{ 0x060000F0, { 351, 7 } },
-	{ 0x060000F1, { 358, 7 } },
-	{ 0x060000F2, { 365, 7 } },
-	{ 0x060000F3, { 372, 7 } },
-	{ 0x060000F5, { 379, 2 } },
-	{ 0x060000F6, { 381, 2 } },
-	{ 0x060000F7, { 383, 2 } },
-	{ 0x060000F8, { 385, 2 } },
-	{ 0x060000F9, { 387, 2 } },
-	{ 0x060000FB, { 389, 2 } },
-	{ 0x060000FC, { 391, 2 } },
-	{ 0x060000FD, { 393, 2 } },
-	{ 0x060000FE, { 395, 2 } },
-	{ 0x060000FF, { 397, 2 } },
-	{ 0x06000101, { 399, 1 } },
-	{ 0x06000102, { 400, 1 } },
-	{ 0x06000103, { 401, 1 } },
-	{ 0x06000104, { 402, 1 } },
-	{ 0x06000105, { 403, 1 } },
-	{ 0x06000112, { 404, 2 } },
-	{ 0x06000113, { 406, 2 } },
-	{ 0x06000114, { 408, 2 } },
-	{ 0x06000115, { 410, 2 } },
-	{ 0x06000116, { 412, 2 } },
-	{ 0x06000117, { 414, 2 } },
-	{ 0x06000118, { 416, 7 } },
-	{ 0x06000119, { 423, 7 } },
-	{ 0x0600011A, { 430, 7 } },
-	{ 0x0600011B, { 437, 7 } },
-	{ 0x0600011C, { 444, 7 } },
-	{ 0x0600011D, { 451, 7 } },
-	{ 0x0600011E, { 458, 4 } },
-	{ 0x0600011F, { 462, 4 } },
-	{ 0x06000120, { 466, 4 } },
-	{ 0x06000121, { 470, 4 } },
-	{ 0x06000122, { 474, 4 } },
-	{ 0x06000123, { 478, 4 } },
-	{ 0x06000124, { 482, 4 } },
-	{ 0x06000125, { 486, 4 } },
-	{ 0x06000126, { 490, 4 } },
-	{ 0x06000127, { 494, 4 } },
-	{ 0x06000128, { 498, 4 } },
-	{ 0x06000129, { 502, 4 } },
-	{ 0x0600012B, { 506, 1 } },
-	{ 0x0600012C, { 507, 1 } },
-	{ 0x0600012D, { 508, 1 } },
-	{ 0x0600012E, { 509, 1 } },
-	{ 0x0600012F, { 510, 1 } },
-	{ 0x0600018A, { 770, 1 } },
-	{ 0x0600018B, { 771, 1 } },
-	{ 0x0600018F, { 772, 5 } },
-	{ 0x060001BB, { 787, 1 } },
-	{ 0x060001BC, { 788, 1 } },
-	{ 0x060001D9, { 790, 2 } },
-	{ 0x0600023C, { 839, 1 } },
-	{ 0x0600023D, { 840, 1 } },
-	{ 0x06000240, { 841, 1 } },
-	{ 0x06000241, { 842, 7 } },
-	{ 0x06000244, { 849, 1 } },
-	{ 0x06000245, { 850, 1 } },
-	{ 0x06000246, { 851, 5 } },
-	{ 0x0600024C, { 856, 5 } },
-	{ 0x0600024D, { 861, 5 } },
-	{ 0x0600024E, { 866, 5 } },
-	{ 0x060002D4, { 972, 13 } },
-	{ 0x060002D6, { 985, 13 } },
-	{ 0x060002DA, { 998, 2 } },
-	{ 0x060002DC, { 1000, 2 } },
-	{ 0x06000335, { 1025, 2 } },
-	{ 0x06000338, { 1027, 3 } },
-	{ 0x06000339, { 1030, 3 } },
-	{ 0x0600033E, { 1039, 2 } },
-	{ 0x06000341, { 1041, 3 } },
-	{ 0x06000342, { 1044, 3 } },
-	{ 0x06000351, { 1047, 1 } },
-	{ 0x06000353, { 1048, 2 } },
-	{ 0x06000362, { 1051, 4 } },
-	{ 0x06000363, { 1055, 2 } },
-	{ 0x06000365, { 1057, 10 } },
-	{ 0x06000367, { 1067, 4 } },
-	{ 0x0600040E, { 1109, 2 } },
-	{ 0x0600040F, { 1111, 6 } },
-	{ 0x06000573, { 1125, 4 } },
-	{ 0x06000574, { 1129, 4 } },
-	{ 0x06000575, { 1133, 1 } },
-	{ 0x06000589, { 1165, 1 } },
-	{ 0x0600058A, { 1166, 1 } },
-	{ 0x060005E5, { 1178, 3 } },
-	{ 0x060005E6, { 1181, 1 } },
-	{ 0x060005E7, { 1182, 1 } },
-	{ 0x060005FC, { 1183, 1 } },
-	{ 0x060005FD, { 1184, 5 } },
-	{ 0x0600061E, { 1189, 1 } },
-	{ 0x06000627, { 1190, 1 } },
-	{ 0x0600064D, { 1191, 1 } },
-	{ 0x0600064E, { 1192, 2 } },
-	{ 0x0600064F, { 1194, 1 } },
-	{ 0x06000651, { 1195, 3 } },
-	{ 0x06000652, { 1198, 1 } },
-	{ 0x060006AF, { 1209, 4 } },
-	{ 0x060006C1, { 1213, 8 } },
+	{ 0x06000085, { 215, 1 } },
+	{ 0x06000086, { 216, 1 } },
+	{ 0x06000087, { 217, 1 } },
+	{ 0x06000089, { 218, 1 } },
+	{ 0x0600008A, { 219, 1 } },
+	{ 0x0600008E, { 220, 1 } },
+	{ 0x0600009C, { 221, 3 } },
+	{ 0x0600009D, { 224, 3 } },
+	{ 0x060000A4, { 227, 1 } },
+	{ 0x060000A6, { 228, 1 } },
+	{ 0x060000A9, { 229, 1 } },
+	{ 0x060000AA, { 230, 2 } },
+	{ 0x060000AE, { 232, 3 } },
+	{ 0x060000AF, { 235, 2 } },
+	{ 0x060000B6, { 237, 2 } },
+	{ 0x060000B7, { 239, 2 } },
+	{ 0x060000BC, { 241, 1 } },
+	{ 0x060000BD, { 242, 1 } },
+	{ 0x060000BE, { 243, 2 } },
+	{ 0x060000BF, { 245, 2 } },
+	{ 0x060000C0, { 247, 2 } },
+	{ 0x060000C1, { 249, 2 } },
+	{ 0x060000C2, { 251, 2 } },
+	{ 0x060000C3, { 253, 2 } },
+	{ 0x060000C4, { 255, 1 } },
+	{ 0x060000C5, { 256, 1 } },
+	{ 0x060000C6, { 257, 2 } },
+	{ 0x060000C7, { 259, 2 } },
+	{ 0x060000C8, { 261, 2 } },
+	{ 0x060000C9, { 263, 2 } },
+	{ 0x060000CA, { 265, 2 } },
+	{ 0x060000CB, { 267, 2 } },
+	{ 0x060000CC, { 269, 1 } },
+	{ 0x060000CD, { 270, 1 } },
+	{ 0x060000CE, { 271, 2 } },
+	{ 0x060000CF, { 273, 2 } },
+	{ 0x060000D0, { 275, 2 } },
+	{ 0x060000D1, { 277, 2 } },
+	{ 0x060000D2, { 279, 2 } },
+	{ 0x060000D3, { 281, 2 } },
+	{ 0x060000D4, { 283, 1 } },
+	{ 0x060000D5, { 284, 1 } },
+	{ 0x060000D6, { 285, 2 } },
+	{ 0x060000D7, { 287, 2 } },
+	{ 0x060000D8, { 289, 2 } },
+	{ 0x060000D9, { 291, 2 } },
+	{ 0x060000DA, { 293, 2 } },
+	{ 0x060000DB, { 295, 2 } },
+	{ 0x060000DC, { 297, 2 } },
+	{ 0x060000DD, { 299, 2 } },
+	{ 0x060000DF, { 301, 1 } },
+	{ 0x060000E0, { 302, 1 } },
+	{ 0x060000E1, { 303, 1 } },
+	{ 0x060000E2, { 304, 1 } },
+	{ 0x060000E3, { 305, 1 } },
+	{ 0x060000E4, { 306, 1 } },
+	{ 0x060000E5, { 307, 1 } },
+	{ 0x060000E6, { 308, 1 } },
+	{ 0x060000E7, { 309, 1 } },
+	{ 0x060000E8, { 310, 1 } },
+	{ 0x060000E9, { 311, 1 } },
+	{ 0x060000EA, { 312, 1 } },
+	{ 0x060000EB, { 313, 4 } },
+	{ 0x060000EC, { 317, 4 } },
+	{ 0x060000ED, { 321, 4 } },
+	{ 0x060000EE, { 325, 4 } },
+	{ 0x060000EF, { 329, 4 } },
+	{ 0x060000F0, { 333, 4 } },
+	{ 0x060000F1, { 337, 7 } },
+	{ 0x060000F2, { 344, 7 } },
+	{ 0x060000F3, { 351, 7 } },
+	{ 0x060000F4, { 358, 7 } },
+	{ 0x060000F5, { 365, 7 } },
+	{ 0x060000F6, { 372, 7 } },
+	{ 0x060000F8, { 379, 2 } },
+	{ 0x060000F9, { 381, 2 } },
+	{ 0x060000FA, { 383, 2 } },
+	{ 0x060000FB, { 385, 2 } },
+	{ 0x060000FC, { 387, 2 } },
+	{ 0x060000FE, { 389, 2 } },
+	{ 0x060000FF, { 391, 2 } },
+	{ 0x06000100, { 393, 2 } },
+	{ 0x06000101, { 395, 2 } },
+	{ 0x06000102, { 397, 2 } },
+	{ 0x06000104, { 399, 1 } },
+	{ 0x06000105, { 400, 1 } },
+	{ 0x06000106, { 401, 1 } },
+	{ 0x06000107, { 402, 1 } },
+	{ 0x06000108, { 403, 1 } },
+	{ 0x06000115, { 404, 2 } },
+	{ 0x06000116, { 406, 2 } },
+	{ 0x06000117, { 408, 2 } },
+	{ 0x06000118, { 410, 2 } },
+	{ 0x06000119, { 412, 2 } },
+	{ 0x0600011A, { 414, 2 } },
+	{ 0x0600011B, { 416, 7 } },
+	{ 0x0600011C, { 423, 7 } },
+	{ 0x0600011D, { 430, 7 } },
+	{ 0x0600011E, { 437, 7 } },
+	{ 0x0600011F, { 444, 7 } },
+	{ 0x06000120, { 451, 7 } },
+	{ 0x06000121, { 458, 4 } },
+	{ 0x06000122, { 462, 4 } },
+	{ 0x06000123, { 466, 4 } },
+	{ 0x06000124, { 470, 4 } },
+	{ 0x06000125, { 474, 4 } },
+	{ 0x06000126, { 478, 4 } },
+	{ 0x06000127, { 482, 4 } },
+	{ 0x06000128, { 486, 4 } },
+	{ 0x06000129, { 490, 4 } },
+	{ 0x0600012A, { 494, 4 } },
+	{ 0x0600012B, { 498, 4 } },
+	{ 0x0600012C, { 502, 4 } },
+	{ 0x0600012E, { 506, 1 } },
+	{ 0x0600012F, { 507, 1 } },
+	{ 0x06000130, { 508, 1 } },
+	{ 0x06000131, { 509, 1 } },
+	{ 0x06000132, { 510, 1 } },
+	{ 0x0600018D, { 770, 1 } },
+	{ 0x0600018E, { 771, 1 } },
+	{ 0x06000192, { 772, 5 } },
+	{ 0x060001BE, { 787, 1 } },
+	{ 0x060001BF, { 788, 1 } },
+	{ 0x060001DC, { 790, 2 } },
+	{ 0x0600023F, { 839, 1 } },
+	{ 0x06000240, { 840, 1 } },
+	{ 0x06000243, { 841, 1 } },
+	{ 0x06000244, { 842, 7 } },
+	{ 0x06000247, { 849, 1 } },
+	{ 0x06000248, { 850, 1 } },
+	{ 0x06000249, { 851, 5 } },
+	{ 0x0600024F, { 856, 5 } },
+	{ 0x06000250, { 861, 5 } },
+	{ 0x06000251, { 866, 5 } },
+	{ 0x060002D7, { 972, 13 } },
+	{ 0x060002D9, { 985, 13 } },
+	{ 0x060002DD, { 998, 2 } },
+	{ 0x060002DF, { 1000, 2 } },
+	{ 0x06000338, { 1025, 2 } },
+	{ 0x0600033B, { 1027, 3 } },
+	{ 0x0600033C, { 1030, 3 } },
+	{ 0x06000341, { 1039, 2 } },
+	{ 0x06000344, { 1041, 3 } },
+	{ 0x06000345, { 1044, 3 } },
+	{ 0x06000354, { 1047, 1 } },
+	{ 0x06000356, { 1048, 2 } },
+	{ 0x06000365, { 1051, 4 } },
+	{ 0x06000366, { 1055, 2 } },
+	{ 0x06000368, { 1057, 10 } },
+	{ 0x0600036A, { 1067, 4 } },
+	{ 0x06000411, { 1109, 2 } },
+	{ 0x06000412, { 1111, 6 } },
+	{ 0x0600057B, { 1125, 4 } },
+	{ 0x0600057C, { 1129, 4 } },
+	{ 0x0600057D, { 1133, 1 } },
+	{ 0x06000591, { 1165, 1 } },
+	{ 0x06000592, { 1166, 1 } },
+	{ 0x060005F7, { 1178, 3 } },
+	{ 0x060005F8, { 1181, 1 } },
+	{ 0x060005F9, { 1182, 1 } },
+	{ 0x0600060E, { 1183, 1 } },
+	{ 0x0600060F, { 1184, 5 } },
+	{ 0x06000630, { 1189, 1 } },
+	{ 0x06000639, { 1190, 1 } },
+	{ 0x06000666, { 1191, 1 } },
+	{ 0x06000667, { 1192, 2 } },
+	{ 0x06000668, { 1194, 1 } },
+	{ 0x0600066A, { 1195, 3 } },
+	{ 0x0600066B, { 1198, 1 } },
+	{ 0x060006C8, { 1209, 4 } },
+	{ 0x060006DA, { 1213, 8 } },
 };
 extern const uint32_t g_rgctx_Dictionary_2_t164D196072B9ECC2B140E9CC166A1C0490F15BF1;
 extern const uint32_t g_rgctx_Dictionary_2_get_Count_m146BBD11A545179515B47BA06B8AB32638FDC2AC;
@@ -7587,8 +7687,8 @@ extern const uint32_t g_rgctx_Func_1_t712052DC2297B13592B05980DC9B09A722D53760;
 extern const uint32_t g_rgctx_Func_1__ctor_m2C4C84886D6673380484DCB788ACC9D4D4198B1E;
 extern const uint32_t g_rgctx_GenericPool_1_set_OnCreate_m33E54A0945C108D3522F7EB3853A8FBF6E89E4DA;
 extern const uint32_t g_rgctx_GenericPool_1_OnItemCreate_m5AC5AB70841642C5B4C5E79E54121290F2158F25;
-extern const uint32_t g_rgctx_T_t5804E13B75D0E95A65E6E941CE53F9856639B875;
 extern const uint32_t g_rgctx_TimeManagedPool_1_OnItemAllocate_m36B809D95DC3F98A8A61D701F3B7E766018610CC;
+extern const uint32_t g_rgctx_T_t5804E13B75D0E95A65E6E941CE53F9856639B875;
 extern const uint32_t g_rgctx_UnitTestPool_1_OnItemRecycle_m6B7E2B1B3B1319FA971899B6E97738E4425AD4FB;
 extern const uint32_t g_rgctx_TimeManagedPool_1__ctor_mD215621B444592D7A6F70E04042D8DFEDA4CF048;
 extern const uint32_t g_rgctx_TimeManagedPool_1_tD773CDDEA09949B73F210ADE62970799336BBFF6;
@@ -8810,8 +8910,8 @@ static const Il2CppRGCTXDefinition s_rgctxValues[1221] =
 	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_Func_1__ctor_m2C4C84886D6673380484DCB788ACC9D4D4198B1E },
 	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_GenericPool_1_set_OnCreate_m33E54A0945C108D3522F7EB3853A8FBF6E89E4DA },
 	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_GenericPool_1_OnItemCreate_m5AC5AB70841642C5B4C5E79E54121290F2158F25 },
-	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_T_t5804E13B75D0E95A65E6E941CE53F9856639B875 },
 	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_TimeManagedPool_1_OnItemAllocate_m36B809D95DC3F98A8A61D701F3B7E766018610CC },
+	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_T_t5804E13B75D0E95A65E6E941CE53F9856639B875 },
 	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_UnitTestPool_1_OnItemRecycle_m6B7E2B1B3B1319FA971899B6E97738E4425AD4FB },
 	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_TimeManagedPool_1__ctor_mD215621B444592D7A6F70E04042D8DFEDA4CF048 },
 	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_TimeManagedPool_1_tD773CDDEA09949B73F210ADE62970799336BBFF6 },
@@ -9131,7 +9231,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AirFramework_CodeGenModule;
 const Il2CppCodeGenModule g_AirFramework_CodeGenModule = 
 {
 	"AirFramework.dll",
-	1730,
+	1756,
 	s_methodPointers,
 	56,
 	s_adjustorThunks,

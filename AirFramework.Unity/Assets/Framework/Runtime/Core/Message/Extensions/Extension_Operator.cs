@@ -14,7 +14,7 @@ namespace AirFramework
         /// <typeparam name="MessageType"></typeparam>
         /// <param name="receiver"></param>
         /// <returns></returns>
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static MessageOperatorBox<MessageType> Operator<MessageType>(this IMessageReceiver receiver, bool autoCreate = true) where MessageType : ISendEventBase
         {
             MessageOperatorBox<IMessage> x = null;
@@ -40,7 +40,7 @@ namespace AirFramework
         /// <typeparam name="MessageType"></typeparam>
         /// <param name="receiver"></param>
         /// <returns></returns>
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static MessageOperatorBox<MessageType> Operator<MessageType>(this IMessageReceiver receiver, bool autoCreate = true) where MessageType : ICallEventBase
         {
             MessageOperatorBox<IMessage> x = null;

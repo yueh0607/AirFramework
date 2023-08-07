@@ -5874,8 +5874,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CanvasUpdateRegistry_RegisterCanvasEleme
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool GameObject_get_activeInHierarchy_m49250F4F168DCC5388D5BE4F6A5681386907B109 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, const RuntimeMethod* method) ;
 // System.Boolean UnityEngine.UI.CanvasUpdateRegistry::IsRebuildingLayout()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool CanvasUpdateRegistry_IsRebuildingLayout_m3C037968252136E38CF1AF8716DC671CE13917EA (const RuntimeMethod* method) ;
-// System.Void UnityEngine.UI.GraphicRegistry::DisableGraphicForCanvas(UnityEngine.Canvas,UnityEngine.UI.Graphic)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GraphicRegistry_DisableGraphicForCanvas_m9AFAD2245A25194017FDDF31DE9D6F6DD9B7A506 (Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26* ___0_c, Graphic_tCBFCA4585A19E2B75465AECFEAC43F4016BF7931* ___1_graphic, const RuntimeMethod* method) ;
+// System.Void UnityEngine.UI.GraphicRegistry::UnregisterGraphicForCanvas(UnityEngine.Canvas,UnityEngine.UI.Graphic)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GraphicRegistry_UnregisterGraphicForCanvas_m31671D141DBAF5B11D8F005E90D6E826362FDC3B (Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26* ___0_c, Graphic_tCBFCA4585A19E2B75465AECFEAC43F4016BF7931* ___1_graphic, const RuntimeMethod* method) ;
 // System.Void UnityEngine.EventSystems.UIBehaviour::OnTransformParentChanged()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UIBehaviour_OnTransformParentChanged_mAD56D3C6049A1746F00DC2643D1666F7DE921384 (UIBehaviour_tB9D4295827BD2EEDEF0749200C6CA7090C742A9D* __this, const RuntimeMethod* method) ;
 // System.Void UnityEngine.UI.Graphic::CacheCanvas()
@@ -5931,14 +5931,14 @@ inline void CollectionPool_2_Release_m59C1324B0736F8E08B4D90A0C1C63768047F9E4C (
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UIBehaviour_OnEnable_m8989ABF5C038905A68E5536BED2E6FFAF8767FFC (UIBehaviour_tB9D4295827BD2EEDEF0749200C6CA7090C742A9D* __this, const RuntimeMethod* method) ;
 // UnityEngine.Texture2D UnityEngine.Texture2D::get_whiteTexture()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* Texture2D_get_whiteTexture_m3A243ED388F9EF0EC515015A6E0E50FD261D2FA1 (const RuntimeMethod* method) ;
+// System.Void UnityEngine.UI.GraphicRegistry::DisableGraphicForCanvas(UnityEngine.Canvas,UnityEngine.UI.Graphic)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GraphicRegistry_DisableGraphicForCanvas_m9AFAD2245A25194017FDDF31DE9D6F6DD9B7A506 (Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26* ___0_c, Graphic_tCBFCA4585A19E2B75465AECFEAC43F4016BF7931* ___1_graphic, const RuntimeMethod* method) ;
 // System.Void UnityEngine.UI.CanvasUpdateRegistry::DisableCanvasElementForRebuild(UnityEngine.UI.ICanvasElement)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CanvasUpdateRegistry_DisableCanvasElementForRebuild_mC1A68AC220C3755789E3CB51E8DBAC81CC61D62F (RuntimeObject* ___0_element, const RuntimeMethod* method) ;
 // System.Void UnityEngine.CanvasRenderer::Clear()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CanvasRenderer_Clear_m496D522F1DBD1037417E470CF2D4D9FD22F68E81 (CanvasRenderer_tAB9A55A976C4E3B2B37D0CE5616E5685A8B43860* __this, const RuntimeMethod* method) ;
 // System.Void UnityEngine.EventSystems.UIBehaviour::OnDisable()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UIBehaviour_OnDisable_m18D5A0B93F65FB50F4D6CE8197EC07F3452C5DDE (UIBehaviour_tB9D4295827BD2EEDEF0749200C6CA7090C742A9D* __this, const RuntimeMethod* method) ;
-// System.Void UnityEngine.UI.GraphicRegistry::UnregisterGraphicForCanvas(UnityEngine.Canvas,UnityEngine.UI.Graphic)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GraphicRegistry_UnregisterGraphicForCanvas_m31671D141DBAF5B11D8F005E90D6E826362FDC3B (Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26* ___0_c, Graphic_tCBFCA4585A19E2B75465AECFEAC43F4016BF7931* ___1_graphic, const RuntimeMethod* method) ;
 // System.Void UnityEngine.UI.CanvasUpdateRegistry::UnRegisterCanvasElementForRebuild(UnityEngine.UI.ICanvasElement)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CanvasUpdateRegistry_UnRegisterCanvasElementForRebuild_m61F9979AB8AFBA924430757FE09967D7A335D916 (RuntimeObject* ___0_element, const RuntimeMethod* method) ;
 // System.Void UnityEngine.EventSystems.UIBehaviour::OnDestroy()
@@ -6386,8 +6386,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Image_GenerateSlicedSprite_mE27E793AAF0D
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Image_GenerateTiledSprite_mD6AD2832573EB7AFDDDAC9D31C243AABEA7489B5 (Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* __this, VertexHelper_tB905FCB02AE67CBEE5F265FE37A5938FC5D136FE* ___0_toFill, const RuntimeMethod* method) ;
 // System.Void UnityEngine.UI.Image::GenerateFilledSprite(UnityEngine.UI.VertexHelper,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Image_GenerateFilledSprite_m3C13BE8BEBBF021D40B2A6AF6A4170055E621915 (Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* __this, VertexHelper_tB905FCB02AE67CBEE5F265FE37A5938FC5D136FE* ___0_toFill, bool ___1_preserveAspect, const RuntimeMethod* method) ;
-// System.Boolean UnityEngine.Sprite::get_isUsingPlaceholder()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Sprite_get_isUsingPlaceholder_m83E42D142B29888F1B6DC3F2C307EF2CCC67274B (Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* __this, const RuntimeMethod* method) ;
 // System.Void UnityEngine.UI.Image::TrackImage(UnityEngine.UI.Image)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Image_TrackImage_m24AE9D703DB406780DA6975F648C587CA1F62EDC (Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* ___0_g, const RuntimeMethod* method) ;
 // System.Void UnityEngine.UI.MaskableGraphic::OnEnable()
@@ -6498,8 +6496,6 @@ inline Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* List_1_get_Item_m6C59436
 }
 // System.Boolean UnityEngine.U2D.SpriteAtlas::CanBindTo(UnityEngine.Sprite)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool SpriteAtlas_CanBindTo_mB4326EC04E7C2CC9D43AE04AEE9B91171F3BFA01 (SpriteAtlas_t7B9620FBFBE1CCB781F2ED24A3B2DD37734F66A8* __this, Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___0_sprite, const RuntimeMethod* method) ;
-// System.Boolean UnityEngine.U2D.SpriteAtlas::IsPlaceholder()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool SpriteAtlas_IsPlaceholder_mCEE38D5EC3F8E50F54CCCAD1387403C7BA2143EF (SpriteAtlas_t7B9620FBFBE1CCB781F2ED24A3B2DD37734F66A8* __this, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.List`1<UnityEngine.UI.Image>::RemoveAt(System.Int32)
 inline void List_1_RemoveAt_m1C83935701080EAD7C26FCB613789A05C529AD34 (List_1_tE6BB71ABF15905EFA2BE92C38A2716547AEADB19* __this, int32_t ___0_index, const RuntimeMethod* method)
 {
@@ -14890,11 +14886,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Graphic_OnBeforeTransformParentChanged_m
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		// GraphicRegistry.DisableGraphicForCanvas(canvas, this);
+		// GraphicRegistry.UnregisterGraphicForCanvas(canvas, this);
 		Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26* L_0;
 		L_0 = Graphic_get_canvas_mEA2161DF3BD736541DE41F9B814C4860FEB76419(__this, NULL);
 		il2cpp_codegen_runtime_class_init_inline(GraphicRegistry_t374118CCD6DBB47209C783A4BF2F4EF9EA78A326_il2cpp_TypeInfo_var);
-		GraphicRegistry_DisableGraphicForCanvas_m9AFAD2245A25194017FDDF31DE9D6F6DD9B7A506(L_0, __this, NULL);
+		GraphicRegistry_UnregisterGraphicForCanvas_m31671D141DBAF5B11D8F005E90D6E826362FDC3B(L_0, __this, NULL);
 		// LayoutRebuilder.MarkLayoutForRebuild(rectTransform);
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_1;
 		L_1 = Graphic_get_rectTransform_mF4752E8934267D630810E84CE02CDFB81EB1FD6D(__this, NULL);
@@ -21096,7 +21092,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Image_TrackSprite_m77BFAC0425F494ED236E3
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		// if (activeSprite != null && (activeSprite.texture == null || activeSprite.isUsingPlaceholder))
+		// if (activeSprite != null && activeSprite.texture == null)
 		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_0;
 		L_0 = Image_get_activeSprite_m0F639A03B26FD25CA1D8EEA006D0B0C322037034(__this, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -21104,7 +21100,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Image_TrackSprite_m77BFAC0425F494ED236E3
 		L_1 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 		if (!L_1)
 		{
-			goto IL_003b;
+			goto IL_002e;
 		}
 	}
 	{
@@ -21116,24 +21112,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Image_TrackSprite_m77BFAC0425F494ED236E3
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_4;
 		L_4 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_3, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		if (L_4)
+		if (!L_4)
 		{
 			goto IL_002e;
 		}
 	}
-	{
-		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_5;
-		L_5 = Image_get_activeSprite_m0F639A03B26FD25CA1D8EEA006D0B0C322037034(__this, NULL);
-		NullCheck(L_5);
-		bool L_6;
-		L_6 = Sprite_get_isUsingPlaceholder_m83E42D142B29888F1B6DC3F2C307EF2CCC67274B(L_5, NULL);
-		if (!L_6)
-		{
-			goto IL_003b;
-		}
-	}
-
-IL_002e:
 	{
 		// TrackImage(this);
 		il2cpp_codegen_runtime_class_init_inline(Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E_il2cpp_TypeInfo_var);
@@ -21142,7 +21125,7 @@ IL_002e:
 		__this->___m_Tracked_48 = (bool)1;
 	}
 
-IL_003b:
+IL_002e:
 	{
 		// }
 		return;
@@ -26020,7 +26003,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Image_RebuildImage_m5BDCACEE109C4EF96B8F
 		int32_t L_1;
 		L_1 = List_1_get_Count_m9CF4A6657F7D5E95A4A105F7E18047A70F55B82C_inline(L_0, List_1_get_Count_m9CF4A6657F7D5E95A4A105F7E18047A70F55B82C_RuntimeMethod_var);
 		V_0 = ((int32_t)il2cpp_codegen_subtract(L_1, 1));
-		goto IL_0054;
+		goto IL_004c;
 	}
 
 IL_000f:
@@ -26043,7 +26026,7 @@ IL_000f:
 		L_7 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602((Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, L_6, NULL);
 		if (!L_7)
 		{
-			goto IL_0050;
+			goto IL_0048;
 		}
 	}
 	{
@@ -26057,7 +26040,7 @@ IL_000f:
 		L_11 = SpriteAtlas_CanBindTo_mB4326EC04E7C2CC9D43AE04AEE9B91171F3BFA01(L_8, L_10, NULL);
 		if (!L_11)
 		{
-			goto IL_0050;
+			goto IL_0048;
 		}
 	}
 	{
@@ -26065,37 +26048,26 @@ IL_000f:
 		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_12 = V_1;
 		NullCheck(L_12);
 		VirtualActionInvoker0::Invoke(26 /* System.Void UnityEngine.UI.Graphic::SetAllDirty() */, L_12);
-		// if (!spriteAtlas.IsPlaceholder())
-		SpriteAtlas_t7B9620FBFBE1CCB781F2ED24A3B2DD37734F66A8* L_13 = ___0_spriteAtlas;
-		NullCheck(L_13);
-		bool L_14;
-		L_14 = SpriteAtlas_IsPlaceholder_mCEE38D5EC3F8E50F54CCCAD1387403C7BA2143EF(L_13, NULL);
-		if (L_14)
-		{
-			goto IL_0050;
-		}
-	}
-	{
 		// m_TrackedTexturelessImages.RemoveAt(i);
 		il2cpp_codegen_runtime_class_init_inline(Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E_il2cpp_TypeInfo_var);
-		List_1_tE6BB71ABF15905EFA2BE92C38A2716547AEADB19* L_15 = ((Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E_StaticFields*)il2cpp_codegen_static_fields_for(Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E_il2cpp_TypeInfo_var))->___m_TrackedTexturelessImages_56;
+		List_1_tE6BB71ABF15905EFA2BE92C38A2716547AEADB19* L_13 = ((Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E_StaticFields*)il2cpp_codegen_static_fields_for(Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E_il2cpp_TypeInfo_var))->___m_TrackedTexturelessImages_56;
+		int32_t L_14 = V_0;
+		NullCheck(L_13);
+		List_1_RemoveAt_m1C83935701080EAD7C26FCB613789A05C529AD34(L_13, L_14, List_1_RemoveAt_m1C83935701080EAD7C26FCB613789A05C529AD34_RuntimeMethod_var);
+	}
+
+IL_0048:
+	{
+		// for (var i = m_TrackedTexturelessImages.Count - 1; i >= 0; i--)
+		int32_t L_15 = V_0;
+		V_0 = ((int32_t)il2cpp_codegen_subtract(L_15, 1));
+	}
+
+IL_004c:
+	{
+		// for (var i = m_TrackedTexturelessImages.Count - 1; i >= 0; i--)
 		int32_t L_16 = V_0;
-		NullCheck(L_15);
-		List_1_RemoveAt_m1C83935701080EAD7C26FCB613789A05C529AD34(L_15, L_16, List_1_RemoveAt_m1C83935701080EAD7C26FCB613789A05C529AD34_RuntimeMethod_var);
-	}
-
-IL_0050:
-	{
-		// for (var i = m_TrackedTexturelessImages.Count - 1; i >= 0; i--)
-		int32_t L_17 = V_0;
-		V_0 = ((int32_t)il2cpp_codegen_subtract(L_17, 1));
-	}
-
-IL_0054:
-	{
-		// for (var i = m_TrackedTexturelessImages.Count - 1; i >= 0; i--)
-		int32_t L_18 = V_0;
-		if ((((int32_t)L_18) >= ((int32_t)0)))
+		if ((((int32_t)L_16) >= ((int32_t)0)))
 		{
 			goto IL_000f;
 		}

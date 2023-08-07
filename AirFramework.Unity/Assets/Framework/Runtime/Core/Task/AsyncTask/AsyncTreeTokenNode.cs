@@ -31,7 +31,7 @@ namespace AirFramework.Internal
 
         public ITaskTokenHolder TokenHolder { get; set; } = null;
 
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public AsyncTreeTokenNode(IAsyncTokenProperty Root, IAsyncTokenProperty Current)
         {
             this.Current = Current;
@@ -48,7 +48,7 @@ namespace AirFramework.Internal
         /// <summary>
         /// 挂起任务，暂停任务
         /// </summary>
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Yield()
         {
             Authorization = false;
@@ -60,7 +60,7 @@ namespace AirFramework.Internal
         /// <summary>
         /// 继续任务
         /// </summary>
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Continue()
         {
             Authorization = true;
@@ -71,7 +71,7 @@ namespace AirFramework.Internal
         /// <summary>
         /// 取消任务
         /// </summary>
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Cancel()
         {
             Authorization = false;

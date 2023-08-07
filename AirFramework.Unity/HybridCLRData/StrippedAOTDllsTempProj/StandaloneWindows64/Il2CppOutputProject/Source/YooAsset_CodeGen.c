@@ -654,575 +654,577 @@ extern void AssetInfo_get_Error_mC9133119BEDF740145FDEE6781E8A90CACE0B6F3 (void)
 extern void AssetInfo_get_GUID_mB0C6C83736E4A04557E24F6F1E6E85EDD3F1E91A (void);
 // 0x00000145 System.Boolean YooAsset.AssetInfo::get_IsInvalid()
 extern void AssetInfo_get_IsInvalid_mE49DFEE2F21AF8068B2EE8D70698866D3E6D1309 (void);
-// 0x00000146 System.String YooAsset.AssetInfo::get_AssetPath()
+// 0x00000146 System.String YooAsset.AssetInfo::get_Address()
+extern void AssetInfo_get_Address_m32244A4F8AAFD3F3B308EC40953A2BBE49C1E015 (void);
+// 0x00000147 System.String YooAsset.AssetInfo::get_AssetPath()
 extern void AssetInfo_get_AssetPath_mBF0509BDAB9E0ED197999E10C7B5DEFECE7DAD45 (void);
-// 0x00000147 System.Void YooAsset.AssetInfo::.ctor(YooAsset.PackageAsset,System.Type)
+// 0x00000148 System.Void YooAsset.AssetInfo::.ctor(YooAsset.PackageAsset,System.Type)
 extern void AssetInfo__ctor_mBCA57B01F1B48EDC7E997F0A6685C161E788C556 (void);
-// 0x00000148 System.Void YooAsset.AssetInfo::.ctor(YooAsset.PackageAsset)
+// 0x00000149 System.Void YooAsset.AssetInfo::.ctor(YooAsset.PackageAsset)
 extern void AssetInfo__ctor_mE3A2AB75778CE74ACFD8E6450FD98E0574296BD9 (void);
-// 0x00000149 System.Void YooAsset.AssetInfo::.ctor(System.String)
+// 0x0000014A System.Void YooAsset.AssetInfo::.ctor(System.String)
 extern void AssetInfo__ctor_m3FBC08A7217B08A964DE5768108419C86F0BA4AF (void);
-// 0x0000014A System.Void YooAsset.BundleInfo::set_RemoteMainURL(System.String)
+// 0x0000014B System.Void YooAsset.BundleInfo::set_RemoteMainURL(System.String)
 extern void BundleInfo_set_RemoteMainURL_m3E7B011A8D1435C74657113DBCBE60EAB02A78A3 (void);
-// 0x0000014B System.String YooAsset.BundleInfo::get_RemoteMainURL()
+// 0x0000014C System.String YooAsset.BundleInfo::get_RemoteMainURL()
 extern void BundleInfo_get_RemoteMainURL_m575EFBB7EE825E78864FEE7E70A6763DEAE3E439 (void);
-// 0x0000014C System.Void YooAsset.BundleInfo::set_RemoteFallbackURL(System.String)
+// 0x0000014D System.Void YooAsset.BundleInfo::set_RemoteFallbackURL(System.String)
 extern void BundleInfo_set_RemoteFallbackURL_m4EEE9A5A24994BF1E9E164C4D94817CB93B9B418 (void);
-// 0x0000014D System.String YooAsset.BundleInfo::get_RemoteFallbackURL()
+// 0x0000014E System.String YooAsset.BundleInfo::get_RemoteFallbackURL()
 extern void BundleInfo_get_RemoteFallbackURL_m5582C9F3EC9E666A3E0FEDB250D11F78DC340FBF (void);
-// 0x0000014E System.Void YooAsset.BundleInfo::.ctor(YooAsset.PackageBundle,YooAsset.BundleInfo/ELoadMode,System.String,System.String)
+// 0x0000014F System.Void YooAsset.BundleInfo::.ctor(YooAsset.PackageBundle,YooAsset.BundleInfo/ELoadMode,System.String,System.String)
 extern void BundleInfo__ctor_mE5CF6C1A88B9587E432B55681CC03A96B8FA759E (void);
-// 0x0000014F System.Void YooAsset.BundleInfo::.ctor(YooAsset.PackageBundle,YooAsset.BundleInfo/ELoadMode)
+// 0x00000150 System.Void YooAsset.BundleInfo::.ctor(YooAsset.PackageBundle,YooAsset.BundleInfo/ELoadMode)
 extern void BundleInfo__ctor_m7540C41174421DEA13C194707C8798C24433186F (void);
-// 0x00000150 System.String YooAsset.ManifestTools::GetRemoteBundleFileExtension(System.String)
+// 0x00000151 System.String YooAsset.ManifestTools::GetRemoteBundleFileExtension(System.String)
 extern void ManifestTools_GetRemoteBundleFileExtension_m1B0D4C8486FB946288CE3F2D12F45E9683804875 (void);
-// 0x00000151 System.String YooAsset.ManifestTools::GetRemoteBundleFileName(System.Int32,System.String,System.String,System.String)
+// 0x00000152 System.String YooAsset.ManifestTools::GetRemoteBundleFileName(System.Int32,System.String,System.String,System.String)
 extern void ManifestTools_GetRemoteBundleFileName_m6D08E8EA23F00E31D1FED9EED1955464FBFFB2BF (void);
-// 0x00000152 YooAsset.BundleInfo YooAsset.ManifestTools::ConvertToUnpackInfo(YooAsset.PackageBundle)
+// 0x00000153 YooAsset.BundleInfo YooAsset.ManifestTools::ConvertToUnpackInfo(YooAsset.PackageBundle)
 extern void ManifestTools_ConvertToUnpackInfo_mFF9CE89E52AAFC18FFF05686D366283C43D20C14 (void);
-// 0x00000153 System.Void YooAsset.DownloaderOperation::set_TotalDownloadCount(System.Int32)
+// 0x00000154 System.Void YooAsset.DownloaderOperation::set_TotalDownloadCount(System.Int32)
 extern void DownloaderOperation_set_TotalDownloadCount_m2BA06204B123D3F3A03B657C1DA5B532B8B1A424 (void);
-// 0x00000154 System.Int32 YooAsset.DownloaderOperation::get_TotalDownloadCount()
+// 0x00000155 System.Int32 YooAsset.DownloaderOperation::get_TotalDownloadCount()
 extern void DownloaderOperation_get_TotalDownloadCount_m536A5BFFEB385106C66064BD94A272301CD6EC1C (void);
-// 0x00000155 System.Void YooAsset.DownloaderOperation::set_TotalDownloadBytes(System.Int64)
+// 0x00000156 System.Void YooAsset.DownloaderOperation::set_TotalDownloadBytes(System.Int64)
 extern void DownloaderOperation_set_TotalDownloadBytes_m0990BBDEC28BA3F72F4E24142D7724FB60E6AC4A (void);
-// 0x00000156 System.Int64 YooAsset.DownloaderOperation::get_TotalDownloadBytes()
+// 0x00000157 System.Int64 YooAsset.DownloaderOperation::get_TotalDownloadBytes()
 extern void DownloaderOperation_get_TotalDownloadBytes_m4F0009CCA5AEF043B000F6B6270448CA58CFE5FA (void);
-// 0x00000157 System.Void YooAsset.DownloaderOperation::set_OnDownloadOverCallback(YooAsset.DownloaderOperation/OnDownloadOver)
+// 0x00000158 System.Void YooAsset.DownloaderOperation::set_OnDownloadOverCallback(YooAsset.DownloaderOperation/OnDownloadOver)
 extern void DownloaderOperation_set_OnDownloadOverCallback_mEC1CC28A211DD3649D0A559267528B4BE36F62A7 (void);
-// 0x00000158 YooAsset.DownloaderOperation/OnDownloadOver YooAsset.DownloaderOperation::get_OnDownloadOverCallback()
+// 0x00000159 YooAsset.DownloaderOperation/OnDownloadOver YooAsset.DownloaderOperation::get_OnDownloadOverCallback()
 extern void DownloaderOperation_get_OnDownloadOverCallback_m7C13A3D2D2A1D2834E00F8B06FE07205D2B493F8 (void);
-// 0x00000159 System.Void YooAsset.DownloaderOperation::set_OnDownloadProgressCallback(YooAsset.DownloaderOperation/OnDownloadProgress)
+// 0x0000015A System.Void YooAsset.DownloaderOperation::set_OnDownloadProgressCallback(YooAsset.DownloaderOperation/OnDownloadProgress)
 extern void DownloaderOperation_set_OnDownloadProgressCallback_m1057544081D4EF83F2C7681E18B1B250DEF95883 (void);
-// 0x0000015A YooAsset.DownloaderOperation/OnDownloadProgress YooAsset.DownloaderOperation::get_OnDownloadProgressCallback()
+// 0x0000015B YooAsset.DownloaderOperation/OnDownloadProgress YooAsset.DownloaderOperation::get_OnDownloadProgressCallback()
 extern void DownloaderOperation_get_OnDownloadProgressCallback_mC5555DA02D608B7112158EF15F205D206B600755 (void);
-// 0x0000015B System.Void YooAsset.DownloaderOperation::set_OnDownloadErrorCallback(YooAsset.DownloaderOperation/OnDownloadError)
+// 0x0000015C System.Void YooAsset.DownloaderOperation::set_OnDownloadErrorCallback(YooAsset.DownloaderOperation/OnDownloadError)
 extern void DownloaderOperation_set_OnDownloadErrorCallback_mC83AA6D2931DF85E69235C7FFF4903A427E170BA (void);
-// 0x0000015C YooAsset.DownloaderOperation/OnDownloadError YooAsset.DownloaderOperation::get_OnDownloadErrorCallback()
+// 0x0000015D YooAsset.DownloaderOperation/OnDownloadError YooAsset.DownloaderOperation::get_OnDownloadErrorCallback()
 extern void DownloaderOperation_get_OnDownloadErrorCallback_mE8618B93BFEA8A4A78B13CCEF7ACE7141BB69174 (void);
-// 0x0000015D System.Void YooAsset.DownloaderOperation::set_OnStartDownloadFileCallback(YooAsset.DownloaderOperation/OnStartDownloadFile)
+// 0x0000015E System.Void YooAsset.DownloaderOperation::set_OnStartDownloadFileCallback(YooAsset.DownloaderOperation/OnStartDownloadFile)
 extern void DownloaderOperation_set_OnStartDownloadFileCallback_mD64B6D59C362CA1F84CB20AAC83F43035E3933D6 (void);
-// 0x0000015E YooAsset.DownloaderOperation/OnStartDownloadFile YooAsset.DownloaderOperation::get_OnStartDownloadFileCallback()
+// 0x0000015F YooAsset.DownloaderOperation/OnStartDownloadFile YooAsset.DownloaderOperation::get_OnStartDownloadFileCallback()
 extern void DownloaderOperation_get_OnStartDownloadFileCallback_m67773A6FD9D33DB14CB1D7A4579A8CA9ABF40557 (void);
-// 0x0000015F System.Void YooAsset.DownloaderOperation::.ctor(System.Collections.Generic.List`1<YooAsset.BundleInfo>,System.Int32,System.Int32,System.Int32)
+// 0x00000160 System.Void YooAsset.DownloaderOperation::.ctor(System.Collections.Generic.List`1<YooAsset.BundleInfo>,System.Int32,System.Int32,System.Int32)
 extern void DownloaderOperation__ctor_mFDFE3AC6E17130CF17018C6AF1C8A15635E720A5 (void);
-// 0x00000160 System.Void YooAsset.DownloaderOperation::Start()
+// 0x00000161 System.Void YooAsset.DownloaderOperation::Start()
 extern void DownloaderOperation_Start_mA97AE1B89ADDE1C25C5B71A36E4D754D4CA8D513 (void);
-// 0x00000161 System.Void YooAsset.DownloaderOperation::Update()
+// 0x00000162 System.Void YooAsset.DownloaderOperation::Update()
 extern void DownloaderOperation_Update_mB9B889444E967342F4473B89ACECDC8CC69E9F9C (void);
-// 0x00000162 System.Void YooAsset.DownloaderOperation::BeginDownload()
+// 0x00000163 System.Void YooAsset.DownloaderOperation::BeginDownload()
 extern void DownloaderOperation_BeginDownload_m52627DC31BD59F76E388626ED8A7C2969B11E561 (void);
-// 0x00000163 System.Void YooAsset.DownloaderOperation/OnDownloadOver::.ctor(System.Object,System.IntPtr)
+// 0x00000164 System.Void YooAsset.DownloaderOperation/OnDownloadOver::.ctor(System.Object,System.IntPtr)
 extern void OnDownloadOver__ctor_m2EBEF97FDE8D0C96E26F5BA0E150AE8E5F1625B9 (void);
-// 0x00000164 System.Void YooAsset.DownloaderOperation/OnDownloadOver::Invoke(System.Boolean)
+// 0x00000165 System.Void YooAsset.DownloaderOperation/OnDownloadOver::Invoke(System.Boolean)
 extern void OnDownloadOver_Invoke_m834735178D3433798EB9491A42108D1043FC957A (void);
-// 0x00000165 System.Void YooAsset.DownloaderOperation/OnDownloadProgress::.ctor(System.Object,System.IntPtr)
+// 0x00000166 System.Void YooAsset.DownloaderOperation/OnDownloadProgress::.ctor(System.Object,System.IntPtr)
 extern void OnDownloadProgress__ctor_m5EE3A22471494C009282038AED6C8BFE8A8AAB86 (void);
-// 0x00000166 System.Void YooAsset.DownloaderOperation/OnDownloadProgress::Invoke(System.Int32,System.Int32,System.Int64,System.Int64)
+// 0x00000167 System.Void YooAsset.DownloaderOperation/OnDownloadProgress::Invoke(System.Int32,System.Int32,System.Int64,System.Int64)
 extern void OnDownloadProgress_Invoke_m823CB39E7B30C2A2897667DA8EAD2C91D67A6A9D (void);
-// 0x00000167 System.Void YooAsset.DownloaderOperation/OnDownloadError::.ctor(System.Object,System.IntPtr)
+// 0x00000168 System.Void YooAsset.DownloaderOperation/OnDownloadError::.ctor(System.Object,System.IntPtr)
 extern void OnDownloadError__ctor_mB790A3BCB45D13F4440EBB84170E7D84B1BCC166 (void);
-// 0x00000168 System.Void YooAsset.DownloaderOperation/OnDownloadError::Invoke(System.String,System.String)
+// 0x00000169 System.Void YooAsset.DownloaderOperation/OnDownloadError::Invoke(System.String,System.String)
 extern void OnDownloadError_Invoke_mEC50C971586534B6FD01D87BB5D0665FD223787E (void);
-// 0x00000169 System.Void YooAsset.DownloaderOperation/OnStartDownloadFile::.ctor(System.Object,System.IntPtr)
+// 0x0000016A System.Void YooAsset.DownloaderOperation/OnStartDownloadFile::.ctor(System.Object,System.IntPtr)
 extern void OnStartDownloadFile__ctor_m622DFE678E54A8CF3FDB035AAFADFE9F31388265 (void);
-// 0x0000016A System.Void YooAsset.DownloaderOperation/OnStartDownloadFile::Invoke(System.String,System.Int64)
+// 0x0000016B System.Void YooAsset.DownloaderOperation/OnStartDownloadFile::Invoke(System.String,System.Int64)
 extern void OnStartDownloadFile_Invoke_mCF0136C4A4CFF532AF09D7B57B7F36F7DB90153F (void);
-// 0x0000016B System.Void YooAsset.ResourceDownloaderOperation::.ctor(System.Collections.Generic.List`1<YooAsset.BundleInfo>,System.Int32,System.Int32,System.Int32)
+// 0x0000016C System.Void YooAsset.ResourceDownloaderOperation::.ctor(System.Collections.Generic.List`1<YooAsset.BundleInfo>,System.Int32,System.Int32,System.Int32)
 extern void ResourceDownloaderOperation__ctor_mBDA72EEA115B88A9614AC2F9ED53F207123B7B69 (void);
-// 0x0000016C YooAsset.ResourceDownloaderOperation YooAsset.ResourceDownloaderOperation::CreateEmptyDownloader(System.Int32,System.Int32,System.Int32)
+// 0x0000016D YooAsset.ResourceDownloaderOperation YooAsset.ResourceDownloaderOperation::CreateEmptyDownloader(System.Int32,System.Int32,System.Int32)
 extern void ResourceDownloaderOperation_CreateEmptyDownloader_m8CB97E037739ED090CF56998FAEA615F5674305B (void);
-// 0x0000016D System.Void YooAsset.InitializationOperation::set_PackageVersion(System.String)
+// 0x0000016E System.Void YooAsset.InitializationOperation::set_PackageVersion(System.String)
 extern void InitializationOperation_set_PackageVersion_mADF573111B93F350A705E39AD8E6A88E6A055AD5 (void);
-// 0x0000016E System.Void YooAsset.InitializationOperation::.ctor()
+// 0x0000016F System.Void YooAsset.InitializationOperation::.ctor()
 extern void InitializationOperation__ctor_m274A70EE38DE78EC50EF156DAF3EBDDCDD3D45A9 (void);
-// 0x0000016F System.Void YooAsset.EditorSimulateModeInitializationOperation::.ctor(YooAsset.EditorSimulateModeImpl,System.String)
+// 0x00000170 System.Void YooAsset.EditorSimulateModeInitializationOperation::.ctor(YooAsset.EditorSimulateModeImpl,System.String)
 extern void EditorSimulateModeInitializationOperation__ctor_m666E8FFACD207BFA00FA5CB346338263FC825FA0 (void);
-// 0x00000170 System.Void YooAsset.EditorSimulateModeInitializationOperation::Start()
+// 0x00000171 System.Void YooAsset.EditorSimulateModeInitializationOperation::Start()
 extern void EditorSimulateModeInitializationOperation_Start_m32ACC2A99547C155D6AD2C6B2226BEDB8B908F10 (void);
-// 0x00000171 System.Void YooAsset.EditorSimulateModeInitializationOperation::Update()
+// 0x00000172 System.Void YooAsset.EditorSimulateModeInitializationOperation::Update()
 extern void EditorSimulateModeInitializationOperation_Update_m3F44058D2E2F5985CBD1DB446B4FC24E2634A3B5 (void);
-// 0x00000172 System.Void YooAsset.OfflinePlayModeInitializationOperation::.ctor(YooAsset.OfflinePlayModeImpl,System.String)
+// 0x00000173 System.Void YooAsset.OfflinePlayModeInitializationOperation::.ctor(YooAsset.OfflinePlayModeImpl,System.String)
 extern void OfflinePlayModeInitializationOperation__ctor_mFE177DA042C001B9324360E17A834F354DD987E1 (void);
-// 0x00000173 System.Void YooAsset.OfflinePlayModeInitializationOperation::Start()
+// 0x00000174 System.Void YooAsset.OfflinePlayModeInitializationOperation::Start()
 extern void OfflinePlayModeInitializationOperation_Start_mAD21EB53416142E4A87013B7A0A2763C508EAC39 (void);
-// 0x00000174 System.Void YooAsset.OfflinePlayModeInitializationOperation::Update()
+// 0x00000175 System.Void YooAsset.OfflinePlayModeInitializationOperation::Update()
 extern void OfflinePlayModeInitializationOperation_Update_mCA1F099D8E3E3B4C8A09D4AE1BC126E5CC03A648 (void);
-// 0x00000175 System.Void YooAsset.HostPlayModeInitializationOperation::.ctor(YooAsset.HostPlayModeImpl,System.String)
+// 0x00000176 System.Void YooAsset.HostPlayModeInitializationOperation::.ctor(YooAsset.HostPlayModeImpl,System.String)
 extern void HostPlayModeInitializationOperation__ctor_m261BF1BD12E8F3B38D35D1E69F5588A5EF42CD39 (void);
-// 0x00000176 System.Void YooAsset.HostPlayModeInitializationOperation::Start()
+// 0x00000177 System.Void YooAsset.HostPlayModeInitializationOperation::Start()
 extern void HostPlayModeInitializationOperation_Start_mD14EA7C83C82C0BCC1A8C8E2D1F77808D39D9953 (void);
-// 0x00000177 System.Void YooAsset.HostPlayModeInitializationOperation::Update()
+// 0x00000178 System.Void YooAsset.HostPlayModeInitializationOperation::Update()
 extern void HostPlayModeInitializationOperation_Update_m23B37A3393F1F8EBAC0E630FA1DAAE9C22DD08C4 (void);
-// 0x00000178 System.Void YooAsset.AppFootPrint::Load()
+// 0x00000179 System.Void YooAsset.AppFootPrint::Load()
 extern void AppFootPrint_Load_mD7C5BF693DF6945B38745D21EB2B45A96AAA615C (void);
-// 0x00000179 System.Boolean YooAsset.AppFootPrint::IsDirty()
+// 0x0000017A System.Boolean YooAsset.AppFootPrint::IsDirty()
 extern void AppFootPrint_IsDirty_m4D28DB7E1E5F711D67201540FE64857CC32EBCD3 (void);
-// 0x0000017A System.Void YooAsset.AppFootPrint::Coverage()
+// 0x0000017B System.Void YooAsset.AppFootPrint::Coverage()
 extern void AppFootPrint_Coverage_mE880410C36158FF252BC1D5627C4C650429B0A1D (void);
-// 0x0000017B System.Void YooAsset.AppFootPrint::.ctor()
+// 0x0000017C System.Void YooAsset.AppFootPrint::.ctor()
 extern void AppFootPrint__ctor_m4549F6844450B843339D2C044A93786C724939E6 (void);
-// 0x0000017C System.Void YooAsset.DeserializeManifestOperation::set_Manifest(YooAsset.PackageManifest)
+// 0x0000017D System.Void YooAsset.DeserializeManifestOperation::set_Manifest(YooAsset.PackageManifest)
 extern void DeserializeManifestOperation_set_Manifest_m2A5C2004FB9FC00471B42489A82BEFCA5266238D (void);
-// 0x0000017D YooAsset.PackageManifest YooAsset.DeserializeManifestOperation::get_Manifest()
+// 0x0000017E YooAsset.PackageManifest YooAsset.DeserializeManifestOperation::get_Manifest()
 extern void DeserializeManifestOperation_get_Manifest_mC22C7ADD7C1B88F9FB4574D417279536CDE924E3 (void);
-// 0x0000017E System.Void YooAsset.DeserializeManifestOperation::.ctor(System.Byte[])
+// 0x0000017F System.Void YooAsset.DeserializeManifestOperation::.ctor(System.Byte[])
 extern void DeserializeManifestOperation__ctor_m4B55A7A7DCFA419B828FC96A130E9D0CF14BA4EA (void);
-// 0x0000017F System.Void YooAsset.DeserializeManifestOperation::Start()
+// 0x00000180 System.Void YooAsset.DeserializeManifestOperation::Start()
 extern void DeserializeManifestOperation_Start_m7FE22DD7D20A2218D1CE6B98118B75D353372FF9 (void);
-// 0x00000180 System.Void YooAsset.DeserializeManifestOperation::Update()
+// 0x00000181 System.Void YooAsset.DeserializeManifestOperation::Update()
 extern void DeserializeManifestOperation_Update_m2103234C2C8DD95C26E0E7A51B5B5D242DE822A6 (void);
-// 0x00000181 System.Void YooAsset.DownloadManifestOperation::.ctor(YooAsset.IRemoteServices,System.String,System.String,System.Int32)
+// 0x00000182 System.Void YooAsset.DownloadManifestOperation::.ctor(YooAsset.IRemoteServices,System.String,System.String,System.Int32)
 extern void DownloadManifestOperation__ctor_mA246AA17F790D61F6B47253CA878D2F1F7C53BF5 (void);
-// 0x00000182 System.Void YooAsset.DownloadManifestOperation::Start()
+// 0x00000183 System.Void YooAsset.DownloadManifestOperation::Start()
 extern void DownloadManifestOperation_Start_m528C53ED0A1DB663707C5DCDF86BCE02053FE8AB (void);
-// 0x00000183 System.Void YooAsset.DownloadManifestOperation::Update()
+// 0x00000184 System.Void YooAsset.DownloadManifestOperation::Update()
 extern void DownloadManifestOperation_Update_m40004F1EE9A2236915DF59516F24A86808ADDA3D (void);
-// 0x00000184 System.String YooAsset.DownloadManifestOperation::GetDownloadRequestURL(System.String)
+// 0x00000185 System.String YooAsset.DownloadManifestOperation::GetDownloadRequestURL(System.String)
 extern void DownloadManifestOperation_GetDownloadRequestURL_mE517F04AF60FC3D40A28488AC6A04B8F7B637BFB (void);
-// 0x00000185 System.Void YooAsset.LoadBuildinManifestOperation::set_Manifest(YooAsset.PackageManifest)
+// 0x00000186 System.Void YooAsset.LoadBuildinManifestOperation::set_Manifest(YooAsset.PackageManifest)
 extern void LoadBuildinManifestOperation_set_Manifest_mA6406DCD394B5D99944A2C425CF328E783756263 (void);
-// 0x00000186 YooAsset.PackageManifest YooAsset.LoadBuildinManifestOperation::get_Manifest()
+// 0x00000187 YooAsset.PackageManifest YooAsset.LoadBuildinManifestOperation::get_Manifest()
 extern void LoadBuildinManifestOperation_get_Manifest_m25CF817CB8B209E33846CD26ACDAB64C10788FFB (void);
-// 0x00000187 System.Void YooAsset.LoadBuildinManifestOperation::.ctor(System.String,System.String)
+// 0x00000188 System.Void YooAsset.LoadBuildinManifestOperation::.ctor(System.String,System.String)
 extern void LoadBuildinManifestOperation__ctor_m75EDDAF6B216CFE99E7BB4CF3781DFB9273BD7C7 (void);
-// 0x00000188 System.Void YooAsset.LoadBuildinManifestOperation::Start()
+// 0x00000189 System.Void YooAsset.LoadBuildinManifestOperation::Start()
 extern void LoadBuildinManifestOperation_Start_mDB60F7D9B0A874E4568B769D86EA3B2DD644D470 (void);
-// 0x00000189 System.Void YooAsset.LoadBuildinManifestOperation::Update()
+// 0x0000018A System.Void YooAsset.LoadBuildinManifestOperation::Update()
 extern void LoadBuildinManifestOperation_Update_m5B4ECCBD5D86DA1109B48889B7DC074DFEF44B3D (void);
-// 0x0000018A System.Void YooAsset.LoadCacheManifestOperation::set_Manifest(YooAsset.PackageManifest)
+// 0x0000018B System.Void YooAsset.LoadCacheManifestOperation::set_Manifest(YooAsset.PackageManifest)
 extern void LoadCacheManifestOperation_set_Manifest_m8CAB20FC003C4D18804FDB3420DCF0D8A0FF742C (void);
-// 0x0000018B YooAsset.PackageManifest YooAsset.LoadCacheManifestOperation::get_Manifest()
+// 0x0000018C YooAsset.PackageManifest YooAsset.LoadCacheManifestOperation::get_Manifest()
 extern void LoadCacheManifestOperation_get_Manifest_m47E7B4F16BB9DAC3B1B06693BBBF39C2B5FEC03F (void);
-// 0x0000018C System.Void YooAsset.LoadCacheManifestOperation::.ctor(System.String,System.String)
+// 0x0000018D System.Void YooAsset.LoadCacheManifestOperation::.ctor(System.String,System.String)
 extern void LoadCacheManifestOperation__ctor_m5EBB824C455BC0DD1E639C52DEC225E7958EFDFB (void);
-// 0x0000018D System.Void YooAsset.LoadCacheManifestOperation::Start()
+// 0x0000018E System.Void YooAsset.LoadCacheManifestOperation::Start()
 extern void LoadCacheManifestOperation_Start_mC42F3033CE29403590261E812F1181490130519E (void);
-// 0x0000018E System.Void YooAsset.LoadCacheManifestOperation::Update()
+// 0x0000018F System.Void YooAsset.LoadCacheManifestOperation::Update()
 extern void LoadCacheManifestOperation_Update_mF4117384466DD68C05721EED4E6A1EF73705047C (void);
-// 0x0000018F System.Void YooAsset.LoadCacheManifestOperation::ClearCacheFile()
+// 0x00000190 System.Void YooAsset.LoadCacheManifestOperation::ClearCacheFile()
 extern void LoadCacheManifestOperation_ClearCacheFile_m22604FB10856ED1A3B1CA4EC32D88384C96D9F56 (void);
-// 0x00000190 System.Void YooAsset.LoadEditorManifestOperation::set_Manifest(YooAsset.PackageManifest)
+// 0x00000191 System.Void YooAsset.LoadEditorManifestOperation::set_Manifest(YooAsset.PackageManifest)
 extern void LoadEditorManifestOperation_set_Manifest_m2C35775CDA3645FAEEDD6F93E0AFECA9A6116243 (void);
-// 0x00000191 YooAsset.PackageManifest YooAsset.LoadEditorManifestOperation::get_Manifest()
+// 0x00000192 YooAsset.PackageManifest YooAsset.LoadEditorManifestOperation::get_Manifest()
 extern void LoadEditorManifestOperation_get_Manifest_mFD2D2A1BC18D7D06A1205F017E9E4795843DA72D (void);
-// 0x00000192 System.Void YooAsset.LoadEditorManifestOperation::.ctor(System.String)
+// 0x00000193 System.Void YooAsset.LoadEditorManifestOperation::.ctor(System.String)
 extern void LoadEditorManifestOperation__ctor_mCC6AC57860ACAD5FE26159CD8BD81EC6F36C682D (void);
-// 0x00000193 System.Void YooAsset.LoadEditorManifestOperation::Start()
+// 0x00000194 System.Void YooAsset.LoadEditorManifestOperation::Start()
 extern void LoadEditorManifestOperation_Start_m18EDF59F816A137077C32DE6FB96DCB365979087 (void);
-// 0x00000194 System.Void YooAsset.LoadEditorManifestOperation::Update()
+// 0x00000195 System.Void YooAsset.LoadEditorManifestOperation::Update()
 extern void LoadEditorManifestOperation_Update_mC9A9884141AB242F90382156444C406FA52C8C4A (void);
-// 0x00000195 System.Void YooAsset.QueryBuildinPackageVersionOperation::set_PackageVersion(System.String)
+// 0x00000196 System.Void YooAsset.QueryBuildinPackageVersionOperation::set_PackageVersion(System.String)
 extern void QueryBuildinPackageVersionOperation_set_PackageVersion_m61813326F8E452BF14AEB16CC8BDD5A8A44D7E67 (void);
-// 0x00000196 System.String YooAsset.QueryBuildinPackageVersionOperation::get_PackageVersion()
+// 0x00000197 System.String YooAsset.QueryBuildinPackageVersionOperation::get_PackageVersion()
 extern void QueryBuildinPackageVersionOperation_get_PackageVersion_m06FDAAFB50DCD5F46B4136864F73D3792C0F0E55 (void);
-// 0x00000197 System.Void YooAsset.QueryBuildinPackageVersionOperation::.ctor(System.String)
+// 0x00000198 System.Void YooAsset.QueryBuildinPackageVersionOperation::.ctor(System.String)
 extern void QueryBuildinPackageVersionOperation__ctor_m187D806611F700A1F53E99429DEF127AED592911 (void);
-// 0x00000198 System.Void YooAsset.QueryBuildinPackageVersionOperation::Start()
+// 0x00000199 System.Void YooAsset.QueryBuildinPackageVersionOperation::Start()
 extern void QueryBuildinPackageVersionOperation_Start_mC20A3F9DFCF5086FF807EA71C249F0865CCA1B71 (void);
-// 0x00000199 System.Void YooAsset.QueryBuildinPackageVersionOperation::Update()
+// 0x0000019A System.Void YooAsset.QueryBuildinPackageVersionOperation::Update()
 extern void QueryBuildinPackageVersionOperation_Update_m69C5AF482D39582EF0DA98BCDA484A03053E8802 (void);
-// 0x0000019A System.Void YooAsset.QueryCachePackageHashOperation::set_PackageHash(System.String)
+// 0x0000019B System.Void YooAsset.QueryCachePackageHashOperation::set_PackageHash(System.String)
 extern void QueryCachePackageHashOperation_set_PackageHash_m99A2B6A2B6FAF37ACA3207E625F33C1683362D20 (void);
-// 0x0000019B System.String YooAsset.QueryCachePackageHashOperation::get_PackageHash()
+// 0x0000019C System.String YooAsset.QueryCachePackageHashOperation::get_PackageHash()
 extern void QueryCachePackageHashOperation_get_PackageHash_mBDE85304573564EE66E9D6FEB736D99F2B6EE4CB (void);
-// 0x0000019C System.Void YooAsset.QueryCachePackageHashOperation::.ctor(System.String,System.String)
+// 0x0000019D System.Void YooAsset.QueryCachePackageHashOperation::.ctor(System.String,System.String)
 extern void QueryCachePackageHashOperation__ctor_m59F2A7317F292D448C1480EE5C5D2327C6B489CD (void);
-// 0x0000019D System.Void YooAsset.QueryCachePackageHashOperation::Start()
+// 0x0000019E System.Void YooAsset.QueryCachePackageHashOperation::Start()
 extern void QueryCachePackageHashOperation_Start_m6AF3F3C8E71C7F9EA6794FE94DCB1508291F3812 (void);
-// 0x0000019E System.Void YooAsset.QueryCachePackageHashOperation::Update()
+// 0x0000019F System.Void YooAsset.QueryCachePackageHashOperation::Update()
 extern void QueryCachePackageHashOperation_Update_m647C1FEDBC07F0C1E3F74E026AEFA192B0BB8BAB (void);
-// 0x0000019F System.Void YooAsset.QueryCachePackageVersionOperation::set_PackageVersion(System.String)
+// 0x000001A0 System.Void YooAsset.QueryCachePackageVersionOperation::set_PackageVersion(System.String)
 extern void QueryCachePackageVersionOperation_set_PackageVersion_mFE79C9CAAA517C1294A6BFD48A15A3F333FB95FF (void);
-// 0x000001A0 System.String YooAsset.QueryCachePackageVersionOperation::get_PackageVersion()
+// 0x000001A1 System.String YooAsset.QueryCachePackageVersionOperation::get_PackageVersion()
 extern void QueryCachePackageVersionOperation_get_PackageVersion_m1FFDADC5943DAE5EADDEAE8224328848136CA32D (void);
-// 0x000001A1 System.Void YooAsset.QueryCachePackageVersionOperation::.ctor(System.String)
+// 0x000001A2 System.Void YooAsset.QueryCachePackageVersionOperation::.ctor(System.String)
 extern void QueryCachePackageVersionOperation__ctor_m7EFD5ACE5FD3D9B4719F5BF6E40F3CF2E411405D (void);
-// 0x000001A2 System.Void YooAsset.QueryCachePackageVersionOperation::Start()
+// 0x000001A3 System.Void YooAsset.QueryCachePackageVersionOperation::Start()
 extern void QueryCachePackageVersionOperation_Start_m1529F5F368B3A77FDB146B2486A270456480C21F (void);
-// 0x000001A3 System.Void YooAsset.QueryCachePackageVersionOperation::Update()
+// 0x000001A4 System.Void YooAsset.QueryCachePackageVersionOperation::Update()
 extern void QueryCachePackageVersionOperation_Update_mFEC5091E6B7238969ACFBC21F6DB93F1A31BA8A8 (void);
-// 0x000001A4 System.Void YooAsset.QueryRemotePackageVersionOperation::set_PackageVersion(System.String)
+// 0x000001A5 System.Void YooAsset.QueryRemotePackageVersionOperation::set_PackageVersion(System.String)
 extern void QueryRemotePackageVersionOperation_set_PackageVersion_m572045AE52D4BF03E4CA3764108D72BE3F49981A (void);
-// 0x000001A5 System.String YooAsset.QueryRemotePackageVersionOperation::get_PackageVersion()
+// 0x000001A6 System.String YooAsset.QueryRemotePackageVersionOperation::get_PackageVersion()
 extern void QueryRemotePackageVersionOperation_get_PackageVersion_mF5037B0E7F219931D387C027BDABA68CDA4DA588 (void);
-// 0x000001A6 System.Void YooAsset.QueryRemotePackageVersionOperation::.ctor(YooAsset.IRemoteServices,System.String,System.Boolean,System.Int32)
+// 0x000001A7 System.Void YooAsset.QueryRemotePackageVersionOperation::.ctor(YooAsset.IRemoteServices,System.String,System.Boolean,System.Int32)
 extern void QueryRemotePackageVersionOperation__ctor_m899C06ECEF2DFA34C572DF2CEAE87B03F8F8EA54 (void);
-// 0x000001A7 System.Void YooAsset.QueryRemotePackageVersionOperation::Start()
+// 0x000001A8 System.Void YooAsset.QueryRemotePackageVersionOperation::Start()
 extern void QueryRemotePackageVersionOperation_Start_m17EF023CDB203FD70FCC0E6B05AC7ABC46892608 (void);
-// 0x000001A8 System.Void YooAsset.QueryRemotePackageVersionOperation::Update()
+// 0x000001A9 System.Void YooAsset.QueryRemotePackageVersionOperation::Update()
 extern void QueryRemotePackageVersionOperation_Update_m7EAEB15CE601E6199F276E8DB6A625BC3394698F (void);
-// 0x000001A9 System.String YooAsset.QueryRemotePackageVersionOperation::GetPackageVersionRequestURL(System.String)
+// 0x000001AA System.String YooAsset.QueryRemotePackageVersionOperation::GetPackageVersionRequestURL(System.String)
 extern void QueryRemotePackageVersionOperation_GetPackageVersionRequestURL_m69C144779EE4F8CFBBF667C31B4FCAEAC9D3F6AE (void);
-// 0x000001AA System.Void YooAsset.UnpackBuildinManifestOperation::.ctor(System.String,System.String)
+// 0x000001AB System.Void YooAsset.UnpackBuildinManifestOperation::.ctor(System.String,System.String)
 extern void UnpackBuildinManifestOperation__ctor_m687E4D551A709464DE4063383A441096FE98FF6E (void);
-// 0x000001AB System.Void YooAsset.UnpackBuildinManifestOperation::Start()
+// 0x000001AC System.Void YooAsset.UnpackBuildinManifestOperation::Start()
 extern void UnpackBuildinManifestOperation_Start_m1218D55964EF6D016F4E3F3C37F4BD8E7FA0B339 (void);
-// 0x000001AC System.Void YooAsset.UnpackBuildinManifestOperation::Update()
+// 0x000001AD System.Void YooAsset.UnpackBuildinManifestOperation::Update()
 extern void UnpackBuildinManifestOperation_Update_m0C157F7FB195947FFAB8B7E28FD6CBADFD1D9E95 (void);
-// 0x000001AD System.Void YooAsset.UpdatePackageManifestOperation::SavePackageVersion()
+// 0x000001AE System.Void YooAsset.UpdatePackageManifestOperation::SavePackageVersion()
 extern void UpdatePackageManifestOperation_SavePackageVersion_m2948FD6CCACD88F4811A827A0C8D4525A28A3081 (void);
-// 0x000001AE System.Void YooAsset.UpdatePackageManifestOperation::.ctor()
+// 0x000001AF System.Void YooAsset.UpdatePackageManifestOperation::.ctor()
 extern void UpdatePackageManifestOperation__ctor_mC486EBD110A1D4EF77EE599D1DD9A82D6D736652 (void);
-// 0x000001AF System.Void YooAsset.EditorPlayModeUpdatePackageManifestOperation::.ctor()
+// 0x000001B0 System.Void YooAsset.EditorPlayModeUpdatePackageManifestOperation::.ctor()
 extern void EditorPlayModeUpdatePackageManifestOperation__ctor_m48A82688D24FE3D371D941E275229777FD0D1CCA (void);
-// 0x000001B0 System.Void YooAsset.EditorPlayModeUpdatePackageManifestOperation::Start()
+// 0x000001B1 System.Void YooAsset.EditorPlayModeUpdatePackageManifestOperation::Start()
 extern void EditorPlayModeUpdatePackageManifestOperation_Start_m42CEF31C6065BF9181980971ADD75E05C07401D1 (void);
-// 0x000001B1 System.Void YooAsset.EditorPlayModeUpdatePackageManifestOperation::Update()
+// 0x000001B2 System.Void YooAsset.EditorPlayModeUpdatePackageManifestOperation::Update()
 extern void EditorPlayModeUpdatePackageManifestOperation_Update_m8954190EB2E0CBEA1E8D5BA65F407F8E1B6C06D8 (void);
-// 0x000001B2 System.Void YooAsset.OfflinePlayModeUpdatePackageManifestOperation::.ctor()
+// 0x000001B3 System.Void YooAsset.OfflinePlayModeUpdatePackageManifestOperation::.ctor()
 extern void OfflinePlayModeUpdatePackageManifestOperation__ctor_m0D2DDD249DCF76BB1F50A4744C19A0ADD66283A1 (void);
-// 0x000001B3 System.Void YooAsset.OfflinePlayModeUpdatePackageManifestOperation::Start()
+// 0x000001B4 System.Void YooAsset.OfflinePlayModeUpdatePackageManifestOperation::Start()
 extern void OfflinePlayModeUpdatePackageManifestOperation_Start_m00A1E3CD32942633191433AE1A0C55D186693118 (void);
-// 0x000001B4 System.Void YooAsset.OfflinePlayModeUpdatePackageManifestOperation::Update()
+// 0x000001B5 System.Void YooAsset.OfflinePlayModeUpdatePackageManifestOperation::Update()
 extern void OfflinePlayModeUpdatePackageManifestOperation_Update_m560610340C3E0E317B9D7B3E59DBA7522EB310C2 (void);
-// 0x000001B5 System.Void YooAsset.HostPlayModeUpdatePackageManifestOperation::.ctor(YooAsset.HostPlayModeImpl,System.String,System.String,System.Boolean,System.Int32)
+// 0x000001B6 System.Void YooAsset.HostPlayModeUpdatePackageManifestOperation::.ctor(YooAsset.HostPlayModeImpl,System.String,System.String,System.Boolean,System.Int32)
 extern void HostPlayModeUpdatePackageManifestOperation__ctor_mCEA4F6EAFD7C555F744053B4EAC4DA20A56F4AAF (void);
-// 0x000001B6 System.Void YooAsset.HostPlayModeUpdatePackageManifestOperation::Start()
+// 0x000001B7 System.Void YooAsset.HostPlayModeUpdatePackageManifestOperation::Start()
 extern void HostPlayModeUpdatePackageManifestOperation_Start_mCDC9A2E6364C0544A854D973F4EC49D1EFA773F4 (void);
-// 0x000001B7 System.Void YooAsset.HostPlayModeUpdatePackageManifestOperation::Update()
+// 0x000001B8 System.Void YooAsset.HostPlayModeUpdatePackageManifestOperation::Update()
 extern void HostPlayModeUpdatePackageManifestOperation_Update_m3B9F9E732425DB7707360D4AA92100DB5E5194CD (void);
-// 0x000001B8 System.Void YooAsset.HostPlayModeUpdatePackageManifestOperation::SavePackageVersion()
+// 0x000001B9 System.Void YooAsset.HostPlayModeUpdatePackageManifestOperation::SavePackageVersion()
 extern void HostPlayModeUpdatePackageManifestOperation_SavePackageVersion_mA3BB48D5FED82124F26818935F7186D9AD3B08E3 (void);
-// 0x000001B9 System.Void YooAsset.UpdatePackageVersionOperation::set_PackageVersion(System.String)
+// 0x000001BA System.Void YooAsset.UpdatePackageVersionOperation::set_PackageVersion(System.String)
 extern void UpdatePackageVersionOperation_set_PackageVersion_m4CE801FE704812A71303170193CD85E7F3BE8432 (void);
-// 0x000001BA System.Void YooAsset.UpdatePackageVersionOperation::.ctor()
+// 0x000001BB System.Void YooAsset.UpdatePackageVersionOperation::.ctor()
 extern void UpdatePackageVersionOperation__ctor_m97C3D2AB97F09C1D30293AA5C1F7A31BC5085D1C (void);
-// 0x000001BB System.Void YooAsset.EditorPlayModeUpdatePackageVersionOperation::Start()
+// 0x000001BC System.Void YooAsset.EditorPlayModeUpdatePackageVersionOperation::Start()
 extern void EditorPlayModeUpdatePackageVersionOperation_Start_m2898CD0BB87479C18E3CDB3D6ED207974BD318FE (void);
-// 0x000001BC System.Void YooAsset.EditorPlayModeUpdatePackageVersionOperation::Update()
+// 0x000001BD System.Void YooAsset.EditorPlayModeUpdatePackageVersionOperation::Update()
 extern void EditorPlayModeUpdatePackageVersionOperation_Update_mFA728CABB0C88DB416C184474369C888561F5D24 (void);
-// 0x000001BD System.Void YooAsset.EditorPlayModeUpdatePackageVersionOperation::.ctor()
+// 0x000001BE System.Void YooAsset.EditorPlayModeUpdatePackageVersionOperation::.ctor()
 extern void EditorPlayModeUpdatePackageVersionOperation__ctor_m29D62D6C2BA5D48C641AAE6EB6C96BF8F61A7738 (void);
-// 0x000001BE System.Void YooAsset.OfflinePlayModeUpdatePackageVersionOperation::Start()
+// 0x000001BF System.Void YooAsset.OfflinePlayModeUpdatePackageVersionOperation::Start()
 extern void OfflinePlayModeUpdatePackageVersionOperation_Start_m0257F7CF5121BDCD8E5A85B8C517F204BBB7D595 (void);
-// 0x000001BF System.Void YooAsset.OfflinePlayModeUpdatePackageVersionOperation::Update()
+// 0x000001C0 System.Void YooAsset.OfflinePlayModeUpdatePackageVersionOperation::Update()
 extern void OfflinePlayModeUpdatePackageVersionOperation_Update_m64DCC00F0DE7F0F6F08B1E8A2CBC51BD44CFB09A (void);
-// 0x000001C0 System.Void YooAsset.OfflinePlayModeUpdatePackageVersionOperation::.ctor()
+// 0x000001C1 System.Void YooAsset.OfflinePlayModeUpdatePackageVersionOperation::.ctor()
 extern void OfflinePlayModeUpdatePackageVersionOperation__ctor_m4A31C42ABF2BA52829588FCA0F44F0A4CEACC84C (void);
-// 0x000001C1 System.Void YooAsset.HostPlayModeUpdatePackageVersionOperation::.ctor(YooAsset.HostPlayModeImpl,System.String,System.Boolean,System.Int32)
+// 0x000001C2 System.Void YooAsset.HostPlayModeUpdatePackageVersionOperation::.ctor(YooAsset.HostPlayModeImpl,System.String,System.Boolean,System.Int32)
 extern void HostPlayModeUpdatePackageVersionOperation__ctor_mF9D9C1539705E6CB57F380A215804474E033459C (void);
-// 0x000001C2 System.Void YooAsset.HostPlayModeUpdatePackageVersionOperation::Start()
+// 0x000001C3 System.Void YooAsset.HostPlayModeUpdatePackageVersionOperation::Start()
 extern void HostPlayModeUpdatePackageVersionOperation_Start_m43EAA5E20786122ED3B15FA3BD8EAFEC0870A213 (void);
-// 0x000001C3 System.Void YooAsset.HostPlayModeUpdatePackageVersionOperation::Update()
+// 0x000001C4 System.Void YooAsset.HostPlayModeUpdatePackageVersionOperation::Update()
 extern void HostPlayModeUpdatePackageVersionOperation_Update_mEA11B9CD167C498464B942AC919A2E6FDFA9A873 (void);
-// 0x000001C4 System.Boolean YooAsset.PackageAsset::HasTag(System.String[])
+// 0x000001C5 System.Boolean YooAsset.PackageAsset::HasTag(System.String[])
 extern void PackageAsset_HasTag_mBC2FD8D06A449CFDBA1F72267AF03BFF9EF62D93 (void);
-// 0x000001C5 System.Void YooAsset.PackageAsset::.ctor()
+// 0x000001C6 System.Void YooAsset.PackageAsset::.ctor()
 extern void PackageAsset__ctor_mE5A281B6AD7AA9CC7C536A3AF7D523A4434BD562 (void);
-// 0x000001C6 System.Void YooAsset.PackageBundle::set_PackageName(System.String)
+// 0x000001C7 System.Void YooAsset.PackageBundle::set_PackageName(System.String)
 extern void PackageBundle_set_PackageName_m8AF6120068AA5EF89C019D57AB16E2F9E7C134B5 (void);
-// 0x000001C7 System.String YooAsset.PackageBundle::get_PackageName()
+// 0x000001C8 System.String YooAsset.PackageBundle::get_PackageName()
 extern void PackageBundle_get_PackageName_m92ECA08EAED4C0AACD148135C7148A8EC1061434 (void);
-// 0x000001C8 System.String YooAsset.PackageBundle::get_CacheGUID()
+// 0x000001C9 System.String YooAsset.PackageBundle::get_CacheGUID()
 extern void PackageBundle_get_CacheGUID_m6EFB8F4D4876376D6FDC6FD32EDEF4469130ACD3 (void);
-// 0x000001C9 System.String YooAsset.PackageBundle::get_CachedDataFilePath()
+// 0x000001CA System.String YooAsset.PackageBundle::get_CachedDataFilePath()
 extern void PackageBundle_get_CachedDataFilePath_m7E6A4265B82F5170A6D8E51624486F41B1844DC4 (void);
-// 0x000001CA System.String YooAsset.PackageBundle::get_CachedInfoFilePath()
+// 0x000001CB System.String YooAsset.PackageBundle::get_CachedInfoFilePath()
 extern void PackageBundle_get_CachedInfoFilePath_mDB8A84100537767380948CBB47900BCBDE9CC51E (void);
-// 0x000001CB System.String YooAsset.PackageBundle::get_TempDataFilePath()
+// 0x000001CC System.String YooAsset.PackageBundle::get_TempDataFilePath()
 extern void PackageBundle_get_TempDataFilePath_mAD3273D9D561CE1FDB4857755622707DA15D4FAF (void);
-// 0x000001CC System.String YooAsset.PackageBundle::get_StreamingFilePath()
+// 0x000001CD System.String YooAsset.PackageBundle::get_StreamingFilePath()
 extern void PackageBundle_get_StreamingFilePath_m1A60A21E5A72891119298824A096F4F891710C09 (void);
-// 0x000001CD System.String YooAsset.PackageBundle::get_FileName()
+// 0x000001CE System.String YooAsset.PackageBundle::get_FileName()
 extern void PackageBundle_get_FileName_m6B93CFFB933854A946989D561AF4CA165C3CADB3 (void);
-// 0x000001CE System.Void YooAsset.PackageBundle::.ctor()
+// 0x000001CF System.Void YooAsset.PackageBundle::.ctor()
 extern void PackageBundle__ctor_m18ED937559C9C30BDA3E93B28512222094A0EF14 (void);
-// 0x000001CF System.Void YooAsset.PackageBundle::ParseBundle(System.String,System.Int32)
+// 0x000001D0 System.Void YooAsset.PackageBundle::ParseBundle(System.String,System.Int32)
 extern void PackageBundle_ParseBundle_m61191DC28A401681ED750D7FE9A3E6090A9CC05A (void);
-// 0x000001D0 YooAsset.PackageBundle YooAsset.PackageManifest::GetMainPackageBundle(System.String)
+// 0x000001D1 YooAsset.PackageBundle YooAsset.PackageManifest::GetMainPackageBundle(System.String)
 extern void PackageManifest_GetMainPackageBundle_mD24F33C464D5F9D29503C8E315A3F6B39853720A (void);
-// 0x000001D1 YooAsset.PackageBundle[] YooAsset.PackageManifest::GetAllDependencies(System.String)
+// 0x000001D2 YooAsset.PackageBundle[] YooAsset.PackageManifest::GetAllDependencies(System.String)
 extern void PackageManifest_GetAllDependencies_m3817D9A9A715EFF8F22F069C657D0A40D9AAF167 (void);
-// 0x000001D2 System.Boolean YooAsset.PackageManifest::TryGetPackageAsset(System.String,YooAsset.PackageAsset&)
+// 0x000001D3 System.Boolean YooAsset.PackageManifest::TryGetPackageAsset(System.String,YooAsset.PackageAsset&)
 extern void PackageManifest_TryGetPackageAsset_mE625FD56E01662F36FCC80275CEFC47D857B8719 (void);
-// 0x000001D3 YooAsset.AssetInfo[] YooAsset.PackageManifest::GetAssetsInfoByTags(System.String[])
+// 0x000001D4 YooAsset.AssetInfo[] YooAsset.PackageManifest::GetAssetsInfoByTags(System.String[])
 extern void PackageManifest_GetAssetsInfoByTags_m28A83DB815A513DAB54A7507BD22A2E0799F3290 (void);
-// 0x000001D4 YooAsset.AssetInfo YooAsset.PackageManifest::ConvertLocationToAssetInfo(System.String,System.Type)
+// 0x000001D5 YooAsset.AssetInfo YooAsset.PackageManifest::ConvertLocationToAssetInfo(System.String,System.Type)
 extern void PackageManifest_ConvertLocationToAssetInfo_m8AFDCD78C8BF7F76D8A383825845B0997624F04D (void);
-// 0x000001D5 System.String YooAsset.PackageManifest::ConvertLocationToAssetInfoMapping(System.String)
+// 0x000001D6 System.String YooAsset.PackageManifest::ConvertLocationToAssetInfoMapping(System.String)
 extern void PackageManifest_ConvertLocationToAssetInfoMapping_m5714E8C073B9AB56D2E928E54E153B6BBDD6F953 (void);
-// 0x000001D6 System.String[] YooAsset.PackageManifest::GetBundleIncludeAssets(System.String)
+// 0x000001D7 System.String[] YooAsset.PackageManifest::GetBundleIncludeAssets(System.String)
 extern void PackageManifest_GetBundleIncludeAssets_m5DF23990CEC0B07348FCB62020531941550A9CE9 (void);
-// 0x000001D7 System.Void YooAsset.PackageManifest::.ctor()
+// 0x000001D8 System.Void YooAsset.PackageManifest::.ctor()
 extern void PackageManifest__ctor_m3F93CDF7A6707CFAD12A98ADB84168445140C6A3 (void);
-// 0x000001D8 System.String YooAsset.EditorSimulateModeHelper::SimulateBuild(System.String)
+// 0x000001D9 System.String YooAsset.EditorSimulateModeHelper::SimulateBuild(System.String)
 extern void EditorSimulateModeHelper_SimulateBuild_m6BFEA7AE009EBC4736041FF11B18F86063572298 (void);
-// 0x000001D9 YooAsset.InitializationOperation YooAsset.EditorSimulateModeImpl::InitializeAsync(System.String)
+// 0x000001DA YooAsset.InitializationOperation YooAsset.EditorSimulateModeImpl::InitializeAsync(System.String)
 extern void EditorSimulateModeImpl_InitializeAsync_mD253E4F6F42DDDE2DD664B6E4F87EAC8A4B39398 (void);
-// 0x000001DA System.Void YooAsset.EditorSimulateModeImpl::set_ActiveManifest(YooAsset.PackageManifest)
+// 0x000001DB System.Void YooAsset.EditorSimulateModeImpl::set_ActiveManifest(YooAsset.PackageManifest)
 extern void EditorSimulateModeImpl_set_ActiveManifest_m98EA8D55EB056EB9750ED5F83C27C76F2C8EA2C7 (void);
-// 0x000001DB YooAsset.PackageManifest YooAsset.EditorSimulateModeImpl::get_ActiveManifest()
+// 0x000001DC YooAsset.PackageManifest YooAsset.EditorSimulateModeImpl::get_ActiveManifest()
 extern void EditorSimulateModeImpl_get_ActiveManifest_m5279337C4A68F55C2B54AC49CA2BBA640028EBDA (void);
-// 0x000001DC YooAsset.UpdatePackageVersionOperation YooAsset.EditorSimulateModeImpl::YooAsset.IPlayModeServices.UpdatePackageVersionAsync(System.Boolean,System.Int32)
+// 0x000001DD YooAsset.UpdatePackageVersionOperation YooAsset.EditorSimulateModeImpl::YooAsset.IPlayModeServices.UpdatePackageVersionAsync(System.Boolean,System.Int32)
 extern void EditorSimulateModeImpl_YooAsset_IPlayModeServices_UpdatePackageVersionAsync_m4C8F2FE485047D0C55A64D6E4B2CDCDF8BD6E8A7 (void);
-// 0x000001DD YooAsset.UpdatePackageManifestOperation YooAsset.EditorSimulateModeImpl::YooAsset.IPlayModeServices.UpdatePackageManifestAsync(System.String,System.Boolean,System.Int32)
+// 0x000001DE YooAsset.UpdatePackageManifestOperation YooAsset.EditorSimulateModeImpl::YooAsset.IPlayModeServices.UpdatePackageManifestAsync(System.String,System.Boolean,System.Int32)
 extern void EditorSimulateModeImpl_YooAsset_IPlayModeServices_UpdatePackageManifestAsync_m16F67DA6995416469D507E75099F6E784261DECB (void);
-// 0x000001DE YooAsset.ResourceDownloaderOperation YooAsset.EditorSimulateModeImpl::YooAsset.IPlayModeServices.CreateResourceDownloaderByAll(System.Int32,System.Int32,System.Int32)
+// 0x000001DF YooAsset.ResourceDownloaderOperation YooAsset.EditorSimulateModeImpl::YooAsset.IPlayModeServices.CreateResourceDownloaderByAll(System.Int32,System.Int32,System.Int32)
 extern void EditorSimulateModeImpl_YooAsset_IPlayModeServices_CreateResourceDownloaderByAll_m05A83BC04AA778F7D7679856DAE6AA967EBF2ADE (void);
-// 0x000001DF YooAsset.BundleInfo YooAsset.EditorSimulateModeImpl::CreateBundleInfo(YooAsset.PackageBundle,YooAsset.AssetInfo)
+// 0x000001E0 YooAsset.BundleInfo YooAsset.EditorSimulateModeImpl::CreateBundleInfo(YooAsset.PackageBundle,YooAsset.AssetInfo)
 extern void EditorSimulateModeImpl_CreateBundleInfo_m75E0466827F8D24370CB8C82D4BF534528216ADE (void);
-// 0x000001E0 YooAsset.BundleInfo YooAsset.EditorSimulateModeImpl::YooAsset.IBundleServices.GetBundleInfo(YooAsset.AssetInfo)
+// 0x000001E1 YooAsset.BundleInfo YooAsset.EditorSimulateModeImpl::YooAsset.IBundleServices.GetBundleInfo(YooAsset.AssetInfo)
 extern void EditorSimulateModeImpl_YooAsset_IBundleServices_GetBundleInfo_m86A1095DE70F3D3AC2B20D01D62FA97420A26CA0 (void);
-// 0x000001E1 YooAsset.BundleInfo[] YooAsset.EditorSimulateModeImpl::YooAsset.IBundleServices.GetAllDependBundleInfos(YooAsset.AssetInfo)
+// 0x000001E2 YooAsset.BundleInfo[] YooAsset.EditorSimulateModeImpl::YooAsset.IBundleServices.GetAllDependBundleInfos(YooAsset.AssetInfo)
 extern void EditorSimulateModeImpl_YooAsset_IBundleServices_GetAllDependBundleInfos_m895328C974D5E5AAE1D11F0C975942D2FF381FE7 (void);
-// 0x000001E2 System.Void YooAsset.EditorSimulateModeImpl::.ctor()
+// 0x000001E3 System.Void YooAsset.EditorSimulateModeImpl::.ctor()
 extern void EditorSimulateModeImpl__ctor_mF2E08930672EE022E727134420FA970D25BF3B52 (void);
-// 0x000001E3 YooAsset.InitializationOperation YooAsset.HostPlayModeImpl::InitializeAsync(System.String,System.String,System.String,YooAsset.IQueryServices)
+// 0x000001E4 YooAsset.InitializationOperation YooAsset.HostPlayModeImpl::InitializeAsync(System.String,System.String,System.String,YooAsset.IQueryServices)
 extern void HostPlayModeImpl_InitializeAsync_mD219FAF20501D346A1E7C265E64402ABF4DFD87A (void);
-// 0x000001E4 System.Collections.Generic.List`1<YooAsset.BundleInfo> YooAsset.HostPlayModeImpl::ConvertToDownloadList(System.Collections.Generic.List`1<YooAsset.PackageBundle>)
+// 0x000001E5 System.Collections.Generic.List`1<YooAsset.BundleInfo> YooAsset.HostPlayModeImpl::ConvertToDownloadList(System.Collections.Generic.List`1<YooAsset.PackageBundle>)
 extern void HostPlayModeImpl_ConvertToDownloadList_mA02D2676EA55F07FDB0CE07E9E2E50ED3A10056C (void);
-// 0x000001E5 YooAsset.BundleInfo YooAsset.HostPlayModeImpl::ConvertToDownloadInfo(YooAsset.PackageBundle)
+// 0x000001E6 YooAsset.BundleInfo YooAsset.HostPlayModeImpl::ConvertToDownloadInfo(YooAsset.PackageBundle)
 extern void HostPlayModeImpl_ConvertToDownloadInfo_m858330E492823CB436758B9B473CFD750A02D4DE (void);
-// 0x000001E6 System.String YooAsset.HostPlayModeImpl::GetRemoteMainURL(System.String)
+// 0x000001E7 System.String YooAsset.HostPlayModeImpl::GetRemoteMainURL(System.String)
 extern void HostPlayModeImpl_GetRemoteMainURL_m514D86CBAFDDEF29D80096A123C9D01FF895542B (void);
-// 0x000001E7 System.String YooAsset.HostPlayModeImpl::GetRemoteFallbackURL(System.String)
+// 0x000001E8 System.String YooAsset.HostPlayModeImpl::GetRemoteFallbackURL(System.String)
 extern void HostPlayModeImpl_GetRemoteFallbackURL_m46677AC9063240F0490C25C54F8FA07234F83176 (void);
-// 0x000001E8 System.Void YooAsset.HostPlayModeImpl::set_ActiveManifest(YooAsset.PackageManifest)
+// 0x000001E9 System.Void YooAsset.HostPlayModeImpl::set_ActiveManifest(YooAsset.PackageManifest)
 extern void HostPlayModeImpl_set_ActiveManifest_m6B63FF46169CB8EFEE86E58646672CD4C01C0CBD (void);
-// 0x000001E9 YooAsset.PackageManifest YooAsset.HostPlayModeImpl::get_ActiveManifest()
+// 0x000001EA YooAsset.PackageManifest YooAsset.HostPlayModeImpl::get_ActiveManifest()
 extern void HostPlayModeImpl_get_ActiveManifest_m63F8D693E2CF7A49D2769C40F5AF3882980DEB5F (void);
-// 0x000001EA System.Void YooAsset.HostPlayModeImpl::FlushManifestVersionFile()
+// 0x000001EB System.Void YooAsset.HostPlayModeImpl::FlushManifestVersionFile()
 extern void HostPlayModeImpl_FlushManifestVersionFile_m92A4AB3AFAA48A8C16C9A20815E663C9FF76EBA7 (void);
-// 0x000001EB System.Boolean YooAsset.HostPlayModeImpl::IsBuildinPackageBundle(YooAsset.PackageBundle)
+// 0x000001EC System.Boolean YooAsset.HostPlayModeImpl::IsBuildinPackageBundle(YooAsset.PackageBundle)
 extern void HostPlayModeImpl_IsBuildinPackageBundle_m594B7150E6904B75C41FEBC224D7595389F6D84A (void);
-// 0x000001EC System.Boolean YooAsset.HostPlayModeImpl::IsCachedPackageBundle(YooAsset.PackageBundle)
+// 0x000001ED System.Boolean YooAsset.HostPlayModeImpl::IsCachedPackageBundle(YooAsset.PackageBundle)
 extern void HostPlayModeImpl_IsCachedPackageBundle_m1EF6E48676A6984C3D5BD0B9C0E218BC9A3166D6 (void);
-// 0x000001ED YooAsset.UpdatePackageVersionOperation YooAsset.HostPlayModeImpl::YooAsset.IPlayModeServices.UpdatePackageVersionAsync(System.Boolean,System.Int32)
+// 0x000001EE YooAsset.UpdatePackageVersionOperation YooAsset.HostPlayModeImpl::YooAsset.IPlayModeServices.UpdatePackageVersionAsync(System.Boolean,System.Int32)
 extern void HostPlayModeImpl_YooAsset_IPlayModeServices_UpdatePackageVersionAsync_m0D212AC80615A2D1A83024FD5CBABFB43471CB63 (void);
-// 0x000001EE YooAsset.UpdatePackageManifestOperation YooAsset.HostPlayModeImpl::YooAsset.IPlayModeServices.UpdatePackageManifestAsync(System.String,System.Boolean,System.Int32)
+// 0x000001EF YooAsset.UpdatePackageManifestOperation YooAsset.HostPlayModeImpl::YooAsset.IPlayModeServices.UpdatePackageManifestAsync(System.String,System.Boolean,System.Int32)
 extern void HostPlayModeImpl_YooAsset_IPlayModeServices_UpdatePackageManifestAsync_mDC0FC2AE61B84D40A23D9C59E7C1816983110349 (void);
-// 0x000001EF YooAsset.ResourceDownloaderOperation YooAsset.HostPlayModeImpl::YooAsset.IPlayModeServices.CreateResourceDownloaderByAll(System.Int32,System.Int32,System.Int32)
+// 0x000001F0 YooAsset.ResourceDownloaderOperation YooAsset.HostPlayModeImpl::YooAsset.IPlayModeServices.CreateResourceDownloaderByAll(System.Int32,System.Int32,System.Int32)
 extern void HostPlayModeImpl_YooAsset_IPlayModeServices_CreateResourceDownloaderByAll_m9ABEA5761E6DFB4F4F1D9CB6B0F9C49A99CE4AEF (void);
-// 0x000001F0 System.Collections.Generic.List`1<YooAsset.BundleInfo> YooAsset.HostPlayModeImpl::GetDownloadListByAll(YooAsset.PackageManifest)
+// 0x000001F1 System.Collections.Generic.List`1<YooAsset.BundleInfo> YooAsset.HostPlayModeImpl::GetDownloadListByAll(YooAsset.PackageManifest)
 extern void HostPlayModeImpl_GetDownloadListByAll_m5C3AB596922CDB9C350E61464A6633BB4487CA82 (void);
-// 0x000001F1 YooAsset.BundleInfo YooAsset.HostPlayModeImpl::CreateBundleInfo(YooAsset.PackageBundle)
+// 0x000001F2 YooAsset.BundleInfo YooAsset.HostPlayModeImpl::CreateBundleInfo(YooAsset.PackageBundle)
 extern void HostPlayModeImpl_CreateBundleInfo_mFA91CE078495379FD6EB74B72F40D3181EEED562 (void);
-// 0x000001F2 YooAsset.BundleInfo YooAsset.HostPlayModeImpl::YooAsset.IBundleServices.GetBundleInfo(YooAsset.AssetInfo)
+// 0x000001F3 YooAsset.BundleInfo YooAsset.HostPlayModeImpl::YooAsset.IBundleServices.GetBundleInfo(YooAsset.AssetInfo)
 extern void HostPlayModeImpl_YooAsset_IBundleServices_GetBundleInfo_m987FC61672B4555B4C06A52958B941CFDAE645B1 (void);
-// 0x000001F3 YooAsset.BundleInfo[] YooAsset.HostPlayModeImpl::YooAsset.IBundleServices.GetAllDependBundleInfos(YooAsset.AssetInfo)
+// 0x000001F4 YooAsset.BundleInfo[] YooAsset.HostPlayModeImpl::YooAsset.IBundleServices.GetAllDependBundleInfos(YooAsset.AssetInfo)
 extern void HostPlayModeImpl_YooAsset_IBundleServices_GetAllDependBundleInfos_m4F7386DBB159A267729A11366F85ABB7B7A983C7 (void);
-// 0x000001F4 System.Void YooAsset.HostPlayModeImpl::.ctor()
+// 0x000001F5 System.Void YooAsset.HostPlayModeImpl::.ctor()
 extern void HostPlayModeImpl__ctor_m5A5AE9AC7D8532D6B787DD99A53E7EEB0E73DB65 (void);
-// 0x000001F5 YooAsset.InitializationOperation YooAsset.OfflinePlayModeImpl::InitializeAsync(System.String)
+// 0x000001F6 YooAsset.InitializationOperation YooAsset.OfflinePlayModeImpl::InitializeAsync(System.String)
 extern void OfflinePlayModeImpl_InitializeAsync_mE8B45BA8EBE6B11AF5ACFAB69248B487E2F0F500 (void);
-// 0x000001F6 System.Void YooAsset.OfflinePlayModeImpl::set_ActiveManifest(YooAsset.PackageManifest)
+// 0x000001F7 System.Void YooAsset.OfflinePlayModeImpl::set_ActiveManifest(YooAsset.PackageManifest)
 extern void OfflinePlayModeImpl_set_ActiveManifest_mEBCCAD43713E82E6C935C7546F8B51B1B38717BF (void);
-// 0x000001F7 YooAsset.PackageManifest YooAsset.OfflinePlayModeImpl::get_ActiveManifest()
+// 0x000001F8 YooAsset.PackageManifest YooAsset.OfflinePlayModeImpl::get_ActiveManifest()
 extern void OfflinePlayModeImpl_get_ActiveManifest_m07F941F5825A7CAEA408AA2CA2799AC3D18AD9F9 (void);
-// 0x000001F8 YooAsset.UpdatePackageVersionOperation YooAsset.OfflinePlayModeImpl::YooAsset.IPlayModeServices.UpdatePackageVersionAsync(System.Boolean,System.Int32)
+// 0x000001F9 YooAsset.UpdatePackageVersionOperation YooAsset.OfflinePlayModeImpl::YooAsset.IPlayModeServices.UpdatePackageVersionAsync(System.Boolean,System.Int32)
 extern void OfflinePlayModeImpl_YooAsset_IPlayModeServices_UpdatePackageVersionAsync_mAF0428410FF7A8BB0E0F227BFC61909F12C89532 (void);
-// 0x000001F9 YooAsset.UpdatePackageManifestOperation YooAsset.OfflinePlayModeImpl::YooAsset.IPlayModeServices.UpdatePackageManifestAsync(System.String,System.Boolean,System.Int32)
+// 0x000001FA YooAsset.UpdatePackageManifestOperation YooAsset.OfflinePlayModeImpl::YooAsset.IPlayModeServices.UpdatePackageManifestAsync(System.String,System.Boolean,System.Int32)
 extern void OfflinePlayModeImpl_YooAsset_IPlayModeServices_UpdatePackageManifestAsync_m7B007079C6BEFAA603B31DBF3F51F9708DE34EC5 (void);
-// 0x000001FA YooAsset.ResourceDownloaderOperation YooAsset.OfflinePlayModeImpl::YooAsset.IPlayModeServices.CreateResourceDownloaderByAll(System.Int32,System.Int32,System.Int32)
+// 0x000001FB YooAsset.ResourceDownloaderOperation YooAsset.OfflinePlayModeImpl::YooAsset.IPlayModeServices.CreateResourceDownloaderByAll(System.Int32,System.Int32,System.Int32)
 extern void OfflinePlayModeImpl_YooAsset_IPlayModeServices_CreateResourceDownloaderByAll_mCCA6E5C0D2675C71EE5ACD3F3CB0F2CB8BC17240 (void);
-// 0x000001FB YooAsset.BundleInfo YooAsset.OfflinePlayModeImpl::CreateBundleInfo(YooAsset.PackageBundle)
+// 0x000001FC YooAsset.BundleInfo YooAsset.OfflinePlayModeImpl::CreateBundleInfo(YooAsset.PackageBundle)
 extern void OfflinePlayModeImpl_CreateBundleInfo_m2F749AE50C4E3AA6552ED91F74B8911349164F04 (void);
-// 0x000001FC YooAsset.BundleInfo YooAsset.OfflinePlayModeImpl::YooAsset.IBundleServices.GetBundleInfo(YooAsset.AssetInfo)
+// 0x000001FD YooAsset.BundleInfo YooAsset.OfflinePlayModeImpl::YooAsset.IBundleServices.GetBundleInfo(YooAsset.AssetInfo)
 extern void OfflinePlayModeImpl_YooAsset_IBundleServices_GetBundleInfo_mE080A5AB1AA7982F07B2E13586C93D7FC419E111 (void);
-// 0x000001FD YooAsset.BundleInfo[] YooAsset.OfflinePlayModeImpl::YooAsset.IBundleServices.GetAllDependBundleInfos(YooAsset.AssetInfo)
+// 0x000001FE YooAsset.BundleInfo[] YooAsset.OfflinePlayModeImpl::YooAsset.IBundleServices.GetAllDependBundleInfos(YooAsset.AssetInfo)
 extern void OfflinePlayModeImpl_YooAsset_IBundleServices_GetAllDependBundleInfos_mF1C9755BFFBBBD2C5A73C6D37D46F37161AF1C29 (void);
-// 0x000001FE System.Void YooAsset.OfflinePlayModeImpl::.ctor()
+// 0x000001FF System.Void YooAsset.OfflinePlayModeImpl::.ctor()
 extern void OfflinePlayModeImpl__ctor_m167E8189DB8FC1CC0C83722851A56D57A5F6F5D6 (void);
-// 0x000001FF System.Void YooAsset.ResourcePackage::set_PackageName(System.String)
+// 0x00000200 System.Void YooAsset.ResourcePackage::set_PackageName(System.String)
 extern void ResourcePackage_set_PackageName_m99F975DC15B4427CF2C132095211526F3039E74D (void);
-// 0x00000200 System.String YooAsset.ResourcePackage::get_PackageName()
+// 0x00000201 System.String YooAsset.ResourcePackage::get_PackageName()
 extern void ResourcePackage_get_PackageName_mA6911D7E45684CA013C522F06820B21E884BCD81 (void);
-// 0x00000201 System.Void YooAsset.ResourcePackage::.ctor(System.String)
+// 0x00000202 System.Void YooAsset.ResourcePackage::.ctor(System.String)
 extern void ResourcePackage__ctor_m862FA89D0D7DEB3D0D78E9183EE2FFECA7DA97B3 (void);
-// 0x00000202 System.Void YooAsset.ResourcePackage::UpdatePackage()
+// 0x00000203 System.Void YooAsset.ResourcePackage::UpdatePackage()
 extern void ResourcePackage_UpdatePackage_m357E84E1333D3C774D10244776A1D709538C886C (void);
-// 0x00000203 YooAsset.InitializationOperation YooAsset.ResourcePackage::InitializeAsync(YooAsset.InitializeParameters)
+// 0x00000204 YooAsset.InitializationOperation YooAsset.ResourcePackage::InitializeAsync(YooAsset.InitializeParameters)
 extern void ResourcePackage_InitializeAsync_mE765719D9916BC40D7DFA0AE5B3243C47F3AC9F4 (void);
-// 0x00000204 System.Void YooAsset.ResourcePackage::ResetInitializeAfterFailed()
+// 0x00000205 System.Void YooAsset.ResourcePackage::ResetInitializeAfterFailed()
 extern void ResourcePackage_ResetInitializeAfterFailed_m2CD06F843B8FF16B7D5BA8971240CBD8047DD2B7 (void);
-// 0x00000205 System.Void YooAsset.ResourcePackage::CheckInitializeParameters(YooAsset.InitializeParameters)
+// 0x00000206 System.Void YooAsset.ResourcePackage::CheckInitializeParameters(YooAsset.InitializeParameters)
 extern void ResourcePackage_CheckInitializeParameters_mB22EBE708F2D36764D6F85A3B9356E9A56A4A746 (void);
-// 0x00000206 System.Void YooAsset.ResourcePackage::InitializeOperation_Completed(YooAsset.AsyncOperationBase)
+// 0x00000207 System.Void YooAsset.ResourcePackage::InitializeOperation_Completed(YooAsset.AsyncOperationBase)
 extern void ResourcePackage_InitializeOperation_Completed_mFE9C3CAC88FD426F01ACC919C370F46423CDF2BF (void);
-// 0x00000207 YooAsset.UpdatePackageVersionOperation YooAsset.ResourcePackage::UpdatePackageVersionAsync(System.Boolean,System.Int32)
+// 0x00000208 YooAsset.UpdatePackageVersionOperation YooAsset.ResourcePackage::UpdatePackageVersionAsync(System.Boolean,System.Int32)
 extern void ResourcePackage_UpdatePackageVersionAsync_mA2A8847999A3EA7660FFD2C0C361054CD9B0688E (void);
-// 0x00000208 YooAsset.UpdatePackageManifestOperation YooAsset.ResourcePackage::UpdatePackageManifestAsync(System.String,System.Boolean,System.Int32)
+// 0x00000209 YooAsset.UpdatePackageManifestOperation YooAsset.ResourcePackage::UpdatePackageManifestAsync(System.String,System.Boolean,System.Int32)
 extern void ResourcePackage_UpdatePackageManifestAsync_m1613428117422678F0EEFB1F6BC8EDF874CE0C4B (void);
-// 0x00000209 System.String YooAsset.ResourcePackage::GetPackageVersion()
+// 0x0000020A System.String YooAsset.ResourcePackage::GetPackageVersion()
 extern void ResourcePackage_GetPackageVersion_m5CC52512B6442998DF5F098251FE0E72A07B37AE (void);
-// 0x0000020A YooAsset.AssetInfo[] YooAsset.ResourcePackage::GetAssetInfos(System.String)
+// 0x0000020B YooAsset.AssetInfo[] YooAsset.ResourcePackage::GetAssetInfos(System.String)
 extern void ResourcePackage_GetAssetInfos_mE6348F8DFF65DCCEAE8A6FB0C34668C429802FBE (void);
-// 0x0000020B YooAsset.RawFileOperationHandle YooAsset.ResourcePackage::LoadRawFileAsync(YooAsset.AssetInfo)
+// 0x0000020C YooAsset.RawFileOperationHandle YooAsset.ResourcePackage::LoadRawFileAsync(YooAsset.AssetInfo)
 extern void ResourcePackage_LoadRawFileAsync_mC5F2EAA9892BC46E6D829DF23C6F1AFF6309F8DA (void);
-// 0x0000020C YooAsset.RawFileOperationHandle YooAsset.ResourcePackage::LoadRawFileInternal(YooAsset.AssetInfo,System.Boolean)
+// 0x0000020D YooAsset.RawFileOperationHandle YooAsset.ResourcePackage::LoadRawFileInternal(YooAsset.AssetInfo,System.Boolean)
 extern void ResourcePackage_LoadRawFileInternal_m6C3DB54DFFDD2C5C15E8B9C84DBDBA9EF32E6324 (void);
-// 0x0000020D YooAsset.AssetOperationHandle YooAsset.ResourcePackage::LoadAssetSync(System.String)
-// 0x0000020E YooAsset.AssetOperationHandle YooAsset.ResourcePackage::LoadAssetAsync(System.String)
-// 0x0000020F YooAsset.AssetOperationHandle YooAsset.ResourcePackage::LoadAssetInternal(YooAsset.AssetInfo,System.Boolean)
+// 0x0000020E YooAsset.AssetOperationHandle YooAsset.ResourcePackage::LoadAssetSync(System.String)
+// 0x0000020F YooAsset.AssetOperationHandle YooAsset.ResourcePackage::LoadAssetAsync(System.String)
+// 0x00000210 YooAsset.AssetOperationHandle YooAsset.ResourcePackage::LoadAssetInternal(YooAsset.AssetInfo,System.Boolean)
 extern void ResourcePackage_LoadAssetInternal_mD606BD7FFC1941FF81F817B249BB0334B1A41662 (void);
-// 0x00000210 YooAsset.ResourceDownloaderOperation YooAsset.ResourcePackage::CreateResourceDownloader(System.Int32,System.Int32,System.Int32)
+// 0x00000211 YooAsset.ResourceDownloaderOperation YooAsset.ResourcePackage::CreateResourceDownloader(System.Int32,System.Int32,System.Int32)
 extern void ResourcePackage_CreateResourceDownloader_m7BCBA05D79698FD8C1EC1AAC30A02A4300365DE8 (void);
-// 0x00000211 YooAsset.AssetInfo YooAsset.ResourcePackage::ConvertLocationToAssetInfo(System.String,System.Type)
+// 0x00000212 YooAsset.AssetInfo YooAsset.ResourcePackage::ConvertLocationToAssetInfo(System.String,System.Type)
 extern void ResourcePackage_ConvertLocationToAssetInfo_m66DFD14659B2FA9B8E8763D09BDB5DC130419D69 (void);
-// 0x00000212 YooAsset.DebugPackageData YooAsset.ResourcePackage::GetDebugPackageData()
+// 0x00000213 YooAsset.DebugPackageData YooAsset.ResourcePackage::GetDebugPackageData()
 extern void ResourcePackage_GetDebugPackageData_mAD38FFF02B859916E6D0F09CDC307B94C7B09820 (void);
-// 0x00000213 System.UInt64 YooAsset.IDecryptionServices::LoadFromFileOffset(YooAsset.DecryptFileInfo)
-// 0x00000214 System.Byte[] YooAsset.IDecryptionServices::LoadFromMemory(YooAsset.DecryptFileInfo)
-// 0x00000215 System.IO.Stream YooAsset.IDecryptionServices::LoadFromStream(YooAsset.DecryptFileInfo)
-// 0x00000216 System.UInt32 YooAsset.IDecryptionServices::GetManagedReadBufferSize()
-// 0x00000217 YooAsset.BundleInfo YooAsset.IBundleServices::GetBundleInfo(YooAsset.AssetInfo)
-// 0x00000218 YooAsset.BundleInfo[] YooAsset.IBundleServices::GetAllDependBundleInfos(YooAsset.AssetInfo)
-// 0x00000219 YooAsset.PackageManifest YooAsset.IPlayModeServices::get_ActiveManifest()
-// 0x0000021A YooAsset.UpdatePackageVersionOperation YooAsset.IPlayModeServices::UpdatePackageVersionAsync(System.Boolean,System.Int32)
-// 0x0000021B YooAsset.UpdatePackageManifestOperation YooAsset.IPlayModeServices::UpdatePackageManifestAsync(System.String,System.Boolean,System.Int32)
-// 0x0000021C YooAsset.ResourceDownloaderOperation YooAsset.IPlayModeServices::CreateResourceDownloaderByAll(System.Int32,System.Int32,System.Int32)
-// 0x0000021D System.String YooAsset.IRemoteServices::GetRemoteMainURL(System.String)
-// 0x0000021E System.String YooAsset.IRemoteServices::GetRemoteFallbackURL(System.String)
-// 0x0000021F System.Boolean YooAsset.IQueryServices::QueryStreamingAssets(System.String)
-// 0x00000220 System.Void YooAsset.YooAssetSettings::.ctor()
+// 0x00000214 System.UInt64 YooAsset.IDecryptionServices::LoadFromFileOffset(YooAsset.DecryptFileInfo)
+// 0x00000215 System.Byte[] YooAsset.IDecryptionServices::LoadFromMemory(YooAsset.DecryptFileInfo)
+// 0x00000216 System.IO.Stream YooAsset.IDecryptionServices::LoadFromStream(YooAsset.DecryptFileInfo)
+// 0x00000217 System.UInt32 YooAsset.IDecryptionServices::GetManagedReadBufferSize()
+// 0x00000218 YooAsset.BundleInfo YooAsset.IBundleServices::GetBundleInfo(YooAsset.AssetInfo)
+// 0x00000219 YooAsset.BundleInfo[] YooAsset.IBundleServices::GetAllDependBundleInfos(YooAsset.AssetInfo)
+// 0x0000021A YooAsset.PackageManifest YooAsset.IPlayModeServices::get_ActiveManifest()
+// 0x0000021B YooAsset.UpdatePackageVersionOperation YooAsset.IPlayModeServices::UpdatePackageVersionAsync(System.Boolean,System.Int32)
+// 0x0000021C YooAsset.UpdatePackageManifestOperation YooAsset.IPlayModeServices::UpdatePackageManifestAsync(System.String,System.Boolean,System.Int32)
+// 0x0000021D YooAsset.ResourceDownloaderOperation YooAsset.IPlayModeServices::CreateResourceDownloaderByAll(System.Int32,System.Int32,System.Int32)
+// 0x0000021E System.String YooAsset.IRemoteServices::GetRemoteMainURL(System.String)
+// 0x0000021F System.String YooAsset.IRemoteServices::GetRemoteFallbackURL(System.String)
+// 0x00000220 System.Boolean YooAsset.IQueryServices::QueryStreamingAssets(System.String)
+// 0x00000221 System.Void YooAsset.YooAssetSettings::.ctor()
 extern void YooAssetSettings__ctor_m791B0FC8C5F1C8910BB3EABEBE798135D4CC3311 (void);
-// 0x00000221 YooAsset.YooAssetSettings YooAsset.YooAssetSettingsData::get_Setting()
+// 0x00000222 YooAsset.YooAssetSettings YooAsset.YooAssetSettingsData::get_Setting()
 extern void YooAssetSettingsData_get_Setting_mE46290161FA618BBC58334B0DAD6F8204312EA53 (void);
-// 0x00000222 System.Void YooAsset.YooAssetSettingsData::LoadSettingData()
+// 0x00000223 System.Void YooAsset.YooAssetSettingsData::LoadSettingData()
 extern void YooAssetSettingsData_LoadSettingData_mF83313A98D3693138A772EA633FB982A545A1455 (void);
-// 0x00000223 System.String YooAsset.YooAssetSettingsData::GetManifestBinaryFileName(System.String,System.String)
+// 0x00000224 System.String YooAsset.YooAssetSettingsData::GetManifestBinaryFileName(System.String,System.String)
 extern void YooAssetSettingsData_GetManifestBinaryFileName_mDD89E20180792BB59238E5E465EAB820B87C67DA (void);
-// 0x00000224 System.String YooAsset.YooAssetSettingsData::GetPackageHashFileName(System.String,System.String)
+// 0x00000225 System.String YooAsset.YooAssetSettingsData::GetPackageHashFileName(System.String,System.String)
 extern void YooAssetSettingsData_GetPackageHashFileName_mC089CF286FC569A8C8B548509DA7E4A310F85175 (void);
-// 0x00000225 System.String YooAsset.YooAssetSettingsData::GetPackageVersionFileName(System.String)
+// 0x00000226 System.String YooAsset.YooAssetSettingsData::GetPackageVersionFileName(System.String)
 extern void YooAssetSettingsData_GetPackageVersionFileName_mE2475A52E8FD228A366BB77E8D2E58BA7856EFB8 (void);
-// 0x00000226 System.Void YooAsset.BufferReader::.ctor(System.Byte[])
+// 0x00000227 System.Void YooAsset.BufferReader::.ctor(System.Byte[])
 extern void BufferReader__ctor_mC6EF8F425A7C6EB439FB912948AE3DE47F0D3988 (void);
-// 0x00000227 System.Boolean YooAsset.BufferReader::get_IsValid()
+// 0x00000228 System.Boolean YooAsset.BufferReader::get_IsValid()
 extern void BufferReader_get_IsValid_m80C56E288DBE6DB7D8F29F49B1422688FE0C49A6 (void);
-// 0x00000228 System.Byte YooAsset.BufferReader::ReadByte()
+// 0x00000229 System.Byte YooAsset.BufferReader::ReadByte()
 extern void BufferReader_ReadByte_m2A8234ABF4AAEBE105C65807AB1BC36484429454 (void);
-// 0x00000229 System.Boolean YooAsset.BufferReader::ReadBool()
+// 0x0000022A System.Boolean YooAsset.BufferReader::ReadBool()
 extern void BufferReader_ReadBool_m68183B3F41D9E3C082C46421570FF124FD30C50C (void);
-// 0x0000022A System.Int16 YooAsset.BufferReader::ReadInt16()
+// 0x0000022B System.Int16 YooAsset.BufferReader::ReadInt16()
 extern void BufferReader_ReadInt16_mA5B06052AF71586C0E0F278A063EEAED53494AB1 (void);
-// 0x0000022B System.UInt16 YooAsset.BufferReader::ReadUInt16()
+// 0x0000022C System.UInt16 YooAsset.BufferReader::ReadUInt16()
 extern void BufferReader_ReadUInt16_m069C188A56BC98EDBBEAFE129EF9999CC018C00E (void);
-// 0x0000022C System.Int32 YooAsset.BufferReader::ReadInt32()
+// 0x0000022D System.Int32 YooAsset.BufferReader::ReadInt32()
 extern void BufferReader_ReadInt32_mE435455960B4D67BE25CD6DD4C9B5308BD35868A (void);
-// 0x0000022D System.UInt32 YooAsset.BufferReader::ReadUInt32()
+// 0x0000022E System.UInt32 YooAsset.BufferReader::ReadUInt32()
 extern void BufferReader_ReadUInt32_m232721C663F60269387CA4D99282E811BE60F7AD (void);
-// 0x0000022E System.Int64 YooAsset.BufferReader::ReadInt64()
+// 0x0000022F System.Int64 YooAsset.BufferReader::ReadInt64()
 extern void BufferReader_ReadInt64_mF5E55A5504F0D0C07A0C77F9795A6B1986C1B9A9 (void);
-// 0x0000022F System.String YooAsset.BufferReader::ReadUTF8()
+// 0x00000230 System.String YooAsset.BufferReader::ReadUTF8()
 extern void BufferReader_ReadUTF8_m3593299F42A67EFC02BF43E2F08C07030B3613D4 (void);
-// 0x00000230 System.Int32[] YooAsset.BufferReader::ReadInt32Array()
+// 0x00000231 System.Int32[] YooAsset.BufferReader::ReadInt32Array()
 extern void BufferReader_ReadInt32Array_m299D7566FB9F588CDF22C883BF02157863B2C7F6 (void);
-// 0x00000231 System.String[] YooAsset.BufferReader::ReadUTF8Array()
+// 0x00000232 System.String[] YooAsset.BufferReader::ReadUTF8Array()
 extern void BufferReader_ReadUTF8Array_mE5696019520879DFD4104B6CF755E5CEA4D21A2C (void);
-// 0x00000232 System.Void YooAsset.BufferWriter::.ctor(System.Int32)
+// 0x00000233 System.Void YooAsset.BufferWriter::.ctor(System.Int32)
 extern void BufferWriter__ctor_m5B2AF42B56EEBAE07F67B8AE314BC223DACC2EDB (void);
-// 0x00000233 System.Void YooAsset.BufferWriter::Clear()
+// 0x00000234 System.Void YooAsset.BufferWriter::Clear()
 extern void BufferWriter_Clear_mE0FC4859F1FBCBC6FB621B868A1FAB2762AAB0DA (void);
-// 0x00000234 System.Void YooAsset.BufferWriter::WriteToStream(System.IO.FileStream)
+// 0x00000235 System.Void YooAsset.BufferWriter::WriteToStream(System.IO.FileStream)
 extern void BufferWriter_WriteToStream_mA997D1C5E4CB380C7DAE16E0BF243D0160759B72 (void);
-// 0x00000235 System.Void YooAsset.BufferWriter::WriteBytes(System.Byte[])
+// 0x00000236 System.Void YooAsset.BufferWriter::WriteBytes(System.Byte[])
 extern void BufferWriter_WriteBytes_mFFB036CE6E80DDBDD25891820C2307169C70D6D0 (void);
-// 0x00000236 System.Void YooAsset.BufferWriter::WriteUInt16(System.UInt16)
+// 0x00000237 System.Void YooAsset.BufferWriter::WriteUInt16(System.UInt16)
 extern void BufferWriter_WriteUInt16_mB40927185E82DA1290F5621E6C2512A9FA7013C5 (void);
-// 0x00000237 System.Void YooAsset.BufferWriter::WriteInt64(System.Int64)
+// 0x00000238 System.Void YooAsset.BufferWriter::WriteInt64(System.Int64)
 extern void BufferWriter_WriteInt64_m68239C91573978F31F2268CD8BE30847D6D4E455 (void);
-// 0x00000238 System.Void YooAsset.BufferWriter::WriteUInt64(System.UInt64)
+// 0x00000239 System.Void YooAsset.BufferWriter::WriteUInt64(System.UInt64)
 extern void BufferWriter_WriteUInt64_m572D638FA02DE18EBDD7057C4CBF1F2E03F0F788 (void);
-// 0x00000239 System.Void YooAsset.BufferWriter::WriteUTF8(System.String)
+// 0x0000023A System.Void YooAsset.BufferWriter::WriteUTF8(System.String)
 extern void BufferWriter_WriteUTF8_m88353C3A51555128165FA9826DC112155E13B334 (void);
-// 0x0000023A System.Void YooAsset.SafeProxy::.ctor()
+// 0x0000023B System.Void YooAsset.SafeProxy::.ctor()
 extern void SafeProxy__ctor_m20D5BAFBED63005F32518A267B10569A87AFA329 (void);
-// 0x0000023B System.Void YooAsset.SafeProxy::Init(System.UInt32)
+// 0x0000023C System.Void YooAsset.SafeProxy::Init(System.UInt32)
 extern void SafeProxy_Init_m22B2A105F4BF66946394BAB6B7FC5FBB925BA3EF (void);
-// 0x0000023C System.UInt32 YooAsset.SafeProxy::Append(System.UInt32,System.Byte[],System.Int32,System.Int32)
+// 0x0000023D System.UInt32 YooAsset.SafeProxy::Append(System.UInt32,System.Byte[],System.Int32,System.Int32)
 extern void SafeProxy_Append_m4537F0777BF86A68EF103F1E127BBDA372D4353E (void);
-// 0x0000023D System.Void YooAsset.CRC32Algorithm::.ctor()
+// 0x0000023E System.Void YooAsset.CRC32Algorithm::.ctor()
 extern void CRC32Algorithm__ctor_m294E2814CE76E07DF72E04905B4900D80FD10F7B (void);
-// 0x0000023E System.Void YooAsset.CRC32Algorithm::Initialize()
+// 0x0000023F System.Void YooAsset.CRC32Algorithm::Initialize()
 extern void CRC32Algorithm_Initialize_m27E8AA0C2D4BDA0382732C455ED84D1B9A9FD7AF (void);
-// 0x0000023F System.Void YooAsset.CRC32Algorithm::HashCore(System.Byte[],System.Int32,System.Int32)
+// 0x00000240 System.Void YooAsset.CRC32Algorithm::HashCore(System.Byte[],System.Int32,System.Int32)
 extern void CRC32Algorithm_HashCore_mEB09D2ED78FA41E68EA2435FCE1BC5B9C46FD25C (void);
-// 0x00000240 System.Byte[] YooAsset.CRC32Algorithm::HashFinal()
+// 0x00000241 System.Byte[] YooAsset.CRC32Algorithm::HashFinal()
 extern void CRC32Algorithm_HashFinal_mD8007FC23543C5FFF5C689201CCCFF5A4A675E5F (void);
-// 0x00000241 System.UInt32 YooAsset.CRC32Algorithm::AppendInternal(System.UInt32,System.Byte[],System.Int32,System.Int32)
+// 0x00000242 System.UInt32 YooAsset.CRC32Algorithm::AppendInternal(System.UInt32,System.Byte[],System.Int32,System.Int32)
 extern void CRC32Algorithm_AppendInternal_m4FB055BC957D1A8685B673C6C6283632BC7942FD (void);
-// 0x00000242 System.Void YooAsset.CRC32Algorithm::.cctor()
+// 0x00000243 System.Void YooAsset.CRC32Algorithm::.cctor()
 extern void CRC32Algorithm__cctor_m12F15F3D28AF859729F6501A91A5F00C27469C80 (void);
-// 0x00000243 System.Void YooAsset.ILogger::Warning(System.String)
-// 0x00000244 System.Void YooAsset.ILogger::Error(System.String)
-// 0x00000245 System.Void YooAsset.ILogger::Exception(System.Exception)
-// 0x00000246 System.Void YooAsset.YooLogger::Warning(System.String)
+// 0x00000244 System.Void YooAsset.ILogger::Warning(System.String)
+// 0x00000245 System.Void YooAsset.ILogger::Error(System.String)
+// 0x00000246 System.Void YooAsset.ILogger::Exception(System.Exception)
+// 0x00000247 System.Void YooAsset.YooLogger::Warning(System.String)
 extern void YooLogger_Warning_m0FDCABFC6EB0F423424F5FAB4C63AD86D2142724 (void);
-// 0x00000247 System.Void YooAsset.YooLogger::Error(System.String)
+// 0x00000248 System.Void YooAsset.YooLogger::Error(System.String)
 extern void YooLogger_Error_m30690253373083BEEF5813486E22F990791F7E14 (void);
-// 0x00000248 System.Void YooAsset.YooLogger::Exception(System.Exception)
+// 0x00000249 System.Void YooAsset.YooLogger::Exception(System.Exception)
 extern void YooLogger_Exception_mE10CEEFE3F29B1FFCC8065D63534F9DF20F4D8D9 (void);
-// 0x00000249 System.String YooAsset.PathUtility::RemoveExtension(System.String)
+// 0x0000024A System.String YooAsset.PathUtility::RemoveExtension(System.String)
 extern void PathUtility_RemoveExtension_mB37809517DE9576A5A133FC6EB1C03A17A27C001 (void);
-// 0x0000024A System.String YooAsset.PathUtility::Combine(System.String,System.String)
+// 0x0000024B System.String YooAsset.PathUtility::Combine(System.String,System.String)
 extern void PathUtility_Combine_m6A27D589F2324DFC34626385A25BFE05153466CF (void);
-// 0x0000024B System.String YooAsset.PathUtility::Combine(System.String,System.String,System.String)
+// 0x0000024C System.String YooAsset.PathUtility::Combine(System.String,System.String,System.String)
 extern void PathUtility_Combine_m6920072B21881851CD528AEB1215A7B926A1B43A (void);
-// 0x0000024C System.String YooAsset.PathUtility::Combine(System.String,System.String,System.String,System.String)
+// 0x0000024D System.String YooAsset.PathUtility::Combine(System.String,System.String,System.String,System.String)
 extern void PathUtility_Combine_m4F74CC4C03DB1C83255A40383BFB8452A23D81B6 (void);
-// 0x0000024D System.String YooAsset.StringUtility::Format(System.String,System.Object)
+// 0x0000024E System.String YooAsset.StringUtility::Format(System.String,System.Object)
 extern void StringUtility_Format_m57FE5C4829C2170C2BF8284B1EB2F92D2F7FF1B7 (void);
-// 0x0000024E System.String YooAsset.StringUtility::Format(System.String,System.Object,System.Object)
+// 0x0000024F System.String YooAsset.StringUtility::Format(System.String,System.Object,System.Object)
 extern void StringUtility_Format_m56943693D959257C024A22C4DA4A9BA37E9878ED (void);
-// 0x0000024F System.String YooAsset.StringUtility::Format(System.String,System.Object,System.Object,System.Object)
+// 0x00000250 System.String YooAsset.StringUtility::Format(System.String,System.Object,System.Object,System.Object)
 extern void StringUtility_Format_mFDB7AA995F59B6BB794195CB0A9C1612627F2B4B (void);
-// 0x00000250 System.String YooAsset.StringUtility::Format(System.String,System.Object[])
+// 0x00000251 System.String YooAsset.StringUtility::Format(System.String,System.Object[])
 extern void StringUtility_Format_m01B57791BBB6FFDE33EBEF1730890E5EEB7F4C15 (void);
-// 0x00000251 System.Void YooAsset.StringUtility::.cctor()
+// 0x00000252 System.Void YooAsset.StringUtility::.cctor()
 extern void StringUtility__cctor_m0F9FD51CF1A36E6BCCB1E0BC0B6CF23F9100E4B8 (void);
-// 0x00000252 System.String YooAsset.FileUtility::ReadAllText(System.String)
+// 0x00000253 System.String YooAsset.FileUtility::ReadAllText(System.String)
 extern void FileUtility_ReadAllText_m0562C7080D4A1BBA4E9E917A24123F6EFEEA003B (void);
-// 0x00000253 System.Byte[] YooAsset.FileUtility::ReadAllBytes(System.String)
+// 0x00000254 System.Byte[] YooAsset.FileUtility::ReadAllBytes(System.String)
 extern void FileUtility_ReadAllBytes_mD14D378FF3622F974AC86304BC07E714FDE4F96C (void);
-// 0x00000254 System.Void YooAsset.FileUtility::WriteAllText(System.String,System.String)
+// 0x00000255 System.Void YooAsset.FileUtility::WriteAllText(System.String,System.String)
 extern void FileUtility_WriteAllText_m19EAD0113063D600AA40F6362F1EF62900EEB12A (void);
-// 0x00000255 System.Void YooAsset.FileUtility::CreateFileDirectory(System.String)
+// 0x00000256 System.Void YooAsset.FileUtility::CreateFileDirectory(System.String)
 extern void FileUtility_CreateFileDirectory_mBCB0B7AC354E6E43DF4D3A6F0E705E5EB81D9765 (void);
-// 0x00000256 System.Void YooAsset.FileUtility::CreateDirectory(System.String)
+// 0x00000257 System.Void YooAsset.FileUtility::CreateDirectory(System.String)
 extern void FileUtility_CreateDirectory_mD9C505973F661F7D955D8B73AA514E8F05CAD0B3 (void);
-// 0x00000257 System.Int64 YooAsset.FileUtility::GetFileSize(System.String)
+// 0x00000258 System.Int64 YooAsset.FileUtility::GetFileSize(System.String)
 extern void FileUtility_GetFileSize_mF2BCBA341B32DC7CC759391050ED6DD8252DA52D (void);
-// 0x00000258 System.String YooAsset.HashUtility::ToString(System.Byte[])
+// 0x00000259 System.String YooAsset.HashUtility::ToString(System.Byte[])
 extern void HashUtility_ToString_mFC0FE6EDA758E059BEE078D775605C369E62E66E (void);
-// 0x00000259 System.String YooAsset.HashUtility::FileMD5(System.String)
+// 0x0000025A System.String YooAsset.HashUtility::FileMD5(System.String)
 extern void HashUtility_FileMD5_mC15CC81E0A046E46B138159FC30AADD0E4012B6B (void);
-// 0x0000025A System.String YooAsset.HashUtility::StreamMD5(System.IO.Stream)
+// 0x0000025B System.String YooAsset.HashUtility::StreamMD5(System.IO.Stream)
 extern void HashUtility_StreamMD5_mEF8553E585C6249ADA7536E1C3BFBD50C5637DB8 (void);
-// 0x0000025B System.String YooAsset.HashUtility::FileCRC32(System.String)
+// 0x0000025C System.String YooAsset.HashUtility::FileCRC32(System.String)
 extern void HashUtility_FileCRC32_m19D18BFBB5686559F437B99AA7E7A374EC7C3947 (void);
-// 0x0000025C System.String YooAsset.HashUtility::StreamCRC32(System.IO.Stream)
+// 0x0000025D System.String YooAsset.HashUtility::StreamCRC32(System.IO.Stream)
 extern void HashUtility_StreamCRC32_mA53E2220FD4BA495151B0E9F28C5D51817026813 (void);
-// 0x0000025D System.Void YooAsset.YooAssets::Initialize(YooAsset.ILogger)
+// 0x0000025E System.Void YooAsset.YooAssets::Initialize(YooAsset.ILogger)
 extern void YooAssets_Initialize_mB0A84BF8A5A714A29327289CC2D8FB194DAF56F3 (void);
-// 0x0000025E System.Void YooAsset.YooAssets::Update()
+// 0x0000025F System.Void YooAsset.YooAssets::Update()
 extern void YooAssets_Update_mBEAE2E75143E5E279AA247D6E72F45D3288AC289 (void);
-// 0x0000025F YooAsset.ResourcePackage YooAsset.YooAssets::CreatePackage(System.String)
+// 0x00000260 YooAsset.ResourcePackage YooAsset.YooAssets::CreatePackage(System.String)
 extern void YooAssets_CreatePackage_m15B5FE1965291E05B81890B9B15636A7C2D1B873 (void);
-// 0x00000260 System.Boolean YooAsset.YooAssets::HasPackage(System.String)
+// 0x00000261 System.Boolean YooAsset.YooAssets::HasPackage(System.String)
 extern void YooAssets_HasPackage_m835B2DF39108F56037BAC7C0F3707203BB73B184 (void);
-// 0x00000261 System.String YooAsset.YooAssets::GetStreamingAssetBuildinFolderName()
+// 0x00000262 System.String YooAsset.YooAssets::GetStreamingAssetBuildinFolderName()
 extern void YooAssets_GetStreamingAssetBuildinFolderName_m310233391F05875E89559C66E5B0728A2B2B9DF4 (void);
-// 0x00000262 YooAsset.DebugReport YooAsset.YooAssets::GetDebugReport()
+// 0x00000263 YooAsset.DebugReport YooAsset.YooAssets::GetDebugReport()
 extern void YooAssets_GetDebugReport_m76E1839C08757D6335A741D657E84471D2516E82 (void);
-// 0x00000263 System.Void YooAsset.YooAssets::SetDefaultPackage(YooAsset.ResourcePackage)
+// 0x00000264 System.Void YooAsset.YooAssets::SetDefaultPackage(YooAsset.ResourcePackage)
 extern void YooAssets_SetDefaultPackage_mB83D34E411C4AB0C42DD9E9CB1992E836BA06328 (void);
-// 0x00000264 YooAsset.AssetInfo[] YooAsset.YooAssets::GetAssetInfos(System.String)
+// 0x00000265 YooAsset.AssetInfo[] YooAsset.YooAssets::GetAssetInfos(System.String)
 extern void YooAssets_GetAssetInfos_m9A10C055F33EBF1DC21B693796C8CB7B595F27ED (void);
-// 0x00000265 YooAsset.RawFileOperationHandle YooAsset.YooAssets::LoadRawFileAsync(YooAsset.AssetInfo)
+// 0x00000266 YooAsset.RawFileOperationHandle YooAsset.YooAssets::LoadRawFileAsync(YooAsset.AssetInfo)
 extern void YooAssets_LoadRawFileAsync_m0A7BC63FD1B1CD7D59C7B9D978C8A32F5E04C52E (void);
-// 0x00000266 YooAsset.AssetOperationHandle YooAsset.YooAssets::LoadAssetSync(System.String)
-// 0x00000267 YooAsset.AssetOperationHandle YooAsset.YooAssets::LoadAssetAsync(System.String)
-// 0x00000268 System.Void YooAsset.YooAssets::.cctor()
+// 0x00000267 YooAsset.AssetOperationHandle YooAsset.YooAssets::LoadAssetSync(System.String)
+// 0x00000268 YooAsset.AssetOperationHandle YooAsset.YooAssets::LoadAssetAsync(System.String)
+// 0x00000269 System.Void YooAsset.YooAssets::.cctor()
 extern void YooAssets__cctor_m1B500E6E007DCC1FBBEDB59384C6041AD144C580 (void);
-// 0x00000269 System.Void YooAsset.YooAssetsDriver::Update()
+// 0x0000026A System.Void YooAsset.YooAssetsDriver::Update()
 extern void YooAssetsDriver_Update_m990474D140444AB6B0599A0E562A0941C518005F (void);
-// 0x0000026A System.Void YooAsset.YooAssetsDriver::DebugCheckDuplicateDriver()
+// 0x0000026B System.Void YooAsset.YooAssetsDriver::DebugCheckDuplicateDriver()
 extern void YooAssetsDriver_DebugCheckDuplicateDriver_mD08D8F69F86927A2C4F01EF2D35C644C06151CEB (void);
-// 0x0000026B System.Void YooAsset.YooAssetsDriver::.ctor()
+// 0x0000026C System.Void YooAsset.YooAssetsDriver::.ctor()
 extern void YooAssetsDriver__ctor_m354D5C4B4F226C2FB6B5B7E9E19B764A1769438C (void);
-static Il2CppMethodPointer s_methodPointers[619] = 
+static Il2CppMethodPointer s_methodPointers[620] = 
 {
 	AssetSystemImpl_set_DownloadFailedTryAgain_mAA2B6685F36F73FBED52CB014A7E18CBCFBC90E2,
 	AssetSystemImpl_get_DownloadFailedTryAgain_mD52F7BE1D995DA2E0E4CE370457AE1FBEA07A434,
@@ -1549,6 +1551,7 @@ static Il2CppMethodPointer s_methodPointers[619] =
 	AssetInfo_get_Error_mC9133119BEDF740145FDEE6781E8A90CACE0B6F3,
 	AssetInfo_get_GUID_mB0C6C83736E4A04557E24F6F1E6E85EDD3F1E91A,
 	AssetInfo_get_IsInvalid_mE49DFEE2F21AF8068B2EE8D70698866D3E6D1309,
+	AssetInfo_get_Address_m32244A4F8AAFD3F3B308EC40953A2BBE49C1E015,
 	AssetInfo_get_AssetPath_mBF0509BDAB9E0ED197999E10C7B5DEFECE7DAD45,
 	AssetInfo__ctor_mBCA57B01F1B48EDC7E997F0A6685C161E788C556,
 	AssetInfo__ctor_mE3A2AB75778CE74ACFD8E6450FD98E0574296BD9,
@@ -1844,541 +1847,539 @@ static Il2CppMethodPointer s_methodPointers[619] =
 	YooAssetsDriver_DebugCheckDuplicateDriver_mD08D8F69F86927A2C4F01EF2D35C644C06151CEB,
 	YooAssetsDriver__ctor_m354D5C4B4F226C2FB6B5B7E9E19B764A1769438C,
 };
-static const int32_t s_InvokerIndices[619] = 
+static const int32_t s_InvokerIndices[620] = 
 {
-	3519,
-	4193,
-	3539,
-	4215,
-	3539,
-	4215,
-	4147,
+	3376,
+	4056,
+	3396,
+	4078,
+	3396,
+	4078,
+	4010,
 	175,
-	4315,
-	3164,
-	3164,
-	3164,
-	3164,
-	3164,
-	3164,
-	3164,
-	4215,
-	4315,
-	6569,
-	3539,
-	4315,
-	4315,
-	3539,
-	4315,
-	4315,
-	4315,
-	4215,
-	4215,
-	283,
-	3539,
-	4215,
-	3539,
+	4179,
+	3018,
+	3018,
+	3018,
+	3018,
+	3018,
+	3018,
+	3018,
+	4078,
+	4179,
+	6433,
+	3396,
+	4179,
+	4179,
+	3396,
+	4179,
+	4179,
+	4179,
+	4078,
+	4078,
+	282,
+	3396,
+	4078,
+	3396,
 	0,
-	4147,
-	4147,
-	4147,
-	4315,
-	4147,
-	4315,
-	4215,
-	3539,
-	4315,
-	4315,
-	4315,
-	4215,
-	3539,
-	4315,
-	3539,
-	4315,
-	4315,
-	2101,
-	4315,
-	4315,
-	3539,
-	4215,
-	3539,
-	4215,
-	3519,
-	4193,
-	3519,
-	4193,
-	3539,
-	4215,
-	4147,
-	3539,
-	4215,
-	3539,
-	4215,
-	3574,
-	3616,
-	2101,
-	3539,
-	4315,
-	4147,
+	4010,
+	4010,
+	4010,
+	4179,
+	4010,
+	4179,
+	4078,
+	3396,
+	4179,
+	4179,
+	4179,
+	4078,
+	3396,
+	4179,
+	3396,
+	4179,
+	4179,
+	1947,
+	4179,
+	4179,
+	3396,
+	4078,
+	3396,
+	4078,
+	3376,
+	4056,
+	3376,
+	4056,
+	3396,
+	4078,
+	4010,
+	3396,
+	4078,
+	3396,
+	4078,
+	3432,
+	3474,
+	1947,
+	3396,
+	4179,
+	4010,
 	0,
 	0,
-	3539,
-	4147,
-	4147,
-	4215,
-	4315,
-	4315,
-	3539,
-	2101,
-	4315,
-	4315,
-	2101,
-	4315,
-	4315,
+	3396,
+	4010,
+	4010,
+	4078,
+	4179,
+	4179,
+	3396,
+	1947,
+	4179,
+	4179,
+	1947,
+	4179,
+	4179,
 	176,
-	4315,
-	4315,
-	4530,
-	1177,
-	4315,
-	1177,
-	4315,
-	3539,
-	4315,
-	3539,
-	1177,
-	4315,
-	1177,
-	4315,
-	3539,
-	3539,
-	3539,
-	4215,
-	3539,
-	4215,
-	3539,
-	4215,
-	3519,
-	4193,
-	3539,
-	4215,
-	3574,
-	3519,
-	4193,
-	4147,
-	4147,
-	3539,
-	4215,
-	3539,
-	4215,
-	3468,
-	4147,
-	1177,
+	4179,
+	4179,
+	4397,
+	1072,
+	4179,
+	1072,
+	4179,
+	3396,
+	4179,
+	3396,
+	1072,
+	4179,
+	1072,
+	4179,
+	3396,
+	3396,
+	3396,
+	4078,
+	3396,
+	4078,
+	3396,
+	4078,
+	3376,
+	4056,
+	3396,
+	4078,
+	3432,
+	3376,
+	4056,
+	4010,
+	4010,
+	3396,
+	4078,
+	3396,
+	4078,
+	3325,
+	4010,
+	1072,
 	0,
 	0,
-	3539,
-	4315,
-	4315,
-	4194,
-	3539,
-	5618,
-	5587,
-	6569,
-	6534,
-	6251,
-	5721,
-	5619,
-	6059,
-	6251,
-	6251,
-	5834,
-	4912,
-	6314,
-	6569,
-	3539,
-	4315,
-	4315,
-	4147,
-	4147,
-	6314,
-	4315,
-	3539,
-	4315,
-	4315,
-	4254,
-	2610,
-	3539,
-	3539,
-	3519,
-	4193,
-	6314,
-	4315,
-	3539,
-	4315,
-	4315,
-	2610,
-	3539,
-	3539,
-	4315,
-	4315,
-	3539,
-	3539,
-	4193,
-	2610,
-	2101,
-	3539,
-	3164,
-	3539,
-	3539,
-	4215,
-	3539,
-	4215,
-	3520,
-	4194,
-	677,
-	6541,
-	6314,
-	6314,
-	5895,
-	5411,
-	6314,
-	6569,
-	6314,
-	6314,
-	6541,
-	5895,
-	5895,
-	6314,
-	6059,
-	6569,
-	3539,
-	4215,
-	3539,
-	4215,
-	3539,
-	4215,
-	3539,
-	4215,
-	3539,
-	4215,
-	342,
-	4315,
-	3539,
-	4215,
-	3539,
-	4215,
-	3520,
-	4194,
-	1176,
-	3015,
-	1466,
-	4315,
-	4315,
-	3015,
-	1466,
-	4315,
-	6314,
-	4315,
-	6314,
-	4315,
-	6569,
-	4315,
-	4315,
-	3539,
-	4315,
-	4254,
-	4303,
-	3539,
-	1940,
+	3396,
+	4179,
+	4179,
+	4057,
+	3396,
+	5483,
+	5452,
+	6433,
+	6398,
+	6115,
+	5586,
+	5484,
+	5923,
+	6115,
+	6115,
+	5698,
+	4778,
+	6178,
+	6433,
+	3396,
+	4179,
+	4179,
+	4010,
+	4010,
+	6178,
+	4179,
+	3396,
+	4179,
+	4179,
+	4118,
+	2460,
+	3396,
+	3396,
+	3376,
+	4056,
+	6178,
+	4179,
+	3396,
+	4179,
+	4179,
+	2460,
+	3396,
+	3396,
+	4179,
+	4179,
+	3396,
+	3396,
+	4056,
+	2460,
+	1947,
+	3396,
+	3018,
+	3396,
+	3396,
+	4078,
+	3396,
+	4078,
+	3377,
+	4057,
+	678,
+	6405,
+	6178,
+	6178,
+	5759,
+	5276,
+	6178,
+	6433,
+	6178,
+	6178,
+	6405,
+	5759,
+	5759,
+	6178,
+	5923,
+	6433,
+	3396,
+	4078,
+	3396,
+	4078,
+	3396,
+	4078,
+	3396,
+	4078,
+	3396,
+	4078,
+	341,
+	4179,
+	3396,
+	4078,
+	3396,
+	4078,
+	3377,
+	4057,
+	1071,
+	2868,
+	1354,
+	4179,
+	4179,
+	2868,
+	1354,
+	4179,
+	6178,
+	4179,
+	6178,
+	4179,
+	6433,
+	4179,
+	4179,
+	3396,
+	4179,
+	4118,
+	4167,
+	3396,
+	1785,
 	0,
-	4215,
-	4215,
-	4147,
-	4147,
-	4315,
-	4315,
-	4215,
-	4315,
-	2087,
-	4315,
-	4315,
-	4315,
-	3539,
-	4315,
-	2099,
-	3164,
-	6534,
-	6541,
-	6569,
-	6569,
-	5402,
-	6314,
-	6569,
-	4315,
-	2101,
-	4315,
-	4315,
-	4315,
-	3539,
-	4215,
-	2097,
-	4215,
-	4215,
-	4315,
-	4147,
-	4254,
-	4147,
-	4215,
-	4315,
-	3539,
-	4215,
-	1178,
-	4315,
-	4147,
-	4147,
-	4215,
-	4315,
-	4315,
-	4315,
-	4315,
-	4315,
-	4315,
-	4193,
-	3519,
-	4215,
-	3539,
-	4254,
-	3574,
-	4147,
-	3539,
-	3539,
+	4078,
+	4078,
+	4010,
+	4010,
+	4179,
+	4179,
+	4078,
+	4179,
+	1933,
+	4179,
+	4179,
+	4179,
+	3396,
+	4179,
+	1945,
+	3018,
+	6398,
+	6405,
+	6433,
+	6433,
+	5267,
+	6178,
+	6433,
+	4179,
+	1947,
+	4179,
+	4179,
+	4179,
+	3396,
+	4078,
+	1943,
+	4078,
+	4078,
+	4179,
+	4010,
+	4118,
+	4010,
+	4078,
+	4179,
+	3396,
+	4078,
+	1073,
+	4179,
+	4010,
+	4010,
+	4078,
+	4179,
+	4179,
+	4179,
+	4179,
+	4179,
+	4179,
+	4056,
+	3376,
+	4078,
+	3396,
+	4118,
+	3432,
+	4010,
+	3396,
+	3396,
 	0,
 	0,
-	4315,
-	4147,
-	4315,
-	4215,
-	4315,
-	6535,
-	6520,
-	6569,
-	6569,
-	6457,
-	6569,
-	3539,
-	4215,
-	3539,
-	4215,
-	4215,
-	4147,
-	4215,
-	2101,
-	3539,
-	3539,
-	3539,
-	4215,
-	3539,
-	4215,
-	656,
-	2097,
-	6314,
-	5002,
-	6314,
-	3519,
-	4193,
-	3520,
-	4194,
-	3539,
-	4215,
-	3539,
-	4215,
-	3539,
-	4215,
-	3539,
-	4215,
-	652,
-	4315,
-	4315,
-	4315,
-	2099,
-	3468,
-	2099,
+	4179,
+	4010,
+	4179,
+	4078,
+	4179,
+	6399,
+	6384,
+	6433,
+	6433,
+	6321,
+	6433,
+	3396,
+	4078,
+	3396,
+	4078,
+	4078,
+	4010,
+	4078,
+	4078,
+	1947,
+	3396,
+	3396,
+	3396,
+	4078,
+	3396,
+	4078,
+	657,
+	1943,
+	6178,
+	4868,
+	6178,
+	3376,
+	4056,
+	3377,
+	4057,
+	3396,
+	4078,
+	3396,
+	4078,
+	3396,
+	4078,
+	3396,
+	4078,
+	653,
+	4179,
+	4179,
+	4179,
+	1945,
+	3325,
+	1945,
 	605,
-	2099,
-	2101,
-	2099,
-	2098,
-	652,
-	5383,
-	3539,
-	4315,
-	2101,
-	4315,
-	4315,
-	2101,
-	4315,
-	4315,
-	2101,
-	4315,
-	4315,
-	4315,
-	4147,
-	4315,
-	4315,
-	3539,
-	4215,
-	3539,
-	4315,
-	4315,
-	676,
-	4315,
-	4315,
-	3164,
-	3539,
-	4215,
-	2101,
-	4315,
-	4315,
-	3539,
-	4215,
-	2101,
-	4315,
-	4315,
-	4315,
-	3539,
-	4215,
-	3539,
-	4315,
-	4315,
-	3539,
-	4215,
-	3539,
-	4315,
-	4315,
-	3539,
-	4215,
-	2101,
-	4315,
-	4315,
-	3539,
-	4215,
-	3539,
-	4315,
-	4315,
-	3539,
-	4215,
-	666,
-	4315,
-	4315,
-	3164,
-	2101,
-	4315,
-	4315,
-	4315,
-	4315,
-	4315,
-	4315,
-	4315,
-	4315,
-	4315,
-	4315,
-	338,
-	4315,
-	4315,
-	4315,
-	3539,
-	4315,
-	4315,
-	4315,
-	4315,
-	4315,
-	4315,
-	4315,
-	666,
-	4315,
-	4315,
-	2610,
-	4315,
-	3539,
-	4215,
-	4215,
-	4215,
-	4215,
-	4215,
-	4215,
-	4215,
-	4315,
-	2097,
-	3164,
-	3164,
-	1294,
-	3164,
-	1651,
-	3164,
-	3164,
-	4315,
-	6314,
-	3164,
-	3539,
-	4215,
-	1625,
-	915,
-	896,
-	1651,
-	3164,
-	3164,
-	4315,
+	1945,
+	1947,
+	1945,
+	1944,
+	653,
+	5248,
+	3396,
+	4179,
+	1947,
+	4179,
+	4179,
+	1947,
+	4179,
+	4179,
+	1947,
+	4179,
+	4179,
+	4179,
+	4010,
+	4179,
+	4179,
+	3396,
+	4078,
+	3396,
+	4179,
+	4179,
+	677,
+	4179,
+	4179,
+	3018,
+	3396,
+	4078,
+	1947,
+	4179,
+	4179,
+	3396,
+	4078,
+	1947,
+	4179,
+	4179,
+	4179,
+	3396,
+	4078,
+	3396,
+	4179,
+	4179,
+	3396,
+	4078,
+	3396,
+	4179,
+	4179,
+	3396,
+	4078,
+	1947,
+	4179,
+	4179,
+	3396,
+	4078,
+	3396,
+	4179,
+	4179,
+	3396,
+	4078,
+	667,
+	4179,
+	4179,
+	3018,
+	1947,
+	4179,
+	4179,
+	4179,
+	4179,
+	4179,
+	4179,
+	4179,
+	4179,
+	4179,
+	4179,
+	337,
+	4179,
+	4179,
+	4179,
+	3396,
+	4179,
+	4179,
+	4179,
+	4179,
+	4179,
+	4179,
+	4179,
+	667,
+	4179,
+	4179,
+	2460,
+	4179,
+	3396,
+	4078,
+	4078,
+	4078,
+	4078,
+	4078,
+	4078,
+	4078,
+	4179,
+	1943,
+	3018,
+	3018,
+	1191,
+	3018,
+	1496,
+	3018,
+	3018,
+	4179,
+	6178,
+	3018,
+	3396,
+	4078,
+	1470,
+	850,
+	832,
+	1496,
+	3018,
+	3018,
+	4179,
 	560,
-	3164,
-	3164,
-	3164,
-	3164,
-	3539,
-	4215,
-	4315,
-	2610,
-	2610,
-	1625,
-	915,
-	896,
-	3164,
-	3164,
-	3164,
-	3164,
-	4315,
-	3164,
-	3539,
-	4215,
-	1625,
-	915,
-	896,
-	3164,
-	3164,
-	3164,
-	4315,
-	3539,
-	4215,
-	3539,
-	4315,
-	3164,
-	4315,
-	3539,
-	3539,
-	1625,
-	915,
-	4215,
-	3164,
-	3164,
-	1648,
+	3018,
+	3018,
+	3018,
+	3018,
+	3396,
+	4078,
+	4179,
+	2460,
+	2460,
+	1470,
+	850,
+	832,
+	3018,
+	3018,
+	3018,
+	3018,
+	4179,
+	3018,
+	3396,
+	4078,
+	1470,
+	850,
+	832,
+	3018,
+	3018,
+	3018,
+	4179,
+	3396,
+	4078,
+	3396,
+	4179,
+	3018,
+	4179,
+	3396,
+	3396,
+	1470,
+	850,
+	4078,
+	3018,
+	3018,
+	1493,
 	0,
 	0,
-	1648,
-	896,
-	1651,
-	4215,
-	0,
-	0,
-	0,
+	1493,
+	832,
+	1496,
+	4078,
 	0,
 	0,
 	0,
@@ -2389,90 +2390,93 @@ static const int32_t s_InvokerIndices[619] =
 	0,
 	0,
 	0,
-	4315,
-	6541,
-	6569,
-	5895,
-	5895,
-	6314,
-	3539,
-	4147,
-	4147,
-	4147,
-	4192,
-	4301,
-	4193,
-	4302,
-	4194,
-	4215,
-	4215,
-	4215,
-	3519,
-	4315,
-	3539,
-	3539,
-	3614,
-	3520,
-	3616,
-	3539,
-	4315,
-	3615,
+	0,
+	0,
+	0,
+	4179,
+	6405,
+	6433,
+	5759,
+	5759,
+	6178,
+	3396,
+	4010,
+	4010,
+	4010,
+	4055,
+	4165,
+	4056,
+	4166,
+	4057,
+	4078,
+	4078,
+	4078,
+	3376,
+	4179,
+	3396,
+	3396,
+	3472,
+	3377,
+	3474,
+	3396,
+	4179,
+	3473,
 	573,
-	4315,
-	4315,
-	1153,
-	4215,
-	5110,
-	6569,
+	4179,
+	4179,
+	1048,
+	4078,
+	4975,
+	6433,
 	0,
 	0,
 	0,
-	6457,
-	6457,
-	6457,
-	6314,
-	5895,
-	5411,
-	5042,
-	5895,
-	5411,
-	5042,
-	5895,
-	6569,
-	6314,
-	6314,
-	6059,
-	6457,
-	6457,
-	6265,
-	6314,
-	6314,
-	6314,
-	6314,
-	6314,
-	6457,
-	6569,
-	6314,
-	6174,
-	6541,
-	6541,
-	6457,
-	6314,
-	6314,
+	6321,
+	6321,
+	6321,
+	6178,
+	5759,
+	5276,
+	4908,
+	5759,
+	5276,
+	4908,
+	5759,
+	6433,
+	6178,
+	6178,
+	5923,
+	6321,
+	6321,
+	6129,
+	6178,
+	6178,
+	6178,
+	6178,
+	6178,
+	6321,
+	6433,
+	6178,
+	6038,
+	6405,
+	6405,
+	6321,
+	6178,
+	6178,
 	0,
 	0,
-	6569,
-	4315,
-	4315,
-	4315,
+	6433,
+	4179,
+	4179,
+	4179,
 };
 static const Il2CppTokenRangePair s_rgctxIndices[5] = 
 {
 	{ 0x06000082, { 0, 2 } },
-	{ 0x0600020D, { 2, 1 } },
-	{ 0x0600020E, { 3, 1 } },
-	{ 0x06000266, { 4, 1 } },
-	{ 0x06000267, { 5, 1 } },
+	{ 0x0600020E, { 2, 1 } },
+	{ 0x0600020F, { 3, 1 } },
+	{ 0x06000267, { 4, 1 } },
+	{ 0x06000268, { 5, 1 } },
 };
 extern const uint32_t g_rgctx_T_tC720EC33C058D0899C65C5875CB3E816983EB6C6;
 extern const uint32_t g_rgctx_T_tC720EC33C058D0899C65C5875CB3E816983EB6C6;
@@ -2493,7 +2497,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_YooAsset_CodeGenModule;
 const Il2CppCodeGenModule g_YooAsset_CodeGenModule = 
 {
 	"YooAsset.dll",
-	619,
+	620,
 	s_methodPointers,
 	0,
 	NULL,

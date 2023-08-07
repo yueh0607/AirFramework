@@ -10149,7 +10149,7 @@ IL_0170:
 		StreamReader_t81027449065C1B0C339DB46241D8001A6F61130B* L_55 = __this->___reader_2;
 		NullCheck(L_55);
 		Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* L_56;
-		L_56 = VirtualFuncInvoker0< Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* >::Invoke(13 /* System.IO.Stream System.IO.StreamReader::get_BaseStream() */, L_55);
+		L_56 = VirtualFuncInvoker0< Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* >::Invoke(14 /* System.IO.Stream System.IO.StreamReader::get_BaseStream() */, L_55);
 		NullCheck(L_56);
 		int64_t L_57;
 		L_57 = VirtualFuncInvoker0< int64_t >::Invoke(11 /* System.Int64 System.IO.Stream::get_Position() */, L_56);
@@ -11986,7 +11986,7 @@ IL_003b:
 		StreamReader_t81027449065C1B0C339DB46241D8001A6F61130B* L_8 = __this->___reader_2;
 		NullCheck(L_8);
 		int32_t L_9;
-		L_9 = VirtualFuncInvoker0< int32_t >::Invoke(9 /* System.Int32 System.IO.TextReader::Read() */, L_8);
+		L_9 = VirtualFuncInvoker0< int32_t >::Invoke(10 /* System.Int32 System.IO.TextReader::Read() */, L_8);
 		Nullable_1_tD52F1D0FC7EBB336F119BE953E59F426766032C1 L_10;
 		memset((&L_10), 0, sizeof(L_10));
 		Nullable_1__ctor_m925B76A79F5C50FC6CCDB1C29526E908C8257ABE((&L_10), ((int32_t)(uint16_t)L_9), /*hidden argument*/Nullable_1__ctor_m925B76A79F5C50FC6CCDB1C29526E908C8257ABE_RuntimeMethod_var);
@@ -12051,7 +12051,7 @@ IL_0030:
 		StreamReader_t81027449065C1B0C339DB46241D8001A6F61130B* L_7 = __this->___reader_2;
 		NullCheck(L_7);
 		int32_t L_8;
-		L_8 = VirtualFuncInvoker0< int32_t >::Invoke(9 /* System.Int32 System.IO.TextReader::Read() */, L_7);
+		L_8 = VirtualFuncInvoker0< int32_t >::Invoke(10 /* System.Int32 System.IO.TextReader::Read() */, L_7);
 		return;
 	}
 
@@ -12115,7 +12115,7 @@ IL_002f:
 		StreamReader_t81027449065C1B0C339DB46241D8001A6F61130B* L_7 = __this->___reader_2;
 		NullCheck(L_7);
 		int32_t L_8;
-		L_8 = VirtualFuncInvoker0< int32_t >::Invoke(9 /* System.Int32 System.IO.TextReader::Read() */, L_7);
+		L_8 = VirtualFuncInvoker0< int32_t >::Invoke(10 /* System.Int32 System.IO.TextReader::Read() */, L_7);
 		return ((int32_t)(uint16_t)L_8);
 	}
 

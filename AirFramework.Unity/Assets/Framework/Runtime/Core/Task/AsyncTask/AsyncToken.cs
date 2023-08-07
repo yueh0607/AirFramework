@@ -39,7 +39,7 @@ namespace AirFramework
 
         public event Action OnCanceled = null;
         private List<ICancelCallback> callbacks = null;
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void AddCancelCallback(ICancelCallback callback)
         {
             callbacks ??= new List<ICancelCallback>();
@@ -68,21 +68,21 @@ namespace AirFramework
         [DebuggerHidden]
         public AsyncStatus Status { get; private set; } = AsyncStatus.Pending;
 
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Yield()
         {
             if (Status == AsyncStatus.Completed) throw new InvalidOperationException("尝试挂起已经结束的任务是无效的");
             Status = AsyncStatus.Yield;
             node.Yield();
         }
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Continue()
         {
             if (Status == AsyncStatus.Completed) throw new InvalidOperationException("尝试取消已经结束的任务是无效的");
             Status = AsyncStatus.Pending;
             node.Continue();
         }
-        //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Cancel()
         {
             if (Status == AsyncStatus.Completed) throw new InvalidOperationException();

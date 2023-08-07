@@ -6817,6 +6817,8 @@ inline void UnityEvent_1_Invoke_mABC41DCEDDFA68F8F39C0DFC1CF55B7C1B70A805 (Unity
 {
 	((  void (*) (UnityEvent_1_tDD811EB8F49CEE97BA6DF59344DFE6C6F42553D4*, float, const RuntimeMethod*))UnityEvent_1_Invoke_mABC41DCEDDFA68F8F39C0DFC1CF55B7C1B70A805_gshared)(__this, ___0_arg0, method);
 }
+// System.Void UnityEngine.UI.Selectable::OnDidApplyAnimationProperties()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Selectable_OnDidApplyAnimationProperties_m62471EC7970DF938373D7E63BB1D4DFB74EA7330 (Selectable_t3251808068A17B8E92FB33590A4C2FA66D456712* __this, const RuntimeMethod* method) ;
 // System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Object_op_Implicit_m93896EF7D68FA113C42D3FE2BC6F661FC7EF514A (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___0_exists, const RuntimeMethod* method) ;
 // UnityEngine.Transform UnityEngine.Component::get_transform()
@@ -7142,8 +7144,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR CanvasRenderer_tAB9A55A976C4E3B2B37D0CE5616E5
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F CanvasRenderer_GetColor_m16A530AA6D0A6ACB5A6C1DDCC17D259DA856EC70 (CanvasRenderer_tAB9A55A976C4E3B2B37D0CE5616E5685A8B43860* __this, const RuntimeMethod* method) ;
 // System.Void UnityEngine.UI.Toggle::Set(System.Boolean,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Toggle_Set_mA2CCB1FBC23519004E2F47CA0F53CA6E1B368DDE (Toggle_tBF13F3EBA485E06826FD8A38F4B4C1380DF21A1F* __this, bool ___0_value, bool ___1_sendCallback, const RuntimeMethod* method) ;
-// System.Void UnityEngine.UI.Selectable::OnDidApplyAnimationProperties()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Selectable_OnDidApplyAnimationProperties_m62471EC7970DF938373D7E63BB1D4DFB74EA7330 (Selectable_t3251808068A17B8E92FB33590A4C2FA66D456712* __this, const RuntimeMethod* method) ;
 // System.Void UnityEngine.UI.ToggleGroup::UnregisterToggle(UnityEngine.UI.Toggle)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ToggleGroup_UnregisterToggle_m6A07803166E901CCDE4F23FCED1BD76CBB002307 (ToggleGroup_tF2E6FE7D4B17BDBF82462715CFB57C4FDE0A2A2C* __this, Toggle_tBF13F3EBA485E06826FD8A38F4B4C1380DF21A1F* ___0_toggle, const RuntimeMethod* method) ;
 // System.Void UnityEngine.UI.ToggleGroup::RegisterToggle(UnityEngine.UI.Toggle)
@@ -7704,6 +7704,8 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2D
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BaseRuntimePanel_PointerLeavesPanel_mB19671805A09ABDCD5E57F3458471653B6C3F39E (BaseRuntimePanel_tEDFA512CC6692082EBBB87E5DC446A88D2E75DC4* __this, int32_t ___0_pointerId, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___1_position, const RuntimeMethod* method) ;
 // System.Void UnityEngine.UIElements.BaseRuntimePanel::PointerEntersPanel(System.Int32,UnityEngine.Vector2)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BaseRuntimePanel_PointerEntersPanel_m6D24AF54FA1180AA1D4BE357ADD57846BCD6D8F6 (BaseRuntimePanel_tEDFA512CC6692082EBBB87E5DC446A88D2E75DC4* __this, int32_t ___0_pointerId, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___1_position, const RuntimeMethod* method) ;
+// System.Void UnityEngine.UIElements.PanelEventHandler::ProcessImguiEvents(System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PanelEventHandler_ProcessImguiEvents_mFD6515767C5083020530A3F81371BFC94029A31F (PanelEventHandler_t7DF19E1B93AD4FE82833AD0801732CB7DD8CAA09* __this, bool ___0_isSelected, const RuntimeMethod* method) ;
 // T UnityEngine.UIElements.EventBase`1<UnityEngine.UIElements.NavigationSubmitEvent>::GetPooled()
 inline NavigationSubmitEvent_t193DCBDB6CBC8FF9F0A545B48962188505665BB1* EventBase_1_GetPooled_mE3FD65DA4C4805F105F0E53C08DC9A37842C66F7 (const RuntimeMethod* method)
 {
@@ -7734,8 +7736,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool EventBase_get_isPropagationStopped_m36E1
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Event_Use_mD77A166D8CFEC4997484C58BC55FEB2D288D3453 (Event_tEBC6F24B56CE22B9C9AD1AC6C24A6B83BC3860CB* __this, const RuntimeMethod* method) ;
 // UnityEngine.GameObject UnityEngine.EventSystems.EventSystem::get_currentSelectedGameObject()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* EventSystem_get_currentSelectedGameObject_mD606FFACF3E72755298A523CBB709535CF08C98A_inline (EventSystem_t61C51380B105BE9D2C39C4F15B7E655659957707* __this, const RuntimeMethod* method) ;
-// System.Void UnityEngine.UIElements.PanelEventHandler::ProcessImguiEvents(System.Boolean)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PanelEventHandler_ProcessImguiEvents_mFD6515767C5083020530A3F81371BFC94029A31F (PanelEventHandler_t7DF19E1B93AD4FE82833AD0801732CB7DD8CAA09* __this, bool ___0_isSelected, const RuntimeMethod* method) ;
 // UnityEngine.EventType UnityEngine.Event::get_type()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Event_get_type_m8A825D6DA432B967DAA3E22E5C8571620A75F8A8 (Event_tEBC6F24B56CE22B9C9AD1AC6C24A6B83BC3860CB* __this, const RuntimeMethod* method) ;
 // UnityEngine.EventModifiers UnityEngine.Event::get_modifiers()
@@ -9612,6 +9612,8 @@ IL_00ea:
 
 IL_0115:
 	{
+		// base.OnDidApplyAnimationProperties();
+		Selectable_OnDidApplyAnimationProperties_m62471EC7970DF938373D7E63BB1D4DFB74EA7330(__this, NULL);
 		// }
 		return;
 	}
@@ -20290,6 +20292,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PanelEventHandler_OnSubmit_m56C7D96593E7
 
 IL_0009:
 	{
+		// ProcessImguiEvents(true);
+		PanelEventHandler_ProcessImguiEvents_mFD6515767C5083020530A3F81371BFC94029A31F(__this, (bool)1, NULL);
 		// using (var e = NavigationSubmitEvent.GetPooled())
 		il2cpp_codegen_runtime_class_init_inline(EventBase_1_tF3176CA51B64DBB3010435BA1986B05039647C37_il2cpp_TypeInfo_var);
 		NavigationSubmitEvent_t193DCBDB6CBC8FF9F0A545B48962188505665BB1* L_1;
@@ -20300,13 +20304,13 @@ IL_0009:
 		auto __finallyBlock = il2cpp::utils::Finally([&]
 		{
 
-FINALLY_0019:
+FINALLY_0020:
 			{// begin finally (depth: 1)
 				{
 					NavigationSubmitEvent_t193DCBDB6CBC8FF9F0A545B48962188505665BB1* L_2 = V_0;
 					if (!L_2)
 					{
-						goto IL_0022;
+						goto IL_0029;
 					}
 				}
 				{
@@ -20315,7 +20319,7 @@ FINALLY_0019:
 					InterfaceActionInvoker0::Invoke(0 /* System.Void System.IDisposable::Dispose() */, IDisposable_t030E0496B4E0E4E4F086825007979AF51F7248C5_il2cpp_TypeInfo_var, L_3);
 				}
 
-IL_0022:
+IL_0029:
 				{
 					return;
 				}
@@ -20328,7 +20332,7 @@ IL_0022:
 			BaseEventData_tE03A848325C0AE8E76C6CA15FD86395EBF83364F* L_5 = ___0_eventData;
 			PanelEventHandler_SendEvent_m380CCD38E3E7949B65EE3001067AA9548B19B9F5(__this, L_4, L_5, NULL);
 			// }
-			goto IL_0023;
+			goto IL_002a;
 		}// end try (depth: 1)
 		catch(Il2CppExceptionWrapper& e)
 		{
@@ -20336,7 +20340,7 @@ IL_0022:
 		}
 	}
 
-IL_0023:
+IL_002a:
 	{
 		// }
 		return;
@@ -20369,6 +20373,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PanelEventHandler_OnCancel_mAC960731F19F
 
 IL_0009:
 	{
+		// ProcessImguiEvents(true);
+		PanelEventHandler_ProcessImguiEvents_mFD6515767C5083020530A3F81371BFC94029A31F(__this, (bool)1, NULL);
 		// using (var e = NavigationCancelEvent.GetPooled())
 		il2cpp_codegen_runtime_class_init_inline(EventBase_1_t06692607D03E5B5F275B33C5EACCE075D1C2AB05_il2cpp_TypeInfo_var);
 		NavigationCancelEvent_tB8811EBDC85FD365D1034AEA30F07CBC3161E59E* L_1;
@@ -20379,13 +20385,13 @@ IL_0009:
 		auto __finallyBlock = il2cpp::utils::Finally([&]
 		{
 
-FINALLY_0019:
+FINALLY_0020:
 			{// begin finally (depth: 1)
 				{
 					NavigationCancelEvent_tB8811EBDC85FD365D1034AEA30F07CBC3161E59E* L_2 = V_0;
 					if (!L_2)
 					{
-						goto IL_0022;
+						goto IL_0029;
 					}
 				}
 				{
@@ -20394,7 +20400,7 @@ FINALLY_0019:
 					InterfaceActionInvoker0::Invoke(0 /* System.Void System.IDisposable::Dispose() */, IDisposable_t030E0496B4E0E4E4F086825007979AF51F7248C5_il2cpp_TypeInfo_var, L_3);
 				}
 
-IL_0022:
+IL_0029:
 				{
 					return;
 				}
@@ -20407,7 +20413,7 @@ IL_0022:
 			BaseEventData_tE03A848325C0AE8E76C6CA15FD86395EBF83364F* L_5 = ___0_eventData;
 			PanelEventHandler_SendEvent_m380CCD38E3E7949B65EE3001067AA9548B19B9F5(__this, L_4, L_5, NULL);
 			// }
-			goto IL_0023;
+			goto IL_002a;
 		}// end try (depth: 1)
 		catch(Il2CppExceptionWrapper& e)
 		{
@@ -20415,7 +20421,7 @@ IL_0022:
 		}
 	}
 
-IL_0023:
+IL_002a:
 	{
 		// }
 		return;
@@ -20446,6 +20452,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PanelEventHandler_OnMove_m3103CB2983C10B
 
 IL_0009:
 	{
+		// ProcessImguiEvents(true);
+		PanelEventHandler_ProcessImguiEvents_mFD6515767C5083020530A3F81371BFC94029A31F(__this, (bool)1, NULL);
 		// using (var e = NavigationMoveEvent.GetPooled(eventData.moveVector))
 		AxisEventData_t4AA742BC101B1AA300B16EE7F19E31B91F37A938* L_1 = ___0_eventData;
 		NullCheck(L_1);
@@ -20459,13 +20467,13 @@ IL_0009:
 		auto __finallyBlock = il2cpp::utils::Finally([&]
 		{
 
-FINALLY_001f:
+FINALLY_0026:
 			{// begin finally (depth: 1)
 				{
 					NavigationMoveEvent_t70F4AAAE0B5287449430A2A7A2DC78A2AF1364DF* L_4 = V_0;
 					if (!L_4)
 					{
-						goto IL_0028;
+						goto IL_002f;
 					}
 				}
 				{
@@ -20474,7 +20482,7 @@ FINALLY_001f:
 					InterfaceActionInvoker0::Invoke(0 /* System.Void System.IDisposable::Dispose() */, IDisposable_t030E0496B4E0E4E4F086825007979AF51F7248C5_il2cpp_TypeInfo_var, L_5);
 				}
 
-IL_0028:
+IL_002f:
 				{
 					return;
 				}
@@ -20487,7 +20495,7 @@ IL_0028:
 			AxisEventData_t4AA742BC101B1AA300B16EE7F19E31B91F37A938* L_7 = ___0_eventData;
 			PanelEventHandler_SendEvent_m380CCD38E3E7949B65EE3001067AA9548B19B9F5(__this, L_6, L_7, NULL);
 			// }
-			goto IL_0029;
+			goto IL_0030;
 		}// end try (depth: 1)
 		catch(Il2CppExceptionWrapper& e)
 		{
@@ -20495,7 +20503,7 @@ IL_0028:
 		}
 	}
 
-IL_0029:
+IL_0030:
 	{
 		// }
 		return;

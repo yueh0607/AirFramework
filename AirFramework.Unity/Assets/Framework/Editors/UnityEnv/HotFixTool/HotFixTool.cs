@@ -10,6 +10,7 @@ using System.Linq;
 using System.IO;
 using AirFramework.Utility;
 using System;
+using Sirenix.Serialization;
 
 namespace AirEditor
 {
@@ -49,7 +50,7 @@ namespace AirEditor
         private void OnGUI()
         {
 
-            selectedPlatform = EditorGUILayout.Popup(selectedPlatform, PlatformOptions.ToArray());
+            selectedPlatform = EditorGUILayout.Popup("拷贝平台",selectedPlatform, PlatformOptions.ToArray());
             hotFixBytesPath = EditorGUILayout.TextField("热更新Bytes拷贝路径", hotFixBytesPath);
             metaBytesPath = EditorGUILayout.TextField("元数据Bytes拷贝路径", metaBytesPath);
 
@@ -111,11 +112,15 @@ namespace AirEditor
             {
                 PatchMetaDataNames.Add(name);
             }
+            foreach(var name in AOTGenericReferences.PatchedAOTAssemblyList)
+            {
+                PatchMetaDataNames.Add(Path.GetFileNameWithoutExtension(name));
+            }
         }
         void LoadPlatformOptions()
         {
             PlatformOptions.Clear();
-            PlatformOptions.Add("None");
+            //PlatformOptions.Add("None");
             foreach (var platform in Directory.EnumerateDirectories(HybridCLRSettings.Instance.hotUpdateDllCompileOutputRootDir))
             {
                 PlatformOptions.Add(Path.GetFileName(platform));
@@ -133,7 +138,7 @@ namespace AirEditor
         }
         void ClearAndCopyHotFixDllFile()
         {
-            if (selectedPlatform == 0 || selectedPlatform >= PlatformOptions.Count) throw new InvalidOperationException("无效的平台");
+            if (selectedPlatform < 0 || selectedPlatform >= PlatformOptions.Count) throw new InvalidOperationException("无效的平台");
             //LoadAllUsefulAssemblyNames();
             ClearHotFixDllFiles(false);
             int i = FolderBytesCopyer.CopyBytes(ProjectPath + HybridCLRSettings.Instance.hotUpdateDllCompileOutputRootDir + "/" + PlatformOptions[selectedPlatform],

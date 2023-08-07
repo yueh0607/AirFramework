@@ -664,6 +664,8 @@ struct AssetInfo_t6646B3A8F405CC4B9221FB0F9F3E3DCDB98F1456;
 struct AssetOperationHandle_t3C4EE34040385828202FA37D72CC91D7668FB32B;
 // System.AsyncCallback
 struct AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C;
+// YooAsset.AsyncOperationBase
+struct AsyncOperationBase_t3324BDEE0DD12D5653A50876950C3E50AE795032;
 // AirFramework.Internal.AsyncTreeTokenNode
 struct AsyncTreeTokenNode_t30276ED5F4277A1AED2D115DAB4C1D29702AD6DC;
 // System.Reflection.Binder
@@ -720,6 +722,8 @@ struct IExternalStringReferenceResolver_tB7BE3E6120D7E67612A9A230C5AF3508A5A7F23
 struct IFormatProvider_tC202922D43BFF3525109ABF3FB79625F5646AB52;
 // System.Runtime.Serialization.IFormatterConverter
 struct IFormatterConverter_t726606DAC82C384B08C82471313C340968DDB609;
+// AirFramework.ILogger
+struct ILogger_tD70C6BD70ABEB56002B82943DD098954B3A7D990;
 // Sirenix.Serialization.ILogger
 struct ILogger_t264A82F87DDF77784E6FBFF7D05A2D64E60CD036;
 // AirFramework.IMessageReceiver
@@ -824,7 +828,6 @@ struct DownloadConfig_t8540215B0EF867B7FA4E1E91B3D0EB589114D93A;
 struct ContingentProperties_t3FA59480914505CEA917B1002EC675F29D0CB540;
 
 IL2CPP_EXTERN_C RuntimeClass* Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* AirEngine_t135B63540CC3E81E4AFEED55C08911E6263B66A1_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* AirTask_tC970C760B30CD51ED650CFEF4548203762BC72A5_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* ArgumentException_tAD90411542A20A9C72D5CDA3A84181D8B947A263_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* ArgumentNullException_t327031E412FAB2351B0022DD5DAD47E67E597129_il2cpp_TypeInfo_var;
@@ -838,6 +841,7 @@ IL2CPP_EXTERN_C RuntimeClass* IDataReader_t387D8EF56B60D4587344CF62EFED4C811EC91
 IL2CPP_EXTERN_C RuntimeClass* IDisposable_t030E0496B4E0E4E4F086825007979AF51F7248C5_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* IEnumerable_t6331596D5DD37C462B1B8D49CF6B319B00AB7131_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* IEnumerator_t7B609C2FFA6EB5167D9C62A0C32A21DE2F666DAA_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* ILogger_tD70C6BD70ABEB56002B82943DD098954B3A7D990_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* INotifyCompletion_tBAC8B873E366225D6C276A072D2D0A8981A23F76_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* IViewHide_tC2A7962F3AEA8C86637BEB140AC9DA3FAB385F7F_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* IViewInitialize_t06FB2A122F23195FF41F38790732F5658A2EFE65_il2cpp_TypeInfo_var;
@@ -873,7 +877,6 @@ IL2CPP_EXTERN_C const RuntimeMethod* MessageDispatcherBox_1_get_Value_m5C0684E6C
 IL2CPP_EXTERN_C const RuntimeMethod* OperatorEx2_Operator_TisIViewHide_tC2A7962F3AEA8C86637BEB140AC9DA3FAB385F7F_m0BD29421BA9E08198C8C3BDBA94DE55A1E390E95_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* OperatorEx2_Operator_TisIViewInitialize_t06FB2A122F23195FF41F38790732F5658A2EFE65_m1167FA39780C57EB24942BCC3FFD0F951B993EEC_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* OperatorEx2_Operator_TisIViewShow_tD9BE10AD4C979C62F7461262DB8DE8103F7BC3FE_m0C6B35974063760D04805771917DF80913655425_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* PoolManager_Allocate_TisAirTask_tC970C760B30CD51ED650CFEF4548203762BC72A5_mA597DD40697A744FB92DF4341683A3E76F4226B0_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Queue_1__ctor_m8ADF693E7041BD410B975BE9B7DE9D208E953945_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* ResModule_LoadAsync_TisGameObject_t76FEDD663AB33C991A9C9A23129337651094216F_m21AB6B895CD9F473AF09323FB7B4E4BB0A75609B_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* TypeExtensions_IfAbstractThrowException_m43E6BE1BDF4E747580A14896C0F89ED9D1276FD0_RuntimeMethod_var;
@@ -5349,6 +5352,10 @@ struct List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D_StaticFields
 
 // System.Threading.Tasks.TaskCompletionSource`1<System.Object>
 
+// YooAsset.AsyncOperationBase
+
+// YooAsset.AsyncOperationBase
+
 // AirFramework.Internal.AsyncTreeTokenNode
 
 // AirFramework.Internal.AsyncTreeTokenNode
@@ -6357,8 +6364,6 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AirTaskBuilder_1_AwaitOnComp
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CTryCallAllAsyncU3Ed__66_1_MoveNext_m94EA98272F5C455591A6569C1A3FDB7A2E56A161_gshared (U3CTryCallAllAsyncU3Ed__66_1_tF2AEFC0740F0968653FBAA6E25287E0A33E7BF1E* __this, const RuntimeMethod* method) ;
 // System.Void AirFramework.MessageExtensions/<TryCallAllAsync>d__66`1<System.Object>::SetStateMachine(System.Runtime.CompilerServices.IAsyncStateMachine)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CTryCallAllAsyncU3Ed__66_1_SetStateMachine_m81AF62958AE4C73E579F793F7AF6053437E7D6B3_gshared (U3CTryCallAllAsyncU3Ed__66_1_tF2AEFC0740F0968653FBAA6E25287E0A33E7BF1E* __this, RuntimeObject* ___0_stateMachine, const RuntimeMethod* method) ;
-// T AirFramework.PoolManager::Allocate<System.Object>()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* PoolManager_Allocate_TisRuntimeObject_m29C20C8F70B982E138668FAF8FECCAD8A47F9C91_gshared (PoolManager_tB7F98065CA12981551D225676813C34D8A2F4067* __this, const RuntimeMethod* method) ;
 // AirFramework.AirTask`1<T> AirFramework.AirTaskBuilder`1<System.Object>::get_Task()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR AirTask_1_t29065D51498DE470B568D6860889F15881878737* AirTaskBuilder_1_get_Task_m6114272D98B35C1AD3695A1453A267E5D0182FD2_gshared_inline (AirTaskBuilder_1_tADB5BB0F6BCF44784BA86D7A3CD88CD0A4F84BB2* __this, const RuntimeMethod* method) ;
 // K AirFramework.DynamicDictionaryExtensions::GetValueOrAddDefault<System.Object,System.Object>(AirFramework.DynamicDictionary`2<T,K>,T,System.Func`1<K>)
@@ -6697,8 +6702,8 @@ inline AssetOperationHandle_t3C4EE34040385828202FA37D72CC91D7668FB32B* ResModule
 }
 // System.Boolean YooAsset.OperationHandleBase::get_IsDone()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool OperationHandleBase_get_IsDone_m592065DFEE06E6574198A11F9FFA65CA545E6124 (OperationHandleBase_tADAF436129FFA906751706F53E79482B8201377C* __this, const RuntimeMethod* method) ;
-// AirFramework.AirTask AirFramework.AirTask2Coroutine::GetAwaiter(System.Collections.IEnumerator)
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR AirTask_tC970C760B30CD51ED650CFEF4548203762BC72A5* AirTask2Coroutine_GetAwaiter_m5D2046D2EB9F0549352A48740B447689D1E0C51A_inline (RuntimeObject* ___0_enumerator, const RuntimeMethod* method) ;
+// AirFramework.AirTask AirFramework.AssetEx::GetAwaiter(YooAsset.OperationHandleBase)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AirTask_tC970C760B30CD51ED650CFEF4548203762BC72A5* AssetEx_GetAwaiter_m475916C8A73141D34C6C3745227F188FD0BB1C6D (OperationHandleBase_tADAF436129FFA906751706F53E79482B8201377C* ___0_handle, const RuntimeMethod* method) ;
 // System.Void AirFramework.AirTaskBuilder::AwaitUnsafeOnCompleted<AirFramework.AirTask,AirFramework.View`1/<LoadAsync>d__4<System.Object>>(TAwaiter&,TStateMachine&)
 inline void AirTaskBuilder_AwaitUnsafeOnCompleted_TisAirTask_tC970C760B30CD51ED650CFEF4548203762BC72A5_TisU3CLoadAsyncU3Ed__4_tBB230D576F711187CCEF18BC73DE60D6FC491B07_mAF4F560B551DCAB5C92AEB0E6077982263ECB845_inline (AirTaskBuilder_t45EA2AB4D80A59544ADB854A233B4E590A45FFAD* __this, AirTask_tC970C760B30CD51ED650CFEF4548203762BC72A5** ___0_awaiter, U3CLoadAsyncU3Ed__4_tBB230D576F711187CCEF18BC73DE60D6FC491B07* ___1_stateMachine, const RuntimeMethod* method)
 {
@@ -6711,6 +6716,8 @@ inline void AirTaskBuilder_AwaitOnCompleted_TisAirTaskCompleted_tB037A4A97E58BDC
 }
 // YooAsset.InstantiateOperation YooAsset.AssetOperationHandle::InstantiateAsync()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR InstantiateOperation_t3A3C4296D9763CA01BB3F7C1285B0651AC23E66E* AssetOperationHandle_InstantiateAsync_mBF310EB4E847FC9BA442D620B828275AFFA59193 (AssetOperationHandle_t3C4EE34040385828202FA37D72CC91D7668FB32B* __this, const RuntimeMethod* method) ;
+// AirFramework.AirTask AirFramework.AssetEx::GetAwaiter(YooAsset.AsyncOperationBase)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AirTask_tC970C760B30CD51ED650CFEF4548203762BC72A5* AssetEx_GetAwaiter_mD4E6D092C7BB46B3B716ECBE19330B20E9B105C6 (AsyncOperationBase_t3324BDEE0DD12D5653A50876950C3E50AE795032* ___0_handle, const RuntimeMethod* method) ;
 // System.Void UnityEngine.Object::DontDestroyOnLoad(UnityEngine.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Object_DontDestroyOnLoad_m4B70C3AEF886C176543D1295507B6455C9DCAEA7 (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* ___0_target, const RuntimeMethod* method) ;
 // AirFramework.MessageOperatorBox`1<MessageType> AirFramework.OperatorEx2::Operator<AirFramework.IViewInitialize>(AirFramework.IMessageReceiver,System.Boolean)
@@ -6914,8 +6921,10 @@ inline void U3CTryCallAllAsyncU3Ed__66_1_SetStateMachine_m81AF62958AE4C73E579F79
 {
 	((  void (*) (U3CTryCallAllAsyncU3Ed__66_1_tF2AEFC0740F0968653FBAA6E25287E0A33E7BF1E*, RuntimeObject*, const RuntimeMethod*))U3CTryCallAllAsyncU3Ed__66_1_SetStateMachine_m81AF62958AE4C73E579F793F7AF6053437E7D6B3_gshared)(__this, ___0_stateMachine, method);
 }
-// System.Void System.Runtime.ExceptionServices.ExceptionDispatchInfo::Throw()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ExceptionDispatchInfo_Throw_m06F398E346AE94C1CCEB636763A8CB26511F6330 (ExceptionDispatchInfo_tD7AF19E75FEC22F4A8329FD1E9EDF96615CB2757* __this, const RuntimeMethod* method) ;
+// AirFramework.ILogger AirFramework.Framework::get_Log()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Framework_get_Log_m05A504EE8C13B423C7FEB2657376C0DF7E20B836 (const RuntimeMethod* method) ;
+// System.Exception System.Runtime.ExceptionServices.ExceptionDispatchInfo::get_SourceException()
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Exception_t* ExceptionDispatchInfo_get_SourceException_m981DC7F90598BE65BD4FA1A8340025A3A7CC3DBE_inline (ExceptionDispatchInfo_tD7AF19E75FEC22F4A8329FD1E9EDF96615CB2757* __this, const RuntimeMethod* method) ;
 // System.String System.String::Format(System.String,System.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Format_mA8DBB4C2516B9723C5A41E6CB1E2FAF4BBE96DD8 (String_t* ___0_format, RuntimeObject* ___1_arg0, const RuntimeMethod* method) ;
 // System.Void System.InvalidOperationException::.ctor(System.String)
@@ -6930,15 +6939,6 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool AsyncTreeTokenNode_get_IsCan
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Type_get_IsAbstract_m16FA83463867635ED9DECAE1C5F6BE96B4579CE5 (Type_t* __this, const RuntimeMethod* method) ;
 // System.Void System.ArgumentException::.ctor(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArgumentException__ctor_m026938A67AF9D36BB7ED27F80425D7194B514465 (ArgumentException_tAD90411542A20A9C72D5CDA3A84181D8B947A263* __this, String_t* ___0_message, const RuntimeMethod* method) ;
-// T AirFramework.PoolManager::Allocate<AirFramework.AirTask>()
-inline AirTask_tC970C760B30CD51ED650CFEF4548203762BC72A5* PoolManager_Allocate_TisAirTask_tC970C760B30CD51ED650CFEF4548203762BC72A5_mA597DD40697A744FB92DF4341683A3E76F4226B0 (PoolManager_tB7F98065CA12981551D225676813C34D8A2F4067* __this, const RuntimeMethod* method)
-{
-	return ((  AirTask_tC970C760B30CD51ED650CFEF4548203762BC72A5* (*) (PoolManager_tB7F98065CA12981551D225676813C34D8A2F4067*, const RuntimeMethod*))PoolManager_Allocate_TisRuntimeObject_m29C20C8F70B982E138668FAF8FECCAD8A47F9C91_gshared)(__this, method);
-}
-// System.Collections.IEnumerator AirFramework.AirTask2Coroutine::<GetAwaiter>g__RunEnumerator|0_0(System.Collections.IEnumerator,AirFramework.AirTask)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* AirTask2Coroutine_U3CGetAwaiterU3Eg__RunEnumeratorU7C0_0_m69D55586D0B7CCAD3A8B3C34E3F5F9369CABD442 (RuntimeObject* ___0__enumerator, AirTask_tC970C760B30CD51ED650CFEF4548203762BC72A5* ___1_task, const RuntimeMethod* method) ;
-// System.Void AirFramework.Internal.AirEngine::StartCoroutine(System.Collections.IEnumerator)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AirEngine_StartCoroutine_m316FBB11DF34AF4D179AA6525FAFE53CC451A07E (RuntimeObject* ___0_enumerator, const RuntimeMethod* method) ;
 // AirFramework.AirTask`1<T> AirFramework.AirTaskBuilder`1<System.Object>::get_Task()
 inline AirTask_1_t29065D51498DE470B568D6860889F15881878737* AirTaskBuilder_1_get_Task_m6114272D98B35C1AD3695A1453A267E5D0182FD2_inline (AirTaskBuilder_1_tADB5BB0F6BCF44784BA86D7A3CD88CD0A4F84BB2* __this, const RuntimeMethod* method)
 {
@@ -20763,7 +20763,7 @@ IL_0052_1:
 			// await prefabHandle;
 			AssetOperationHandle_t3C4EE34040385828202FA37D72CC91D7668FB32B* L_13 = ((View_t7525EECCC6AF7AA917D2966FE3196A88F8A72D2E_StaticFields*)il2cpp_codegen_static_fields_for(View_t7525EECCC6AF7AA917D2966FE3196A88F8A72D2E_il2cpp_TypeInfo_var))->___prefabHandle_8;
 			AirTask_tC970C760B30CD51ED650CFEF4548203762BC72A5* L_14;
-			L_14 = AirTask2Coroutine_GetAwaiter_m5D2046D2EB9F0549352A48740B447689D1E0C51A_inline((RuntimeObject*)L_13, NULL);
+			L_14 = AssetEx_GetAwaiter_m475916C8A73141D34C6C3745227F188FD0BB1C6D((OperationHandleBase_tADAF436129FFA906751706F53E79482B8201377C*)L_13, NULL);
 			V_3 = L_14;
 			AirTask_tC970C760B30CD51ED650CFEF4548203762BC72A5* L_15 = V_3;
 			NullCheck(L_15);
@@ -20855,7 +20855,7 @@ IL_010c_1:
 			// await objHandle;
 			InstantiateOperation_t3A3C4296D9763CA01BB3F7C1285B0651AC23E66E* L_34 = __this->___U3CobjHandleU3E5__2_3;
 			AirTask_tC970C760B30CD51ED650CFEF4548203762BC72A5* L_35;
-			L_35 = AirTask2Coroutine_GetAwaiter_m5D2046D2EB9F0549352A48740B447689D1E0C51A_inline((RuntimeObject*)L_34, NULL);
+			L_35 = AssetEx_GetAwaiter_mD4E6D092C7BB46B3B716ECBE19330B20E9B105C6((AsyncOperationBase_t3324BDEE0DD12D5653A50876950C3E50AE795032*)L_34, NULL);
 			V_3 = L_35;
 			AirTask_tC970C760B30CD51ED650CFEF4548203762BC72A5* L_36 = V_3;
 			NullCheck(L_36);
@@ -28821,11 +28821,25 @@ IL2CPP_EXTERN_C  void U3CTryCallAllAsyncU3Ed__66_1_SetStateMachine_m81AF62958AE4
 #endif
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AirTaskBase_PostException_m324406A5CA13964D92AF468CB24DA15EEA389AD3_inline (AirTaskBase_tAE38FABD5EA0E5592E5CD41AC6316D9672A3C75C* __this, ExceptionDispatchInfo_tD7AF19E75FEC22F4A8329FD1E9EDF96615CB2757* ___0_ex, const RuntimeMethod* method) 
 {
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
 	{
-		// ex.Throw();
-		ExceptionDispatchInfo_tD7AF19E75FEC22F4A8329FD1E9EDF96615CB2757* L_0 = ___0_ex;
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ILogger_tD70C6BD70ABEB56002B82943DD098954B3A7D990_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		// Framework.Log.Error(ex.SourceException.ToString());
+		RuntimeObject* L_0;
+		L_0 = Framework_get_Log_m05A504EE8C13B423C7FEB2657376C0DF7E20B836(NULL);
+		ExceptionDispatchInfo_tD7AF19E75FEC22F4A8329FD1E9EDF96615CB2757* L_1 = ___0_ex;
+		NullCheck(L_1);
+		Exception_t* L_2;
+		L_2 = ExceptionDispatchInfo_get_SourceException_m981DC7F90598BE65BD4FA1A8340025A3A7CC3DBE_inline(L_1, NULL);
+		NullCheck(L_2);
+		String_t* L_3;
+		L_3 = VirtualFuncInvoker0< String_t* >::Invoke(3 /* System.String System.Object::ToString() */, L_2);
 		NullCheck(L_0);
-		ExceptionDispatchInfo_Throw_m06F398E346AE94C1CCEB636763A8CB26511F6330(L_0, NULL);
+		InterfaceActionInvoker1< RuntimeObject* >::Invoke(2 /* System.Void AirFramework.ILogger::Error(System.Object) */, ILogger_tD70C6BD70ABEB56002B82943DD098954B3A7D990_il2cpp_TypeInfo_var, L_0, L_3);
 		// }
 		return;
 	}
@@ -29020,10 +29034,10 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AirTaskBuilder_SetException_
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AirTaskBuilder_SetResult_mC4573B3D50CEBCF8D9EB5C9B60916269BEE7FFBE_inline (AirTaskBuilder_t45EA2AB4D80A59544ADB854A233B4E590A45FFAD* __this, const RuntimeMethod* method) 
 {
 	{
-		// task.Finish(ETaskStatus.Succeed);
+		// task.Finish(ETaskStatus.Completed);
 		AirTask_tC970C760B30CD51ED650CFEF4548203762BC72A5* L_0 = __this->___task_0;
 		NullCheck(L_0);
-		AirTaskBase_Finish_m630387E2AB00569617832FB17555EA3DE145E1D6_inline(L_0, 2, NULL);
+		AirTaskBase_Finish_m630387E2AB00569617832FB17555EA3DE145E1D6_inline(L_0, 4, NULL);
 		// }
 		return;
 	}
@@ -29042,36 +29056,6 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void View_set_IsLoading_m30DAB9F3
 		bool L_0 = ___0_value;
 		__this->___U3CIsLoadingU3Ek__BackingField_10 = L_0;
 		return;
-	}
-}
-IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR AirTask_tC970C760B30CD51ED650CFEF4548203762BC72A5* AirTask2Coroutine_GetAwaiter_m5D2046D2EB9F0549352A48740B447689D1E0C51A_inline (RuntimeObject* ___0_enumerator, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&AirEngine_t135B63540CC3E81E4AFEED55C08911E6263B66A1_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&PoolManager_Allocate_TisAirTask_tC970C760B30CD51ED650CFEF4548203762BC72A5_mA597DD40697A744FB92DF4341683A3E76F4226B0_RuntimeMethod_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	AirTask_tC970C760B30CD51ED650CFEF4548203762BC72A5* V_0 = NULL;
-	{
-		// AirTask task = Framework.Pool.Allocate<AirTask>();
-		PoolManager_tB7F98065CA12981551D225676813C34D8A2F4067* L_0;
-		L_0 = Framework_get_Pool_m51764312966AB27B1B4B7728BB1D7E5D7A61B8AC(NULL);
-		NullCheck(L_0);
-		AirTask_tC970C760B30CD51ED650CFEF4548203762BC72A5* L_1;
-		L_1 = PoolManager_Allocate_TisAirTask_tC970C760B30CD51ED650CFEF4548203762BC72A5_mA597DD40697A744FB92DF4341683A3E76F4226B0(L_0, PoolManager_Allocate_TisAirTask_tC970C760B30CD51ED650CFEF4548203762BC72A5_mA597DD40697A744FB92DF4341683A3E76F4226B0_RuntimeMethod_var);
-		V_0 = L_1;
-		// AirEngine.StartCoroutine(RunEnumerator(enumerator, task));
-		RuntimeObject* L_2 = ___0_enumerator;
-		AirTask_tC970C760B30CD51ED650CFEF4548203762BC72A5* L_3 = V_0;
-		RuntimeObject* L_4;
-		L_4 = AirTask2Coroutine_U3CGetAwaiterU3Eg__RunEnumeratorU7C0_0_m69D55586D0B7CCAD3A8B3C34E3F5F9369CABD442(L_2, L_3, NULL);
-		il2cpp_codegen_runtime_class_init_inline(AirEngine_t135B63540CC3E81E4AFEED55C08911E6263B66A1_il2cpp_TypeInfo_var);
-		AirEngine_StartCoroutine_m316FBB11DF34AF4D179AA6525FAFE53CC451A07E(L_4, NULL);
-		// return task;
-		AirTask_tC970C760B30CD51ED650CFEF4548203762BC72A5* L_5 = V_0;
-		return L_5;
 	}
 }
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void View_set_IsLoaded_mAAC2024DE1A012152BE2F3A18F0D040DBFF0C774_inline (View_t7525EECCC6AF7AA917D2966FE3196A88F8A72D2E* __this, bool ___0_value, const RuntimeMethod* method) 
@@ -29181,30 +29165,38 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float FloatTween_get_duration_mB1
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool AirTaskBase_get_IsDone_mEDE800FEDFB55A18A7CBC2486BBADBFDBA862EF4_inline (AirTaskBase_tAE38FABD5EA0E5592E5CD41AC6316D9672A3C75C* __this, const RuntimeMethod* method) 
 {
 	{
-		// if (Status == ETaskStatus.Succeed || Status == ETaskStatus.Failed) return true;
+		// if (Status == ETaskStatus.Succeed || Status == ETaskStatus.Failed||Status==ETaskStatus.Completed) return true;
 		int32_t L_0;
 		L_0 = AirTaskBase_get_Status_m4F90D5CB533A306319053F15A3CCE47CF2CC58F1_inline(__this, NULL);
 		if ((((int32_t)L_0) == ((int32_t)2)))
 		{
-			goto IL_0012;
+			goto IL_001b;
 		}
 	}
 	{
 		int32_t L_1;
 		L_1 = AirTaskBase_get_Status_m4F90D5CB533A306319053F15A3CCE47CF2CC58F1_inline(__this, NULL);
-		if ((!(((uint32_t)L_1) == ((uint32_t)3))))
+		if ((((int32_t)L_1) == ((int32_t)3)))
 		{
-			goto IL_0014;
+			goto IL_001b;
+		}
+	}
+	{
+		int32_t L_2;
+		L_2 = AirTaskBase_get_Status_m4F90D5CB533A306319053F15A3CCE47CF2CC58F1_inline(__this, NULL);
+		if ((!(((uint32_t)L_2) == ((uint32_t)4))))
+		{
+			goto IL_001d;
 		}
 	}
 
-IL_0012:
+IL_001b:
 	{
-		// if (Status == ETaskStatus.Succeed || Status == ETaskStatus.Failed) return true;
+		// if (Status == ETaskStatus.Succeed || Status == ETaskStatus.Failed||Status==ETaskStatus.Completed) return true;
 		return (bool)1;
 	}
 
-IL_0014:
+IL_001d:
 	{
 		// return false;
 		return (bool)0;
@@ -29285,6 +29277,9 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AirTaskBuilder_1_SetExceptio
 		L_3 = ExceptionDispatchInfo_Capture_mC1C1C30D83DC04B2B7813DFCB67D07CCD4909803(L_2, NULL);
 		NullCheck((AirTaskBase_tAE38FABD5EA0E5592E5CD41AC6316D9672A3C75C*)L_1);
 		AirTaskBase_PostException_m324406A5CA13964D92AF468CB24DA15EEA389AD3_inline((AirTaskBase_tAE38FABD5EA0E5592E5CD41AC6316D9672A3C75C*)L_1, L_3, NULL);
+		// task = null;
+		__this->___task_0 = (AirTask_1_t29065D51498DE470B568D6860889F15881878737*)NULL;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___task_0), (void*)(AirTask_1_t29065D51498DE470B568D6860889F15881878737*)NULL);
 		// }
 		return;
 	}
@@ -29297,10 +29292,13 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AirTaskBuilder_1_SetResult_m
 		RuntimeObject* L_1 = ___0_result;
 		NullCheck(L_0);
 		((  void (*) (AirTask_1_t29065D51498DE470B568D6860889F15881878737*, RuntimeObject*, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 4)))(L_0, L_1, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 4));
-		// task.Finish(ETaskStatus.Succeed);
+		// task.Finish(ETaskStatus.Completed);
 		AirTask_1_t29065D51498DE470B568D6860889F15881878737* L_2 = __this->___task_0;
 		NullCheck((AirTaskBase_tAE38FABD5EA0E5592E5CD41AC6316D9672A3C75C*)L_2);
-		AirTaskBase_Finish_m630387E2AB00569617832FB17555EA3DE145E1D6_inline((AirTaskBase_tAE38FABD5EA0E5592E5CD41AC6316D9672A3C75C*)L_2, (int32_t)2, NULL);
+		AirTaskBase_Finish_m630387E2AB00569617832FB17555EA3DE145E1D6_inline((AirTaskBase_tAE38FABD5EA0E5592E5CD41AC6316D9672A3C75C*)L_2, (int32_t)4, NULL);
+		// task = null;
+		__this->___task_0 = (AirTask_1_t29065D51498DE470B568D6860889F15881878737*)NULL;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___task_0), (void*)(AirTask_1_t29065D51498DE470B568D6860889F15881878737*)NULL);
 		// }
 		return;
 	}
@@ -30228,6 +30226,13 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AirTaskBuilder_1_AwaitOnComp
 		AirTaskCompleted_OnCompleted_m096BC9D60E16B385CD60B8C761BA5D4DC135A69F_inline(L_6, L_12, il2cpp_rgctx_method(method->rgctx_data, 2));
 		// }
 		return;
+	}
+}
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Exception_t* ExceptionDispatchInfo_get_SourceException_m981DC7F90598BE65BD4FA1A8340025A3A7CC3DBE_inline (ExceptionDispatchInfo_tD7AF19E75FEC22F4A8329FD1E9EDF96615CB2757* __this, const RuntimeMethod* method) 
+{
+	{
+		Exception_t* L_0 = __this->___m_Exception_0;
+		return L_0;
 	}
 }
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AirTaskBase_set_Status_m1F6A2ACD38DD4B6350A2DF5079A2506C6D8EE288_inline (AirTaskBase_tAE38FABD5EA0E5592E5CD41AC6316D9672A3C75C* __this, int32_t ___0_value, const RuntimeMethod* method) 
