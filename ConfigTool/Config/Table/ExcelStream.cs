@@ -1,12 +1,14 @@
-﻿namespace AirFramework
+﻿using OfficeOpenXml;
+
+namespace AirFramework
 {
     public class ExcelStream : IDisposable, ITable<string>
     {
 
         public string SourcePath { get; set; } = string.Empty;
 
-        public int Sheet { get; set; } = 0;
-        private ConfigTable<string> data = null;
+        public int Sheet { get; set; } = 1;
+        private ConfigTable<string>? data = null;
 
         public ConfigTable<string> Data
         {
@@ -17,10 +19,12 @@
             }
         }
 
+#pragma warning disable CS8602 // 解引用可能出现空引用。
         public int RowCount => data.RowCount;
 
-        public int ColumnCount => data.ColumnCount;
 
+        public int ColumnCount => data.ColumnCount;
+#pragma warning restore CS8602 // 解引用可能出现空引用。
         public string this[int row, int column]
         {
             get => Data[row, column];
@@ -51,7 +55,7 @@
                 {
                     for (int j = 0; j < columnCount; j++)
                     {
-                        data[i, j] = worksheet.Cells[i, j].Text;
+                        data[i, j] = worksheet.Cells[i+1, j+1].Text;
                     }
                 }
             }
@@ -62,6 +66,7 @@
             {
                 ExcelWorksheet worksheet = package.Workbook.Worksheets[Sheet];
 
+#pragma warning disable CS8602 // 解引用可能出现空引用。
                 for (int i = 0; i < data.RowCount; i++)
                 {
                     for (int j = 0; j < data.ColumnCount; j++)
@@ -69,6 +74,7 @@
                         worksheet.Cells[i, j].Value = data[i, j];
                     }
                 }
+#pragma warning restore CS8602 // 解引用可能出现空引用。
 
                 package.Save();
             }

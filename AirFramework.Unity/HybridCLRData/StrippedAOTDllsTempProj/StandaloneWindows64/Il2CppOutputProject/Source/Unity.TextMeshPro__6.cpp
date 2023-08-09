@@ -2958,7 +2958,7 @@ IL_0004:
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_2;
 		L_2 = List_1_get_Item_mC1F85E68DFB8A7463D800F9550D1A168E899AA23(L_0, L_1, List_1_get_Item_mC1F85E68DFB8A7463D800F9550D1A168E899AA23_RuntimeMethod_var);
 		NullCheck(L_2);
-		VirtualActionInvoker0::Invoke(130 /* System.Void TMPro.TMP_Text::InternalUpdate() */, L_2);
+		VirtualActionInvoker0::Invoke(132 /* System.Void TMPro.TMP_Text::InternalUpdate() */, L_2);
 		// for (int i = 0; i < m_InternalUpdateQueue.Count; i++)
 		int32_t L_3 = V_0;
 		V_0 = ((int32_t)il2cpp_codegen_add(L_3, 1));
@@ -3106,7 +3106,7 @@ IL_00c3:
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_31;
 		L_31 = List_1_get_Item_mC1F85E68DFB8A7463D800F9550D1A168E899AA23(L_29, L_30, List_1_get_Item_mC1F85E68DFB8A7463D800F9550D1A168E899AA23_RuntimeMethod_var);
 		NullCheck(L_31);
-		VirtualActionInvoker0::Invoke(100 /* System.Void TMPro.TMP_Text::UpdateCulling() */, L_31);
+		VirtualActionInvoker0::Invoke(102 /* System.Void TMPro.TMP_Text::UpdateCulling() */, L_31);
 		// for (int i = 0; i < m_CullingUpdateQueue.Count; i++)
 		int32_t L_32 = V_3;
 		V_3 = ((int32_t)il2cpp_codegen_add(L_32, 1));

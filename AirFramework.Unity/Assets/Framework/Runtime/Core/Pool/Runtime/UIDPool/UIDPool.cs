@@ -3,7 +3,7 @@
     public class UIDPool : Unit, IDepositablePool
     {
 
-        private readonly UIDGenerator generator;
+        private readonly UIDGenerator generator = null;
 
         public int Count => generator.SurvivalCapacity;
 

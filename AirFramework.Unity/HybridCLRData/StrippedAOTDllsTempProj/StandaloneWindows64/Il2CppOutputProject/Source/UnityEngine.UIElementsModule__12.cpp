@@ -13320,6 +13320,7 @@ IL_0158:
 		Il2CppChar L_40;
 		L_40 = String_get_Chars_mC49DF0CD2D3BE7BE97B3AD9C995BE3094F8E36D3(L_38, ((int32_t)il2cpp_codegen_add(L_39, 1)), NULL);
 		V_7 = L_40;
+		il2cpp_codegen_runtime_class_init_inline(Char_t521A6F19B456D956AF452D926C32709DC03D6B17_il2cpp_TypeInfo_var);
 		String_t* L_41;
 		L_41 = Char_ToString_m2A308731F9577C06AF3C0901234E2EAC8327410C((&V_7), NULL);
 		G_B21_0 = L_41;

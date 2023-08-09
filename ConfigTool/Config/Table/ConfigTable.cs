@@ -4,7 +4,9 @@
     public int RowCount { get; private set; } = 0;
     public int ColumnCount { get; private set; } = 0;
 
+#pragma warning disable CS8625 // 无法将 null 字面量转换为非 null 的引用类型。
     private T[,] data = null;
+#pragma warning restore CS8625 // 无法将 null 字面量转换为非 null 的引用类型。
 
     public ConfigTable(int rowCount, int columnCount)
     {
@@ -14,7 +16,9 @@
     public ConfigTable(ConfigTable<T> table)
     {
         SetSizeAndCopy(table.RowCount, table.ColumnCount, false);
+#pragma warning disable CS8604 // 引用类型参数可能为 null。
         table.data.CopyTo(data, 0);
+#pragma warning restore CS8604 // 引用类型参数可能为 null。
     }
 
 

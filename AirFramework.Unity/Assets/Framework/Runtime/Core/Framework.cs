@@ -28,7 +28,7 @@ namespace AirFramework
             remove => AirEngine.Update -= value;
         }
 
-        
+
         #endregion
 
 

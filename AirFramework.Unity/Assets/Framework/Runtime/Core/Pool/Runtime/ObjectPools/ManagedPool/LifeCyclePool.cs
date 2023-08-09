@@ -35,7 +35,7 @@ namespace AirFramework
                 Framework.Message.LifeCycle.AnalyseAddAll(item);
                 if (item is IAllocate)
                     receiver.Operator<IAllocate>().Publish();
-               
+
             }
 
         }
@@ -47,7 +47,7 @@ namespace AirFramework
             //注册生命周期
             if (item is IMessageReceiver receiver)
             {
-                if (item is IAllocate )
+                if (item is IAllocate)
                     receiver.Operator<IRecycle>().Publish();
                 //receiver.SetActive(false);
 

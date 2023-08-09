@@ -724,6 +724,7 @@ IL2CPP_EXTERN_C RuntimeClass* Action_1_t7F8A08D55E64F30F0E9A4213699C99903459421A
 IL2CPP_EXTERN_C RuntimeClass* CanvasUpdateRegistry_t7A4CC63D880F418DCDE83152B6FDB3259DF14DD1_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Char_t521A6F19B456D956AF452D926C32709DC03D6B17_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* ColorBlock_tDD7C62E7AFE442652FC98F8D058CE8AE6BFD7C11_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* ColorTweenCallback_tA3F6E0BB4EBAA1CFB97539807CE8C9BB7C851F53_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* ContentTypeU5BU5D_t9CD28BD8595DADB2BF0E1020E0E5701C95E80B39_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Convert_t7097FF336D592F7C06D88A98349A44646F91EFFC_il2cpp_TypeInfo_var;
@@ -11226,6 +11227,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* TMP_LinkInfo_GetLinkText_m954EE8FF3
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Char_t521A6F19B456D956AF452D926C32709DC03D6B17_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&String_t_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
@@ -11258,6 +11260,7 @@ IL_001b:
 		int32_t L_7 = V_2;
 		NullCheck(L_6);
 		Il2CppChar* L_8 = (Il2CppChar*)(&((L_6)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_7)))->___character_0);
+		il2cpp_codegen_runtime_class_init_inline(Char_t521A6F19B456D956AF452D926C32709DC03D6B17_il2cpp_TypeInfo_var);
 		String_t* L_9;
 		L_9 = Char_ToString_m2A308731F9577C06AF3C0901234E2EAC8327410C(L_8, NULL);
 		String_t* L_10;
@@ -11384,6 +11387,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* TMP_WordInfo_GetWord_m7F72AB87E8AB0
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Char_t521A6F19B456D956AF452D926C32709DC03D6B17_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&String_t_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
@@ -11416,6 +11420,7 @@ IL_0020:
 		int32_t L_7 = V_2;
 		NullCheck(L_6);
 		Il2CppChar* L_8 = (Il2CppChar*)(&((L_6)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_7)))->___character_0);
+		il2cpp_codegen_runtime_class_init_inline(Char_t521A6F19B456D956AF452D926C32709DC03D6B17_il2cpp_TypeInfo_var);
 		String_t* L_9;
 		L_9 = Char_ToString_m2A308731F9577C06AF3C0901234E2EAC8327410C(L_8, NULL);
 		String_t* L_10;
@@ -13908,6 +13913,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TMP_DefaultControls_SetDefaultTextValues
 // System.Void TMPro.TMP_DefaultControls::SetDefaultColorTransitionValues(UnityEngine.UI.Selectable)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TMP_DefaultControls_SetDefaultColorTransitionValues_m72AC254CDF013CD5831DC9FF9A49A17E9857A228 (Selectable_t3251808068A17B8E92FB33590A4C2FA66D456712* ___0_slider, const RuntimeMethod* method) 
 {
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ColorBlock_tDD7C62E7AFE442652FC98F8D058CE8AE6BFD7C11_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
 	ColorBlock_tDD7C62E7AFE442652FC98F8D058CE8AE6BFD7C11 V_0;
 	memset((&V_0), 0, sizeof(V_0));
 	{
@@ -13921,6 +13932,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TMP_DefaultControls_SetDefaultColorTrans
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_2;
 		memset((&L_2), 0, sizeof(L_2));
 		Color__ctor_mCD6889CDE39F18704CD6EA8E2EFBFA48BA3E13B0_inline((&L_2), (0.882000029f), (0.882000029f), (0.882000029f), /*hidden argument*/NULL);
+		il2cpp_codegen_runtime_class_init_inline(ColorBlock_tDD7C62E7AFE442652FC98F8D058CE8AE6BFD7C11_il2cpp_TypeInfo_var);
 		ColorBlock_set_highlightedColor_m04E97DF2CCE7CAC47120D8F486E18BF62F16FF86_inline((&V_0), L_2, NULL);
 		// colors.pressedColor = new Color(0.698f, 0.698f, 0.698f);
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_3;
@@ -14256,7 +14268,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651
 		// text.text = "Button";
 		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_18 = L_17;
 		NullCheck(L_18);
-		VirtualActionInvoker1< String_t* >::Invoke(64 /* System.Void TMPro.TMP_Text::set_text(System.String) */, L_18, _stringLiteral7DE03E5EBA0308517D1762F2C0DF3B9E2A2F1870);
+		VirtualActionInvoker1< String_t* >::Invoke(66 /* System.Void TMPro.TMP_Text::set_text(System.String) */, L_18, _stringLiteral7DE03E5EBA0308517D1762F2C0DF3B9E2A2F1870);
 		// text.alignment = TextAlignmentOptions.Center;
 		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_19 = L_18;
 		NullCheck(L_19);
@@ -14452,7 +14464,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651
 		// text.text = "";
 		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_35 = V_5;
 		NullCheck(L_35);
-		VirtualActionInvoker1< String_t* >::Invoke(64 /* System.Void TMPro.TMP_Text::set_text(System.String) */, L_35, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
+		VirtualActionInvoker1< String_t* >::Invoke(66 /* System.Void TMPro.TMP_Text::set_text(System.String) */, L_35, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
 		// text.enableWordWrapping = false;
 		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_36 = V_5;
 		NullCheck(L_36);
@@ -14477,7 +14489,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651
 		// placeholder.text = "Enter text...";
 		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_42 = V_6;
 		NullCheck(L_42);
-		VirtualActionInvoker1< String_t* >::Invoke(64 /* System.Void TMPro.TMP_Text::set_text(System.String) */, L_42, _stringLiteralA818D784EEE0EEB6AB11F62A9BF9EF44CF6146AC);
+		VirtualActionInvoker1< String_t* >::Invoke(66 /* System.Void TMPro.TMP_Text::set_text(System.String) */, L_42, _stringLiteralA818D784EEE0EEB6AB11F62A9BF9EF44CF6146AC);
 		// placeholder.fontSize = 14;
 		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_43 = V_6;
 		NullCheck(L_43);
@@ -14988,7 +15000,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651
 		// itemLabelText.text = "Option A";
 		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_112 = V_10;
 		NullCheck(L_112);
-		VirtualActionInvoker1< String_t* >::Invoke(64 /* System.Void TMPro.TMP_Text::set_text(System.String) */, L_112, _stringLiteral17AEAD6B86236368E44E9297467458F1158CAF04);
+		VirtualActionInvoker1< String_t* >::Invoke(66 /* System.Void TMPro.TMP_Text::set_text(System.String) */, L_112, _stringLiteral17AEAD6B86236368E44E9297467458F1158CAF04);
 		// dropdown.options.Add(new TMP_Dropdown.OptionData {text = "Option A" });
 		TMP_Dropdown_t73B37BFDA0D005451C7B750938AFB1748E5EA504* L_113 = L_110;
 		NullCheck(L_113);
@@ -16049,7 +16061,7 @@ IL_0042:
 		String_t* L_17;
 		L_17 = OptionData_get_text_m2E822D5D50B597BFBA7AB3485EF15B526A726A1A_inline(L_16, NULL);
 		NullCheck(L_15);
-		VirtualActionInvoker1< String_t* >::Invoke(64 /* System.Void TMPro.TMP_Text::set_text(System.String) */, L_15, L_17);
+		VirtualActionInvoker1< String_t* >::Invoke(66 /* System.Void TMPro.TMP_Text::set_text(System.String) */, L_15, L_17);
 		goto IL_007d;
 	}
 
@@ -16058,7 +16070,7 @@ IL_006d:
 		// m_CaptionText.text = "";
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_18 = __this->___m_CaptionText_21;
 		NullCheck(L_18);
-		VirtualActionInvoker1< String_t* >::Invoke(64 /* System.Void TMPro.TMP_Text::set_text(System.String) */, L_18, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
+		VirtualActionInvoker1< String_t* >::Invoke(66 /* System.Void TMPro.TMP_Text::set_text(System.String) */, L_18, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
 	}
 
 IL_007d:
@@ -18323,7 +18335,7 @@ IL_0088:
 		String_t* L_31;
 		L_31 = OptionData_get_text_m2E822D5D50B597BFBA7AB3485EF15B526A726A1A_inline(L_30, NULL);
 		NullCheck(L_29);
-		VirtualActionInvoker1< String_t* >::Invoke(64 /* System.Void TMPro.TMP_Text::set_text(System.String) */, L_29, L_31);
+		VirtualActionInvoker1< String_t* >::Invoke(66 /* System.Void TMPro.TMP_Text::set_text(System.String) */, L_29, L_31);
 	}
 
 IL_00a6:
@@ -22833,6 +22845,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* TMP_FontAsset_GetCharacters_mF4A9E3
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Char_t521A6F19B456D956AF452D926C32709DC03D6B17_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_get_Count_m9487E2DD5481AE7E89DD20CF6E6640DF763A9998_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_get_Item_m94F97B65B40EA25788630CFD505F65003028DF28_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&String_t_il2cpp_TypeInfo_var);
@@ -22866,6 +22879,7 @@ IL_000a:
 		uint32_t L_6;
 		L_6 = TMP_TextElement_get_unicode_mF963B03CCA673335FB682EBDD1CFF86F0DB8539F_inline(L_5, NULL);
 		V_2 = ((int32_t)(uint16_t)L_6);
+		il2cpp_codegen_runtime_class_init_inline(Char_t521A6F19B456D956AF452D926C32709DC03D6B17_il2cpp_TypeInfo_var);
 		String_t* L_7;
 		L_7 = Char_ToString_m2A308731F9577C06AF3C0901234E2EAC8327410C((&V_2), NULL);
 		String_t* L_8;
@@ -35948,6 +35962,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TMP_InputField_LateUpdate_m9D1496DFE349C
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Char_t521A6F19B456D956AF452D926C32709DC03D6B17_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&EventSystem_t61C51380B105BE9D2C39C4F15B7E655659957707_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GameObject_GetComponent_TisTMP_InputField_t3488E0EE8C3DF56C6A328EC95D1BEEA2DF4A7D5F_m6CA031C91E5D203C24D3315721B6E3910B9C8729_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -36554,6 +36569,7 @@ IL_02b8:
 	{
 		// m_Text += c;
 		String_t* L_84 = __this->___m_Text_60;
+		il2cpp_codegen_runtime_class_init_inline(Char_t521A6F19B456D956AF452D926C32709DC03D6B17_il2cpp_TypeInfo_var);
 		String_t* L_85;
 		L_85 = Char_ToString_m2A308731F9577C06AF3C0901234E2EAC8327410C((&V_5), NULL);
 		String_t* L_86;
@@ -38758,7 +38774,7 @@ IL_001d:
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_4 = __this->___m_TextComponent_27;
 		NullCheck(L_4);
 		float L_5;
-		L_5 = VirtualFuncInvoker0< float >::Invoke(83 /* System.Single TMPro.TMP_Text::get_preferredHeight() */, L_4);
+		L_5 = VirtualFuncInvoker0< float >::Invoke(85 /* System.Single TMPro.TMP_Text::get_preferredHeight() */, L_4);
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_6 = __this->___m_TextViewport_23;
 		NullCheck(L_6);
 		Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D L_7;
@@ -38866,7 +38882,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TMP_InputField_GetScrollPositionRelativ
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_11 = __this->___m_TextComponent_27;
 		NullCheck(L_11);
 		float L_12;
-		L_12 = VirtualFuncInvoker0< float >::Invoke(83 /* System.Single TMPro.TMP_Text::get_preferredHeight() */, L_11);
+		L_12 = VirtualFuncInvoker0< float >::Invoke(85 /* System.Single TMPro.TMP_Text::get_preferredHeight() */, L_11);
 		float L_13;
 		L_13 = Rect_get_height_mE1AA6C6C725CCD2D317BD2157396D3CF7D47C9D8((&V_0), NULL);
 		// scrollPosition = (int)((scrollPosition * 1000) + 0.5f) / 1000.0f;
@@ -42594,6 +42610,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TMP_InputField_Insert_mD8773951E82B4743A
 IL_0009:
 	{
 		// string replaceString = c.ToString();
+		il2cpp_codegen_runtime_class_init_inline(Char_t521A6F19B456D956AF452D926C32709DC03D6B17_il2cpp_TypeInfo_var);
 		String_t* L_1;
 		L_1 = Char_ToString_m2A308731F9577C06AF3C0901234E2EAC8327410C((&___0_c), NULL);
 		V_0 = L_1;
@@ -43261,7 +43278,7 @@ IL_014c:
 		String_t* L_48;
 		L_48 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(L_47, _stringLiteral22BE618ADF9DAFBF84F27DD4CA2D8D34F67B1103, NULL);
 		NullCheck(L_46);
-		VirtualActionInvoker1< String_t* >::Invoke(64 /* System.Void TMPro.TMP_Text::set_text(System.String) */, L_46, L_48);
+		VirtualActionInvoker1< String_t* >::Invoke(66 /* System.Void TMPro.TMP_Text::set_text(System.String) */, L_46, L_48);
 		// if (m_IsDrivenByLayoutComponents)
 		bool L_49 = __this->___m_IsDrivenByLayoutComponents_32;
 		if (!L_49)
@@ -43289,7 +43306,7 @@ IL_0175:
 		// m_TextComponent.ForceMeshUpdate();
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_52 = __this->___m_TextComponent_27;
 		NullCheck(L_52);
-		VirtualActionInvoker2< bool, bool >::Invoke(104 /* System.Void TMPro.TMP_Text::ForceMeshUpdate(System.Boolean,System.Boolean) */, L_52, (bool)0, (bool)0);
+		VirtualActionInvoker2< bool, bool >::Invoke(106 /* System.Void TMPro.TMP_Text::ForceMeshUpdate(System.Boolean,System.Boolean) */, L_52, (bool)0, (bool)0);
 		// TMP_TextInfo textInfo = m_TextComponent.textInfo;
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_53 = __this->___m_TextComponent_27;
 		NullCheck(L_53);
@@ -43355,7 +43372,7 @@ IL_0175:
 		String_t* L_79;
 		L_79 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(L_78, _stringLiteral22BE618ADF9DAFBF84F27DD4CA2D8D34F67B1103, NULL);
 		NullCheck(L_77);
-		VirtualActionInvoker1< String_t* >::Invoke(64 /* System.Void TMPro.TMP_Text::set_text(System.String) */, L_77, L_79);
+		VirtualActionInvoker1< String_t* >::Invoke(66 /* System.Void TMPro.TMP_Text::set_text(System.String) */, L_77, L_79);
 	}
 
 IL_0221:
@@ -43385,7 +43402,7 @@ IL_0236:
 		// m_TextComponent.ForceMeshUpdate();
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_83 = __this->___m_TextComponent_27;
 		NullCheck(L_83);
-		VirtualActionInvoker2< bool, bool >::Invoke(104 /* System.Void TMPro.TMP_Text::ForceMeshUpdate(System.Boolean,System.Boolean) */, L_83, (bool)0, (bool)0);
+		VirtualActionInvoker2< bool, bool >::Invoke(106 /* System.Void TMPro.TMP_Text::ForceMeshUpdate(System.Boolean,System.Boolean) */, L_83, (bool)0, (bool)0);
 	}
 
 IL_024a:
@@ -43438,7 +43455,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TMP_InputField_UpdateScrollbar_m61D071BE
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_5 = __this->___m_TextComponent_27;
 		NullCheck(L_5);
 		float L_6;
-		L_6 = VirtualFuncInvoker0< float >::Invoke(83 /* System.Single TMPro.TMP_Text::get_preferredHeight() */, L_5);
+		L_6 = VirtualFuncInvoker0< float >::Invoke(85 /* System.Single TMPro.TMP_Text::get_preferredHeight() */, L_5);
 		V_1 = ((float)(L_4/L_6));
 		// m_VerticalScrollbar.size = size;
 		Scrollbar_t7CDC9B956698D9385A11E4C12964CD51477072C3* L_7 = __this->___m_VerticalScrollbar_30;
@@ -43598,7 +43615,7 @@ IL_003f:
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_13 = __this->___m_TextComponent_27;
 		NullCheck(L_13);
 		float L_14;
-		L_14 = VirtualFuncInvoker0< float >::Invoke(83 /* System.Single TMPro.TMP_Text::get_preferredHeight() */, L_13);
+		L_14 = VirtualFuncInvoker0< float >::Invoke(85 /* System.Single TMPro.TMP_Text::get_preferredHeight() */, L_13);
 		V_2 = L_14;
 		// switch (m_TextComponent.verticalAlignment)
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_15 = __this->___m_TextComponent_27;
@@ -45858,7 +45875,7 @@ IL_000f:
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_42 = __this->___m_TextComponent_27;
 		NullCheck(L_42);
 		Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 L_43;
-		L_43 = VirtualFuncInvoker0< Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 >::Invoke(71 /* UnityEngine.Vector4 TMPro.TMP_Text::get_margin() */, L_42);
+		L_43 = VirtualFuncInvoker0< Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 >::Invoke(73 /* UnityEngine.Vector4 TMPro.TMP_Text::get_margin() */, L_42);
 		float L_44 = L_43.___z_3;
 		int32_t L_45 = __this->___m_CaretWidth_62;
 		V_6 = ((float)il2cpp_codegen_subtract(L_39, ((float)il2cpp_codegen_add(((float)il2cpp_codegen_add(L_41, L_44)), ((float)L_45)))));
@@ -45919,7 +45936,7 @@ IL_0132:
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_59 = __this->___m_TextComponent_27;
 		NullCheck(L_59);
 		Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 L_60;
-		L_60 = VirtualFuncInvoker0< Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 >::Invoke(71 /* UnityEngine.Vector4 TMPro.TMP_Text::get_margin() */, L_59);
+		L_60 = VirtualFuncInvoker0< Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 >::Invoke(73 /* UnityEngine.Vector4 TMPro.TMP_Text::get_margin() */, L_59);
 		float L_61 = L_60.___x_1;
 		float L_62;
 		L_62 = Rect_get_xMin_mE89C40702926D016A633399E20DB9501E251630D((&V_5), NULL);
@@ -46074,7 +46091,7 @@ IL_0226:
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_110 = __this->___m_TextComponent_27;
 		NullCheck(L_110);
 		Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 L_111;
-		L_111 = VirtualFuncInvoker0< Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 >::Invoke(71 /* UnityEngine.Vector4 TMPro.TMP_Text::get_margin() */, L_110);
+		L_111 = VirtualFuncInvoker0< Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 >::Invoke(73 /* UnityEngine.Vector4 TMPro.TMP_Text::get_margin() */, L_110);
 		float L_112 = L_111.___x_1;
 		V_11 = ((float)il2cpp_codegen_subtract(((float)il2cpp_codegen_add(((float)il2cpp_codegen_add(((float)il2cpp_codegen_add(L_101, L_103)), L_105)), L_109)), L_112));
 		// float lastCharPosition = localPosition.x + textViewportLocalPosition.x + textComponentLocalPosition.x + m_TextComponent.textInfo.characterInfo[m_TextComponent.textInfo.characterCount - 1].origin + m_TextComponent.margin.z + m_CaretWidth;
@@ -46101,7 +46118,7 @@ IL_0226:
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_126 = __this->___m_TextComponent_27;
 		NullCheck(L_126);
 		Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 L_127;
-		L_127 = VirtualFuncInvoker0< Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 >::Invoke(71 /* UnityEngine.Vector4 TMPro.TMP_Text::get_margin() */, L_126);
+		L_127 = VirtualFuncInvoker0< Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 >::Invoke(73 /* UnityEngine.Vector4 TMPro.TMP_Text::get_margin() */, L_126);
 		float L_128 = L_127.___z_3;
 		int32_t L_129 = __this->___m_CaretWidth_62;
 		V_12 = ((float)il2cpp_codegen_add(((float)il2cpp_codegen_add(((float)il2cpp_codegen_add(((float)il2cpp_codegen_add(((float)il2cpp_codegen_add(L_114, L_116)), L_118)), L_125)), L_128)), ((float)L_129)));
@@ -47273,6 +47290,7 @@ IL_0330:
 	}
 	{
 		// if (Regex.IsMatch(ch.ToString(), m_RegexValue))
+		il2cpp_codegen_runtime_class_init_inline(Char_t521A6F19B456D956AF452D926C32709DC03D6B17_il2cpp_TypeInfo_var);
 		String_t* L_160;
 		L_160 = Char_ToString_m2A308731F9577C06AF3C0901234E2EAC8327410C((&___2_ch), NULL);
 		String_t* L_161 = __this->___m_RegexValue_45;
@@ -48633,7 +48651,7 @@ IL_006c:
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_16 = __this->___m_TextComponent_27;
 		NullCheck(L_16);
 		float L_17;
-		L_17 = VirtualFuncInvoker0< float >::Invoke(82 /* System.Single TMPro.TMP_Text::get_preferredWidth() */, L_16);
+		L_17 = VirtualFuncInvoker0< float >::Invoke(84 /* System.Single TMPro.TMP_Text::get_preferredWidth() */, L_16);
 		float L_18 = V_0;
 		return ((float)il2cpp_codegen_add(L_17, L_18));
 	}
@@ -48741,7 +48759,7 @@ IL_006c:
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_16 = __this->___m_TextComponent_27;
 		NullCheck(L_16);
 		float L_17;
-		L_17 = VirtualFuncInvoker0< float >::Invoke(83 /* System.Single TMPro.TMP_Text::get_preferredHeight() */, L_16);
+		L_17 = VirtualFuncInvoker0< float >::Invoke(85 /* System.Single TMPro.TMP_Text::get_preferredHeight() */, L_16);
 		float L_18 = V_0;
 		return ((float)il2cpp_codegen_add(L_17, L_18));
 	}

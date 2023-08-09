@@ -1,17 +1,11 @@
-﻿using AirFramework;
+﻿
+using AirFramework;
 using System.Text;
 
 
-class Testitem
-{
-    public string name;
-    public string description;
-    public int id;
-}
-
 public static class TableToModel
 {
-    public static string interfaceText = $"{typeof(AirFramework.IModel).FullName}";
+    public static string interfaceText = $"AirFramework.IModel";
     public const string space = "        ";
 
 
@@ -21,7 +15,7 @@ $@"using System;
 using System.Collections;
 using System.Collections.Generic;
   
-namespace {FrameworkSettings.instance.defaultNamespace}
+namespace AirFramework.ConstModel
 {{
 
     public class #ITEMNAME#
@@ -29,7 +23,7 @@ namespace {FrameworkSettings.instance.defaultNamespace}
 #CODE#
     }}
 
-    public class #MODELNAME#Model : {typeof(IModel).FullName}
+    public class #MODELNAME#Model : {interfaceText}
     {{
         public System.Collections.Generic.List<#ITEMNAME#> Data = new System.Collections.Generic.List<#ITEMNAME>()
         {{
@@ -69,7 +63,7 @@ namespace {FrameworkSettings.instance.defaultNamespace}
         StringBuilder builder = new StringBuilder();
         StringBuilder temp = new StringBuilder();
 
-        builder.AppendLine($"{space}[{typeof(PrimaryKeyAttribute).FullName.Replace("Attribute", string.Empty)}]");
+        builder.AppendLine($"{space}[{"AirFramework.PrimaryKeyAttribute".Replace("Attribute", string.Empty)}]");
         for (int i = 0; i < table.ColumnCount; i++)
         {
             Type trueType = SyntaxStrategy.GetTrueType(table[0, i]);
@@ -83,11 +77,11 @@ namespace {FrameworkSettings.instance.defaultNamespace}
             temp.Clear();
         }
 
-        List<Testitem> items = new List<Testitem>()
-        {
-            new Testitem{name="",description="",id=0},
+        //List<Testitem> items = new List<Testitem>()
+        //{
+        //    new Testitem{name="",description="",id=0},
 
-        };
+        //};
 
         return builder.ToString();
     }

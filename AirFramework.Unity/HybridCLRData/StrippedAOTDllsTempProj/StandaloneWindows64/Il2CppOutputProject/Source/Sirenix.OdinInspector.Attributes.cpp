@@ -7262,7 +7262,7 @@ IL_00ab:
 		bool L_28 = L_27->___AnimateVisibility_5;
 		__this->___AnimateVisibility_5 = (bool)((int32_t)((int32_t)L_26&(int32_t)L_28));
 		PropertyGroupAttribute_t431BBFDAA802926EC2B946D37A7896D8CBE2279E* L_29 = ___0_other;
-		VirtualActionInvoker1< PropertyGroupAttribute_t431BBFDAA802926EC2B946D37A7896D8CBE2279E* >::Invoke(4 /* System.Void Sirenix.OdinInspector.PropertyGroupAttribute::CombineValuesWith(Sirenix.OdinInspector.PropertyGroupAttribute) */, __this, L_29);
+		VirtualActionInvoker1< PropertyGroupAttribute_t431BBFDAA802926EC2B946D37A7896D8CBE2279E* >::Invoke(11 /* System.Void Sirenix.OdinInspector.PropertyGroupAttribute::CombineValuesWith(Sirenix.OdinInspector.PropertyGroupAttribute) */, __this, L_29);
 		return __this;
 	}
 }

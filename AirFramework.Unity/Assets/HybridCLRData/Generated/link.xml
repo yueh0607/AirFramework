@@ -6,7 +6,6 @@
     <type fullname="AirFramework.AirTask`1" preserve="all" />
     <type fullname="AirFramework.Framework" preserve="all" />
     <type fullname="AirFramework.FrameworkInitializeAttribute" preserve="all" />
-    <type fullname="AirFramework.IAllocate" preserve="all" />
     <type fullname="AirFramework.ICallEventBase" preserve="all" />
     <type fullname="AirFramework.ICallEvent`1" preserve="all" />
     <type fullname="AirFramework.IFrameworkInitialize" preserve="all" />
@@ -28,27 +27,52 @@
     <type fullname="AirFramework.ViewModule" preserve="all" />
     <type fullname="AirFramework.View`1" preserve="all" />
   </assembly>
+  <assembly fullname="MemoryPack">
+    <type fullname="MemoryPack.Formatters.ArrayFormatter`1" preserve="all" />
+    <type fullname="MemoryPack.Formatters.ListFormatter`1" preserve="all" />
+    <type fullname="MemoryPack.GenerateType" preserve="all" />
+    <type fullname="MemoryPack.IMemoryPackFormatterRegister" preserve="all" />
+    <type fullname="MemoryPack.IMemoryPackable`1" preserve="all" />
+    <type fullname="MemoryPack.Internal.PreserveAttribute" preserve="all" />
+    <type fullname="MemoryPack.MemoryPackFormatterProvider" preserve="all" />
+    <type fullname="MemoryPack.MemoryPackFormatter`1" preserve="all" />
+    <type fullname="MemoryPack.MemoryPackReader" preserve="all" />
+    <type fullname="MemoryPack.MemoryPackSerializationException" preserve="all" />
+    <type fullname="MemoryPack.MemoryPackSerializer" preserve="all" />
+    <type fullname="MemoryPack.MemoryPackSerializerOptions" preserve="all" />
+    <type fullname="MemoryPack.MemoryPackWriter" preserve="all" />
+    <type fullname="MemoryPack.MemoryPackableAttribute" preserve="all" />
+  </assembly>
   <assembly fullname="UnityEngine.CoreModule">
     <type fullname="UnityEngine.Component" preserve="all" />
     <type fullname="UnityEngine.Debug" preserve="all" />
     <type fullname="UnityEngine.MonoBehaviour" preserve="all" />
+    <type fullname="UnityEngine.Vector3" preserve="all" />
   </assembly>
   <assembly fullname="UnityEngine.UIModule">
     <type fullname="UnityEngine.CanvasGroup" preserve="all" />
   </assembly>
   <assembly fullname="mscorlib">
     <type fullname="System.Action`1" preserve="all" />
+    <type fullname="System.Attribute" preserve="all" />
+    <type fullname="System.AttributeTargets" preserve="all" />
+    <type fullname="System.AttributeUsageAttribute" preserve="all" />
+    <type fullname="System.Byte" preserve="all" />
+    <type fullname="System.Collections.Generic.List`1" preserve="all" />
     <type fullname="System.Diagnostics.DebuggableAttribute" preserve="all" />
     <type fullname="System.Diagnostics.DebuggableAttribute/DebuggingModes" preserve="all" />
     <type fullname="System.Diagnostics.DebuggerHiddenAttribute" preserve="all" />
     <type fullname="System.Exception" preserve="all" />
     <type fullname="System.Func`1" preserve="all" />
     <type fullname="System.Object" preserve="all" />
+    <type fullname="System.ReadOnlySpan`1" preserve="all" />
     <type fullname="System.Runtime.CompilerServices.AsyncStateMachineAttribute" preserve="all" />
     <type fullname="System.Runtime.CompilerServices.CompilationRelaxationsAttribute" preserve="all" />
     <type fullname="System.Runtime.CompilerServices.CompilerGeneratedAttribute" preserve="all" />
     <type fullname="System.Runtime.CompilerServices.IAsyncStateMachine" preserve="all" />
     <type fullname="System.Runtime.CompilerServices.RuntimeCompatibilityAttribute" preserve="all" />
+    <type fullname="System.RuntimeTypeHandle" preserve="all" />
+    <type fullname="System.Text.StringBuilder" preserve="all" />
     <type fullname="System.Type" preserve="all" />
     <type fullname="System.ValueType" preserve="all" />
   </assembly>

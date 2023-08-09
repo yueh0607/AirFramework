@@ -1,16 +1,9 @@
-﻿using AirEditor;
-using System.Collections;
+﻿using HybridCLR.Editor;
+using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
+using System.IO;
 using UnityEditor;
 using UnityEngine;
-using HybridCLR;
-using HybridCLR.Editor;
-using System.Linq;
-using System.IO;
-using AirFramework.Utility;
-using System;
-using Sirenix.Serialization;
 
 namespace AirEditor
 {
@@ -50,7 +43,7 @@ namespace AirEditor
         private void OnGUI()
         {
 
-            selectedPlatform = EditorGUILayout.Popup("拷贝平台",selectedPlatform, PlatformOptions.ToArray());
+            selectedPlatform = EditorGUILayout.Popup("拷贝平台", selectedPlatform, PlatformOptions.ToArray());
             hotFixBytesPath = EditorGUILayout.TextField("热更新Bytes拷贝路径", hotFixBytesPath);
             metaBytesPath = EditorGUILayout.TextField("元数据Bytes拷贝路径", metaBytesPath);
 
@@ -112,7 +105,7 @@ namespace AirEditor
             {
                 PatchMetaDataNames.Add(name);
             }
-            foreach(var name in AOTGenericReferences.PatchedAOTAssemblyList)
+            foreach (var name in AOTGenericReferences.PatchedAOTAssemblyList)
             {
                 PatchMetaDataNames.Add(Path.GetFileNameWithoutExtension(name));
             }

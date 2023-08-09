@@ -28,7 +28,7 @@ namespace AirFramework
             [DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                if (Status == ETaskStatus.Succeed || Status == ETaskStatus.Failed||Status==ETaskStatus.Completed) return true;
+                if (Status == ETaskStatus.Succeed || Status == ETaskStatus.Failed || Status == ETaskStatus.Completed) return true;
                 return false;
             }
         }

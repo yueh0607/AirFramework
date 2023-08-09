@@ -13,6 +13,10 @@
 
 // System.Byte[]
 struct ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031;
+// System.Attribute
+struct Attribute_tFDA8EFEFB0711976D22474794576DAF28F7440AA;
+// HybridCLR.ReversePInvokeWrapperGenerationAttribute
+struct ReversePInvokeWrapperGenerationAttribute_t884C403F2A4DFDA5B53C5142028EA7FFB6F295AB;
 
 
 struct ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031;
@@ -28,6 +32,11 @@ IL2CPP_EXTERN_C_END
 
 // <Module>
 struct U3CModuleU3E_tD0DFB154750CEF95F40DFD18F49DF0881C0A7176 
+{
+};
+
+// System.Attribute
+struct Attribute_tFDA8EFEFB0711976D22474794576DAF28F7440AA  : public RuntimeObject
 {
 };
 
@@ -63,9 +72,32 @@ struct Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C
 	int32_t ___m_value_0;
 };
 
+// HybridCLR.ReversePInvokeWrapperGenerationAttribute
+struct ReversePInvokeWrapperGenerationAttribute_t884C403F2A4DFDA5B53C5142028EA7FFB6F295AB  : public Attribute_tFDA8EFEFB0711976D22474794576DAF28F7440AA
+{
+	// System.Int32 HybridCLR.ReversePInvokeWrapperGenerationAttribute::<ReserveWrapperCount>k__BackingField
+	int32_t ___U3CReserveWrapperCountU3Ek__BackingField_0;
+};
+
+// System.Void
+struct Void_t4861ACF8F4594C3437BB48B6E56783494B843915 
+{
+	union
+	{
+		struct
+		{
+		};
+		uint8_t Void_t4861ACF8F4594C3437BB48B6E56783494B843915__padding[1];
+	};
+};
+
 // <Module>
 
 // <Module>
+
+// System.Attribute
+
+// System.Attribute
 
 // HybridCLR.RuntimeApi
 
@@ -78,6 +110,14 @@ struct Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C
 // System.Int32
 
 // System.Int32
+
+// HybridCLR.ReversePInvokeWrapperGenerationAttribute
+
+// HybridCLR.ReversePInvokeWrapperGenerationAttribute
+
+// System.Void
+
+// System.Void
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
@@ -117,16 +157,60 @@ struct ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031  : public RuntimeArr
 
 
 
+// System.Void System.Attribute::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Attribute__ctor_m79ED1BF1EE36D1E417BA89A0D9F91F8AAD8D19E2 (Attribute_tFDA8EFEFB0711976D22474794576DAF28F7440AA* __this, const RuntimeMethod* method) ;
 // System.Int32 HybridCLR.RuntimeApi::LoadMetadataForAOTAssembly(System.Byte*,System.Int32,System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t RuntimeApi_LoadMetadataForAOTAssembly_m6ED4725E4C774891EF9403AD0ADC6B081164EF4F (uint8_t* ___0_dllBytes, int32_t ___1_dllSize, int32_t ___2_mode, const RuntimeMethod* method) ;
 #if FORCE_PINVOKE_INTERNAL || FORCE_PINVOKE_GameAssembly_INTERNAL
 IL2CPP_EXTERN_C int32_t DEFAULT_CALL RuntimeApi_LoadMetadataForAOTAssembly(uint8_t*, int32_t, int32_t);
+#endif
+#if FORCE_PINVOKE_INTERNAL || FORCE_PINVOKE_GameAssembly_INTERNAL
+IL2CPP_EXTERN_C int32_t DEFAULT_CALL RuntimeApi_GetInterpreterThreadObjectStackSize();
+#endif
+#if FORCE_PINVOKE_INTERNAL || FORCE_PINVOKE_GameAssembly_INTERNAL
+IL2CPP_EXTERN_C void DEFAULT_CALL RuntimeApi_SetInterpreterThreadObjectStackSize(int32_t);
+#endif
+#if FORCE_PINVOKE_INTERNAL || FORCE_PINVOKE_GameAssembly_INTERNAL
+IL2CPP_EXTERN_C int32_t DEFAULT_CALL RuntimeApi_GetInterpreterThreadFrameStackSize();
+#endif
+#if FORCE_PINVOKE_INTERNAL || FORCE_PINVOKE_GameAssembly_INTERNAL
+IL2CPP_EXTERN_C void DEFAULT_CALL RuntimeApi_SetInterpreterThreadFrameStackSize(int32_t);
 #endif
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Int32 HybridCLR.ReversePInvokeWrapperGenerationAttribute::get_ReserveWrapperCount()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ReversePInvokeWrapperGenerationAttribute_get_ReserveWrapperCount_m39F675FA90E65D8E9F8550796F774133E33A7967 (ReversePInvokeWrapperGenerationAttribute_t884C403F2A4DFDA5B53C5142028EA7FFB6F295AB* __this, const RuntimeMethod* method) 
+{
+	{
+		// public int ReserveWrapperCount { get; }
+		int32_t L_0 = __this->___U3CReserveWrapperCountU3Ek__BackingField_0;
+		return L_0;
+	}
+}
+// System.Void HybridCLR.ReversePInvokeWrapperGenerationAttribute::.ctor(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ReversePInvokeWrapperGenerationAttribute__ctor_mF2B8EE86D31188FEDB364935852C113DF7BBA68D (ReversePInvokeWrapperGenerationAttribute_t884C403F2A4DFDA5B53C5142028EA7FFB6F295AB* __this, int32_t ___0_reserveWrapperCount, const RuntimeMethod* method) 
+{
+	{
+		// public ReversePInvokeWrapperGenerationAttribute(int reserveWrapperCount)
+		Attribute__ctor_m79ED1BF1EE36D1E417BA89A0D9F91F8AAD8D19E2(__this, NULL);
+		// ReserveWrapperCount = reserveWrapperCount;
+		int32_t L_0 = ___0_reserveWrapperCount;
+		__this->___U3CReserveWrapperCountU3Ek__BackingField_0 = L_0;
+		// }
+		return;
+	}
+}
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
@@ -206,6 +290,96 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t RuntimeApi_LoadMetadataForAOTAssembly
 	#endif
 
 	return returnValue;
+}
+// System.Int32 HybridCLR.RuntimeApi::GetInterpreterThreadObjectStackSize()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t RuntimeApi_GetInterpreterThreadObjectStackSize_m14F7A9B2189031E90AF86604ED7C1A51206BE13B (const RuntimeMethod* method) 
+{
+	typedef int32_t (DEFAULT_CALL *PInvokeFunc) ();
+	#if !FORCE_PINVOKE_INTERNAL && !FORCE_PINVOKE_GameAssembly_INTERNAL
+	static PInvokeFunc il2cppPInvokeFunc;
+	if (il2cppPInvokeFunc == NULL)
+	{
+		int parameterSize = 0;
+		il2cppPInvokeFunc = il2cpp_codegen_resolve_pinvoke<PInvokeFunc>(IL2CPP_NATIVE_STRING("GameAssembly"), "RuntimeApi_GetInterpreterThreadObjectStackSize", IL2CPP_CALL_DEFAULT, CHARSET_NOT_SPECIFIED, parameterSize, false);
+		IL2CPP_ASSERT(il2cppPInvokeFunc != NULL);
+	}
+	#endif
+
+	// Native function invocation
+	#if FORCE_PINVOKE_INTERNAL || FORCE_PINVOKE_GameAssembly_INTERNAL
+	int32_t returnValue = reinterpret_cast<PInvokeFunc>(RuntimeApi_GetInterpreterThreadObjectStackSize)();
+	#else
+	int32_t returnValue = il2cppPInvokeFunc();
+	#endif
+
+	return returnValue;
+}
+// System.Void HybridCLR.RuntimeApi::SetInterpreterThreadObjectStackSize(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RuntimeApi_SetInterpreterThreadObjectStackSize_m979FCC41260D4408BB9DFA200A9C0A2F9010C2C5 (int32_t ___0_size, const RuntimeMethod* method) 
+{
+	typedef void (DEFAULT_CALL *PInvokeFunc) (int32_t);
+	#if !FORCE_PINVOKE_INTERNAL && !FORCE_PINVOKE_GameAssembly_INTERNAL
+	static PInvokeFunc il2cppPInvokeFunc;
+	if (il2cppPInvokeFunc == NULL)
+	{
+		int parameterSize = sizeof(int32_t);
+		il2cppPInvokeFunc = il2cpp_codegen_resolve_pinvoke<PInvokeFunc>(IL2CPP_NATIVE_STRING("GameAssembly"), "RuntimeApi_SetInterpreterThreadObjectStackSize", IL2CPP_CALL_DEFAULT, CHARSET_NOT_SPECIFIED, parameterSize, false);
+		IL2CPP_ASSERT(il2cppPInvokeFunc != NULL);
+	}
+	#endif
+
+	// Native function invocation
+	#if FORCE_PINVOKE_INTERNAL || FORCE_PINVOKE_GameAssembly_INTERNAL
+	reinterpret_cast<PInvokeFunc>(RuntimeApi_SetInterpreterThreadObjectStackSize)(___0_size);
+	#else
+	il2cppPInvokeFunc(___0_size);
+	#endif
+
+}
+// System.Int32 HybridCLR.RuntimeApi::GetInterpreterThreadFrameStackSize()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t RuntimeApi_GetInterpreterThreadFrameStackSize_m455CC0C9D87B847CAEB778E9A0E1588D9506F1D4 (const RuntimeMethod* method) 
+{
+	typedef int32_t (DEFAULT_CALL *PInvokeFunc) ();
+	#if !FORCE_PINVOKE_INTERNAL && !FORCE_PINVOKE_GameAssembly_INTERNAL
+	static PInvokeFunc il2cppPInvokeFunc;
+	if (il2cppPInvokeFunc == NULL)
+	{
+		int parameterSize = 0;
+		il2cppPInvokeFunc = il2cpp_codegen_resolve_pinvoke<PInvokeFunc>(IL2CPP_NATIVE_STRING("GameAssembly"), "RuntimeApi_GetInterpreterThreadFrameStackSize", IL2CPP_CALL_DEFAULT, CHARSET_NOT_SPECIFIED, parameterSize, false);
+		IL2CPP_ASSERT(il2cppPInvokeFunc != NULL);
+	}
+	#endif
+
+	// Native function invocation
+	#if FORCE_PINVOKE_INTERNAL || FORCE_PINVOKE_GameAssembly_INTERNAL
+	int32_t returnValue = reinterpret_cast<PInvokeFunc>(RuntimeApi_GetInterpreterThreadFrameStackSize)();
+	#else
+	int32_t returnValue = il2cppPInvokeFunc();
+	#endif
+
+	return returnValue;
+}
+// System.Void HybridCLR.RuntimeApi::SetInterpreterThreadFrameStackSize(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RuntimeApi_SetInterpreterThreadFrameStackSize_mFAF106800174ED6F6BC7FA25832081B21A4CAD97 (int32_t ___0_size, const RuntimeMethod* method) 
+{
+	typedef void (DEFAULT_CALL *PInvokeFunc) (int32_t);
+	#if !FORCE_PINVOKE_INTERNAL && !FORCE_PINVOKE_GameAssembly_INTERNAL
+	static PInvokeFunc il2cppPInvokeFunc;
+	if (il2cppPInvokeFunc == NULL)
+	{
+		int parameterSize = sizeof(int32_t);
+		il2cppPInvokeFunc = il2cpp_codegen_resolve_pinvoke<PInvokeFunc>(IL2CPP_NATIVE_STRING("GameAssembly"), "RuntimeApi_SetInterpreterThreadFrameStackSize", IL2CPP_CALL_DEFAULT, CHARSET_NOT_SPECIFIED, parameterSize, false);
+		IL2CPP_ASSERT(il2cppPInvokeFunc != NULL);
+	}
+	#endif
+
+	// Native function invocation
+	#if FORCE_PINVOKE_INTERNAL || FORCE_PINVOKE_GameAssembly_INTERNAL
+	reinterpret_cast<PInvokeFunc>(RuntimeApi_SetInterpreterThreadFrameStackSize)(___0_size);
+	#else
+	il2cppPInvokeFunc(___0_size);
+	#endif
+
 }
 #ifdef __clang__
 #pragma clang diagnostic pop

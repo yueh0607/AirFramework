@@ -1,17 +1,25 @@
 ﻿using AirFramework;
-using DG.Tweening;
+using MemoryPack;
+using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
-class Test2 : IAllocate
+[MemoryPackable]
+public partial class Test2
 {
+    public int X = 100;
+    public int Y = 100;
+    public string str = "66";
+    public List<int> list = new List<int>() { 1, 5, 6 };
 
+    public AAV aAV = new AAV();
+    public Vector3 vector = Vector3.zero;
+}
 
-    public void OnAllocate()
-    {
-        Debug.Log("2Allocate");
-    }
-
-  
+[MemoryPackable]
+public partial class AAV
+{
+    public int t = 1000;
 }
 
 public interface ITestAsyncEvent : ICallEvent<AirTask>
@@ -23,7 +31,20 @@ public class Test : IFrameworkInitialize, ITestAsyncEvent
 {
     void IFrameworkInitialize.OnFrameworkInitialize()
     {
-        Debug.Log("热更新代码2");
+        Test2 test = new Test2();
+        byte[] bytes = MemoryPackSerializer.Serialize(test);
+        StringBuilder builder = new StringBuilder();
+        foreach (byte b in bytes)
+            builder.Append(b);
+        Debug.Log(builder.ToString());
+
+        var t2 = MemoryPackSerializer.Deserialize<Test2>(bytes);
+        Debug.Log(t2.str);
+        Debug.LogError("热更前的日志");
+
+        // SceneManager.LoadScene("TestScene");
+        Debug.LogError("更新成功，替换bundle后的日志");
+
     }
     async AirTask Dooo()
     {

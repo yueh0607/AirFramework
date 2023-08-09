@@ -3,3 +3,15 @@ X:\Projects\Framework\ConfigTool\obj\Debug\net6.0\ConfigTool.GeneratedMSBuildEdi
 X:\Projects\Framework\ConfigTool\obj\Debug\net6.0\ConfigTool.AssemblyInfoInputs.cache
 X:\Projects\Framework\ConfigTool\obj\Debug\net6.0\ConfigTool.AssemblyInfo.cs
 X:\Projects\Framework\ConfigTool\obj\Debug\net6.0\ConfigTool.csproj.CoreCompileInputs.cache
+X:\Projects\Framework\ConfigTool\bin\Debug\net6.0\ConfigTool.exe
+X:\Projects\Framework\ConfigTool\bin\Debug\net6.0\ConfigTool.deps.json
+X:\Projects\Framework\ConfigTool\bin\Debug\net6.0\ConfigTool.runtimeconfig.json
+X:\Projects\Framework\ConfigTool\bin\Debug\net6.0\ConfigTool.dll
+X:\Projects\Framework\ConfigTool\bin\Debug\net6.0\ConfigTool.pdb
+X:\Projects\Framework\ConfigTool\bin\Debug\net6.0\EPPlus.dll
+X:\Projects\Framework\ConfigTool\obj\Debug\net6.0\ConfigTool.csproj.CopyComplete
+X:\Projects\Framework\ConfigTool\obj\Debug\net6.0\ConfigTool.dll
+X:\Projects\Framework\ConfigTool\obj\Debug\net6.0\refint\ConfigTool.dll
+X:\Projects\Framework\ConfigTool\obj\Debug\net6.0\ConfigTool.pdb
+X:\Projects\Framework\ConfigTool\obj\Debug\net6.0\ConfigTool.genruntimeconfig.cache
+X:\Projects\Framework\ConfigTool\obj\Debug\net6.0\ref\ConfigTool.dll

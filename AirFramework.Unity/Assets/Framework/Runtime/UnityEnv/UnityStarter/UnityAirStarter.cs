@@ -9,7 +9,6 @@
 using AirFramework.Internal;
 using System;
 using System.Collections;
-using System.IO;
 using UnityEngine;
 using YooAsset;
 
@@ -25,7 +24,7 @@ namespace AirFramework
 
         private async void Awake()
         {
-            
+
             gameObject.name = $"[{nameof(AirFramework)}.{nameof(UnityEngine)}]";
             //初始协程执行器
             Action<IEnumerator> coroutineRunner = (x) =>
@@ -42,7 +41,7 @@ namespace AirFramework
             var module = Framework.GetModule<ResModule>();
             module.Initialize();
 
-          
+
             RuntimeConfigData config = RuntimeConfigData.Read();
             RuntimeMode mode = config.initializeType;
 
@@ -58,7 +57,7 @@ namespace AirFramework
             }
             await module.InitializePackage(ToYooAssetPlayMode(mode));
 
-           
+
 
 
             //创建模型模块
@@ -69,7 +68,7 @@ namespace AirFramework
             Framework.CreateModule<HotUpdateModule>();
             //补充元数据并加载热更程序集
             await Framework.GetModule<HotUpdateModule>().Initialize(mode);
-     
+
             //发布框架初始化事件
             Framework.Message.Dispatcher<IFrameworkInitialize>().Publish();
         }

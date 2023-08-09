@@ -8,7 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AirFramework.Unity\AirFramework.csproj" />
+    <Reference Include="EPPlus">
+      <HintPath>..\AirFramework.Unity\Assets\Framework\Runtime\Core\Config\Runtime\EPPlus.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

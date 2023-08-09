@@ -18,7 +18,7 @@ namespace AirFramework
         public AirTaskBuilder(AirTask task) => this.task = task;
 
 
-        private  AirTask task;
+        private AirTask task;
 
 
 
@@ -50,7 +50,7 @@ namespace AirFramework
         {
             //UnityEngine.Debug.Log($"ID:{task.ID}" + this.GetHashCode());
             task.Finish(ETaskStatus.Completed);
-           // task = null;
+            // task = null;
         }
 
         // 6. AwaitOnCompleted  

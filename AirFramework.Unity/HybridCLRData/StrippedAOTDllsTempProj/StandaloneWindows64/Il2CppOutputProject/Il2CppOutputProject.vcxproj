@@ -55,6 +55,14 @@
     </ClCompile>
     <ClCompile Include="Source\GenericMethods__11.cpp">
     </ClCompile>
+    <ClCompile Include="Source\GenericMethods__12.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\GenericMethods__13.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\GenericMethods__14.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\GenericMethods__15.cpp">
+    </ClCompile>
     <ClCompile Include="Source\GenericMethods__2.cpp">
     </ClCompile>
     <ClCompile Include="Source\GenericMethods__3.cpp">
@@ -137,9 +145,47 @@
     </ClCompile>
     <ClCompile Include="Source\Generics__38.cpp">
     </ClCompile>
+    <ClCompile Include="Source\Generics__39.cpp">
+    </ClCompile>
     <ClCompile Include="Source\Generics__4.cpp">
     </ClCompile>
+    <ClCompile Include="Source\Generics__40.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics__41.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics__42.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics__43.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics__44.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics__45.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics__46.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics__47.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics__48.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics__49.cpp">
+    </ClCompile>
     <ClCompile Include="Source\Generics__5.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics__50.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics__51.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics__52.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics__53.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics__54.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics__55.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics__56.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\Generics__57.cpp">
     </ClCompile>
     <ClCompile Include="Source\Generics__6.cpp">
     </ClCompile>
@@ -159,6 +205,8 @@
     </ClCompile>
     <ClCompile Include="Source\Il2CppCCalculateTypeValues.cpp">
     </ClCompile>
+    <ClCompile Include="Source\Il2CppCCalculateTypeValues1.cpp">
+    </ClCompile>
     <ClCompile Include="Source\Il2CppCCFieldValuesTable.cpp">
     </ClCompile>
     <ClCompile Include="Source\Il2CppCCTypeValuesTable.cpp">
@@ -170,6 +218,8 @@
     <ClCompile Include="Source\Il2CppInvokerTable.cpp">
     </ClCompile>
     <ClCompile Include="Source\Il2CppReversePInvokeWrapperTable.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\MemoryPack.cpp">
     </ClCompile>
     <ClCompile Include="Source\Mono.Security.cpp">
     </ClCompile>
@@ -234,6 +284,10 @@
     <ClCompile Include="Source\System.Core.cpp">
     </ClCompile>
     <ClCompile Include="Source\System.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\System.IO.Compression.cpp">
+    </ClCompile>
+    <ClCompile Include="Source\System.Numerics.cpp">
     </ClCompile>
     <ClCompile Include="Source\System.Runtime.CompilerServices.Unsafe.cpp">
     </ClCompile>
@@ -359,6 +413,8 @@
     </ClCompile>
     <ClCompile Include="Source\UnityEngine.UnityAnalyticsModule.cpp">
     </ClCompile>
+    <ClCompile Include="Source\UnityEngine.UnityWebRequestAssetBundleModule.cpp">
+    </ClCompile>
     <ClCompile Include="Source\UnityEngine.UnityWebRequestModule.cpp">
     </ClCompile>
     <ClCompile Include="Source\UnityEngine.VFXModule.cpp">
@@ -407,6 +463,8 @@
     </ClCompile>
     <ClCompile Include="Source\Il2CppTypeDefinitions.c">
     </ClCompile>
+    <ClCompile Include="Source\MemoryPack_CodeGen.c">
+    </ClCompile>
     <ClCompile Include="Source\Mono.Security_CodeGen.c">
     </ClCompile>
     <ClCompile Include="Source\mscorlib_CodeGen.c">
@@ -424,6 +482,10 @@
     <ClCompile Include="Source\System.Configuration_CodeGen.c">
     </ClCompile>
     <ClCompile Include="Source\System.Core_CodeGen.c">
+    </ClCompile>
+    <ClCompile Include="Source\System.IO.Compression_CodeGen.c">
+    </ClCompile>
+    <ClCompile Include="Source\System.Numerics_CodeGen.c">
     </ClCompile>
     <ClCompile Include="Source\System.Runtime.CompilerServices.Unsafe_CodeGen.c">
     </ClCompile>
@@ -488,6 +550,8 @@
     <ClCompile Include="Source\UnityEngine.UI_CodeGen.c">
     </ClCompile>
     <ClCompile Include="Source\UnityEngine.UnityAnalyticsModule_CodeGen.c">
+    </ClCompile>
+    <ClCompile Include="Source\UnityEngine.UnityWebRequestAssetBundleModule_CodeGen.c">
     </ClCompile>
     <ClCompile Include="Source\UnityEngine.UnityWebRequestModule_CodeGen.c">
     </ClCompile>

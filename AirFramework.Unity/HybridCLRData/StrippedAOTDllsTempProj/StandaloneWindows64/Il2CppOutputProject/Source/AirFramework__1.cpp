@@ -71,6 +71,8 @@ struct Singleton_1_tDDD8EE0E4F6FDCFDE7AB21869EAA169199265E65;
 struct Singleton_1_tC88F6E30B276E408C09D13C28CB5FA38469F27DB;
 // AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InCircCurve>
 struct Singleton_1_tB7C8FC67FB32A04C873D128A9E66A6FAEE4CDE3C;
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InCubicCurve>
+struct Singleton_1_tE7FE54B08D21EDD4C3CCC557D0B31D3977E4958B;
 // AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InElasticCurve>
 struct Singleton_1_tF1FB26B9131EB9FFE6CA9D5E1D4D6CCE0985FCB8;
 // AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InExpoCurve>
@@ -79,14 +81,30 @@ struct Singleton_1_t0D06CBEECF609122BB6A52BFCF6070078C701F42;
 struct Singleton_1_t34229C93637271F0F514C2EB2ED846601F366177;
 // AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InOutCircCurve>
 struct Singleton_1_tF1C864D9518E6315DABBE01530D21DA5C63EC90A;
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InOutCubicCurve>
+struct Singleton_1_t4F3AD925EB8BED68E52787B6F9A15F4C4E82AEA9;
 // AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InOutElasticCurve>
 struct Singleton_1_t8D9BCE476EECCE560FD6A3E83DCCFFB48ED1F460;
 // AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InOutExpoCurve>
 struct Singleton_1_t91FADB231E85FB873762E6E457E61CE55B1737E5;
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InOutQuadCurve>
+struct Singleton_1_tF78DEA834F4F68447CBECCB3FBC3044B85D317FC;
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InOutQuartCurve>
+struct Singleton_1_t63774B4BEE00DEBD588AAD34FBC783630806CB5B;
 // AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InOutQuintCurve>
 struct Singleton_1_t3DC5CE2E36F22671E84280162253B9B0D1FC76A9;
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InOutSineCurve>
+struct Singleton_1_t2EC1D7BEA3160CB3CCA984E19FB5DA952A9A9EAC;
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InQuadCurve>
+struct Singleton_1_t72BF37C80D1F069000E0C8822603B4EA12805C55;
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InQuartCurve>
+struct Singleton_1_tD7CBAB36650BFD3429ADB3AE922021523E96B164;
 // AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InQuintCurve>
 struct Singleton_1_t3856131C476E66DB05821DB2BD9C63CDA3166C5E;
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InSineCurve>
+struct Singleton_1_tD214A671787D68232687E7F82080921AF2187230;
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.LinearCurve>
+struct Singleton_1_t16909EE098E79FABC8875F82958B748ED9035933;
 // AirFramework.Singleton`1<System.Object>
 struct Singleton_1_tE3EE4BFBC346CC3B4CEEFCDEA71371A93C0C369E;
 // AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.OutBackCurve>
@@ -95,12 +113,20 @@ struct Singleton_1_t56498A65308AFC5E3FA5034DF1469560B12BF6A1;
 struct Singleton_1_tD9D9F61F224091BA5E0D16772A7F8235F909414E;
 // AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.OutCircCurve>
 struct Singleton_1_t6E29AB1CC948E4BC169EC4B38657694795508D42;
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.OutCubicCurve>
+struct Singleton_1_t0B6E52CA72C7A5C70C49FC2D5725860EE807E129;
 // AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.OutElasticCurve>
 struct Singleton_1_t162D4C962B97F7075514CB6D64CA66C6B89FD090;
 // AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.OutExpoCurve>
 struct Singleton_1_tA6C7860A37426946D0CFEE7150E997E1BACEE24B;
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.OutQuadCurve>
+struct Singleton_1_tAE2CCD0EEB13D8B21322E214A2310D8D11FA20C8;
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.OutQuartCurve>
+struct Singleton_1_t3EE5B6056B45338C9059DC793801CB52C0020A71;
 // AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.OutQuintCurve>
 struct Singleton_1_t24178E4B1FD83A094181881018D3FA4867829957;
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.OutSineCurve>
+struct Singleton_1_t13BA27978C90BF8DA27F569DAB6DE38DF1A75549;
 // System.Reflection.Assembly[]
 struct AssemblyU5BU5D_t97B7B4E3FD4DA4944A4BFAA4DC484EA7D990B339;
 // System.Byte[]
@@ -149,6 +175,8 @@ struct InBackCurve_tDBB383973778FE176E7EB6BCC939CC065AD8AF14;
 struct InBounceCurve_t3C8E9B8DFD8DF1AFD4EFF93682A0EE2CDA881F98;
 // AirFramework.Internal.EaseCurve.InCircCurve
 struct InCircCurve_tE6D2318523FFBAD572C7CC9955D95E771EC4AC40;
+// AirFramework.Internal.EaseCurve.InCubicCurve
+struct InCubicCurve_t45ADFBC4ED6D13680994AE5E29402FD7559379BE;
 // AirFramework.Internal.EaseCurve.InElasticCurve
 struct InElasticCurve_tA4A31F06D89DAC0636E71D7BB39254EC0F8528FC;
 // AirFramework.Internal.EaseCurve.InExpoCurve
@@ -159,14 +187,30 @@ struct InOutBackCurve_t32C3E3DF9F09851E4FDA27C5B14104ECEF3E1E29;
 struct InOutBounceCurve_t6E6BEE4B0B42DA9E56C9E226C40FED04C49D829B;
 // AirFramework.Internal.EaseCurve.InOutCircCurve
 struct InOutCircCurve_tDAD68E12CF40BEEC4B314F26C601803D0E33EE4A;
+// AirFramework.Internal.EaseCurve.InOutCubicCurve
+struct InOutCubicCurve_t4F14FDE0BCF91D89983FE676CB6E60BA9BD9BF73;
 // AirFramework.Internal.EaseCurve.InOutElasticCurve
 struct InOutElasticCurve_t0E73A2342196D381DED3E6DEAD9DFCF31A8BE80E;
 // AirFramework.Internal.EaseCurve.InOutExpoCurve
 struct InOutExpoCurve_t4B888D8EF0B1B1120D0D00CAF8E4511BA1E054FE;
+// AirFramework.Internal.EaseCurve.InOutQuadCurve
+struct InOutQuadCurve_t4C51DE1F46BAA21C00E60DFFDA2797B1820CF6B1;
+// AirFramework.Internal.EaseCurve.InOutQuartCurve
+struct InOutQuartCurve_t63F6FA6735ADD97AE13E8F6351928418E60082EF;
 // AirFramework.Internal.EaseCurve.InOutQuintCurve
 struct InOutQuintCurve_tBEEE5203310AB6B7A81BA80F27CADEB8A2D4BB1F;
+// AirFramework.Internal.EaseCurve.InOutSineCurve
+struct InOutSineCurve_tC8040E450EA9C60C0A8455EA50DDD4724E90FF52;
+// AirFramework.Internal.EaseCurve.InQuadCurve
+struct InQuadCurve_t2201F334DE21C77A65E610D020160E9C477C878A;
+// AirFramework.Internal.EaseCurve.InQuartCurve
+struct InQuartCurve_t2D17075CCAFC456FE1308330061328C086B118AA;
 // AirFramework.Internal.EaseCurve.InQuintCurve
 struct InQuintCurve_t4AB1155E85B30CA9F2FD91D97BCB9E277E912699;
+// AirFramework.Internal.EaseCurve.InSineCurve
+struct InSineCurve_tE16AAE629EDD423524B94A732CE22B4D819F5301;
+// AirFramework.Internal.EaseCurve.LinearCurve
+struct LinearCurve_tEE48B6E861624E10AF6D7ECB629FD45CE0AE2B3E;
 // System.Reflection.MemberFilter
 struct MemberFilter_tF644F1AE82F611B677CE1964D5A3277DDA21D553;
 // System.Reflection.MemberInfo
@@ -181,12 +225,20 @@ struct OutBackCurve_t04FC9562D9C579B3545D0304EE64B5B23B028F4C;
 struct OutBounceCurve_tEAAE581CE826D9DA1DFB6BD388A2899A2B240F9D;
 // AirFramework.Internal.EaseCurve.OutCircCurve
 struct OutCircCurve_tF28B359299311F83F7DA6C1B159991BC6AAEB257;
+// AirFramework.Internal.EaseCurve.OutCubicCurve
+struct OutCubicCurve_t556432154D6B53436CE06A3E4FFD542161BA0443;
 // AirFramework.Internal.EaseCurve.OutElasticCurve
 struct OutElasticCurve_tE82071F61068871A94730BFAEE9050665D48C530;
 // AirFramework.Internal.EaseCurve.OutExpoCurve
 struct OutExpoCurve_t25489A24BAE39DD1D71812F1F5E902C70285B306;
+// AirFramework.Internal.EaseCurve.OutQuadCurve
+struct OutQuadCurve_tDD6E20EB3104D69F211FE9C85A6B7ABDA9DD4F60;
+// AirFramework.Internal.EaseCurve.OutQuartCurve
+struct OutQuartCurve_tF97C31D4EE2E0D21C4D956775D325104FD04A1A3;
 // AirFramework.Internal.EaseCurve.OutQuintCurve
 struct OutQuintCurve_t9E31741A4294CA1A38CA140AC3E58BB22771E5D6;
+// AirFramework.Internal.EaseCurve.OutSineCurve
+struct OutSineCurve_t71ACC1701F39959C44F32758F6FFCE8ACCF30F89;
 // System.Reflection.PropertyInfo
 struct PropertyInfo_t;
 // System.ResolveEventHandler
@@ -255,23 +307,36 @@ IL2CPP_EXTERN_C const RuntimeMethod* List_1__ctor_m6EA307CA8014BDB96B0F709FC1038
 IL2CPP_EXTERN_C const RuntimeMethod* List_1__ctor_mA9DDF7BE6D217D447049C8BEE35CD8A1EF93F3CE_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* List_1__ctor_mCA8DD57EAC70C2B5923DBB9D5A77CEAC22E7068E_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* List_1__ctor_mD9035342BE1CF0A3EEEE157D1796DA385C0C3F69_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* Singleton_1__ctor_m022E98AFCCB5CF2D74A87C5DF1DA75FC61856C0B_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Singleton_1__ctor_m0C93D6760EB8F6742000B353F2631A9C4BA99420_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Singleton_1__ctor_m1024E022B4752225A9B218AC667654B9932C63CE_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* Singleton_1__ctor_m159CF9ED490CDBFA9D306BE7F8171FC20F601ABA_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Singleton_1__ctor_m16249AC34DCB4D1732A7ADDE5F0E50A749EE54D6_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Singleton_1__ctor_m193D55DA31EDFF0E310FC198887E40088E421603_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Singleton_1__ctor_m1F5F07DFCA95F0F060D9C895D793EC67643DEB24_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* Singleton_1__ctor_m2516E2D6930D44471080BF4C7F30CBEFDCD6622E_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Singleton_1__ctor_m34FB408F2BBB88486D3F11B387546C24C0B23805_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* Singleton_1__ctor_m3DD52D220C534474C038CC46C3C296114610AECF_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Singleton_1__ctor_m44AFFD4E275D6F148F7E86573CDBE08CF21F5E89_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* Singleton_1__ctor_m4A81BD33DE97AA13AD4DFA60A66630E02C0415F8_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Singleton_1__ctor_m4BDB32BB5299E0F6D86B578582B4A94E66D22F07_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Singleton_1__ctor_m5CD359C7B2887789B3C800C152CD87763F3E7CE9_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Singleton_1__ctor_m7BB44433A846B34815C8B6C57743F364BC5F912B_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* Singleton_1__ctor_m8FD1EC87C045D216A0837B8DE4F4FAC0981B9B78_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Singleton_1__ctor_mA012E7044E5A7FC2D14A4B45490C775C621DF2E4_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Singleton_1__ctor_mA7B74E0EE6A618B11C94D6BE00C4093399930303_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* Singleton_1__ctor_mAE3A16B18374EA30A6B96ABEB551BAF2DAC3DF47_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* Singleton_1__ctor_mBC96EEB5A51E192293987873D380F187767E90A4_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* Singleton_1__ctor_mCC288914BBC861F65C973255812DAA11C6674740_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* Singleton_1__ctor_mCC4FC99F788D1FADF71A0DCD6855A46B5A62A8A0_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Singleton_1__ctor_mD101AA90F5940E45A29CA06A3647F906E240968E_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Singleton_1__ctor_mD3FB287B677FEC25B09BBF1987F31CE7109673BC_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Singleton_1__ctor_mDD18CCE5E7F73E13E48ED5FB9C5FDEAA2DE8A5B5_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Singleton_1__ctor_mDFD8DB316325B0B6E4ED3E4B5CAF22630DD3103D_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Singleton_1__ctor_mE05AFC61297B4720ABAD3D382B727144325B4701_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* Singleton_1__ctor_mE305A90402F37AC58EB65E6EB092CC59799CFB82_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* Singleton_1__ctor_mE9AE9E372686935ACB4C94756E2FD6889C712F1C_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* Singleton_1__ctor_mEA68C9EDD2A0B3C1D9B82B1B8D7BA0B0B1A26DDE_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Singleton_1_get_Instance_mF7D18EB655203CD614B899E0AA2A5497AC7518AA_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeType* RuntimeObject_0_0_0_var;
 struct Delegate_t_marshaled_com;
@@ -427,6 +492,11 @@ struct Singleton_1_tB7C8FC67FB32A04C873D128A9E66A6FAEE4CDE3C  : public RuntimeOb
 {
 };
 
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InCubicCurve>
+struct Singleton_1_tE7FE54B08D21EDD4C3CCC557D0B31D3977E4958B  : public RuntimeObject
+{
+};
+
 // AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InElasticCurve>
 struct Singleton_1_tF1FB26B9131EB9FFE6CA9D5E1D4D6CCE0985FCB8  : public RuntimeObject
 {
@@ -447,6 +517,11 @@ struct Singleton_1_tF1C864D9518E6315DABBE01530D21DA5C63EC90A  : public RuntimeOb
 {
 };
 
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InOutCubicCurve>
+struct Singleton_1_t4F3AD925EB8BED68E52787B6F9A15F4C4E82AEA9  : public RuntimeObject
+{
+};
+
 // AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InOutElasticCurve>
 struct Singleton_1_t8D9BCE476EECCE560FD6A3E83DCCFFB48ED1F460  : public RuntimeObject
 {
@@ -457,13 +532,48 @@ struct Singleton_1_t91FADB231E85FB873762E6E457E61CE55B1737E5  : public RuntimeOb
 {
 };
 
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InOutQuadCurve>
+struct Singleton_1_tF78DEA834F4F68447CBECCB3FBC3044B85D317FC  : public RuntimeObject
+{
+};
+
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InOutQuartCurve>
+struct Singleton_1_t63774B4BEE00DEBD588AAD34FBC783630806CB5B  : public RuntimeObject
+{
+};
+
 // AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InOutQuintCurve>
 struct Singleton_1_t3DC5CE2E36F22671E84280162253B9B0D1FC76A9  : public RuntimeObject
 {
 };
 
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InOutSineCurve>
+struct Singleton_1_t2EC1D7BEA3160CB3CCA984E19FB5DA952A9A9EAC  : public RuntimeObject
+{
+};
+
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InQuadCurve>
+struct Singleton_1_t72BF37C80D1F069000E0C8822603B4EA12805C55  : public RuntimeObject
+{
+};
+
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InQuartCurve>
+struct Singleton_1_tD7CBAB36650BFD3429ADB3AE922021523E96B164  : public RuntimeObject
+{
+};
+
 // AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InQuintCurve>
 struct Singleton_1_t3856131C476E66DB05821DB2BD9C63CDA3166C5E  : public RuntimeObject
+{
+};
+
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InSineCurve>
+struct Singleton_1_tD214A671787D68232687E7F82080921AF2187230  : public RuntimeObject
+{
+};
+
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.LinearCurve>
+struct Singleton_1_t16909EE098E79FABC8875F82958B748ED9035933  : public RuntimeObject
 {
 };
 
@@ -482,6 +592,11 @@ struct Singleton_1_t6E29AB1CC948E4BC169EC4B38657694795508D42  : public RuntimeOb
 {
 };
 
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.OutCubicCurve>
+struct Singleton_1_t0B6E52CA72C7A5C70C49FC2D5725860EE807E129  : public RuntimeObject
+{
+};
+
 // AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.OutElasticCurve>
 struct Singleton_1_t162D4C962B97F7075514CB6D64CA66C6B89FD090  : public RuntimeObject
 {
@@ -492,8 +607,23 @@ struct Singleton_1_tA6C7860A37426946D0CFEE7150E997E1BACEE24B  : public RuntimeOb
 {
 };
 
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.OutQuadCurve>
+struct Singleton_1_tAE2CCD0EEB13D8B21322E214A2310D8D11FA20C8  : public RuntimeObject
+{
+};
+
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.OutQuartCurve>
+struct Singleton_1_t3EE5B6056B45338C9059DC793801CB52C0020A71  : public RuntimeObject
+{
+};
+
 // AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.OutQuintCurve>
 struct Singleton_1_t24178E4B1FD83A094181881018D3FA4867829957  : public RuntimeObject
+{
+};
+
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.OutSineCurve>
+struct Singleton_1_t13BA27978C90BF8DA27F569DAB6DE38DF1A75549  : public RuntimeObject
 {
 };
 
@@ -716,6 +846,11 @@ struct InCircCurve_tE6D2318523FFBAD572C7CC9955D95E771EC4AC40  : public Singleton
 {
 };
 
+// AirFramework.Internal.EaseCurve.InCubicCurve
+struct InCubicCurve_t45ADFBC4ED6D13680994AE5E29402FD7559379BE  : public Singleton_1_tE7FE54B08D21EDD4C3CCC557D0B31D3977E4958B
+{
+};
+
 // AirFramework.Internal.EaseCurve.InElasticCurve
 struct InElasticCurve_tA4A31F06D89DAC0636E71D7BB39254EC0F8528FC  : public Singleton_1_tF1FB26B9131EB9FFE6CA9D5E1D4D6CCE0985FCB8
 {
@@ -741,6 +876,11 @@ struct InOutCircCurve_tDAD68E12CF40BEEC4B314F26C601803D0E33EE4A  : public Single
 {
 };
 
+// AirFramework.Internal.EaseCurve.InOutCubicCurve
+struct InOutCubicCurve_t4F14FDE0BCF91D89983FE676CB6E60BA9BD9BF73  : public Singleton_1_t4F3AD925EB8BED68E52787B6F9A15F4C4E82AEA9
+{
+};
+
 // AirFramework.Internal.EaseCurve.InOutElasticCurve
 struct InOutElasticCurve_t0E73A2342196D381DED3E6DEAD9DFCF31A8BE80E  : public Singleton_1_t8D9BCE476EECCE560FD6A3E83DCCFFB48ED1F460
 {
@@ -751,13 +891,43 @@ struct InOutExpoCurve_t4B888D8EF0B1B1120D0D00CAF8E4511BA1E054FE  : public Single
 {
 };
 
+// AirFramework.Internal.EaseCurve.InOutQuadCurve
+struct InOutQuadCurve_t4C51DE1F46BAA21C00E60DFFDA2797B1820CF6B1  : public Singleton_1_tF78DEA834F4F68447CBECCB3FBC3044B85D317FC
+{
+};
+
+// AirFramework.Internal.EaseCurve.InOutQuartCurve
+struct InOutQuartCurve_t63F6FA6735ADD97AE13E8F6351928418E60082EF  : public Singleton_1_t63774B4BEE00DEBD588AAD34FBC783630806CB5B
+{
+};
+
 // AirFramework.Internal.EaseCurve.InOutQuintCurve
 struct InOutQuintCurve_tBEEE5203310AB6B7A81BA80F27CADEB8A2D4BB1F  : public Singleton_1_t3DC5CE2E36F22671E84280162253B9B0D1FC76A9
 {
 };
 
+// AirFramework.Internal.EaseCurve.InOutSineCurve
+struct InOutSineCurve_tC8040E450EA9C60C0A8455EA50DDD4724E90FF52  : public Singleton_1_t2EC1D7BEA3160CB3CCA984E19FB5DA952A9A9EAC
+{
+};
+
+// AirFramework.Internal.EaseCurve.InQuadCurve
+struct InQuadCurve_t2201F334DE21C77A65E610D020160E9C477C878A  : public Singleton_1_t72BF37C80D1F069000E0C8822603B4EA12805C55
+{
+};
+
+// AirFramework.Internal.EaseCurve.InQuartCurve
+struct InQuartCurve_t2D17075CCAFC456FE1308330061328C086B118AA  : public Singleton_1_tD7CBAB36650BFD3429ADB3AE922021523E96B164
+{
+};
+
 // AirFramework.Internal.EaseCurve.InQuintCurve
 struct InQuintCurve_t4AB1155E85B30CA9F2FD91D97BCB9E277E912699  : public Singleton_1_t3856131C476E66DB05821DB2BD9C63CDA3166C5E
+{
+};
+
+// AirFramework.Internal.EaseCurve.InSineCurve
+struct InSineCurve_tE16AAE629EDD423524B94A732CE22B4D819F5301  : public Singleton_1_tD214A671787D68232687E7F82080921AF2187230
 {
 };
 
@@ -775,6 +945,11 @@ struct IntPtr_t
 	void* ___m_value_0;
 };
 
+// AirFramework.Internal.EaseCurve.LinearCurve
+struct LinearCurve_tEE48B6E861624E10AF6D7ECB629FD45CE0AE2B3E  : public Singleton_1_t16909EE098E79FABC8875F82958B748ED9035933
+{
+};
+
 // AirFramework.Internal.EaseCurve.OutBackCurve
 struct OutBackCurve_t04FC9562D9C579B3545D0304EE64B5B23B028F4C  : public Singleton_1_t56498A65308AFC5E3FA5034DF1469560B12BF6A1
 {
@@ -790,6 +965,11 @@ struct OutCircCurve_tF28B359299311F83F7DA6C1B159991BC6AAEB257  : public Singleto
 {
 };
 
+// AirFramework.Internal.EaseCurve.OutCubicCurve
+struct OutCubicCurve_t556432154D6B53436CE06A3E4FFD542161BA0443  : public Singleton_1_t0B6E52CA72C7A5C70C49FC2D5725860EE807E129
+{
+};
+
 // AirFramework.Internal.EaseCurve.OutElasticCurve
 struct OutElasticCurve_tE82071F61068871A94730BFAEE9050665D48C530  : public Singleton_1_t162D4C962B97F7075514CB6D64CA66C6B89FD090
 {
@@ -800,8 +980,23 @@ struct OutExpoCurve_t25489A24BAE39DD1D71812F1F5E902C70285B306  : public Singleto
 {
 };
 
+// AirFramework.Internal.EaseCurve.OutQuadCurve
+struct OutQuadCurve_tDD6E20EB3104D69F211FE9C85A6B7ABDA9DD4F60  : public Singleton_1_tAE2CCD0EEB13D8B21322E214A2310D8D11FA20C8
+{
+};
+
+// AirFramework.Internal.EaseCurve.OutQuartCurve
+struct OutQuartCurve_tF97C31D4EE2E0D21C4D956775D325104FD04A1A3  : public Singleton_1_t3EE5B6056B45338C9059DC793801CB52C0020A71
+{
+};
+
 // AirFramework.Internal.EaseCurve.OutQuintCurve
 struct OutQuintCurve_t9E31741A4294CA1A38CA140AC3E58BB22771E5D6  : public Singleton_1_t24178E4B1FD83A094181881018D3FA4867829957
+{
+};
+
+// AirFramework.Internal.EaseCurve.OutSineCurve
+struct OutSineCurve_t71ACC1701F39959C44F32758F6FFCE8ACCF30F89  : public Singleton_1_t13BA27978C90BF8DA27F569DAB6DE38DF1A75549
 {
 };
 
@@ -1151,6 +1346,10 @@ struct List_1_t4B77DB8D00EC6CC4705EB5F2FCC506472734EA72_StaticFields
 
 // AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InCircCurve>
 
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InCubicCurve>
+
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InCubicCurve>
+
 // AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InElasticCurve>
 
 // AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InElasticCurve>
@@ -1167,6 +1366,10 @@ struct List_1_t4B77DB8D00EC6CC4705EB5F2FCC506472734EA72_StaticFields
 
 // AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InOutCircCurve>
 
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InOutCubicCurve>
+
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InOutCubicCurve>
+
 // AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InOutElasticCurve>
 
 // AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InOutElasticCurve>
@@ -1175,13 +1378,41 @@ struct List_1_t4B77DB8D00EC6CC4705EB5F2FCC506472734EA72_StaticFields
 
 // AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InOutExpoCurve>
 
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InOutQuadCurve>
+
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InOutQuadCurve>
+
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InOutQuartCurve>
+
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InOutQuartCurve>
+
 // AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InOutQuintCurve>
 
 // AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InOutQuintCurve>
+
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InOutSineCurve>
+
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InOutSineCurve>
+
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InQuadCurve>
+
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InQuadCurve>
+
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InQuartCurve>
+
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InQuartCurve>
 
 // AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InQuintCurve>
 
 // AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InQuintCurve>
+
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InSineCurve>
+
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InSineCurve>
+
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.LinearCurve>
+
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.LinearCurve>
 
 // AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.OutBackCurve>
 
@@ -1195,6 +1426,10 @@ struct List_1_t4B77DB8D00EC6CC4705EB5F2FCC506472734EA72_StaticFields
 
 // AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.OutCircCurve>
 
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.OutCubicCurve>
+
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.OutCubicCurve>
+
 // AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.OutElasticCurve>
 
 // AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.OutElasticCurve>
@@ -1203,9 +1438,21 @@ struct List_1_t4B77DB8D00EC6CC4705EB5F2FCC506472734EA72_StaticFields
 
 // AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.OutExpoCurve>
 
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.OutQuadCurve>
+
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.OutQuadCurve>
+
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.OutQuartCurve>
+
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.OutQuartCurve>
+
 // AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.OutQuintCurve>
 
 // AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.OutQuintCurve>
+
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.OutSineCurve>
+
+// AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.OutSineCurve>
 
 // System.Reflection.Assembly
 
@@ -1308,6 +1555,10 @@ struct Char_t521A6F19B456D956AF452D926C32709DC03D6B17_StaticFields
 
 // AirFramework.Internal.EaseCurve.InCircCurve
 
+// AirFramework.Internal.EaseCurve.InCubicCurve
+
+// AirFramework.Internal.EaseCurve.InCubicCurve
+
 // AirFramework.Internal.EaseCurve.InElasticCurve
 
 // AirFramework.Internal.EaseCurve.InElasticCurve
@@ -1328,6 +1579,10 @@ struct Char_t521A6F19B456D956AF452D926C32709DC03D6B17_StaticFields
 
 // AirFramework.Internal.EaseCurve.InOutCircCurve
 
+// AirFramework.Internal.EaseCurve.InOutCubicCurve
+
+// AirFramework.Internal.EaseCurve.InOutCubicCurve
+
 // AirFramework.Internal.EaseCurve.InOutElasticCurve
 
 // AirFramework.Internal.EaseCurve.InOutElasticCurve
@@ -1336,17 +1591,45 @@ struct Char_t521A6F19B456D956AF452D926C32709DC03D6B17_StaticFields
 
 // AirFramework.Internal.EaseCurve.InOutExpoCurve
 
+// AirFramework.Internal.EaseCurve.InOutQuadCurve
+
+// AirFramework.Internal.EaseCurve.InOutQuadCurve
+
+// AirFramework.Internal.EaseCurve.InOutQuartCurve
+
+// AirFramework.Internal.EaseCurve.InOutQuartCurve
+
 // AirFramework.Internal.EaseCurve.InOutQuintCurve
 
 // AirFramework.Internal.EaseCurve.InOutQuintCurve
+
+// AirFramework.Internal.EaseCurve.InOutSineCurve
+
+// AirFramework.Internal.EaseCurve.InOutSineCurve
+
+// AirFramework.Internal.EaseCurve.InQuadCurve
+
+// AirFramework.Internal.EaseCurve.InQuadCurve
+
+// AirFramework.Internal.EaseCurve.InQuartCurve
+
+// AirFramework.Internal.EaseCurve.InQuartCurve
 
 // AirFramework.Internal.EaseCurve.InQuintCurve
 
 // AirFramework.Internal.EaseCurve.InQuintCurve
 
+// AirFramework.Internal.EaseCurve.InSineCurve
+
+// AirFramework.Internal.EaseCurve.InSineCurve
+
 // System.Int32
 
 // System.Int32
+
+// AirFramework.Internal.EaseCurve.LinearCurve
+
+// AirFramework.Internal.EaseCurve.LinearCurve
 
 // AirFramework.Internal.EaseCurve.OutBackCurve
 
@@ -1360,6 +1643,10 @@ struct Char_t521A6F19B456D956AF452D926C32709DC03D6B17_StaticFields
 
 // AirFramework.Internal.EaseCurve.OutCircCurve
 
+// AirFramework.Internal.EaseCurve.OutCubicCurve
+
+// AirFramework.Internal.EaseCurve.OutCubicCurve
+
 // AirFramework.Internal.EaseCurve.OutElasticCurve
 
 // AirFramework.Internal.EaseCurve.OutElasticCurve
@@ -1368,9 +1655,21 @@ struct Char_t521A6F19B456D956AF452D926C32709DC03D6B17_StaticFields
 
 // AirFramework.Internal.EaseCurve.OutExpoCurve
 
+// AirFramework.Internal.EaseCurve.OutQuadCurve
+
+// AirFramework.Internal.EaseCurve.OutQuadCurve
+
+// AirFramework.Internal.EaseCurve.OutQuartCurve
+
+// AirFramework.Internal.EaseCurve.OutQuartCurve
+
 // AirFramework.Internal.EaseCurve.OutQuintCurve
 
 // AirFramework.Internal.EaseCurve.OutQuintCurve
+
+// AirFramework.Internal.EaseCurve.OutSineCurve
+
+// AirFramework.Internal.EaseCurve.OutSineCurve
 
 // System.Reflection.PropertyInfo
 
@@ -1770,6 +2069,71 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922F
 // TResult System.Func`3<System.Object,System.Object,System.Boolean>::Invoke(T1,T2)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Func_3_Invoke_mC786FD8356E25F147BEF4CF07A587720613A2C12_gshared_inline (Func_3_tFCEB9D8CEAECBF6D0AD5440F96C6F9010270CE79* __this, RuntimeObject* ___0_arg1, RuntimeObject* ___1_arg2, const RuntimeMethod* method) ;
 
+// System.Void AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.LinearCurve>::.ctor()
+inline void Singleton_1__ctor_mCC288914BBC861F65C973255812DAA11C6674740 (Singleton_1_t16909EE098E79FABC8875F82958B748ED9035933* __this, const RuntimeMethod* method)
+{
+	((  void (*) (Singleton_1_t16909EE098E79FABC8875F82958B748ED9035933*, const RuntimeMethod*))Singleton_1__ctor_m93FD2DBA74AD5CEE0B74F189216E082468770C7B_gshared)(__this, method);
+}
+// System.Void AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InSineCurve>::.ctor()
+inline void Singleton_1__ctor_mBC96EEB5A51E192293987873D380F187767E90A4 (Singleton_1_tD214A671787D68232687E7F82080921AF2187230* __this, const RuntimeMethod* method)
+{
+	((  void (*) (Singleton_1_tD214A671787D68232687E7F82080921AF2187230*, const RuntimeMethod*))Singleton_1__ctor_m93FD2DBA74AD5CEE0B74F189216E082468770C7B_gshared)(__this, method);
+}
+// System.Void AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.OutSineCurve>::.ctor()
+inline void Singleton_1__ctor_m022E98AFCCB5CF2D74A87C5DF1DA75FC61856C0B (Singleton_1_t13BA27978C90BF8DA27F569DAB6DE38DF1A75549* __this, const RuntimeMethod* method)
+{
+	((  void (*) (Singleton_1_t13BA27978C90BF8DA27F569DAB6DE38DF1A75549*, const RuntimeMethod*))Singleton_1__ctor_m93FD2DBA74AD5CEE0B74F189216E082468770C7B_gshared)(__this, method);
+}
+// System.Void AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InOutSineCurve>::.ctor()
+inline void Singleton_1__ctor_m3DD52D220C534474C038CC46C3C296114610AECF (Singleton_1_t2EC1D7BEA3160CB3CCA984E19FB5DA952A9A9EAC* __this, const RuntimeMethod* method)
+{
+	((  void (*) (Singleton_1_t2EC1D7BEA3160CB3CCA984E19FB5DA952A9A9EAC*, const RuntimeMethod*))Singleton_1__ctor_m93FD2DBA74AD5CEE0B74F189216E082468770C7B_gshared)(__this, method);
+}
+// System.Void AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InQuadCurve>::.ctor()
+inline void Singleton_1__ctor_mEA68C9EDD2A0B3C1D9B82B1B8D7BA0B0B1A26DDE (Singleton_1_t72BF37C80D1F069000E0C8822603B4EA12805C55* __this, const RuntimeMethod* method)
+{
+	((  void (*) (Singleton_1_t72BF37C80D1F069000E0C8822603B4EA12805C55*, const RuntimeMethod*))Singleton_1__ctor_m93FD2DBA74AD5CEE0B74F189216E082468770C7B_gshared)(__this, method);
+}
+// System.Void AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.OutQuadCurve>::.ctor()
+inline void Singleton_1__ctor_mE9AE9E372686935ACB4C94756E2FD6889C712F1C (Singleton_1_tAE2CCD0EEB13D8B21322E214A2310D8D11FA20C8* __this, const RuntimeMethod* method)
+{
+	((  void (*) (Singleton_1_tAE2CCD0EEB13D8B21322E214A2310D8D11FA20C8*, const RuntimeMethod*))Singleton_1__ctor_m93FD2DBA74AD5CEE0B74F189216E082468770C7B_gshared)(__this, method);
+}
+// System.Void AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InOutQuadCurve>::.ctor()
+inline void Singleton_1__ctor_m4A81BD33DE97AA13AD4DFA60A66630E02C0415F8 (Singleton_1_tF78DEA834F4F68447CBECCB3FBC3044B85D317FC* __this, const RuntimeMethod* method)
+{
+	((  void (*) (Singleton_1_tF78DEA834F4F68447CBECCB3FBC3044B85D317FC*, const RuntimeMethod*))Singleton_1__ctor_m93FD2DBA74AD5CEE0B74F189216E082468770C7B_gshared)(__this, method);
+}
+// System.Void AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InCubicCurve>::.ctor()
+inline void Singleton_1__ctor_mCC4FC99F788D1FADF71A0DCD6855A46B5A62A8A0 (Singleton_1_tE7FE54B08D21EDD4C3CCC557D0B31D3977E4958B* __this, const RuntimeMethod* method)
+{
+	((  void (*) (Singleton_1_tE7FE54B08D21EDD4C3CCC557D0B31D3977E4958B*, const RuntimeMethod*))Singleton_1__ctor_m93FD2DBA74AD5CEE0B74F189216E082468770C7B_gshared)(__this, method);
+}
+// System.Void AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.OutCubicCurve>::.ctor()
+inline void Singleton_1__ctor_m2516E2D6930D44471080BF4C7F30CBEFDCD6622E (Singleton_1_t0B6E52CA72C7A5C70C49FC2D5725860EE807E129* __this, const RuntimeMethod* method)
+{
+	((  void (*) (Singleton_1_t0B6E52CA72C7A5C70C49FC2D5725860EE807E129*, const RuntimeMethod*))Singleton_1__ctor_m93FD2DBA74AD5CEE0B74F189216E082468770C7B_gshared)(__this, method);
+}
+// System.Void AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InOutCubicCurve>::.ctor()
+inline void Singleton_1__ctor_mE305A90402F37AC58EB65E6EB092CC59799CFB82 (Singleton_1_t4F3AD925EB8BED68E52787B6F9A15F4C4E82AEA9* __this, const RuntimeMethod* method)
+{
+	((  void (*) (Singleton_1_t4F3AD925EB8BED68E52787B6F9A15F4C4E82AEA9*, const RuntimeMethod*))Singleton_1__ctor_m93FD2DBA74AD5CEE0B74F189216E082468770C7B_gshared)(__this, method);
+}
+// System.Void AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InQuartCurve>::.ctor()
+inline void Singleton_1__ctor_m8FD1EC87C045D216A0837B8DE4F4FAC0981B9B78 (Singleton_1_tD7CBAB36650BFD3429ADB3AE922021523E96B164* __this, const RuntimeMethod* method)
+{
+	((  void (*) (Singleton_1_tD7CBAB36650BFD3429ADB3AE922021523E96B164*, const RuntimeMethod*))Singleton_1__ctor_m93FD2DBA74AD5CEE0B74F189216E082468770C7B_gshared)(__this, method);
+}
+// System.Void AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.OutQuartCurve>::.ctor()
+inline void Singleton_1__ctor_mAE3A16B18374EA30A6B96ABEB551BAF2DAC3DF47 (Singleton_1_t3EE5B6056B45338C9059DC793801CB52C0020A71* __this, const RuntimeMethod* method)
+{
+	((  void (*) (Singleton_1_t3EE5B6056B45338C9059DC793801CB52C0020A71*, const RuntimeMethod*))Singleton_1__ctor_m93FD2DBA74AD5CEE0B74F189216E082468770C7B_gshared)(__this, method);
+}
+// System.Void AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InOutQuartCurve>::.ctor()
+inline void Singleton_1__ctor_m159CF9ED490CDBFA9D306BE7F8171FC20F601ABA (Singleton_1_t63774B4BEE00DEBD588AAD34FBC783630806CB5B* __this, const RuntimeMethod* method)
+{
+	((  void (*) (Singleton_1_t63774B4BEE00DEBD588AAD34FBC783630806CB5B*, const RuntimeMethod*))Singleton_1__ctor_m93FD2DBA74AD5CEE0B74F189216E082468770C7B_gshared)(__this, method);
+}
 // System.Void AirFramework.Singleton`1<AirFramework.Internal.EaseCurve.InQuintCurve>::.ctor()
 inline void Singleton_1__ctor_m4BDB32BB5299E0F6D86B578582B4A94E66D22F07 (Singleton_1_t3856131C476E66DB05821DB2BD9C63CDA3166C5E* __this, const RuntimeMethod* method)
 {
@@ -2117,6 +2481,507 @@ inline bool Enumerator_MoveNext_m9360A25E040507C2A33C02E92ACE8AD5ABA3E0FB (Enume
 {
 	return ((  bool (*) (Enumerator_t2E011DE5D9C8DB2A137AE9CD1D7516D52F2A95AA*, const RuntimeMethod*))Enumerator_MoveNext_mE921CC8F29FBBDE7CC3209A0ED0D921D58D00BCB_gshared)(__this, method);
 }
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Single AirFramework.Internal.EaseCurve.LinearCurve::Evaluate(System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float LinearCurve_Evaluate_m1934FFA7F4F00FB52C812054685CEBB312A692C3 (LinearCurve_tEE48B6E861624E10AF6D7ECB629FD45CE0AE2B3E* __this, float ___0_x, const RuntimeMethod* method) 
+{
+	{
+		// return x;
+		float L_0 = ___0_x;
+		return L_0;
+	}
+}
+// System.Void AirFramework.Internal.EaseCurve.LinearCurve::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LinearCurve__ctor_mFEC6F49A495831EB7EAF0E19A92001A156C8AA10 (LinearCurve_tEE48B6E861624E10AF6D7ECB629FD45CE0AE2B3E* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Singleton_1__ctor_mCC288914BBC861F65C973255812DAA11C6674740_RuntimeMethod_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		Singleton_1__ctor_mCC288914BBC861F65C973255812DAA11C6674740(__this, Singleton_1__ctor_mCC288914BBC861F65C973255812DAA11C6674740_RuntimeMethod_var);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Single AirFramework.Internal.EaseCurve.InSineCurve::Evaluate(System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float InSineCurve_Evaluate_mE5DF622AF0FE532351DFCBA53B2184AC931D3D01 (InSineCurve_tE16AAE629EDD423524B94A732CE22B4D819F5301* __this, float ___0_x, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Math_tEB65DE7CA8B083C412C969C92981C030865486CE_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		// return -(float)Math.Cos((double)(x * 1.5707964f)) + 1f;
+		float L_0 = ___0_x;
+		il2cpp_codegen_runtime_class_init_inline(Math_tEB65DE7CA8B083C412C969C92981C030865486CE_il2cpp_TypeInfo_var);
+		double L_1;
+		L_1 = cos(((double)((float)il2cpp_codegen_multiply(L_0, (1.57079637f)))));
+		return ((float)il2cpp_codegen_add(((-((float)L_1))), (1.0f)));
+	}
+}
+// System.Void AirFramework.Internal.EaseCurve.InSineCurve::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InSineCurve__ctor_mFEC1FCB606F695944260FA02CEE98DD1996B9D02 (InSineCurve_tE16AAE629EDD423524B94A732CE22B4D819F5301* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Singleton_1__ctor_mBC96EEB5A51E192293987873D380F187767E90A4_RuntimeMethod_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		Singleton_1__ctor_mBC96EEB5A51E192293987873D380F187767E90A4(__this, Singleton_1__ctor_mBC96EEB5A51E192293987873D380F187767E90A4_RuntimeMethod_var);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Single AirFramework.Internal.EaseCurve.OutSineCurve::Evaluate(System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float OutSineCurve_Evaluate_m8BBF6429324F9DCE680BA47FD77C5E8ED41D14EE (OutSineCurve_t71ACC1701F39959C44F32758F6FFCE8ACCF30F89* __this, float ___0_x, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Math_tEB65DE7CA8B083C412C969C92981C030865486CE_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		// return (float)Math.Sin((double)(x * 1.5707964f));
+		float L_0 = ___0_x;
+		il2cpp_codegen_runtime_class_init_inline(Math_tEB65DE7CA8B083C412C969C92981C030865486CE_il2cpp_TypeInfo_var);
+		double L_1;
+		L_1 = sin(((double)((float)il2cpp_codegen_multiply(L_0, (1.57079637f)))));
+		return ((float)L_1);
+	}
+}
+// System.Void AirFramework.Internal.EaseCurve.OutSineCurve::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OutSineCurve__ctor_m47328E0BF286BFE1C2B42DD8AB641FBE45DE6F44 (OutSineCurve_t71ACC1701F39959C44F32758F6FFCE8ACCF30F89* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Singleton_1__ctor_m022E98AFCCB5CF2D74A87C5DF1DA75FC61856C0B_RuntimeMethod_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		Singleton_1__ctor_m022E98AFCCB5CF2D74A87C5DF1DA75FC61856C0B(__this, Singleton_1__ctor_m022E98AFCCB5CF2D74A87C5DF1DA75FC61856C0B_RuntimeMethod_var);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Single AirFramework.Internal.EaseCurve.InOutSineCurve::Evaluate(System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float InOutSineCurve_Evaluate_m69F724205AE638C8C7D15877E4D99CC6D359057E (InOutSineCurve_tC8040E450EA9C60C0A8455EA50DDD4724E90FF52* __this, float ___0_x, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Math_tEB65DE7CA8B083C412C969C92981C030865486CE_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		// return -0.5f * ((float)Math.Cos((double)(Math.PI * x)) - 1f);
+		float L_0 = ___0_x;
+		il2cpp_codegen_runtime_class_init_inline(Math_tEB65DE7CA8B083C412C969C92981C030865486CE_il2cpp_TypeInfo_var);
+		double L_1;
+		L_1 = cos(((double)((double)il2cpp_codegen_multiply((3.1415926535897931), ((double)L_0)))));
+		return ((float)il2cpp_codegen_multiply((-0.5f), ((float)il2cpp_codegen_subtract(((float)L_1), (1.0f)))));
+	}
+}
+// System.Void AirFramework.Internal.EaseCurve.InOutSineCurve::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InOutSineCurve__ctor_m3B2F4E9D2FB95BD07160CE1FA388E1DB28F9C320 (InOutSineCurve_tC8040E450EA9C60C0A8455EA50DDD4724E90FF52* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Singleton_1__ctor_m3DD52D220C534474C038CC46C3C296114610AECF_RuntimeMethod_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		Singleton_1__ctor_m3DD52D220C534474C038CC46C3C296114610AECF(__this, Singleton_1__ctor_m3DD52D220C534474C038CC46C3C296114610AECF_RuntimeMethod_var);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Single AirFramework.Internal.EaseCurve.InQuadCurve::Evaluate(System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float InQuadCurve_Evaluate_m45D270EC0F4E1791A53AC88855528539E8C6BCE1 (InQuadCurve_t2201F334DE21C77A65E610D020160E9C477C878A* __this, float ___0_x, const RuntimeMethod* method) 
+{
+	{
+		// return x * x;
+		float L_0 = ___0_x;
+		float L_1 = ___0_x;
+		return ((float)il2cpp_codegen_multiply(L_0, L_1));
+	}
+}
+// System.Void AirFramework.Internal.EaseCurve.InQuadCurve::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InQuadCurve__ctor_mAA44827E2192E95EDF43F73565D09CD31A63B9D5 (InQuadCurve_t2201F334DE21C77A65E610D020160E9C477C878A* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Singleton_1__ctor_mEA68C9EDD2A0B3C1D9B82B1B8D7BA0B0B1A26DDE_RuntimeMethod_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		Singleton_1__ctor_mEA68C9EDD2A0B3C1D9B82B1B8D7BA0B0B1A26DDE(__this, Singleton_1__ctor_mEA68C9EDD2A0B3C1D9B82B1B8D7BA0B0B1A26DDE_RuntimeMethod_var);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Single AirFramework.Internal.EaseCurve.OutQuadCurve::Evaluate(System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float OutQuadCurve_Evaluate_m1405CC79A12C9714D0627F8691357ABAD5613AC9 (OutQuadCurve_tDD6E20EB3104D69F211FE9C85A6B7ABDA9DD4F60* __this, float ___0_x, const RuntimeMethod* method) 
+{
+	{
+		// return 1f - (1f - x) * (1f - x);
+		float L_0 = ___0_x;
+		float L_1 = ___0_x;
+		return ((float)il2cpp_codegen_subtract((1.0f), ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_subtract((1.0f), L_0)), ((float)il2cpp_codegen_subtract((1.0f), L_1))))));
+	}
+}
+// System.Void AirFramework.Internal.EaseCurve.OutQuadCurve::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OutQuadCurve__ctor_m2581C8D87CD39D3C4076054BF796086ECA196976 (OutQuadCurve_tDD6E20EB3104D69F211FE9C85A6B7ABDA9DD4F60* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Singleton_1__ctor_mE9AE9E372686935ACB4C94756E2FD6889C712F1C_RuntimeMethod_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		Singleton_1__ctor_mE9AE9E372686935ACB4C94756E2FD6889C712F1C(__this, Singleton_1__ctor_mE9AE9E372686935ACB4C94756E2FD6889C712F1C_RuntimeMethod_var);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Single AirFramework.Internal.EaseCurve.InOutQuadCurve::Evaluate(System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float InOutQuadCurve_Evaluate_m6D37B1158618AA977A4D2ED5E1E59EC8B108E346 (InOutQuadCurve_t4C51DE1F46BAA21C00E60DFFDA2797B1820CF6B1* __this, float ___0_x, const RuntimeMethod* method) 
+{
+	{
+		// return x < 0.5f ? 2f * x * x : 1f - 2f * (1f - x) * (1f - x);
+		float L_0 = ___0_x;
+		if ((((float)L_0) < ((float)(0.5f))))
+		{
+			goto IL_0024;
+		}
+	}
+	{
+		float L_1 = ___0_x;
+		float L_2 = ___0_x;
+		return ((float)il2cpp_codegen_subtract((1.0f), ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply((2.0f), ((float)il2cpp_codegen_subtract((1.0f), L_1)))), ((float)il2cpp_codegen_subtract((1.0f), L_2))))));
+	}
+
+IL_0024:
+	{
+		float L_3 = ___0_x;
+		float L_4 = ___0_x;
+		return ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply((2.0f), L_3)), L_4));
+	}
+}
+// System.Void AirFramework.Internal.EaseCurve.InOutQuadCurve::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InOutQuadCurve__ctor_m43099B4674BAE0FD0AC0FB619F9EDE1794D81BF1 (InOutQuadCurve_t4C51DE1F46BAA21C00E60DFFDA2797B1820CF6B1* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Singleton_1__ctor_m4A81BD33DE97AA13AD4DFA60A66630E02C0415F8_RuntimeMethod_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		Singleton_1__ctor_m4A81BD33DE97AA13AD4DFA60A66630E02C0415F8(__this, Singleton_1__ctor_m4A81BD33DE97AA13AD4DFA60A66630E02C0415F8_RuntimeMethod_var);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Single AirFramework.Internal.EaseCurve.InCubicCurve::Evaluate(System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float InCubicCurve_Evaluate_m43DDD8E584A65DF9016BAC2AEAC0FB29470A4016 (InCubicCurve_t45ADFBC4ED6D13680994AE5E29402FD7559379BE* __this, float ___0_x, const RuntimeMethod* method) 
+{
+	{
+		// return x * x * x;
+		float L_0 = ___0_x;
+		float L_1 = ___0_x;
+		float L_2 = ___0_x;
+		return ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(L_0, L_1)), L_2));
+	}
+}
+// System.Void AirFramework.Internal.EaseCurve.InCubicCurve::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InCubicCurve__ctor_mAD01A221BBCED01F8742CFF782296B5A18F856AD (InCubicCurve_t45ADFBC4ED6D13680994AE5E29402FD7559379BE* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Singleton_1__ctor_mCC4FC99F788D1FADF71A0DCD6855A46B5A62A8A0_RuntimeMethod_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		Singleton_1__ctor_mCC4FC99F788D1FADF71A0DCD6855A46B5A62A8A0(__this, Singleton_1__ctor_mCC4FC99F788D1FADF71A0DCD6855A46B5A62A8A0_RuntimeMethod_var);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Single AirFramework.Internal.EaseCurve.OutCubicCurve::Evaluate(System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float OutCubicCurve_Evaluate_m807575231A687B0DF6A631C531CFD863B35E3712 (OutCubicCurve_t556432154D6B53436CE06A3E4FFD542161BA0443* __this, float ___0_x, const RuntimeMethod* method) 
+{
+	float V_0 = 0.0f;
+	{
+		// var t = x - 1f;
+		float L_0 = ___0_x;
+		V_0 = ((float)il2cpp_codegen_subtract(L_0, (1.0f)));
+		// return t * t * t + 1f;
+		float L_1 = V_0;
+		float L_2 = V_0;
+		float L_3 = V_0;
+		return ((float)il2cpp_codegen_add(((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(L_1, L_2)), L_3)), (1.0f)));
+	}
+}
+// System.Void AirFramework.Internal.EaseCurve.OutCubicCurve::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OutCubicCurve__ctor_m82BC4E5C5ADA9A5DE877FDC5BC7A7D758DC7D248 (OutCubicCurve_t556432154D6B53436CE06A3E4FFD542161BA0443* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Singleton_1__ctor_m2516E2D6930D44471080BF4C7F30CBEFDCD6622E_RuntimeMethod_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		Singleton_1__ctor_m2516E2D6930D44471080BF4C7F30CBEFDCD6622E(__this, Singleton_1__ctor_m2516E2D6930D44471080BF4C7F30CBEFDCD6622E_RuntimeMethod_var);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Single AirFramework.Internal.EaseCurve.InOutCubicCurve::Evaluate(System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float InOutCubicCurve_Evaluate_m8627C0A13CD3CE484968913386AAFD5F8E91985E (InOutCubicCurve_t4F14FDE0BCF91D89983FE676CB6E60BA9BD9BF73* __this, float ___0_x, const RuntimeMethod* method) 
+{
+	{
+		// return x < 0.5f ? 4f * x * x * x : 1f + 4f * (x - 1f) * (x - 1f) * (x - 1f);
+		float L_0 = ___0_x;
+		if ((((float)L_0) < ((float)(0.5f))))
+		{
+			goto IL_002c;
+		}
+	}
+	{
+		float L_1 = ___0_x;
+		float L_2 = ___0_x;
+		float L_3 = ___0_x;
+		return ((float)il2cpp_codegen_add((1.0f), ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply((4.0f), ((float)il2cpp_codegen_subtract(L_1, (1.0f))))), ((float)il2cpp_codegen_subtract(L_2, (1.0f))))), ((float)il2cpp_codegen_subtract(L_3, (1.0f)))))));
+	}
+
+IL_002c:
+	{
+		float L_4 = ___0_x;
+		float L_5 = ___0_x;
+		float L_6 = ___0_x;
+		return ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply((4.0f), L_4)), L_5)), L_6));
+	}
+}
+// System.Void AirFramework.Internal.EaseCurve.InOutCubicCurve::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InOutCubicCurve__ctor_m45E7BFD3645B86AFD59B371FF5F77929CC65CD6D (InOutCubicCurve_t4F14FDE0BCF91D89983FE676CB6E60BA9BD9BF73* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Singleton_1__ctor_mE305A90402F37AC58EB65E6EB092CC59799CFB82_RuntimeMethod_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		Singleton_1__ctor_mE305A90402F37AC58EB65E6EB092CC59799CFB82(__this, Singleton_1__ctor_mE305A90402F37AC58EB65E6EB092CC59799CFB82_RuntimeMethod_var);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Single AirFramework.Internal.EaseCurve.InQuartCurve::Evaluate(System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float InQuartCurve_Evaluate_mB431F9B89D7AC8201AA3CB4243CA2C85CAE45389 (InQuartCurve_t2D17075CCAFC456FE1308330061328C086B118AA* __this, float ___0_x, const RuntimeMethod* method) 
+{
+	{
+		// return x * x * x * x;
+		float L_0 = ___0_x;
+		float L_1 = ___0_x;
+		float L_2 = ___0_x;
+		float L_3 = ___0_x;
+		return ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(L_0, L_1)), L_2)), L_3));
+	}
+}
+// System.Void AirFramework.Internal.EaseCurve.InQuartCurve::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InQuartCurve__ctor_m9FE6DBB4BD6E4D5B90D1DE4B8DADE45C01346457 (InQuartCurve_t2D17075CCAFC456FE1308330061328C086B118AA* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Singleton_1__ctor_m8FD1EC87C045D216A0837B8DE4F4FAC0981B9B78_RuntimeMethod_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		Singleton_1__ctor_m8FD1EC87C045D216A0837B8DE4F4FAC0981B9B78(__this, Singleton_1__ctor_m8FD1EC87C045D216A0837B8DE4F4FAC0981B9B78_RuntimeMethod_var);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Single AirFramework.Internal.EaseCurve.OutQuartCurve::Evaluate(System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float OutQuartCurve_Evaluate_m12B72FBB3BFD13A2CE600D01E5F557B4A1852190 (OutQuartCurve_tF97C31D4EE2E0D21C4D956775D325104FD04A1A3* __this, float ___0_x, const RuntimeMethod* method) 
+{
+	float V_0 = 0.0f;
+	{
+		// var t = x - 1f;
+		float L_0 = ___0_x;
+		V_0 = ((float)il2cpp_codegen_subtract(L_0, (1.0f)));
+		// return 1f - t * t * t * t;
+		float L_1 = V_0;
+		float L_2 = V_0;
+		float L_3 = V_0;
+		float L_4 = V_0;
+		return ((float)il2cpp_codegen_subtract((1.0f), ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(L_1, L_2)), L_3)), L_4))));
+	}
+}
+// System.Void AirFramework.Internal.EaseCurve.OutQuartCurve::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OutQuartCurve__ctor_m464A7EF646DBD9508D80CD3FC3D308B66F9EABF2 (OutQuartCurve_tF97C31D4EE2E0D21C4D956775D325104FD04A1A3* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Singleton_1__ctor_mAE3A16B18374EA30A6B96ABEB551BAF2DAC3DF47_RuntimeMethod_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		Singleton_1__ctor_mAE3A16B18374EA30A6B96ABEB551BAF2DAC3DF47(__this, Singleton_1__ctor_mAE3A16B18374EA30A6B96ABEB551BAF2DAC3DF47_RuntimeMethod_var);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Single AirFramework.Internal.EaseCurve.InOutQuartCurve::Evaluate(System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float InOutQuartCurve_Evaluate_m2D948C06C5D6CA73C00F0C90FB9C42EC98E72ED9 (InOutQuartCurve_t63F6FA6735ADD97AE13E8F6351928418E60082EF* __this, float ___0_x, const RuntimeMethod* method) 
+{
+	{
+		// return x < 0.5f ? 8f * x * x * x * x : 1f - 8f * (x - 1f) * (x - 1f) * (x - 1f) * (x - 1f);
+		float L_0 = ___0_x;
+		if ((((float)L_0) < ((float)(0.5f))))
+		{
+			goto IL_0034;
+		}
+	}
+	{
+		float L_1 = ___0_x;
+		float L_2 = ___0_x;
+		float L_3 = ___0_x;
+		float L_4 = ___0_x;
+		return ((float)il2cpp_codegen_subtract((1.0f), ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply((8.0f), ((float)il2cpp_codegen_subtract(L_1, (1.0f))))), ((float)il2cpp_codegen_subtract(L_2, (1.0f))))), ((float)il2cpp_codegen_subtract(L_3, (1.0f))))), ((float)il2cpp_codegen_subtract(L_4, (1.0f)))))));
+	}
+
+IL_0034:
+	{
+		float L_5 = ___0_x;
+		float L_6 = ___0_x;
+		float L_7 = ___0_x;
+		float L_8 = ___0_x;
+		return ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply((8.0f), L_5)), L_6)), L_7)), L_8));
+	}
+}
+// System.Void AirFramework.Internal.EaseCurve.InOutQuartCurve::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InOutQuartCurve__ctor_m4E4FC428E5D48287989C1B7D741DA20A541EBC1B (InOutQuartCurve_t63F6FA6735ADD97AE13E8F6351928418E60082EF* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Singleton_1__ctor_m159CF9ED490CDBFA9D306BE7F8171FC20F601ABA_RuntimeMethod_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		Singleton_1__ctor_m159CF9ED490CDBFA9D306BE7F8171FC20F601ABA(__this, Singleton_1__ctor_m159CF9ED490CDBFA9D306BE7F8171FC20F601ABA_RuntimeMethod_var);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"

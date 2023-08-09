@@ -4,21 +4,6 @@
     "X:\\Projects\\Framework\\ConfigTool\\ConfigTool.csproj": {}
   },
   "projects": {
-    "X:\\Projects\\Framework\\AirFramework.Unity\\AirFramework.csproj": {
-      "restore": {
-        "projectUniqueName": "X:\\Projects\\Framework\\AirFramework.Unity\\AirFramework.csproj",
-        "projectName": "AirFramework",
-        "projectPath": "X:\\Projects\\Framework\\AirFramework.Unity\\AirFramework.csproj",
-        "frameworks": {
-          "net471": {
-            "projectReferences": {}
-          }
-        }
-      },
-      "frameworks": {
-        "net471": {}
-      }
-    },
     "X:\\Projects\\Framework\\ConfigTool\\ConfigTool.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -47,11 +32,7 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {
-              "X:\\Projects\\Framework\\AirFramework.Unity\\AirFramework.csproj": {
-                "projectPath": "X:\\Projects\\Framework\\AirFramework.Unity\\AirFramework.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {

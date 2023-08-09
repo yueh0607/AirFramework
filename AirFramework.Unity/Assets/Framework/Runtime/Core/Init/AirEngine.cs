@@ -27,7 +27,7 @@ namespace AirFramework.Internal
             //异步任务
             Framework.CreateModule<TaskModule>();
             //部署全局程序反射初始化步骤
-            AirEngine.AOTReflectionInitialize(new List<Assembly>() { Assembly.GetExecutingAssembly()});
+            AirEngine.AOTReflectionInitialize(new List<Assembly>() { Assembly.GetExecutingAssembly() });
 
 
         }

@@ -3,7 +3,8 @@
     "rootNamespace": "AirFramework",
     "references": [
         "GUID:e34a5702dd353724aa315fb8011f08c3",
-        "GUID:13ba8ce62aa80c74598530029cb2d649"
+        "GUID:13ba8ce62aa80c74598530029cb2d649",
+        "GUID:756335c0388f7114790e504ed368ae1d"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
