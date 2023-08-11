@@ -1,4 +1,6 @@
-﻿namespace AirFramework
+﻿using System.IO;
+
+namespace AirFramework
 {
 
     /* +---------------+---------------+-----------+------------+---------+
@@ -34,11 +36,10 @@
     Data：实际的数据部分，长度由Length字段指定。*/
 
     [MemoryPack.MemoryPackable]
-    public partial struct DataPack
+    public partial class DataPack
     {
         public uint Conv { get; set; } // Conversation ID
 
-        [MemoryPack.MemoryPackIgnore]
         public byte CmdFrg { get; set; } // Command and Fragment
         public ushort Wnd { get; set; } // Window Size
         public uint Ts { get; set; } // Timestamp
@@ -48,7 +49,14 @@
         public uint Length { get; set; } // Data Length
         public byte[] Data { get; set; } // Actual Data
 
+
+        [MemoryPack.MemoryPackIgnore]
         public byte Cmd => (byte)(CmdFrg & 0xF); // Extract Command
+
+        [MemoryPack.MemoryPackIgnore]
         public byte Frg => (byte)((CmdFrg >> 4) & 0x3); // Extract Fragment
+
+
+
     }
 }

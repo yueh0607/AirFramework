@@ -15,7 +15,7 @@ namespace AirFramework
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="item"></param>
-        public static void RecycleSelf(this IMessageReceiver item)
+        public static void RecycleSelf(this object item)
         {
             Framework.Pool.Recycle(item);
         }
