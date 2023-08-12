@@ -18,4 +18,8 @@
 # 开源许可
 - [Apache 2.0 LICENSE](https://github.com/yueh0607/AirFramework/blob/main/LICENSE)
 
-
+# 外源项目
+- [tuyoogame/YooAsset - 强大的资源管理方案](https://github.com/tuyoogame/YooAsset)
+- [Cysharp/MemoryPack - 强大的序列化方案](https://github.com/Cysharp/MemoryPack)
+- [focus-creative-games/HybridCLR - 高效的无感热更方案](https://github.com/focus-creative-games/hybridclr)
+- [KumoKyaku/KCP - 高效的KCP协议](https://github.com/KumoKyaku/KCP)
