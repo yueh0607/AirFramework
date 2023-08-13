@@ -37,29 +37,6 @@ public class Test : IFrameworkInitialize, ITestAsyncEvent
 {
     void IFrameworkInitialize.OnFrameworkInitialize()
     {
-        DataPack pack = new DataPack();
-
-        Log(pack);
-
-        pack.Sn = 33;
-        Log(pack);
-        pack.Conv = 1;
-        Log(pack);
-
-        pack.Data = new byte[100];
-        Log(pack);
-    }
-
-    void Log(DataPack pack)
-    {
-        {
-            byte[] bytes = MemoryPackSerializer.Serialize(pack);
-            Debug.Log(bytes.Length);
-            StringBuilder builder = new StringBuilder();
-            foreach (byte b in bytes)
-                builder.Append(b);
-            Debug.Log($"{bytes.Length}位:{builder.ToString()}");
-        }
     }
 
     async AirTask Dooo()
