@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 namespace AirFramework
 {
-    public class ArrayHolder<T> :Unit, IRecycle
+    public class ArrayHolder<T> : Unit, IRecycle
     {
 
         private T[] array = null;
@@ -13,7 +10,7 @@ namespace AirFramework
         /// <summary>
         /// 持有器持有的真实数组
         /// </summary>
-        public T[] Value=>array;
+        public T[] Value => array;
 
         private int length = 0;
         public int Length => length;
@@ -26,14 +23,14 @@ namespace AirFramework
             if (array == null)
             {
                 array = new T[size];
-           
+
             }
             //放大
             else if (array.Length < size)
             {
                 T[] tempData = array;
                 array = new T[size];
-                Array.ConstrainedCopy(tempData,0,array,0,size);
+                Array.ConstrainedCopy(tempData, 0, array, 0, size);
             }
 
             length = size;
@@ -45,7 +42,7 @@ namespace AirFramework
             get
             {
                 if (!initialized) throw new InvalidOperationException("You need to set the size for the array first");
-                if (index<0||index>=length) throw new IndexOutOfRangeException();
+                if (index < 0 || index >= length) throw new IndexOutOfRangeException();
                 return array[index];
             }
         }

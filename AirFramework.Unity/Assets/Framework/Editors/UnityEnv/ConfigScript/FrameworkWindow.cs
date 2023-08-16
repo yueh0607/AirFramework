@@ -21,6 +21,8 @@ namespace AirEditor
         private void OnEnable()
         {
             logo = AssetDatabase.LoadAssetAtPath<Texture>("Assets/Framework/Editors/UnityEnv/Icons/logo.png");
+            
+            
             runtimeConfigData = RuntimeConfigData.Read();
         }
 

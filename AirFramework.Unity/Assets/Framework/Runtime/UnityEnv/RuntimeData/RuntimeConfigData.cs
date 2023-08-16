@@ -27,7 +27,9 @@ namespace AirFramework
 
         public static RuntimeConfigData Read()
         {
-            var reader = new StreamReader(Path.Combine(Application.streamingAssetsPath, "RuntimeMode.INI"), true);
+            string path = Path.Combine(Application.streamingAssetsPath, "RuntimeMode.INI");
+            if (!File.Exists(path)) Write(new RuntimeConfigData());
+            var reader = new StreamReader(path, true);
             string str = reader.ReadToEnd();
             reader.Close();
             RuntimeConfigData config = JsonUtility.FromJson<RuntimeConfigData>(str);

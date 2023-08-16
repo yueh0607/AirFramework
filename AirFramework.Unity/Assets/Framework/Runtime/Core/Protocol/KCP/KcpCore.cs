@@ -2,7 +2,6 @@
 using System.Buffers.Binary;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using static System.Math;
 using BufferOwner = System.Buffers.IMemoryOwner<byte>;
@@ -1122,7 +1121,7 @@ namespace System.Net.Sockets.Kcp
         }
 
         protected virtual void OnDeadlink()
-        { 
+        {
 
         }
 
@@ -1583,7 +1582,7 @@ namespace System.Net.Sockets.Kcp
 
             #region append to previous segment in streaming mode (if possible)
             /// 基于线程安全和数据结构的等原因,移除了追加数据到最后一个包行为。
-            
+
             /// C语言版本snd_queue使用双向链表，可以修改最后一个包。
             /// C#当前snd_queue使用ConcurrentQueue，无法修改最后一个包。所以无法实现流模式。
             #endregion

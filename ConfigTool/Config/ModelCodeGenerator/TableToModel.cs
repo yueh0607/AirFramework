@@ -10,7 +10,7 @@ public static class TableToModel
 
 
     //Marks : ITEMNAME,CODE,PRIMARYKEYNAME,PRIMARYKEYTYPE,MODELNAME,GENERATEDATA
-    public static string model =
+    private static string model =
 $@"using System;
 using System.Collections;
 using System.Collections.Generic;

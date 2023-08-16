@@ -6,7 +6,6 @@ namespace AirFramework
     {
         public static AirTask GetAwaiter(this OperationHandleBase handle)
         {
-
             return AirTask.WaitUntil(() =>
             {
                 //Debug.Log("运行中");

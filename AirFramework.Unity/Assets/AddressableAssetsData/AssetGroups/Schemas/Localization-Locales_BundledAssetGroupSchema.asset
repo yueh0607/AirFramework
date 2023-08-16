@@ -1,0 +1,160 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5d17a21594effb4e9591490b009e7aa, type: 3}
+  m_Name: Localization-Locales_BundledAssetGroupSchema
+  m_EditorClassIdentifier: 
+  m_Group: {fileID: 11400000, guid: 6ecba39aa17c16042994357ee504b936, type: 2}
+  m_InternalBundleIdMode: 1
+  m_Compression: 1
+  m_IncludeAddressInCatalog: 1
+  m_IncludeGUIDInCatalog: 1
+  m_IncludeLabelsInCatalog: 1
+  m_InternalIdNamingMode: 0
+  m_CacheClearBehavior: 0
+  m_IncludeInBuild: 1
+  m_BundledAssetProviderType:
+    m_AssemblyName: Unity.ResourceManager, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_ClassName: UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider
+    <ValueChanged>k__BackingField: 0
+  m_ForceUniqueProvider: 0
+  m_UseAssetBundleCache: 1
+  m_UseAssetBundleCrc: 1
+  m_UseAssetBundleCrcForCachedBundles: 1
+  m_UseUWRForLocalBundles: 0
+  m_Timeout: 0
+  m_ChunkedTransfer: 0
+  m_RedirectLimit: -1
+  m_RetryCount: 0
+  m_BuildPath:
+    m_Id: 070371ccca0094a4c85c7c3837d7a73f
+  m_LoadPath:
+    m_Id: cc524009ee6ca8c46a69d37f920a7228
+  m_BundleMode: 0
+  m_AssetBundleProviderType:
+    m_AssemblyName: Unity.ResourceManager, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_ClassName: UnityEngine.ResourceManagement.ResourceProviders.AssetBundleProvider
+    <ValueChanged>k__BackingField: 0
+  m_UseCustomPaths: 0
+  m_BundleNaming: 1
+  m_AssetLoadMode: 0
+  m_ShowPaths: 1
+  m_CompressionContent:
+    m_Text: Asset Bundle Compression
+    m_Image: {fileID: 0}
+    m_Tooltip: Compression method to use for asset bundles.
+  m_IncludeInBuildContent:
+    m_Text: Include in Build
+    m_Image: {fileID: 0}
+    m_Tooltip: If disabled, these bundles will not be included in the build.
+  m_ForceUniqueProviderContent:
+    m_Text: Force Unique Provider
+    m_Image: {fileID: 0}
+    m_Tooltip: If enabled, this option forces bundles loaded from this group to use
+      a unique provider.
+  m_UseAssetBundleCacheContent:
+    m_Text: Use Asset Bundle Cache
+    m_Image: {fileID: 0}
+    m_Tooltip: If enabled and supported, the device will cache  asset bundles.
+  m_AssetBundleCrcContent:
+    m_Text: Asset Bundle CRC
+    m_Image: {fileID: 0}
+    m_Tooltip: Defines which Asset Bundles will have their CRC checked when loading
+      to ensure correct content.
+  m_CrcPopupContent:
+  - m_Text: Disabled
+    m_Image: {fileID: 0}
+    m_Tooltip: Bundles will not have their CRC checked when loading.
+  - m_Text: Enabled, Including Cached
+    m_Image: {fileID: 0}
+    m_Tooltip: All Bundles will have their CRC checked when loading.
+  - m_Text: Enabled, Excluding Cached
+    m_Image: {fileID: 0}
+    m_Tooltip: Bundles that have already been downloaded and cached will not have
+      their CRC check when loading, otherwise CRC check will be performed.
+  m_UseUWRForLocalBundlesContent:
+    m_Text: Use UnityWebRequest for Local Asset Bundles
+    m_Image: {fileID: 0}
+    m_Tooltip: If enabled, local asset bundles will load through UnityWebRequest.
+  m_TimeoutContent:
+    m_Text: Request Timeout
+    m_Image: {fileID: 0}
+    m_Tooltip: The timeout with no download activity (in seconds) for the Http request.
+  m_ChunkedTransferContent:
+    m_Text: Use Http Chunked Transfer
+    m_Image: {fileID: 0}
+    m_Tooltip: If enabled, the Http request will use chunked transfers.
+  m_RedirectLimitContent:
+    m_Text: Http Redirect Limit
+    m_Image: {fileID: 0}
+    m_Tooltip: The redirect limit for the Http request.
+  m_RetryCountContent:
+    m_Text: Retry Count
+    m_Image: {fileID: 0}
+    m_Tooltip: The number of times to retry the http request.
+  m_IncludeAddressInCatalogContent:
+    m_Text: Include Addresses in Catalog
+    m_Image: {fileID: 0}
+    m_Tooltip: If disabled, addresses from this group will not be included in the
+      catalog.  This is useful for reducing the size of the catalog if addresses
+      are not needed.
+  m_IncludeGUIDInCatalogContent:
+    m_Text: Include GUIDs in Catalog
+    m_Image: {fileID: 0}
+    m_Tooltip: If disabled, guids from this group will not be included in the catalog. 
+      This is useful for reducing the size of the catalog if guids are not needed.
+  m_IncludeLabelsInCatalogContent:
+    m_Text: Include Labels in Catalog
+    m_Image: {fileID: 0}
+    m_Tooltip: If disabled, labels from this group will not be included in the catalog. 
+      This is useful for reducing the size of the catalog if labels are not needed.
+  m_InternalIdNamingModeContent:
+    m_Text: Internal Asset Naming Mode
+    m_Image: {fileID: 0}
+    m_Tooltip: Mode for naming assets internally in bundles.  This can reduce the
+      size of the catalog by replacing long paths with shorter strings.
+  m_InternalBundleIdModeContent:
+    m_Text: Internal Bundle Id Mode
+    m_Image: {fileID: 0}
+    m_Tooltip: Specifies how the internal id of the bundle is generated.  This must
+      be set to GroupGuid or GroupGuidProjectIdHash to ensure proper caching on device.
+  m_CacheClearBehaviorContent:
+    m_Text: Cache Clear Behavior
+    m_Image: {fileID: 0}
+    m_Tooltip: Controls how old cached asset bundles are cleared.
+  m_BundleModeContent:
+    m_Text: Bundle Mode
+    m_Image: {fileID: 0}
+    m_Tooltip: Controls how bundles are created from this group.
+  m_BundleNamingContent:
+    m_Text: Bundle Naming Mode
+    m_Image: {fileID: 0}
+    m_Tooltip: Controls the final file naming mode for bundles in this group.
+  m_AssetLoadModeContent:
+    m_Text: Asset Load Mode
+    m_Image: {fileID: 0}
+    m_Tooltip: 'Determines how Assets are loaded when accessed.
+
+      - Requested
+      Asset And Dependencies, will only load the requested Asset (Recommended).
+
+      -
+      All Packed Assets And Dependencies, will load all Assets that are packed together.
+      Best used when loading all Assets into memory is required.'
+  m_AssetProviderContent:
+    m_Text: Asset Provider
+    m_Image: {fileID: 0}
+    m_Tooltip: The provider to use for loading assets out of AssetBundles
+  m_BundleProviderContent:
+    m_Text: Asset Bundle Provider
+    m_Image: {fileID: 0}
+    m_Tooltip: The provider to use for loading AssetBundles (not the assets within
+      bundles)

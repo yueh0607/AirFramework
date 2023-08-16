@@ -1,5 +1,4 @@
-﻿using System.Buffers;
-using System.Buffers.Binary;
+﻿using System.Buffers.Binary;
 using System.Runtime.InteropServices;
 
 namespace System.Net.Sockets.Kcp

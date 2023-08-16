@@ -1,9 +1,5 @@
 ﻿using AirFramework;
 using MemoryPack;
-using System;
-using System.Collections.Generic;
-using System.Numerics;
-using System.Text;
 using UnityEngine;
 
 [MemoryPackable]
@@ -37,6 +33,7 @@ public class Test : IFrameworkInitialize, ITestAsyncEvent
 {
     void IFrameworkInitialize.OnFrameworkInitialize()
     {
+        Dooo();
     }
 
     async AirTask Dooo()

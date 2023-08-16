@@ -1,7 +1,6 @@
-﻿using System.Threading.Tasks;
-using System.Threading;
+﻿using System.Buffers;
+using System.Threading.Tasks;
 using BufferOwner = System.Buffers.IMemoryOwner<byte>;
-using System.Buffers;
 
 namespace System.Net.Sockets.Kcp
 {

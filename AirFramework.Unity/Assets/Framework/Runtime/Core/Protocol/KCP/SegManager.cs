@@ -1,7 +1,7 @@
-﻿using System.Runtime.InteropServices;
-using System.Collections.Generic;
+﻿using System.Buffers.Binary;
 using System.Collections.Concurrent;
-using System.Buffers.Binary;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
 
 namespace System.Net.Sockets.Kcp
 {

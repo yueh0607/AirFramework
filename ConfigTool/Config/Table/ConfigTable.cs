@@ -1,7 +1,13 @@
 ﻿public class ConfigTable<T> : ITable<T>
 {
-
+    /// <summary>
+    /// 行数
+    /// </summary>
     public int RowCount { get; private set; } = 0;
+
+    /// <summary>
+    /// 列数
+    /// </summary>
     public int ColumnCount { get; private set; } = 0;
 
 #pragma warning disable CS8625 // 无法将 null 字面量转换为非 null 的引用类型。
@@ -22,6 +28,13 @@
     }
 
 
+    /// <summary>
+    /// 设置大小并拷贝
+    /// </summary>
+    /// <param name="newRowCount"></param>
+    /// <param name="newColumnCount"></param>
+    /// <param name="copy"></param>
+    /// <exception cref="InvalidOperationException"></exception>
     public void SetSizeAndCopy(int newRowCount, int newColumnCount, bool copy = true)
     {
         if (RowCount < 0 || ColumnCount < 0) throw new InvalidOperationException($"Invalid New Size:[{newRowCount},{newColumnCount}]");

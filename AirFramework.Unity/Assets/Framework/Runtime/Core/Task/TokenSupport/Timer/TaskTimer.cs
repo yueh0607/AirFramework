@@ -41,7 +41,7 @@
         {
             if (!Enable) return;
             Current += deltaTime;
-            UnityEngine.Debug.Log("CurrentTime :{Current}");
+            //UnityEngine.Debug.Log("CurrentTime :{Current}");
             if (Current >= Max)
             {
                 //UnityEngine.Debug.Log($"尝试完成任务:{BindTask.ID}");
