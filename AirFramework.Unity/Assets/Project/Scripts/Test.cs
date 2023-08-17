@@ -4,7 +4,8 @@ using UnityEngine;
 
 
 public interface ITestAsyncEvent : ICallEvent<AirTask>
-{ }
+{
+}
 
 
 public class T2 : IAllocate,IRecycle
