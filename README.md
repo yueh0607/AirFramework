@@ -13,7 +13,7 @@
 - **有限状态机**(天然轻量级状态机)
 - **Tween补间动画**(双向可调整的播放速度,多种循环方式，Ease曲线30+种，异步拓展，手动曲线配置)
 - **热更新**(基于HybridCLR无感热更新方案的接入，有极高的效率，适配了部分便于使用的工具和规范，对接YooAsset)
-- **配表工具**(读取Excel生成常量Model代码，支持双端生成，完美适配MVE结构)
+- **配表工具**(读取Excel生成常量Model代码，支持表格查错，float，Vector2，Vector3，Type，Array等的表格配置)
 - **序列化**(基于MemoryPack的SourceGenerator在编译时生成序列化，效率极高)
 # 开源许可
 - [Apache 2.0 LICENSE](https://github.com/yueh0607/AirFramework/blob/main/LICENSE)
