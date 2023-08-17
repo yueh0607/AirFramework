@@ -23,3 +23,4 @@
 - [Cysharp/MemoryPack - 强大的序列化方案](https://github.com/Cysharp/MemoryPack)
 - [focus-creative-games/HybridCLR - 高效的无感热更方案](https://github.com/focus-creative-games/hybridclr)
 - [KumoKyaku/KCP - 高效的KCP协议](https://github.com/KumoKyaku/KCP)
+  [JanKallman/EPPlus - Excel读写工具](https://github.com/JanKallman/EPPlus)
