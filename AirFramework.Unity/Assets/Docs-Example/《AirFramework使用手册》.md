@@ -1,24 +1,12 @@
 # 《AirFramework使用手册》
 
-## 一、简介
-
-Air意为空气，天空，传递一种轻量，自由，随心所欲的气息。正如它的名字，就连名字也是随便起的...(开玩笑)
-
-使用要义！！！ 记住全在这里面   Framework.XXXX.XXXX
-
-
-
-
-
-
-
-## 二、使用指南(文档水平有限QAQ)
+## 使用指南
 
 -----------------------------------------------------------------------Core----------------------------------------------------------------------------------
 
-### 0.Unit结构
+### 0.Unit基类
 
-```c#
+```csharp
 Unit带有一个Disposed值，设置为可以set和可以get的，但是不推荐手动set，这样会导致DisposeRepeatException
     
 Unit也有一个ID值，这个值全局的Unit都不同，死亡的Unit会重新利用ID，但是保证在100个ID内不会利用死亡的ID
@@ -36,13 +24,91 @@ Unit作为框架内大部分类型的基类，有着重要的作用，它的Equa
 
 
 
+### 1.生命周期 与 规范
+
+```csharp
+直接继承接口,你可以通过调用StartLife和CloseLife直接控制生命周期的应用与否，但是这两个方法有一定的GC
+可以使用SetActive来替代，这个方法会保留生命周期的缓存
+
+public class MyClass: IUpdate
+{
+	void IUpdate.Update()
+	{
+		//Update Call
+	}
+}
+
+
+```
+
+### 2.事件系统 与 生命周期定义
+
+```csharp
+AirFramework的事件系统很具有特色： ；参数类型安全，调用安全
+
+实现此安全性的基础是System.Runtime.ComplierServices.Unsafe.As + CoVariant 进行泛型匹配
+注意所在平台与Unsafe和泛型协变的兼容性
+    
+定义事件
+    //事件定义
+    public interface ITestEvent:ISendEvent<int>{}
+
+//委托方法
+void TestMethod(int x){}
+//注册
+this.Operator<ITestEvent>().Subscribe(TestMethod);
+//发布
+this.Operator<ITestEvent>().Publish(TestMethod,10);
+//取消注册
+this.Operator<ITestEvent>().UnSubscribe(TestMethod);
+
+同理，你可以定义CallEvent,我们默认最后一个参数即为返回值
+    public interface ITestEvent2 : ICallEvent<int>{}
+
+//委托方法
+int TestMethod(){}
+//注册
+this.Operator<ITestEvent>().Subscribe(TestMethod);
+//发布
+int x = this.Operator<ITestEvent>().Call(TestMethod);
+//取消注册
+this.Operator<ITestEvent>().UnSubscribe(TestMethod);
+
+
+而定义一个生命周期,需要在合适的时机去派发，如此例中，在FixedUpdate中使用
+    Framework.Message.Dispatcher<IFixedUpdate>().Publish()进行全局发布
+    
+namespace AirFramework
+{
+    public interface IFixedUpdate : ISendEvent<float>, IMessageReceiver
+    {
+        void FixedUpdate(float fixedTime);
+    }
+    public class FixedUpdateHandler : LifeCycleHandler<IFixedUpdate>
+    {
+        public override void OnLifeCycleRegister(IFixedUpdate item)
+        {
+            item.Operator<IFixedUpdate>().Subscribe(item.FixedUpdate);
+        }
+
+        public override void OnLifeCycleUnRegister(IFixedUpdate item)
+        {
+            item.Operator<IFixedUpdate>().UnSubscribe(item.FixedUpdate);
+        }
+    }
+}
+    
+```
+
+
+
 ### 1.对象池
 
 托管池的使用：
 
 ```c#
 //1.基本使用方式
-
+//PoolableObject为一个封装类型，封装了Dispose自动回收，以及IAllocate和IRecycle
 public class MyPoolObj : PoolableObject
 {
     public override void OnAllocate()
@@ -59,18 +125,13 @@ public class MyPoolObj : PoolableObject
 //从池申请一个对象
 MyPoolObj item = Framework.Pool.Allocate<MyPoolObj>();
 
-//接下来是三种回收方式，执行其一
-//1.这一种会把item回收到当前类型对应的管理器池里，注意不能进行类型转换
-Framework.Pool.Recycle(item);
-//2.这一种会把item回收到当前绑定的池里
+
+//把item回收到当前绑定的池里
 item.RecycleSelf();
-//3.这一种会把item回收到它根本类型的池里，无论是否发生类型转换
-Framework.Pool.RecycleOrigin(item);
 
 
-//接下来是什么样的类型能被管理器管理： 实现了IPoolable都可以,这是继承关系
-//唯一不同的就是PoolableObject和PoolableObject会在Dispose时自动回收到Pool
-//PoolableValueObject<T> : PoolableObject : IPoolable
+
+
 
 //PoolableObject特有的的小彩蛋，using后自动释放掉，因为这个类的Dispose调用了RecycleSelf
 //注意这是特有的
@@ -82,41 +143,12 @@ Framework.Pool.RecycleOrigin(item);
 item.Dispose()
     
     
-//如果有需要继承别的，不能继承PoolableObject，你可以直接实现IPoolable接口
-public class MyClass :IPoolable
-{
-    //仅用作内部数据交换，如果不是真的理解原因，不要随意使用这些属性的set访问器
-    public IObjectPool ThisPool { get ; set ; }
-    public bool Disposed { get; set; }
-    
-    public void OnAllocate(){}
-    public void OnRecycle(){}
-}
+//你也可以单独实现IAllocate和IRecycle，注意了，这样的Dispose是无效的，你可以自己在OnDispose里调用RecycleSelf满足范式
 
-    
-//2.池管理器
-//这两个字段可以直接被设置
-//计时器触发默认间隔
- Framework.Pool.DefaultRecycleCycleTime = 60_000F;
-//回收闲置比例： 比如闲置了10个，回收不超过5个
- Framework.Pool.DefaultRecycleRatio = 0.5F;
 
-//获取托管池，如果无则新建，如果你需要对单个池修改计时逻辑，则可以强转为IManagedPool进行调整
- public IGenericPool<T> GetPool<T>() where T : class, IPoolable
- //这将释放整个托管池，也会对池进行Dispose，清空并销毁全部对象
- public void ReleasePool<T>() where T : class, IPoolable
- //返回T类型的对象
- public T Allocate<T>() where T : class, IPoolable
- //回收对象到T类型池，注意，类型转换后不能正确回收
- public void Recycle<T>(T item) where T : class, IPoolable
- //回收对象到GetType得到的类型对应的池子，也就是说哪怕转换为父类，也能正确回收
- //对象.RecycleSelf不是通过这两个方法实现的，而是通过绑定池实现的，IPoolable.ThisPool.RecycleObj(obj);
- public void RecycleOrigin(object item)
- //遍历池
- public void ForeachPools(Action<IManagedPool> action)
 ```
 
-非托管池使用：
+非托管池使用（可能已经调整了）：
 
 ```c#
 
@@ -142,117 +174,11 @@ public UIDPool CreateGUIDPool(int repeatCount = 100)
 
 常用封装类型：你可以直接从托管池管理器申请这些类型，使用方式类似于Obj.Value.Add()
 
-你不需要担心UnitList的扩容问题，如果使用频率低，GC值完全可以忽略，如果较高，这时管理器内的都是高容量的UnitList，大概率不会再次进行扩容。
+你不需要担心UnitList的扩容问题，如果使用频率低，扩容带来的损耗完全可以忽略，如果较高，这时管理器内的都是高容量的UnitList，大概率不会再次进行扩容。
 
 ![image-20230509163158847](https://raw.githubusercontent.com/yueh0607/MyPicueres/main/202305091632780.png)
 
 
-
-### 2.消息系统
-
-这个消息系统最大的一个好处就是参数不会错，这一过程使用了UnsafeUtility.As进行转换，不支持这个API的平台无法使用本框架。在NET CORE中，可以使用Unsafe.As替代。加上协变功能，我们实现了对参数类型的约束。
-
-```c#
-//定义一个消息类型，后面的泛型就是参数类型
-public interface ICustomEvent : IGenericMessage<int,string>{}
-
-//定义被注册的消息方法
-void MyEvent(int x,string y)
-{
-    Debug.Log($"MyEventInvoke: x:{x} , y:{y}");
-}
-
-//注册一个事件
-Framework.Message.Operator<CustomEvent>().Subscribe(MyEvent);
-//取消一个事件，注意不用必须取消(C#的委托机制问题，闭包持有强引用导致无法GC回收对象，产生内存泄漏，其他基于委托的消息系统或多或少都有这个问题，而且几乎无法被解决)
-Framework.Message.Operator<ICustomEvent>().UnSubscribe(MyEvent);
-//发送消息,此时会执行上面的方法，输出"MyEventInvoke: x:10 , y:haha
-Framework.Message.Operator<ICustomEvent>().Publish(10,"haha");
-
-//使用这个可以跨文件，跨对象，跨类
-
-//注意注意注意
-//最神奇的是他能自己约束你的参数类型，也就是说，Publish，Subscribe传入错误的参数是会给出提示的
-Framework.Messsage.Operator<ICustomEvent>().Publish(10,20);
-//这样直接报错！！！！！！！！！！！快乐+++，再也不会写错参数类型了
-//不然出现一个错误参数类型，可能就让人查一个小时bug
-
-
-
-
-//继承了IMessageReceiver
-class MyReceiver : IMessageReceiver
-{
-    
-}
-MyRecevier rec = new();
-//这样的话，调用上面的方法仅在这个对象范围内有效，比如在rec上注册的，只能在rec取消，对rec发布，同参数才能正确响应事件
-Framework.Message.Operator<ICustomEvent>(rec).XXXX;
-//如果不填，默认则为消息管理器，近似实现了全局的消息，实际上这是管理器消息
-
-
-//真正的全局消息,这样使用则会调用全局每个对象上注册的消息，无论指定的Operator是谁
-Framewwork.Message.Dispatcher<ICustomEvent>().Publish(10,"haha");
-//没有全局的注册哦，请用注册为管理器消息替代
-
-//Response-Call模式
-//上面的调用是不支持返回值的，而采用call则可以支持返回值
-
-//定义一个消息类型，后面的泛型就是参数类型,最后一个泛型参数是返回值类型
-public interface ICustomEvent : IGenericMessage<int,string,int>{}
-
-//定义被注册的消息方法
-int MyEvent(int x,string y)
-{
-    Debug.Log($"MyEventInvoke: x:{x} , y:{y}");
-    return 10000;
-}
-
-//注册方式与之前相同
-Framework.Message.Operator<CustomEvent>().Subscribe(MyEvent);
-Framework.Message.Operator<ICustomEvent>().UnSubscribe(MyEvent);
-//而发布方式不同了
-var x = Framework.Message.Operator<ICustomEvent>().Call(10,"haha");
-//还有TryCall，如果无事件时，会返回默认值，如果call的消息本身有问题，还是会throw Ex的
-//同样的方式，你还可以对Dispatcher进行Call，返回UnitList，是按顺序排列的结果。
-//我们支持在Call的过程中进行注册和取消注册，但是请注意不要取消注册到容器为空，否则您手动获取的容器将会失效！！
-
-
-
-//进阶技巧：：
-
-var Message = Framework.Message;
-Message.xxx.xxx
-    
-
-GenericOperator<MessageType,T1,T2...>() 
-    //当传入消息类型为泛型参数时，您可以这样使用，代替Operator，但是不建议这么使用。
-    
-    
-    
-    
-//消息系统也负责生命周期,Update,LateUpdate,FixedUpdate等
-class MyObj:IUpdate    //自动是IMessageReceiver
-{
-    //第一种实现方式
-    void IUpdate.Update()
-    {
-        
-    }
-    //第二种实现方式
-    public void Update()
-    {
-        
-    }
-}
-
-//这两个方法是对对象生命的开启和关闭。
-obj.StartLife();
-obj.CloseLife();
-//如果是从池里拿的，这两个会在拿和回收时自动调用。
-
-
-```
 
 ### 3.Async
 
@@ -260,51 +186,13 @@ obj.CloseLife();
 
 这个任务是单线程的，默认开启了池，一个AsyncTask在await之后禁止使用，否则将引发灾难后果！！！
 
-```c#
-public async AsyncTask DownloadResources()
-{
-    //等待五秒
-    await Async.Delay(5);
-    
-    Debug.Log("5秒过去了");
-    
-    //等待一秒
-    await Async.Delay(1);
-    
-    //等5帧
-    await Async.WaitForFrame(5);
-    
-    
-}
+AirFramework的异步任务能自动适配大量协程，如YieldConstrcution(WaitforSceonds)，但是因为有些外源的IEnumeraotr实现并不规范，所以仍需要手动适配
 
-public async AsyncTask GetXXX()
-{
-    if(XXX)
-    {
-       await Async.Delay(10);
-    }
-    else
-    {
-        //瞬间完成的任务
-        await Async.Complete();
-    }
-    //每个async必须有一个await也可以拿这个占位置，不然报Warnning
-    await Async.Complete();
-}
+且AirTask最大的优势是：令牌非传染式自动传递
+
+无需CancelationToken
 
 
-
-//异步令牌
-AsyncTask task = GetXXX();
-
-task.WithToken(out var token);
-//暂停
-token.Yield();
-//取消
-token.Cancel();
-//继续
-token.Continue();
-```
 
 ### 4.FSM(有限状态机)
 

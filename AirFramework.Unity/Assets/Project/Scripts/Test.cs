@@ -29,9 +29,8 @@ public class Test : IFrameworkInitialize, ITestAsyncEvent
     void IFrameworkInitialize.OnFrameworkInitialize()
     {
         Debug.Log("Test");
-        var t2 = Framework.AnyGet<T2>();
-
-        t2.RecycleSelf();
+        var model = Framework.GetModule<ModelModule>().GetModel<TestModel>();
+        Framework.GetModule<ModelModule>().SaveAll();
     }
 
     

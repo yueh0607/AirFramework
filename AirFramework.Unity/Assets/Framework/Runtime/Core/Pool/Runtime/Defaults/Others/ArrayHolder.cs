@@ -17,7 +17,7 @@ namespace AirFramework
 
         bool initialized = false;
 
-        public void SetSize(int size)
+        public void SetSize(int size,bool recyle=false)
         {
             //创建
             if (array == null)
@@ -29,6 +29,10 @@ namespace AirFramework
             else if (array.Length < size)
             {
                 T[] tempData = array;
+                if(recyle)
+                {
+                    Framework.Pool.Recycle(Marshal(tempData));
+                }
                 array = new T[size];
                 Array.ConstrainedCopy(tempData, 0, array, 0, size);
             }
@@ -51,11 +55,22 @@ namespace AirFramework
         {
             Array.Clear(array, 0, length);
             length = array.Length;
+            initialized = false;
         }
 
         protected override void OnDispose()
         {
             this.RecycleSelf();
+        }
+
+
+        public static ArrayHolder<T> Marshal(T[] array)
+        {
+            var holder = new ArrayHolder<T>();
+            holder.array = array;
+            holder.length = array.Length;
+            holder.initialized = true;
+            return holder;
         }
     }
 }
