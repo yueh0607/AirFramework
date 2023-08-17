@@ -15,12 +15,17 @@ namespace AirFramework
     /// <typeparam name="T"></typeparam>
     public class LifeCyclePool<T> : TimeManagedPool<T> where T : class
     {
+        protected override void OnItemDestroy(T item)
+        {
+            Framework.Message.LifeCycle.AnalyseRemoveAll(item);
+            base.OnItemDestroy(item);
+        }
         protected override T OnItemCreate()
         {
             var item = base.OnItemCreate();
 
             //Debug .Log($"生成事件：{item.GetType().FullName}");
-            //Framework.Message.LifeCycle.AnalyseAddAll(item);
+            Framework.Message.LifeCycle.AnalyseAddAll(item);
 
             return item;
         }
@@ -31,8 +36,8 @@ namespace AirFramework
             //注册生命周期
             if (item is IMessageReceiver receiver)
             {
-                //receiver.SetActive(true);
-                Framework.Message.LifeCycle.AnalyseAddAll(item);
+                receiver.SetActive(true);
+                //Framework.Message.LifeCycle.AnalyseAddAll(item);
                 if (item is IAllocate)
                     receiver.Operator<IAllocate>().Publish();
 
@@ -49,9 +54,9 @@ namespace AirFramework
             {
                 if (item is IAllocate)
                     receiver.Operator<IRecycle>().Publish();
-                //receiver.SetActive(false);
+                receiver.SetActive(false);
 
-                Framework.Message.LifeCycle.AnalyseRemoveAll(item);
+                //Framework.Message.LifeCycle.AnalyseRemoveAll(item);
             }
         }
 
