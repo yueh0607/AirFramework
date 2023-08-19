@@ -4,4 +4,9 @@
     {
         //仅标记M层
     }
+
+    public interface IConstModel:IModel
+    {
+
+    }
 }

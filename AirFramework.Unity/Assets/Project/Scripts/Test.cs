@@ -30,7 +30,7 @@ public class Test : IFrameworkInitialize, ITestAsyncEvent
     {
         Debug.Log("Test");
         var model = Framework.GetModule<ModelModule>().GetModel<TestModel>();
-        Framework.GetModule<ModelModule>().SaveAll();
+        Framework.GetModule<ModelModule>().SaveAllAsync();
     }
 
     
