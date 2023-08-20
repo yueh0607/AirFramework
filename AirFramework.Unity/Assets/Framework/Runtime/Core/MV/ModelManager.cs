@@ -41,11 +41,12 @@ namespace AirFramework
         public async AirTask<object> DeSerialize(Type type, byte[] bytes, int length = -1)
         {
             object cache;
-            using (var stream = Framework.Pool.Allocate<MemoryHolder>())
+            using (MemoryStream stream  = new MemoryStream(bytes))
             {
-                stream.Value.Read(bytes, 0, length == -1 ? bytes.Length : length);
-                cache = await MemoryPack.MemoryPackSerializer.DeserializeAsync(type, stream.Value);
-                stream.Value.Position = 0;
+        
+                //stream.Value.Write(bytes, 0, length == -1 ? bytes.Length : length);
+                cache = await MemoryPack.MemoryPackSerializer.DeserializeAsync(type, stream);
+     
             }
             return cache;
         }
@@ -56,6 +57,7 @@ namespace AirFramework
         /// <returns></returns>
         public async AirTask<object> DeSerialize(TypeCouple couple)
         {
+            if(couple == null) throw new ArgumentNullException(nameof(couple)+" is null");
             return await DeSerialize(couple.TrueType, couple.TrueData);
         }
 
@@ -74,19 +76,35 @@ namespace AirFramework
         /// <returns></returns>
         public async AirTask WriteToFile(string relativePath, byte[] fileContent)
         {
+
             string path = GetPersistentPath(relativePath);
-            using (FileStream fs = File.OpenWrite(path))
+            Directory.CreateDirectory(Path.GetDirectoryName(path));
+            using (FileStream fs = File.Create(path))
             {
                 await fs.WriteAsync(fileContent, 0, fileContent.Length).AsAirTask();
             }
         }
+        /// <summary>
+        /// 从存档目录读取文件
+        /// </summary>
+        /// <param name="relativePath"></param>
+        /// <returns></returns>
+        public async AirTask<byte[]> ReadFromFile(string relativePath)
+        {
+            string path = GetPersistentPath(relativePath);
+            using (FileStream fs = File.OpenRead(path))
+            {
+                byte[] array = new byte[fs.Length];
+                await fs.ReadAsync(array).AsTask().AsAirTask();
+                return array;
+            }
+        }
 
 
-
-
-        //生成TypeCouple
+        //生成全部Model的TypeCouple
         private async AirTask GenereteMedium()
         {
+            foreach (var couple in couples) Framework.Pool.Recycle(couple);
             couples.Clear();
             foreach (var kp in models)
             {
@@ -95,18 +113,46 @@ namespace AirFramework
             }
             await AirTask.CompletedTask;
         }
+
+        private async AirTask ReadMedium()
+        {
+            foreach (var cp in couples)
+            {
+                IModel model =(IModel)await DeSerialize(cp);
+                if (model == null) continue;
+                if(!models.ContainsKey(cp.TrueType)) models.Add(cp.TrueType, model);
+                else
+                {
+                    models[cp.TrueType] = model;
+                }
+            }
+        }
         //序列化数据
         private async AirTask<byte[]> SerializeData()
         {
             byte[] result;
             using (var stream = Framework.Pool.Allocate<MemoryHolder>())
             {
-                await MemoryPack.MemoryPackSerializer.SerializeAsync(TypeValue<List<TypeCouple>>.Value, stream.Value, couples).AsTask().AsAirTask();
+                await MemoryPack.MemoryPackSerializer.
+                    SerializeAsync(TypeValue<List<TypeCouple>>.Value, stream.Value, couples).AsTask().AsAirTask();
                 await stream.Value.FlushAsync().AsAirTask();
                 result = stream.Value.ToArray();
             }
             return result;
         }
+        //反序列化数据
+        private async AirTask DeSerializeData(byte[] array)
+        {
+            foreach (var couple in couples) Framework.Pool.Recycle(couple);
+            using (var stream = new MemoryStream(array))
+            {
+                
+                List<TypeCouple> temp = (List<TypeCouple>)(await MemoryPack.MemoryPackSerializer.
+                    DeserializeAsync(TypeValue<List<TypeCouple>>.Value, stream).AsTask().AsAirTask());
+                couples.AddRange(temp);
+            }
+        }
+
 
         public IModel GetModel(Type type)
         {
@@ -121,16 +167,24 @@ namespace AirFramework
         public T GetModel<T>() => (T)GetModel(typeof(T));
 
 
+        private const string modelPath = "AirFramework/Models.bytes";
         public async AirTask SaveAllAsync()
         {
             await GenereteMedium();
             var bytes = await SerializeData();
-            Debug.Log(bytes.Length);
+            await WriteToFile(modelPath, bytes);
         }
 
-        public void LoadAllAsync()
+        public async AirTask LoadAllAsync()
         {
-
+            if (!File.Exists(GetPersistentPath(modelPath)))
+            {
+                await AirTask.CompletedTask;
+                return;
+            }
+            var bytes = await ReadFromFile(modelPath);
+            await DeSerializeData(bytes);
+            await ReadMedium();
         }
 
 

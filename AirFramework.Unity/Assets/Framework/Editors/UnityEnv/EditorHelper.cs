@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 using UnityEngine;
 
 
@@ -91,6 +93,41 @@ namespace AirEditor
             {
                 ForeachDFS(dir, action, filter);
             }
+        }
+
+        /// <summary>
+        /// 遍历整个域的类型
+        /// </summary>
+        /// <param name="action"></param>
+        /// <param name="filter"></param>
+
+        public static void ForeachTypes(Action<Assembly,Type> action,Predicate<Type> filter=null)
+        {
+            foreach(var assebly in AppDomain.CurrentDomain.GetAssemblies())
+            {
+                foreach(var tp in assebly.GetTypes())
+                {
+                    if(filter==null || filter(tp))
+                    {
+                        action(assebly, tp);
+                    }
+                }
+            }
+        }
+        /// <summary>
+        /// 在整个域里获取特性
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static List<T> GetAllAttributes<T>() where T : Attribute
+        {
+            List<T> list = new List<T>();
+            ForeachTypes((x, y) =>
+            {
+                var att = y.GetCustomAttributes<T>();
+                list.AddRange(att);
+            });
+            return list;
         }
 
     }

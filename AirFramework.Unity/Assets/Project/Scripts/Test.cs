@@ -8,7 +8,7 @@ public interface ITestAsyncEvent : ICallEvent<AirTask>
 }
 
 
-public class T2 : IAllocate,IRecycle
+public class T2 : IAllocate, IRecycle
 {
     public void OnAllocate()
     {
@@ -29,9 +29,18 @@ public class Test : IFrameworkInitialize, ITestAsyncEvent
     void IFrameworkInitialize.OnFrameworkInitialize()
     {
         Debug.Log("Test");
-        var model = Framework.GetModule<ModelModule>().GetModel<TestModel>();
-        Framework.GetModule<ModelModule>().SaveAllAsync();
+        TTT();
     }
 
-    
+    async AirTask TTT()
+    {
+
+
+        await Framework.GetModule<ModelModule>().LoadAllAsync();
+        var model = Framework.GetModule<ModelModule>().GetModel<TestModel>();
+        Debug.Log
+            (model.x);
+    }
+
+
 }

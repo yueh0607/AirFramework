@@ -136,7 +136,7 @@ namespace AirFramework
         public override void OnAllocate()
         {
             //UnityEngine.Debug.Log($"Task:{ID}-Allocate");
-            Status = ETaskStatus.None;
+            Status = ETaskStatus.Pending;
             var token = ((IAsyncTokenProperty)this).Token;
             token.Current = this;
             token.Root = this;
@@ -154,7 +154,6 @@ namespace AirFramework
         public override void OnRecycle()
         {
             //UnityEngine.Debug.Log($"Task:{ID}-Recycle");
-            Status = ETaskStatus.None;
             var token = ((IAsyncTokenProperty)this).Token;
             token.Authorization = false;
         }
