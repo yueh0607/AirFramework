@@ -31,6 +31,7 @@ namespace AirEditor
 
         private void OnDisable()
         {
+            if(selectedPlatform<PlatformOptions.Count&&selectedPlatform>=0)
             HotFixToolCache.instance.currentPlatform = PlatformOptions[selectedPlatform];
             HotFixToolCache.instance.hotFixBytesPath = hotFixBytesPath;
             HotFixToolCache.instance.metaDataBytesPath = metaBytesPath;
