@@ -188,6 +188,7 @@ namespace AirFramework
             if (predicate == null) throw new ArgumentNullException("Null condition");
             AirTask task = Framework.Pool.Allocate<AirTask>();
             var until = Framework.Pool.Allocate<TaskUntil>();
+            task.Token.TokenHolder = until;
             until.BindTask = task;
             until.Condition = predicate;
             until.Enable = true;

@@ -55,7 +55,11 @@ namespace AirFramework
 
         #region 关键字段
         //通用池缓存队列
-        private readonly Queue<T> pool = new Queue<T>();
+        protected readonly Queue<T> pool = new Queue<T>();
+
+
+
+
         /// <summary>
         /// 池缓存数量
         /// </summary>
@@ -123,6 +127,7 @@ namespace AirFramework
             else item = pool.Dequeue();
             //执行申请时行为委托
             OnItemAllocate(item);
+
             return item;
         }
 
@@ -140,6 +145,9 @@ namespace AirFramework
             //入池
             if (Count < MaxCapacity) pool.Enqueue(it);
             else OnItemDestroy(it);
+
+
+
         }
 
 

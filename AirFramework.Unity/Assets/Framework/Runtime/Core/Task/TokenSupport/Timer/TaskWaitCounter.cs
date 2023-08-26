@@ -49,6 +49,7 @@
             {
                 BindTask.Finish(ETaskStatus.Succeed);
                 Enable = false;
+                Dispose();
             }
         }
         public override void OnAllocate()

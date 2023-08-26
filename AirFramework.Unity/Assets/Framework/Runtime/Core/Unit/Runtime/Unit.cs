@@ -82,6 +82,8 @@ namespace AirFramework
             _id = IDs.Allocate();
             //if (this is IMessageReceiver) Framework.Message.LifeCycle.AnalyseAddAll(this);
             //UnityEngine.Debug.Log($"id:{_id} , Type:{this.GetType().Name}");
+
+
         }
         ~Unit()
         {
@@ -92,6 +94,8 @@ namespace AirFramework
             components?.Dispose();
             childs = null;
             components = null;
+
+
         }
     }
 
@@ -190,6 +194,9 @@ namespace AirFramework
             }
             return list;
         }
+
+
+
 
     }
 

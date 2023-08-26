@@ -6,6 +6,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 
 namespace AirFramework
 {
@@ -23,6 +24,33 @@ namespace AirFramework
         {
             base.OnItemAllocate(item);
             AllocateCountPerCycle++;
+
+#if UNITY_EDITOR
+            if (refs.Count <= 0) rented.Add(new WeakReference(item));
+            else
+            {
+                var wk = refs.Dequeue();
+                wk.Target = item;
+                rented.Add(wk);
+            }
+#endif
+        }
+        protected override void OnItemRecycle(T item)
+        {
+            base.OnItemRecycle(item);
+
+#if UNITY_EDITOR
+            try
+            {
+                var wk = rented.Find((x) => x.IsAlive && x.Target == item);
+                rented.Remove(wk);
+            }
+            finally
+            {
+
+            }
+
+#endif
         }
 
         public TimeManagedPool(Func<T> onCreate = null, Action<T> onDestroy = null, Action<T> onRecycle = null, Action<T> onAllocate = null) : base(onCreate, onDestroy, onRecycle, onAllocate)
@@ -103,6 +131,42 @@ namespace AirFramework
             }
             AllocateCountPerCycle = 0;
         }
+
+
+#if UNITY_EDITOR
+        private readonly List<WeakReference> alive = new List<WeakReference>();
+        private readonly Queue<WeakReference> refs = new Queue<WeakReference>();
+        private readonly List<WeakReference> rented = new List<WeakReference>();
+
+
+        public void RemoveDeadObj()
+        {
+            rented.RemoveAll((x) => !x.IsAlive);
+            alive.RemoveAll((x) => !x.IsAlive);
+        }
+        public List<WeakReference> GetAllAlive()
+        {
+            foreach (var item in alive)
+            {
+                refs.Enqueue(item);
+            }
+            alive.Clear();
+            foreach (var item in base.pool)
+            {
+                WeakReference wr;
+                if (refs.Count <=0) wr = new WeakReference(item);
+                else
+                {
+                    wr = refs.Dequeue();
+                    wr.Target = item;
+                }
+                alive.Add(wr);
+            }
+            return alive;
+        }
+
+        public List<WeakReference> GetAllRented() => rented;
+#endif
     }
 
 }

@@ -50,6 +50,7 @@ namespace AirFramework
                 {
                     Enable = false;
                     BindTask.Finish(ETaskStatus.Succeed);
+                   Dispose();
                 }
             }
         }

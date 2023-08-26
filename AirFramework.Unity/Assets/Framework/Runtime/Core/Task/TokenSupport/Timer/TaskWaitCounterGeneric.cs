@@ -76,7 +76,7 @@ namespace AirFramework
             {
                 BindTask.Result = Results;
                 BindTask.Finish(ETaskStatus.Succeed);
-                Enable = false;
+                Dispose();
             }
         }
 
