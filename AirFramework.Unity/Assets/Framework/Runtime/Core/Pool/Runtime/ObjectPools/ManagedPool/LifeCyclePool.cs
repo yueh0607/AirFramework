@@ -31,33 +31,39 @@ namespace AirFramework
         }
         protected override void OnItemAllocate(T item)
         {
-            base.OnItemAllocate(item);
-
+            if(item is Unit unit)
+            {
+                if(unit.ID==69)
+                {
+                    int x = 0;
+                }
+            }
             //注册生命周期
             if (item is IMessageReceiver receiver)
             {
-                //receiver.SetActive(true);
-                Framework.Message.LifeCycle.AnalyseAddAll(item);
+                receiver.SetActive(true);
+                //Framework.Message.LifeCycle.AnalyseAddAll(item);
                 if (item is IAllocate)
                     receiver.Operator<IAllocate>().Publish();
 
             }
-
+            base.OnItemAllocate(item);
         }
 
         protected override void OnItemRecycle(T item)
         {
-            base.OnItemRecycle(item);
-
             //注册生命周期
             if (item is IMessageReceiver receiver)
             {
                 if (item is IAllocate)
                     receiver.Operator<IRecycle>().Publish();
-                //receiver.SetActive(false);
+                receiver.SetActive(false);
 
-                Framework.Message.LifeCycle.AnalyseRemoveAll(item);
+                //Framework.Message.LifeCycle.AnalyseRemoveAll(item);
             }
+            base.OnItemRecycle(item);
+
+            
         }
 
         public LifeCyclePool(Func<T> onCreate = null, Action<T> onDestroy = null, Action<T> onRecycle = null, Action<T> onAllocate = null) : base(onCreate, onDestroy, onRecycle, onAllocate)

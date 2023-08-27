@@ -22,9 +22,9 @@ namespace AirFramework
         //申请
         protected override void OnItemAllocate(T item)
         {
-            base.OnItemAllocate(item);
+    
             AllocateCountPerCycle++;
-
+            base.OnItemAllocate(item);
 #if UNITY_EDITOR
             if (refs.Count <= 0) rented.Add(new WeakReference(item));
             else

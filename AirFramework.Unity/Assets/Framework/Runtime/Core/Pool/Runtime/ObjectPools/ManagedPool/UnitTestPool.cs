@@ -12,20 +12,22 @@ namespace AirFramework
 
         protected override void OnItemAllocate(T item)
         {
-            base.OnItemAllocate(item);
+         
             if (item is Unit unit)
             {
                 unit.Disposed = false;
             }
+            base.OnItemAllocate(item);
         }
 
         protected override void OnItemRecycle(T item)
         {
-            base.OnItemRecycle(item);
+            
             if (item is Unit unit)
             {
                 unit.Disposed = true;
             }
+            base.OnItemRecycle(item);
         }
 
         public UnitTestPool(Func<T> onCreate = null, Action<T> onDestroy = null, Action<T> onRecycle = null, Action<T> onAllocate = null) : base(onCreate, onDestroy, onRecycle, onAllocate)

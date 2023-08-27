@@ -75,12 +75,15 @@ namespace AirFramework
         protected override void OnFinish()
         {
             _callback?.Invoke(this);
+        
             continuation?.Invoke();
+            //Dispose();
         }
 
         //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override void OnRecycle()
         {
+
             _callback = null;
             base.OnRecycle();
             continuation = null;
@@ -186,7 +189,9 @@ namespace AirFramework
         protected override void OnFinish()
         {
             _callback?.Invoke(this);
+            
             continuation?.Invoke();
+            //Dispose();
         }
 
 
