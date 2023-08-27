@@ -43,10 +43,7 @@ namespace AirFramework
             object cache;
             using (MemoryStream stream  = new MemoryStream(bytes))
             {
-        
-                //stream.Value.Write(bytes, 0, length == -1 ? bytes.Length : length);
-                cache = await MemoryPack.MemoryPackSerializer.DeserializeAsync(type, stream);
-     
+                cache = await MemoryPack.MemoryPackSerializer.DeserializeAsync(type, stream).AsTask().AsAirTask();
             }
             return cache;
         }
@@ -58,7 +55,7 @@ namespace AirFramework
         public async AirTask<object> DeSerialize(TypeCouple couple)
         {
             if(couple == null) throw new ArgumentNullException(nameof(couple)+" is null");
-            return await DeSerialize(couple.TrueType, couple.TrueData);
+            return await DeSerialize(couple.TrueType, couple.TrueData)??throw new InvalidCastException("DeSerialize Failed");
         }
 
         /// <summary>
@@ -76,7 +73,6 @@ namespace AirFramework
         /// <returns></returns>
         public async AirTask WriteToFile(string relativePath, byte[] fileContent)
         {
-
             string path = GetPersistentPath(relativePath);
             Directory.CreateDirectory(Path.GetDirectoryName(path));
             using (FileStream fs = File.Create(path))

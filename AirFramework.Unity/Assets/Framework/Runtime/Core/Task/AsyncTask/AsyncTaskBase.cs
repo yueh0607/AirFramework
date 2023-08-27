@@ -58,7 +58,7 @@ namespace AirFramework
         //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Finish(ETaskStatus status)
         {
-            UnityEngine.Debug.Log($"完成任务{ID},Status:{status}");
+            //UnityEngine.Debug.Log($"完成任务{ID},Status:{status}");
             if (IsDone)
             {
                 throw new InvalidOperationException($"Completed tasks （ID：{ID}） cannot be completed repeatedly. StateChange [{Status} -> {status}]");
@@ -136,7 +136,7 @@ namespace AirFramework
         //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override void OnAllocate()
         {
-            UnityEngine.Debug.Log($"Task:{ID}-Allocate");
+            //UnityEngine.Debug.Log($"Task:{ID}-Allocate");
             Status = ETaskStatus.Pending;
             var token = ((IAsyncTokenProperty)this).Token;
             token.Current = this;
@@ -154,7 +154,7 @@ namespace AirFramework
         //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override void OnRecycle()
         {
-            UnityEngine.Debug.Log($"Task:{ID}-Recycle");
+            //UnityEngine.Debug.Log($"Task:{ID}-Recycle");
             var token = ((IAsyncTokenProperty)this).Token;
             token.Authorization = false;
         }

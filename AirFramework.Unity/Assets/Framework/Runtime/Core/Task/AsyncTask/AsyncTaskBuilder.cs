@@ -17,7 +17,7 @@ namespace AirFramework
         //[DebuggerHidden, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public AirTaskBuilder(AirTask task)
         {
-            UnityEngine.Debug.Log($"Builder Allocate {task.ID}");
+            //UnityEngine.Debug.Log($"Builder Allocate {task.ID}");
             this.task = task;
         }
 
