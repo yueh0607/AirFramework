@@ -34,27 +34,27 @@ namespace AirFramework.MV.RefBuild.Editor
         bool language_cn = true;
         private void OnEnable()
         {
-            //target = BuilderPreference.instance.buildPrefab;
-            //className = BuilderPreference.instance.className;
-            language_cn = BuilderPreference.instance.Language_CN;
-            path = BuilderPreference.instance.defaultPath;
-            increase = BuilderPreference.instance.increase;
-            part = BuilderPreference.instance.part;
-            nameSpaceName = BuilderPreference.instance.defaultNameSpace;
-            autoCreatePath = BuilderPreference.instance.autoCreatePath;
-            awakeInit = BuilderPreference.instance.awakrInit;
+            //target = BuilderPreference.Instance.buildPrefab;
+            //className = BuilderPreference.Instance.className;
+            language_cn = BuilderPreference.Instance.Language_CN;
+            path = BuilderPreference.Instance.defaultPath;
+            increase = BuilderPreference.Instance.increase;
+            part = BuilderPreference.Instance.part;
+            nameSpaceName = BuilderPreference.Instance.defaultNameSpace;
+            autoCreatePath = BuilderPreference.Instance.autoCreatePath;
+            awakeInit = BuilderPreference.Instance.awakrInit;
         }
         private void OnDisable()
         {
-            //BuilderPreference.instance.buildPrefab = target;
-            //BuilderPreference.instance.className = className;
-            BuilderPreference.instance.Language_CN = language_cn;
-            BuilderPreference.instance.defaultPath = path;
-            BuilderPreference.instance.increase = increase;
-            BuilderPreference.instance.part = part;
-            BuilderPreference.instance.defaultNameSpace = nameSpaceName;
-            BuilderPreference.instance.autoCreatePath = autoCreatePath;
-            BuilderPreference.instance.awakrInit = awakeInit;
+            //BuilderPreference.Instance.buildPrefab = target;
+            //BuilderPreference.Instance.className = className;
+            BuilderPreference.Instance.Language_CN = language_cn;
+            BuilderPreference.Instance.defaultPath = path;
+            BuilderPreference.Instance.increase = increase;
+            BuilderPreference.Instance.part = part;
+            BuilderPreference.Instance.defaultNameSpace = nameSpaceName;
+            BuilderPreference.Instance.autoCreatePath = autoCreatePath;
+            BuilderPreference.Instance.awakrInit = awakeInit;
 
         }
 
@@ -263,7 +263,7 @@ namespace #NAMESPACE#
                 model = model.Replace("#NAMESPACE#", _namespace);
                 model = model.Replace("#CLASS#", _class);
                 model = model.Replace("#PART#", part ? "partial " : string.Empty);
-                model = model.Replace("NAMESPACE", FrameworkSettings.instance.defaultNamespace);
+                model = model.Replace("NAMESPACE", FrameworkSettings.Instance.defaultNamespace);
                 model = model.Replace("#NEWFUNC#", awakeInit ?
 @"
         private void Awake()

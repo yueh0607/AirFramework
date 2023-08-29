@@ -66,7 +66,7 @@ namespace AirEditor
         {
             string date = DateTime.Now.ToString();
             string des = "Describe the function here.";
-            string author = FrameworkSettings.instance.authorName;
+            string author = FrameworkSettings.Instance.authorName;
 
             string version = Application.unityVersion;
 

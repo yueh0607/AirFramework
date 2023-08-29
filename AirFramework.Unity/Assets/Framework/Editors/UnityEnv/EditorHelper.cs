@@ -24,12 +24,14 @@ namespace AirEditor
                 return projectPath;
             }
         }
+        public static string GetAbsPathToAsset(string relativePath)=>Path.Combine(Application.dataPath, relativePath);
+        public  static string GetAbsPathToProject(string relativePath) =>Path.Combine(ProjectPath, relativePath);
 
         /// <summary>
         /// 不存在则创建，可以是文件夹也可以是文件
         /// </summary>
         /// <param name="path"></param>
-        public static void NotExistCreate(string path)
+        public static bool NotExistCreate(string path)
         {
             if (Path.HasExtension(path))
             {
@@ -37,11 +39,13 @@ namespace AirEditor
                 Directory.CreateDirectory(dir);
                 if (!File.Exists(path))
                     File.Create(path).Dispose();
+                else return false;
             }
             else
             {
                 Directory.CreateDirectory(path);
             }
+            return true;
         }
 
         /// <summary>

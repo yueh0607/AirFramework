@@ -24,17 +24,17 @@ namespace AirEditor
         private void OnEnable()
         {
             LoadPlatformOptions();
-            selectedPlatform = PlatformOptions.IndexOf(HotFixToolCache.instance.currentPlatform);
-            hotFixBytesPath = HotFixToolCache.instance.hotFixBytesPath;
-            metaBytesPath = HotFixToolCache.instance.metaDataBytesPath;
+            selectedPlatform = PlatformOptions.IndexOf(HotFixToolCache.Instance.currentPlatform);
+            hotFixBytesPath = HotFixToolCache.Instance.hotFixBytesPath;
+            metaBytesPath = HotFixToolCache.Instance.metaDataBytesPath;
         }
 
         private void OnDisable()
         {
             if(selectedPlatform<PlatformOptions.Count&&selectedPlatform>=0)
-            HotFixToolCache.instance.currentPlatform = PlatformOptions[selectedPlatform];
-            HotFixToolCache.instance.hotFixBytesPath = hotFixBytesPath;
-            HotFixToolCache.instance.metaDataBytesPath = metaBytesPath;
+            HotFixToolCache.Instance.currentPlatform = PlatformOptions[selectedPlatform];
+            HotFixToolCache.Instance.hotFixBytesPath = hotFixBytesPath;
+            HotFixToolCache.Instance.metaDataBytesPath = metaBytesPath;
         }
 
         Vector2 hotUpdateScrollViewPosition = Vector2.zero;
@@ -157,7 +157,7 @@ namespace AirEditor
         void ResetPathToDefault()
         {
             Debug.Log("AirFramework.HotFixTool Path Apply Default Setting!");
-            HotFixToolCache.DestroyImmediate(HotFixToolCache.instance);
+            HotFixToolCache.DestroyImmediate(HotFixToolCache.Instance);
             OnEnable();
         }
 

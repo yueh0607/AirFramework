@@ -2,8 +2,8 @@
 
 namespace AirEditor
 {
-    //[FilePath("Assets/Framework/Editors/UnityEnv/Configurations/Framework.Setting.asset")]
-    public class FrameworkSettings : ScriptableSingleton<FrameworkSettings>
+    [FilePath("FrameworkPerference/FrameworkEditorGlobalCache.asset",FilePathAttribute.LocationType.AssetsFolder)]
+    public class FrameworkSettings : ScriptableObjectSingleton<FrameworkSettings>
     {
         public string authorName = "#unknown#";
         public string defaultNamespace = "MyNamespace";

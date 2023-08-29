@@ -10,7 +10,8 @@ using UnityEngine;
 
 namespace AirEditor
 {
-    public class ConfigCache : ScriptableSingleton<ConfigCache>
+    [FilePath("FrameworkPerference/ConfigWindowCache.asset",FilePathAttribute.LocationType.AssetsFolder)]
+    public class ConfigCache : ScriptableObjectSingleton<ConfigCache>
     {
         public string generatePath = "Assets/Project/Scripts/ConstModels";
         public string originPath = "ConfigDataTable";
@@ -33,18 +34,18 @@ namespace AirEditor
         private void OnGUI()
         {
             GUILayout.BeginHorizontal();
-            ConfigCache.instance.generatePath = EditorGUILayout.TextField("GeneratePath", ConfigCache.instance.generatePath, GUILayout.ExpandWidth(true));
+            ConfigCache.Instance.generatePath = EditorGUILayout.TextField("GeneratePath", ConfigCache.Instance.generatePath, GUILayout.ExpandWidth(true));
             if (GUILayout.Button("Open", GUILayout.ExpandWidth(false)))
             {
-                Application.OpenURL(ConfigCache.instance.generatePath);
+                Application.OpenURL(ConfigCache.Instance.generatePath);
             }
             GUILayout.EndHorizontal();
 
             GUILayout.BeginHorizontal();
-            ConfigCache.instance.originPath = EditorGUILayout.TextField("OriginPath", ConfigCache.instance.originPath);
+            ConfigCache.Instance.originPath = EditorGUILayout.TextField("OriginPath", ConfigCache.Instance.originPath);
             if (GUILayout.Button("Open", GUILayout.ExpandWidth(false)))
             {
-                Application.OpenURL(ConfigCache.instance.originPath);
+                Application.OpenURL(ConfigCache.Instance.originPath);
             }
             GUILayout.EndHorizontal();
 
@@ -57,7 +58,7 @@ namespace AirEditor
             pos = GUILayout.BeginScrollView(pos);
 
             locked = false;
-            string path = Path.Combine(EditorHelper.ProjectPath, ConfigCache.instance.originPath);
+            string path = Path.Combine(EditorHelper.ProjectPath, ConfigCache.Instance.originPath);
             if (Directory.Exists(path))
                 EditorHelper.ForeachDFS(path, (x) =>
                 {
@@ -90,9 +91,9 @@ namespace AirEditor
         private void GenerateAll()
         {
             if (locked) throw new InvalidOperationException("Please close excel");
-            //EditorHelper.NotExistCreate(ConfigCache.instance.generatePath);
+            //EditorHelper.NotExistCreate(ConfigCache.Instance.generatePath);
 
-            string path = Path.Combine(EditorHelper.ProjectPath, ConfigCache.instance.originPath);
+            string path = Path.Combine(EditorHelper.ProjectPath, ConfigCache.Instance.originPath);
             EditorHelper.NotExistCreate(path);
             EditorHelper.ForeachDFS(path, (x) =>
             {
@@ -112,7 +113,7 @@ namespace AirEditor
                 string code = TableToModel.GetCode(table, modelName, modelName);
                 stream.Dispose();
 
-                string genPath = Path.Combine(EditorHelper.ProjectPath, ConfigCache.instance.generatePath, modelName + "Model.cs");
+                string genPath = Path.Combine(EditorHelper.ProjectPath, ConfigCache.Instance.generatePath, modelName + "Model.cs");
                 EditorHelper.NotExistCreate(genPath);
                 StreamWriter writer = new StreamWriter(genPath, false, System.Text.Encoding.UTF8);
                 writer.Write(code);

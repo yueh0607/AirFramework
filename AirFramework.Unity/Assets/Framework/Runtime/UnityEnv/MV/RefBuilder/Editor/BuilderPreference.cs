@@ -1,10 +1,10 @@
-﻿using UnityEditor;
+﻿using AirEditor;
 using UnityEngine;
 
 namespace AirFramework.MV.RefBuild.Editor
 {
-
-    public class BuilderPreference : ScriptableSingleton<BuilderPreference>
+    [FilePath("FrameworkPerference/RefBuilderCache.asset",FilePathAttribute.LocationType.AssetsFolder)]
+    public class BuilderPreference : ScriptableObjectSingleton<BuilderPreference>
     {
         public GameObject buildPrefab = null;
         public string className = "";

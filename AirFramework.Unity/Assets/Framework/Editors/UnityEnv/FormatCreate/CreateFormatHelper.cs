@@ -15,7 +15,7 @@ using System.Collections;
 using System.Collections.Generic;
 using AirFramework;
 
-namespace {FrameworkSettings.instance.defaultNamespace}
+namespace {FrameworkSettings.Instance.defaultNamespace}
 {{
     public class #NAME#
     {{
@@ -35,7 +35,7 @@ namespace {FrameworkSettings.instance.defaultNamespace}
             FileCreateHelper.CreateScriptWithTitle(@$"
         using AirFramework;
 
-        namespace {FrameworkSettings.instance.defaultNamespace}
+        namespace {FrameworkSettings.Instance.defaultNamespace}
         {{
             public class #NAME# : {typeof(IModel).FullName}
             {{
@@ -56,7 +56,7 @@ using System.Collections;
 using System.Collections.Generic;
 using AirFramework;
 
-namespace {FrameworkSettings.instance.defaultNamespace}
+namespace {FrameworkSettings.Instance.defaultNamespace}
 {{
     public class #NAME# : MonoBehaviour
     {{
@@ -89,7 +89,7 @@ using System.Collections;
 using System.Collections.Generic;
 using AirFramework;
 
-namespace {FrameworkSettings.instance.defaultNamespace}
+namespace {FrameworkSettings.Instance.defaultNamespace}
 {{
     public class #NAME# : Unit
     {{
@@ -114,7 +114,7 @@ using System.Collections;
 using System.Collections.Generic;
 using AirFramework;
 
-namespace {FrameworkSettings.instance.defaultNamespace}
+namespace {FrameworkSettings.Instance.defaultNamespace}
 {{
     public class #NAME# : PoolableObject
     {{
@@ -141,7 +141,7 @@ namespace {FrameworkSettings.instance.defaultNamespace}
         {
             FileCreateHelper.CreateScriptWithTitle(@$"
 
-namespace {FrameworkSettings.instance.defaultNamespace}
+namespace {FrameworkSettings.Instance.defaultNamespace}
 {{
     public interface #NAME#
     {{

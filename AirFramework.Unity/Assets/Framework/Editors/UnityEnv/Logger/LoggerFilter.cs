@@ -5,25 +5,19 @@ using UnityEngine;
 
 namespace AirEditor
 {
-
-    public class LogFilterInfo : ScriptableSingleton<LogFilterInfo>
-    {
-        public List<string> CustomInfos = new List<string>();
-        public List<string> BuiltInInfos = new List<string>();
-        public bool ShowBuiltIn = false;
-    }
+   
 
     public static class HideLog
     {
         static bool ContainFile(string str)
         {
             bool exist = false;
-            foreach (var s in LogFilterInfo.instance.BuiltInInfos)
+            foreach (var s in LogFilterInfo.Instance.BuiltInInfos)
             {
                 if (exist) break;
                 exist |= str.Contains(s);
             }
-            foreach (var s in LogFilterInfo.instance.CustomInfos)
+            foreach (var s in LogFilterInfo.Instance.CustomInfos)
             {
                 if (exist) break;
                 exist |= str.Contains(s);
@@ -32,9 +26,9 @@ namespace AirEditor
         }
 
         [UnityEditor.Callbacks.OnOpenAsset(0)]
-        static bool OnOpenAsset(int instanceID, int line)
+        static bool OnOpenAsset(int InstanceID, int line)
         {
-            string assetPath = AssetDatabase.GetAssetPath(instanceID);
+            string assetPath = AssetDatabase.GetAssetPath(InstanceID);
 
             //不存在直接手动打开
             if (!ContainFile(assetPath))
@@ -192,19 +186,19 @@ namespace AirEditor
                 case 0:
                     {
                         if (GUILayout.Button("Add", GUILayout.ExpandWidth(false)))
-                            AddTo(ref LogFilterInfo.instance.BuiltInInfos, add);
+                            AddTo(ref LogFilterInfo.Instance.BuiltInInfos, add);
                         GUILayout.EndHorizontal();
 
-                        DrawList(ref LogFilterInfo.instance.BuiltInInfos, ref POS);
+                        DrawList(ref LogFilterInfo.Instance.BuiltInInfos, ref POS);
                         break;
                     }
                 case 1:
                     {
                         if (GUILayout.Button("Add", GUILayout.ExpandWidth(false)))
-                            AddTo(ref LogFilterInfo.instance.CustomInfos, add);
+                            AddTo(ref LogFilterInfo.Instance.CustomInfos, add);
 
                         GUILayout.EndHorizontal();
-                        DrawList(ref LogFilterInfo.instance.CustomInfos, ref POS2);
+                        DrawList(ref LogFilterInfo.Instance.CustomInfos, ref POS2);
                         break;
                     }
             }
